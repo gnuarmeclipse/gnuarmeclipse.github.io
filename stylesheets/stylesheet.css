@@ -671,7 +671,7 @@ form {
   text-indent: 3px;
 }
 
-h4:before {
+#main-content h4:before {
   padding-right: 0.3em;
   margin-left: -2.8em;
   content: "////";
@@ -685,7 +685,7 @@ h4:before {
   color: #474747;
   text-indent: 3px;
 }
-h5:before {
+#main-content h5:before {
   padding-right: 0.3em;
   margin-left: -3.2em;
   content: "/////";
@@ -699,7 +699,7 @@ h5:before {
   color: #474747;
   text-indent: 3px;
 }
-h6:before {
+#main-content h6:before {
   padding-right: 0.3em;
   margin-left: -3.7em;
   content: "//////";
@@ -770,6 +770,36 @@ footer a:hover {
 .clearfix {display: inline-block;}
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
+
+/* Make the Contents slightly smaller */
+
+h2#contents + ol {
+  list-style-type: none;
+  font-size: 80%;
+}
+
+h2#contents + ul {
+  font-size: 80%;
+}
+
+
+#sidebar h4 {
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#sidebar ul {
+  margin-top: 0px;
+}
+
+h3#additional-tools ~ ul li p:first-child {
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 110%;
+}
+
 
 /* #Media Queries
 ================================================== */
