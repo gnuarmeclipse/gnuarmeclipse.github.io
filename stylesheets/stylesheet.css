@@ -788,7 +788,7 @@ h2#contents + ul {
   font-size: 15px;
   font-weight: bold;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 #sidebar ul {
@@ -800,6 +800,13 @@ h3#additional-tools ~ ul li p:first-child {
   font-size: 110%;
 }
 
+p.post-footer {
+  font-size: 80%;
+}
+
+p.post-meta {
+  font-size: 80%;
+}
 
 /* #Media Queries
 ================================================== */
