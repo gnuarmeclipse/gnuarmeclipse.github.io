@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>GNU ARM Eclipse</title>
+  <title>The 2014 QEMU Change Log</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="/qemu/change-log/2014/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <!--[if lt IE 9]>
@@ -54,46 +54,99 @@
 <section id="main-content">
 
 
-<h2 id="welcome-to-gnu-arm-eclipse-work-in-progress-old-sitehttpgnuarmeclipseliviusnetblog">Welcome to GNU ARM Eclipse! (Work-in-progress! <a href="http://gnuarmeclipse.livius.net/blog/">Old site</a>)</h2>
+<h1 class="page-title">The 2014 QEMU Change Log</h1>
 
-<p>This site is dedicated to the <strong>GNU ARM Eclipse</strong> family of plug-ins and tools for embedded ARM development, based on GNU toolchains. This project is hosted on <a href="https://github.com/gnuarmeclipse">GitHub</a> and <a href="http://sourceforge.net/projects/gnuarmeclipse/">SourceForge</a>.</p>
 
-<h3 id="the-gnu-arm-eclipse-plug-ins">The GNU ARM Eclipse plug-ins</h3>
+<h2 id="section">2014</h2>
 
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for GNU ARM toolchains like <strong>GNU Tools for ARM Embedded Processors</strong>, <strong>Linaro</strong>, etc.</p>
-
-<p>In short, the GNU ARM Eclipse plug-ins allow to create, build, debug and in general to <strong>manage ARM and AArch64 projects</strong> (executables and static/shared libraries, in both 32 and 64-bit versions) with the Eclipse framework (currently tested up to Eclipse 4.4 Luna). The plug-ins run on Windows, GNU/Linux and Mac OS X. For more details please visit the <a href="http://gnuarmeclipse.livius.net/blog/features/">Features</a> page.</p>
-
-<p><img src="images/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
-
-<h3 id="additional-tools">Additional tools</h3>
-
-<p>Apart from the main Eclipse plug-ins, this project also includes several additional tools, distributed as separate packages.</p>
-
+<h3 id="section-1">2014-12-31</h3>
 <ul>
-  <li>
-    <p><strong>GNU ARM Eclipse Windows Build Tools</strong></p>
-
-    <p>The <strong>GNU ARM Eclipse Windows Build Tools</strong> subproject includes the additional tools required on Windows (<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>GNU ARM Eclipse OpenOCD</strong></p>
-
-    <p>The <strong>GNU ARM Eclipse OpenOCD</strong> subproject is a new distribution of <a href="http://openocd.sourceforge.net/">OpenOCD</a>, customised for a better/more convenient integration with the <strong>GNU ARM OpenOCD Debugging</strong> plug-in.</p>
-  </li>
-  <li>
-    <p><strong>GNU ARM Eclipse QEMU</strong></p>
-
-    <p>The <strong>GNU ARM Eclipse QEMU</strong> subproject is a fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator), intended to provide support for Cortex-M emulation in GNU ARM Eclipse.</p>
-
-    <p><img src="images/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs." /></p>
-  </li>
+  <li>Merge branch ‘master’ into gnuarmeclipse-cortexm</li>
 </ul>
 
-<h3 id="enjoy">Enjoy!</h3>
+<h3 id="section-2">2014-12-11</h3>
+<ul>
+  <li>Pass semihosting exit code back to system (master)</li>
+  <li>Add the “-semihosting-config” option (master)</li>
+</ul>
 
-<p>If you successfully installed and used this project, we’d be honoured to receive your <strong>Thumbs up</strong>, and eventually a short review in the main <a href="http://sourceforge.net/projects/gnuarmeclipse">SourceForge Project page</a>.</p>
+<h3 id="section-3">2014-12-03</h3>
+<ul>
+  <li>separate nsi file added for gnuarmeclipse</li>
+  <li>mingw windows path updated to GNU ARM Eclipse/QEMU</li>
+</ul>
 
+<h3 id="section-4">2014-11-30</h3>
+<ul>
+  <li>cortexm: qemu-gnuarmeclipse.nsi</li>
+</ul>
+
+<h3 id="section-5">2014-11-27</h3>
+<ul>
+  <li>Merge branch ‘master’ into gnuarmeclipse</li>
+  <li>registry keys changed to be automatically detected by plug-in</li>
+</ul>
+
+<h3 id="section-6">2014-11-25</h3>
+<ul>
+  <li>cortexm: sam &amp; xmc added</li>
+</ul>
+
+<h3 id="section-7">2014-11-24</h3>
+<ul>
+  <li>cortexm: set default system_clock_scale = 80</li>
+</ul>
+
+<h3 id="section-8">2014-11-23</h3>
+<ul>
+  <li>cortexm: tiva board added</li>
+  <li>cortexm: olimex stm32-e407 instead of p407</li>
+</ul>
+
+<h3 id="section-9">2014-11-22</h3>
+<ul>
+  <li>cortex-m: initial implementation</li>
+  <li>cortexm: most STM32 boards defined</li>
+  <li>cortexm: *_[core|mcu|board]_init renames</li>
+  <li>cortexm: Kinetis &amp; LPC boards added</li>
+</ul>
+
+<h3 id="section-10">2014-11-20</h3>
+<ul>
+  <li>-semihosting-config target=…,cmdline=…</li>
+</ul>
+
+<h3 id="section-11">2014-11-11</h3>
+<ul>
+  <li>gnuarmeclipse-softmmu target added</li>
+  <li>CONFIG_VERBOSE/SEMIHOSTING/BRANDING added</li>
+</ul>
+
+<h3 id="section-12">2014-11-08</h3>
+<ul>
+  <li>verbosity for monitor commands</li>
+  <li>on mingw default to ipv4</li>
+  <li>use inet_ntop() to get peer address</li>
+  <li>do not use inet_ntop() on MinGW</li>
+</ul>
+
+<h3 id="section-13">2014-11-07</h3>
+<ul>
+  <li>verbosity: &gt;1 for Write, command line</li>
+  <li>use BRANDING definition</li>
+  <li>add mingw patches</li>
+</ul>
+
+<h3 id="section-14">2014-11-05</h3>
+<ul>
+  <li>‘-verbose’ defined and checked</li>
+</ul>
+
+<h3 id="section-15">2014-11-03</h3>
+<ul>
+  <li>branch created</li>
+  <li>semihosting debug on stderr even in debug</li>
+</ul>
 
 
 </section>

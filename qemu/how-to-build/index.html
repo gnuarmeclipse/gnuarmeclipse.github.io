@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>How to build the QEMU binaries</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="/qemu/how-to-build/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="page-title">How to build the QEMU binaries</h1>
+
+
+<p>The latest version of the build script is a single run, multi-platform build, generating the Windows 32, Windows 64, GNU/Linux 32, GNU/Linux 64 and OS X distribution packages at once.</p>
+
+<p>The script was developed on OS X, but it also runs on any recent GNU/Linux distribution (just that in this case it cannot generate the OS X package).</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>The main trick that made the multi-platform build possible is <a href="https://www.docker.com">Docker</a>.</p>
+
+<p>Containers based on three docker images are used, one packing MinGW-w64 in a Debian 8, and two packing the basic system (gcc &amp; x11) in Debian 8 (separate 32/64-bits containers). The more conservative Debian was preferred to generate the GNU/Linux versions, to avoid problems when attempting to run the executables on older versions.</p>
+
+<h3 id="os-x">OS X</h3>
+
+<h4 id="install-docker">Install Docker</h4>
+
+<p>On OS X, install <strong>boot2docker</strong>, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on Mac OS X</a> instructions.</p>
+
+<h4 id="install-the-command-line-tools">Install the Command Line Tools</h4>
+
+<p>The OS X compiler and other development tools are packed in a separate Xcode add-on. The best place to get it is from the <a href="https://developer.apple.com/xcode/downloads/">Developer</a> site, although this might require enrolling to the developer program (free of charge).</p>
+
+<p>To test if the compiler is available, use:</p>
+
+<pre><code>$ gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 6.1.0 (clang-602.0.49) (based on LLVM 3.6.0svn)
+Target: x86_64-apple-darwin14.3.0
+Thread model: posix
+</code></pre>
+
+<h4 id="install-macports">Install MacPorts</h4>
+
+<p>The build procedure requires the presence of <a href="http://www.macports.org">MacPorts</a>. Install it according to the documentation.</p>
+
+<h4 id="install-required-macports-packages">Install required MacPorts packages</h4>
+
+<p>Install the following packages:</p>
+
+<pre><code>sudo port install libtool automake autoconf pkgconfig
+sudo port install texinfo texlive
+</code></pre>
+
+<h3 id="gnulinux">GNU/Linux</h3>
+
+<h4 id="install-docker-1">Install Docker</h4>
+
+<p>For any GNU/Linux distribution, follow the <a href="https://docs.docker.com/installation/#installation">specific instructions</a>.</p>
+
+<h4 id="configure-docker-to-run-as-regular-user">Configure Docker to run as regular user</h4>
+
+<p>To allow docker to run as a regular user, you need to be a member of the <strong>docker</strong> group.</p>
+
+<pre><code>sudo groupadd docker
+sudo gpasswd -a ${USER} docker
+sudo service docker restart
+</code></pre>
+
+<p>To make these changes effective, logout and login.</p>
+
+<h4 id="install-required-packages">Install required packages</h4>
+
+<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<strong>curl</strong>, <strong>git</strong>, <strong>automake</strong>, <strong>patch</strong>, <strong>tar</strong>, <strong>unzip</strong>).</p>
+
+<p>The script checks for them; if the script fails, install them and re-run.</p>
+
+<h3 id="docker-images">Docker images</h3>
+
+<p>The Docker images are available from <a href="https://hub.docker.com/u/ilegeul/">Docker Hub</a>. They were build using the Dockerfiles available from <a href="https://github.com/ilg-ul/docker">ilg-ul/docker</a> on GitHub.</p>
+
+<h2 id="download-the-build-script">Download the build script</h2>
+
+<p>The script is available from the GitHub and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-qemu.sh">viewed online</a>.</p>
+
+<p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
+
+<pre><code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh \
+-o ~/Downloads/build-qemu.sh
+</code></pre>
+
+<h2 id="check-the-script">Check the script</h2>
+
+<p>The script creates a temporary build <strong>Work/qemu</strong> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine WORK_FOLDER variable before invoking the script.</p>
+
+<h2 id="preload-the-docker-images">Preload the Docker images</h2>
+
+<p>Docker does not require to explicitly download new images, but does this automatically at first use.</p>
+
+<p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
+
+<pre><code>bash ~/Downloads/build-qemu.sh preload-images
+</code></pre>
+
+<p>Please be patient, this will bring about 5 GB, which on a regular broadband line might take more than 30 minutes.</p>
+
+<p>The result should look similar to:</p>
+
+<pre><code>$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ilegeul/debian      8-gnuarm-mingw      1a8e62c2dd40        23 hours ago        2.486 GB
+ilegeul/debian32    8-gnuarm-gcc-x11    a006ca3d3fe6        2 days ago          1.423 GB
+ilegeul/debian      8-gnuarm-gcc-x11    575a7f52cfcf        2 days ago          1.569 GB
+hello-world         latest              e45a5af57b00        6 months ago        910 B
+</code></pre>
+
+<h2 id="build-all-distribution-files">Build all distribution files</h2>
+
+<pre><code>bash ~/Downloads/build-qemu.sh --all
+</code></pre>
+
+<p>On OS X, to prevent sleep, use:</p>
+
+<pre><code>caffeinate bash ~/Downloads/build-qemu.sh --all
+</code></pre>
+
+<p>About half an hour later, the output of the build script is a set of 5 files in the output folder:</p>
+
+<pre><code>$ ls -l output
+total 105616
+total 51336
+drwxr-xr-x  6 ilg  staff      204 May 12 22:07 debian32
+drwxr-xr-x  6 ilg  staff      204 May 12 21:43 debian64
+-rw-r--r--  1 ilg  staff  4462782 May 12 22:30 gnuarmeclipse-qemu-debian32-2.3.50-201505121804-dev.tgz
+-rw-r--r--  1 ilg  staff  4601903 May 12 22:06 gnuarmeclipse-qemu-debian64-2.3.50-201505121804-dev.tgz
+-rw-r--r--  1 ilg  staff  5378788 May 12 22:34 gnuarmeclipse-qemu-osx-2.3.50-201505121804-dev.pkg
+-rw-r--r--  1 ilg  staff  3257398 May 12 21:42 gnuarmeclipse-qemu-win32-2.3.50-201505121804-dev-setup.exe
+-rw-r--r--  1 ilg  staff  3782102 May 12 21:25 gnuarmeclipse-qemu-win64-2.3.50-201505121804-dev-setup.exe
+drwxr-xr-x  4 ilg  staff      136 May 12 22:35 osx
+drwxr-xr-x  6 ilg  staff      204 May 12 21:26 win32
+drwxr-xr-x  6 ilg  staff      204 May 12 21:04 win64
+</code></pre>
+
+<h2 id="subsequent-runs">Subsequent runs</h2>
+
+<h3 id="separate-platform-specific-builds">Separate platform specific builds</h3>
+
+<p>Instead of <strong>–all</strong>, you can use any combination of:</p>
+
+<pre><code>--win32 --win64 --debian32 --debian64 --osx
+</code></pre>
+
+<h3 id="clean">clean</h3>
+
+<p>To remove all build files, use:</p>
+
+<pre><code>bash ~/Downloads/build-qemu.sh clean
+</code></pre>
+
+<h2 id="the-work-folder">The Work folder</h2>
+
+<p>The entire build process is contained in a Work folder, located on the host and mounted in the Docker containers.</p>
+
+<p>A typical Work folder includes sub-folders for each project:</p>
+
+<pre><code>$ tree -L 1 qemu
+qemu
+├── README.txt
+├── build
+├── gnuarmeclipse-qemu.git
+├── install
+├── output
+├── patches
+├── scripts
+└── xcode
+</code></pre>
+
+<p>The build and include subfolders look like:</p>
+
+<pre><code>$ tree -L 2 qemu/build/ qemu/install
+qemu/build/
+├── debian32
+│   └── qemu
+├── debian64
+│   └── qemu
+├── osx
+│   └── qemu
+├── win32
+│   └── qemu
+└── win64
+    └── qemu
+qemu/install
+├── debian32
+│   ├── archive
+│   └── qemu
+├── debian64
+│   ├── archive
+│   └── qemu
+├── osx
+│   └── qemu
+├── win32
+│   └── qemu
+└── win64
+    └── qemu
+
+22 directories, 0 files
+</code></pre>
+
+<h2 id="install-procedure">Install procedure</h2>
+
+<p>The procedure to install GNU ARM Eclipse QEMU is platform specific, but relatively straight forward (a Windows setup, an OS X install or a TGZ archive on GNU/Linux). The setup/install asks no special questions, and the defaults are generally ok for most installations.</p>
+
+<h2 id="install-hierarchy">Install hierarchy</h2>
+
+<p>After install, the package should create a structure like this (only the first two depth levels are shown):</p>
+
+<pre><code>$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/QEMU/2.3.50-201505141607-dev 
+/Applications/GNU\ ARM\ Eclipse/QEMU/2.3.50-201505141607-dev
+├── INFO.txt
+├── bin
+│   ├── libffi.6.dylib
+│   ├── libgmp.10.dylib
+│   ├── libgnutls.28.dylib
+│   ├── libhogweed.2.dylib
+│   ├── libiconv.2.dylib
+│   ├── libintl.8.dylib
+│   ├── libnettle.4.dylib
+│   ├── libp11-kit.0.dylib
+│   ├── libtasn1.6.dylib
+│   ├── libz.1.dylib
+│   └── qemu-system-gnuarmeclipse
+├── doc
+│   ├── qemu-doc.html
+│   ├── qemu-doc.pdf
+│   ├── qemu-tech.html
+│   ├── qemu-tech.pdf
+│   └── qmp-commands.txt
+├── etc
+│   └── qemu
+├── gnuarmeclipse
+│   ├── BUILD.txt
+│   ├── CHANGES.txt
+│   ├── build-helper.sh
+│   ├── build-qemu.sh
+│   └── config.log
+├── license
+│   └── qemu-2.3.50
+├── man
+│   └── man1
+└── share
+    └── qemu
+
+11 directories, 22 files
+</code></pre>
+
+<p>No other files are installed in any system folders or other locations.</p>
+
+<h2 id="uninstall">Uninstall</h2>
+
+<p>To uninstall QEMU from a Windows machine, use the <strong>qemu-uninstall.exe</strong> program.</p>
+
+<p>On OS X and GNU/Linux, the GNU ARM Eclipse QEMU install folder is self-contained and removing it is enough for completely removing the application.</p>
+
+<h2 id="test">Test</h2>
+
+<p>A simple test is performed by the script at the end, by launching the executable to check if all shared/dynamic libraries are correctly used.</p>
+
+<p>For a true test you need to first install the package and then run the program form the final location. For example on OS X the output should look like:</p>
+
+<pre><code>$ /Applications/GNU\ ARM\ Eclipse/QEMU/2.2.91-201504021111-dev/bin/qemu-system-gnuarmeclipse --version
+GNU ARM Eclipse QEMU 64-bits emulator version 2.2.91
+Copyright (c) 2003-2008 Fabrice Bellard
+</code></pre>
+
+<h2 id="stop-boot2docker">Stop boot2docker</h2>
+
+<p>On OS X, the build script automatically starts <strong>boot2docker</strong>, if needed.</p>
+
+<p>When done, be sure you stop boot2docker, to free significant resources (a VirtualBox Ubuntu machine).</p>
+
+<pre><code>boot2docker stop
+</code></pre>
+
+<h2 id="more-build-details">More build details</h2>
+
+<p>The script is quite complex, and an attempt to explain its functionality would require some effort. For the final authoritative details, please refer to the comments available in the <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-qemu.sh">script</a>.</p>
+
+
+</section>
+
+
+<aside id="sidebar">
+
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="features">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Plug-ins</li>
+  <li>Windows Build Tools</li>
+  <li>QEMU</li>
+  <li>OpenOCD</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Eclipse plug-ins install</li>
+  <li>Toolchain(s) install</li>
+  <li>Windows build tools (make &amp; rm) install</li>
+  <li>Debugging tools install
+    <ul>
+      <li>Overview</li>
+      <li>SEGGER J-Link install</li>
+      <li>OpenOCD install</li>
+      <li>QEMU install</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li>Workspace preferences</li>
+  <li>Toolchain path</li>
+  <li>Project portability</li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li>Create a Blinky ARM test project</li>
+  <li>Create a Hello ARM test project</li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li>The managed build plug-in</li>
+  <li>The packs manager (CMSIS)</li>
+  <li>Assign a device</li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Cortex-M template</li>
+  <li>STM32Fxx templates</li>
+  <li>Freescale KLxx templates</li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>The SEGGER J-Link plug-in</li>
+  <li>The OpenOCD plug-in</li>
+  <li>The QEMU plug-in</li>
+  <li>The peripheral registers view (CMSIS)</li>
+</ul>
+
+<h4 id="gnu-arm-qemuqemu"><a href="/qemu/">GNU ARM QEMU</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview/">Overview</a></li>
+  <li><a href="/qemu/install/">Install</a></li>
+  <li>Eclipse plug-in</li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a></li>
+  <li><a href="http://localhost:4000/qemu/how-to-build">How to build</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd">GNU ARM OpenOCD</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Install</li>
+  <li>The OpenOCD plug-in</li>
+</ul>
+
+<h4 id="windows-build-tools">Windows Build Tools</h4>
+
+<ul>
+  <li>Overview</li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li>Headless builds</li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li>Known issues</li>
+  <li>FAQ</li>
+  <li>SourceForge tickets</li>
+</ul>
+
+<h4 id="developer">Developer</h4>
+
+<ul>
+  <li>Wiki</li>
+  <li>Change log</li>
+  <li>Contribute</li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li>GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</li>
+</ul>
+
+<h4 id="about"><a href="">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>
