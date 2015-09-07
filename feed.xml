@@ -5,8 +5,8 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Sep 2015 22:19:43 +0300</pubDate>
-    <lastBuildDate>Mon, 07 Sep 2015 22:19:43 +0300</lastBuildDate>
+    <pubDate>Mon, 07 Sep 2015 22:27:41 +0300</pubDate>
+    <lastBuildDate>Mon, 07 Sep 2015 22:27:41 +0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -46,9 +46,9 @@ gnuarmeclipse-qemu-debian64-2.3.50-201508161112-dev.tgz
         <category>qemu</category>
         
         
-        <category>releases</category>
-        
         <category>qemu</category>
+        
+        <category>releases</category>
         
       </item>
     
@@ -86,9 +86,9 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
         <category>qemu</category>
         
         
-        <category>releases</category>
-        
         <category>qemu</category>
+        
+        <category>releases</category>
         
       </item>
     
@@ -145,9 +145,9 @@ gnuarmeclipse-qemu-win32-2.3.50-201508041609-dev-setup.exe
         <category>qemu</category>
         
         
-        <category>releases</category>
-        
         <category>qemu</category>
+        
+        <category>releases</category>
         
       </item>
     
@@ -272,9 +272,9 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
         <category>SysTick</category>
         
         
-        <category>releases</category>
-        
         <category>qemu</category>
+        
+        <category>releases</category>
         
       </item>
     
@@ -367,9 +367,9 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
         <category>semihosting</category>
         
         
-        <category>releases</category>
-        
         <category>qemu</category>
+        
+        <category>releases</category>
         
       </item>
     
