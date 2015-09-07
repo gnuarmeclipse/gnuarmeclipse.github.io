@@ -3,10 +3,10 @@
   <channel>
     <title>GNU ARM Eclipse</title>
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Sep 2015 21:34:01 +0300</pubDate>
-    <lastBuildDate>Mon, 07 Sep 2015 21:34:01 +0300</lastBuildDate>
+    <link>http://gnuarmeclipse.github.io/</link>
+    <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 07 Sep 2015 21:46:34 +0300</pubDate>
+    <lastBuildDate>Mon, 07 Sep 2015 21:46:34 +0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -36,8 +36,8 @@ gnuarmeclipse-qemu-debian64-2.3.50-201508161112-dev.tgz
 
 </description>
         <pubDate>Sun, 16 Aug 2015 23:09:00 +0300</pubDate>
-        <link>/2015/08/16/qemu-v2-3-50-20150816-released/</link>
-        <guid isPermaLink="true">/2015/08/16/qemu-v2-3-50-20150816-released/</guid>
+        <link>http://gnuarmeclipse.github.io/2015/08/16/qemu-v2-3-50-20150816-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/16/qemu-v2-3-50-20150816-released/</guid>
         
         <category>Linux</category>
         
@@ -74,8 +74,8 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
 
 </description>
         <pubDate>Wed, 05 Aug 2015 23:09:00 +0300</pubDate>
-        <link>/2015/08/05/qemu-v2-3-50-20150805-released/</link>
-        <guid isPermaLink="true">/2015/08/05/qemu-v2-3-50-20150805-released/</guid>
+        <link>http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150805-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150805-released/</guid>
         
         <category>windows</category>
         
@@ -135,8 +135,8 @@ gnuarmeclipse-qemu-win32-2.3.50-201508041609-dev-setup.exe
 &lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Wed, 05 Aug 2015 00:29:00 +0300</pubDate>
-        <link>/2015/08/05/qemu-v2-3-50-20150804-released/</link>
-        <guid isPermaLink="true">/2015/08/05/qemu-v2-3-50-20150804-released/</guid>
+        <link>http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150804-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150804-released/</guid>
         
         <category>411re</category>
         
@@ -258,8 +258,8 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
 &lt;p&gt;The 64-bits Windows package was added as a new &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150805&quot;&gt;GitHub Release&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 02 Aug 2015 05:00:00 +0300</pubDate>
-        <link>/2015/08/02/qemu-v2-3-50-20150801-released/</link>
-        <guid isPermaLink="true">/2015/08/02/qemu-v2-3-50-20150801-released/</guid>
+        <link>http://gnuarmeclipse.github.io/2015/08/02/qemu-v2-3-50-20150801-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/02/qemu-v2-3-50-20150801-released/</guid>
         
         <category>GPIO</category>
         
@@ -351,8 +351,8 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
 &lt;p&gt;The new QEMU can be downloaded from the &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.2.92-20150404&quot;&gt;GitHub Releases&lt;/a&gt; page.&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Apr 2015 02:09:00 +0300</pubDate>
-        <link>/2015/04/05/qemu-v2-2-92-20150404-released/</link>
-        <guid isPermaLink="true">/2015/04/05/qemu-v2-2-92-20150404-released/</guid>
+        <link>http://gnuarmeclipse.github.io/2015/04/05/qemu-v2-2-92-20150404-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/04/05/qemu-v2-2-92-20150404-released/</guid>
         
         <category>Cortex-M</category>
         

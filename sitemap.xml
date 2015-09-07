@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/2015/08/16/qemu-v2-3-50-20150816-released/</loc>
+    <loc>http://gnuarmeclipse.github.io/2015/08/16/qemu-v2-3-50-20150816-released/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/2015/08/05/qemu-v2-3-50-20150805-released/</loc>
+    <loc>http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150805-released/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/2015/08/05/qemu-v2-3-50-20150804-released/</loc>
+    <loc>http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150804-released/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/2015/08/02/qemu-v2-3-50-20150801-released/</loc>
+    <loc>http://gnuarmeclipse.github.io/2015/08/02/qemu-v2-3-50-20150801-released/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/2015/04/05/qemu-v2-2-92-20150404-released/</loc>
+    <loc>http://gnuarmeclipse.github.io/2015/04/05/qemu-v2-2-92-20150404-released/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/qemu/change-log/2014/</loc>
+    <loc>http://gnuarmeclipse.github.io/qemu/change-log/2014/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/qemu/change-log/</loc>
+    <loc>http://gnuarmeclipse.github.io/qemu/change-log/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/</loc>
+    <loc>http://gnuarmeclipse.github.io/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/qemu/</loc>
+    <loc>http://gnuarmeclipse.github.io/qemu/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/qemu/how-to-build/</loc>
+    <loc>http://gnuarmeclipse.github.io/qemu/how-to-build/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/qemu/install/</loc>
+    <loc>http://gnuarmeclipse.github.io/qemu/install/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>/qemu/overview/</loc>
+    <loc>http://gnuarmeclipse.github.io/qemu/overview/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
 </urlset>
