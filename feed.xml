@@ -5,34 +5,13 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Sep 2015 22:27:41 +0300</pubDate>
-    <lastBuildDate>Mon, 07 Sep 2015 22:27:41 +0300</lastBuildDate>
+    <pubDate>Tue, 08 Sep 2015 13:24:44 +0300</pubDate>
+    <lastBuildDate>Tue, 08 Sep 2015 13:24:44 +0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>GNU ARM Eclipse QEMU 2.3.50-20150816*-dev released</title>
         <description>&lt;p&gt;Version 2.3.50-201508161112 is a maintenance partial release, fixing the GNU/Linux distribution.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150816&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;addressed-issues&quot;&gt;Addressed issues&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the build script for the GNU/Linux distribution did not generate the correct was &lt;strong&gt;rpath&lt;/strong&gt; for the executable and shared libraries, as per &lt;a href=&quot;https://sourceforge.net/p/gnuarmeclipse/support-requests/160/&quot;&gt;support-request:#160&lt;/a&gt;; fixed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-
-&lt;p&gt;The new GNU/Linux QEMU can be downloaded from the &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150816&quot;&gt;GitHub Releases&lt;/a&gt; page. The packages for other platforms are available from previous releases.&lt;/p&gt;
-
-&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;e6d58d4174aa3b4e42c050da73e52eb2  
-gnuarmeclipse-qemu-debian32-2.3.50-201508161112-dev.tgz
-
-e9af057490dae54946dde460a1aa2c29  
-gnuarmeclipse-qemu-debian64-2.3.50-201508161112-dev.tgz
-&lt;/code&gt;&lt;/pre&gt;
 
 </description>
         <pubDate>Sun, 16 Aug 2015 23:09:00 +0300</pubDate>
@@ -55,22 +34,6 @@ gnuarmeclipse-qemu-debian64-2.3.50-201508161112-dev.tgz
       <item>
         <title>GNU ARM Eclipse QEMU 2.3.50-20150805*-dev released</title>
         <description>&lt;p&gt;Version 2.3.50-201508051820 is a maintenance partial release, adding support for Windows 64-bits.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150805&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;addressed-issues&quot;&gt;Addressed issues&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;the &lt;code&gt;_WIN64&lt;/code&gt; use of &lt;code&gt;sigsetjmp()&lt;/code&gt; was fixed and now the Windows 64-bits distribution is fully functional.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-&lt;p&gt;The new Windows 64-bits QEMU can be downloaded from the &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150805&quot;&gt;GitHub Releases&lt;/a&gt; page. The packages for other platforms are available from previous releases.&lt;/p&gt;
-
-&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;f4d0618158f37284416f0e13aba83160  
-gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
-&lt;/code&gt;&lt;/pre&gt;
 
 </description>
         <pubDate>Wed, 05 Aug 2015 23:09:00 +0300</pubDate>
@@ -96,43 +59,6 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
         <title>GNU ARM Eclipse QEMU 2.3.50-20150804*-dev released</title>
         <description>&lt;p&gt;Version 2.3.50-201508041609 is a maintenance release, fixing the graphical rendering on Windows and adding support for NUCLEO-F411RE.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150804&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;addressed-issues&quot;&gt;Addressed issues&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the problem affecting the graphical rendering was identified; an explicit event loop was added and rendering seems ok now, on all platforms, including Windows.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;new-features&quot;&gt;New features&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the &lt;strong&gt;NUCLEO-F411RE&lt;/strong&gt; board was added, using &lt;strong&gt;STM32F411RE&lt;/strong&gt; device.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;known-problems&quot;&gt;Known problems&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;due to a wrong &lt;strong&gt;rpath&lt;/strong&gt; definitions, in certain conditions, the GNU/Linux distribution failed to start;&lt;/del&gt; &lt;strong&gt;fixed in release 2.3.50-201508161112-dev&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-&lt;p&gt;The new QEMU can be downloaded from the &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150804&quot;&gt;GitHub Releases&lt;/a&gt; page.&lt;/p&gt;
-
-&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;9f82a62194b57fdbbdf9c689c2209710  
-gnuarmeclipse-qemu-debian32-2.3.50-201508041609-dev.tgz
-
-513c858cf247f5ad7e98853f5afec6d5  
-gnuarmeclipse-qemu-debian64-2.3.50-201508041609-dev.tgz
-
-a2326fe2f576a182f6df4db9784180e6 
-gnuarmeclipse-qemu-osx-2.3.50-201508041609-dev.pkg
-
-13713073d9e3e036bb518ae34801c34b  
-gnuarmeclipse-qemu-win32-2.3.50-201508041609-dev-setup.exe
-&lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Wed, 05 Aug 2015 00:29:00 +0300</pubDate>
         <link>http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150804-released/</link>
@@ -155,107 +81,6 @@ gnuarmeclipse-qemu-win32-2.3.50-201508041609-dev-setup.exe
         <title>GNU ARM Eclipse QEMU 2.3.50-20150801*-dev released</title>
         <description>&lt;p&gt;Version 2.3.50-201508012214 is the first production release of the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt;. It supports a range of STM boards, and fully implements the user LEDs available on these boards, presenting them graphically, in real time animation, over the board picture.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150801&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;animated-leds&quot;&gt;Animated LEDs&lt;/h2&gt;
-
-&lt;p&gt;In addition to fully supporting the semihosting commands, intended to running unit tests, the GNU ARM Eclipse QEMU is also intended to running the &lt;strong&gt;blinky&lt;/strong&gt; applications generated by the GNU ARM Eclipse templates.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2015/stm32f4-discovery-leds.png&quot; alt=&quot;The STM32F4-Discovery 4 LEDs.&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;supported-boards&quot;&gt;Supported boards&lt;/h2&gt;
-
-&lt;p&gt;The following boards are fully supported in graphical mode:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Mapple&lt;/strong&gt; - LeafLab Arduino-style STM32 microcontroller board (r5)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;NUCLEO-F103RB&lt;/strong&gt; - ST Nucleo Development Board for STM32 F1 series&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;NetduinoGo&lt;/strong&gt; - Netduino GoBus Development Board with STM32F4&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;NetduinoPlus2&lt;/strong&gt; - Netduino Development Board with STM32F4&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;OLIMEXINO-STM32&lt;/strong&gt; - Olimex Mapple (Arduino-like) Development Board&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;STM32-E407&lt;/strong&gt; - Olimex Development Board for STM32F407ZGT6&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;STM32-H103&lt;/strong&gt; - Olimex Header Board for STM32F103RBT6&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;STM32-P103&lt;/strong&gt; - Olimex Prototype Board for STM32F103RBT6&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;STM32-P107&lt;/strong&gt; - Olimex Prototype Board for STM32F107VCT6&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;STM32F4-Discovery&lt;/strong&gt; - ST Discovery kit for STM32F407/417 lines&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;STM32F429I-Discovery&lt;/strong&gt; - ST Discovery kit for STM32F429/439 lines&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;generic&lt;/strong&gt; - Generic Cortex-M board; use -mcu to define the device&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Note: the rest of the boards listed in the previous QEMU release will be added in future versions.&lt;/p&gt;
-
-&lt;h2 id=&quot;supported-mcus&quot;&gt;Supported MCUs&lt;/h2&gt;
-
-&lt;p&gt;The following Cortex-M3 and Cortex-M4 microcontrollers are supported:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;STM32F103RB&lt;/li&gt;
-  &lt;li&gt;STM32F107VC&lt;/li&gt;
-  &lt;li&gt;STM32F405RG&lt;/li&gt;
-  &lt;li&gt;STM32F407VG&lt;/li&gt;
-  &lt;li&gt;STM32F407ZG&lt;/li&gt;
-  &lt;li&gt;STM32F429ZI&lt;/li&gt;
-  &lt;li&gt;STM32L152RE&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;peripherals--compatibility&quot;&gt;Peripherals &amp;amp; compatibility&lt;/h2&gt;
-
-&lt;p&gt;The main compatibility requirement for the emulator was to support all devices addressed during the standard CMSIS initialisations, which generally refer to PLL &amp;amp; clock settings.&lt;/p&gt;
-
-&lt;p&gt;The next requirement was to fully support the GPIOs, at the level of allowing one or more LEDs to blink.&lt;/p&gt;
-
-&lt;h2 id=&quot;systick&quot;&gt;SysTick&lt;/h2&gt;
-
-&lt;p&gt;The blinky projects generated by the GNU ARM Eclipse templates (and all STM32 HAL projects) use the SysTick to measure time, so any realistic emulation should support SysTick. GNU ARM Eclipse QEMU not only does this, but also provides relatively accurate time intervals, and the SysTick exception can be used from simple time measuring to driving a real-time scheduler with a reasonable number of task switches per second (1000 Hz is OK).&lt;/p&gt;
-
-&lt;h2 id=&quot;changes-from-2292&quot;&gt;Changes from 2.2.92&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;–semihosting-cmdline&lt;/strong&gt; was moved to the last position on the command line, and all following options are passed to the emulated application;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;–semihosting-config enable=on&lt;/strong&gt; is default, and may be omitted;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;–image filename.elf&lt;/strong&gt; defines the application executable to be emulated;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;–board name&lt;/strong&gt; defines the CMSIS board name; if missing, the MCU must be defined; to get a list of available boards, use &lt;strong&gt;–board help&lt;/strong&gt;, or &lt;strong&gt;–board ?&lt;/strong&gt;;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;–mcu name&lt;/strong&gt; defines the CMSIS device name; if missing, the default MCU of the board is used; to get a list of supported devices, use &lt;strong&gt;–mcu help&lt;/strong&gt;, or &lt;strong&gt;–mcu ?&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;known-problems&quot;&gt;Known problems&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;QEMU emulates only &lt;strong&gt;Cortex-M3&lt;/strong&gt; and &lt;strong&gt;Cortex-M4&lt;/strong&gt; instructions; specific FP (Floating Point) Cortex-M4 instructions are not yet supported;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;the &lt;strong&gt;64-bits Windows&lt;/strong&gt; version of QEMU still has some problems with the timers, and applications using SysTick fail; until a solution is found, the 32-bits version of QEMU can be used on Windows 64-bits too;&lt;/del&gt; &lt;strong&gt;fixed in release 2.3.50-201508051820-dev&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;the new QEMU uses custom command line options, which makes it slightly incompatible with the experimental version in the previous version (and with the original QEMU); do not try to use the QEMU debugging plug-in with the original QEMU.&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;due to a wrong &lt;strong&gt;rpath&lt;/strong&gt; definitions, in certain conditions, the GNU/Linux distribution failed to start;&lt;/del&gt; &lt;strong&gt;fixed in release 2.3.50-201508161112-dev&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;[August 4, 2015; update]&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;A problem affecting QEMU graphical features was discovered: &lt;del&gt;on Windows, if the graphical window is selected or moved, rendering hangs; also rendering during Debug sessions is affected;&lt;/del&gt; on all platforms rendering during Run sessions seems ok, but the window does not react to any events; &lt;strong&gt;fixed in release 2.3.50-201508041609-dev&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-
-&lt;p&gt;The new QEMU can be downloaded from the &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150801&quot;&gt;GitHub Releases&lt;/a&gt; page.&lt;/p&gt;
-
-&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;8eaf34b847e5b65b15f118c980b3f5c4
-gnuarmeclipse-qemu-debian32-2.3.50-201508012214-dev.tgz
-
-969f536db8768604fef113ffcd7a6bcd
-gnuarmeclipse-qemu-debian64-2.3.50-201508012214-dev.tgz
-
-22bd97ade3233134e83ddf55912ec9ef
-gnuarmeclipse-qemu-osx-2.3.50-201508012214-dev.pkg
-
-d0a6114d2ede44ad8bcff40e8baeb21f
-gnuarmeclipse-qemu-win32-2.3.50-201508012214-dev-setup.exe
-
-f4d0618158f37284416f0e13aba83160  
-gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;[August 5, 2015; update]&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The 64-bits Windows package was added as a new &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150805&quot;&gt;GitHub Release&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 02 Aug 2015 05:00:00 +0300</pubDate>
         <link>http://gnuarmeclipse.github.io/2015/08/02/qemu-v2-3-50-20150801-released/</link>
@@ -279,76 +104,37 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
       </item>
     
       <item>
+        <title>GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released</title>
+        <description>&lt;p&gt;Version v2.6-201507152002 is a new release of the GNU ARM Eclipse Windows Build Tools, adding support for Windows 64-bits.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 15 Jul 2015 15:00:00 +0300</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/07/15/windows-build-tools-v2.6-20150715-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/07/15/windows-build-tools-v2.6-20150715-released/</guid>
+        
+        <category>windows</category>
+        
+        <category>setup</category>
+        
+        <category>build</category>
+        
+        <category>make</category>
+        
+        <category>rm</category>
+        
+        <category>busybox</category>
+        
+        
+        <category>windows-build-tools</category>
+        
+        <category>releases</category>
+        
+      </item>
+    
+      <item>
         <title>GNU ARM Eclipse QEMU 2.2.92-20150404*-dev released</title>
         <description>&lt;p&gt;This is the initial release of the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt;. It is mainly a technology preview (most of the supported boards are present, but functionality is limited and only projects created with the generic Cortex-M3 template are supported).&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/edit/gae-2.2.92-20150404&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;supported-boards&quot;&gt;Supported boards&lt;/h2&gt;
-
-&lt;p&gt;The boards initially added to &lt;strong&gt;GNU ARM Eclipse QEMU&lt;/strong&gt; are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;EK-TM4C123GXL – TI Tiva C Series TM4C123GXL LaunchPad Evaluation Kit (Experimental)&lt;/li&gt;
-  &lt;li&gt;FRDM-K20D50M – Freescale Freedom Development Platform for Kinetis K20 USB MCUs (Experimental)&lt;/li&gt;
-  &lt;li&gt;FRDM-K22F – Freescale Freedom Development Platform for Kinetis K22 MCUs (Experimental)&lt;/li&gt;
-  &lt;li&gt;FRDM-K64F – Freescale Freedom Development Platform for Kinetis K6[34] and K24 MCUs (Experimental)&lt;/li&gt;
-  &lt;li&gt;FRDM-KL25Z – Freescale Freedom Development Platform for Kinetis KL[12][45] MCUs (Experimental)&lt;/li&gt;
-  &lt;li&gt;FRDM-KL26Z – Freescale Freedom Development Platform for Kinetis KL[12]6 MCUs (Experimental)&lt;/li&gt;
-  &lt;li&gt;FRDM-KL43Z – Freescale Freedom Development Platform for Kinetis KL[34]3, KL[12]7 MCUs (Experimental)&lt;/li&gt;
-  &lt;li&gt;FRDM-KL46Z – Freescale Freedom Development Platform for Kinetis KL[34]x MCUs (Experimental)&lt;/li&gt;
-  &lt;li&gt;LPCXpresso-LPC1769 – Embedded Artists LPCXpresso LPC1769 Development Board (Experimental)&lt;/li&gt;
-  &lt;li&gt;Mapple – LeafLab Arduino-style STM32 microcontroller board (Experimental)&lt;/li&gt;
-  &lt;li&gt;NUCLEO-F103RB – ST Nucleo Development Board for STM32 F1 series (Experimental)&lt;/li&gt;
-  &lt;li&gt;NUCLEO-F334R8 – ST Nucleo Development Board for STM32 F3 series (Experimental)&lt;/li&gt;
-  &lt;li&gt;NUCLEO-F411RE – ST Nucleo Development Board for STM32 F4 series (Experimental)&lt;/li&gt;
-  &lt;li&gt;NUCLEO-L152RE – ST Nucleo Development Board with STM32L152RET6 (Experimental)&lt;/li&gt;
-  &lt;li&gt;Netduino2 – Netduino Development Board with STM32F2 (Experimental)&lt;/li&gt;
-  &lt;li&gt;NetduinoGo – Netduino GoBus Development Board with STM32F4 (Experimental)&lt;/li&gt;
-  &lt;li&gt;NetduinoPlus2 – Netduino Development Board with STM32F4 (Experimental)&lt;/li&gt;
-  &lt;li&gt;OLIMEXINO-STM32 – Olimex Mapple (Arduino-like) Development Board (Experimental)&lt;/li&gt;
-  &lt;li&gt;SAM3-H256 – Olimex Header Board for ATSAM3S4BA (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32-E407 – Olimex Development Board for STM32F407ZGT6 (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32-H103 – Olimex Header Board for STM32F103RBT6 (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32-P103 – Olimex Prototype Board for STM32F103RBT6 (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32-P107 – Olimex Prototype Board for STM32F107VCT6 (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32F0-Discovery – ST Discovery kit for STM32F051 line (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32F3-Discovery – ST Discovery kit for STM32F303 line (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32F4-Discovery – ST Discovery kit for STM32F407/417 lines (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32F429I-Discovery – ST Discovery kit for STM32F429/439 lines (Experimental)&lt;/li&gt;
-  &lt;li&gt;STM32VL-Discovery – ST Discovery kit for STM32F100 Value Line (Experimental)&lt;/li&gt;
-  &lt;li&gt;TWR-K60F120M – Freescale Kinetis K60 120 MHz Tower System Module (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC 2Go – Infineon XMC 2Go Kit with XMC1100 (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC1100 Boot Kit – Infineon CPU Card XMC1100 Boot Kit Entry Series (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC1200 Boot Kit – Infineon CPU Card XMC1200 Boot Kit Feature Series (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC1300 Boot Kit – Infineon CPU Card XMC1300 Boot Kit Control Series (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC4200 Enterprise Kit – Infineon CPU Board XMC4200 Actuator (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC4400 Enterprise Kit – Infineon CPU Board XMC4400 General Purpose (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC4500 Enterprise Kit – Infineon CPU Board XMC4500 General Purpose (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC4500 Relax Kit – Infineon CPU Board XMC4500 Relax Kit (Experimental)&lt;/li&gt;
-  &lt;li&gt;XMC4500 Relax Lite Kit – Infineon CPU Board XMC4500 Relax Lite Kit (Experimental)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;As clearly marked, support for these boards is &lt;strong&gt;experimental.&lt;/strong&gt; The boards generally include the right ARM core ID and should reflect the real memory banks, but since currently QEMU supports only Cortex-M3 cores, the boards behave like Cortex-M3 cores, so the emulation is not yet very accurate.&lt;/p&gt;
-
-&lt;h2 id=&quot;changes-from-qemu-2292&quot;&gt;Changes from QEMU 2.2.92&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;-verbose&lt;/strong&gt; added, with multiple levels to increase verbosity; the first level of verbosity is always enabled by the plug-in, to get the feedback required when starting the server backend for the debugging session;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;-semihosting-cmdline&lt;/strong&gt; added, to define the semihosting command line, required when running unit tests;&lt;/li&gt;
-  &lt;li&gt;build script for OS X, Debian 32-bit/64-bit and Windows 32-bit/64-bit (using MinGW-w64) added; the required libraries are build locally&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;eclipse-plug-in&quot;&gt;Eclipse plug-in&lt;/h2&gt;
-
-&lt;p&gt;The &lt;strong&gt;GNU ARM Eclipse QEMU&lt;/strong&gt; is by design intended to be integrated with the &lt;strong&gt;GNU ARM Eclipse plug-ins&lt;/strong&gt;. QEMU behaves like a GDB server, allowing to load the application into processor memory and debug as any real board. (Note: the Eclipse plug-in will be available shortly).&lt;/p&gt;
-
-&lt;h2 id=&quot;known-problems&quot;&gt;Known problems&lt;/h2&gt;
-
-&lt;p&gt;&lt;del&gt;The 64-bits version for Windows has some run-time problems and does not execute properly;&lt;/del&gt; it was deleted from the released files section; until a solution will be available, the 32-bits version of QEMU can be used on Windows 64-bits; &lt;strong&gt;fixed in release 2.3.50-201508051820-dev&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-&lt;p&gt;The new QEMU can be downloaded from the &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.2.92-20150404&quot;&gt;GitHub Releases&lt;/a&gt; page.&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Apr 2015 02:09:00 +0300</pubDate>
         <link>http://gnuarmeclipse.github.io/2015/04/05/qemu-v2-2-92-20150404-released/</link>
@@ -368,6 +154,114 @@ gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
         
         
         <category>qemu</category>
+        
+        <category>releases</category>
+        
+      </item>
+    
+      <item>
+        <title>GNU ARM Eclipse Windows Build Tools v2.4-201503242026 released</title>
+        <description>&lt;p&gt;Version 2.4-201503242026 is a maintenance release, fixing the uninstall procedure.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 24 Mar 2015 14:00:00 +0200</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/03/24/windows-build-tools-v2.4-20150324-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/03/24/windows-build-tools-v2.4-20150324-released/</guid>
+        
+        <category>windows</category>
+        
+        <category>setup</category>
+        
+        <category>build</category>
+        
+        <category>make</category>
+        
+        <category>rm</category>
+        
+        <category>busybox</category>
+        
+        
+        <category>windows-build-tools</category>
+        
+        <category>releases</category>
+        
+      </item>
+    
+      <item>
+        <title>GNU ARM Eclipse Windows Build Tools v2.4-201503212005 released</title>
+        <description>&lt;p&gt;Version 2.4-201503212005 is a new release of the GNU ARM Eclipse Windows Build Tools.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 21 Mar 2015 14:00:00 +0200</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/03/21/windows-build-tools-v2.4-20150321-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/03/21/windows-build-tools-v2.4-20150321-released/</guid>
+        
+        <category>windows</category>
+        
+        <category>setup</category>
+        
+        <category>build</category>
+        
+        <category>make</category>
+        
+        <category>rm</category>
+        
+        <category>busybox</category>
+        
+        
+        <category>windows-build-tools</category>
+        
+        <category>releases</category>
+        
+      </item>
+    
+      <item>
+        <title>GNU ARM Eclipse Windows Build Tools v2.3-201501242223 released</title>
+        <description>&lt;p&gt;Version 2.3-201501242223 is a new release of the GNU ARM Eclipse Windows Build Tools.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 24 Jan 2015 14:00:00 +0200</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/01/24/windows-build-tools-v2.3-20150124-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/01/24/windows-build-tools-v2.3-20150124-released/</guid>
+        
+        <category>windows</category>
+        
+        <category>setup</category>
+        
+        <category>build</category>
+        
+        <category>make</category>
+        
+        <category>rm</category>
+        
+        
+        <category>windows-build-tools</category>
+        
+        <category>releases</category>
+        
+      </item>
+    
+      <item>
+        <title>GNU ARM Eclipse Windows Build Tools v2.2-201501232303 released</title>
+        <description>&lt;p&gt;Version 2.2-201501232303 is a maintenance release.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 23 Jan 2015 14:00:00 +0200</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/01/23/windows-build-tools-v2.2-20150123-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/01/23/windows-build-tools-v2.2-20150123-released/</guid>
+        
+        <category>windows</category>
+        
+        <category>setup</category>
+        
+        <category>build</category>
+        
+        <category>make</category>
+        
+        <category>rm</category>
+        
+        
+        <category>windows-build-tools</category>
         
         <category>releases</category>
         

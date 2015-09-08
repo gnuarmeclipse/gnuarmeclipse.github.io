@@ -17,8 +17,36 @@
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/2015/07/15/windows-build-tools-v2.6-20150715-released/</loc>
+    <lastmod>2015-09-08T15:50:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/2015/04/05/qemu-v2-2-92-20150404-released/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/03/24/windows-build-tools-v2.4-20150324-released/</loc>
+    <lastmod>2015-09-08T15:49:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/03/21/windows-build-tools-v2.4-20150321-released/</loc>
+    <lastmod>2015-09-08T15:45:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/01/24/windows-build-tools-v2.3-20150124-released/</loc>
+    <lastmod>2015-09-08T15:41:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/01/23/windows-build-tools-v2.2-20150123-released/</loc>
+    <lastmod>2015-09-08T15:39:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/01/21/windows-build-tools-v2.1-20150121-released/</loc>
+    <lastmod>2015-09-08T15:34:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/12/02/windows-build-tools-v2.0-20141202-released/</loc>
+    <lastmod>2015-09-08T15:34:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/change-log/2014/</loc>
@@ -29,16 +57,32 @@
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/windows-build-tools/change-log/</loc>
+    <lastmod>2015-09-08T16:10:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/</loc>
+    <lastmod>2015-09-08T16:22:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/</loc>
-    <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/windows-build-tools/</loc>
+    <lastmod>2015-09-08T15:53:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/how-to-build/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/windows-build-tools/how-to-build/</loc>
+    <lastmod>2015-09-08T16:20:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/windows-build-tools/install/</loc>
+    <lastmod>2015-09-08T16:20:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/install/</loc>
@@ -47,5 +91,9 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/overview/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/windows-build-tools/overview/</loc>
+    <lastmod>2015-09-08T15:58:00+03:00</lastmod>
   </url>
 </urlset>

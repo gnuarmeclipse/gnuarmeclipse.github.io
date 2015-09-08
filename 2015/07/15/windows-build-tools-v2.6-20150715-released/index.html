@@ -7,18 +7,27 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>Welcome to GNU ARM Eclipse QEMU!</title>
-  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+  <title>GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released</title>
+  <meta name="description" content="Version v2.6-201507152002 is a new release of the GNU ARM Eclipse Windows Build Tools, adding support for Windows 64-bits.">
 
-  <meta property="og:title" content="Welcome to GNU ARM Eclipse QEMU!" />
+  <meta property="og:title" content="GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="Welcome to GNU ARM Eclipse QEMU!">
+  <meta property="og:title" content="GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released">
+
+  <meta property="article:published_time" content="2015-07-15">
 
 
+  <meta property="article:section" content="windows-build-tools" />
+  <meta property="article:section" content="releases" />
 
-
+  <meta property="article:tag" content="windows" />
+  <meta property="article:tag" content="setup" />
+  <meta property="article:tag" content="build" />
+  <meta property="article:tag" content="make" />
+  <meta property="article:tag" content="rm" />
+  <meta property="article:tag" content="busybox" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -29,7 +38,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/qemu/">
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/2015/07/15/windows-build-tools-v2.6-20150715-released/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
@@ -74,45 +83,52 @@
 <section id="main-content">
 
 
-<h1 class="page-title">Welcome to GNU ARM Eclipse QEMU!</h1>
+<h1 class="post-title">GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released</h1>
 
 
-<p>The <a href="/qemu">GNU ARM Eclipse QEMU</a> subproject is a fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator), intended to provide support for Cortex-M emulation in GNU ARM Eclipse. The source code is part of the <strong>GNU ARM Eclipse</strong> project, and is available from <a href="https://github.com/gnuarmeclipse/qemu">GitHub</a>. Binary packages are available from <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a>.</p>
+<p class="post-meta">
+Posted on July 15, 2015 by Liviu Ionescu.
+</p>
 
-<h2 id="how-to-use">How to use</h2>
+<p>Version v2.6-201507152002 is a new release of the GNU ARM Eclipse Windows Build Tools, adding support for Windows 64-bits.</p>
 
-<ul>
-  <li><a href="/qemu/overview">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install">QEMU Install</a></li>
-  <li>Eclipse plug-in</li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a> (using the GitHub Issues)</li>
-</ul>
+<p><a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.6">Binary files »</a></p>
 
-<h2 id="how-to-build">How to build</h2>
+<h2 id="improvements">Improvements</h2>
 
-<ul>
-  <li><a href="/qemu/how-to-build">How to build</a> (using Docker containers)</li>
-  <li><a href="/qemu/change-log">Change log</a> (<a href="/qemu/change-log/2014">2014</a>)</li>
-</ul>
+<p>The GNU ARM Eclipse Build Tools v2.6 package includes the <strong>version 4.1 of GNU make</strong> (built from MSYS2 source files), and version <strong>1.24.0-git of BusyBox</strong>, which provides a convenient implementation for sh/rm/echo.</p>
 
-<p>Other links:</p>
+<p>The main change from v2.4 is a patch that allows BusyBox to run correctly on 64-bits Windows systems. Apparently this not only makes usage safer, by avoiding the DLL32 mess, but also slightly improves build performances.</p>
+
+<h2 id="known-problems">Known problems</h2>
 
 <ul>
-  <li><a href="http://qemu.weilnetz.de">QEMU Binaries for Windows</a></li>
-  <li>the original <a href="http://wiki.qemu.org/Hosts/W32">QEMU Windows build page</a></li>
-  <li><a href="https://registry.hub.docker.com/u/ilegeul/">Docker images</a></li>
+  <li>none so far</li>
 </ul>
 
-<h2 id="releases">Releases</h2>
+<h2 id="download">Download</h2>
 
-<ul>
-  <li><a href="Release-v2.3.50-20150816">GNU ARM Eclipse QEMU 2.3.50-20150816*-dev</a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150816">(download)</a></li>
-  <li><a href="Release-v2.3.50-20150805">GNU ARM Eclipse QEMU 2.3.50-20150805*-dev</a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150805">(download)</a></li>
-  <li><a href="Release-v2.3.50-20150804">GNU ARM Eclipse QEMU 2.3.50-20150804*-dev</a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150804">(download)</a></li>
-  <li><a href="Release-v2.3.50-20150801">GNU ARM Eclipse QEMU 2.3.50-20150801*-dev </a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150801">(download)</a></li>
-  <li><a href="Release-v2.2.92-20150404">GNU ARM Eclipse QEMU 2.2.92-20150404*-dev</a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.2.92-20150404">(download)</a></li>
-</ul>
+<p>The new Windows Build Tools can be downloaded from the <a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.6">GitHub Release</a> page.</p>
 
+<p>The MD5 sums of the files are:</p>
+
+<pre><code>d52c5c3bedc8b34acdcb8384d8b2cfc3  
+gnuarmeclipse-build-tools-win32-2.6-201507152002-setup.exe
+
+a47b0a38355ee9449cb3930beb303762  
+gnuarmeclipse-build-tools-win64-2.6-201507152002-setup.exe
+</code></pre>
+
+
+<hr/>
+<p class="post-footer">
+This entry was posted in
+
+<strong>windows-build-tools</strong>, <strong>releases</strong>
+and tagged
+
+<strong>windows</strong>, <strong>setup</strong>, <strong>build</strong>, <strong>make</strong>, <strong>rm</strong>, <strong>busybox</strong>.
+</p>
 
 
 </section>

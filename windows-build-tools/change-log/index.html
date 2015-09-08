@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>Welcome to GNU ARM Eclipse QEMU!</title>
+  <title>The 2015 Windows Build Tools Change Log</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="Welcome to GNU ARM Eclipse QEMU!" />
+  <meta property="og:title" content="The 2015 Windows Build Tools Change Log" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="Welcome to GNU ARM Eclipse QEMU!">
+  <meta property="og:title" content="The 2015 Windows Build Tools Change Log">
 
 
 
@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/qemu/">
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/windows-build-tools/change-log/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
@@ -74,44 +74,197 @@
 <section id="main-content">
 
 
-<h1 class="page-title">Welcome to GNU ARM Eclipse QEMU!</h1>
+<h1 class="page-title">The 2015 Windows Build Tools Change Log</h1>
 
 
-<p>The <a href="/qemu">GNU ARM Eclipse QEMU</a> subproject is a fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator), intended to provide support for Cortex-M emulation in GNU ARM Eclipse. The source code is part of the <strong>GNU ARM Eclipse</strong> project, and is available from <a href="https://github.com/gnuarmeclipse/qemu">GitHub</a>. Binary packages are available from <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a>.</p>
+<h2 id="section">2015</h2>
 
-<h2 id="how-to-use">How to use</h2>
-
-<ul>
-  <li><a href="/qemu/overview">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install">QEMU Install</a></li>
-  <li>Eclipse plug-in</li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a> (using the GitHub Issues)</li>
-</ul>
-
-<h2 id="how-to-build">How to build</h2>
+<h3 id="section-1">2015-08-30</h3>
 
 <ul>
-  <li><a href="/qemu/how-to-build">How to build</a> (using Docker containers)</li>
-  <li><a href="/qemu/change-log">Change log</a> (<a href="/qemu/change-log/2014">2014</a>)</li>
+  <li>files moved from gnuarmeclipse Git to a separate project</li>
 </ul>
 
-<p>Other links:</p>
+<h3 id="section-2">2015-08-16</h3>
 
 <ul>
-  <li><a href="http://qemu.weilnetz.de">QEMU Binaries for Windows</a></li>
-  <li>the original <a href="http://wiki.qemu.org/Hosts/W32">QEMU Windows build page</a></li>
-  <li><a href="https://registry.hub.docker.com/u/ilegeul/">Docker images</a></li>
+  <li>build-qemu: debian rpath fix
+    <ul>
+      <li>use chrpath to change elf and .so rpath</li>
+      <li>use 8-gnuarm-gcc-x11-v2, which includes chrpath</li>
+      <li>validate $ORIGIN in elf</li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="releases">Releases</h2>
-
+<h3 id="section-3">2015-08-05</h3>
 <ul>
-  <li><a href="Release-v2.3.50-20150816">GNU ARM Eclipse QEMU 2.3.50-20150816*-dev</a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150816">(download)</a></li>
-  <li><a href="Release-v2.3.50-20150805">GNU ARM Eclipse QEMU 2.3.50-20150805*-dev</a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150805">(download)</a></li>
-  <li><a href="Release-v2.3.50-20150804">GNU ARM Eclipse QEMU 2.3.50-20150804*-dev</a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150804">(download)</a></li>
-  <li><a href="Release-v2.3.50-20150801">GNU ARM Eclipse QEMU 2.3.50-20150801*-dev </a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150801">(download)</a></li>
-  <li><a href="Release-v2.2.92-20150404">GNU ARM Eclipse QEMU 2.2.92-20150404*-dev</a> <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.2.92-20150404">(download)</a></li>
+  <li>build-qemu.sh: add libwinpthread to win64</li>
 </ul>
+
+<h3 id="section-4">2015-07-23</h3>
+<ul>
+  <li>build-qemu: tar without j for .xz</li>
+  <li>build-quemu: clean fixed; non-win zlib fixed</li>
+  <li>build-qemu: libz, libjpg, libpixman
+    <ul>
+      <li>no more pixman submodule</li>
+      <li>use pkg-config-dbg everywhere</li>
+      <li>use PKG_CONFIG_LIBDIR everywhere</li>
+    </ul>
+  </li>
+  <li>build-helper: the linux functions renamed *_so</li>
+</ul>
+
+<h3 id="section-5">2015-07-20</h3>
+<ul>
+  <li>build-qemu: osx &amp; debian functional
+    <ul>
+      <li>–no-strip added</li>
+      <li>libpng12 not 16</li>
+      <li>copy more licences</li>
+    </ul>
+  </li>
+  <li>build-helper: user libs no longer search system</li>
+</ul>
+
+<h3 id="section-6">2015-07-19</h3>
+<ul>
+  <li>build-qemu: most libs locally
+    <ul>
+      <li>osx functional</li>
+      <li>debian: crash in graphics</li>
+      <li>windows: sdl displays nothing</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-7">2015-07-18</h3>
+<ul>
+  <li>build-qemu: debian with user sdl
+    <ul>
+      <li>no pthreads</li>
+    </ul>
+  </li>
+  <li>build-qemu: sdl compiled from sources for osx</li>
+  <li>build: debian64 functional
+    <ul>
+      <li>requires libsdl1.2 and libsdl-image1.2</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-8">2015-07-17</h3>
+<ul>
+  <li>build-qemu.sh: new OSX build, with SDL
+    <ul>
+      <li>copy board images</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-9">2015-07-16</h3>
+<ul>
+  <li>build-tools.sh: make it work for win64
+    <ul>
+      <li>make mingw64_defconfig</li>
+      <li>busybox 9fe16f6</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-10">2015-06-10</h3>
+<ul>
+  <li>build-qemu.sh: check docker only for win/deb
+    <ul>
+      <li>in build-qemu.sh add prepare-docker</li>
+      <li>use it conditionally</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-11">2015-05-20</h3>
+<ul>
+  <li>build qemu: show md5 sums
+    <ul>
+      <li>reorder targets, move osx in front</li>
+    </ul>
+  </li>
+  <li>build tools: md5sum -t fixed</li>
+  <li>qemu build: repo actions added</li>
+  <li>Docker folder moved to /Host/Work</li>
+  <li>md5sum -t explicitly</li>
+</ul>
+
+<h3 id="section-12">2015-05-19</h3>
+<ul>
+  <li>md5 sum computation for osx fixed
+    <ul>
+      <li>openocd repo actions code added</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-13">2015-05-15</h3>
+<ul>
+  <li>build scripts: add md5</li>
+  <li>build QEMU: enable pixman submodule</li>
+</ul>
+
+<h3 id="section-14">2015-05-14</h3>
+<ul>
+  <li>build Build Tools: clean msys2</li>
+  <li>build openocd: cosmetics</li>
+  <li>build QEMU: fix DLL list</li>
+  <li>build-helper: include version in pkgbuild id
+    <ul>
+      <li>to allow multiple instances</li>
+    </ul>
+  </li>
+  <li>build Build Tools: copy DLLs</li>
+  <li>script to build windows Build Tools added</li>
+</ul>
+
+<h3 id="section-15">2015-05-13</h3>
+<ul>
+  <li>build use 8-gnuarm-mingw; preload-images</li>
+</ul>
+
+<h3 id="section-16">2015-05-12</h3>
+<ul>
+  <li>qemu build script added
+    <ul>
+      <li>openocd updated to use new helper</li>
+      <li>qemu libs code moved to separate file</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-17">2015-05-11</h3>
+<ul>
+  <li>build-openocd: WORK_FOLDER, build-images
+    <ul>
+      <li>user can define custom WORK_FOLDER</li>
+      <li>a build-images command builds all 3 Docker images</li>
+    </ul>
+  </li>
+  <li>openocd build script: docker script uses helper
+    <ul>
+      <li>move functions to build helper</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-18">2015-05-10</h3>
+<ul>
+  <li>scripts: openocd docker scripts
+    <ul>
+      <li>build windows, debian &amp; os x in one run</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Note: Earlier versions were stored in QEMU &amp; OpenOCD repositories.</p>
 
 
 
