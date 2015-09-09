@@ -105,16 +105,20 @@
     <lastmod>2015-09-09T22:43:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/news/</loc>
+    <lastmod>2015-09-10T02:29:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/overview/</loc>
     <lastmod>2015-09-08T15:58:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/overview/</loc>
-    <lastmod>2015-09-09T22:41:00+03:00</lastmod>
-  </url>
-  <url>
     <loc>http://gnuarmeclipse.github.io/qemu/overview/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/openocd/overview/</loc>
+    <lastmod>2015-09-09T22:41:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/finance/paypal-success/</loc>
