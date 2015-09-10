@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>Eclipse debugging options</title>
+  <title>ilg.gnuarmeclipse.debug.gdbjtag.jlink - persistent values</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="Eclipse debugging options" />
+  <meta property="og:title" content="ilg.gnuarmeclipse.debug.gdbjtag.jlink - persistent values" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="Eclipse debugging options">
+  <meta property="og:title" content="ilg.gnuarmeclipse.debug.gdbjtag.jlink - persistent values">
 
-  <meta property="article:published_time" content="2015-09-10">
+  <meta property="article:published_time" content="2015-09-11">
 
 
 
@@ -30,7 +30,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/eclipse-debugging-options/">
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.jlink/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
@@ -75,32 +75,107 @@
 <section id="main-content">
 
 
-<h1 class="page-title">Eclipse debugging options</h1>
+<h1 class="page-title">ilg.gnuarmeclipse.debug.gdbjtag.jlink - persistent values</h1>
 
 
-<p>Eclipse plug-ins check various properties to display debugging trace messages.</p>
+<h2 id="the-workspace-storage">The workspace storage</h2>
 
-<p>The default properties are defined in <strong>.options</strong> files located in each plug-in folder.</p>
+<p>The J-Link settings are persistent in the workspace scope, and the storage file is located at:</p>
 
-<pre><code>org.eclipse.cdt.core/debug=false
-
-# ASTCache debugging
-org.eclipse.cdt.core/debug/ASTCache=false
+<pre><code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.jlink.prefs
 </code></pre>
 
-<p>The debug options are available via:</p>
+<h2 id="the-properties">The Properties</h2>
 
-<pre><code>String Platform.getDebugOption(String name);
+<p>The J-Link preferences define the device name and all other J-Link related setting from the plug-in settings page.</p>
+
+<pre><code>flashDeviceName=STM32F407VG
+gdb.client.commands=set mem inaccessible-by-default off
+gdb.client.executable=${cross_prefix}gdb${cross_suffix}
+gdb.client.other=
+gdb.jlink.doDebugInRam=false
+gdb.jlink.doInitialReset=true
+gdb.jlink.doPreRunReset=true
+gdb.jlink.enableFlashBreakpoints=true
+gdb.jlink.enableSemihosting=true
+gdb.jlink.enableSwo=false
+gdb.jlink.init.other=
+gdb.jlink.initialReset.speed=1000
+gdb.jlink.initialReset.type=
+gdb.jlink.preRun.other=
+gdb.jlink.preRunReset.type=
+gdb.jlink.semihosting.client=false
+gdb.jlink.semihosting.telnet=true
+gdb.jlink.speed=auto
+gdb.jlink.swoEnableTarget.cpuFreq=0
+gdb.jlink.swoEnableTarget.portMask=0x1
+gdb.jlink.swoEnableTarget.swoFreq=0
+gdb.server.connection=usb
+gdb.server.connection.address=
+gdb.server.doStart=true
+gdb.server.endianness=little
+gdb.server.executable=${jlink_path}/${jlink_gdbserver}
+gdb.server.interface=swd
+gdb.server.other=-singlerun -strict -timeout 0
+gdb.server.speed=1000
 </code></pre>
 
-<p>Example:</p>
+<h2 id="launcher-defaults">Launcher defaults</h2>
 
-<pre><code>private static final boolean DEBUG= "true".equalsIgnoreCase(Platform.getDebugOption("org.eclipse.cdt.core/debug/ASTCache"));
-...
-if (DEBUG) {
-  System.out.println("message");
-}
+<p>All persistent values can have defaults.</p>
+
+<p>For example the following defaults (plus many more) are available to configure the J-Link debug launcher:</p>
+
+<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.executable=${jlink_path}/${jlink_gdbserver}
+ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
+
+ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.interface=swd (or jtag)
+
+ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.jlink.enableSemihosting=true
+ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
 </code></pre>
+
+<p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
+
+<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/tab.main.checkProgram=false
+</code></pre>
+
+<p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
+
+<h2 id="install-defaults">Install defaults</h2>
+
+<p>Defining these two properties will provide default values to the corresponding fields in the <strong>Run/Debug</strong> → <strong>SEGGER J-Link</strong> preferences page. The same variables are visible in the <strong>Run/Debug</strong> → <strong>String Substitution</strong> page.</p>
+
+<h3 id="the-executable-name">The executable name</h3>
+
+<p>The plug-in will use this definition as default for <strong>${jlink_gdbserver}</strong>.</p>
+
+<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/executable.name=JLinkGDBServer
+</code></pre>
+
+<h3 id="the-executable-location">The executable location</h3>
+
+<p>The plug-in will take a best effort approach to find a location to be used as default for <strong>{jlink_path}</strong>.</p>
+
+<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/install.folder=/Applications/SEGGER/Jlink
+</code></pre>
+
+<p>If this preference is defined and the executable is there, the plug-in will use it.</p>
+
+<p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\SEGGER\J-Link</strong> subkey, and the executable is found there, the plug-in will use it.</p>
+
+<p>Otherwise the plug-in will try a folder search.</p>
+
+<pre><code>search.path=\
+${user.home}/Applications/SEGGER:\
+/Applications/SEGGER
+</code></pre>
+
+<p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
+
+<p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/${jlink_gdbserver}</strong>; if multiple such subfolders are found (in case multiple versions, like J-Link_V494, J-Link_V496), the list of names is ordered lexicographically and the last one is used.</p>
+
+<p>If not found, another test for <strong>folder/${jlink_gdbserver}</strong> is made.</p>
 
 
 

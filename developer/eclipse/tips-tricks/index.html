@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>ilg.gnuarmeclipse.debug.gdbjtag.openocd - persistent values</title>
+  <title>Eclipse tips & tricks</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="ilg.gnuarmeclipse.debug.gdbjtag.openocd - persistent values" />
+  <meta property="og:title" content="Eclipse tips & tricks" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="ilg.gnuarmeclipse.debug.gdbjtag.openocd - persistent values">
+  <meta property="og:title" content="Eclipse tips & tricks">
 
-  <meta property="article:published_time" content="2015-09-11">
+  <meta property="article:published_time" content="2015-09-10">
 
 
 
@@ -30,7 +30,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.debug.gdbjtag.openocd/">
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/eclipse/tips-tricks/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
@@ -75,90 +75,158 @@
 <section id="main-content">
 
 
-<h1 class="page-title">ilg.gnuarmeclipse.debug.gdbjtag.openocd - persistent values</h1>
+<h1 class="page-title">Eclipse tips & tricks</h1>
 
 
-<h2 id="the-workspace-storage">The workspace storage</h2>
+<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#find-project-from-configuration">Find project from configuration</a></li>
+  <li><a href="#display-a-message-box-from-a-non-ui-thread">Display a message box from a non-UI thread</a></li>
+  <li><a href="#run-code-in-ui-thread">Run code in UI thread</a></li>
+  <li><a href="#generate-an-unpacked-plug-in">Generate an unpacked plug-in</a></li>
+  <li><a href="#get-the-path-of-folder-where-eclipse-is-installed">Get the path of folder where Eclipse is installed</a></li>
+  <li><a href="#get-the-path-of-a-resource-in-another-plug-in">Get the path of a resource in another plug-in</a></li>
+  <li><a href="#template-shared-defaults">Template shared defaults</a></li>
+  <li><a href="#custom-default-files">Custom default files</a></li>
+  <li><a href="#global-markers">Global markers</a></li>
+  <li><a href="#configuration-folders-within-pde">Configuration folders within PDE</a></li>
+</ul>
 
-<p>The OpenOCD settings are persistent for each workspace and the storage is located at:</p>
+<h2 id="find-project-from-configuration">Find project from configuration</h2>
 
-<pre><code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.openocd.prefs
+<pre><code>IConfiguration config;
+IProject project = (IProject) config.getManagedProject().getOwner();
 </code></pre>
 
-<h2 id="properties">Properties</h2>
+<h2 id="display-a-message-box-from-a-non-ui-thread">Display a message box from a non-UI thread</h2>
 
-<p>The persistent properties are:</p>
+<p>The JFace MessageDialog is prefered over SWT MessageBox (which is extremely ugly on some platforms).</p>
 
-<pre><code>gdb.client.commands=set mem inaccessible-by-default off
-gdb.client.executable=${cross_prefix}gdb${cross_suffix}
-gdb.client.other=
-gdb.openocd.doInitialReset=true
-gdb.openocd.doPreRunReset=true
-gdb.openocd.enableSemihosting=true
-gdb.openocd.init.other=
-gdb.openocd.initialReset.type=init
-gdb.openocd.preRun.other=
-gdb.openocd.preRunReset.type=halt
-gdb.server.doStart=true
-gdb.server.executable=${openocd_path}/${openocd_executable}
-gdb.server.other=-f board/stm32f4discovery.cfg
+<pre><code>class ErrorMessageDialog implements Runnable {
+
+    public int retCode = 0;
+
+    @Override
+    public void run() {
+        String[] buttons = new String[] { "Retry", "Ignore", "Abort" };
+        MessageDialog dialog = new MessageDialog(shell,
+                "Read error", null, sourceUrl.toString() + "\n"
+                        + e.getMessage(), MessageDialog.ERROR,
+                buttons, 0);
+        retCode = dialog.open();
+    }
+}
+
+ErrorMessageDialog messageDialog = new ErrorMessageDialog();
+Display.getDefault().syncExec(messageDialog);
+
+if (messageDialog.retCode == 2) {
+    throw e; // Abort
+} else if (messageDialog.retCode == 1) {
+    return false; // Ignore
+}
 </code></pre>
 
-<h2 id="launcher-defaults">Launcher defaults</h2>
+<h2 id="run-code-in-ui-thread">Run code in UI thread</h2>
 
-<p>The following defaults are available to configure the OpenOCD debug launcher:</p>
+<p>To schedule execution of a piece of code in the UI thread:</p>
 
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.executable=${openocd_path}/${openocd_executable}
-ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
-
-ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discovery.cfg
+<pre><code>Display.getDefault().asyncExec(new Runnable() {
+    public void run() {
+        // Do something
+    }
+});
 </code></pre>
 
-<p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
+<h2 id="generate-an-unpacked-plug-in">Generate an unpacked plug-in</h2>
 
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/tab.main.checkProgram=false
+<p>If you need to access files from another plug-in, you need to leave it unpacked:</p>
+
+<p>For this add the following line to MANIFEST.MF file:</p>
+
+<pre><code>Eclipse-BundleShape: dir
 </code></pre>
 
-<p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
+<h2 id="get-the-path-of-folder-where-eclipse-is-installed">Get the path of folder where Eclipse is installed</h2>
 
-<h2 id="install-defaults">Install defaults</h2>
-
-<p>Defining these two properties will provide default values to the corresponding fields in the <strong>Run/Debug</strong> → <strong>OpenOCD</strong> preferences page. The same variables are visible in the <strong>Run/Debug</strong> → <strong>String Substitution</strong> page.</p>
-
-<h3 id="the-executable-name">The executable name</h3>
-
-<p>The plug-in will use this definition as default for <strong>${openocd_executable}</strong>.</p>
-
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/executable.name=openocd
+<pre><code>URL url = Platform.getInstallLocation().getURL();
+IPath path = new Path(url.getPath());
 </code></pre>
 
-<h3 id="the-executable-location">The executable location</h3>
+<h2 id="get-the-path-of-a-resource-in-another-plug-in">Get the path of a resource in another plug-in</h2>
 
-<p>The plug-in will take a best effort approach to find a location to be used as default for <strong>${openocd_path}</strong>.</p>
+<p>If you need to access files from another plug-in, you need to get the absolute path:</p>
 
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/install.folder=/Applications/GNU ARM Eclipse/OpenOCD/bin
+<pre><code>Bundle bundle = Platform.getBundle(bundleId);
+URL url = FileLocator.find(bundle, new Path(relativePath), null);
+String location;
+try {
+    location = FileLocator.resolve(url).getPath();
+} catch (IOException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
 </code></pre>
 
-<p>If this preference is defined and the executable is there, the plug-in will use it.</p>
+<h2 id="template-shared-defaults">Template shared defaults</h2>
 
-<p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\GNU ARM Eclipse\OpenOCD</strong> subkey, and the executable is found there, the plug-in will use it.</p>
-
-<p>Otherwise the plug-in will try a folder search.</p>
-
-<pre><code>search.path=\
-${user.home}/Applications/GNU ARM Eclipse/OpenOCD:\
-${user.home}/local/GNU ARM Eclipse/OpenOCD:\
-${user.home}/local/gnuarmeclipse/OpenOCD:\
-/Applications/GNU ARM Eclipse/OpenOCD:\
-/opt/local:\
-/usr/local
+<pre><code>value = SharedDefaults.getInstance().getSharedDefaultsMap().get(id);
 </code></pre>
 
-<p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
+<p>The store requires an update action:</p>
 
-<p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/bin/${openocd_executable}</strong>; if multiple such subfolders are found (in case multiple versions, like 0.8.0, 0.9.0-dev), the list of names is ordered lexicographically and the last one is used.</p>
+<pre><code>SharedDefaults.getInstance().updateShareDefaultsMap(SharedDefaults.getInstance().getSharedDefaultsMap());
+</code></pre>
 
-<p>If not found, another test for <strong>folder/bin/${openocd_executable}</strong> is made.</p>
+<p>The preferences are stored in a file name <strong>shareddefaults.xml</strong> located in the workspace:</p>
+
+<pre><code>workspace/.metadata/.plugins/org.eclipse.cdt.core/shareddefaults.xml
+</code></pre>
+
+<h2 id="custom-default-files">Custom default files</h2>
+
+<p>Deprecated: since this is not exactly standard and leads to many small files, it will be migrated to regular preferences.</p>
+
+<p>The preferences are stored in separate files, stored in separate folders named after the plug-in ID:</p>
+
+<pre><code>eclipse/configuration/&lt;plug-in-id&gt;/name.prefs
+
+URL url = Platform.getInstallLocation().getURL();
+
+IPath path = new Path(url.getPath());
+File file = path.append("configuration")
+        .append(Activator.PLUGIN_ID).append(TOOLCHAIN).toFile();
+InputStream is = new FileInputStream(file);
+
+Properties prop = new Properties();
+prop.load(is);
+...
+return prop.getProperty(property, "").trim();
+</code></pre>
+
+<h2 id="global-markers">Global markers</h2>
+
+<p>To create a marker that has global scope (not associated with any specific resource), you can use the workspace root (IWorkspace.getRoot()) as the resource.</p>
+
+<pre><code>public static void reportInfo(String message) {
+try {
+  IMarker marker = ResourcesPlugin.getWorkspace().getRoot()
+            .createMarker(IMarker.PROBLEM);
+  marker.setAttribute(IMarker.MESSAGE, message);
+  marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
+  marker.setAttribute(IMarker.LOCATION, "-");
+  } catch (CoreException e) {
+    System.out.println(message);
+  }
+}
+</code></pre>
+
+<h2 id="configuration-folders-within-pde">Configuration folders within PDE</h2>
+
+<p>When PDE launches a new instance of Eclipse from a debug session, each launch configuration gets a configuration folder:</p>
+
+<pre><code>./metadata/.plugins/org.eclipse.pde.core/&lt;launch-name&gt;/
+</code></pre>
 
 
 

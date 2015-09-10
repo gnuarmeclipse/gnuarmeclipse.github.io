@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>ilg.gnuarmeclipse.debug.gdbjtag.qemu - persistent values</title>
+  <title>The ilg.gnuarmeclipse.debug.core.cprojectExtra extension point</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="ilg.gnuarmeclipse.debug.gdbjtag.qemu - persistent values" />
+  <meta property="og:title" content="The ilg.gnuarmeclipse.debug.core.cprojectExtra extension point" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="ilg.gnuarmeclipse.debug.gdbjtag.qemu - persistent values">
+  <meta property="og:title" content="The ilg.gnuarmeclipse.debug.core.cprojectExtra extension point">
 
-  <meta property="article:published_time" content="2015-09-11">
+  <meta property="article:published_time" content="2015-09-10">
 
 
 
@@ -30,7 +30,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.debug.gdbjtag.qemu/">
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/extension/ilg.gnuarmeclipse.debug.core.cprojectextra/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
@@ -75,91 +75,110 @@
 <section id="main-content">
 
 
-<h1 class="page-title">ilg.gnuarmeclipse.debug.gdbjtag.qemu - persistent values</h1>
+<h1 class="page-title">The ilg.gnuarmeclipse.debug.core.cprojectExtra extension point</h1>
 
 
-<h2 id="the-workspace-storage">The workspace storage</h2>
+<h2 id="purpose">Purpose</h2>
 
-<p>The QEMU setting are persistent for each workspace and the storage is located at:</p>
+<p>This extension point provides decoupled access to the C project extra data from the debug plug-ins.</p>
 
-<pre><code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.qemu.prefs
+<p>It must be implemented by distributions that have their own method of storing extra definitions associated with project configurations (like vendor id and device name).</p>
+
+<h2 id="definition">Definition</h2>
+
+<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd">ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd</a>.</p>
+
+<h2 id="api">API</h2>
+
+<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.core/src/ilg/gnuarmeclipse/debug/core/data/ICProjectExtraDataManager.java">ICProjectExtraDataManager</a>.</p>
+
+<p>The only function required is:</p>
+
+<pre><code>public Map&lt;String, String&gt; getExtraProperties(IConfiguration config);
 </code></pre>
 
-<p>The properties in this file define the device name and all other setting from the interface.</p>
+<h2 id="where-is-this-extension-point-used">Where is this extension point used?</h2>
 
-<h2 id="properties">Properties</h2>
-<p>The persistent properties are:</p>
+<p>The <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/CProjectExtraDataManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/CProjectExtraDataManagerProxy.java</a> class enumerates all <strong>cprojectExtra</strong> extension points and returns the first one that can provide data for the requested configuration.</p>
 
-<pre><code>gdb.client.commands=set mem inaccessible-by-default off
-gdb.client.executable=${cross_prefix}gdb${cross_suffix}
-gdb.client.other=
-gdb.qemu.boardName=STM32F4-Discovery
-gdb.qemu.deviceName=STM32F407VG
-gdb.qemu.doDebugInRam=false
-gdb.qemu.doInitialReset=false
-gdb.qemu.doPreRunReset=true
-gdb.qemu.enableSemihosting=true
-gdb.qemu.init.other=
-gdb.qemu.isVerbose=false
-gdb.qemu.preRun.other=
-gdb.server.doStart=true
-gdb.server.executable=${qemu_path}/${qemu_executable}
-gdb.server.other=
+<p>This <code>CProjectExtraDataManagerProxy.getExtraProperties(config)</code> is called from <code>PeripheralsService.etPeripherals(IContainerDMContext containerDMContext, DataRequestMonitor&lt;IPeripheralDMContext[]&gt; drm)</code>:</p>
+
+<pre><code>String vendorId = null;
+String deviceName = null;
+
+CProjectExtraDataManagerProxy dataManager = CProjectExtraDataManagerProxy
+        .getInstance();
+Map&lt;String, String&gt; propertiesMap = dataManager
+        .getExtraProperties(config);
+if (propertiesMap != null) {
+    vendorId = propertiesMap
+            .get(CProjectPacksStorage.DEVICE_VENDOR_ID);
+    deviceName = propertiesMap
+            .get(CProjectPacksStorage.DEVICE_NAME);
+}
+
+if (vendorId != null &amp;&amp; deviceName != null) {
+
+    Leaf tree = SvdUtils.getTree(vendorId, deviceName);
+    List&lt;Leaf&gt; list = SvdUtils.getPeripherals(tree);
+
+    fPeripheralsDMContexts = createPeripheralsContexts(
+            containerDMContext, list);
+
+    drm.setData(fPeripheralsDMContexts);
+    drm.done();
+    return;
+
+} else {
+
+    drm.setStatus(new Status(
+            Status.ERROR,
+            Activator.PLUGIN_ID,
+            "There are no peripheral descriptions available, assign a device to the project."));
+    drm.done();
+    return;
+}
 </code></pre>
 
-<h2 id="launcher-defaults">Launcher defaults</h2>
+<p>As seen above, this extension point is used to get the <strong>cmsis.device.vendor.id</strong> and <strong>cmsis.device.name</strong> associated with a project, and from it get the SVD to populate the Peripherals view.</p>
 
-<p>The following defaults are available to configure the QEMU debug launcher:</p>
+<h2 id="where-is-this-extension-point-implemented">Where is this extension point implemented?</h2>
 
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.qemu/gdb.server.executable=${qemu_path}/${qemu_executable}
-ilg.gnuarmeclipse.debug.gdbjtag.qemu/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
+<p>This extension point is implemented one in <strong>ilg.gnuarmeclipse.managedbuild.cross</strong>:</p>
+
+<pre><code>   &lt;extension
+         point="ilg.gnuarmeclipse.debug.core.cprojectExtra"&gt;
+      &lt;factory
+            class="ilg.gnuarmeclipse.managedbuild.cross.xpi.CProjectExtraDataManagerFactory"&gt;
+      &lt;/factory&gt;
+   &lt;/extension&gt;
 </code></pre>
 
-<p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
+<p>The data manager created by this factory is <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.managedbuild.cross/src/ilg/gnuarmeclipse/managedbuild/cross/xpi/CProjectExtraDataManager.java">ilg.gnuarmeclipse.managedbuild.cross.xpi/CProjectExtraDataManager.java</a> which returns the entire map of extra properties associated with GNU ARM Eclipse projects, stored in .cproject:</p>
 
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.qemu/tab.main.checkProgram=false
+<pre><code>    &lt;storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"&gt;
+        &lt;option id="cmsis.device.name" value="STM32F407VG"/&gt;
+        &lt;option id="cmsis.subfamily.name" value="STM32F407"/&gt;
+        &lt;option id="cmsis.family.name" value="STM32F4 Series"/&gt;
+        &lt;option id="cmsis.device.vendor.name" value="STMicroelectronics"/&gt;
+        &lt;option id="cmsis.device.vendor.id" value="13"/&gt;
+        &lt;option id="cmsis.device.pack.vendor" value="Keil"/&gt;
+        &lt;option id="cmsis.device.pack.name" value="STM32F4xx_DFP"/&gt;
+        &lt;option id="cmsis.device.pack.version" value="2.3.0"/&gt;
+        &lt;option id="cmsis.board.name" value="STM32F4-Discovery"/&gt;
+        &lt;option id="cmsis.board.revision" value="Rev.C.1"/&gt;
+        &lt;option id="cmsis.board.vendor.name" value="STMicroelectronics"/&gt;
+        &lt;option id="cmsis.board.clock" value="8000000"/&gt;
+        &lt;option id="cmsis.board.pack.vendor" value="Keil"/&gt;
+        &lt;option id="cmsis.board.pack.name" value="STM32F4xx_DFP"/&gt;
+        &lt;option id="cmsis.board.pack.version" value="2.3.0"/&gt;
+        &lt;option id="cmsis.core.name" value="Cortex-M4"/&gt;
+        &lt;option id="cmsis.compiler.define" value="STM32F407xx"/&gt;
+        &lt;memory section="IRAM1" size="0x20000" start="0x20000000" startup="0"/&gt;
+        &lt;memory section="IRAM2" size="0x10000" start="0x10000000" startup="0"/&gt;
+        &lt;memory section="IROM1" size="0x100000" start="0x08000000" startup="1"/&gt;
+    &lt;/storageModule&gt;
 </code></pre>
-
-<p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
-
-<h2 id="install-defaults">Install defaults</h2>
-
-<p>Defining these two properties will provide default values to the corresponding fields in the <strong>Run/Debug</strong> → <strong>QEMU</strong> preferences page. The same variables are visible in the <strong>Run/Debug</strong> → <strong>String Substitution</strong> page.</p>
-
-<h3 id="the-executable-name">The executable name</h3>
-
-<p>The plug-in will use this definition as default for <strong>${qemu_executable}</strong>.</p>
-
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.qemu/executable.name=qemu-system-gnuarmeclipse
-</code></pre>
-
-<h3 id="the-executable-location">The executable location</h3>
-
-<p>The plug-in will take a best effort approach to find a location to be used as default for <strong>${qemu_path}</strong>.</p>
-
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.qemu/install.folder=/Applications/GNU ARM Eclipse/QEMU/2.2.92-201504041609-dev/bin
-</code></pre>
-
-<p>If this preference is defined and the executable is there, the plug-in will use it.</p>
-
-<p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\GNU ARM Eclipse\QEMU</strong> subkey, and the executable is found there, the plug-in will use it.</p>
-
-<p>Otherwise the plug-in will try a folder search.</p>
-
-<pre><code>search.path=\
-${user.home}/Applications/GNU ARM Eclipse/QEMU:\
-${user.home}/local/GNU ARM Eclipse/QEMU:\
-${user.home}/local/gnuarmeclipse/QEMU:\
-/Applications/GNU ARM Eclipse/QEMU:\
-/opt/local:\
-/usr/local
-</code></pre>
-
-<p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
-
-<p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/bin/${qemu_executable}</strong>; if multiple such subfolders are found (in case multiple versions), the list of names is ordered lexicographically and the last one is used.</p>
-
-<p>If not found, another test for <strong>folder/bin/${qemu_executable}</strong> is made.</p>
 
 
 

@@ -270,7 +270,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/</loc>
-    <lastmod>2015-09-10T21:31:00+03:00</lastmod>
+    <lastmod>2015-09-11T01:54:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/development-environment/</loc>
@@ -281,24 +281,24 @@
     <lastmod>2015-09-10T22:58:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/eclipse-debugging-options/</loc>
-    <lastmod>2015-09-10T21:33:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/eclipse/debugging-options/</loc>
+    <lastmod>2015-09-11T01:51:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/eclipse-runtime-preferences/</loc>
-    <lastmod>2015-09-10T21:37:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/eclipse/runtime-preferences/</loc>
+    <lastmod>2015-09-11T01:51:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/eclipse-tips-tricks/</loc>
-    <lastmod>2015-09-10T23:54:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/eclipse/tips-tricks/</loc>
+    <lastmod>2015-09-11T01:58:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/extension-ilg.gnuarmeclipse.debug.core.cprojectextra/</loc>
-    <lastmod>2015-09-10T23:57:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/extension/ilg.gnuarmeclipse.debug.core.cprojectextra/</loc>
+    <lastmod>2015-09-11T01:53:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/extension-ilg.gnuarmeclipse.debug.core.svdpath/</loc>
-    <lastmod>2015-09-10T23:58:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/extension/ilg.gnuarmeclipse.debug.core.svdpath/</loc>
+    <lastmod>2015-09-11T01:53:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/features/</loc>
@@ -365,20 +365,20 @@
     <lastmod>2015-09-09T14:30:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.debug.gdbjtag.jlink/</loc>
-    <lastmod>2015-09-11T00:02:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.jlink/</loc>
+    <lastmod>2015-09-11T01:54:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.debug.gdbjtag.openocd/</loc>
-    <lastmod>2015-09-11T00:03:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.openocd/</loc>
+    <lastmod>2015-09-11T01:54:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.debug.gdbjtag.qemu/</loc>
-    <lastmod>2015-09-11T00:05:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.qemu/</loc>
+    <lastmod>2015-09-11T01:54:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.managedbuild.cross/</loc>
-    <lastmod>2015-09-11T00:06:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.managedbuild.cross/</loc>
+    <lastmod>2015-09-11T01:54:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/publish-procedure/</loc>
