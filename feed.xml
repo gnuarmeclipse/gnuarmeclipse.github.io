@@ -5,12 +5,38 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Sep 2015 09:39:02 +0300</pubDate>
-    <lastBuildDate>Thu, 10 Sep 2015 09:39:02 +0300</lastBuildDate>
+    <pubDate>Thu, 10 Sep 2015 15:50:47 +0300</pubDate>
+    <lastBuildDate>Thu, 10 Sep 2015 15:50:47 +0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>GNU ARM Eclipse QEMU 2.3.50-20150816*-dev released</title>
+        <title>GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</title>
+        <description>&lt;p&gt;Version 2.9.3-201508190739 is a maintenance release; it fixes a small issue in the QEMU Debugger tab, which now uses persistent values for the board/device names only when none of them were assigned to the project from the CMSIS definitions.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 19 Aug 2015 15:00:00 +0300</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/08/19/plugins-v2.9.3-201508190739-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/19/plugins-v2.9.3-201508190739-released/</guid>
+        
+        <category>GNU</category>
+        
+        <category>ARM</category>
+        
+        <category>Eclipse</category>
+        
+        <category>CMSIS</category>
+        
+        <category>qemu</category>
+        
+        
+        <category>plugins</category>
+        
+        <category>releases</category>
+        
+      </item>
+    
+      <item>
+        <title>GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</title>
         <description>&lt;p&gt;Version 2.3.50-201508161112 is a maintenance partial release, fixing the GNU/Linux distribution.&lt;/p&gt;
 
 </description>
@@ -32,7 +58,35 @@
       </item>
     
       <item>
-        <title>GNU ARM Eclipse QEMU 2.3.50-20150805*-dev released</title>
+        <title>GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</title>
+        <description>&lt;p&gt;Version 2.9.2-201508071246 is a maintenance release; the main improvements include support for multi-LED boards in the STM32F4 C++ template and more elaborate PLL settings in the STM32F4 templates.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 07 Aug 2015 15:00:00 +0300</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/08/07/plugins-v2.9.2-201508071246-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/07/plugins-v2.9.2-201508071246-released/</guid>
+        
+        <category>GNU</category>
+        
+        <category>ARM</category>
+        
+        <category>Eclipse</category>
+        
+        <category>qemu</category>
+        
+        <category>STM32F4</category>
+        
+        <category>STM32F4-Discovery</category>
+        
+        
+        <category>plugins</category>
+        
+        <category>releases</category>
+        
+      </item>
+    
+      <item>
+        <title>GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</title>
         <description>&lt;p&gt;Version 2.3.50-201508051820 is a maintenance partial release, adding support for Windows 64-bits.&lt;/p&gt;
 
 </description>
@@ -56,7 +110,7 @@
       </item>
     
       <item>
-        <title>GNU ARM Eclipse QEMU 2.3.50-20150804*-dev released</title>
+        <title>GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</title>
         <description>&lt;p&gt;Version 2.3.50-201508041609 is a maintenance release, fixing the graphical rendering on Windows and adding support for NUCLEO-F411RE.&lt;/p&gt;
 
 </description>
@@ -78,7 +132,7 @@
       </item>
     
       <item>
-        <title>GNU ARM Eclipse QEMU 2.3.50-20150801*-dev released</title>
+        <title>GNU ARM Eclipse QEMU v2.3.50-20150801*-dev released</title>
         <description>&lt;p&gt;Version 2.3.50-201508012214 is the first production release of the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt;. It supports a range of STM boards, and fully implements the user LEDs available on these boards, presenting them graphically, in real time animation, over the board picture.&lt;/p&gt;
 
 </description>
@@ -98,6 +152,42 @@
         
         
         <category>qemu</category>
+        
+        <category>releases</category>
+        
+      </item>
+    
+      <item>
+        <title>GNU ARM Eclipse plug-ins v2.9.1.201508011813 released</title>
+        <description>&lt;p&gt;Version 2.9.1.201508011813 is a new release; the main improvement is the new version of the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt; emulator (including a graphical LED emulator), paired with a new version of the QEMU Debugging plug-in; also embedded applications can now be executed in Run mode, not only in Debug mode.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 01 Aug 2015 15:00:00 +0300</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/08/01/plugins-v2.9.1-201508011813-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/01/plugins-v2.9.1-201508011813-released/</guid>
+        
+        <category>GNU</category>
+        
+        <category>ARM</category>
+        
+        <category>Eclipse</category>
+        
+        <category>cmsis-packs</category>
+        
+        <category>Cortex-M</category>
+        
+        <category>Eclipse</category>
+        
+        <category>gcc</category>
+        
+        <category>hal</category>
+        
+        <category>qemu</category>
+        
+        <category>STM32F4</category>
+        
+        
+        <category>plugins</category>
         
         <category>releases</category>
         
@@ -132,7 +222,7 @@
       </item>
     
       <item>
-        <title>GNU ARM Eclipse OpenOCD 0.9.0-20150519* released</title>
+        <title>GNU ARM Eclipse OpenOCD v0.9.0-20150519* released</title>
         <description>&lt;p&gt;The just released stable version of OpenOCD (&lt;strong&gt;0.9.0&lt;/strong&gt;) is now also available as ready to install, platform specific, binary files.&lt;/p&gt;
 
 </description>
@@ -154,104 +244,26 @@
       </item>
     
       <item>
-        <title>GNU ARM Eclipse QEMU 2.2.92-20150404*-dev released</title>
-        <description>&lt;p&gt;This is the initial release of the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt;. It is mainly a technology preview (most of the supported boards are present, but functionality is limited and only projects created with the generic Cortex-M3 template are supported).&lt;/p&gt;
+        <title>GNU ARM Eclipse plug-ins v2.8.1-201504061754 released</title>
+        <description>&lt;p&gt;Version 2.8.1-201504061754 is a new release; the main improvement is the addition of an experimental QEMU Debugging plug-in, using the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt; emulator.&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 05 Apr 2015 02:09:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/04/05/qemu-v2-2-92-20150404-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/04/05/qemu-v2-2-92-20150404-released/</guid>
+        <pubDate>Mon, 06 Apr 2015 15:00:00 +0300</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/04/06/plugins-v2.8.1-201504061754-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/04/06/plugins-v2.8.1-201504061754-released/</guid>
         
-        <category>Cortex-M</category>
+        <category>GNU</category>
+        
+        <category>ARM</category>
         
         <category>Eclipse</category>
         
-        <category>emulation</category>
-        
-        <category>gdb</category>
+        <category>Cortex-M</category>
         
         <category>qemu</category>
         
-        <category>semihosting</category>
         
-        
-        <category>qemu</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse Windows Build Tools v2.4-201503242026 released</title>
-        <description>&lt;p&gt;Version 2.4-201503242026 is a maintenance release, fixing the uninstall procedure.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 24 Mar 2015 14:00:00 +0200</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/03/24/windows-build-tools-v2.4-20150324-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/03/24/windows-build-tools-v2.4-20150324-released/</guid>
-        
-        <category>windows</category>
-        
-        <category>setup</category>
-        
-        <category>build</category>
-        
-        <category>make</category>
-        
-        <category>rm</category>
-        
-        <category>busybox</category>
-        
-        
-        <category>windows-build-tools</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse Windows Build Tools v2.4-201503212005 released</title>
-        <description>&lt;p&gt;Version 2.4-201503212005 is a new release of the GNU ARM Eclipse Windows Build Tools.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 21 Mar 2015 14:00:00 +0200</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/03/21/windows-build-tools-v2.4-20150321-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/03/21/windows-build-tools-v2.4-20150321-released/</guid>
-        
-        <category>windows</category>
-        
-        <category>setup</category>
-        
-        <category>build</category>
-        
-        <category>make</category>
-        
-        <category>rm</category>
-        
-        <category>busybox</category>
-        
-        
-        <category>windows-build-tools</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse OpenOCD 0.9.0-20150320*-dev released</title>
-        <description>&lt;p&gt;The latest development version of OpenOCD (&lt;strong&gt;0.9.0-dev&lt;/strong&gt;) is now available as multiple platform specific binary packages.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 20 Mar 2015 14:00:00 +0200</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/03/20/openocd-v0.9.0-20150320-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/03/20/openocd-v0.9.0-20150320-released/</guid>
-        
-        <category>GNU ARM Eclipse</category>
-        
-        <category>OpenOCD</category>
-        
-        
-        <category>openocd</category>
+        <category>plugins</category>
         
         <category>releases</category>
         

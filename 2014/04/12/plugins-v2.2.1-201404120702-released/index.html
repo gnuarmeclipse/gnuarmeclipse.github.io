@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>GNU ARM Eclipse plug-ins v2.2.1-201404120702 released</title>
+  <meta name="description" content="Version 2.2.1 is a major release. The main changes are: the complete overhaul of the template plug-ins, the addition of a generic Cortex-M template, the addi...">
+
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.2.1-201404120702 released" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.2.1-201404120702 released">
+
+  <meta property="article:published_time" content="2014-04-12">
+
+
+  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="releases" />
+
+  <meta property="article:tag" content="gnu" />
+  <meta property="article:tag" content="arm" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="cortex-m" />
+  <meta property="article:tag" content="nano" />
+  <meta property="article:tag" content="newlib" />
+  <meta property="article:tag" content="processor expert" />
+  <meta property="article:tag" content="stm32f" />
+  <meta property="article:tag" content="template" />
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/2014/04/12/plugins-v2.2.1-201404120702-released/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="post-title">GNU ARM Eclipse plug-ins v2.2.1-201404120702 released</h1>
+
+
+<p class="post-meta">
+Posted on April 12, 2014 by Liviu Ionescu.
+</p>
+
+<p>Version 2.2.1 is a major release. The main changes are: <strong>the complete overhaul of the template plug-ins</strong>, the addition of a <strong>generic Cortex-M template</strong>, the addition of the <strong>STM32F2xx</strong> template and a better integration of the Freescale PEx template with the Processor Expert 10.4 version.</p>
+
+<p><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/releases/tag/v2.2.1-201404120702">Binary files »</a></p>
+
+<p>New features:</p>
+
+<ul>
+  <li>the generic Cortex-M template was added, to provide a starting point for projects using processors not yet fully supported</li>
+  <li>the STM32F2xx templates were added, completing the STM32F family</li>
+  <li>the STM32F4 template was updated to use the <strong>new HAL library</strong>, instead of the StdPeriph library</li>
+  <li>starting with Processor Expert 10.4, the Freescale PEx template can now properly launch the new project wizard, so integration with Processor Expert is fully functional</li>
+  <li>all templates now optionally use the <strong>newlib nano</strong> library</li>
+  <li>all templates now optionally use the new GCC 4.8 <code>-Og</code> option for debug configurations</li>
+  <li>a new trace facility, using separate functions like <code>trace_printf()</code>, was added to the code generated for the templates; the trace output channel can be changed with a preprocessor define</li>
+  <li>[feature-requests:#39] selecting semihosting/retargetting/standalone is no longer a one time decision, but can be changed at build time using preprocessor definitions</li>
+  <li>new selection values were added for the <code>-mcu=</code> option
+    <ul>
+      <li>arm610</li>
+      <li>cortex-r5</li>
+      <li>cortex-r7</li>
+      <li>generic-armv7-a</li>
+    </ul>
+  </li>
+  <li>new selection values were added for the -march= option
+    <ul>
+      <li>armv6s-m</li>
+      <li>armv7e-m</li>
+    </ul>
+  </li>
+  <li>[feature-requests:#37] a new option Save temporary files (<code>–save-temps</code>) was added to the Miscellaneous category of the compiling tools</li>
+  <li>[feature-requests:#41] in the Tool Settings tab, the common Warnings category, new options were added:
+    <ul>
+      <li><code>-Wunused</code></li>
+      <li><code>-Wpadded</code></li>
+    </ul>
+  </li>
+  <li>in the Tool Settings tab, the Warnings category of the C tool, new options were added:
+    <ul>
+      <li><code>-Wmissing-prototypes</code></li>
+      <li><code>-Wstrict-prototypes</code></li>
+      <li><code>-Wbad-function-cast</code></li>
+    </ul>
+  </li>
+  <li>in the Tool Settings tab, the Warnings category of the C++ tool, new options were added:
+    <ul>
+      <li><code>-Wctor-dtor-privacy</code></li>
+      <li><code>-Wnoexcept</code></li>
+      <li><code>-Wnon-virtual-dtor</code></li>
+      <li><code>-Wstrict-null-sentinel</code></li>
+      <li><code>-Wsign-promo</code></li>
+    </ul>
+  </li>
+  <li>in the Tool Settings tab, the common Optimization category, new options were added:
+    <ul>
+      <li><code>-ffreestanding</code></li>
+    </ul>
+  </li>
+  <li>in the Tool Settings tab, the Optimization category of the C++ tool, new options were added:
+    <ul>
+      <li><code>-fabi-version=</code></li>
+      <li><code>-fno-threadsafe-statics</code></li>
+    </ul>
+  </li>
+  <li>the templates can now optionally generate freestanding programs, using the <code>-ffreestanding</code> option.</li>
+</ul>
+
+<p>Major CDT bugs fixed:</p>
+
+<ul>
+  <li>[support-requests:#44] due to a long standing CDT bug affecting the creation of make files, the dependencies were not properly checked; the culprit was the <code>-MF"$(@:%.o=%.d)"</code>, instead of <code>-MT"$@"</code>, which generated wrong targets in the make files; until a proper patch will be applied to CDT, the workaround in the plug-in was to locally perform the replacement.</li>
+</ul>
+
+<p>Bugs fixed:</p>
+
+<ul>
+  <li>the names of the windows tools for Sourcery CodeBench Lite were changed from <strong>cs_make</strong>/<strong>cs_rm</strong>, instead of <strong>cs-make</strong>/<strong>cs-rm</strong></li>
+  <li>after project rename there were many exceptions due to name change; fixed</li>
+  <li>[bugs:#96] changing the toolchain of another build configuration then the active one was not possible in the Toolchains tab; fixed</li>
+  <li>[bugs:#103, bugs:#97] J-Link &amp; OpenOCD: changing some of the fields in the interface did not enable the Apply button; fixed</li>
+  <li>[bugs:#94] in the Tool Settings tab, the optimisation option ‘Do not use _cxa_atexit() (<code>-fno-use-cxa-atexit</code>)’ was moved from the common category to the C++ compiler tool, since it applies only to C++</li>
+  <li>in the Tool Settings tab, the warning option <em>‘Warn if wrong cast (-Wbad-function-cast)’</em> was moved from the common category to the C compiler tool, since it applies only to C</li>
+  <li>J-Link: in certain conditions, the remote address &amp; port were not properly set, and the debugging session did not start; fixed</li>
+  <li>J-Link: in certain erroneous conditions, the J-Link plug-in triggered an exception, leaving the process handling the semihosting and SWO console in a wrong state; fixed</li>
+  <li>the inlines used in the Trace.h header were marked with <code>((always_inline))</code>, to ensure no code is generated on all optimisation levels</li>
+  <li>[bugs:#99] J-Link &amp; OpenOCD: macro substitution added to most fields available in the interface</li>
+  <li>[bugs:#100] J-Link: to avoid confusion related to multiple JTAG/SWD speeds in the interface, the labelling was changed to ‘Initial speed’ and ‘JTAG/SWD Speed’</li>
+  <li>[bugs:#95] timer setting in templates was not accurate; fixed</li>
+  <li>[bugs:#88] the interrupt handlers generated by the templates were not declared in the “C” namespace and failed when generating C++ projects; fixed.</li>
+</ul>
+
+<p>Other changes:</p>
+
+<ul>
+  <li>templates share a common code, to keep them consistent between processor families</li>
+  <li>the projects generated by the templates have a new structure, with a single hierarchical level below include and src</li>
+  <li>all projects generated by the template plug-ins also have now the C++ nature; the change does not impact at all C only projects, but keeps an open door to the possibility of adding future C++ libraries to the generated projects.</li>
+  <li>templates common code is now directly copied from the sources of the <strong>µOS++</strong>, to keep them consistent between processor families and with future code</li>
+  <li>J-Link &amp; OpenOCD: a notice was added near the second reset field, to warn on not using it when debugging from RAM</li>
+  <li>J-Link &amp; OpenOCD: when launching external processes (like JLinkGDB Server, GDB client, OpenOCD), the current folder is set to the project folder, to easily refer to local configuration files</li>
+  <li>the language standard defaults for new projects were changed to ISO C11 (<code>-std=gnu11</code>) and C++11 (<code>-std=gnu++11</code>)</li>
+  <li>J-Link: as suggested by SEGGER, the default speed used for the initial server connection was increased to 1000 kHz</li>
+  <li>guard checks were added on debug in the startup code, to check if the proper BSS and DATA initialisations were performed</li>
+  <li>[feature-requests:#40] on Cortex-M3/M4 the trace semihosting output code can check if not running under debugger and skip the semihosting call, so it is possible to execute the applications built for Debug without the debugger connected (unfortunately for Cortex-M0/M0+ the debug registers are not available to the application, so this test cannot be done)</li>
+  <li>for all STM32 templates, the USE_FULL_ASSERT was added to debug configurations, and assert_param() is functional</li>
+  <li>J-Link &amp; OpenOCD: most fields in the interface are now persistent, serving as defaults when creating new debug configurations.</li>
+</ul>
+
+
+<hr/>
+<p class="post-footer">
+This entry was posted in
+
+<strong>plugins</strong>, <strong>releases</strong> and tagged
+
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cortex-m</strong>, <strong>nano</strong>, <strong>newlib</strong>, <strong>processor expert</strong>, <strong>stm32f</strong>, <strong>template</strong>.
+</p>
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="features">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Plug-ins</li>
+  <li>Windows Build Tools</li>
+  <li>QEMU</li>
+  <li>OpenOCD</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Eclipse plug-ins install</li>
+  <li>Toolchain(s) install</li>
+  <li>Windows build tools (make &amp; rm) install</li>
+  <li>Debugging tools install
+    <ul>
+      <li>Overview</li>
+      <li>SEGGER J-Link install</li>
+      <li>OpenOCD install</li>
+      <li>QEMU install</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li>Workspace preferences</li>
+  <li>Toolchain path</li>
+  <li>Project portability</li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li>Create a Blinky ARM test project</li>
+  <li>Create a Hello ARM test project</li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li>The managed build plug-in</li>
+  <li>The packs manager (CMSIS)</li>
+  <li>Assign a device</li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Cortex-M template</li>
+  <li>STM32Fxx templates</li>
+  <li>Freescale KLxx templates</li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>The SEGGER J-Link plug-in</li>
+  <li>The OpenOCD plug-in</li>
+  <li>The QEMU plug-in</li>
+  <li>The peripheral registers view (CMSIS)</li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install">QEMU Install</a></li>
+  <li>Eclipse plug-in</li>
+  <li><a href="/qemu/how-to-build">How to build</a></li>
+  <li><a href="/qemu/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install">OpenOCD Install</a></li>
+  <li>The OpenOCD plug-in</li>
+  <li><a href="/openocd/how-to-build">How to build</a></li>
+  <li><a href="/openocd/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/how-to-build">How to build</a></li>
+  <li><a href="/windows-build-tools/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li>Headless builds</li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li>Known issues</li>
+  <li>FAQ</li>
+  <li>SourceForge tickets</li>
+</ul>
+
+<h4 id="developer">Developer</h4>
+
+<ul>
+  <li>Wiki</li>
+  <li>Change log</li>
+  <li>Contribute</li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li>GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship">Sponsorship</a></li>
+</ul>
+
+<h4 id="about"><a href="">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>

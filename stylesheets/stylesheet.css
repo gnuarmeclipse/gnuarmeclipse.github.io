@@ -636,6 +636,8 @@ form {
 #main-content h2 {
   margin-bottom: 8px;
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  line-height: 1.1;
+  margin-bottom: 10px;
   font-size: 22px;
   font-weight: bold;
   color: #474747;

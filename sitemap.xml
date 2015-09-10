@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://gnuarmeclipse.github.io/2015/08/19/plugins-v2.9.3-201508190739-released/</loc>
+    <lastmod>2015-09-10T14:36:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/2015/08/16/qemu-v2-3-50-20150816-released/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/08/07/plugins-v2.9.2-201508071246-released/</loc>
+    <lastmod>2015-09-10T14:35:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150805-released/</loc>
@@ -17,12 +25,20 @@
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/2015/08/01/plugins-v2.9.1-201508011813-released/</loc>
+    <lastmod>2015-09-10T14:34:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/2015/07/15/windows-build-tools-v2.6-20150715-released/</loc>
     <lastmod>2015-09-08T15:50:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/2015/05/19/openocd-v0.9.0-20150519-released/</loc>
     <lastmod>2015-09-10T12:26:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/04/06/plugins-v2.8.1-201504061754-released/</loc>
+    <lastmod>2015-09-10T14:33:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/2015/04/05/qemu-v2-2-92-20150404-released/</loc>
@@ -37,8 +53,16 @@
     <lastmod>2015-09-08T15:45:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/2015/03/21/plugins-v2.7.1-201503211846-released/</loc>
+    <lastmod>2015-09-10T14:31:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/2015/03/20/openocd-v0.9.0-20150320-released/</loc>
     <lastmod>2015-09-10T12:26:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/02/28/plugins-v2.6.1-201502281154-released/</loc>
+    <lastmod>2015-09-10T14:30:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/2015/01/31/openocd-v0.8.0-20150131-released/</loc>
@@ -57,20 +81,132 @@
     <lastmod>2015-09-08T15:34:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/2014/12/19/plugins-v2.5.1-201412191510-released/</loc>
+    <lastmod>2015-09-10T14:28:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/12/15/debugging-topics-added-faq-page/</loc>
+    <lastmod>2015-09-10T17:59:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/2014/12/02/windows-build-tools-v2.0-20141202-released/</loc>
     <lastmod>2015-09-08T15:34:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/11/26/plugins-v2.4.2-201411261616-released/</loc>
+    <lastmod>2015-09-10T14:26:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/10/14/plugins-v2.4.1-201410142110-released/</loc>
+    <lastmod>2015-09-10T14:25:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/07/22/projects-week-july-14-2014/</loc>
+    <lastmod>2015-09-10T18:26:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/07/19/plugins-v2.3.2-201407190854-released/</loc>
+    <lastmod>2015-09-10T14:55:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/07/19/plugins-v2.3.2-201407190818-released/</loc>
+    <lastmod>2015-09-10T14:22:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/07/17/arm-connected-community-article/</loc>
+    <lastmod>2015-09-10T16:18:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/07/12/plugins-v2.3.1-201407120554-released/</loc>
+    <lastmod>2015-09-10T14:21:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/07/04/site-statistics/</loc>
+    <lastmod>2015-09-10T16:26:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/04/24/plugins-v2.2.2-201404240550-released/</loc>
+    <lastmod>2015-09-10T14:20:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/04/12/plugins-v2.2.1-201404120702-released/</loc>
+    <lastmod>2015-09-10T14:18:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/02/18/plugins-v2.1.2-201402180751-released/</loc>
+    <lastmod>2015-09-10T14:16:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/02/14/plugins-v2.1.1-201402140758-released/</loc>
+    <lastmod>2015-09-10T14:15:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/01/22/sourceforge-featured-projects-january-2014/</loc>
+    <lastmod>2015-09-10T18:11:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2014/01/11/plugins-v1.8.1-201401111229-released/</loc>
+    <lastmod>2015-09-10T14:13:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/12/24/plugins-v1.1.7-201312241058-released/</loc>
+    <lastmod>2015-09-10T14:12:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/12/22/plugins-v1.1.7-201312221905-released/</loc>
+    <lastmod>2015-09-10T14:10:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/11/22/plugins-v1.1.6-201311220955-released/</loc>
+    <lastmod>2015-09-10T14:09:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/11/10/plugins-v1.1.5-201311101919-released/</loc>
+    <lastmod>2015-09-10T14:08:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/10/30/plugins-v1.1.4-201310301732-released/</loc>
+    <lastmod>2015-09-10T14:07:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/10/29/plugins-v1.1.3-201310290722-released/</loc>
+    <lastmod>2015-09-10T14:06:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/10/22/plugins-v0.5.5.201310221100-released/</loc>
+    <lastmod>2015-09-10T14:04:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/10/21/plugins-v1.1.2-201310210535-released/</loc>
+    <lastmod>2015-09-10T14:03:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/10/19/plugins-v1.1.1-201310191701-released/</loc>
+    <lastmod>2015-09-10T14:02:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/10/16/plugins-v1.1.0-201310161930-released/</loc>
+    <lastmod>2015-09-10T13:57:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2013/10/11/plugins-v0.5.5.201310111213-released/</loc>
+    <lastmod>2015-09-10T13:55:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2012/01/07/web-new-look/</loc>
+    <lastmod>2015-09-10T16:04:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/change-log/2014/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/change-log/</loc>
-    <lastmod>2015-09-09T21:50:00+03:00</lastmod>
-  </url>
-  <url>
     <loc>http://gnuarmeclipse.github.io/qemu/change-log/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/openocd/change-log/</loc>
+    <lastmod>2015-09-09T21:50:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/change-log/</loc>

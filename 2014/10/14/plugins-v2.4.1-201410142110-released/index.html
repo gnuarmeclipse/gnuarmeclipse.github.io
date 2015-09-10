@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>GNU ARM Eclipse plug-ins v2.4.1-201410142110 released</title>
+  <meta name="description" content="Version 2.4.1 is a major release. The main additions, which extend the CMSIS Packs support, are a peripherals registers view in debug, and a documentation vi...">
+
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.4.1-201410142110 released" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.4.1-201410142110 released">
+
+  <meta property="article:published_time" content="2014-10-14">
+
+
+  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="releases" />
+
+  <meta property="article:tag" content="gnu" />
+  <meta property="article:tag" content="arm" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="cmsis" />
+  <meta property="article:tag" content="packs" />
+  <meta property="article:tag" content="peripheral" />
+  <meta property="article:tag" content="registers" />
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/2014/10/14/plugins-v2.4.1-201410142110-released/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="post-title">GNU ARM Eclipse plug-ins v2.4.1-201410142110 released</h1>
+
+
+<p class="post-meta">
+Posted on October 14, 2014 by Liviu Ionescu.
+</p>
+
+<p>Version 2.4.1 is a major release. The main additions, which extend the <strong>CMSIS Packs</strong> support, are a <strong>peripherals registers view</strong> in debug, and a <strong>documentation view</strong> in the C/C++ perspective.</p>
+
+<p>The addition of the peripherals registers views is the first step to improve the debugging capabilities of GNU ARM Eclipse plug-ins with complex features, available usually in commercial suites.</p>
+
+<p><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/releases/tag/v2.4.1-201410142110">Binary files »</a></p>
+
+<h2 id="new-features">New features</h2>
+
+<ul>
+  <li>a new <strong>Devices</strong> tab was added to the <strong>C/C++ Build</strong> → <strong>Settings</strong> page, to associate a device, and possibly a board, to the project build configuration. The CMSIS Packs installed packages serve as the only source for devices and boards definitions, so it is necessary to first install the desired packages for this tab to be populated;</li>
+  <li>[feature-requests:#53] a new <strong>Peripherals</strong> view was added to the Debug perspective; it requires for the build configuration to have a device associated;</li>
+  <li>a new <strong>Documents</strong> view was added to the C/C++ perspective, to the right of the Outline view, showing the documentation available in the CMSIS Packs for the device (and possibly the board), associated with the build configuration; in case this view does not show, a reset is required for the perspective (right click the C/C++ perspective button);</li>
+  <li>[feature-requests:#60] a new explicit option can be configured in the managed build plug-in: <code>-flto</code> (<strong>Link-Time Optimizations</strong>); it is recommended for Release builds, to further reduce the size of the program;</li>
+  <li>the <code>-flto</code> option was added to all templates, and can be set during project creation;</li>
+  <li>accept ‘/‘ in path definitions during project creation;</li>
+  <li>partial support for CMSIS Packs PDSC v1.3 added, to open various types of files in outlines.</li>
+</ul>
+
+<h2 id="bugs-fixed">Bugs fixed</h2>
+
+<ul>
+  <li>[bugs:#98] clicking the Debug icon opened a contextual launcher, usually wrong, instead of the last used launch configuration; a preference was changed and now the last used configuration is used;</li>
+  <li>[bugs:#116] the main packs view on Ubuntu was wrong, the description field was multiline; fixed, the description field is was shortened to a single line;</li>
+  <li>[bugs:#120] the STM32F4x template did not compile with semihosting, due to a missing header definition; fixed;</li>
+  <li>[bugs:#121] the templates had redundant FPU hardware initialization code; fixed, compile it only upon request;</li>
+  <li>[bugs:#124] some of the templates defined –specs=nano.specs twice; the template process was fixed to avoid duplicates;</li>
+  <li>[bugs:#126] although it was clearly documented that the plug-ins require Eclipse Kepler to run, some of the dependencies were not updated, and it was possible to install the plug-ins on certain older versions; the dependencies were updated.</li>
+</ul>
+
+<h2 id="other-changes">Other changes</h2>
+
+<ul>
+  <li>the update site was not automatically added to the Eclipse update sites; fixed (the URL was added in a p2.inf file);</li>
+  <li>custom markers were added to the Problems view for Packs related events;</li>
+  <li>the packs and debug plug-ins were split into multiple plug-ins, and extension points were added to reduce dependencies; and make the plug-ins work, even with reduced functionality, without the packs plug-in.</li>
+</ul>
+
+
+<hr/>
+<p class="post-footer">
+This entry was posted in
+
+<strong>plugins</strong>, <strong>releases</strong> and tagged
+
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cmsis</strong>, <strong>packs</strong>, <strong>peripheral</strong>, <strong>registers</strong>.
+</p>
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="features">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Plug-ins</li>
+  <li>Windows Build Tools</li>
+  <li>QEMU</li>
+  <li>OpenOCD</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Eclipse plug-ins install</li>
+  <li>Toolchain(s) install</li>
+  <li>Windows build tools (make &amp; rm) install</li>
+  <li>Debugging tools install
+    <ul>
+      <li>Overview</li>
+      <li>SEGGER J-Link install</li>
+      <li>OpenOCD install</li>
+      <li>QEMU install</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li>Workspace preferences</li>
+  <li>Toolchain path</li>
+  <li>Project portability</li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li>Create a Blinky ARM test project</li>
+  <li>Create a Hello ARM test project</li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li>The managed build plug-in</li>
+  <li>The packs manager (CMSIS)</li>
+  <li>Assign a device</li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Cortex-M template</li>
+  <li>STM32Fxx templates</li>
+  <li>Freescale KLxx templates</li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>The SEGGER J-Link plug-in</li>
+  <li>The OpenOCD plug-in</li>
+  <li>The QEMU plug-in</li>
+  <li>The peripheral registers view (CMSIS)</li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install">QEMU Install</a></li>
+  <li>Eclipse plug-in</li>
+  <li><a href="/qemu/how-to-build">How to build</a></li>
+  <li><a href="/qemu/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install">OpenOCD Install</a></li>
+  <li>The OpenOCD plug-in</li>
+  <li><a href="/openocd/how-to-build">How to build</a></li>
+  <li><a href="/openocd/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/how-to-build">How to build</a></li>
+  <li><a href="/windows-build-tools/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li>Headless builds</li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li>Known issues</li>
+  <li>FAQ</li>
+  <li>SourceForge tickets</li>
+</ul>
+
+<h4 id="developer">Developer</h4>
+
+<ul>
+  <li>Wiki</li>
+  <li>Change log</li>
+  <li>Contribute</li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li>GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship">Sponsorship</a></li>
+</ul>
+
+<h4 id="about"><a href="">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>
