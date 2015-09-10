@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>ilg.gnuarmeclipse.managedbuild.cross - persistent values & toolchain ids</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <meta property="og:title" content="ilg.gnuarmeclipse.managedbuild.cross - persistent values & toolchain ids" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="ilg.gnuarmeclipse.managedbuild.cross - persistent values & toolchain ids">
+
+  <meta property="article:published_time" content="2015-09-11">
+
+
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.managedbuild.cross/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="page-title">ilg.gnuarmeclipse.managedbuild.cross - persistent values & toolchain ids</h1>
+
+
+<h2 id="the-build-tools-path">The build tools path</h2>
+
+<p>The build tools path preference is:</p>
+
+<pre><code>buildTools.path=C:/Program Files/GNU ARM Eclipse/Build Tools/bin
+</code></pre>
+
+<p>This value can be stored in all persistent scopes (Eclipse, workspace, project).</p>
+
+<h2 id="the-default-toolchain">The default toolchain</h2>
+
+<p>The default toolchain preference is:</p>
+
+<pre><code>toolchain.name=GNU Tools for ARM Embedded Processors
+</code></pre>
+
+<p>It is stored in the Eclipse scope.</p>
+
+<h2 id="toolchain-paths">Toolchain paths</h2>
+
+<p>The toolchain path preferences are:</p>
+
+<pre><code>toolchain.path.1287942917=/usr/local/gcc-arm-none-eabi-4_8-2014q2/bin
+</code></pre>
+
+<p>The toolchain ID is described below.</p>
+
+<p>Currently these preferences are stored in the Eclipse scope.</p>
+
+<h2 id="toolchain-ids">Toolchain IDs</h2>
+
+<p>The numerical value in the path property is the toolchain ID, computed as the absolute value of the <strong>Java hash of the name string</strong>.</p>
+
+<p>The list of supported toolchains and their IDs:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GNU Tools for ARM Embedded Processors</td>
+      <td>1287942917</td>
+    </tr>
+    <tr>
+      <td>Sourcery CodeBench Lite for ARM EABI</td>
+      <td>730666677</td>
+    </tr>
+    <tr>
+      <td>Sourcery CodeBench Lite for ARM GNU/Linux</td>
+      <td>132202943</td>
+    </tr>
+    <tr>
+      <td>devkitPro ARM EABI</td>
+      <td>599899493</td>
+    </tr>
+    <tr>
+      <td>Yagarto, Summon, etc. ARM EABI</td>
+      <td>1195655929</td>
+    </tr>
+    <tr>
+      <td>Linaro ARMv7 bare-metal EABI</td>
+      <td>976189281</td>
+    </tr>
+    <tr>
+      <td>Linaro ARMv7 big-endian bare-metal EABI</td>
+      <td>1341156853</td>
+    </tr>
+    <tr>
+      <td>Linaro ARMv7 Linux GNU EABI HF</td>
+      <td>280381241</td>
+    </tr>
+    <tr>
+      <td>Linaro ARMv7 big-endian Linux GNU EABI HF</td>
+      <td>1733862821</td>
+    </tr>
+    <tr>
+      <td>Linaro AArch64 bare-metal ELF</td>
+      <td>1871385609</td>
+    </tr>
+    <tr>
+      <td>Linaro AArch64 big-endian bare-metal ELF</td>
+      <td>2048201829</td>
+    </tr>
+    <tr>
+      <td>Linaro AArch64 Linux GNU</td>
+      <td>1246627524</td>
+    </tr>
+    <tr>
+      <td>Linaro AArch64 big-endian Linux GNU</td>
+      <td>681852136</td>
+    </tr>
+    <tr>
+      <td>Custom</td>
+      <td>2029746065</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note: in March 2015, the name of the <strong>Linaro ARMv7 big-endian Linux GNU EABI HF</strong> toolchain was updated to be consistent with the other names (lower case big-endian instead of Big-Endian).</p>
+
+<h2 id="defaults">Defaults</h2>
+
+<p>All persistent values can be given defaults, for example:</p>
+
+<pre><code>ilg.gnuarmeclipse.managedbuild.cross/buildTools.path=C:/Program Files/GNU ARM Eclipse/Build Tools/bin
+
+ilg.gnuarmeclipse.managedbuild.cross/toolchain.name=GNU Tools for ARM Embedded Processors
+ilg.gnuarmeclipse.managedbuild.cross/toolchain.path.1287942917=/usr/local/gcc-arm-none-eabi-4_8-2014q2/bin
+</code></pre>
+
+<p>Defaults only properties:</p>
+
+<pre><code># One of the following will be set to toolchain.search.path.1287942917.
+toolchain.search.path.windows.1287942917=${user.home}/AppData/Local/Programs/GNU Tools ARM Embedded;c:/Program Files/GNU Tools ARM Embedded;c:/Program Files (x86)/GNU Tools ARM Embedded
+toolchain.search.path.linux.1287942917=${user.home}/local:/usr/local
+toolchain.search.path.osx.1287942917=${user.home}/Applications/GNU Tools ARM Embedded:${user.home}/local:/usr/local
+
+# Set to false to disable the folder check.
+global.toolchain.path.strict=true
+global.buildTools.path.strict=true
+workspace.toolchain.path.strict=true
+workspace.buildTools.path.strict=true
+</code></pre>
+
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="/features">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li><a href="/downloads">Overview</a></li>
+  <li>Plug-ins (<a href="/releases">releases</a>)</li>
+  <li>Windows Build Tools (<a href="/windows-build-tools/releases">releases</a>)</li>
+  <li>QEMU (<a href="/qemu/releases">releases</a>)</li>
+  <li>OpenOCD (<a href="/openocd/releases">releases</a>)</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Eclipse plug-ins install</li>
+  <li>Toolchain(s) install</li>
+  <li>Windows build tools (make &amp; rm) install</li>
+  <li>Debugging tools install
+    <ul>
+      <li>Overview</li>
+      <li>SEGGER J-Link install</li>
+      <li>OpenOCD install</li>
+      <li>QEMU install</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li>Workspace preferences</li>
+  <li>Toolchain path</li>
+  <li>Project portability</li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li>Create a Blinky ARM test project</li>
+  <li>Create a Hello ARM test project</li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li>The managed build plug-in</li>
+  <li>The packs manager (CMSIS)</li>
+  <li>Assign a device</li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Cortex-M template</li>
+  <li>STM32Fxx templates</li>
+  <li>Freescale KLxx templates</li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>The SEGGER J-Link plug-in</li>
+  <li>The OpenOCD plug-in</li>
+  <li>The QEMU plug-in</li>
+  <li>The peripheral registers view (CMSIS)</li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install">QEMU Install</a></li>
+  <li>Eclipse plug-in</li>
+  <li><a href="/qemu/build-procedure">How to build</a></li>
+  <li><a href="/qemu/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install">OpenOCD Install</a></li>
+  <li>The OpenOCD plug-in</li>
+  <li><a href="/openocd/build-procedure">How to build</a></li>
+  <li><a href="/openocd/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure">How to build</a></li>
+  <li><a href="/windows-build-tools/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li>Headless builds</li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li>Known issues</li>
+  <li>FAQ</li>
+  <li>SourceForge tickets</li>
+</ul>
+
+<h4 id="developerdeveloper"><a href="/developer">Developer</a></h4>
+
+<ul>
+  <li>Wiki</li>
+  <li>Change log</li>
+  <li>Contribute</li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li>GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship">Sponsorship</a></li>
+</ul>
+
+<h4 id="aboutabout"><a href="/about">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>

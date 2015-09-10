@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>How to publish</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <meta property="og:title" content="How to publish" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="How to publish">
+
+  <meta property="article:published_time" content="2015-09-11">
+
+
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/publish-procedure/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="page-title">How to publish</h1>
+
+
+<p>The plug-ins are published both as update sites (on SourceForge, as an Eclipse update site, with multiple mirrors) and as archives (on GitHub as <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/releases">Releases</a>).</p>
+
+<p>The reason SourceForge is still used is that GitHub does not provide a convenient way to publish an Eclipse update site.</p>
+
+<h2 id="publish-on-the-sourceforge-test-site">Publish on the SourceForge test site</h2>
+
+<p>After each new build, to allow testing on various platforms, the plug-ins are published on the test site.</p>
+
+<p>For this, run the <code>scripts/publish-updates-test.command</code> (this is a script that can be executed directly in the OS X Finder).</p>
+
+<p>A typical session looks like:</p>
+
+<pre><code>$ /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/gnuarmeclipse-se.git/scripts/publish-updates-test.command ; exit;
+Updating Eclipse/updates-test
+Rsync-ing SourceForge Eclipse/updates-test site (-vrCt --exclude=scripts --exclude=.* --delete --checksum)
+Password:
+building file list ... done
+deleting features/ilg.gnuarmeclipse.templates.stm_2.3.1.201507311003.jar
+deleting features/ilg.gnuarmeclipse.templates.freescale_2.2.6.201507311003.jar
+deleting features/ilg.gnuarmeclipse.templates.cortexm_1.2.6.201507311003.jar
+deleting features/ilg.gnuarmeclipse.packs_2.2.2.201507311003.jar
+deleting features/ilg.gnuarmeclipse.managedbuild.cross_1.14.1.201507311003.jar
+deleting features/ilg.gnuarmeclipse.doc.user_1.1.1.201507311003.jar
+deleting features/ilg.gnuarmeclipse.debug.gdbjtag.qemu_2.1.1.201507311003.jar
+deleting features/ilg.gnuarmeclipse.debug.gdbjtag.openocd_3.2.1.201507311003.jar
+deleting features/ilg.gnuarmeclipse.debug.gdbjtag.jlink_3.2.1.201507311003.jar
+deleting features/ilg.gnuarmeclipse.codered_1.1.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.templates.stm_2.3.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.templates.freescale_2.2.6.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.templates.freescale.pe_1.2.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.templates.cortexm_1.2.6.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.templates.core_2.4.2.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.packs_1.2.3.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.packs.ui_1.2.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.packs.data_1.2.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.packs.core_1.1.2.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.managedbuild.packs_1.2.2.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.managedbuild.cross_1.14.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.doc.user_1.1.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.debug.packs_1.1.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.debug.gdbjtag_2.2.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.debug.gdbjtag.restart_1.3.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.debug.gdbjtag.qemu_2.1.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.debug.gdbjtag.openocd_3.2.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.debug.gdbjtag.jlink_3.2.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.debug.core_1.2.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.core_2.9.1.201507311003.jar
+deleting plugins/ilg.gnuarmeclipse.codered_1.1.1.201507311003.jar
+./
+artifacts.jar
+content.jar
+features/
+features/ilg.gnuarmeclipse.codered_1.1.1.201508011813.jar
+features/ilg.gnuarmeclipse.debug.gdbjtag.jlink_3.2.1.201508011813.jar
+features/ilg.gnuarmeclipse.debug.gdbjtag.openocd_3.2.1.201508011813.jar
+features/ilg.gnuarmeclipse.debug.gdbjtag.qemu_2.1.1.201508011813.jar
+features/ilg.gnuarmeclipse.doc.user_1.1.1.201508011813.jar
+features/ilg.gnuarmeclipse.managedbuild.cross_1.14.1.201508011813.jar
+features/ilg.gnuarmeclipse.packs_2.2.2.201508011813.jar
+features/ilg.gnuarmeclipse.templates.cortexm_1.2.6.201508011813.jar
+features/ilg.gnuarmeclipse.templates.freescale_2.2.6.201508011813.jar
+features/ilg.gnuarmeclipse.templates.stm_2.3.1.201508011813.jar
+plugins/
+plugins/ilg.gnuarmeclipse.codered_1.1.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.core_2.9.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.debug.core_1.2.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.debug.gdbjtag.jlink_3.2.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.debug.gdbjtag.openocd_3.2.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.debug.gdbjtag.qemu_2.1.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.debug.gdbjtag.restart_1.3.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.debug.gdbjtag_2.2.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.debug.packs_1.1.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.doc.user_1.1.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.managedbuild.cross_1.14.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.managedbuild.packs_1.2.2.201508011813.jar
+plugins/ilg.gnuarmeclipse.packs.core_1.1.2.201508011813.jar
+plugins/ilg.gnuarmeclipse.packs.data_1.2.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.packs.ui_1.2.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.packs_1.2.3.201508011813.jar
+plugins/ilg.gnuarmeclipse.templates.core_2.4.2.201508011813.jar
+plugins/ilg.gnuarmeclipse.templates.cortexm_1.2.6.201508011813.jar
+plugins/ilg.gnuarmeclipse.templates.freescale.pe_1.2.1.201508011813.jar
+plugins/ilg.gnuarmeclipse.templates.freescale_2.2.6.201508011813.jar
+plugins/ilg.gnuarmeclipse.templates.stm_2.3.1.201508011813.jar
+
+sent 5124827 bytes  received 890 bytes  330691.42 bytes/sec
+total size is 5120410  speedup is 1.00
+Published on the test site.
+ilg.gnuarmeclipse.repository-2.9.1-SNAPSHOT.zip -&gt; /Users/ilg/My Files/MacBookPro Projects/GNU ARM Eclipse/archive/ilg.gnuarmeclipse.repository-2.9.1-201508011813.zip
+When final, don't forget to publish the archive too!
+It is available from /Users/ilg/My Files/MacBookPro Projects/GNU ARM Eclipse/archive/ilg.gnuarmeclipse.repository-2.9.1-201508011813.zip
+Install new software from http://gnuarmeclipse.sourceforge.net/updates-test
+logout
+
+[Process completed]
+</code></pre>
+
+<h2 id="install-on-a-separate-eclipse">Install on a separate Eclipse</h2>
+
+<p>Test if the new build can be used as an update site, by installing from updates-test on a separate Eclipse (not the one used for development).</p>
+
+<h2 id="update-the-change-log">Update the Change log</h2>
+
+<p>Scan the Git log and add new entries to the <a href="/developer/change_log">Change log</a>, grouped by days.</p>
+
+<pre><code>git log --pretty='%cd * %s' --since 2015-06-24 --reverse --date=short &gt;~/Desktop/ChangeLog.txt
+</code></pre>
+
+<p>Add an entry with the latest feature &amp; plug-in versions, copied from the publish script output.</p>
+
+<h2 id="prepare-a-new-wiki-page-to-announce-the-release">Prepare a new Wiki page to announce the release</h2>
+
+<p>Add a new page to the project web.</p>
+
+<p>Name the post like: <em>Release v2.9.3 201508190739</em>, title: <em>Version 2.2.1-201404120702 released</em>.</p>
+
+<p>The structure of the post should contain:</p>
+
+<ul>
+  <li>date, as <em>Aug 1, 2015</em> (italics)</li>
+  <li>one intro paragraph with the summary of the changes</li>
+  <li>a link to <code>[Binary files »]()</code>, currently empty, to be filled with the release URL</li>
+  <li>
+    <h2 id="new-features">New features</h2>
+  </li>
+  <li>
+    <h2 id="addressed-bugs">Addressed bugs</h2>
+  </li>
+  <li>
+    <h2 id="template-issues">Template issues</h2>
+  </li>
+  <li>
+    <h2 id="other-changes">Other changes</h2>
+  </li>
+  <li>
+    <h2 id="known-problems">Known problems</h2>
+  </li>
+</ul>
+
+<p>An example would be the <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/wiki/Release-v2.9.1-201508011813">2.9.1</a> announcement.</p>
+
+<p>Scan the <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues">GitHub Issues</a> and the <a href="https://sourceforge.net/p/gnuarmeclipse/_list/tickets">SourceForge trackers</a> and add references to all tracked issues.</p>
+
+<p>Close issues on the way. Refer to them as <strong>[Issue:#22]</strong>. For SourceForge, refer to them as <strong>[bugs:#98]</strong>, <strong>[feature-requests:#60]</strong>, <strong>[support-requests:#81]</strong>.</p>
+
+<h2 id="publish-on-the-main-sourceforge-updates-site">Publish on the main SourceForge updates site</h2>
+
+<p>When all ready, run the <code>scripts/publish-updates.command</code>:</p>
+
+<pre><code>ilg-mbp:~ ilg$ /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/gnuarmeclipse-se-git/scripts/publish-updates.command ; exit;
+Do you really want to publish? (Yes)? Yes
+Updating Eclipse/updates
+Rsync-ing SourceForge Eclipse/updates site
+Password:
+building file list ... done
+deleting features/ilg.gnuarmeclipse.templates.stm_1.6.1.201401111229.jar
+deleting features/ilg.gnuarmeclipse.managedbuild.cross_1.7.1.201401111229.jar
+deleting features/ilg.gnuarmeclipse.debug.gdbjtag.jlink_1.2.1.201401111229.jar
+deleting plugins/ilg.gnuarmeclipse.templates.stm_1.6.1.201401111229.jar
+deleting plugins/ilg.gnuarmeclipse.templates.core_1.1.1.201401111229.jar
+deleting plugins/ilg.gnuarmeclipse.managedbuild.cross_1.7.1.201401111229.jar
+deleting plugins/ilg.gnuarmeclipse.debug.gdbjtag.jlink_1.2.1.201401111229.jar
+./
+artifacts.jar
+content.jar
+features/
+features/ilg.gnuarmeclipse.debug.gdbjtag.jlink_1.4.1.201402140758.jar
+features/ilg.gnuarmeclipse.debug.gdbjtag.openocd_1.1.1.201402140758.jar
+features/ilg.gnuarmeclipse.managedbuild.cross_1.8.1.201402140758.jar
+features/ilg.gnuarmeclipse.templates.freescale_1.2.1.201402140758.jar
+features/ilg.gnuarmeclipse.templates.stm_1.7.1.201402140758.jar
+features/org.eclipse.cdt.cross.arm.gnu_0.5.5.201310221100.jar
+plugins/
+plugins/ilg.gnuarmeclipse.debug.gdbjtag.jlink_1.4.1.201402140758.jar
+plugins/ilg.gnuarmeclipse.debug.gdbjtag.openocd_1.1.1.201402140758.jar
+plugins/ilg.gnuarmeclipse.debug.gdbjtag.restart_1.1.1.201402140758.jar
+plugins/ilg.gnuarmeclipse.managedbuild.cross_1.8.1.201402140758.jar
+plugins/ilg.gnuarmeclipse.templates.core_1.2.1.201402140758.jar
+plugins/ilg.gnuarmeclipse.templates.freescale.pe_1.1.2.201402140758.jar
+plugins/ilg.gnuarmeclipse.templates.freescale_1.2.1.201402140758.jar
+plugins/ilg.gnuarmeclipse.templates.stm_1.7.1.201402140758.jar
+plugins/org.eclipse.cdt.cross.arm.gnu_0.5.5.201310221100.jar
+
+sent 3926827 bytes  received 1714 bytes  270933.86 bytes/sec
+total size is 3999834  speedup is 1.02
+Published on the main site.
+logout
+
+[Process completed]
+</code></pre>
+
+<p>Do not close the terminal before copy/paste the list to the ChangeLog page!.</p>
+
+<h2 id="clean-the-mess-in-the-local-archive-folder">Clean the mess in the local archive folder</h2>
+
+<ul>
+  <li>go to <strong>…/GNU ARM Eclipse/archive</strong></li>
+  <li>move the latest archive to <strong>released</strong></li>
+  <li>move the other archives to <strong>internal</strong></li>
+</ul>
+
+<h2 id="create-a-new-github-release">Create a new GitHub release</h2>
+
+<ul>
+  <li>go to the <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/releases">GitHub Releases</a> page</li>
+  <li>click <strong>Draft a new release</strong></li>
+  <li>name the tag like <strong>v2.9.3-201508190739</strong></li>
+  <li>select the commit</li>
+  <li>name the release like <strong>GNU ARM Eclipse plug-ins v2.9.3-201508190739</strong></li>
+  <li>as description, copy the first paragraph from the Wiki page</li>
+  <li>add a link to the Wiki page <code>[Continue reading »]()</code></li>
+  <li>attach binaries (drag and drop from the archives folder will do it)</li>
+  <li>click the <strong>Publish Release</strong> button</li>
+</ul>
+
+<p>Note: at this moment the system should send a notification to all clients watching this project.</p>
+
+<h2 id="update-the-wiki-page">Update the Wiki page</h2>
+
+<p>Go to the Wiki <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/wiki/Releases">Releases</a> and update the page to include the link to the new Release.</p>
+
+<h2 id="update-the-latest-release-link">Update the <em>latest release</em> link</h2>
+
+<p>In the <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/wiki">main Wiki</a> page, go to the Releases section and update the <strong>latest release</strong> link to point to the newly added Wiki page and release.</p>
+
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="/features">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li><a href="/downloads">Overview</a></li>
+  <li>Plug-ins (<a href="/releases">releases</a>)</li>
+  <li>Windows Build Tools (<a href="/windows-build-tools/releases">releases</a>)</li>
+  <li>QEMU (<a href="/qemu/releases">releases</a>)</li>
+  <li>OpenOCD (<a href="/openocd/releases">releases</a>)</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Eclipse plug-ins install</li>
+  <li>Toolchain(s) install</li>
+  <li>Windows build tools (make &amp; rm) install</li>
+  <li>Debugging tools install
+    <ul>
+      <li>Overview</li>
+      <li>SEGGER J-Link install</li>
+      <li>OpenOCD install</li>
+      <li>QEMU install</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li>Workspace preferences</li>
+  <li>Toolchain path</li>
+  <li>Project portability</li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li>Create a Blinky ARM test project</li>
+  <li>Create a Hello ARM test project</li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li>The managed build plug-in</li>
+  <li>The packs manager (CMSIS)</li>
+  <li>Assign a device</li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Cortex-M template</li>
+  <li>STM32Fxx templates</li>
+  <li>Freescale KLxx templates</li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>The SEGGER J-Link plug-in</li>
+  <li>The OpenOCD plug-in</li>
+  <li>The QEMU plug-in</li>
+  <li>The peripheral registers view (CMSIS)</li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install">QEMU Install</a></li>
+  <li>Eclipse plug-in</li>
+  <li><a href="/qemu/build-procedure">How to build</a></li>
+  <li><a href="/qemu/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install">OpenOCD Install</a></li>
+  <li>The OpenOCD plug-in</li>
+  <li><a href="/openocd/build-procedure">How to build</a></li>
+  <li><a href="/openocd/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure">How to build</a></li>
+  <li><a href="/windows-build-tools/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li>Headless builds</li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li>Known issues</li>
+  <li>FAQ</li>
+  <li>SourceForge tickets</li>
+</ul>
+
+<h4 id="developerdeveloper"><a href="/developer">Developer</a></h4>
+
+<ul>
+  <li>Wiki</li>
+  <li>Change log</li>
+  <li>Contribute</li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li>GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship">Sponsorship</a></li>
+</ul>
+
+<h4 id="aboutabout"><a href="/about">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>

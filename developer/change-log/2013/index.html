@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>The 2013 GNU ARM Eclipse Plug-ins Change Log</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <meta property="og:title" content="The 2013 GNU ARM Eclipse Plug-ins Change Log" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="The 2013 GNU ARM Eclipse Plug-ins Change Log">
+
+  <meta property="article:published_time" content="2015-09-10">
+
+
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/change-log/2013/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="page-title">The 2013 GNU ARM Eclipse Plug-ins Change Log</h1>
+
+
+<p>Entries in this file are in reverse chronological order.</p>
+
+<h2 id="section">2013</h2>
+
+<h3 id="section-1">2013-12-30</h3>
+
+<ul>
+  <li>STM F4 template updated to v1.3.0</li>
+</ul>
+
+<h3 id="section-2">2013-12-29</h3>
+
+<ul>
+  <li>STM template structure simplified, only src and libs are sources</li>
+</ul>
+
+<h3 id="section-3">2013-12-28</h3>
+
+<ul>
+  <li>Toolchains settings tab visible for Make projects too</li>
+  <li>template for STM32F0 added and functional</li>
+  <li>version scheme changed
+    <ul>
+      <li>site increased from 1.1.7 to 1.8.1</li>
+      <li>cross increased from 1.1.6 to 1.7.1</li>
+      <li>stm increased from 1.1.5 to 1.6.1 (prepared for STM32F0 addition)</li>
+      <li>template core renamed from 1.1.0 to 1.1.1</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-4">2013-12-27</h3>
+
+<ul>
+  <li>internal builder trims, command line without INPUT, since the file name is solved by the input option (preferably placed at the end)</li>
+  <li>linker script quoted even on Unix (otherwise internal builder fails)</li>
+  <li>toolchain changes no longer crashes with NPE</li>
+  <li>toolchain change works even from empty toolchain (ProcessorExpert)</li>
+</ul>
+
+<h3 id="section-5">2013-12-24</h3>
+
+<ul>
+  <li>1.1.7-201312241058 published (cross_1.1.6, stm_1.1.5, jlink 1.1.2)</li>
+  <li>spaces in linker -T now accepted</li>
+  <li>GDB server/client absolute path with spaces accepted</li>
+</ul>
+
+<h3 id="section-6">2013-12-22</h3>
+
+<ul>
+  <li>1.1.7-201312221905 published (cross_1.1.6, stm_1.1.5, jlink 1.1.2)</li>
+  <li>stm32f4 template defines E407 green led</li>
+  <li>all plug-ins dependencies updated for Kepler 4.3 R</li>
+</ul>
+
+<h3 id="section-7">2013-12-21</h3>
+
+<ul>
+  <li>jlink updated for v4.80</li>
+</ul>
+
+<h3 id="section-8">2013-12-19</h3>
+
+<ul>
+  <li>jlink semihosting functional</li>
+</ul>
+
+<h3 id="section-9">2013-12-16</h3>
+
+<ul>
+  <li>jlink restart re-arms tbreak</li>
+</ul>
+
+<h3 id="section-10">2013-12-14</h3>
+
+<ul>
+  <li>jlink uses macros and path from build config</li>
+</ul>
+
+<h3 id="section-11">2013-12-13</h3>
+
+<ul>
+  <li>the GDB server console functional for jlink, version increased to 1.1.2</li>
+</ul>
+
+<h3 id="section-12">2013-12-11</h3>
+
+<ul>
+  <li>STM32F4 FMC/FSMC fixed</li>
+</ul>
+
+<h3 id="section-13">2013-12-10</h3>
+
+<ul>
+  <li>STM32F templates updated, version increased to 1.1.5</li>
+</ul>
+
+<h3 id="section-14">2013-11-28</h3>
+
+<ul>
+  <li>jlink 1.1.1 with Restart button functional</li>
+</ul>
+
+<h3 id="section-15">2013-11-25</h3>
+
+<ul>
+  <li>1.1.7, including jlink 1.1.0</li>
+</ul>
+
+<h3 id="section-16">2013-11-22</h3>
+
+<ul>
+  <li>1.1.6-201311220955 published (cross_1.1.6, stm_1.1.4)</li>
+  <li>template syscalls order (start with none)</li>
+  <li>semi-hosting spelled without ‘-‘</li>
+</ul>
+
+<h3 id="section-17">2013-11-21</h3>
+
+<ul>
+  <li>init part of startup tab implemented and functional</li>
+</ul>
+
+<h3 id="section-18">2013-11-20</h3>
+
+<ul>
+  <li>jlink with all tabs defined locally, functional, but no changes from DSF</li>
+</ul>
+
+<h3 id="section-19">2013-11-19</h3>
+
+<ul>
+  <li>jlink with two static defined tabs</li>
+  <li>Bundle-Localization: plugin added to template plugins to make the localisation substitution</li>
+</ul>
+
+<h3 id="section-20">2013-11-18</h3>
+
+<ul>
+  <li>output to bin, apiAnalysisBuilder added, Activator prints trace on output</li>
+  <li>STM32Fx plug-in name fixed (was F10x)</li>
+  <li>document stimulus port in swo write</li>
+  <li>preliminary jlink support plug-in; does not show tabs yet</li>
+</ul>
+
+<h3 id="section-21">2013-11-14</h3>
+
+<ul>
+  <li>_sbrk() checks _Heap_Limit instead of SP (RTOS can allocate it below)</li>
+</ul>
+
+<h3 id="section-22">2013-11-13</h3>
+
+<ul>
+  <li>echo updates-test url in publish-updates-test.command</li>
+  <li>automatically select fpv4spd16 for cortex-m4 and float hard or softfp</li>
+  <li>libgloss/syscalls.c included, to allow separate _sbrk</li>
+  <li>_sbrk enforces align(4)</li>
+</ul>
+
+<h3 id="section-23">2013-11-12</h3>
+
+<ul>
+  <li>main-tail common part used in all templates</li>
+  <li>_sbrk() added to standalone configurations</li>
+  <li>syscalls selection added to F3 &amp; F4 templates</li>
+  <li>_write_trace_semihosting_stdout() error processing more elaborate</li>
+  <li>add an empty __register_exitproc() in startup_cm.c to avoid startup crash when using startup files</li>
+</ul>
+
+<h3 id="section-24">2013-11-11</h3>
+
+<ul>
+  <li>cross 1.1.6, stm 1.1.4</li>
+  <li>multi-config reentrancy issue fixed</li>
+  <li>when using startup files, the DEBUG version of ResetHandler is not naked, to allow breakpoints</li>
+  <li>F1 template, separate main, libs and options for retarget, semihost, none</li>
+</ul>
+
+<h3 id="section-25">2013-11-10</h3>
+
+<ul>
+  <li>sections.ld _end definition based on _end_noinit</li>
+  <li>void* casts to init array pointers</li>
+  <li>Hello World templates include the librdimon linker options to compile directly</li>
+</ul>
+
+<h3 id="section-26">2013-11-09</h3>
+
+<ul>
+  <li>1.1.5-201311101919 released</li>
+  <li>.noinit section added to templates</li>
+  <li>multi configuration toolchain settings fixed</li>
+</ul>
+
+<h3 id="section-27">2013-11-08</h3>
+
+<ul>
+  <li>F3 template completed</li>
+</ul>
+
+<h3 id="section-28">2013-11-07</h3>
+
+<ul>
+  <li>trace functional on swo, semihosting output and debug</li>
+  <li>count seconds in main loop</li>
+</ul>
+
+<h3 id="section-29">2013-11-06</h3>
+
+<ul>
+  <li>F1 template updated after F4</li>
+</ul>
+
+<h3 id="section-30">2013-11-05</h3>
+
+<ul>
+  <li>F4 template functional</li>
+</ul>
+
+<h3 id="section-31">2013-11-03</h3>
+
+<ul>
+  <li>F4 template startup code in .c</li>
+</ul>
+
+<h3 id="section-32">2013-11-02</h3>
+
+<ul>
+  <li>changing the rm command now regenerates the makefile</li>
+</ul>
+
+<h3 id="section-33">2013-10-30</h3>
+
+<ul>
+  <li>1.1.4-201310301732 released</li>
+  <li>stm32f4x template added (v1.1.1)</li>
+  <li>stm32f1 ldscript flash start address changed to 0x08000000</li>
+  <li>on stm32f1 remove semi-hosting from Release</li>
+  <li>cross plug-in ARM inits adjusted to accomodate template settings</li>
+</ul>
+
+<h3 id="section-34">2013-10-29</h3>
+
+<ul>
+  <li>1.1.3-201310290722 released</li>
+  <li>large stm32f10x_stdperiph_lib_um.chm removed</li>
+</ul>
+
+<h3 id="section-35">2013-10-28</h3>
+
+<ul>
+  <li>templates.core added to handle option setting on debug configs</li>
+  <li>.st renamed .stm</li>
+</ul>
+
+<h3 id="section-36">2013-10-27</h3>
+
+<ul>
+  <li>for the moment, disable usb, version 1.1.0 ready</li>
+  <li>st feature added</li>
+</ul>
+
+<h3 id="section-37">2013-10-26</h3>
+
+<ul>
+  <li>ilg.gnuarmeclipse.templates.st added, for C/C++, configurable mem.ld, blink led sample</li>
+  <li>test <if condition="..."></if> in templates, ok</li>
+</ul>
+
+<h3 id="section-38">2013-10-25</h3>
+
+<ul>
+  <li>options .lstfilename renamed .asmlisting</li>
+</ul>
+
+<h3 id="section-39">2013-10-24</h3>
+
+<ul>
+  <li>Include files (-include) added</li>
+  <li>options *.includepaths renamed *.include.paths</li>
+  <li>category Directories renamed Includes</li>
+  <li>substitute macros in toolchain path</li>
+</ul>
+
+<h3 id="section-40">2013-10-23</h3>
+
+<ul>
+  <li>cs_make, cs_rm renamed cs-make, cs-rm, as per Sourcery definitions.</li>
+</ul>
+
+<h3 id="section-41">2013-10-22</h3>
+
+<ul>
+  <li>0.5.5.201310221100 &amp; 1.1.2.201310221203</li>
+  <li>[bug:#56] due to a .classpath bug in 0.5.5, Maven generated plug-in could not find any .class file; fixed (FE)</li>
+  <li>min jdk1.6 and all platforms allowed (to match SE no restriction build)</li>
+</ul>
+
+<h3 id="section-42">2013-10-21</h3>
+
+<ul>
+  <li>the Toolchains OK button is functional now</li>
+  <li>more explanatory comments in the mem.ld file</li>
+</ul>
+
+<h3 id="section-43">2013-10-20</h3>
+
+<ul>
+  <li>”\n” added to printf() in C templates</li>
+  <li>hello world message streamlined</li>
+</ul>
+
+<h3 id="section-44">2013-10-19</h3>
+
+<ul>
+  <li>version 1.1.1.201310191701 released</li>
+  <li>linker script file changed to multiple files; no more browse and spaces escaped in code</li>
+  <li>new ‘Custom’ toolchain added as arm-none-eabi-</li>
+  <li>a new Cortex-M3 template added</li>
+</ul>
+
+<h3 id="section-45">2013-10-17</h3>
+
+<ul>
+  <li>SourceForge site updated</li>
+  <li>documentation updated</li>
+</ul>
+
+<h3 id="section-46">2013-10-16</h3>
+
+<ul>
+  <li>publish script added (SE)</li>
+  <li>version 0.5.5.201310111213 released (end of life)</li>
+  <li>version 1.1.0.201310161930 released (experimental)</li>
+</ul>
+
+<h3 id="section-47">2013-10-15</h3>
+
+<ul>
+  <li>CXA_ATEXEIT twice, fixed</li>
+  <li>createflash.choice ID fixed</li>
+  <li>maven tycho functional</li>
+</ul>
+
+<h3 id="section-48">2013-10-13</h3>
+
+<ul>
+  <li>Toolchain Settings tab displayed only for this plug-in</li>
+  <li>internal ids containing .base. corrected</li>
+</ul>
+
+<h3 id="section-49">2013-10-12</h3>
+
+<ul>
+  <li>change dependencies to Kepler CDT 8.2.0</li>
+</ul>
+
+<h3 id="section-50">2013-10-11</h3>
+
+<ul>
+  <li>toolchain family renamed architecture; toolchain tab added and functional</li>
+</ul>
+
+<h3 id="section-51">2013-10-09</h3>
+
+<ul>
+  <li>shared libs functionality restored</li>
+</ul>
+
+<h3 id="section-52">2013-10-07</h3>
+
+<ul>
+  <li>separate Optimization entry</li>
+</ul>
+
+<h3 id="section-53">2013-10-05</h3>
+
+<ul>
+  <li>cross_toolchain_flags added as macro and used for discovery</li>
+</ul>
+
+<h3 id="section-54">2013-09-30</h3>
+
+<ul>
+  <li>wizard to select toolchain functional, except discovery</li>
+</ul>
+
+<h3 id="section-55">2013-09-28</h3>
+
+<ul>
+  <li>version 0.5.5.201309281715 released (FE)</li>
+  <li>new version ids renamed to ilg.gnuarmeclipse.managedbuild.cross*</li>
+  <li>ARM configuration with arm/thumb, unalignedaccess added, selection IDs end in .enable/.disable instead of .yes/.no</li>
+</ul>
+
+<h3 id="section-56">2013-09-27</h3>
+
+<ul>
+  <li>missing -pg added to most configs (FE)</li>
+  <li>first functional SE (1.1.0), based on 0.5.5, with all commands configurable, including make and rm (using config macros)</li>
+</ul>
+
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="/features">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li><a href="/downloads">Overview</a></li>
+  <li>Plug-ins (<a href="/releases">releases</a>)</li>
+  <li>Windows Build Tools (<a href="/windows-build-tools/releases">releases</a>)</li>
+  <li>QEMU (<a href="/qemu/releases">releases</a>)</li>
+  <li>OpenOCD (<a href="/openocd/releases">releases</a>)</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Eclipse plug-ins install</li>
+  <li>Toolchain(s) install</li>
+  <li>Windows build tools (make &amp; rm) install</li>
+  <li>Debugging tools install
+    <ul>
+      <li>Overview</li>
+      <li>SEGGER J-Link install</li>
+      <li>OpenOCD install</li>
+      <li>QEMU install</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li>Workspace preferences</li>
+  <li>Toolchain path</li>
+  <li>Project portability</li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li>Create a Blinky ARM test project</li>
+  <li>Create a Hello ARM test project</li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li>The managed build plug-in</li>
+  <li>The packs manager (CMSIS)</li>
+  <li>Assign a device</li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Cortex-M template</li>
+  <li>STM32Fxx templates</li>
+  <li>Freescale KLxx templates</li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>The SEGGER J-Link plug-in</li>
+  <li>The OpenOCD plug-in</li>
+  <li>The QEMU plug-in</li>
+  <li>The peripheral registers view (CMSIS)</li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install">QEMU Install</a></li>
+  <li>Eclipse plug-in</li>
+  <li><a href="/qemu/build-procedure">How to build</a></li>
+  <li><a href="/qemu/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install">OpenOCD Install</a></li>
+  <li>The OpenOCD plug-in</li>
+  <li><a href="/openocd/build-procedure">How to build</a></li>
+  <li><a href="/openocd/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure">How to build</a></li>
+  <li><a href="/windows-build-tools/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li>Headless builds</li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li>Known issues</li>
+  <li>FAQ</li>
+  <li>SourceForge tickets</li>
+</ul>
+
+<h4 id="developerdeveloper"><a href="/developer">Developer</a></h4>
+
+<ul>
+  <li>Wiki</li>
+  <li>Change log</li>
+  <li>Contribute</li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li>GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship">Sponsorship</a></li>
+</ul>
+
+<h4 id="aboutabout"><a href="/about">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>

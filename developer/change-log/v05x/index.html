@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>The GNU ARM Eclipse Plug-ins v0.5.x Change Log</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <meta property="og:title" content="The GNU ARM Eclipse Plug-ins v0.5.x Change Log" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="The GNU ARM Eclipse Plug-ins v0.5.x Change Log">
+
+  <meta property="article:published_time" content="2015-09-10">
+
+
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/change-log/v05x/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="page-title">The GNU ARM Eclipse Plug-ins v0.5.x Change Log</h1>
+
+
+<p>Entries in this file are in direct chronological order.</p>
+
+<h2 id="section">2009</h2>
+
+<h3 id="section-1">2009-08-22</h3>
+
+<ul>
+  <li>C/C++ linker options added</li>
+  <li>–Xlinker –print-gc-sections</li>
+  <li>–Xlinker –print-map</li>
+  <li>–Xlinker –cref</li>
+  <li>C/C++ compiler options added</li>
+  <li>-fno-inline-functions</li>
+  <li>C++ compiler options added</li>
+  <li>-Wabi</li>
+  <li>-Weffc++</li>
+  <li>C/C++ compiler optimization default to -Os instead of -O3</li>
+  <li>browse type ‘file’ removed from Map Filename, since it is not properly rendered</li>
+</ul>
+
+<h3 id="section-2">2009-08-21</h3>
+
+<ul>
+  <li>patches from Freddie Chopin applied</li>
+  <li>C/C++ linker –gc-sections added</li>
+  <li>C/C++ linker -nostartfiles enabled for C, disabled for C++</li>
+  <li>C/C++ linker -nostdlibs disabled</li>
+  <li>C++ compiler -no-rtti option added</li>
+  <li>C/C++ compiler signed char as option, default is unsigned (compiler default)</li>
+  <li>experimental toolchain presence support not completed, temporarily disabled until properly implemented</li>
+</ul>
+
+<h3 id="section-3">2009-04-18</h3>
+
+<ul>
+  <li>‘-nostdlib’ enabled by default for linkers</li>
+  <li>‘CodeSourcery G++ Lite’ for Windows toolchain presence tested (by attempting to execute ‘arm-none-eabi-gcc’) [experimental]</li>
+  <li>‘CodeSourcery G++ Lite’ for Linux toolchain presence tested (by attempting to execute ‘arm-none-eabi-gcc’) [experimental]</li>
+  <li>‘GNUARM’ (and derivatives) toolchain presence tested (by attempting to execute ‘arm-elf-gcc’) [experimental]</li>
+  <li>PATH automatic discovery for Windows versions of ‘CodeSourcery G++ Lite’ and ‘GNUARM 4.1.1’, by using Windows Registry information. No need to have them in the system PATH.</li>
+</ul>
+
+<h3 id="section-4">2009-04-07</h3>
+
+<ul>
+  <li>C Linker empty makefile bug fixed (spaces in secondaryOutputs/targetTool)</li>
+  <li>about.* files moved here from the feature project; the ARM icon is now visible in the Help -&gt; About window.</li>
+  <li>update site URL renamed from <a href="http://gnuarmeclipse.sourceforge.net/update">http://gnuarmeclipse.sourceforge.net/update</a> to <a href="http://gnuarmeclipse.sourceforge.net/updates">http://gnuarmeclipse.sourceforge.net/updates</a></li>
+</ul>
+
+<h3 id="section-5">2009-04-03</h3>
+
+<ul>
+  <li>org.eclipse.cdt.core.templateAssociations (schema in org.eclipse.cdt.core) points to all toolchain bases, as specified in schema examples and used in org.eclipse.cdt.managebuilder.gnu.ui. (not yet functional)</li>
+</ul>
+
+<h3 id="section-6">2009-04-07</h3>
+
+<ul>
+  <li>Discovery Options implemented for all toolchains.</li>
+</ul>
+
+<h3 id="section-7">2009-04-13</h3>
+
+<ul>
+  <li>patches from Freddie Chopin applied</li>
+  <li>linker –gc-sections added</li>
+  <li>linker -nostartfiles enabled for C, disabled for C++</li>
+  <li>linker -nostdlibs disabled</li>
+  <li>C++ compiler -no-rtti option added</li>
+  <li>C/C++ compiler signed char as option, default is unsigned (compiler default)</li>
+  <li>recompiled with Eclipse 3.5 &amp; CDT 6.0</li>
+</ul>
+
+<h2 id="section-8">2010</h2>
+
+<h3 id="section-9">2010-01-15</h3>
+
+<ul>
+  <li>ported on Eclipse 3.5 SR1 (Galileo), with CDT 6.0</li>
+</ul>
+
+<h3 id="section-10">2010-01-26</h3>
+
+<ul>
+  <li>license changed from GPL to EPL</li>
+</ul>
+
+<h3 id="section-11">2010-01-15</h3>
+
+<ul>
+  <li>no functional changes, just a clean repack of the update site and of the published archive.</li>
+</ul>
+
+<h3 id="section-12">2010-04-20</h3>
+
+<ul>
+  <li>the confusion between Host OS and Guest OS when selecting the CodeSourcery G++ Lite toolchain was finally sorted out. The basic toolchain when targeting for embedded systems is ARM EABI. The arm-none-eabi toolchain is intended to generate programs for running on ARM ported Linux, not embedded systems.</li>
+</ul>
+
+<h3 id="section-13">2010-06-09</h3>
+
+<ul>
+  <li>GNU/Linux CodeSourcery toolchain fixed (changed from arm-none-linux-gnueabi-* to arm-none-eabi-*)</li>
+</ul>
+
+<h3 id="section-14">2010-06-28</h3>
+
+<ul>
+  <li>properties on a source file triggered an error when selecting Tool Settings. This was due to a bug in ARMManagedCommandLineGenerator, where the parent of Tool may be ResourceConfiguration instead of ToolChain (bug #3024374 added a better support, by climbing the hierarchy).</li>
+</ul>
+
+<h3 id="section-15">2010-07-06</h3>
+
+<ul>
+  <li>development ported on Mac OS X, Eclipse 3.5.2</li>
+  <li>CodeSourcery added to Mac OS X</li>
+  <li>Mac OS X missing GNUARM configuration reference fixed</li>
+  <li>(#3024374) individual properties processed; ITool.getParent() should climb up the hierarchy via getSuperClass(); this is also a better fix for #3021757.</li>
+  <li>(#3024483) New Yagarto Toolchain uses EABI; Yagarto toolchain split from common Windows GCC configurations</li>
+</ul>
+
+<h3 id="section-16">2010-07-07</h3>
+
+<ul>
+  <li>Yagarto discovery code was referring to CodeSourcery; fixed</li>
+  <li>(#3014562) support for devkitPro ARM toolchain added (arm-eabi-g++)</li>
+</ul>
+
+<h3 id="section-17">2010-07-13</h3>
+
+<ul>
+  <li>(#3028902) assembler listing support added to source files as Wa,-adhlns=”$@.lst”</li>
+</ul>
+
+<h3 id="section-18">2010-07-15</h3>
+
+<ul>
+  <li>the Wiki page <a href="/How_to_build" title="wikilink">How to build</a> and this page (Change log) were created from project text files.</li>
+</ul>
+
+<h3 id="section-19">2010-07-29</h3>
+
+<p>version 0.5.3.201007292300 released</p>
+
+<ul>
+  <li>the Java code is compiled with 1.5 restrictions, otherwise it does not work on most platforms (#3036456)</li>
+  <li>the update site was regenerated from scratch, without build.properties and it seems the categories are now displayed (#2833594)</li>
+  <li>the files ChangeLog.txt, HowToBuild.txt were removed from the repository</li>
+  <li>the file README.txt was simplified</li>
+</ul>
+
+<h3 id="section-20">2010-07-31</h3>
+
+<p>version 0.5.3.201007311800 released</p>
+
+<ul>
+  <li>the download area was reorganised, files are now published in subfolders like <strong>gnuarmeclipse/0.5.3</strong></li>
+  <li>the old files were moved to Previous Releases</li>
+  <li>the gnuarm-update.sh script was updated to publish both to the update site and to the download area</li>
+  <li>the missing category in the update site seems to be a bug in the Eclipse p2 code; the workaround is to remove the fature and reassign it before the build</li>
+  <li>this release shows the category as <strong>CDT GNU Cross Development Tools</strong></li>
+</ul>
+
+<h3 id="section-21">2010-08-10</h3>
+
+<ul>
+  <li>(#2744055) code to identify options change added; interface update code still to be found.</li>
+  <li>the license code in the feature project was fixed (the first line contained a space after the final ‘\’, terminating it prematurely)</li>
+</ul>
+
+<h3 id="section-22">2010-10-06</h3>
+
+<ul>
+  <li>version 0.5.3.201010061939 released</li>
+  <li>(#3077091) new -mcpu= values: cortex-a5, cortex-a9, cortex-m1, cortex-m0, iwmmxt2, marvell-f</li>
+</ul>
+
+<h3 id="section-23">2010-10-14</h3>
+
+<ul>
+  <li>verson 0.5.3.201010141144 released</li>
+  <li>(#3087264) new -mcpu= values: cortex-m4</li>
+</ul>
+
+<h2 id="section-24">2011</h2>
+
+<h3 id="section-25">2011-11-26</h3>
+
+<ul>
+  <li>version 0.5.4.201111262136 released</li>
+  <li>mainly ported to Eclipse 3.7 (CDT 8.0), no functional changes</li>
+</ul>
+
+<h3 id="section-26">2011-12-03</h3>
+
+<ul>
+  <li>version 0.5.4.201112030833 released</li>
+  <li>clean regenerate the update site, to avoid the need to uncheck “Group by Category”</li>
+</ul>
+
+<h2 id="section-27">2012</h2>
+
+<h3 id="section-28">2012-01-24</h3>
+
+<ul>
+  <li>(3475135) support for Mac OS X Yagarto was added</li>
+  <li>the scripts/publish-updates.sh was added, no need to commit binaries to SVN</li>
+</ul>
+
+<h3 id="section-29">2012-01-26</h3>
+
+<ul>
+  <li>version 0.5.4.201201250003 released</li>
+  <li>(3480038) Plug-in install on Eclipse Indigo 3.7.1 fixed (the plug-in itself was ok, the problem was in the publish procedure, updated recently).</li>
+</ul>
+
+<h3 id="section-30">2012-02-17</h3>
+
+<ul>
+  <li>(3479739) support for Summon Toolchain added (patch 3487283 applied)</li>
+  <li>(3479737) support for floating point added as
+    <ul>
+      <li>-mfloat-abi=name and</li>
+      <li>-mfpu=name</li>
+    </ul>
+  </li>
+  <li>support for endiannes added as
+    <ul>
+      <li>-mlittle-endian and</li>
+      <li>-mbig-endian</li>
+    </ul>
+  </li>
+  <li>(3148636) label for -fdata sections renamed as “Data Sections”</li>
+</ul>
+
+<h3 id="section-31">2012-02-21</h3>
+
+<ul>
+  <li>the Windows path for Summon toolchain was changed from <em>arm-toolchain</em> to <em>summon-arm-toolchain</em></li>
+</ul>
+
+<h3 id="section-32">2012-02-25</h3>
+
+<ul>
+  <li>version 0.5.4.201202210114 released</li>
+</ul>
+
+<h2 id="section-33">2013</h2>
+
+<h3 id="section-34">2013-09-16</h3>
+
+<ul>
+  <li>start work on 0.5.5</li>
+  <li>New cpus: arm720, arm710t, arm720t, arm740t, strongarm1110, arm1156t2f-s, cortex-a7, cortex-a15, cortex-a53, cortex-m0plus, marvell-pj4, fa526, fa626, fa606te, fa626te, fmp626, fa726te</li>
+  <li>accept spaces in project names (but still need CDT patch)</li>
+</ul>
+
+<h3 id="section-35">2013-09-17</h3>
+
+<ul>
+  <li>Toolchains added:
+    <ul>
+      <li>Tools for Embedded (arm-none-eabi-)</li>
+      <li>Sourcery Lite Linux (arm-none-linux-gnueabi-)</li>
+      <li>Linaro AArch64 Bare (aarch64-none-elf-)</li>
+      <li>Linaro AArch64 Linux (aarch64-linux-gnu-)</li>
+      <li>Linaro GNUEABIHF Linux (arm-linux-gnueabihf-)</li>
+    </ul>
+  </li>
+  <li>xml name convention changed, to use parenthesis</li>
+  <li>new FPU types: ‘fp-armv8’, ‘neon-fp-armv8’, and ‘crypto-neon-fp-armv8’.</li>
+  <li>FPU Type enabled even for default Float ABI</li>
+  <li>startfiles always enabled</li>
+  <li>toolchain default debug format instead of dwarf</li>
+  <li>elf32-littlearm, elf32-bigarm, elf32-little, elf32-big, tekhex removed from CreateFlash output type;</li>
+  <li>flash binary outputType automatically computed</li>
+</ul>
+
+<h3 id="section-36">2013-09-18</h3>
+
+<ul>
+  <li>compiler -ffunction-sections, -fdata-sections and linker -Xlinker –gc-sections, defaults true</li>
+  <li>C/C++ Hello ARM World templates added locally</li>
+</ul>
+
+<h3 id="section-37">2013-09-19</h3>
+
+<ul>
+  <li>AArch64 target configuration using separate structure</li>
+</ul>
+
+<h3 id="section-38">2013-09-24</h3>
+
+<ul>
+  <li>second edition (SE) started, git created</li>
+</ul>
+
+<h3 id="section-39">2013-09-27</h3>
+
+<ul>
+  <li>missing -pg added to most configs</li>
+  <li>first functional SE (1.1.0), based on 0.5.5, with all commands configurable, including make and rm (using config macros)</li>
+</ul>
+
+<h3 id="section-40">2013-09-28</h3>
+
+<ul>
+  <li>version 0.5.5.201309281715 released</li>
+  <li>new version ids renamed to ilg.gnuarmeclipse.managedbuild.cross* (SE)</li>
+  <li>ARM configuration with arm/thumb, unalignedaccess added, selection IDs end in .enable/.disable instead of .yes/.no (SE)</li>
+</ul>
+
+<h3 id="section-41">2013-09-30</h3>
+
+<ul>
+  <li>wizard to select toolchain functional, except discovery (SE)</li>
+</ul>
+
+<h3 id="section-42">2013-10-05</h3>
+
+<ul>
+  <li>cross_toolchain_flags added as macro and used for discovery (SE)</li>
+</ul>
+
+<h3 id="section-43">2013-10-07</h3>
+
+<ul>
+  <li>separate Optimization entry (SE)</li>
+</ul>
+
+<h3 id="section-44">2013-10-09</h3>
+
+<ul>
+  <li>shared libs functionality restored (SE)</li>
+</ul>
+
+<h3 id="section-45">2013-10-11</h3>
+
+<ul>
+  <li>toolchain family renamed architecture; toolchain tab added and functional (SE)</li>
+</ul>
+
+<h3 id="section-46">2013-10-12</h3>
+
+<ul>
+  <li>change dependencies to Kepler CDT 8.2.0 (SE)</li>
+</ul>
+
+<h3 id="section-47">2013-10-13</h3>
+
+<ul>
+  <li>Toolchain Settings tab displayed only for this plug-in (SE)</li>
+  <li>internal ids containing .base. corrected (SE)</li>
+</ul>
+
+<h3 id="section-48">2013-10-15</h3>
+
+<ul>
+  <li>CXA_ATEXEIT twice, fixed (SE)</li>
+  <li>createflash.choice ID fixed (SE)</li>
+  <li>maven tycho functional (SE)</li>
+</ul>
+
+<h3 id="section-49">2013-10-16</h3>
+
+<ul>
+  <li>publish script added (SE)</li>
+  <li>version 0.5.5.201310111213 released (end of life)</li>
+  <li>version 1.1.0.201310161930 released (experimental)</li>
+</ul>
+
+<p>Note: al further changes refer, unless explicitly mentioned, to SE.</p>
+
+<h3 id="section-50">2013-10-17</h3>
+
+<ul>
+  <li>SourceForge site updated</li>
+  <li>documentation updated</li>
+</ul>
+
+<h3 id="section-51">2013-10-19</h3>
+
+<ul>
+  <li>version 1.1.1.201310191701 released</li>
+  <li>linker script file changed to multiple files; no more browse and spaces escaped in code</li>
+  <li>new ‘Custom’ toolchain added as arm-none-eabi-</li>
+  <li>a new Cortex-M3 template added</li>
+</ul>
+
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="/features">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li><a href="/downloads">Overview</a></li>
+  <li>Plug-ins (<a href="/releases">releases</a>)</li>
+  <li>Windows Build Tools (<a href="/windows-build-tools/releases">releases</a>)</li>
+  <li>QEMU (<a href="/qemu/releases">releases</a>)</li>
+  <li>OpenOCD (<a href="/openocd/releases">releases</a>)</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Eclipse plug-ins install</li>
+  <li>Toolchain(s) install</li>
+  <li>Windows build tools (make &amp; rm) install</li>
+  <li>Debugging tools install
+    <ul>
+      <li>Overview</li>
+      <li>SEGGER J-Link install</li>
+      <li>OpenOCD install</li>
+      <li>QEMU install</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li>Workspace preferences</li>
+  <li>Toolchain path</li>
+  <li>Project portability</li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li>Create a Blinky ARM test project</li>
+  <li>Create a Hello ARM test project</li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li>The managed build plug-in</li>
+  <li>The packs manager (CMSIS)</li>
+  <li>Assign a device</li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>Cortex-M template</li>
+  <li>STM32Fxx templates</li>
+  <li>Freescale KLxx templates</li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li>Overview</li>
+  <li>The SEGGER J-Link plug-in</li>
+  <li>The OpenOCD plug-in</li>
+  <li>The QEMU plug-in</li>
+  <li>The peripheral registers view (CMSIS)</li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install">QEMU Install</a></li>
+  <li>Eclipse plug-in</li>
+  <li><a href="/qemu/build-procedure">How to build</a></li>
+  <li><a href="/qemu/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install">OpenOCD Install</a></li>
+  <li>The OpenOCD plug-in</li>
+  <li><a href="/openocd/build-procedure">How to build</a></li>
+  <li><a href="/openocd/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure">How to build</a></li>
+  <li><a href="/windows-build-tools/releases">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li>Headless builds</li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li>Known issues</li>
+  <li>FAQ</li>
+  <li>SourceForge tickets</li>
+</ul>
+
+<h4 id="developerdeveloper"><a href="/developer">Developer</a></h4>
+
+<ul>
+  <li>Wiki</li>
+  <li>Change log</li>
+  <li>Contribute</li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li>GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship">Sponsorship</a></li>
+</ul>
+
+<h4 id="aboutabout"><a href="/about">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>

@@ -49,6 +49,14 @@
     <lastmod>2015-09-08T15:49:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/2015/03/24/openocd-v0.9.0-20150324-dev-released/</loc>
+    <lastmod>2015-09-11T00:36:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/03/24/openocd-v0.8.0-20150324-released/</loc>
+    <lastmod>2015-09-11T00:36:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/2015/03/21/windows-build-tools-v2.4-20150321-released/</loc>
     <lastmod>2015-09-08T15:45:00+03:00</lastmod>
   </url>
@@ -59,6 +67,10 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/2015/03/20/openocd-v0.9.0-20150320-released/</loc>
     <lastmod>2015-09-10T12:26:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/03/20/openocd-v0.8.0-20150320-released/</loc>
+    <lastmod>2015-09-11T00:36:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/2015/02/28/plugins-v2.6.1-201502281154-released/</loc>
@@ -79,6 +91,10 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/2015/01/21/windows-build-tools-v2.1-20150121-released/</loc>
     <lastmod>2015-09-08T15:34:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/2015/01/19/openocd-v0.8.0-20150119-released/</loc>
+    <lastmod>2015-09-11T00:36:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/2014/12/19/plugins-v2.5.1-201412191510-released/</loc>
@@ -197,24 +213,96 @@
     <lastmod>2015-09-10T16:04:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/about/</loc>
+    <lastmod>2015-09-10T22:58:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/build-prerequisites/</loc>
+    <lastmod>2015-09-10T23:20:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/build-procedure/</loc>
+    <lastmod>2015-09-10T22:37:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/build-procedure/</loc>
+    <lastmod>2015-09-10T23:22:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/openocd/build-procedure/</loc>
+    <lastmod>2015-09-10T22:36:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/windows-build-tools/build-procedure/</loc>
+    <lastmod>2015-09-10T22:37:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/change-log/2013/</loc>
+    <lastmod>2015-09-10T23:28:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/qemu/change-log/2014/</loc>
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/change-log/</loc>
-    <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/change-log/2014/</loc>
+    <lastmod>2015-09-10T23:26:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/change-log/v05x/</loc>
+    <lastmod>2015-09-10T23:28:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/change-log/</loc>
     <lastmod>2015-09-09T21:50:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/developer/change-log/</loc>
+    <lastmod>2015-09-10T23:24:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/change-log/</loc>
+    <lastmod>2015-09-08T00:31:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/change-log/</loc>
     <lastmod>2015-09-08T16:10:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/windows-build-tools/</loc>
-    <lastmod>2015-09-08T15:53:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/</loc>
+    <lastmod>2015-09-10T21:31:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/development-environment/</loc>
+    <lastmod>2015-09-10T21:32:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/downloads/</loc>
+    <lastmod>2015-09-10T22:58:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/eclipse-debugging-options/</loc>
+    <lastmod>2015-09-10T21:33:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/eclipse-runtime-preferences/</loc>
+    <lastmod>2015-09-10T21:37:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/eclipse-tips-tricks/</loc>
+    <lastmod>2015-09-10T23:54:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/extension-ilg.gnuarmeclipse.debug.core.cprojectextra/</loc>
+    <lastmod>2015-09-10T23:57:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/extension-ilg.gnuarmeclipse.debug.core.svdpath/</loc>
+    <lastmod>2015-09-10T23:58:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/features/</loc>
+    <lastmod>2015-09-10T22:59:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/</loc>
@@ -229,19 +317,15 @@
     <lastmod>2015-09-09T21:53:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/how-to-build/</loc>
-    <lastmod>2015-09-09T22:03:00+03:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/how-to-build/</loc>
-    <lastmod>2015-09-08T00:31:00+03:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/windows-build-tools/how-to-build/</loc>
-    <lastmod>2015-09-08T16:20:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/windows-build-tools/</loc>
+    <lastmod>2015-09-08T15:53:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/install/</loc>
+    <lastmod>2015-09-09T22:43:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/install/</loc>
     <lastmod>2015-09-09T22:43:00+03:00</lastmod>
   </url>
   <url>
@@ -249,16 +333,12 @@
     <lastmod>2015-09-08T16:20:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/install/</loc>
-    <lastmod>2015-09-09T22:43:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/j-link-stm32-boards/</loc>
+    <lastmod>2015-09-10T21:31:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/news/</loc>
     <lastmod>2015-09-10T02:29:00+03:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/windows-build-tools/overview/</loc>
-    <lastmod>2015-09-08T15:58:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/overview/</loc>
@@ -269,12 +349,40 @@
     <lastmod>2015-09-08T00:31:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/windows-build-tools/overview/</loc>
+    <lastmod>2015-09-08T15:58:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/pad-file/</loc>
+    <lastmod>2015-09-11T00:00:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/finance/paypal-success/</loc>
     <lastmod>2015-09-08T18:38:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/licenses/plug-ins/</loc>
     <lastmod>2015-09-09T14:30:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.debug.gdbjtag.jlink/</loc>
+    <lastmod>2015-09-11T00:02:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.debug.gdbjtag.openocd/</loc>
+    <lastmod>2015-09-11T00:03:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.debug.gdbjtag.qemu/</loc>
+    <lastmod>2015-09-11T00:05:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/preferences-ilg.gnuarmeclipse.managedbuild.cross/</loc>
+    <lastmod>2015-09-11T00:06:00+03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/publish-procedure/</loc>
+    <lastmod>2015-09-11T00:07:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/releases/</loc>
@@ -285,8 +393,12 @@
     <lastmod>2015-09-10T12:08:00+03:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/developer/releases/</loc>
+    <lastmod>2015-09-11T00:17:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/releases/</loc>
-    <lastmod>2015-09-10T12:33:00+03:00</lastmod>
+    <lastmod>2015-09-11T00:43:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/finance/sponsorship/</loc>
