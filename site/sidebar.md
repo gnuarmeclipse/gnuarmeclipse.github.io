@@ -15,7 +15,7 @@
 #### Downloads
 
 * [Overview]({{ site.baseurl }}/downloads)
-* Plug-ins ([releases]({{ site.baseurl }}/releases))
+* Plug-ins ([releases]({{ site.baseurl }}/developer/releases))
 * Windows Build Tools ([releases]({{ site.baseurl }}/windows-build-tools/releases))
 * QEMU ([releases]({{ site.baseurl }}/qemu/releases))
 * OpenOCD ([releases]({{ site.baseurl }}/openocd/releases))
