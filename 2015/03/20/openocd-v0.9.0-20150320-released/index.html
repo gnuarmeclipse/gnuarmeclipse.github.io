@@ -7,18 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>The 2015 OpenOCD Change Log</title>
-  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+  <title>GNU ARM Eclipse OpenOCD 0.9.0-20150320*-dev released</title>
+  <meta name="description" content="The latest development version of OpenOCD (0.9.0-dev) is now available as multiple platform specific binary packages.">
 
-  <meta property="og:title" content="The 2015 OpenOCD Change Log" />
+  <meta property="og:title" content="GNU ARM Eclipse OpenOCD 0.9.0-20150320*-dev released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="The 2015 OpenOCD Change Log">
+  <meta property="og:title" content="GNU ARM Eclipse OpenOCD 0.9.0-20150320*-dev released">
+
+  <meta property="article:published_time" content="2015-03-20">
 
 
+  <meta property="article:section" content="openocd" />
+  <meta property="article:section" content="releases" />
 
-
+  <meta property="article:tag" content="gnu arm eclipse" />
+  <meta property="article:tag" content="openocd" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -29,7 +34,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/openocd/change-log/">
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/2015/03/20/openocd-v0.9.0-20150320-released/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
@@ -74,91 +79,43 @@
 <section id="main-content">
 
 
-<h1 class="page-title">The 2015 OpenOCD Change Log</h1>
+<h1 class="post-title">GNU ARM Eclipse OpenOCD 0.9.0-20150320*-dev released</h1>
 
 
-<h2 id="section">2015</h2>
+<p class="post-meta">
+Posted on March 20, 2015 by Liviu Ionescu.
+</p>
 
-<h3 id="section-1">2015-05-19</h3>
+<p>The latest development version of OpenOCD (<strong>0.9.0-dev</strong>) is now available as multiple platform specific binary packages.</p>
 
-<ul>
-  <li>remove @raggedright from openocd.texi</li>
-  <li>update VERSON files for 0.9.0</li>
-  <li>merge 0.9.0 into gnuarmeclipse-dev</li>
-  <li>merge gnuarmeclipse-dev into gnuarmeclipse</li>
-  <li>release gae-0.9.0-20150519</li>
-</ul>
+<p><a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.9.0-20150320">Binary files »</a></p>
 
-<h3 id="section-2">2015-05-11</h3>
+<p>For those who want the latest OpenOCD features before the stable version is announced, the latest OpenOCD version built from the development repository was released in packages explicitly marked as <strong>-dev</strong>.</p>
 
-<ul>
-  <li>greeting cosmetics: bit-&gt;bits</li>
-  <li>build INFO updated</li>
-  <li>configure: libftdi compile only test</li>
-  <li>nsis: include all gnuarmeclipse/* files</li>
-</ul>
+<p>The OpenOCD developers claim that the development versions should be generally safe to use. In case you encounter problems, please revert to the latest 0.8.0 stable release.</p>
 
-<h3 id="section-3">2015-04-28</h3>
+<p>In order to allow for multiple versions to coexist at the same time, the OpenOCD packages are now installed in folders including the version and the timestamp (like 0.9.0-201503201830-dev).</p>
 
-<ul>
-  <li>remove libwinpthread from win build</li>
-</ul>
+<p>For this mechanism to work, a new set of binaries for 0.8.0 was also released; there are no functional differences, just that the packages were changed to install in separate folders.</p>
 
-<h3 id="section-4">2015-03-24</h3>
+<p>Please uninstall the previous versions and install these new versions.</p>
 
-<ul>
-  <li>NSIS script fixed to prevent removing the keys</li>
-</ul>
+<p>The debug plug-in generally discovers the latest installed version, by using the Windows registry keys or by searching several designated folders. If you need to use a different version, update the <strong>${openocd_path}</strong> variable accordingly.</p>
 
-<h3 id="section-5">2015-03-20</h3>
+<p><em>[March 24, 2015; update]</em></p>
 
-<ul>
-  <li>submodule update after pull/checkout</li>
-</ul>
+<p>The setup script was updated with code to prevent removing some registry keys when uninstalling an older version.</p>
 
-<h3 id="section-6">2015-03-18</h3>
 
-<ul>
-  <li>updated for 0.9.0-dev</li>
-</ul>
+<hr/>
+<p class="post-footer">
+This entry was posted in
 
-<h3 id="section-7">2015-01-31</h3>
+<strong>openocd</strong>, <strong>releases</strong>
+and tagged
 
-<ul>
-  <li>gae-0.8.0-2 released</li>
-</ul>
-
-<h3 id="section-8">2015-01-29</h3>
-
-<ul>
-  <li>osx build: cmake pkg-config fixed with a patch</li>
-</ul>
-
-<h3 id="section-9">2015-01-28</h3>
-
-<ul>
-  <li>win build: 32/64-bit, libusb0 from sources</li>
-</ul>
-
-<h3 id="section-10">2015-01-16</h3>
-
-<ul>
-  <li>osx build refined; dylib relative to executable</li>
-</ul>
-
-<h3 id="section-11">2015-01-12</h3>
-
-<ul>
-  <li>add “GNU ARM Eclipse” to greeting.</li>
-  <li>use argv[0] even on non windows</li>
-</ul>
-
-<h3 id="section-12">2015-01-10</h3>
-
-<ul>
-  <li>create gnuarmeclipse branch</li>
-</ul>
-
+<strong>gnu arm eclipse</strong>, <strong>openocd</strong>.
+</p>
 
 
 </section>

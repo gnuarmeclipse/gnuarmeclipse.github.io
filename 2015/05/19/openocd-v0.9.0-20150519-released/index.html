@@ -7,18 +7,24 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>The 2015 OpenOCD Change Log</title>
-  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+  <title>GNU ARM Eclipse OpenOCD 0.9.0-20150519* released</title>
+  <meta name="description" content="The just released stable version of OpenOCD (0.9.0) is now also available as ready to install, platform specific, binary files.">
 
-  <meta property="og:title" content="The 2015 OpenOCD Change Log" />
+  <meta property="og:title" content="GNU ARM Eclipse OpenOCD 0.9.0-20150519* released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="The 2015 OpenOCD Change Log">
+  <meta property="og:title" content="GNU ARM Eclipse OpenOCD 0.9.0-20150519* released">
+
+  <meta property="article:published_time" content="2015-05-19">
 
 
+  <meta property="article:section" content="openocd" />
+  <meta property="article:section" content="releases" />
 
-
+  <meta property="article:tag" content="0.9.0" />
+  <meta property="article:tag" content="gnu arm eclipse" />
+  <meta property="article:tag" content="openocd" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -29,7 +35,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/openocd/change-log/">
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/2015/05/19/openocd-v0.9.0-20150519-released/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
@@ -74,91 +80,48 @@
 <section id="main-content">
 
 
-<h1 class="page-title">The 2015 OpenOCD Change Log</h1>
+<h1 class="post-title">GNU ARM Eclipse OpenOCD 0.9.0-20150519* released</h1>
 
 
-<h2 id="section">2015</h2>
+<p class="post-meta">
+Posted on May 19, 2015 by Liviu Ionescu.
+</p>
 
-<h3 id="section-1">2015-05-19</h3>
+<p>The just released stable version of OpenOCD (<strong>0.9.0</strong>) is now also available as ready to install, platform specific, binary files.</p>
 
-<ul>
-  <li>remove @raggedright from openocd.texi</li>
-  <li>update VERSON files for 0.9.0</li>
-  <li>merge 0.9.0 into gnuarmeclipse-dev</li>
-  <li>merge gnuarmeclipse-dev into gnuarmeclipse</li>
-  <li>release gae-0.9.0-20150519</li>
-</ul>
+<p><a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.9.0-20150519">Binary files »</a></p>
 
-<h3 id="section-2">2015-05-11</h3>
+<p>Install the proper package, and then update the path in <strong>Preferences</strong> → <strong>Run/Debug</strong> → <strong>OpenOCD</strong> to the new folder. If installed in the default location, the <strong>Restore Defaults</strong> button should automatically configure the proper path.</p>
 
-<ul>
-  <li>greeting cosmetics: bit-&gt;bits</li>
-  <li>build INFO updated</li>
-  <li>configure: libftdi compile only test</li>
-  <li>nsis: include all gnuarmeclipse/* files</li>
-</ul>
+<p>The MD5 sums of the files are:</p>
 
-<h3 id="section-3">2015-04-28</h3>
+<pre><code>2cf7c6cc044b65076b9cbd2fc035b1c1  
+gnuarmeclipse-openocd-debian32-0.9.0-201505190955.tgz
 
-<ul>
-  <li>remove libwinpthread from win build</li>
-</ul>
+6e017261cfbe4f7ad95b496c5bdeb851  
+gnuarmeclipse-openocd-debian64-0.9.0-201505190955.tgz
 
-<h3 id="section-4">2015-03-24</h3>
+2cc1d7a582e3edc1c9c926be3d1abcd0  
+gnuarmeclipse-openocd-osx-0.9.0-201505191024.pkg
 
-<ul>
-  <li>NSIS script fixed to prevent removing the keys</li>
-</ul>
+1f6e85e096068d622b3d88bc64afb1a1  
+gnuarmeclipse-openocd-win32-0.9.0-201505190955-setup.exe
 
-<h3 id="section-5">2015-03-20</h3>
+83aa34e4c1a79eb30839bf4ddf9ddb34  
+gnuarmeclipse-openocd-win64-0.9.0-201505190955-setup.exe
+</code></pre>
 
-<ul>
-  <li>submodule update after pull/checkout</li>
-</ul>
 
-<h3 id="section-6">2015-03-18</h3>
 
-<ul>
-  <li>updated for 0.9.0-dev</li>
-</ul>
+<hr/>
+<p class="post-footer">
+This entry was posted in
 
-<h3 id="section-7">2015-01-31</h3>
+<strong>openocd</strong>, <strong>releases</strong>
+and tagged
 
-<ul>
-  <li>gae-0.8.0-2 released</li>
-</ul>
-
-<h3 id="section-8">2015-01-29</h3>
-
-<ul>
-  <li>osx build: cmake pkg-config fixed with a patch</li>
-</ul>
-
-<h3 id="section-9">2015-01-28</h3>
-
-<ul>
-  <li>win build: 32/64-bit, libusb0 from sources</li>
-</ul>
-
-<h3 id="section-10">2015-01-16</h3>
-
-<ul>
-  <li>osx build refined; dylib relative to executable</li>
-</ul>
-
-<h3 id="section-11">2015-01-12</h3>
-
-<ul>
-  <li>add “GNU ARM Eclipse” to greeting.</li>
-  <li>use argv[0] even on non windows</li>
-</ul>
-
-<h3 id="section-12">2015-01-10</h3>
-
-<ul>
-  <li>create gnuarmeclipse branch</li>
-</ul>
-
+<strong>0.9.0</strong>, <strong>gnu arm eclipse</strong>, <strong>openocd</strong>.
+</p>
 
 
 </section>
