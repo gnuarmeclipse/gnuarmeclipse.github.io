@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <meta property="og:title" content="GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support">
+
+  <meta property="article:published_time" content="2015-09-11">
+
+
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/articles/arm-com-2014-07/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="page-title">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</h1>
+
+
+<h2 id="overview">Overview</h2>
+
+<p>The <strong>GNU ARM Eclipse</strong> project includes a set of open source Eclipse plug-ins that enhance <a href="https://www.eclipse.org/cdt/">Eclipse CDT</a> (C/C++ Development Tooling) with the specific functionality required to create/build/debug/manage <strong>ARM</strong> (32-bit) and <strong>AArch64</strong> (64-bit) applications and static/shared libraries, using the latest <strong>GNU ARM GCC</strong> toolchains. These plug-ins will be the foundation of a future integrated suite intended to meet the growing demands of entry level users and small companies.</p>
+
+<h2 id="project-sites">Project sites</h2>
+
+<p>The main source of information for GNU ARM Eclipse is the project site <a href="http://gnuarmeclipse.livius.net/"><strong>http://gnuarmeclipse.livius.net/</strong></a>, currently with the following home page:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/HomePage.png" alt="The GNU ARM Eclipse home page." /></p>
+
+<p>The Git repositories and all public releases are available from <a href="http://sourceforge.net/projects/gnuarmeclipse/">SourceForge</a>.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/SourceForge.png" alt="SourceForge project." /></p>
+
+<h2 id="install">Install</h2>
+
+<p>The recommended way to install the GNU ARM Eclipse plug-ins is to use the Eclipse standard install/update mechanism: in the <em>Eclipse</em> menu go to: <strong>Help</strong> → <strong>Install New Software…</strong> and use the update site location: <strong>http://gnuarmeclipse.sourceforge.net/updates</strong></p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/Install.png" alt="Install the plug-ins." /></p>
+
+<h2 id="the-managed-build">The managed build</h2>
+
+<p>The managed build plug-in allows to create C/C++ managed projects and to configure an extensive list of compiler and linker options.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/ToolSettings.png" alt="Tool settings." /></p>
+
+<p>The GNU ARM Eclipse build plug-in also provides extensive configuration options for selecting the toolchain and to portably manage the toolchain path:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/Toolchains.png" alt="Toolchain settings." /></p>
+
+<h2 id="extra-build-steps">Extra build steps</h2>
+
+<p>In addition to building the ELF file, the build plug-in can also create a binary file (<strong>ihex</strong>, <strong>srec</strong>, <strong>binary</strong>) to be programmed in the processor flash memory, create a listing, and display the program size.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/ExtraBuildSteps.png" alt="Extra build steps." /></p>
+
+<h2 id="discovery-options--indexing">Discovery Options &amp; Indexing</h2>
+
+<p>In order to allow Eclipse users to navigate to definitions and declarations, to allow smart completion, refactoring and all these nice features, the CDT needs to have <strong>exactly</strong> the same knowledge of the source files as the compiler. For this, it also needs to know the system headers used at compile time and the default preprocessor definitions issued by the compiler. GCC provides a magic combination of command options to do this (<em>-E -P -v -dD ${plugin_state_location}/specs.c</em>), so the CDT needs to issue the proper compiler commands (one for each language, C &amp; C++). The build plug-in provides these details, for each toolchain.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/LanguageProviderOptions.png" alt="Language settings provider options." /></p>
+
+<p>The result of a proper discovery setting is a correct set of preprocessor definitions that reflect the compiler options and a correct set of include folders:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/Includes.png" alt="Automatically discovered system include folders." /></p>
+
+<h2 id="functional-ready-to-run-templates">Functional ready to run templates</h2>
+
+<p>For beginners, who need initial help to put together all details for their first project, a complete sample with startup code, linker scripts, semi-hosting support and all necessary options already set, can be a major time saver.</p>
+
+<p>Elaborated templates are available for the STM families of processors <strong>STM32F[01234]x</strong>, and for some Freescale <strong>KLxx</strong> processors. They create the classical application that blinks a LED, and, specific for the Debug configuration, prints a string on the tracing (SWV or semi-hosting) output.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/NewProjectTemplate.png" alt="New STM32F4 project template." /></p>
+
+<p>For processors from other families, there is also a generic <strong>Hello World </strong><strong>ARM Cortex-M3 Project</strong> template.</p>
+
+<h2 id="debugging-support">Debugging support</h2>
+
+<p>During the lifetime of a project, creating/editing source files and building binaries are certainly important activities, but in many cases the most time is spent during debugging sessions, therefore a reliable debugging environment is an absolute must.</p>
+
+<p>There are many debugging techniques and tools, but GNU ARM Eclipse recommends two solutions:</p>
+
+<ul>
+  <li>the <a href="http://www.segger.com/jlink_base.html">SEGGER J-Link</a> probe with its integrated GDB server, via <a href="http://gnuarmeclipse.livius.net/blog/jlink-debugging/">the J-Link plug-in</a></li>
+  <li>the <a href="http://openocd.sourceforge.net/">OpenOCD</a> GDB server for many other JTAG probes</li>
+</ul>
+
+<p>The preferred solution is the SEGGER J-Link, and the J-Link plug-in allows to configure most relevant J-Link GDB server options:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/jlink.png" alt="The J-Link GDB server configuration." /></p>
+
+<h2 id="packs-support">Packs support</h2>
+
+<p><strong>Packs</strong> refers to a new modular technology, intended to simplify distribution of software and documentation. The main difference from usual libraries or source archives is that the actual source/object files are accompanied by some form of metadata, defining the dependencies between files, the use of constraints and conditions, plus lists of devices the software runs on, with full descriptions, memory map, registers and peripherals, etc.</p>
+
+<p>The <strong>GNU ARM Eclipse Packs Support plug</strong>-in is intended to manage (list/install/inspect/remove) packs from multiple sources. It currently implements the specifications of CMSIS Packs v1.2, as defined by ARM/Keil, with some extensions.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksPerspective1.png" alt="The Packs perspective." /></p>
+
+<p>The importance of the packs technology is amazing, and there are many useful things available in the packs; unfortunately most of the existing ones, being created by ARM/Keil, were designed with Keil MDK in mind, so are expected to be included in projects compiled with the outdated ARMCC compiler; moreover all available examples can be used only with Keil MDK, and are of no direct use for Eclipse and GCC environments.</p>
+
+<p>For the moment, inspecting the content of the packs is all that can be done, but the packages also include some portable files, that can and will be used in future versions of the plug-ins, for example:</p>
+
+<ul>
+  <li>the list of supported devices and memory maps will be used to associate devices to projects; this will allow to automatically fill in some of the compile options, like the architecture (M0/M0+/M3/M4); even more importantly, it will allow to automatically generate the linker scripts with the correct values (avoiding severe headaches for many users, especially beginners);</li>
+  <li>the detailed list of device peripherals and the register bits will be used to extend the debug perspective with a detailed view presenting the register bit values, a very convenient feature when developing embedded software;</li>
+  <li>the list of documentation files (PDF or CHM) will be available on a project view, for easy access to the specific device or board documentation;</li>
+  <li>the vendor CMSIS headers and source files will be used in the future version of the project template.</li>
+</ul>
+
+<p>And, in the mid-term future, the GNU ARM Eclipse templates will be fully replaced with component based projects, allowing an easy update and advanced configurability for projects.</p>
+
+<h2 id="more-info">More info</h2>
+
+<p>For more info about the GNU ARM Eclipse project, please refer to the project site <strong><a href="http://gnuarmeclipse.livius.net/">http://gnuarmeclipse.livius.net/</a></strong>.</p>
+
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="/features/">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li>Windows Build Tools (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li>QEMU (<a href="/qemu/releases/">releases</a>)</li>
+  <li>OpenOCD (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li>Debugging tools install
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/install/jlink/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li><a href="/templates/overview/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li><a href="/debug/overview/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+</ul>
+
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+
+<ul>
+  <li><a href="/developer/build-procedure">How to build</a></li>
+  <li><a href="/developer/publish-procedure">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/contribute/">Contribute</a></li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+</ul>
+
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>

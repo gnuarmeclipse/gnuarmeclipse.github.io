@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>Packs manager</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <meta property="og:title" content="Packs manager" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="Packs manager">
+
+  <meta property="article:published_time" content="2015-09-12">
+
+
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/plugins/packs-manager/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="page-title">Packs manager</h1>
+
+
+<h2 id="overview">Overview</h2>
+
+<p>Packs are a new modular technology, intended to simplify distribution of software and documentation. The main difference from usual libraries or source archives is that the actual source/object files are accompanied by some form of metadata, defining the dependencies between files, the use constraints and conditions, plus lists of devices the software runs on, with full descriptions, memory map, registers and peripherals, etc.</p>
+
+<h2 id="limitations">Limitations</h2>
+
+<p>The current Keil/ARM packs are intended for Cortex-M cores only.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>To have access to the new packs features, you need to install the <strong>GNU ARM Eclipse Packs Support</strong> plug-in (currently with experimental status):</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/InstallPacks.png" alt="Install packs support plug-in." /></p>
+
+<p><strong>Note:</strong> If you encounter <strong>difficulties to refresh the packs</strong>, please use the latest beta version from <strong>http://gnuarmeclipse.sourceforge.net/updates-test</strong>.</p>
+
+<h2 id="the-packs-support-plug-in">The Packs Support plug-in</h2>
+
+<p>The GNU ARM Eclipse Packs Support plug-in is intended to manage (list/install/inspect/remove) packs from multiple sources. It currently implements the specifications of CMSIS Packs v1.2, as defined by ARM/Keil, with some extensions.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>Before starting using the packs, it is recommended to check and adjust the folder where packs are downloaded and unarchived, since this cannot be changed later (in fact it can, but by doing this you loose all installed packages and need to download them again).</p>
+
+<p>By default, this folder is called Packages and is located at the same level as the current workspace.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksPath.png" alt="Path to packages." /></p>
+
+<p>If you use multiple Eclipses with multiple workspaces, it is recommended to adjust this path to a single location and have the same packs install folder for all workspaces.</p>
+
+<p>The plug-in also provides a page to configure which sites are used to load packs. Currently only the Keil URL is relevant, but in case others will appear, they can be added to the list.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksURLs.png" alt="URLs of packs repositories." /></p>
+
+<h2 id="the-packs-perspective">The Packs perspective</h2>
+
+<p>The packs manager uses a separate perspective, with selection views and outline views. To make this perspective visible, click the <strong>Packs</strong> button available on the Eclipse toolbar:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksToolbarButton.png" alt="Make the packs perspective visible." /></p>
+
+<p>Alternatively you can:</p>
+
+<ul>
+  <li>go to the <em>Eclipse</em> menu <strong>Window</strong> → <strong>Open Perspective</strong> → <strong>Other…</strong></li>
+  <li>select the Packs perspective in the list.</li>
+</ul>
+
+<p>The result is a window like this:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/EmptyPacksPerspective.png" alt="The empty packs perspective." /></p>
+
+<p>Initially all views are empty; to populate them, the plug-in needs to access external packs repositories; for this be sure the internet connection is active and click the yellow arrows <strong>Refresh</strong> button.</p>
+
+<p>After a few minutes, the window will change and show the list of packages:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksPerspective.png" alt="The Packs perspective." /></p>
+
+<p>The structure of this window is generally in line with usual Eclipse guidelines:</p>
+
+<ul>
+  <li>the middle part shows the available packages, and here various actions (install/remove/show outline) can be applied</li>
+  <li>the left part is dedicated to various filtering criteria, like Device, Board and Keyword; clicking on any filtering nodes updates the list of packages to only those having relevance to the filtering criteria (multiple selection is allowed)</li>
+  <li>the right part is dedicated to displaying various outline views</li>
+  <li>centrally, below the main view, is the place where editors can be opened</li>
+  <li>the bottom part is used to display the packs console, where various actions related to packs activity are displayed.</li>
+</ul>
+
+<h2 id="filtering">Filtering</h2>
+
+<p>To easily find the desired packs, several filtering criteria are available: Device, Board and Keyword. The usual usage scenario is to filter by device vendor, which will reduce the list of packages to those referring to all devices produced by the device vendor. For this select one or more vendors in the left window:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/FilterByDeviceVendor.png" alt="Filter by device vendor." /></p>
+
+<p>Similarly you can filter by one or more devices, even from multiple vendors, and the list of packs will be reduces even more:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/FilterByDevices.png" alt="Filter by devices." /></p>
+
+<p>Similarly you can filter by boards and keywords, switch to the corresponding view in the left window and select the desired filters (with multiple selections possible).</p>
+
+<h2 id="pack-versions">Pack versions</h2>
+
+<p>Each pack may have multiple versions.  Generally these versions should be preserved, at least a while, when new releases are issued, to help applications cope with possible incompatible versions.</p>
+
+<p>All current and past versions are shown in the packs tree below each package node:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PackVersions.png" alt="Pack versions." /></p>
+
+<h2 id="brief-outline">Brief outline</h2>
+
+<p>For all existing packs, the plug-in can display a brief outline, with the main content items: the supported devices, the supported boards, the components, bundles and examples.</p>
+
+<p>The brief outline is displayed in the right window, when an uninstalled package or the latest version is selected (see previous picture).</p>
+
+<h2 id="pack-install">Pack install</h2>
+
+<p>Once the desired packages are identified, they must be installed, i.e. copied locally, so that their content can be made available to the various projects.</p>
+
+<p>Usually you would need to install the latest available version, but, for special cases a specific version can be also installed. For this you need to select either the package or the version, and click the Install button in the view toolbar:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/InstallVersion.png" alt="Install a package version." /></p>
+
+<p>The result of this action is the download and unarchive of the desired packs, followed by write protecting all files, to protect them from inadvertent changes. To differentiate installed packages, the icon, initially grey, lights up in colour:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/InstalledVersion.png" alt="Installed versions light up in colour." /></p>
+
+<h2 id="full-outline">Full outline</h2>
+
+<p>Once a package is installed, you can get the full outline of the pack version by selecting the desired version. This will trigger an update of the outline window, with the brief outline being replaced by a full outline.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/FullOutline.png" alt="Full outline view." /></p>
+
+<p>The full outline is a multi-level tree. Moving the mouse around brings new tooltip windows, where full details are displayed.</p>
+
+<p>Most of the packs include various documents, either as local PDF or CHM files, or as links to web documents. Double clicking them opens the appropriate viewers for your platform.</p>
+
+<p>Double clicking source and header files opens them in the main editor window:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/ViewHeaderFile.png" alt="View a header file." /></p>
+
+<h2 id="pack-uninstall">Pack uninstall</h2>
+
+<p>If the packages are no longer needed, they can be removed from the local folder, in order to save space (some packages can be hundreds of megabytes long).</p>
+
+<p>To achieve this, select the desired pack version, and click the uninstall button available in the view toolbar.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PackUninstall.png" alt="Pack uninstall." /></p>
+
+<p>Uninstalling a package version removes both the archive and the unarchived folder, then changes the icons back to grey.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>For installed packages, the plug-in presents the list of available examples below each pack version.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PackExamples.png" alt="Pack examples." /></p>
+
+<p>For selected examples, the outline presents details about the content of the example.</p>
+
+<p>With right click, you can copy one or more examples to separate local folders. Unfortunately the examples currently available in the Keil packages can be used only with Keil MDK, so are of no direct use for Eclipse and GCC environments.</p>
+
+<h2 id="where-next">Where next?</h2>
+
+<p>Well, for the moment, packs support is work in progress. But the importance of the packs technology is amazing, there are many useful details available in the packs, that can and will be used in future version of the plug-ins. Currently, apart from inspecting the content of the packs, you can also use the packs content to:</p>
+
+<ul>
+  <li>assign a device/board, together with the memory map, to a build configuration; this will allow to automatically fill in the J-Link device name when creating debug configurations;</li>
+  <li>examine/modify the peripheral registers during debug sessions, using the <a href="/blog/peripheral-registers/">peripherals registers view</a>;</li>
+  <li>access the documentation made available for the device by the silicon vendor, using the Documents view in the C/C++ perspective.</li>
+</ul>
+
+<p>The next features planned to use the packs content are:</p>
+
+<ul>
+  <li>the device name this will allow to automatically fill in some of the compile options, like the architecture (M0/M0+/M3/M4);</li>
+  <li>the memory map will allow to automatically generate the linker scripts with the correct values (avoiding severe headaches for many users, especially beginners);</li>
+  <li>the vendor CMSIS headers and source files will be used in the future version of the project template.</li>
+</ul>
+
+<p>And, in the mid-term future, the templates will be fully replaced with component based projects, allowing an easy update and advanced configurability for projects.</p>
+
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="/features/">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li>Windows Build Tools (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li>QEMU (<a href="/qemu/releases/">releases</a>)</li>
+  <li>OpenOCD (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li>Debugging tools install
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/install/jlink/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li><a href="/templates/overview/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li><a href="/debug/overview/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+</ul>
+
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+
+<ul>
+  <li><a href="/developer/build-procedure">How to build</a></li>
+  <li><a href="/developer/publish-procedure">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/contribute/">Contribute</a></li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+</ul>
+
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>

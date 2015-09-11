@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>The J-Link debugging Eclipse plug-in</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <meta property="og:title" content="The J-Link debugging Eclipse plug-in" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="og:title" content="The J-Link debugging Eclipse plug-in">
+
+  <meta property="article:published_time" content="2015-09-12">
+
+
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/debug/jlink/">
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16767008-16', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>GNU ARM Eclipse</h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+      
+<section id="main-content">
+
+
+<h1 class="page-title">The J-Link debugging Eclipse plug-in</h1>
+
+
+<h2 id="quicklinks">Quicklinks</h2>
+
+<p>If you already know what are the features of the new plug-in and just want to know how to install/use it, you can directly skip to:</p>
+
+<ul>
+  <li><a href="/blog/jlink-install/" title="SEGGER J-Link install">J-Link install</a></li>
+  <li><a href="/blog/jlink-debugging/#J-Link_plug-in_use">J-Link plug-in usage</a></li>
+</ul>
+
+<h2 id="why-a-new-plug-in">Why a new plug-in?</h2>
+
+<p>Until now, debugging with the J-Link probe in Eclipse was done via the GDB Hardware Debugging plug-in. For experimental projects it was more or less ok, but for serious development it was quite tedious. The missing features, that were added to this plug-in, are:</p>
+
+<ul>
+  <li>transparent integration of the GDB server, automatically started/stopped for each debug session</li>
+  <li>advanced graphical user interface to configure most GDB client and GDB server SEGGER specific options</li>
+  <li>transparent integration of the semihosting and Serial Wire Viewer (SWV) window as a standard Eclipse console</li>
+  <li>a functional restart button, to reset the target and restart the debugging session, without having to rewrite the executable image</li>
+  <li>direct use of project toolchain definition (prefix, suffix, path) to simplify configuration of the GDB client</li>
+  <li>macro based J-Link folder path definition, for simplified management of the GDB server location when upgrades to new SEGGER versions are released</li>
+  <li>support for SWO registers configuration to match a given system clock frequency</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before being able to use the J-Link probe with the GNU ARM Eclipse plug-ins, you must separately install:</p>
+
+<ul>
+  <li>the J-Link debugging plug-in</li>
+  <li>the GDB debugger (client) application, as part of a GNU toolchain</li>
+  <li>the SEGGER J-Link GDB server and drivers.</li>
+</ul>
+
+<p>If you did not do it yet, please follow the instructions in the <a href="/blog/jlink-install/" title="J-Link install">J-Link install</a> page and return when completed.</p>
+
+<p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain. Generally only debugging .elf applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
+
+<h3 id="non-gnu-toolchains">Non-GNU toolchains</h3>
+
+<p>Debugging applications generated by <strong>non-GNU toolchains</strong> (like the obsolete ARM CC), although not completely excluded, is <strong>not supported</strong>.</p>
+
+<h2 id="j-link-plug-in-usage">J-Link plug-in usage</h2>
+
+<h3 id="define-the-j-link-folder-location">Define the J-Link folder location</h3>
+
+<p>Before starting work with the J-Link tools, it is required to define the path to the J-Link folder.</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong> <br />
+<img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/03/JLinkPreferences.png" alt="J-Link preferences page." /></li>
+  <li>click the <strong>Restore Defaults</strong> button</li>
+  <li>the plug-in will suggest the default values computed when Eclipse started; if a new version of SEGGER was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
+  <li>check the <strong>Executable</strong> field; it must define the name of the command line J-Link GDB server executable; in most cases it should be set correctly; if not, edit it to match the correct name;</li>
+  <li>check the <strong>Folder</strong> field; it must point to the actual folder where the J-Link tools were installed on your platform, for example <strong>/Applications/SEGGER/JLink</strong> on OS X</li>
+  <li>click the <strong>OK</strong> button</li>
+  <li><strong>Windows warning:</strong> please note that on Windows there are two GDB server executables, one with a UI and one to be used as a command line (JLinkGDBServerCL.exe); you obviously need to configure the executable field to point to <strong>JLinkGDBServerCL.exe</strong>;</li>
+</ul>
+
+<p>By default, the GDB server is defined as <strong>${jlink_path}/${jlink_gdbserver}</strong>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to keep this definition in all your debug configurations, and also to have a single place to update the path when a new version of the J-Link tools is released.</p>
+
+<h3 id="associate-a-device-to-the-project">Associate a device to the project</h3>
+
+<p>Although not absolutely mandatory, it is recommended to associate a device to the project, so that creating the debugger launch configuration will automatically fill-in the device name.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/Devices.png" alt="Assigning a device to the project." /></p>
+
+<p>Follow the steps in the separate page <a href="http://gnuarmeclipse.livius.net/blog/assign-device-project/" title="Associate a device to the project">Associate a device to the project</a> and return to this page to continue.</p>
+
+<h3 id="create-the-debugger-launch-configuration">Create the debugger launch configuration</h3>
+
+<p>Being a standard debugger, this plug-in also uses the Eclipse standard method of creating debugger configurations for each application. After you successfully build your application, you can create a new debug configuration following these steps:</p>
+
+<ul>
+  <li>select the project</li>
+  <li>build it and ensure the executable file is available</li>
+  <li>expand either the Debug or the Release folder and select the executable you want to debug</li>
+  <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon.</li>
+</ul>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/DebugConfigurations.png" alt="" /></p>
+
+<ul>
+  <li>double click the<strong> GDB SEGGER J-Link Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button.</li>
+</ul>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/JLinkDebugConfiguration.png" alt="J-Link Debug Configurations" /></p>
+
+<ul>
+  <li>a multi-tab page will be displayed;</li>
+  <li>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example Debug/blink1.elf).</li>
+</ul>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/DebugMainTab.png" alt="The Main tab." /></p>
+
+<ul>
+  <li>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client.</li>
+</ul>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/JLinkDebuggerTab.png" alt="" /></p>
+
+<ul>
+  <li>the only field that usually requires attention is the <strong>Device name</strong>, which must identify the processor family; if you assigned the device to the project, this field is automatically filled-in; usually this name is the family name; if you do not know it for your processor, follow the link at the right and copy/paste the string from the <a href="http://www.segger.com/supported-devices.html">SEGGER web page</a>;</li>
+  <li>for portability reasons, the GDB server and GDB client executables are defined using variables; it is highly recommended to keep these definitions;</li>
+  <li>the <strong>${cross_prefix}</strong> and the <strong>${cross_suffix}</strong> variables are defined automatically using the toolchain definitions; unless you are debugging a project-less ELF, leave them as is;</li>
+  <li>the values of the <strong>${jlink_path}</strong> and <strong>${jlink_gdbserver}</strong> can be manually edited in the <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong> configuration page (if you do not find this page, upgrade the plug-ins);</li>
+  <li>the <strong>Connect to running target</strong> option allow to start a debug session without performing any reset or program download, so that the target will continue to run unaffected, until explicitly halted by the debugger (Note: this option requires the latest plug-in and SEGGER versions);</li>
+  <li>click the third tab, named <strong>Startup</strong>, which contains specific J-Link options used to configure the debug session.</li>
+</ul>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/JLingStartupTab.png" alt="The J-Link Startup tab." /></p>
+
+<ul>
+  <li>if you built the project with retargetting support for ITM/SWO, enter the CPU frequency and the desired SWO sampling frequency; for this to work with J-Link, the SWO sampling frequency must be a submultiple of 6MHz (6000000, 3000000, 2000000, 1500000, 1000000, etc) and the CPU frequency must be a multiple of the SWO sampling frequency (these apparently very complicated requirements end up as a pre-scaler value in an ARM register);</li>
+  <li>for most applications running from flash, leave the <strong>Pre-run reset and halt</strong> enabled, this will issue a new reset after programming the flash and just before starting execution. Due to some complicated technical details, when the debugger tries to reset some cores, execution cannot be halted immediately, and part of the initialisation routine is executed. Then the flash is written with the new application, it is not correct to directly start execution, since part of a foreign initialisation sequence, that is not part of the current application, was executed; to be sure the application starts correctly, it is necessary to issue a new reset. Please note that this does <strong>not</strong> apply <strong>for</strong> applications <strong>running from RAM</strong>, since the reset may damage the RAM content;</li>
+  <li>although not mandatory, it is recommended to change the location where the launcher file is stored; for this,
+    <ul>
+      <li>select the <strong>Common</strong> tab,</li>
+      <li>set the <em>Save as:</em> field to <strong>Shared file</strong></li>
+      <li>accept the current project name.</li>
+      <li>click the <strong>Apply</strong> button</li>
+    </ul>
+
+    <p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/SharedDebug.png" alt="Shared debug configuration." /></p>
+  </li>
+  <li>click the <strong>Close</strong> button</li>
+</ul>
+
+<p>With the above settings, the debug configuration will be saved in the project, not in the workspace storage.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/ProjectSharedDebug.png" alt="Debug configuration stored in the project." /></p>
+
+<h2 id="start-a-debug-session">Start a debug session</h2>
+
+<p>Before starting a debug session, be sure that:</p>
+
+<ul>
+  <li>the J-Link debugger is connected to a high speed USB port, preferably directly to the computer, not via hubs which share the bandwidth with other traffic intensive devices, like disks, wi-fi, video cameras, etc.</li>
+  <li>the wide JTAG flat cable is connected both to the J-Link and the target device</li>
+  <li>the target device is powered on</li>
+</ul>
+
+<p>With all the above steps completed properly, you can start the debug session:</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong></li>
+  <li>if necessary, expand the** GDB SEGGER J-Link Debugging** group</li>
+  <li>select the newly defined configuration</li>
+  <li>click the <strong>Debug</strong> button</li>
+</ul>
+
+<p>Alternatively, on subsequent runs, you can use the bug specific icon. By default this will start the previously used debug launch configuration; to start a different configuration, use the down arrow button:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/StartDebugArrow.png" alt="Down arrow debug." /></p>
+
+<p>This will open a new window where you can select the desired debug configuration:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/DebugSelection.png" alt="Select the debug configuration." /></p>
+
+<p>If everything is ok, after a few seconds required to start the server, to allow it to connect to the target, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/DebugSessionClient.png" alt="The new debug session, with three consoles." /></p>
+
+<p>The new debug session, with three consoles.</p>
+
+<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <em>main()</em> function, which in this case is a tracing <em>printf()</em>.</p>
+
+<h2 id="debug-operations">Debug operations</h2>
+
+<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <strong>main()</strong> function), you can perform any debug operation you need.</p>
+
+<p>The most common operations are:</p>
+
+<ul>
+  <li>single step over one source instruction (click the <strong>Step Over</strong> button)</li>
+  <li>single step into the next function called (click the <strong>Step Into</strong> button)</li>
+  <li>single step out of the current function (click the <strong>Step Return</strong> button)</li>
+  <li>set breakpoints (click the grey side area at the left of the source lines)</li>
+  <li>run (click the <strong>Resume</strong> button)</li>
+  <li>halt a running program (click the <strong>Suspend</strong> button)</li>
+  <li>inspect processor registers (use the <strong>Registers</strong> view)</li>
+  <li>inspect memory (use the <strong>Memory</strong> view)</li>
+</ul>
+
+<p>For more details please read the <a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_debug_prog.htm">Running and debugging projects</a> section in the Eclipse documentation.</p>
+
+<h2 id="view-consoles">View consoles</h2>
+
+<p>Each debug process has a dedicated console, to display its standard output and standard error, or to get input for the standard input.</p>
+
+<p>To see the console of any process, just select the process in the top left window. For example the server console might look like this:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/DebugSessionServer.png" alt="The GDB server console." /></p>
+
+<p>Similarly for the tracing console:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/DebugSessionSWO.png" alt="The tracing console." /></p>
+
+<h2 id="show-console-when-standard-outerror-change">Show console when standard out/error change</h2>
+
+<p>This is the default Eclipse behaviour when multiple consoles are active, to automatically switch to the latest updated. In our case, especially when the Semihosting/SWV console is also active, the focus will jump between windows, making things impossible to follow.</p>
+
+<p>This mode can be identified by the status of the buttons on the right side of the Debugging view.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/ShowConsole.png" alt="Show console when standard out/err changes." /></p>
+
+<p>To make the display stable on the desired console, disable both buttons. To switch between consoles, select them either in the top left Debug view, or using the right button, as shown above.</p>
+
+<h2 id="the-restart-button">The Restart button</h2>
+
+<p>Apparently not a big deal, but quite useful for repeated debug sessions, <strong>the Restart button</strong> can be used at any time during a debug session, and the result is that a reset is dispatched to the target board via the JTAG/SWD interface and the debug session is restarted.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/RestartButton.png" alt="The restart button." /></p>
+
+<p>Note: Due to some bugs in Eclipse, the implementation of his simple button has encountered several problems. Depending on the version you are using, the first time you click this button you might get a message box informing that the button was not enabled. Ignore this message, close the message box and click the button again, this time it’ll be effective.</p>
+
+<h2 id="using-a-remote-gdb-server">Using a remote GDB server</h2>
+
+<p>If, for any reason, you need to run the GDB server on a remote machine (for example the development board is connected via J-Link to a machine in your office, but you are in another location), you can still use the plug-in to run debugging session. For this to work, just disable <strong>Start the GDB server locally</strong> in the <strong>Debugger</strong> tab and instead of <em>localhost</em> for the <strong>Host name or IP address</strong>, enter the name or address where the GDB server can be accessed.</p>
+
+<p>Then you must manually start the JLinkGDBServer process on the remote machine and only then you can start the debugging session.</p>
+
+<h2 id="connect-to-running-target">Connect to running target</h2>
+
+<p>This is an advanced feature, allowing debugging of a target that was started outside the debugger.</p>
+
+<p>To make this possible, enable the <strong>Connect to running target</strong> option in the <strong>Debugger</strong> tab:</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/03/ConnectToRunning.png" alt="Connect to running target." /></p>
+
+<p>With this option, the J-Link plug-in will no longer reset the target and will no longer download the code into the target’s memory, leaving the target virtually unaffected, even after the debug session is started.</p>
+
+<p>To start interacting with the target, it must be halted, using the debugger’s <strong>Halt</strong> command. After examining the target’s memory, setting breakpoints, etc, execution can be resumed, and the debug session terminated, leaving the target running.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="missing-or-wrong-jlinkpath">Missing or wrong jlink_path</h3>
+
+<p>The first failure to start a debug session is missing to enter the J-Link path. Without it, the launching sequence will complain <em>Cannot run program “/JLinkGDBServer&amp;”</em>.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/JLinkCannotRun.png" alt="Cannot run the JLinkGDBServer." /></p>
+
+<p>Define the <strong>jlink_path</strong> as instructed above and the session should start properly.</p>
+
+<h3 id="wrong-device-selection">Wrong device selection</h3>
+
+<p>If the devices that you selected in the plug-in does not match the device physically connected, the GDB server session fails and the entire debug session is cancelled. You can identify this case by studying the GDB server log.</p>
+
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/WrongDevice.png" alt="Wrong device." /></p>
+
+<p>Select the device properly and the session should start properly.</p>
+
+<h3 id="j-link-hangups">J-Link hangups</h3>
+
+<p>Although SEGGER took special measures to avoid J-Link firmware hangups, in case you suspect such a situation (the JLinkGDBServer refuses to connect to the USB device, or to the target), it might help to power cycle the J-Link, by disconnecting and reconnecting the USB cable.</p>
+
+<h3 id="cannot-start-applications-running-from-ram">Cannot start applications running from RAM</h3>
+
+<p>Please be sure you disable the <strong>Pre-run reset and halt</strong> option in the <strong>Startup</strong> tab, this usually does not preserve the RAM content.</p>
+
+<h3 id="error-while-launching-command-gdb---version">Error while launching command: gdb –version</h3>
+
+<p>If you kept the GDB client executable defined as <strong>${cross_prefix}gdb${cross_suffix}</strong>, the above error means that the macros could not be substituted with the correct prefix/suffix. There can be several reasons for this. One might be that you did not associate the debug launcher to a project. Check the <strong>Main</strong> tab and be sure the field <strong>Project:</strong> refer to the correct project. Next time when you create the debug configuration, be sure you follow the above suggestions (select .elf, <strong>Debug Configurations</strong>, double click on <strong>GDB SEGGER J-Link Debugging</strong>. Another reason is presented below.</p>
+
+<h3 id="using-a-different-build-plug-in-or-not-supported-compiler">Using a different build plug-in or not supported compiler</h3>
+
+<p>Another reason for not being able to start the debug session is that your project was not build with the GNU ARM Eclipse managed build plug-in. If you are using another build plug-in, or an exotic/obsolete toolchain, you need to replace <strong>${cross_prefix}gdb${cross_suffix}</strong> with the actual name of the gdb client available in your toolchain, since the ${cross_*} macros are available only in projects managed by the GNU ARM Eclipse build plug-in.</p>
+
+<h2 id="more-info"><strong>More info</strong></h2>
+
+<p>Although the plug-in takes care of most of the configuration options, and provides reasonable defaults for the usual cases, it is recommended to read the SEGGER manuals, available from the Doc folder in the installation location or directly from the <a href="http://www.segger.com/jlink-software.html">SEGGER J-Link page</a>.</p>
+
+
+
+
+</section>
+
+<aside id="sidebar">
+
+
+<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+
+<ul>
+  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
+  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
+</ul>
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featuresfeatures"><a href="/features/">Features</a></h4>
+
+<h4 id="downloads">Downloads</h4>
+
+<ul>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li>Windows Build Tools (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li>QEMU (<a href="/qemu/releases/">releases</a>)</li>
+  <li>OpenOCD (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4 id="install">Install</h4>
+
+<ul>
+  <li>Overview</li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li>Debugging tools install
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/install/jlink/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4 id="templates">Templates</h4>
+
+<ul>
+  <li><a href="/templates/overview/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4 id="debugging">Debugging</h4>
+
+<ul>
+  <li><a href="/debug/overview/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/overview/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a></li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4 id="support">Support</h4>
+
+<ul>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+</ul>
+
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+
+<ul>
+  <li><a href="/developer/build-procedure">How to build</a></li>
+  <li><a href="/developer/publish-procedure">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/contribute/">Contribute</a></li>
+</ul>
+
+<h4 id="articles">Articles</h4>
+<ul>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+<ul>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li>Tools</li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+<ul>
+  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+</ul>
+
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
+
+<hr />
+
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</aside>
+
+</div>
+
+</div>
+
+
+  
+</body>
+
+</html>
