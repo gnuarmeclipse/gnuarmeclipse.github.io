@@ -84,7 +84,7 @@
 
 <p>Based on the experience with the J-Link plug-in, we decided to add a separate OpenOCD plug-in, with full configuration pages.</p>
 
-<p>In early 2015, a step further was performed, with the addition of the <a href="/blog/openocd/" title="The GNU ARM Eclipse OpenOCD">GNU ARM Eclipse OpenOCD</a> subproject, a new distribution of OpenOCD.</p>
+<p>In early 2015, a step further was performed, with the addition of the <a href="/openocd/overview/" title="The GNU ARM Eclipse OpenOCD">GNU ARM Eclipse OpenOCD</a> subproject, a new distribution of OpenOCD.</p>
 
 <p>Unfortunately SWD support in the current OpenOCD version (0.8.x) is not that great, and we could not yet figure out a way to get the SWO tracing info out of OpenOCD, so currently there is no special tracing window available.</p>
 
@@ -93,13 +93,13 @@
 <p>Before being able to use any JTAG probe with OpenOCD, you must separately install:</p>
 
 <ul>
-  <li>the <a href="/blog/openocd/" title="The GNU ARM Eclipse OpenOCD">GNU ARM Eclipse OpenOCD</a> debugging plug-in</li>
+  <li>the <a href="/openocd/overview/" title="The GNU ARM Eclipse OpenOCD">GNU ARM Eclipse OpenOCD</a> debugging plug-in</li>
   <li>the GDB debugger (client) application, as part of a GNU toolchain</li>
   <li>the OpenOCD as a GDB server</li>
   <li>any drivers required for the JTAG probe (for example FTDI drivers).</li>
 </ul>
 
-<p>If you did not do it yet, please follow the instructions in the <a href="/blog/openocd-install/" title="OpenOCD install">OpenOCD install</a> page and return when completed.</p>
+<p>If you did not do it yet, please follow the instructions in the <a href="/openocd/install/" title="OpenOCD install">OpenOCD install</a> page and return when completed.</p>
 
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain. Generally only debugging .elf applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 
@@ -359,7 +359,7 @@
   <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li>Debugging tools install
+  <li>Debugging components
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/install/jlink/">SEGGER J-Link install</a></li>
@@ -419,7 +419,7 @@
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
@@ -430,7 +430,7 @@
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
@@ -440,7 +440,7 @@
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -456,7 +456,7 @@
   <li><a href="/support/known-issues/">Known issues</a></li>
   <li><a href="/support/faq/">FAQ</a></li>
   <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Add new plug-ins Issue</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Report plug-ins issue</a></li>
 </ul>
 
 <h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>

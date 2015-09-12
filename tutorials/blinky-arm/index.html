@@ -86,9 +86,9 @@
 
 <h2 id="prerequisites">Prerequisites</h2>
 
-<p>Before creating a new project, please be sure you checked all prerequisites described in the <a href="/blog/use/">How to use</a> page, especially the need to install the <a href="/blog/build-tools-windows/">build tools</a> if you use Windows as your development platform.</p>
+<p>Before creating a new project, please be sure you checked all prerequisites described in the <a href="/plugins/mbs/">How to use</a> page, especially the need to install the <a href="/windows-build-tools/install/">build tools</a> if you use Windows as your development platform.</p>
 
-<p>It is also recommended to <a href="blog/workspace-preferences/" title="Workspace preferences">set the workspace preferences</a>.</p>
+<p>It is also recommended to <a href="/eclipse/workspace/preferences/" title="Workspace preferences">set the workspace preferences</a>.</p>
 
 <p>Note: the multi-LED template is currently available only for ST32F4, and only for C++, since it allows to easily instantiate multiple BlinkLed objects.</p>
 
@@ -180,7 +180,7 @@
 
 <h2 id="assign-a-board-and-device-to-the-project">Assign a board and device to the project</h2>
 
-<p>Although optional, it is highly recommended to assign a board and a device to the project, using the packs definitions. If you did not do it before, install the STM32F4 package, as explained in the <a href="/blog/packs-manager/" title="Packs manager">Packs Manager</a> page.</p>
+<p>Although optional, it is highly recommended to assign a board and a device to the project, using the packs definitions. If you did not do it before, install the STM32F4 package, as explained in the <a href="/plugins/packs-manager/" title="Packs manager">Packs Manager</a> page.</p>
 
 <p>To assign the board and device:</p>
 
@@ -196,11 +196,11 @@
   <li>click <strong>OK</strong></li>
 </ul>
 
-<p><a href="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/08/BlinkyAssignDevice.png"><img class="aligncenter size-full wp-image-1951" src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice" width="922" height="881" /></a></p>
+<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice" /></p>
 
 <h2 id="run-the-test-with-qemu"><strong>Run the test with QEMU</strong></h2>
 
-<p>The most convenient way to run this test is to use the <a href="http://gnuarmeclipse.livius.net/blog/qemu-debugging/" title="The QEMU debugging Eclipse plug-in">QEMU Debugging plug-in</a>. Actually, with the latest plug-ins, you can directly Run the application, you do not need to Debug it.</p>
+<p>The most convenient way to run this test is to use the <a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU Debugging plug-in</a>. Actually, with the latest plug-ins, you can directly Run the application, you do not need to Debug it.</p>
 
 <p>As for any debugging plug-in,</p>
 
@@ -231,7 +231,7 @@
 
 <h2 id="next-step">Next step</h2>
 
-<p>Once you checked the development environment to be functional, proceed with creating real projects using the <a href="blog/stm32f-template/" title="STM32Fxx templates">STM32Fx</a> templates, Freescale <a href="blog/klxx-template/" title="KLxx template">KLxx</a> templates, or, if your target processor is not yet supported, using the Generic <a href="blog/cortexm-template/" title="Generic Cortex-M template">Cortex-M</a> template.</p>
+<p>Once you checked the development environment to be functional, proceed with creating real projects using the <a href="/templates/stm32f/" title="STM32Fxx templates">STM32Fx</a> templates, Freescale <a href="/templates/klxx/" title="KLxx template">KLxx</a> templates, or, if your target processor is not yet supported, using the Generic <a href="/templates/cortexm/" title="Generic Cortex-M template">Cortex-M</a> template.</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -254,7 +254,7 @@
 
 <h2 id="support">Support</h2>
 
-<p>If something went wrong and you cannot build the project, please check the <a href="/blog/use/">How to use</a>, the <a href="/blog/faq/">FAQ</a> and the <a href="/blog/known-problems/">Known issues</a> pages. If you do not find the answer to your question, please read the <a href="/blog/support/">Support</a> page on how to record a support request in the Support tracker. Do not post comments on this page unless they are related to the text (the phrasing is not correct, you discovered typos, etc).</p>
+<p>If something went wrong and you cannot build the project, please check the <a href="/plugins/mbs/">How to use</a>, the <a href="/support/faq/">FAQ</a> and the <a href="/support/known-issues/">Known issues</a> pages. If you do not find the answer to your question, please read the <a href="/support/overview/">Support</a> page on how to record a support request in the Support tracker. Do not post comments on this page unless they are related to the text (the phrasing is not correct, you discovered typos, etc).</p>
 
 
 
@@ -297,7 +297,7 @@
   <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li>Debugging tools install
+  <li>Debugging components
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/install/jlink/">SEGGER J-Link install</a></li>
@@ -357,7 +357,7 @@
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
@@ -368,7 +368,7 @@
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
@@ -378,7 +378,7 @@
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -394,7 +394,7 @@
   <li><a href="/support/known-issues/">Known issues</a></li>
   <li><a href="/support/faq/">FAQ</a></li>
   <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Add new plug-ins Issue</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Report plug-ins issue</a></li>
 </ul>
 
 <h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>

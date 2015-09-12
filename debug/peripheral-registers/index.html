@@ -78,7 +78,7 @@
 <h1 class="page-title">The peripherals registers view</h1>
 
 
-<p>After the success of the <a href="/blog/jlink-debugging/" title="The J-Link hardware debugging Eclipse plug-in">J-Link plug-in</a>, which significantly reduced the configuration effort to start a debug session, the most requested feature was a way of examining/modifying the peripheral registers.</p>
+<p>After the success of the <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link plug-in</a>, which significantly reduced the configuration effort to start a debug session, the most requested feature was a way of examining/modifying the peripheral registers.</p>
 
 <p>There were other solutions already available for this, but all required the availability of various hardware definitions files, plus the manual selection of the appropriate file for the current debug configuration.</p>
 
@@ -92,7 +92,7 @@
 
 <p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/10/PacksFeature.png" alt="Check the presence of the Packs plug-ins." /></p>
 
-<p>If not present, it is recommended to first read the <a href="/blog/packs-manager/" title="Packs manager">Packs manager</a> documentation page where installation details are also provided.</p>
+<p>If not present, it is recommended to first read the <a href="/plugins/packs-manager/" title="Packs manager">Packs manager</a> documentation page where installation details are also provided.</p>
 
 <h3 id="install-required-packs">Install required packs</h3>
 
@@ -104,7 +104,7 @@
 
 <p>Even if a future release will automatically make this association via a wizard during project creation, it is still recommended to check it, and adjust if needed.</p>
 
-<p>For more details, please visit the <a href="/blog/assign-device-project/" title="Associate a device to the project">separate page</a>.</p>
+<p>For more details, please visit the <a href="/eclipse/project/assign-device/" title="Associate a device to the project">separate page</a>.</p>
 
 <p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/Devices.png" alt="Assigning a device to the project." /></p>
 
@@ -190,7 +190,7 @@
 
 <p>The first question some people might raise is <em>“why so many peripherals have zero values?”</em>. Well, most probably because they are not enabled, so reading them leads usually to zeroes. Or because they do not exist for the actual device, and are present there because the silicon vendor provides a single file for the entire family.</p>
 
-<h3 id="no-devices-avaible-install-packs-first">“No devices avaible, install packs first”</h3>
+<h3 id="no-devices-available-install-packs-first">“No devices available, install packs first”</h3>
 
 <p>If your devices window is empty, you did not read carefully the above steps. You need to update the list of available packages, then install the ones you need.</p>
 
@@ -245,7 +245,7 @@
   <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li>Debugging tools install
+  <li>Debugging components
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/install/jlink/">SEGGER J-Link install</a></li>
@@ -305,7 +305,7 @@
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
@@ -316,7 +316,7 @@
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
@@ -326,7 +326,7 @@
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -342,7 +342,7 @@
   <li><a href="/support/known-issues/">Known issues</a></li>
   <li><a href="/support/faq/">FAQ</a></li>
   <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Add new plug-ins Issue</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Report plug-ins issue</a></li>
 </ul>
 
 <h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>

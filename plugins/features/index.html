@@ -184,19 +184,19 @@
 
 <p>The traditional way of accessing the toolchain components was to add the toolchain path to the system PATH and later do nothing special inside Eclipse. Unfortunately this model does not scale; serious development often requires multiple toolchains (either different versions of the same toolchain, or even toolchains from different sources) on the same machine, and polluting the system PATH is a source of major headaches.</p>
 
-<p>The GNU ARM Eclipse cross build plug-in provides advanced toolchain path management; for more details, please read the separate <a href="/blog/toolchain-path/" title="Toolchain path management">Toolchain path management</a> page</p>
+<p>The GNU ARM Eclipse cross build plug-in provides advanced toolchain path management; for more details, please read the separate <a href="/toolchain/path/" title="Toolchain path management">Toolchain path management</a> page</p>
 
 <h2 id="improved-project-portability">Improved project portability</h2>
 
 <p>Even more, for improved project portability, the toolchain path is stored in the workspace, in preference to the path stored in the project.</p>
 
-<p>Project portability is essential for team collaboration, when multiple developers use different platform to develop a single project. Without project portability, after a Windows machine would commit the project to a central repository, OS X or GNU/Linux users would have to manually adjust the path in their projects after each update, and the other way around; for more details, please read the separate <a href="/blog/project-portability/" title="Project portability">Project portability</a> page.</p>
+<p>Project portability is essential for team collaboration, when multiple developers use different platform to develop a single project. Without project portability, after a Windows machine would commit the project to a central repository, OS X or GNU/Linux users would have to manually adjust the path in their projects after each update, and the other way around; for more details, please read the separate <a href="/eclipse/project/portability/" title="Project portability">Project portability</a> page.</p>
 
 <h2 id="functional-ready-to-run-templates">Functional ready to run templates</h2>
 
 <p>For beginners, who need initial help to put all details together for their first project, a complete sample, with startup code, linker scripts, semi-hosting enabled and all necessary options already set, can be a major time saver.</p>
 
-<p>The <strong>Hello </strong><strong>World </strong>ARM Cortex-M3 C Project template was destined exactly for such cases; please see the <a href="/blog/test-project/">Tutorial: Create a test project</a> for more details.</p>
+<p>The <strong>Hello </strong><strong>World </strong>ARM Cortex-M3 C Project template was destined exactly for such cases; please see the <a href="/tutorials/hello-arm/">Tutorial: Create a test project</a> for more details.</p>
 
 <p><img src="/images/2015/NewCM3ProjectResult.png" alt="The Cortex-M3 template project." /></p>
 
@@ -209,7 +209,7 @@
 <p>There are many debugging techniques and tools, but we recommend two solutions:</p>
 
 <ul>
-  <li>the <a href="http://www.segger.com/jlink_base.html">SEGGER J-Link</a> probe with its integrated GDB server, via <a href="/blog/jlink-debugging/" title="The J-Link hardware debugging Eclipse plug-in">the J-Link plug-in</a></li>
+  <li>the <a href="http://www.segger.com/jlink_base.html">SEGGER J-Link</a> probe with its integrated GDB server, via <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">the J-Link plug-in</a></li>
   <li>
     <p>the <a href="http://openocd.sourceforge.net">OpenOCD</a> GDB server for many other JTAG probes.</p>
 
@@ -292,7 +292,7 @@
   <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li>Debugging tools install
+  <li>Debugging components
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/install/jlink/">SEGGER J-Link install</a></li>
@@ -352,7 +352,7 @@
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
@@ -363,7 +363,7 @@
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
@@ -373,7 +373,7 @@
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -389,7 +389,7 @@
   <li><a href="/support/known-issues/">Known issues</a></li>
   <li><a href="/support/faq/">FAQ</a></li>
   <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Add new plug-ins Issue</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Report plug-ins issue</a></li>
 </ul>
 
 <h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>

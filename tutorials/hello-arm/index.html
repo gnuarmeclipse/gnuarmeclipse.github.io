@@ -78,7 +78,7 @@
 <h1 class="page-title">Tutorial: Create a Hello ARM test project</h1>
 
 
-<p>Note: This page was superseded by the new <a href="/blog/blinky-project/" title="Tutorial: Create a Blinky ARM test project">Create a Blinky ARM test project</a> page.</p>
+<p>Note: This page was superseded by the new <a href="/tutorials/blinky-arm/" title="Tutorial: Create a Blinky ARM test project">Create a Blinky ARM test project</a> page.</p>
 
 <p>If you are new to ARM development, it is recommended to follow this short tutorial and learn how to build a simple test executable program.</p>
 
@@ -88,7 +88,7 @@
 
 <p>Before creating a new project, please be sure you checked all prerequisites described in the <a href="/plugins/mbs/">How to use</a> page, especially the need to install the <a href="/windows-build-tools/install/">build tools</a> if you use Windows as your development platform.</p>
 
-<p>It is also recommended to <a href="blog/workspace-preferences/" title="Workspace preferences">set the workspace preferences</a>.</p>
+<p>It is also recommended to <a href="/eclipse/workspace/preferences/" title="Workspace preferences">set the workspace preferences</a>.</p>
 
 <h2 id="create-a-new-c-project">Create a new C project</h2>
 
@@ -184,11 +184,11 @@
 
 <p>This project is not specific to a physical processor, so no specific initialisations are included, which makes the code generated above being able to run on any Cortex-M3 processors (assuming it has at least the required RAM).</p>
 
-<p>The most convenient way to test such generic code is to use the <a href="http://gnuarmeclipse.livius.net/blog/qemu-debugging/" title="The QEMU debugging Eclipse plug-in">QEMU Debugging plug-in</a>.</p>
+<p>The most convenient way to test such generic code is to use the <a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU Debugging plug-in</a>.</p>
 
 <h2 id="next-step">Next step</h2>
 
-<p>Once you checked the development environment to be functional, proceed with creating real projects using the <a href="blog/stm32f-template/" title="STM32Fxx templates">STM32Fx</a> templates, Freescale <a href="blog/klxx-template/" title="KLxx template">KLxx</a> templates, or, if your target processor is not yet supported, using the Generic <a href="blog/cortexm-template/" title="Generic Cortex-M template">Cortex-M</a> template.</p>
+<p>Once you checked the development environment to be functional, proceed with creating real projects using the <a href="/templates/stm32f/" title="STM32Fxx templates">STM32Fx</a> templates, Freescale <a href="/templates/klxx/" title="KLxx template">KLxx</a> templates, or, if your target processor is not yet supported, using the Generic <a href="/templates/cortexm/" title="Generic Cortex-M template">Cortex-M</a> template.</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -201,12 +201,12 @@
 <p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths." /></p>
 
 <ul>
-  <li>missing build tools (make &amp; rm) on Windows; install the <a href="/blog/build-tools-windows/" title="Build tools (make &amp; rm) for Windows">build tools</a>.</li>
+  <li>missing build tools (make &amp; rm) on Windows; install the <a href="/windows-build-tools/overview/" title="Build tools (make &amp; rm) for Windows">build tools</a>.</li>
 </ul>
 
 <h2 id="support">Support</h2>
 
-<p>If something went wrong and you cannot build the project, please check the <a href="/plugins/mbs/">How to use</a>, the <a href="/support/faq/">FAQ</a> and the <a href="/blog/known-problems/">Known issues</a> pages. If you do not find the answer to your question, please read the <a href="/blog/support/">Support</a> page on how to record a support request in the Support tracker. Do not post comments on this page unless they are related to the text (the phrasing is not correct, you discovered typos, etc).</p>
+<p>If something went wrong and you cannot build the project, please check the <a href="/plugins/mbs/">How to use</a>, the <a href="/support/faq/">FAQ</a> and the <a href="/support/known-issues/">Known issues</a> pages. If you do not find the answer to your question, please read the <a href="/support/overview/">Support</a> page on how to record a support request in the Support tracker. Do not post comments on this page unless they are related to the text (the phrasing is not correct, you discovered typos, etc).</p>
 
 
 
@@ -249,7 +249,7 @@
   <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li>Debugging tools install
+  <li>Debugging components
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/install/jlink/">SEGGER J-Link install</a></li>
@@ -309,7 +309,7 @@
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
@@ -320,7 +320,7 @@
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
@@ -330,7 +330,7 @@
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -346,7 +346,7 @@
   <li><a href="/support/known-issues/">Known issues</a></li>
   <li><a href="/support/faq/">FAQ</a></li>
   <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Add new plug-ins Issue</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Report plug-ins issue</a></li>
 </ul>
 
 <h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
