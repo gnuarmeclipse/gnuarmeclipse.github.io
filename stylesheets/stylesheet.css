@@ -725,8 +725,8 @@ p a {
 
 blockquote {
   padding: 0 0 0 30px;
-  margin-bottom: 20px;
-  font-size: 1.6em;
+  margin-bottom: 15px; /* was 20px; */
+  font-size: 1.2em; /* was 1.6em */
   border-left: 10px solid #e9e9e9;
 }
 

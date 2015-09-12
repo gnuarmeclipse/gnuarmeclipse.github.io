@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>The Build environment</title>
+  <title>How to get support</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="The Build environment" />
+  <meta property="og:title" content="How to get support" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="The Build environment">
+  <meta property="og:title" content="How to get support">
 
-  <meta property="article:published_time" content="2015-09-10">
+  <meta property="article:published_time" content="2015-09-12">
 
 
 
@@ -30,7 +30,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/development-environment/">
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/support/overview/">
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
@@ -75,23 +75,67 @@
 <section id="main-content">
 
 
-<h1 class="page-title">The Build environment</h1>
+<h1 class="page-title">How to get support</h1>
 
 
-<h2 id="liviu-ionescus-build-environment">Liviu Ionescu’s build environment</h2>
+<h2 id="plug-ins-issues">Plug-ins issues</h2>
 
-<p>I’m currently using OS X 10.10.x running on a Mac Book Pro 2011, with 8 GB of RAM. The debugging sessions are started from within Eclipse on OS X. I currently have no debug capabilities on other platforms (sorry for this).</p>
-
-<p>For testing the resulting plug-ins binaries on other platforms, I install them on Eclipses within several virtual machines running on Parallels Desktop 10:</p>
+<p>In case you encounter problems while using the plug-ins, please consider the following:</p>
 
 <ul>
-  <li>Ubuntu 14.x, 64-bits</li>
-  <li>Windows 8.1, 64-bits</li>
-  <li>Windows 7, 32-bits</li>
+  <li>read the documentation pages</li>
+  <li>check the <a href="/support/known-issues/">Known issues</a></li>
+  <li>check the <a href="/support/faq/">FAQ</a></li>
+  <li>scan the <a href="/support/ for similar problemssourceforge/">SourceForge tickets</a></li>
+  <li>check the GitHub Issues</li>
 </ul>
 
-<p>For the multi-platform builds I use <a href="https://www.docker.com">Docker</a>, which on OS X runs under Virtual Box. Running the builds in parallel with using other Parallels Desktop virtual machines is possible, but Virtual Box becomes painfully slow and generally should be avoided.</p>
+<p>If you still could not find a solution, follow the recommendations in the GitHub Issues <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">tracker</a> and add a new ticket.</p>
 
+<p><img src="/images/2015/github-gae-issues-welcome-new.png" alt="GNU ARM Eclipse Issues." /></p>
+
+<p>The issues can be labeled as:</p>
+
+<ul>
+  <li><strong>bug</strong> - use it for bug reports</li>
+  <li><strong>enhancement</strong> - use it for feature requests</li>
+  <li><strong>help wanted</strong></li>
+  <li><strong>question</strong> - use them for support requests</li>
+</ul>
+
+<p><img src="/images/2015/github-gae-issues-welcome-labels.png" alt="Issue Labels" /></p>
+
+<h3 id="bugs">Bugs</h3>
+
+<p>If, while using the plug-in, you encounter any bugs, please let us know about them.</p>
+
+<h3 id="feature-requests">Feature requests</h3>
+
+<p>As for any open source project, feature requests will be more quickly processed if accompanied by patches.</p>
+
+<h3 id="support-requests">Support requests</h3>
+
+<p>For all other issues you have, that are not related to bugs or feature requests, you can use label your request as ‘help wanted’ or ‘question’.</p>
+
+<h2 id="tools-issues">Tools issues</h2>
+
+<p>Similarly, each tool project has a separate GitHub Issue tracker.</p>
+
+<ul>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">QEMU Issues</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">OpenOCD Issues</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Windows Build Tools Issues</a></li>
+</ul>
+
+<p>Please note that these trackers are mostly intended to the GNU ARM Eclipse specifics of these tools (like packing, or specific changes), and for issues affecting the core functionality, the user will most probably be asked to refer to the tools trackers.</p>
+
+<h2 id="web-pages-issues">Web pages issues</h2>
+
+<p>If you discover problems in the content of these pages (typos, wrong phrasing, etc), or you have suggestions on how to improve them, you can use the <a href="https://github.com/gnuarmeclipse/gnuarmeclipse.github.io/issues/1">Web Issues</a> tracker.</p>
+
+<blockquote>
+  <p>Note: the migration from WordPress/MediaWiki to GitHub Pages involved quite significant changes to the web pages, including conversion to <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a>, which was done partly with scripts, partly manually; we are aware that it is very likely that lots of mistakes are still present in the pages; we would appreciate any help in fixing them.</p>
+</blockquote>
 
 
 
