@@ -802,7 +802,8 @@ h2#contents + ul {
   margin-top: 0px;
 }
 
-h3#additional-tools ~ ul li p:first-child {
+/* The list of additional tools */
+h2#additional-tools ~ ul li p:first-child {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 110%;
 }
