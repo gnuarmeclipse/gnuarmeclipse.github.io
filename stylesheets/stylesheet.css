@@ -468,7 +468,7 @@ header h1 {
 
 header h2 {
   width: 600px; /* 540px; */
-  
+
   margin-top: 0;
   margin-bottom: 0;
   font-size: 26px;
@@ -725,9 +725,11 @@ p a {
 
 blockquote {
   padding: 0 0 0 30px;
-  margin-bottom: 15px; /* was 20px; */
-  font-size: 1.2em; /* was 1.6em */
+  margin-bottom: 10px; /* was 20px; */
+  font-size: 1.1em; /* was 1.6em */
+  line-height: 1.4;
   border-left: 10px solid #e9e9e9;
+  font-style: italic;
 }
 
 ul {
@@ -925,4 +927,3 @@ a.post-smaller {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) { }
-
