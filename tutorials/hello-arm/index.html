@@ -94,7 +94,7 @@
 
 <p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or the button in the upper left corner), and select the <strong>C Project</strong>:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/NewCProject.png" alt="NewCProject" /></p>
+<p><img src="/images/2013/10/NewCProject.png" alt="NewCProject" /></p>
 
 <p>In the <strong>C Project</strong> window:</p>
 
@@ -105,7 +105,7 @@
   <li>click the <strong>Next &gt;</strong> button</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/NewCHelloProject1.png" alt="" /></p>
+<p><img src="/images/2013/10/NewCHelloProject1.png" alt="" /></p>
 
 <p>In the <strong> Target processor settings</strong> window be sure to:</p>
 
@@ -117,15 +117,15 @@
   <li>click the <strong>Next &gt;</strong> button.</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloProcessorSettings.png" alt="" /></p>
+<p><img src="/images/2013/10/HelloProcessorSettings.png" alt="" /></p>
 
 <p>In the <strong>Folders</strong> page leave the suggested folders unchanged and click the <strong>Next &gt;</strong> button.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloFolderSettings.png" alt="Define the project folders." /></p>
+<p><img src="/images/2013/10/HelloFolderSettings.png" alt="Define the project folders." /></p>
 
 <p>In the <strong>Select Configurations</strong> page leave the suggested Debug/Release configurations checked and click the <strong>Next &gt;</strong> button.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloConfigurations.png" alt="" /></p>
+<p><img src="/images/2013/10/HelloConfigurations.png" alt="" /></p>
 
 <p>In the <strong>Cross GNU ARM Toolchain</strong> window:</p>
 
@@ -135,17 +135,17 @@
   <li>click the <strong>Finish</strong> button</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloToolchain.png" alt="" /></p>
+<p><img src="/images/2013/10/HelloToolchain.png" alt="" /></p>
 
 <p>Note 1: when selecting the path, be sure you select the <strong>/bin</strong> folder where the programs with long, prefixed names are stored, and not the inner /bin folder where the short name programs may be available.</p>
 
 <p>Note 2: DO NOT SKIP this step, it is mandatory to have a correct toolchain path defined in order for the build to complete correctly.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloToolchainPath.png" alt="" /></p>
+<p><img src="/images/2013/10/HelloToolchainPath.png" alt="" /></p>
 
 <p>The result of the wizard is a simple project, with a <strong>main()</strong> function printing a greeting on the standard output.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloProject.png" alt="" /></p>
+<p><img src="/images/2013/10/HelloProject.png" alt="" /></p>
 
 <h2 id="build-the-project">Build the project</h2>
 
@@ -156,15 +156,15 @@
   <li>click the <strong>hammer</strong> icon</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HammerBuild1.png" alt="" /></p>
+<p><img src="/images/2013/10/HammerBuild1.png" alt="" /></p>
 
 <p>The build process should leave in the <em>Console</em> window a listing like this:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloProjectBuildConsole.png" alt="" /></p>
+<p><img src="/images/2013/10/HelloProjectBuildConsole.png" alt="" /></p>
 
 <p>The files created by the build process are left in a folder named by the name of the configuration, for example <em>Debug</em> or <em>Release</em>.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloBuildResult.png" alt="" /></p>
+<p><img src="/images/2013/10/HelloBuildResult.png" alt="" /></p>
 
 <p>As seen above, the <em>Debug</em> folder is populated with</p>
 
@@ -198,7 +198,7 @@
   <li>a wrong or missing toolchain path; go to the project properties, C/C++ Build → Setting → the Toolchains tab and define the correct path;</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths." /></p>
+<p><img src="/images/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths." /></p>
 
 <ul>
   <li>missing build tools (make &amp; rm) on Windows; install the <a href="/windows-build-tools/overview/" title="Build tools (make &amp; rm) for Windows">build tools</a>.</li>

@@ -126,7 +126,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)&lt;/pre&gt;
 
 <p>As mentioned before, the recommended way is to use a fresh <strong>Eclipse IDE for C/C++ Developers</strong> for the cross ARM development projects. Even if you did so, but especially if you did not do so, it is a good idea to check if you really have the latest version available. For this, enter the <em>Eclipse</em> menu and go to <strong>Help</strong> → <strong>Install New Software</strong></p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/InstallNewSoftware.png" alt="Install new software" /></p>
+<p><img src="/images/2013/10/InstallNewSoftware.png" alt="Install new software" /></p>
 
 <ul>
   <li>select <em>Work with:</em> <strong>Kepler</strong></li>
@@ -135,7 +135,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)&lt;/pre&gt;
   <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/InstallCDT.png" alt="CDT install." /></p>
+<p><img src="/images/2013/10/InstallCDT.png" alt="CDT install." /></p>
 
 <h3 id="compatibility-issues">Compatibility issues</h3>
 
@@ -158,7 +158,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)&lt;/pre&gt;
   <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/AddRepository.png" alt="AddRepository" /></p>
+<p><img src="/images/2013/10/AddRepository.png" alt="AddRepository" /></p>
 
 <ul>
   <li>normally the main window should list a group named <strong>CDT GNU Cross Development Tools</strong>; expand it</li>
@@ -167,7 +167,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)&lt;/pre&gt;
   <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/04/PluginsInstall.png" alt="Plug-ins install" /></p>
+<p><img src="/images/2014/04/PluginsInstall.png" alt="Plug-ins install" /></p>
 
 <p>Once you define the update site URL, further updates are greatly simplified (<strong>Help</strong> → <strong>Check For Updates</strong>).</p>
 
@@ -175,7 +175,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)&lt;/pre&gt;
 
 <p>There are cases when the on-line access to the SourceForge mirror servers might not be reliable. In these cases the Eclipse update system may fail. For example:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/FailedInstall.png" alt="Failed install." /></p>
+<p><img src="/images/2013/10/FailedInstall.png" alt="Failed install." /></p>
 
 <p>If this happens, Eclipse remains in a confused state and rarely can recover itself.</p>
 
@@ -183,7 +183,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)&lt;/pre&gt;
 
 <p>For this go to Eclipse menu → <strong>Preferences</strong> → <strong>Install/Update</strong> → <strong>Available Software Sites</strong>:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/AvailableSites.png" alt="Remove from available site list." /></p>
+<p><img src="/images/2013/10/AvailableSites.png" alt="Remove from available site list." /></p>
 
 <p>If this still fails, the alternative method is to manually download the latest version archive and to perform the install from it, as presented below.</p>
 
@@ -200,13 +200,13 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)&lt;/pre&gt;
   <li>follow the usual installation procedure</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/AddArchiveRepository.png" alt="Add repository from archive." /></p>
+<p><img src="/images/2013/10/AddArchiveRepository.png" alt="Add repository from archive." /></p>
 
 <h2 id="off-line-install">Off-line install</h2>
 
 <p>If, for any reasons, you need to install the GNU ARM Eclipse plug-ins on a system without permanent Internet connection, and decide for the alternate way presented above, please be aware that the debug plug-ins require the presence of the <strong>C/C++ GDB Hardware Debugging</strong> plug-in. Usually this plug-in is not included in the standard package, but is present in the <strong>CDT Optional Features</strong> category, packed with the CDT archives available from the <a href="https://www.eclipse.org/cdt/downloads.php">CDT download site</a>. Download the desired archive, add it to your update sites, select the C/C++ GDB Hardware Debugging plug-in, restart as usual, and then install the GNU ARM Eclipse plug-ins from the local archive, as above.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/GDB_Hardware_Install.png" alt="Install the GDB Hardware." /></p>
+<p><img src="/images/2013/10/GDB_Hardware_Install.png" alt="Install the GDB Hardware." /></p>
 
 <p>Note: Attempts to install the GNU ARM Eclipse plug-ins off-line without having the C/C++ GDB Hardware Debugging installed fails with an error related to installing the <em>ilg.gnuarmeclipse.debug.gdbjtag.jlink.feature.group</em> and other debugging features.</p>
 
@@ -218,11 +218,11 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)&lt;/pre&gt;
 
 <p>The short answer is that the announced version refers to the update site, also packed as an archive, and available from SourceForge. The same version is also used for the <strong>ilg.gnuarmeclipse.core</strong> plug-in:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/Plugins.png" alt="Installed plug-ins." /></p>
+<p><img src="/images/2013/10/Plugins.png" alt="Installed plug-ins." /></p>
 
 <p>Although the core plug-in is referred by all features, this version number cannot be found in the list of the features:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/Features.png" alt="Installed features." /></p>
+<p><img src="/images/2013/10/Features.png" alt="Installed features." /></p>
 
 <p>However, the common point for all these magic numbers is the release date, <em>201502281154</em> in this case, which is identical for all plug-ins and features.</p>
 

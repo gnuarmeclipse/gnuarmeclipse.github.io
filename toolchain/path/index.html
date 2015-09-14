@@ -112,7 +112,7 @@
 
 <p>However, when multiple toolchains are installed, the use of any global setting is strongly discouraged, since it soon leads to serious problems generally due to messing headers and executables between different toolchains. In this case the only recommended solution is to define the toolchain path for each build configuration.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/02/ProjectEnvironment.png" alt="Toolchain path in project environment." /></p>
+<p><img src="/images/2014/02/ProjectEnvironment.png" alt="Toolchain path in project environment." /></p>
 
 <h2 id="cdt-cross-build-plug-in">CDT Cross build plug-in</h2>
 
@@ -132,11 +132,11 @@
 
 <p>The default (and the recommended) setting, is to use the global toolchain path.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/02/ToolchainsProperties.png" alt="" /></p>
+<p><img src="/images/2014/02/ToolchainsProperties.png" alt="" /></p>
 
 <p>The displayed path is associated with the selected toolchain. To change the toolchain path use the hyperlinks; it is recommended to use the global page, but, if needed, the toolchain path can also be configured per workspace or even per project.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths." /></p>
+<p><img src="/images/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths." /></p>
 
 <p>Using the global toolchain path does not store any data in the project configuration files, but in the Eclipse folders, so the project portability is not affected.</p>
 
@@ -146,7 +146,7 @@
 
 <p>Forgetting to set the toolchain path, or setting a wrong value, is easy to diagnose, since the Eclipse editor will be full of red markers to all definitions related to system headers, and, even more explictly, the build will fail:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/02/NoToolchainPath.png" alt="Missing or wrong path." /></p>
+<p><img src="/images/2014/02/NoToolchainPath.png" alt="Missing or wrong path." /></p>
 
 <p>If so, enter the project <strong>C/C++ Settings</strong>, the <strong>Toolchains</strong> tab, and add/correct the toolchain path (see above).</p>
 
@@ -159,7 +159,7 @@
 
 <p>The page to setup this is the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Settings</strong> → <strong>Build Steps</strong>:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/02/PreBuildVersion.png" alt="Pre-build step to display compiler version." /></p>
+<p><img src="/images/2014/02/PreBuildVersion.png" alt="Pre-build step to display compiler version." /></p>
 
 <h3 id="the-installer-already-updated-the-system-path">The installer already updated the system path</h3>
 

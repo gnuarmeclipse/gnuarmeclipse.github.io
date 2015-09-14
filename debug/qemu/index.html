@@ -115,7 +115,7 @@
   <li>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>QEMU</strong></li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/QEMU_Preferences.png" alt="The QEMU preferences page." /></p>
+<p><img src="/images/2015/04/QEMU_Preferences.png" alt="The QEMU preferences page." /></p>
 
 <ul>
   <li>click the <strong>Restore Defaults</strong> button</li>
@@ -131,7 +131,7 @@
 
 <p>Although not absolutely mandatory, it is recommended to associate a device to the project, so that creating the debugger launch configuration will automatically fill-in the device name.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/Devices.png" alt="Assigning a device to the project." /></p>
+<p><img src="/images/2013/10/Devices.png" alt="Assigning a device to the project." /></p>
 
 <p>Follow the steps in the separate page <a href="/eclipse/project/assign-device/">Associate a device to the project</a> and return to this page to continue.</p>
 
@@ -146,26 +146,26 @@
   <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon.</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/10/HelloBuildResult.png" alt="The build result." /></p>
+<p><img src="/images/2013/10/HelloBuildResult.png" alt="The build result." /></p>
 
 <ul>
   <li>double click the <strong>GDB QEMU Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button.</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/QEMU_Debugging.png" alt="Create a new QEMU launch configuration." /></p>
+<p><img src="/images/2015/04/QEMU_Debugging.png" alt="Create a new QEMU launch configuration." /></p>
 
 <ul>
   <li>a multi-tab page will be displayed;</li>
   <li>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example hello) and the application file name and location (for example Debug/hello.elf).</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/HelloMainTab.png" alt="The Main tab." /></p>
+<p><img src="/images/2015/04/HelloMainTab.png" alt="The Main tab." /></p>
 
 <ul>
   <li>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start QEMU as a GDB server and the GDB client.</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/HelloDebuggerTab.png" alt="The Debugger tab at first run." /></p>
+<p><img src="/images/2015/04/HelloDebuggerTab.png" alt="The Debugger tab at first run." /></p>
 
 <ul>
   <li>at your first run it is recommended to leave the Board name: field as it is, with a question mark, for the emulator to display the list of supported boards.</li>
@@ -179,7 +179,7 @@
   </li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/HelloCommonTab.png" alt="Store the debug configuration in the project." /></p>
+<p><img src="/images/2015/04/HelloCommonTab.png" alt="Store the debug configuration in the project." /></p>
 
 <ul>
   <li>click the <strong>Close</strong> button.</li>
@@ -187,7 +187,7 @@
 
 <p>With the above settings, the debug configuration will be saved in the project, not in the workspace storage.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/LauncherInProject.png" alt="The debug launch configuration stored in the project folder." /></p>
+<p><img src="/images/2015/04/LauncherInProject.png" alt="The debug launch configuration stored in the project folder." /></p>
 
 <h2 id="start-a-debug-session">Start a debug session</h2>
 
@@ -202,11 +202,11 @@
 
 <p>Alternatively, on subsequent runs, you can use the bug specific icon. By default this will start the previously used debug launch configuration; to start a different configuration, use the down arrow button:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/DebugDownArrow.png" alt="The debugger down arrow selection." /></p>
+<p><img src="/images/2015/04/DebugDownArrow.png" alt="The debugger down arrow selection." /></p>
 
 <p>If everything is ok, after a few seconds required to start QEMU, you should see something like this:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/QEMU_FirstRun.png" alt="The list of supported boards." /></p>
+<p><img src="/images/2015/04/QEMU_FirstRun.png" alt="The list of supported boards." /></p>
 
 <p>This happened because by default the <em>Board name:</em> field contains a question mark.</p>
 
@@ -220,7 +220,7 @@
   <li>in the Command line: field, after hello, add <code>3 2 1</code>, as an example</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/HelloDebuggerTabH103.png" alt="The Debugger tab with the board name filled-in." /></p>
+<p><img src="/images/2015/04/HelloDebuggerTabH103.png" alt="The Debugger tab with the board name filled-in." /></p>
 
 <ul>
   <li>click the Debug button</li>
@@ -228,13 +228,13 @@
 
 <p>If everything is ok, after a few seconds required to start the server, to allow it to connect to the target, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/HelloFirstDebug.png" alt="The first debug." /></p>
+<p><img src="/images/2015/04/HelloFirstDebug.png" alt="The first debug." /></p>
 
 <p>Be sure you enable the Remember my decision check box, otherwise Eclipse will ask this question each and every time you launch this debug configuration. Then click the <strong>Yes</strong> button.</p>
 
 <p>If everything is ok, after a few seconds required to start QEMUt, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/BreakpointInMain.png" alt="Breakpoint in main()." /></p>
+<p><img src="/images/2015/04/BreakpointInMain.png" alt="Breakpoint in main()." /></p>
 
 <p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <em>main()</em> function.</p>
 
@@ -263,17 +263,17 @@
 
 <p>To see the console of any process, just select the process in the top left window. For example the QEMU console will initially look like this:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/QEMU_Console.png" alt="The QEMU console." /></p>
+<p><img src="/images/2015/04/QEMU_Console.png" alt="The QEMU console." /></p>
 
 <p>select again the main thread in the debugged application (in the upper left window) and click several times the Step Over button, until you reach the timer_start() function.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/HelloSingleSteps.png" alt="Hello single steps." /></p>
+<p><img src="/images/2015/04/HelloSingleSteps.png" alt="Hello single steps." /></p>
 
 <p>The QEMU console should display the program arguments, passed via semihosting, then exercise various output functions.</p>
 
 <p>Click the <strong>Resume</strong> button and execution will resume. Watch the console. After three iterations, execution will complete and QEMU will quit with exit code 0 (success).</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2015/04/HelloFinalRun.png" alt="Run the application to completion." /></p>
+<p><img src="/images/2015/04/HelloFinalRun.png" alt="Run the application to completion." /></p>
 
 <p>You can experiment with the first argument, which controls the number of iterations in the main loop; edit it to 7 and rerun the application.</p>
 

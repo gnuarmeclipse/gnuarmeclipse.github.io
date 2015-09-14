@@ -90,7 +90,7 @@
 
 <p>To have access to the new packs features, you need to install the <strong>GNU ARM Eclipse Packs Support</strong> plug-in (currently with experimental status):</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/InstallPacks.png" alt="Install packs support plug-in." /></p>
+<p><img src="/images/2014/07/InstallPacks.png" alt="Install packs support plug-in." /></p>
 
 <p><strong>Note:</strong> If you encounter <strong>difficulties to refresh the packs</strong>, please use the latest beta version from <strong>http://gnuarmeclipse.sourceforge.net/updates-test</strong>.</p>
 
@@ -104,19 +104,19 @@
 
 <p>By default, this folder is called Packages and is located at the same level as the current workspace.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksPath.png" alt="Path to packages." /></p>
+<p><img src="/images/2014/07/PacksPath.png" alt="Path to packages." /></p>
 
 <p>If you use multiple Eclipses with multiple workspaces, it is recommended to adjust this path to a single location and have the same packs install folder for all workspaces.</p>
 
 <p>The plug-in also provides a page to configure which sites are used to load packs. Currently only the Keil URL is relevant, but in case others will appear, they can be added to the list.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksURLs.png" alt="URLs of packs repositories." /></p>
+<p><img src="/images/2014/07/PacksURLs.png" alt="URLs of packs repositories." /></p>
 
 <h2 id="the-packs-perspective">The Packs perspective</h2>
 
 <p>The packs manager uses a separate perspective, with selection views and outline views. To make this perspective visible, click the <strong>Packs</strong> button available on the Eclipse toolbar:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksToolbarButton.png" alt="Make the packs perspective visible." /></p>
+<p><img src="/images/2014/07/PacksToolbarButton.png" alt="Make the packs perspective visible." /></p>
 
 <p>Alternatively you can:</p>
 
@@ -127,13 +127,13 @@
 
 <p>The result is a window like this:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/EmptyPacksPerspective.png" alt="The empty packs perspective." /></p>
+<p><img src="/images/2014/07/EmptyPacksPerspective.png" alt="The empty packs perspective." /></p>
 
 <p>Initially all views are empty; to populate them, the plug-in needs to access external packs repositories; for this be sure the internet connection is active and click the yellow arrows <strong>Refresh</strong> button.</p>
 
 <p>After a few minutes, the window will change and show the list of packages:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PacksPerspective.png" alt="The Packs perspective." /></p>
+<p><img src="/images/2014/07/PacksPerspective.png" alt="The Packs perspective." /></p>
 
 <p>The structure of this window is generally in line with usual Eclipse guidelines:</p>
 
@@ -149,11 +149,11 @@
 
 <p>To easily find the desired packs, several filtering criteria are available: Device, Board and Keyword. The usual usage scenario is to filter by device vendor, which will reduce the list of packages to those referring to all devices produced by the device vendor. For this select one or more vendors in the left window:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/FilterByDeviceVendor.png" alt="Filter by device vendor." /></p>
+<p><img src="/images/2014/07/FilterByDeviceVendor.png" alt="Filter by device vendor." /></p>
 
 <p>Similarly you can filter by one or more devices, even from multiple vendors, and the list of packs will be reduces even more:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/FilterByDevices.png" alt="Filter by devices." /></p>
+<p><img src="/images/2014/07/FilterByDevices.png" alt="Filter by devices." /></p>
 
 <p>Similarly you can filter by boards and keywords, switch to the corresponding view in the left window and select the desired filters (with multiple selections possible).</p>
 
@@ -163,7 +163,7 @@
 
 <p>All current and past versions are shown in the packs tree below each package node:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PackVersions.png" alt="Pack versions." /></p>
+<p><img src="/images/2014/07/PackVersions.png" alt="Pack versions." /></p>
 
 <h2 id="brief-outline">Brief outline</h2>
 
@@ -177,17 +177,17 @@
 
 <p>Usually you would need to install the latest available version, but, for special cases a specific version can be also installed. For this you need to select either the package or the version, and click the Install button in the view toolbar:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/InstallVersion.png" alt="Install a package version." /></p>
+<p><img src="/images/2014/07/InstallVersion.png" alt="Install a package version." /></p>
 
 <p>The result of this action is the download and unarchive of the desired packs, followed by write protecting all files, to protect them from inadvertent changes. To differentiate installed packages, the icon, initially grey, lights up in colour:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/InstalledVersion.png" alt="Installed versions light up in colour." /></p>
+<p><img src="/images/2014/07/InstalledVersion.png" alt="Installed versions light up in colour." /></p>
 
 <h2 id="full-outline">Full outline</h2>
 
 <p>Once a package is installed, you can get the full outline of the pack version by selecting the desired version. This will trigger an update of the outline window, with the brief outline being replaced by a full outline.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/FullOutline.png" alt="Full outline view." /></p>
+<p><img src="/images/2014/07/FullOutline.png" alt="Full outline view." /></p>
 
 <p>The full outline is a multi-level tree. Moving the mouse around brings new tooltip windows, where full details are displayed.</p>
 
@@ -195,7 +195,7 @@
 
 <p>Double clicking source and header files opens them in the main editor window:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/ViewHeaderFile.png" alt="View a header file." /></p>
+<p><img src="/images/2014/07/ViewHeaderFile.png" alt="View a header file." /></p>
 
 <h2 id="pack-uninstall">Pack uninstall</h2>
 
@@ -203,7 +203,7 @@
 
 <p>To achieve this, select the desired pack version, and click the uninstall button available in the view toolbar.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PackUninstall.png" alt="Pack uninstall." /></p>
+<p><img src="/images/2014/07/PackUninstall.png" alt="Pack uninstall." /></p>
 
 <p>Uninstalling a package version removes both the archive and the unarchived folder, then changes the icons back to grey.</p>
 
@@ -211,7 +211,7 @@
 
 <p>For installed packages, the plug-in presents the list of available examples below each pack version.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2014/07/PackExamples.png" alt="Pack examples." /></p>
+<p><img src="/images/2014/07/PackExamples.png" alt="Pack examples." /></p>
 
 <p>For selected examples, the outline presents details about the content of the example.</p>
 

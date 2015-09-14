@@ -121,7 +121,7 @@
   <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDPath.png" alt="" /></p>
+<p><img src="/images/2013/12/OpenOCDPath.png" alt="" /></p>
 
 <p>It is recommended to define the path to the OpenOCD relative to this variable in all your debug configurations, to have a single place to update the path when you want to use another version of the OpenOCD tools installed in a different location.</p>
 
@@ -137,20 +137,20 @@
   <li>double click on the <strong>GDB OpenOCD Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDDebugConfigs.png" alt="OpenOCD debug configurations." /></p>
+<p><img src="/images/2013/12/OpenOCDDebugConfigs.png" alt="OpenOCD debug configurations." /></p>
 
 <ul>
   <li>a multi-tab page will be displayed</li>
   <li>if you started this procedure with the executable file selected, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example Debug/blink1.elf).</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDMainTab.png" alt="The OpenOCD Main tab." /></p>
+<p><img src="/images/2013/12/OpenOCDMainTab.png" alt="The OpenOCD Main tab." /></p>
 
 <ul>
   <li>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDDebuggerTab.png" alt="OpenOCD Debugger tab." /></p>
+<p><img src="/images/2013/12/OpenOCDDebuggerTab.png" alt="OpenOCD Debugger tab." /></p>
 
 <ul>
   <li>the only field that usually requires attention is the OpenOCD <strong>Config options:</strong>, where you should add one or more configuration scripts</li>
@@ -158,7 +158,7 @@
   <li>click the third tab, named <strong>Startup</strong>, which contains some specific OpenOCD options used to configure the debug session; defaults are generally enough</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDStartupTab.png" alt="The OpenOCD Startup tab." /></p>
+<p><img src="/images/2013/12/OpenOCDStartupTab.png" alt="The OpenOCD Startup tab." /></p>
 
 <ul>
   <li>
@@ -181,13 +181,13 @@
   </li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDCommonTab.png" alt="Shared debug configuration." /></p>
+<p><img src="/images/2013/12/OpenOCDCommonTab.png" alt="Shared debug configuration." /></p>
 
 <ul>
   <li>this will arrange for the debug configuration to be saved in the project, not in the workspace storage</li>
 </ul>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDSharedDebug.png" alt="Debug configuration stored in the project." /></p>
+<p><img src="/images/2013/12/OpenOCDSharedDebug.png" alt="Debug configuration stored in the project." /></p>
 
 <ul>
   <li>click the <strong>Apply</strong> button</li>
@@ -215,15 +215,15 @@
 
 <p>Alternatively, for later sessions, you can use the bug specific icon. Do not press it directly, since it will not behave as expected; instead, click the down arrow button:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDStartDebugArrow.png" alt="Down arrow debug." /></p>
+<p><img src="/images/2013/12/OpenOCDStartDebugArrow.png" alt="Down arrow debug." /></p>
 
 <p>This will open a new window where you can select the desired debug configuration:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/DebugSelection.png" alt="Select the debug configuration." /></p>
+<p><img src="/images/2013/12/DebugSelection.png" alt="Select the debug configuration." /></p>
 
 <p>If everything is ok, after a few seconds required to start the server, to allow it to connect to the target, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDConsoles.png" alt="The new debug session, with two consoles." /></p>
+<p><img src="/images/2013/12/OpenOCDConsoles.png" alt="The new debug session, with two consoles." /></p>
 
 <p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <em>main()</em> function, which in this case is a tracing <em>printf()</em>.</p>
 
@@ -252,11 +252,11 @@
 
 <p>To see the console of any process, just select the process in the top left window. For example the gdb client console might look like this:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDclientConsole.png" alt="The GDB client console." /></p>
+<p><img src="/images/2013/12/OpenOCDclientConsole.png" alt="The GDB client console." /></p>
 
 <p>The semihosting tracing messages are displayed in the same window as the OpenOCD output:</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDTraceConsole.png" alt="The tracing console." /></p>
+<p><img src="/images/2013/12/OpenOCDTraceConsole.png" alt="The tracing console." /></p>
 
 <h2 id="show-console-when-standard-outerror-change">Show console when standard out/error change</h2>
 
@@ -264,7 +264,7 @@
 
 <p>This mode can be identified by the status of the buttons on the right side of the Debugging view.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDShowConsole.png" alt="Show console when standard out/err changes." /></p>
+<p><img src="/images/2013/12/OpenOCDShowConsole.png" alt="Show console when standard out/err changes." /></p>
 
 <p>To make the display stable on the desired console, disable both buttons. To switch between consoles, select them either in the top left Debug view, or using the right button, as shown above.</p>
 
@@ -272,7 +272,7 @@
 
 <p>Apparently not a big deal, but quite useful for repeated debug sessions, <strong>the Restart button</strong> can be used at any time during a debug session, and the result is that a reset is dispatched to the target board via the JTAG/SWD interface and the debug session is restarted.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/RestartButton.png" alt="The restart button." /></p>
+<p><img src="/images/2013/12/RestartButton.png" alt="The restart button." /></p>
 
 <p>Note: Due to some bugs in Eclipse, the implementation of his simple button has encountered several problems. Depending on the version you are using, the first time you click this button you might get a message box informing that the button was not enabled. Ignore this message, close the message box and click the button again, this time it’ll be effective.</p>
 
@@ -288,7 +288,7 @@
 
 <p>The first failure to start a debug session is missing to enter the OpenOCD path. Without it, the launching sequence will complain <em>Cannot run program “/openocd”</em>.</p>
 
-<p><img src="http://gnuarmeclipse.livius.net/blog/wp-content/uploads/2013/12/OpenOCDCannotRun.png" alt="Cannot run OpenOCD." /></p>
+<p><img src="/images/2013/12/OpenOCDCannotRun.png" alt="Cannot run OpenOCD." /></p>
 
 <p>Define the <strong>openocd_path</strong> as instructed above and the session should start properly.</p>
 

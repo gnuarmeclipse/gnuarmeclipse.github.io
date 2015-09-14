@@ -16,6 +16,7 @@
 
   <meta property="og:title" content="How to install the Windows Build Tools">
 
+  <meta property="article:published_time" content="2015-09-04">
 
 
 
@@ -109,7 +110,7 @@
 
 <h2 id="download-the-windows-build-tools-setup">Download the Windows Build Tools setup</h2>
 
-<p>Otherwise, if you use other toolchains, like the recommended <a href="http://launchpad.net/gcc-arm-embedded"><strong>GNU Tools for ARM Embedded Processors</strong></a>, for your convenience we prepared a small package with the required build tools; just download the most recent <strong>gnuarmeclipse-build-tools-win32-2.*-*-setup.exe</strong> file from the <a href="https://sourceforge.net/projects/gnuarmeclipse/files/Build Tools/" target="_blank">SourceForge download area</a> and proceed with the setup.</p>
+<p>Otherwise, if you use other toolchains, like the recommended <a href="http://launchpad.net/gcc-arm-embedded"><strong>GNU Tools for ARM Embedded Processors</strong></a>, for your convenience we prepared a small package with the required build tools; just download the most recent <strong>gnuarmeclipse-build-tools-win32-2.*-*-setup.exe</strong> file from the <a href="https://sourceforge.net/projects/gnuarmeclipse/files/Build Tools/">SourceForge download area</a> and proceed with the setup.</p>
 
 <h2 id="run-the-setup">Run the setup</h2>
 
@@ -125,12 +126,12 @@
 
 <p>Check if the tool is functional; go to the folder where you installed the tools and run <code>make --version</code>.</p>
 
-<pre><code>C:\Program Files\GNU ARM Eclipse\Build Tools\bin&gt;make --version 
-GNU Make 4.1 
-Built for i686-w64-mingw32 
-Copyright (C) 1988-2014 Free Software Foundation, Inc. 
-License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt; 
-This is free software: you are free to change and redistribute it. 
+<pre><code>C:\Program Files\GNU ARM Eclipse\Build Tools\bin&gt;make --version
+GNU Make 4.1
+Built for i686-w64-mingw32
+Copyright (C) 1988-2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 </code></pre>
 
@@ -159,7 +160,6 @@ There is NO WARRANTY, to the extent permitted by law.
 <h2 id="the-echo-command">The echo command</h2>
 
 <p>The package also contains an executable for the <strong>echo</strong> command. It is not mandatory for the build to succeed, but it is recommended to have it in the build path, to avoid an annoying CDT bug, that triggers an error during the first build of a new project, claiming that <em>Program “gcc” not found in PATH</em>.</p>
-
 
 
 
