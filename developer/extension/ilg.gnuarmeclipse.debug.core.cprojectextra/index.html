@@ -86,11 +86,11 @@
 
 <h2 id="definition">Definition</h2>
 
-<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd">ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd</a>.</p>
+<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd">ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd</a>.</p>
 
 <h2 id="api">API</h2>
 
-<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.core/src/ilg/gnuarmeclipse/debug/core/data/ICProjectExtraDataManager.java">ICProjectExtraDataManager</a>.</p>
+<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.core/src/ilg/gnuarmeclipse/debug/core/data/ICProjectExtraDataManager.java">ICProjectExtraDataManager</a>.</p>
 
 <p>The only function required is:</p>
 
@@ -99,7 +99,7 @@
 
 <h2 id="where-is-this-extension-point-used">Where is this extension point used?</h2>
 
-<p>The <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/CProjectExtraDataManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/CProjectExtraDataManagerProxy.java</a> class enumerates all <strong>cprojectExtra</strong> extension points and returns the first one that can provide data for the requested configuration.</p>
+<p>The <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/CProjectExtraDataManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/CProjectExtraDataManagerProxy.java</a> class enumerates all <strong>cprojectExtra</strong> extension points and returns the first one that can provide data for the requested configuration.</p>
 
 <p>This <code>CProjectExtraDataManagerProxy.getExtraProperties(config)</code> is called from <code>PeripheralsService.etPeripherals(IContainerDMContext containerDMContext, DataRequestMonitor&lt;IPeripheralDMContext[]&gt; drm)</code>:</p>
 
@@ -154,7 +154,7 @@ if (vendorId != null &amp;&amp; deviceName != null) {
    &lt;/extension&gt;
 </code></pre>
 
-<p>The data manager created by this factory is <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.managedbuild.cross/src/ilg/gnuarmeclipse/managedbuild/cross/xpi/CProjectExtraDataManager.java">ilg.gnuarmeclipse.managedbuild.cross.xpi/CProjectExtraDataManager.java</a> which returns the entire map of extra properties associated with GNU ARM Eclipse projects, stored in .cproject:</p>
+<p>The data manager created by this factory is <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.managedbuild.cross/src/ilg/gnuarmeclipse/managedbuild/cross/xpi/CProjectExtraDataManager.java">ilg.gnuarmeclipse.managedbuild.cross.xpi/CProjectExtraDataManager.java</a> which returns the entire map of extra properties associated with GNU ARM Eclipse projects, stored in .cproject:</p>
 
 <pre><code>    &lt;storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"&gt;
         &lt;option id="cmsis.device.name" value="STM32F407VG"/&gt;
@@ -190,11 +190,11 @@ if (vendorId != null &amp;&amp; deviceName != null) {
 <h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
 
 <ul>
+  <li><a href="/2015/09/14/2015-09-14-web-new-look/">The GNU ARM Eclipse project has a new home and a new look</a></li>
   <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
   <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
   <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
   <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
-  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
 </ul>
 
 <hr />
@@ -317,7 +317,7 @@ if (vendorId != null &amp;&amp; deviceName != null) {
   <li><a href="/support/known-issues/">Known issues</a></li>
   <li><a href="/support/faq/">FAQ</a></li>
   <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Report plug-ins issue</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
 </ul>
 
 <h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>

@@ -86,11 +86,11 @@
 
 <h2 id="definition">Definition</h2>
 
-<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.core/schema/svd_path.exsd">ilg.gnuarmeclipse.debug.core/schema/svd_path.exsd</a>.</p>
+<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.core/schema/svd_path.exsd">ilg.gnuarmeclipse.debug.core/schema/svd_path.exsd</a>.</p>
 
 <h2 id="api">API</h2>
 
-<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.core/src/ilg/gnuarmeclipse/debug/core/data/ISVDPathManager.java">ISVDPathManager</a>.</p>
+<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.core/src/ilg/gnuarmeclipse/debug/core/data/ISVDPathManager.java">ISVDPathManager</a>.</p>
 
 <p>The only function required is:</p>
 
@@ -99,7 +99,7 @@
 
 <h2 id="where-is-this-extension-point-used">Where is this extension point used?</h2>
 
-<p>The svdPath extension point is used in <a href="https://github.com/gnuarmeclipse/gnuarmeclipse/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/SVDPathManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/SVDPathManagerProxy.java</a>, called from <code>SVDUtils.getTree(String deviceVendorId, String deviceName)</code>:</p>
+<p>The svdPath extension point is used in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/SVDPathManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/SVDPathManagerProxy.java</a>, called from <code>SVDUtils.getTree(String deviceVendorId, String deviceName)</code>:</p>
 
 <pre><code>// Try to get the SVD from a custom provider, like in DAVE.
 SVDPathManagerProxy pathManager = SVDPathManagerProxy.getInstance();
@@ -141,11 +141,11 @@ if (path == null) {
 <h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
 
 <ul>
+  <li><a href="/2015/09/14/2015-09-14-web-new-look/">The GNU ARM Eclipse project has a new home and a new look</a></li>
   <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
   <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
   <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
   <li><a href="/2015/08/05/qemu-v2-3-50-20150805-released/">GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</a></li>
-  <li><a href="/2015/08/05/qemu-v2-3-50-20150804-released/">GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</a></li>
 </ul>
 
 <hr />
@@ -268,7 +268,7 @@ if (path == null) {
   <li><a href="/support/known-issues/">Known issues</a></li>
   <li><a href="/support/faq/">FAQ</a></li>
   <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse/issues/1">Report plug-ins issue</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
 </ul>
 
 <h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
