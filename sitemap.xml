@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://gnuarmeclipse.github.io/2015/09/14/web-new-look/</loc>
+    <lastmod>2015-09-15T22:42:00+03:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/2015/08/19/plugins-v2.9.3-201508190739-released/</loc>
     <lastmod>2015-09-10T22:02:00+03:00</lastmod>
   </url>
