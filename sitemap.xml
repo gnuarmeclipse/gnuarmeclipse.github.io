@@ -362,7 +362,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/install/</loc>
-    <lastmod>2015-09-15T16:36:00+03:00</lastmod>
+    <lastmod>2015-09-15T16:51:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/install/</loc>
@@ -385,12 +385,12 @@
     <lastmod>2015-09-10T21:31:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/debug/install/jlink/</loc>
-    <lastmod>2015-09-14T15:54:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/debug/jlink/install/</loc>
+    <lastmod>2015-09-15T16:50:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/jlink/</loc>
-    <lastmod>2015-09-14T15:54:00+03:00</lastmod>
+    <lastmod>2015-09-15T16:51:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/templates/klxx/</loc>
@@ -410,7 +410,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/</loc>
-    <lastmod>2015-09-15T16:18:00+03:00</lastmod>
+    <lastmod>2015-09-15T16:51:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/templates/</loc>
