@@ -370,7 +370,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/install/</loc>
-    <lastmod>2015-09-15T12:51:00+03:00</lastmod>
+    <lastmod>2015-09-15T16:19:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/toolchain/install/</loc>
@@ -409,12 +409,12 @@
     <lastmod>2015-09-14T15:54:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/debug/overview/</loc>
-    <lastmod>2015-09-12T21:42:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/debug/</loc>
+    <lastmod>2015-09-15T16:18:00+03:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/templates/overview/</loc>
-    <lastmod>2015-09-14T15:54:00+03:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/templates/</loc>
+    <lastmod>2015-09-15T16:16:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/support/</loc>
@@ -514,7 +514,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/templates/stm32f/</loc>
-    <lastmod>2015-09-14T15:54:00+03:00</lastmod>
+    <lastmod>2015-09-15T16:19:00+03:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
