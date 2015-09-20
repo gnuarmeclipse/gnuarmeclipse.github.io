@@ -547,7 +547,7 @@ aside a.button {
 }
 
 code, pre {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 13px;
   color: #222;
@@ -724,11 +724,13 @@ p a {
 }
 
 blockquote {
-  padding: 0 0 0 30px;
-  margin-bottom: 10px; /* was 20px; */
+  padding: 0 0 0 20px; /* was 0 0 0 30px */
+  /* margin-bottom: 10px; /* was 20px; */
+  margin-left: 20px;
+  margin-right: 20px;
   font-size: 1.1em; /* was 1.6em */
-  line-height: 1.4;
-  border-left: 10px solid #e9e9e9;
+  line-height: 1.5; /* was 1.4 */
+  border-left: 7px solid #e9e9e9; /* was 10px */
   font-style: italic;
 }
 

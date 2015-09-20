@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>Toolchain install</title>
+  <title>How to install the ARM toolchain?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="Toolchain install" />
+  <meta property="og:title" content="How to install the ARM toolchain?" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="og:title" content="Toolchain install">
+  <meta property="og:title" content="How to install the ARM toolchain?">
 
   <meta property="article:published_time" content="2015-09-12">
 
@@ -75,12 +75,12 @@
 <section id="main-content">
 
 
-<h1 class="page-title">Toolchain install</h1>
+<h1 class="page-title">How to install the ARM toolchain?</h1>
 
 
 <h2 id="overview">Overview</h2>
 
-<p>The build plug-in is highly configurable in terms of executable names and location, so you can use any 32/64-bit ARM GNU toolchain you preffer, but, for better results, the recommended toolchain for <strong>bare metal</strong> target applications is <a href="http://launchpad.net/gcc-arm-embedded"><strong>GNU Tools for ARM Embedded Processors</strong></a>; for <strong>GNU/Linux</strong> target applications, the <strong><a href="http://www.linaro.org/downloads/">Linaro</a></strong> family of toolchains provides a large selection of choices, for various specific needs (little/big endian, 32/64-bit, etc).</p>
+<p>The build plug-in is highly configurable in terms of executable names and location, so you can use any 32/64-bits ARM GNU toolchain you preffer, but, for better results, the recommended toolchain for <strong>bare metal</strong> target applications is <a href="http://launchpad.net/gcc-arm-embedded"><strong>GCC ARM Embedded</strong></a> (formerly GNU Tools for ARM Embedded Processors); for <strong>GNU/Linux</strong> target applications, the <strong><a href="http://www.linaro.org/downloads/">Linaro</a></strong> family of toolchains provides a large selection of choices, for various specific needs (little/big endian, 32/64-bits, etc).</p>
 
 <p>Please note the distinction between the <strong>target platform</strong> and the <strong>host/development platform</strong>.</p>
 
@@ -89,13 +89,13 @@
   <li>the host/development platform is the platform where the development tools are executed, usually as cross compilers, and can be, in our case, any platform that supports Eclipse, for example Windows, OS X, GNU/Linux, BSD, etc.</li>
 </ul>
 
-<p>Be sure you select the proper toolchain for the target platform, otherwise builds will not succeed, or the generated applications will fail to run. <strong>Do not</strong> try to use the GNU Tools for ARM Embedded Processors to build  GNU/Linux applications, because the executables will not run on anything than bare metal, and <strong>do not try to use the Linaro toolchains for bare metal applications</strong>.</p>
+<p>Be sure you select the proper toolchain for the target platform, otherwise builds will not succeed, or the generated applications will fail to run. <strong>Do not</strong> try to use the GCC ARM Embedded to build  GNU/Linux applications, because the executables will not run on anything than bare metal, and <strong>do not try to use the Linaro toolchains for bare metal applications</strong>.</p>
 
-<p>The installation details described below assume the selection of the GNU Tools for ARM Embedded Processors toolchain. For other toolchains, please follow the specific installation instructions.</p>
+<p>The installation details described below assume the selection of the GCC ARM Embedded toolchain. For other toolchains, please follow the specific installation instructions.</p>
 
 <h2 id="download">Download</h2>
 
-<p>Due to portability reasons, the GNU ARM Eclipse plug-ins do not include any toolchain binaries, but they can be downloaded either from the <a href="http://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors project page</a>, or, even better, from the <a href="http://launchpad.net/gcc-arm-embedded/+download">All downloads</a> page, where it is a bit easier to identify which file is required.</p>
+<p>Due to portability reasons, the GNU ARM Eclipse plug-ins do not include any toolchain binaries, but they can be downloaded either from the <a href="http://launchpad.net/gcc-arm-embedded">GCC ARM Embedded project page</a>, or, even better, from the <a href="http://launchpad.net/gcc-arm-embedded/+download">All downloads</a> page, where it is a bit easier to identify which file is required.</p>
 
 <p>Versions from 4.7 up to 4.9-2014-q4 were tested and are known to work properly.</p>
 
@@ -105,39 +105,41 @@
 
 <h2 id="windows">Windows</h2>
 
-<ul>
-  <li>download the latest Windows installer <strong>.exe</strong> file (currently <em>gcc-arm-none-eabi-4_8-2014q2-20140609-win32.exe</em>, about 84MB)</li>
-  <li>locate the file (usually in the <strong>…\Downloads</strong>  folder) and double click it to start the installer</li>
-  <li>authenticate with the administrative password, to allow the installer write in system locations</li>
-</ul>
-
-<p><img src="/images/2014/01/MS_admin.png" alt="MS_admin" /></p>
+<p>The following steps can be performed on Windows:</p>
 
 <ul>
+  <li>download the latest Windows installer <strong>.exe</strong> file (currently <code>gcc-arm-none-eabi-4_8-2014q2-20140609-win32.exe</code>, about 84MB)</li>
+  <li>locate the file (usually in the <code>...\Downloads\</code>  folder) and double click it to start the installer</li>
+  <li>
+    <p>authenticate with the administrative password, to allow the installer write in system locations</p>
+
+    <p><img src="/images/2014/01/MS_admin.png" alt="MS_admin" /></p>
+  </li>
   <li>select the desired language</li>
   <li>confirm that you want to install the toolchain</li>
   <li>accept the terms of the license agreement</li>
-  <li>accept the destination folder, usually a version specific sub-folder of <em>*C:\Program Files*</em></li>
-</ul>
+  <li>
+    <p>accept the destination folder, usually a version specific sub-folder of <code>C:\Program Files\</code></p>
 
-<p>Note: It is highly recommended to <strong>do not to change the install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    <blockquote>
+      <p>Note: It is highly recommended to <strong>do not to change the install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    </blockquote>
 
-<p><img src="/images/2014/01/MS_destination_location.png" alt="The destination folder." /></p>
-
-<ul>
+    <p><img src="/images/2014/01/MS_destination_location.png" alt="The destination folder." /></p>
+  </li>
   <li>wait a few moments for the installer to copy files</li>
-  <li>in the final window be sure you <strong>disable adding the toolchain path to the environment</strong></li>
-</ul>
+  <li>
+    <p>in the final window be sure you <strong>disable adding the toolchain path to the environment</strong></p>
 
-<p><img src="/images/2014/01/MS_finish.png" alt="Disable adding toolchain path to environment." /></p>
-
-<ul>
-  <li>read the readme.txt file</li>
+    <p><img src="/images/2014/01/MS_finish.png" alt="Disable adding toolchain path to environment." /></p>
+  </li>
+  <li>read the <code>readme.txt</code> file</li>
   <li>
     <p>test if the compiler is functional</p>
 
-    <p>C:\Users\Liviu Ionescu&gt;“C:\Program Files\GNU Tools ARM Embedded\4.8 2014q2\bin\arm-none-eabi-gcc.exe” –version
-  arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-branch revision 211358]</p>
+    <pre><code>C:\Users\Liviu Ionescu\&gt;"C:\Program Files\GNU Tools ARM Embedded\4.8 2014q2\bin\arm-none-eabi-gcc.exe" --version
+arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-branch revision 211358]
+</code></pre>
   </li>
 </ul>
 
@@ -149,101 +151,112 @@
 
 <h2 id="os-x">OS X</h2>
 
-<p>The following steps can be performed on OS X.</p>
+<p>The following steps can be performed on OS X:</p>
 
 <ul>
-  <li>download the latest OS X install tarball file (currently <em>gcc-arm-none-eabi-4_8-2014q2-20140609-mac.tar.bz2</em>, about 66MB)</li>
-  <li>locate the file (usually in the <strong>$HOME/Downloads</strong> folder)</li>
-  <li>decide on a location to install the toolchain; the recommended folder is <strong>/usr/local</strong></li>
-  <li>unpack the archive in the destination folder</li>
-</ul>
+  <li>download the latest OS X install tarball file (currently <code>gcc-arm-none-eabi-4_8-2014q2-20140609-mac.tar.bz2</code>, about 66MB)</li>
+  <li>locate the file (usually in the <code>$HOME/Downloads</code> folder)</li>
+  <li>decide on a location to install the toolchain; the recommended folder is <code>/usr/local/</code></li>
+  <li>
+    <p>unpack the archive in the destination folder</p>
 
-<p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    <blockquote>
+      <p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    </blockquote>
 
-<pre><code>$ sudo mkdir -p /usr/local
+    <pre><code>$ sudo mkdir -p /usr/local
 $ cd /usr/local
 $ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_8-2014q2-20140609-mac.tar.bz2
 </code></pre>
-
-<ul>
-  <li>the result should be a folder like <strong>/usr/local/gcc-arm-none-eabi-4_8-2014q2</strong></li>
+  </li>
+  <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q2</code></li>
   <li>
     <p>test if the compiler is functional</p>
 
-    <pre><code>$ /usr/local/gcc-arm-none-eabi-4\_8-2014q2/bin/arm-none-eabi-gcc --version
+    <pre><code>$ /usr/local/gcc-arm-none-eabi-4_8-2014q2/bin/arm-none-eabi-gcc --version
 arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-branch revision 211358]
 </code></pre>
+
+    <blockquote>
+      <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+    </blockquote>
   </li>
 </ul>
 
-<p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+<p>The complete toolchain documentation is available in the <code>.../share/doc/pdf/</code> folder.</p>
 
-<p>The complete toolchain documentation is available in the <strong>…/share/doc/pdf/</strong> folder.</p>
-
-<p>If you’ll ever need to remove the toolchain, just remove the /usr/local/gcc-arm-none-eabi-4_8-2014q2, there are no other components stored in system folders.</p>
+<p>If you’ll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_8-2014q2</code>, there are no other components stored in system folders.</p>
 
 <h3 id="macports">MacPorts</h3>
 
-<p>In case you have MacPorts installed, be sure you remove the MacPorts path from the user path (edit the <strong>.profile</strong> in your home folder and comment out the line where /opt/local is added in front of the PATH), especially if you installed any toolchain inside MacPorts, since this will be a serious source of confusion.</p>
+<p>In case you have MacPorts installed, be sure you remove the MacPorts path from the user path (edit the <strong>.profile</strong> in your home folder and comment out the line where <code>/opt/local/</code> is added in front of the PATH), especially if you installed any toolchain inside MacPorts, since this will be a serious source of confusion.</p>
 
 <h2 id="gnulinux">GNU/Linux</h2>
 
-<p>The following steps were performed on <strong>Ubuntu 14.04 LTSx64</strong>. Please adjust them accordingly for other distributions.</p>
+<p>The following steps were performed on <strong>Ubuntu 14.04 LTSx64</strong> (please adjust them accordingly for other distributions):</p>
 
 <ul>
   <li>
-    <p>since the toolchain executables are 32-bit apps, when running on 64-bit machines, be sure you install the following 32-bit libraries (for different versions check the toolchain README for the actual list):</p>
+    <p>since the toolchain executables are 32-bits apps, when running on 64-bits machines, be sure you install the following 32-bits libraries (for different versions check the toolchain README for the actual list):</p>
 
-    <p>$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0</p>
+    <pre><code>$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
+</code></pre>
   </li>
   <li>
     <p>on Ubuntu 15.04 the following libraries are required:</p>
 
-    <p>$ sudo apt-get install lib32ncurses5</p>
+    <pre><code>$ sudo apt-get install lib32ncurses5
+</code></pre>
   </li>
   <li>
-    <p>on Ubuntu 12 LTSx64 all 32-bit libraries were packed in ia32-libs, so you can also use, but be prepared to get a lot of useless libraries:</p>
+    <p>on Ubuntu 12 LTSx64 all 32-bits libraries were packed in ia32-libs, so you can also use, but be prepared to get a lot of useless libraries:</p>
 
-    <p>$ sudo apt-get install ia32-libs</p>
+    <pre><code>$ sudo apt-get install ia32-libs
+</code></pre>
   </li>
-  <li>download the latest Linux install tarball file (currently <em>gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2</em>, more than 60MB)</li>
-  <li>locate the file (usually in the <strong>Home/Downloads</strong>  folder)</li>
-  <li>decide on a location to install the toolchain; the recommended folder is <strong>/usr/local</strong></li>
-  <li>unpack the archive in the destination folder</li>
-</ul>
+  <li>download the latest Linux install tarball file (currently <code>gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2</code>, more than 60MB)</li>
+  <li>locate the file (usually in the <code>$HOME/Downloads/</code>  folder)</li>
+  <li>decide on a location to install the toolchain; the recommended folder is <code>/usr/local/</code></li>
+  <li>
+    <p>unpack the archive in the destination folder</p>
 
-<p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    <blockquote>
+      <p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    </blockquote>
 
-<pre><code>$ cd /usr/local
+    <pre><code>$ cd /usr/local
 $ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2
 </code></pre>
-
-<ul>
-  <li>the result should be a folder like <strong>/usr/local/gcc-arm-none-eabi-4_8-2014q1</strong></li>
+  </li>
+  <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code></li>
   <li>
     <p>test if the compiler is functional</p>
 
-    <p>$ /usr/local/gcc-arm-none-eabi-4_8-2014q1/bin/arm-none-eabi-gcc –version
-  arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (release) [ARM/embedded-4_8-branch revision 208322]</p>
+    <pre><code>$ /usr/local/gcc-arm-none-eabi-4_8-2014q1/bin/arm-none-eabi-gcc --version
+arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (release) [ARM/embedded-4_8-branch revision 208322]
+</code></pre>
+
+    <blockquote>
+      <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+    </blockquote>
   </li>
 </ul>
 
-<p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
-
 <p>The complete toolchain documentation is available in the <code>.../share/doc/pdf/</code> folder.</p>
 
-<p>If you’ll ever need to remove the toolchain, just remove the /usr/local/gcc-arm-none-eabi-4_8-2014q1, there are no other components stored in system folders.</p>
+<p>If you’ll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code>, there are no other components stored in system folders.</p>
 
 <h2 id="toolchain-path">Toolchain path</h2>
 
 <p>To be sure you did not miss this recommendation, here it is again:</p>
 
-<p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+<blockquote>
+  <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+</blockquote>
 
 <p>If there would be only one single version of one single toolchain in existence, then it wouldn’t be a problem, but as soon as you start real world applications, you will face at least the need to keep multiple versions of the same toolchain installed, if not multiple toolchains, and this is when your trouble starts.</p>
 
-<p>The GNU ARM Eclipse plug-in has an advanced <a href="/toolchain/path/" title="Toolchain path management">toolchain path management</a> (presented in more detail in the separate page). Use it!</p>
-
+<p>The GNU ARM Eclipse plug-in has an advanced <a href="/toolchain/path/">toolchain path management</a> (presented in more detail in the separate page). Use it!</p>
 
 
 
