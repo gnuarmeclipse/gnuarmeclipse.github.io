@@ -83,8 +83,8 @@
 <p>If you already know what are the features of the new plug-in and just want to know how to install/use it, you can directly skip to:</p>
 
 <ul>
-  <li><a href="/debug/jlink/install/" title="SEGGER J-Link install">J-Link install</a></li>
-  <li><a href="/debug/jlink/#J-Link_plug-in_use">J-Link plug-in usage</a></li>
+  <li><a href="/debug/jlink/install/">J-Link install</a></li>
+  <li><a href="/debug/jlink/#j-link-plug-in-use">J-Link plug-in usage</a></li>
 </ul>
 
 <h2 id="why-a-new-plug-in">Why a new plug-in?</h2>
@@ -111,7 +111,7 @@
   <li>the SEGGER J-Link GDB server and drivers.</li>
 </ul>
 
-<p>If you did not do it yet, please follow the instructions in the <a href="/debug/jlink/install/" title="J-Link install">J-Link install</a> page and return when completed.</p>
+<p>If you did not do it yet, please follow the instructions in the <a href="/debug/jlink/install/">J-Link install</a> page and return when completed.</p>
 
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain. Generally only debugging .elf applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 
@@ -126,8 +126,11 @@
 <p>Before starting work with the J-Link tools, it is required to define the path to the J-Link folder.</p>
 
 <ul>
-  <li>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong>
-<img src="/images/2015/03/JLinkPreferences.png" alt="J-Link preferences page." /></li>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> → <strong>SEGGER J-Link</strong></p>
+
+    <p><img src="/images/2015/03/JLinkPreferences.png" alt="J-Link preferences page." /></p>
+  </li>
   <li>click the <strong>Restore Defaults</strong> button</li>
   <li>the plug-in will suggest the default values computed when Eclipse started; if a new version of SEGGER was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
   <li>check the <strong>Executable</strong> field; it must define the name of the command line J-Link GDB server executable; in most cases it should be set correctly; if not, edit it to match the correct name;</li>
@@ -144,7 +147,7 @@
 
 <p><img src="/images/2013/10/Devices.png" alt="Assigning a device to the project." /></p>
 
-<p>Follow the steps in the separate page <a href="/eclipse/project/assign-device/" title="Associate a device to the project">Associate a device to the project</a> and return to this page to continue.</p>
+<p>Follow the steps in the separate page <a href="/eclipse/project/assign-device/">Associate a device to the project</a> and return to this page to continue.</p>
 
 <h3 id="create-the-debugger-launch-configuration">Create the debugger launch configuration</h3>
 
@@ -154,42 +157,37 @@
   <li>select the project</li>
   <li>build it and ensure the executable file is available</li>
   <li>expand either the Debug or the Release folder and select the executable you want to debug</li>
-  <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon.</li>
-</ul>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon.</p>
 
-<p><img src="/images/2013/12/DebugConfigurations.png" alt="" /></p>
+    <p><img src="/images/2013/12/DebugConfigurations.png" alt="" /></p>
+  </li>
+  <li>
+    <p>double click the<strong> GDB SEGGER J-Link Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button.</p>
 
-<ul>
-  <li>double click the<strong> GDB SEGGER J-Link Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button.</li>
-</ul>
-
-<p><img src="/images/2013/12/JLinkDebugConfiguration.png" alt="J-Link Debug Configurations" /></p>
-
-<ul>
+    <p><img src="/images/2013/12/JLinkDebugConfiguration.png" alt="J-Link Debug Configurations" /></p>
+  </li>
   <li>a multi-tab page will be displayed;</li>
-  <li>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example Debug/blink1.elf).</li>
-</ul>
+  <li>
+    <p>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example Debug/blink1.elf).</p>
 
-<p><img src="/images/2013/12/DebugMainTab.png" alt="The Main tab." /></p>
+    <p><img src="/images/2013/12/DebugMainTab.png" alt="The Main tab." /></p>
+  </li>
+  <li>
+    <p>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client.</p>
 
-<ul>
-  <li>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client.</li>
-</ul>
-
-<p><img src="/images/2013/12/JLinkDebuggerTab.png" alt="" /></p>
-
-<ul>
+    <p><img src="/images/2013/12/JLinkDebuggerTab.png" alt="" /></p>
+  </li>
   <li>the only field that usually requires attention is the <strong>Device name</strong>, which must identify the processor family; if you assigned the device to the project, this field is automatically filled-in; usually this name is the family name; if you do not know it for your processor, follow the link at the right and copy/paste the string from the <a href="http://www.segger.com/supported-devices.html">SEGGER web page</a>;</li>
   <li>for portability reasons, the GDB server and GDB client executables are defined using variables; it is highly recommended to keep these definitions;</li>
   <li>the <strong>${cross_prefix}</strong> and the <strong>${cross_suffix}</strong> variables are defined automatically using the toolchain definitions; unless you are debugging a project-less ELF, leave them as is;</li>
   <li>the values of the <strong>${jlink_path}</strong> and <strong>${jlink_gdbserver}</strong> can be manually edited in the <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong> configuration page (if you do not find this page, upgrade the plug-ins);</li>
   <li>the <strong>Connect to running target</strong> option allow to start a debug session without performing any reset or program download, so that the target will continue to run unaffected, until explicitly halted by the debugger (Note: this option requires the latest plug-in and SEGGER versions);</li>
-  <li>click the third tab, named <strong>Startup</strong>, which contains specific J-Link options used to configure the debug session.</li>
-</ul>
+  <li>
+    <p>click the third tab, named <strong>Startup</strong>, which contains specific J-Link options used to configure the debug session.</p>
 
-<p><img src="/images/2013/12/JLingStartupTab.png" alt="The J-Link Startup tab." /></p>
-
-<ul>
+    <p><img src="/images/2013/12/JLingStartupTab.png" alt="The J-Link Startup tab." /></p>
+  </li>
   <li>if you built the project with retargetting support for ITM/SWO, enter the CPU frequency and the desired SWO sampling frequency; for this to work with J-Link, the SWO sampling frequency must be a submultiple of 6MHz (6000000, 3000000, 2000000, 1500000, 1000000, etc) and the CPU frequency must be a multiple of the SWO sampling frequency (these apparently very complicated requirements end up as a pre-scaler value in an ARM register);</li>
   <li>for most applications running from flash, leave the <strong>Pre-run reset and halt</strong> enabled, this will issue a new reset after programming the flash and just before starting execution. Due to some complicated technical details, when the debugger tries to reset some cores, execution cannot be halted immediately, and part of the initialisation routine is executed. Then the flash is written with the new application, it is not correct to directly start execution, since part of a foreign initialisation sequence, that is not part of the current application, was executed; to be sure the application starts correctly, it is necessary to issue a new reset. Please note that this does <strong>not</strong> apply <strong>for</strong> applications <strong>running from RAM</strong>, since the reset may damage the RAM content;</li>
   <li>although not mandatory, it is recommended to change the location where the launcher file is stored; for this,
@@ -223,7 +221,7 @@
 
 <ul>
   <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong></li>
-  <li>if necessary, expand the** GDB SEGGER J-Link Debugging** group</li>
+  <li>if necessary, expand the <strong>GDB SEGGER J-Link Debugging</strong> group</li>
   <li>select the newly defined configuration</li>
   <li>click the <strong>Debug</strong> button</li>
 </ul>
@@ -311,6 +309,16 @@
 
 <p>To start interacting with the target, it must be halted, using the debugger’s <strong>Halt</strong> command. After examining the target’s memory, setting breakpoints, etc, execution can be resumed, and the debug session terminated, leaving the target running.</p>
 
+<h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
+
+<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
+
+<p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section:</p>
+
+<p><img src="/images/2015/launch-jlink-debugger-client.png" alt="" /></p>
+
+<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server, in this case the J-Link GDB server.</p>
+
 <h2 id="troubleshooting">Troubleshooting</h2>
 
 <h3 id="missing-or-wrong-jlinkpath">Missing or wrong jlink_path</h3>
@@ -348,7 +356,6 @@
 <h2 id="more-info"><strong>More info</strong></h2>
 
 <p>Although the plug-in takes care of most of the configuration options, and provides reasonable defaults for the usual cases, it is recommended to read the SEGGER manuals, available from the Doc folder in the installation location or directly from the <a href="http://www.segger.com/jlink-software.html">SEGGER J-Link page</a>.</p>
-
 
 
 

@@ -84,7 +84,7 @@
 
 <p>Based on the experience with the J-Link plug-in, we decided to add a separate OpenOCD plug-in, with full configuration pages.</p>
 
-<p>In early 2015, a step further was performed, with the addition of the <a href="/openocd/" title="The GNU ARM Eclipse OpenOCD">GNU ARM Eclipse OpenOCD</a> subproject, a new distribution of OpenOCD.</p>
+<p>In early 2015, a step further was performed, with the addition of the <a href="/openocd/">GNU ARM Eclipse OpenOCD</a> subproject, a new distribution of OpenOCD.</p>
 
 <p>Unfortunately SWD support in the current OpenOCD version (0.8.x) is not that great, and we could not yet figure out a way to get the SWO tracing info out of OpenOCD, so currently there is no special tracing window available.</p>
 
@@ -93,13 +93,13 @@
 <p>Before being able to use any JTAG probe with OpenOCD, you must separately install:</p>
 
 <ul>
-  <li>the <a href="/openocd/" title="The GNU ARM Eclipse OpenOCD">GNU ARM Eclipse OpenOCD</a> debugging plug-in</li>
+  <li>the <a href="/openocd/">GNU ARM Eclipse OpenOCD</a> debugging plug-in</li>
   <li>the GDB debugger (client) application, as part of a GNU toolchain</li>
   <li>the OpenOCD as a GDB server</li>
   <li>any drivers required for the JTAG probe (for example FTDI drivers).</li>
 </ul>
 
-<p>If you did not do it yet, please follow the instructions in the <a href="/openocd/install/" title="OpenOCD install">OpenOCD install</a> page and return when completed.</p>
+<p>If you did not do it yet, please follow the instructions in the <a href="/openocd/install/">OpenOCD install</a> page and return when completed.</p>
 
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain. Generally only debugging .elf applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 
@@ -115,9 +115,9 @@
 
 <ul>
   <li>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>String Substitutions</strong></li>
-  <li>the <strong>openocd_path</strong> should be already there, so click the <strong>Edit…</strong> button (if you are using old versions of the plug-in, click the <strong>New…</strong> button and add it)</li>
-  <li>in the <em>Value:</em> field enter the actual folder where the OpenOCD binary was installed on your platform, for example <strong>C:\Program Files\GNU ARM Eclipse\OpenOCD\bin</strong> on Windows, <strong>/Applications/GNU ARM Eclipse/OpenOCD/bin/</strong> on OS X, or <strong>/opt/gnuarmeclipse/openocd/bin/</strong> on GNU/Linux</li>
-  <li>similarly for the <strong>openocd_executable</strong> variable, update it to match the name of the OpenOCD executable (usually the default <strong>openocd</strong> will do it)</li>
+  <li>the <code>openocd_path</code> should be already there, so click the <strong>Edit…</strong> button (if you are using old versions of the plug-in, click the <strong>New…</strong> button and add it)</li>
+  <li>in the <em>Value:</em> field enter the actual folder where the OpenOCD binary was installed on your platform, for example <code>C:\Program Files\GNU ARM Eclipse\OpenOCD\bin</code> on Windows, <code>/Applications/GNU ARM Eclipse/OpenOCD/bin/</code> on OS X, or <code>/opt/gnuarmeclipse/openocd/bin/</code> on GNU/Linux</li>
+  <li>similarly for the <code>openocd_executable</code> variable, update it to match the name of the OpenOCD executable (usually the default <code>openocd</code> will do it)</li>
   <li>click the <strong>OK</strong> button</li>
 </ul>
 
@@ -134,62 +134,55 @@
   <li>build it and ensure the executable file is available</li>
   <li>expand the Debug/Release folder and select the new executable file</li>
   <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon</li>
-  <li>double click on the <strong>GDB OpenOCD Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button</li>
-</ul>
+  <li>
+    <p>double click on the <strong>GDB OpenOCD Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button</p>
 
-<p><img src="/images/2013/12/OpenOCDDebugConfigs.png" alt="OpenOCD debug configurations." /></p>
-
-<ul>
+    <p><img src="/images/2013/12/OpenOCDDebugConfigs.png" alt="OpenOCD debug configurations." /></p>
+  </li>
   <li>a multi-tab page will be displayed</li>
-  <li>if you started this procedure with the executable file selected, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example Debug/blink1.elf).</li>
-</ul>
+  <li>
+    <p>if you started this procedure with the executable file selected, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example <code>Debug/blink1.elf</code>).</p>
 
-<p><img src="/images/2013/12/OpenOCDMainTab.png" alt="The OpenOCD Main tab." /></p>
+    <p><img src="/images/2013/12/OpenOCDMainTab.png" alt="The OpenOCD Main tab." /></p>
+  </li>
+  <li>
+    <p>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client</p>
 
-<ul>
-  <li>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client</li>
-</ul>
-
-<p><img src="/images/2013/12/OpenOCDDebuggerTab.png" alt="OpenOCD Debugger tab." /></p>
-
-<ul>
+    <p><img src="/images/2013/12/OpenOCDDebuggerTab.png" alt="OpenOCD Debugger tab." /></p>
+  </li>
   <li>the only field that usually requires attention is the OpenOCD <strong>Config options:</strong>, where you should add one or more configuration scripts</li>
   <li>Note: due to a platform specific issue, on Windows it is not possible to disable the <em>Allocate console for OpenOCD</em></li>
-  <li>click the third tab, named <strong>Startup</strong>, which contains some specific OpenOCD options used to configure the debug session; defaults are generally enough</li>
-</ul>
+  <li>
+    <p>click the third tab, named <strong>Startup</strong>, which contains some specific OpenOCD options used to configure the debug session; defaults are generally enough</p>
 
-<p><img src="/images/2013/12/OpenOCDStartupTab.png" alt="The OpenOCD Startup tab." /></p>
-
-<ul>
+    <p><img src="/images/2013/12/OpenOCDStartupTab.png" alt="The OpenOCD Startup tab." /></p>
+  </li>
   <li>
     <p>the order of sections/fields reflect the order commands are sent to GDB; for example the above generates:</p>
 
-    <p>monitor reset init
-  monitor halt
-  …
-  monitor arm semihosting enable
-  symbol-file “/…/blink1/Debug/blink1.elf”
-  load “/…/blink1/Debug/blink1.elf”
-  tbreak main
-  monitor reset halt
-  monitor halt
-  …
-  continue</p>
+    <pre><code>monitor reset init
+monitor halt
+...
+monitor arm semihosting enable
+symbol-file "/.../blink1/Debug/blink1.elf"
+load "/.../blink1/Debug/blink1.elf"
+tbreak main
+monitor reset halt
+monitor halt
+...
+continue
+</code></pre>
   </li>
   <li>
     <p>select the <strong>Common</strong> tab, set the <em>Save as:</em> field to <strong>Shared file</strong> and accept the current project name</p>
+
+    <p><img src="/images/2013/12/OpenOCDCommonTab.png" alt="Shared debug configuration." /></p>
   </li>
-</ul>
+  <li>
+    <p>this will arrange for the debug configuration to be saved in the project, not in the workspace storage</p>
 
-<p><img src="/images/2013/12/OpenOCDCommonTab.png" alt="Shared debug configuration." /></p>
-
-<ul>
-  <li>this will arrange for the debug configuration to be saved in the project, not in the workspace storage</li>
-</ul>
-
-<p><img src="/images/2013/12/OpenOCDSharedDebug.png" alt="Debug configuration stored in the project." /></p>
-
-<ul>
+    <p><img src="/images/2013/12/OpenOCDSharedDebug.png" alt="Debug configuration stored in the project." /></p>
+  </li>
   <li>click the <strong>Apply</strong> button</li>
   <li>click the <strong>Close</strong> button</li>
 </ul>
@@ -225,11 +218,11 @@
 
 <p><img src="/images/2013/12/OpenOCDConsoles.png" alt="The new debug session, with two consoles." /></p>
 
-<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <em>main()</em> function, which in this case is a tracing <em>printf()</em>.</p>
+<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code>main()</code> function, which in this case is a tracing <code>printf()</code>.</p>
 
 <h2 id="debug-operations">Debug operations</h2>
 
-<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <strong>main()</strong> function), you can perform any debug operation you need.</p>
+<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code>main()</code> function), you can perform any debug operation you need.</p>
 
 <p>The most common operations are:</p>
 
@@ -314,10 +307,17 @@
 
 <p>If the GDB Hardware Debugging plug-in works and the GDB OpenOCD debugging plug-in doesn’t, rerun both of them with the log enabled, on exactly the same executable, and compare the results. If you do not discover the problem, open a support ticket and attach the log files.</p>
 
+<h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
+
+<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
+
+<p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section.</p>
+
+<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server, in this case the OpenOCD server.</p>
+
 <h2 id="more-details">More details</h2>
 
 <p>Although the plug-in takes care of most of the configuration options, and provides reasonable defaults for the usual cases, it is recommended to read the OpenOCD manuals, available in the <strong>doc</strong> folder of your install location.</p>
-
 
 
 

@@ -83,7 +83,7 @@
 <p>If you already know what are the features of the new plug-in and just want to know how to install/use it, you can directly skip to:</p>
 
 <ul>
-  <li><a href="/qemu/install/" title="QEMU Install">QEMU install</a></li>
+  <li><a href="/qemu/install/">QEMU install</a></li>
   <li><a href="/debug/qemu/#qemu-plug-in-usage">QEMU plug-in usage</a></li>
 </ul>
 
@@ -101,7 +101,7 @@
   <li>the GNU ARM Eclipse QEMU.</li>
 </ul>
 
-<p>If you did not do it yet, please follow the instructions in the <a href="/qemu/install/" title="QEMU Install">QEMU install</a> page and return when completed.</p>
+<p>If you did not do it yet, please follow the instructions in the <a href="/qemu/install/">QEMU install</a> page and return when completed.</p>
 
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain. Generally only debugging .elf applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 
@@ -112,20 +112,19 @@
 <p>Before starting work with QEMU, it is required to define the path to the QEMU folder.</p>
 
 <ul>
-  <li>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>QEMU</strong></li>
-</ul>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>QEMU</strong></p>
 
-<p><img src="/images/2015/04/QEMU_Preferences.png" alt="The QEMU preferences page." /></p>
-
-<ul>
+    <p><img src="/images/2015/04/QEMU_Preferences.png" alt="The QEMU preferences page." /></p>
+  </li>
   <li>click the <strong>Restore Defaults</strong> button</li>
   <li>the plug-in will suggest the default values computed when Eclipse started; if a new version of GNU ARM Eclipse QEMU was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
   <li>check the <em>Executable:</em> field; it must define the name of the QEMU executable; in most cases it should be already set correctly; if not, edit it to match the correct name;</li>
-  <li>check the <em>Folder:</em> field; it must point to the actual folder where the GNU ARM Eclipse QEMU was installed on your system, for example <strong>/Applications/GNU ARM Eclipse/QEMU</strong> on OS X</li>
+  <li>check the <em>Folder:</em> field; it must point to the actual folder where the GNU ARM Eclipse QEMU was installed on your system, for example <code>/Applications/GNU ARM Eclipse/QEMU</code> on OS X</li>
   <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<p>By default, the GDB server is defined as <strong>${qemu_path}/${qemu_executable}</strong>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to keep this definition in all your debug configurations, and also to have a single place to update the path when a new version of the GNU ARM Eclipse QEMU is released.</p>
+<p>By default, the GDB server is defined as <code>${qemu_path}/${qemu_executable}</code>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to keep this definition in all your debug configurations, and also to have a single place to update the path when a new version of the GNU ARM Eclipse QEMU is released.</p>
 
 <h3 id="associate-a-device-to-the-project">Associate a device to the project</h3>
 
@@ -143,31 +142,27 @@
   <li>select the project</li>
   <li>build it and ensure the executable file is available</li>
   <li>expand either the Debug or the Release folder and select the executable you want to debug</li>
-  <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon.</li>
-</ul>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon.</p>
 
-<p><img src="/images/2013/10/HelloBuildResult.png" alt="The build result." /></p>
+    <p><img src="/images/2013/10/HelloBuildResult.png" alt="The build result." /></p>
+  </li>
+  <li>
+    <p>double click the <strong>GDB QEMU Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button.</p>
 
-<ul>
-  <li>double click the <strong>GDB QEMU Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button.</li>
-</ul>
-
-<p><img src="/images/2015/04/QEMU_Debugging.png" alt="Create a new QEMU launch configuration." /></p>
-
-<ul>
+    <p><img src="/images/2015/04/QEMU_Debugging.png" alt="Create a new QEMU launch configuration." /></p>
+  </li>
   <li>a multi-tab page will be displayed;</li>
-  <li>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example hello) and the application file name and location (for example Debug/hello.elf).</li>
-</ul>
+  <li>
+    <p>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example hello) and the application file name and location (for example <code>Debug/hello.elf</code>).</p>
 
-<p><img src="/images/2015/04/HelloMainTab.png" alt="The Main tab." /></p>
+    <p><img src="/images/2015/04/HelloMainTab.png" alt="The Main tab." /></p>
+  </li>
+  <li>
+    <p>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start QEMU as a GDB server and the GDB client.</p>
 
-<ul>
-  <li>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start QEMU as a GDB server and the GDB client.</li>
-</ul>
-
-<p><img src="/images/2015/04/HelloDebuggerTab.png" alt="The Debugger tab at first run." /></p>
-
-<ul>
+    <p><img src="/images/2015/04/HelloDebuggerTab.png" alt="The Debugger tab at first run." /></p>
+  </li>
   <li>at your first run it is recommended to leave the Board name: field as it is, with a question mark, for the emulator to display the list of supported boards.</li>
   <li>although not mandatory, it is recommended to change the location where the launcher file is stored; for this,
     <ul>
@@ -176,12 +171,9 @@
       <li>accept the current project name.</li>
       <li>click the <strong>Apply</strong> button</li>
     </ul>
+
+    <p><img src="/images/2015/04/HelloCommonTab.png" alt="Store the debug configuration in the project." /></p>
   </li>
-</ul>
-
-<p><img src="/images/2015/04/HelloCommonTab.png" alt="Store the debug configuration in the project." /></p>
-
-<ul>
   <li>click the <strong>Close</strong> button.</li>
 </ul>
 
@@ -217,12 +209,11 @@
   <li>select <strong>hello</strong></li>
   <li>select the <strong>Debugger</strong> tab</li>
   <li>in the <em>Board name:</em> field, enter <strong>STM32-H103</strong> (a popular Olimex STM32F103 board)</li>
-  <li>in the Command line: field, after hello, add <code>3 2 1</code>, as an example</li>
-</ul>
+  <li>
+    <p>in the Command line: field, after hello, add <code>3 2 1</code>, as an example</p>
 
-<p><img src="/images/2015/04/HelloDebuggerTabH103.png" alt="The Debugger tab with the board name filled-in." /></p>
-
-<ul>
+    <p><img src="/images/2015/04/HelloDebuggerTabH103.png" alt="The Debugger tab with the board name filled-in." /></p>
+  </li>
   <li>click the Debug button</li>
 </ul>
 
@@ -236,11 +227,11 @@
 
 <p><img src="/images/2015/04/BreakpointInMain.png" alt="Breakpoint in main()." /></p>
 
-<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <em>main()</em> function.</p>
+<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code>main()</code> function.</p>
 
 <h2 id="debug-operations">Debug operations</h2>
 
-<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <strong>main()</strong> function), you can perform any debug operation you need.</p>
+<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code>main()</code> function), you can perform any debug operation you need.</p>
 
 <p>The most common operations are:</p>
 
@@ -265,7 +256,7 @@
 
 <p><img src="/images/2015/04/QEMU_Console.png" alt="The QEMU console." /></p>
 
-<p>select again the main thread in the debugged application (in the upper left window) and click several times the Step Over button, until you reach the timer_start() function.</p>
+<p>select again the main thread in the debugged application (in the upper left window) and click several times the Step Over button, until you reach the <code>timer_start()</code> function.</p>
 
 <p><img src="/images/2015/04/HelloSingleSteps.png" alt="Hello single steps." /></p>
 
@@ -277,6 +268,13 @@
 
 <p>You can experiment with the first argument, which controls the number of iterations in the main loop; edit it to 7 and rerun the application.</p>
 
+<h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
+
+<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
+
+<p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section.</p>
+
+<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server, in this case the QEMU server.</p>
 
 
 

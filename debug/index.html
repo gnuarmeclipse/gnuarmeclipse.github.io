@@ -89,9 +89,9 @@
   <li><a href="/debug/jlink/">J-Link plug-in usage</a></li>
   <li><a href="/openocd/install/">OpenOCD install</a></li>
   <li><a href="/debug/openocd/">OpenOCD plug-in usage</a></li>
-  <li><a href="/qemu/install/" title="QEMU Install">QEMU install</a></li>
-  <li><a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU plug-in usage</a></li>
-  <li><a href="/debug/peripheral-registers/" title="Peripheral registers view">The Peripherals registers view</a></li>
+  <li><a href="/qemu/install/">QEMU install</a></li>
+  <li><a href="/debug/qemu/">QEMU plug-in usage</a></li>
+  <li><a href="/debug/peripheral-registers/">The Peripherals registers view</a></li>
 </ul>
 
 <h2 id="overview">Overview</h2>
@@ -123,8 +123,19 @@
 
 <p>Recognising the importance of these methods, the designers of the ARM families added special support, like the <strong>SWO</strong> (Serial Wire Output) pin in Cortex-M processors, or even more elaborate interfaces for larger ARM processors.</p>
 
-<p>TODO: add more content</p>
+<h2 id="gdb">GDB</h2>
 
+<p>The tool used by GNU ARM Eclipse plug-ins for debugging is the ARM version of GDB, the venerable GNU debugging tool.</p>
+
+<h3 id="no-initialisation-files">No initialisation files</h3>
+
+<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
+
+<p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section:</p>
+
+<p><img src="/images/2015/launch-jlink-debugger-client.png" alt="" /></p>
+
+<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server.</p>
 
 
 
