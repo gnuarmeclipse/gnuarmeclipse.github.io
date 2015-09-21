@@ -129,7 +129,7 @@
   <li>
     <p>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> → <strong>SEGGER J-Link</strong></p>
 
-    <p><img src="/images/2015/03/JLinkPreferences.png" alt="J-Link preferences page." /></p>
+    <p><img src="/images/2015/03/JLinkPreferences.png" alt="J-Link preferences page" /></p>
   </li>
   <li>click the <strong>Restore Defaults</strong> button</li>
   <li>the plug-in will suggest the default values computed when Eclipse started; if a new version of SEGGER was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
@@ -145,7 +145,7 @@
 
 <p>Although not absolutely mandatory, it is recommended to associate a device to the project, so that creating the debugger launch configuration will automatically fill-in the device name.</p>
 
-<p><img src="/images/2013/10/Devices.png" alt="Assigning a device to the project." /></p>
+<p><img src="/images/2013/10/Devices.png" alt="Assigning a device to the project" /></p>
 
 <p>Follow the steps in the separate page <a href="/eclipse/project/assign-device/">Associate a device to the project</a> and return to this page to continue.</p>
 
@@ -171,7 +171,7 @@
   <li>
     <p>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example Debug/blink1.elf).</p>
 
-    <p><img src="/images/2013/12/DebugMainTab.png" alt="The Main tab." /></p>
+    <p><img src="/images/2013/12/DebugMainTab.png" alt="The Main tab" /></p>
   </li>
   <li>
     <p>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client.</p>
@@ -186,7 +186,7 @@
   <li>
     <p>click the third tab, named <strong>Startup</strong>, which contains specific J-Link options used to configure the debug session.</p>
 
-    <p><img src="/images/2013/12/JLingStartupTab.png" alt="The J-Link Startup tab." /></p>
+    <p><img src="/images/2013/12/JLingStartupTab.png" alt="The J-Link Startup tab" /></p>
   </li>
   <li>if you built the project with retargetting support for ITM/SWO, enter the CPU frequency and the desired SWO sampling frequency; for this to work with J-Link, the SWO sampling frequency must be a submultiple of 6MHz (6000000, 3000000, 2000000, 1500000, 1000000, etc) and the CPU frequency must be a multiple of the SWO sampling frequency (these apparently very complicated requirements end up as a pre-scaler value in an ARM register);</li>
   <li>for most applications running from flash, leave the <strong>Pre-run reset and halt</strong> enabled, this will issue a new reset after programming the flash and just before starting execution. Due to some complicated technical details, when the debugger tries to reset some cores, execution cannot be halted immediately, and part of the initialisation routine is executed. Then the flash is written with the new application, it is not correct to directly start execution, since part of a foreign initialisation sequence, that is not part of the current application, was executed; to be sure the application starts correctly, it is necessary to issue a new reset. Please note that this does <strong>not</strong> apply <strong>for</strong> applications <strong>running from RAM</strong>, since the reset may damage the RAM content;</li>
@@ -198,14 +198,14 @@
       <li>click the <strong>Apply</strong> button</li>
     </ul>
 
-    <p><img src="/images/2013/12/SharedDebug.png" alt="Shared debug configuration." /></p>
+    <p><img src="/images/2013/12/SharedDebug.png" alt="Shared debug configuration" /></p>
   </li>
   <li>click the <strong>Close</strong> button</li>
 </ul>
 
 <p>With the above settings, the debug configuration will be saved in the project, not in the workspace storage.</p>
 
-<p><img src="/images/2013/12/ProjectSharedDebug.png" alt="Debug configuration stored in the project." /></p>
+<p><img src="/images/2013/12/ProjectSharedDebug.png" alt="Debug configuration stored in the project" /></p>
 
 <h2 id="start-a-debug-session">Start a debug session</h2>
 
@@ -228,15 +228,15 @@
 
 <p>Alternatively, on subsequent runs, you can use the bug specific icon. By default this will start the previously used debug launch configuration; to start a different configuration, use the down arrow button:</p>
 
-<p><img src="/images/2013/12/StartDebugArrow.png" alt="Down arrow debug." /></p>
+<p><img src="/images/2013/12/StartDebugArrow.png" alt="Down arrow debug" /></p>
 
 <p>This will open a new window where you can select the desired debug configuration:</p>
 
-<p><img src="/images/2013/12/DebugSelection.png" alt="Select the debug configuration." /></p>
+<p><img src="/images/2013/12/DebugSelection.png" alt="Select the debug configuration" /></p>
 
 <p>If everything is ok, after a few seconds required to start the server, to allow it to connect to the target, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
 
-<p><img src="/images/2013/12/DebugSessionClient.png" alt="The new debug session, with three consoles." /></p>
+<p><img src="/images/2013/12/DebugSessionClient.png" alt="The new debug session, with three consoles" /></p>
 
 <p>The new debug session, with three consoles.</p>
 
@@ -267,11 +267,11 @@
 
 <p>To see the console of any process, just select the process in the top left window. For example the server console might look like this:</p>
 
-<p><img src="/images/2013/12/DebugSessionServer.png" alt="The GDB server console." /></p>
+<p><img src="/images/2013/12/DebugSessionServer.png" alt="The GDB server console" /></p>
 
 <p>Similarly for the tracing console:</p>
 
-<p><img src="/images/2013/12/DebugSessionSWO.png" alt="The tracing console." /></p>
+<p><img src="/images/2013/12/DebugSessionSWO.png" alt="The tracing console" /></p>
 
 <h2 id="show-console-when-standard-outerror-change">Show console when standard out/error change</h2>
 
@@ -279,7 +279,7 @@
 
 <p>This mode can be identified by the status of the buttons on the right side of the Debugging view.</p>
 
-<p><img src="/images/2013/12/ShowConsole.png" alt="Show console when standard out/err changes." /></p>
+<p><img src="/images/2013/12/ShowConsole.png" alt="Show console when standard out/err changes" /></p>
 
 <p>To make the display stable on the desired console, disable both buttons. To switch between consoles, select them either in the top left Debug view, or using the right button, as shown above.</p>
 
@@ -287,7 +287,7 @@
 
 <p>Apparently not a big deal, but quite useful for repeated debug sessions, <strong>the Restart button</strong> can be used at any time during a debug session, and the result is that a reset is dispatched to the target board via the JTAG/SWD interface and the debug session is restarted.</p>
 
-<p><img src="/images/2013/12/RestartButton.png" alt="The restart button." /></p>
+<p><img src="/images/2013/12/RestartButton.png" alt="The restart button" /></p>
 
 <p>Note: Due to some bugs in Eclipse, the implementation of his simple button has encountered several problems. Depending on the version you are using, the first time you click this button you might get a message box informing that the button was not enabled. Ignore this message, close the message box and click the button again, this time it’ll be effective.</p>
 
@@ -303,7 +303,7 @@
 
 <p>To make this possible, enable the <strong>Connect to running target</strong> option in the <strong>Debugger</strong> tab:</p>
 
-<p><img src="/images/2015/03/ConnectToRunning.png" alt="Connect to running target." /></p>
+<p><img src="/images/2015/03/ConnectToRunning.png" alt="Connect to running target" /></p>
 
 <p>With this option, the J-Link plug-in will no longer reset the target and will no longer download the code into the target’s memory, leaving the target virtually unaffected, even after the debug session is started.</p>
 
@@ -325,7 +325,7 @@
 
 <p>The first failure to start a debug session is missing to enter the J-Link path. Without it, the launching sequence will complain <em>Cannot run program “/JLinkGDBServer&amp;”</em>.</p>
 
-<p><img src="/images/2013/12/JLinkCannotRun.png" alt="Cannot run the JLinkGDBServer." /></p>
+<p><img src="/images/2013/12/JLinkCannotRun.png" alt="Cannot run the JLinkGDBServer" /></p>
 
 <p>Define the <strong>jlink_path</strong> as instructed above and the session should start properly.</p>
 
@@ -333,7 +333,7 @@
 
 <p>If the devices that you selected in the plug-in does not match the device physically connected, the GDB server session fails and the entire debug session is cancelled. You can identify this case by studying the GDB server log.</p>
 
-<p><img src="/images/2013/12/WrongDevice.png" alt="Wrong device." /></p>
+<p><img src="/images/2013/12/WrongDevice.png" alt="Wrong device" /></p>
 
 <p>Select the device properly and the session should start properly.</p>
 

@@ -102,15 +102,15 @@
 
 <p>The recommended method to enter include path referring to local project folders is to use relative paths.</p>
 
-<p><img src="/images/2014/02/IncludePath.png" alt="Define relative include paths." /></p>
+<p><img src="/images/2014/02/IncludePath.png" alt="Define relative include paths" /></p>
 
 <p>In most usual cases CDT is smart enough to know the environment where the build process is executed, to properly process these paths. For example when the build is started in the default Debug or Release folders, the actual paths to the include folders is one step up, so it is automatically prefixed with <code>../</code>.</p>
 
-<p><img src="/images/2014/02/UseRelativePaths.png" alt="Use of relative include paths." /></p>
+<p><img src="/images/2014/02/UseRelativePaths.png" alt="Use of relative include paths" /></p>
 
 <p>An alternative solution is to use the CDT predefined macros, to create paths relative either to the current project folder, with ${ProjDirPath},</p>
 
-<p><img src="/images/2014/02/UseProjDirPath.png" alt="Use ProjDirPath for include paths." /></p>
+<p><img src="/images/2014/02/UseProjDirPath.png" alt="Use ProjDirPath for include paths" /></p>
 
 <p>or something like <code>${workspace_loc:/other_proj/libs/misc/include}</code> relative to any project in the workspace.</p>
 
@@ -118,15 +118,15 @@
 
 <p>Similar solutions can be considered for entering linker scripts. The recommended method is to enter the script names without any path</p>
 
-<p><img src="/images/2014/02/ScriptFiles.png" alt="Add script files by simple names." /></p>
+<p><img src="/images/2014/02/ScriptFiles.png" alt="Add script files by simple names" /></p>
 
 <p>and to define the path to the folder where they are located (usually named <strong>ldscripts</strong>).</p>
 
-<p><img src="/images/2014/02/ldscriptsFolder.png" alt="Enter location for linker scripts." /></p>
+<p><img src="/images/2014/02/ldscriptsFolder.png" alt="Enter location for linker scripts" /></p>
 
 <p>As for the include paths, CDT is smart enough to make this definition relative to the build folder:</p>
 
-<p><img src="/images/2014/02/ldscriptsUsage.png" alt="Relative linker scripts folder." /></p>
+<p><img src="/images/2014/02/ldscriptsUsage.png" alt="Relative linker scripts folder" /></p>
 
 <p>Alternate solutions are to use paths relative to ${ProjDirPath} or ${workspace_loc}.</p>
 
