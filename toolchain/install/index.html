@@ -87,7 +87,9 @@
   <li>the host/development platform is the platform where the development tools are executed, usually as cross compilers, and can be, in our case, any platform that supports Eclipse, for example Windows, OS X, GNU/Linux, BSD, etc.</li>
 </ul>
 
-<p>Be sure you select the proper toolchain for the target platform, otherwise builds will not succeed, or the generated applications will fail to run. <strong>Do not</strong> try to use the GCC ARM Embedded to build  GNU/Linux applications, because the executables will not run on anything than bare metal, and <strong>do not try to use the Linaro toolchains for bare metal applications</strong>.</p>
+<blockquote>
+  <p>Note: Be sure you select the proper toolchain for the target platform, otherwise builds will not succeed, or the generated applications will fail to run. <strong>Do not</strong> try to use the GCC ARM Embedded to build  GNU/Linux applications, because the executables will not run on anything than bare metal, and <strong>do not try to use the Linaro toolchains for bare metal applications</strong>.</p>
+</blockquote>
 
 <p>The installation details described below assume the selection of the GCC ARM Embedded toolchain. For other toolchains, please follow the specific installation instructions.</p>
 
@@ -259,7 +261,7 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (releas
 
 <hr/>
 <p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
+Last modified on Mon Sep 28 10:58:34 2015 EEST.
 </p>
 
 

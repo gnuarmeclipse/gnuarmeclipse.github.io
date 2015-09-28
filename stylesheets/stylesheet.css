@@ -724,13 +724,13 @@ p a {
 }
 
 blockquote {
-  padding: 0 0 0 20px; /* was 0 0 0 30px */
+  padding: 0 20px 0 14px; /* was 0 0 0 30px */
   /* margin-bottom: 10px; /* was 20px; */
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
   font-size: 1.1em; /* was 1.6em */
-  line-height: 1.5; /* was 1.4 */
-  border-left: 7px solid #e9e9e9; /* was 10px */
+  line-height: 1.4; /* was 1.4 */
+  border-left: 6px solid #e9e9e9; /* was 10px */
   font-style: italic;
 }
 

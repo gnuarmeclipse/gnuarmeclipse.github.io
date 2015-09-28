@@ -118,7 +118,7 @@
   <p>I’m trying to single-step a simple loop, but execution does not stop after a single iteration, the target runs continuously, with permanent interactions with the debugger.</p>
 </blockquote>
 
-<p>The current GDB has a problem with placing breakpoints <strong>in simple loops</strong>, and <strong>single-stepping fails</strong>. The problem was already reported (<a href="https://bugs.launchpad.net/gcc-arm-embedded/+bug/1401565">bug 1401565</a>). If you rally need this, switch to assembly view and single-stepping is again functional.</p>
+<p>The current GDB has a problem with placing breakpoints <strong>in simple loops</strong>, and <strong>single-stepping fails</strong>. The problem was already reported (<a href="https://bugs.launchpad.net/gcc-arm-embedded/+bug/1401565">bug 1401565</a>). If you really need this, switch to assembly view and single-stepping is again functional.</p>
 
 <h2 id="why-thedebugging-flow-with--og-is-sometimesjumpy">Why the debugging flow with -Og is sometimes jumpy?</h2>
 
@@ -128,13 +128,15 @@
 
 <p>In GCC prior 4.9, the definition of <strong>-Og</strong> needs a small adjustment, also add the <strong>-fno-move-loop-invariants</strong> option to the Debug configuration; this will prevent the compiler to move some constant parts of the loop outside it and the execution flow will be more easy to follow. The problem was already reported (<a href="https://bugs.launchpad.net/gcc-arm-embedded/+bug/1395077">bug 1395077</a>). Starting with 4.9, the -fno-move-loop-invariants is added automatically to -Og.</p>
 
-<h2 id="how-can-i-add-new-tickets-if-no-create-ticket-button-is-available">How can I add new tickets if no Create Ticket button is available?</h2>
+<h2 id="how-can-i-add-new-sourceforge-tickets-if-no-create-ticket-button-is-available">How can I add new SourceForge tickets if no Create Ticket button is available?</h2>
 
 <blockquote>
   <p>Please excuse me for not using the support ticket tool you provided on sourceforge but I seem to be too incompetent to even spot some type of “add request” button.</p>
 </blockquote>
 
-<p>To be able to add new tickets to the SourceForge trackers, you need to log-in to SourceForge, and so the <strong>Create Ticket</strong> button will become visible.</p>
+<p>Following the migration to GitHub, the SourceForge ticketing system was configured as read-only, and new tickets can no longer be added.</p>
+
+<p>Please login to GitHub and use the GitHub Issues trackers.</p>
 
 <h2 id="plug-ins-update-from-05x-running-on-junoto-current-version-fails">Plug-ins update from 0.5.x running on Juno to current version fails</h2>
 
@@ -273,7 +275,7 @@ Invoking: Cross ARM C++ Linker
 
 <hr/>
 <p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
+Last modified on Mon Sep 28 10:59:25 2015 EEST.
 </p>
 
 
