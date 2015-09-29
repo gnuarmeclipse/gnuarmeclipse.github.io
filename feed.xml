@@ -5,13 +5,35 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Sep 2015 23:24:23 +0300</pubDate>
-    <lastBuildDate>Mon, 28 Sep 2015 23:24:23 +0300</lastBuildDate>
+    <pubDate>Tue, 29 Sep 2015 17:14:27 +0300</pubDate>
+    <lastBuildDate>Tue, 29 Sep 2015 17:14:27 +0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>The GNU ARM Eclipse project has a new home and a new look</title>
-        <description>&lt;h2 id=&quot;migration-to-github&quot;&gt;Migration to GitHub&lt;/h2&gt;
+        <title>ARM Connected Community article, September 2015</title>
+        <description>&lt;p&gt;A new article was published on the &lt;a href=&quot;http://community.arm.com&quot;&gt;ARM Connected Community&lt;/a&gt; site, under the name &lt;strong&gt;&lt;a href=&quot;http://community.arm.com/groups/tools/blog/2015/09/29/the-gnu-arm-eclipse-project-has-a-new-look-and-a-new-home&quot;&gt;The GNU ARM Eclipse project has a new look and a new home at GitHub&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Sep 2015 19:51:00 +0300</pubDate>
+        <link>http://gnuarmeclipse.github.io/2015/09/29/arm-connected-community-article/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/09/29/arm-connected-community-article/</guid>
+        
+        <category>article</category>
+        
+        <category>arm</category>
+        
+        <category>connected</category>
+        
+        
+        <category>news</category>
+        
+        <category>article</category>
+        
+      </item>
+    
+      <item>
+        <title>The GNU ARM Eclipse project has a new home and a new look (GitHub)</title>
+        <description>&lt;p&gt;The GNU ARM Eclipse project was migrated from &lt;a href=&quot;https://sourceforge.net/projects/gnuarmeclipse/&quot;&gt;SourceForge&lt;/a&gt; to &lt;a href=&quot;https://github.com/gnuarmeclipse&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 14 Sep 2015 16:41:00 +0300</pubDate>
@@ -232,28 +254,6 @@
         
         
         <category>windows-build-tools</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse OpenOCD v0.9.0-20150519* released</title>
-        <description>&lt;p&gt;The just released stable version of OpenOCD (&lt;strong&gt;0.9.0&lt;/strong&gt;) is now also available as ready to install, platform specific, binary files.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 19 May 2015 15:00:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/05/19/openocd-v0.9.0-20150519-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/05/19/openocd-v0.9.0-20150519-released/</guid>
-        
-        <category>0.9.0</category>
-        
-        <category>GNU ARM Eclipse</category>
-        
-        <category>OpenOCD</category>
-        
-        
-        <category>openocd</category>
         
         <category>releases</category>
         
