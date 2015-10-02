@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
+  <title>GNU ARM Eclipse plug-ins v2.7.1-201503211846 released</title>
+  <meta name="description" content="Version 2.7.1-201503211846 is a new release; the main improvements include: a new set of preferences pages to configure the debug tools paths (J-Link, OpenOC...">
+
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.7.1-201503211846 released" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="article:published_time" content="2015-03-21">
+
+
+  <meta property="article:section" content="releases" />
+  <meta property="article:section" content="plugins" />
+
+  <meta property="article:tag" content="gnu" />
+  <meta property="article:tag" content="arm" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="j-link" />
+  <meta property="article:tag" content="openocd" />
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/blog/2015/03/21/plugins-v2.7.1-201503211846-released/">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1><a href="/">GNU ARM Eclipse</a></h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+
+<section id="main-content">
+
+
+<h1 class="post-title">GNU ARM Eclipse plug-ins v2.7.1-201503211846 released</h1>
+
+
+<p class="post-meta">
+Posted on March 21, 2015 by Liviu Ionescu.
+</p>
+
+<p>Version 2.7.1-201503211846 is a new release; the main improvements include: a new set of preferences pages to configure the debug tools paths (J-Link, OpenOCD); as a homage to the team who created the former CodeRed suite, a new debug perspective named <strong>CodeRed</strong> was added, intended to be compatible with the CodeRed Develop perspective.</p>
+
+<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.7.1-201503211846">Binary files »</a></p>
+
+<p>New features:</p>
+
+<ul>
+<li><a href="/2015/03/21/windows-build-tools-v2.4-20150321-released/">GNU ARM Eclipse Build Tools v2.4-20150321* released</a></li>
+<li><a href="/2015/03/20/openocd-v0.9.0-20150320-released/">GNU ARM Eclipse OpenOCD 0.9.0-20150320*-dev released</a></li>
+<li>[feature-requests:#86] new <strong>J-Link and OpenOCD preferences pages</strong> were added, to configure the executable name and the location of the binaries;
+<img src="/assets/images/2015/preferences-run-jlink.png" alt="The J-Link Preferences page"></li>
+<li>[feature-requests:#89] in the Peripherals view, when displaying registers that changed since the previous halt, instead of a single colour (yellow) to mark changed values, <strong>three shades of yellow</strong> are used in a fading way to also show values changed by the previous and the previous-previous steps;</li>
+<li>[feature-requests:#88] a new preferences page was added to <strong>configure the colours</strong> use by the the Peripherals view;
+<img src="/assets/images/2015/preferences-run-peripheral-views.png" alt="Peripherals view preferences page"></li>
+<li>a <strong>new debug perspective</strong> named <strong>CodeRed</strong> was added, to better use the screen space; this is packed as a new Eclipse feature and requires to <strong>Install New Software...</strong>, a <strong>Check for Updates</strong> might not install it;
+<img src="/assets/images/2015/perspective-codered.png" alt="The CodeRed debug perspective"></li>
+<li><strong>new Linaro toolchains</strong> were added (<em>Linaro ARMv7 bare-metal EABI</em>, <em>Linaro ARMv7 big-endian bare-metal EABI</em>); the name of <em>Linaro ARMv7 big-endian Linux GNU EABI HF</em> was slightly edited to match the naming convention used by the other toolchain;
+<img src="/assets/images/2015/properties-c-setting-toolchains-names.png" alt="Supported Toolchains"></li>
+<li>[feature-requests:#59] to help others integrate the GNU ARM Eclipse plug-ins in their Eclipse suites, default values can now be used to configure most of the tools processing and debugger GUI elements;</li>
+<li>[bugs:#141] the J-Link specific <strong>Connect to running target</strong> was re-enabled, since recent SEGGER releases fixed the initial bugs and this very powerful debug feature is now fully functional;
+<img src="/assets/images/2015/launch-jlink-debugger-running.png" alt="Connect to running target"></li>
+<li>for Windows users, a new command line option (<strong>-nogui</strong>) was added when starting the J-Link GDB Server, to prevent displaying the annoying GUI windows on top of Eclipse windows;
+<img src="/assets/images/2015/launch-jlink-debugger-nogui.png" alt="The -nogui option"></li>
+</ul>
+
+<p>The following bugs were addressed:</p>
+
+<ul>
+<li>[bugs:#171] in certain conditions the new <strong>Tools Path</strong> property page was also visible for other projects managed than those managed by GNU ARM Eclipse; fixed</li>
+<li>[bugs:#174] in certain conditions when launching OpenOCD externally, the plug-in was not able to perform properly; fixed</li>
+<li>[bugs:#170] in certain conditions the tools paths auto-discovered from the Windows registry did not use POSIX separators; fixed</li>
+<li>[bugs:#169] the plug-ins were quite chatty on the console; tests of specific conditions were added to all these debug trace messages;</li>
+<li>[bugs:#168] for debug launch configurations created by external wizards, some of the CDT specific attributes had no defaults and the debug session failed to start; fixed</li>
+<li>[bugs:#137, #107] in certain conditions, wrong commands passed in the debugger configuration windows did not properly reach the user; fixed</li>
+</ul>
+
+<p>In the projects generated by the templates, the following issues were addressed:</p>
+
+<ul>
+<li>[support-requests:#116] when using <strong>LTO</strong>, the exception handlers were excluded from the build, probably because they were referred only from assembly; they were marked as <strong>used</strong> and are now always included;</li>
+<li>to help debugging, the exception handlers are now terminated with an <strong>explicit BKPT</strong> instruction, that  activates the debugger and shows the exact line where execution stopped;</li>
+</ul>
+
+<p>Known problems:</p>
+
+<ul>
+<li>(2015-03-31) the template for the stm32f411 has a problem in the vectors_stm32f4xx.c file, generating the core vectors twice; the workaround is to remove the vectors after the #elif defined(STM32F411xE), from WWDG_IRQHandler to ADC_IRQHandler; the fix will be included in the next release.</li>
+</ul>
+
+<p>Notes:</p>
+
+<ul>
+<li>the new J-Link configuration pages require <strong>SEGGER J-Link version 4.98 or latter</strong>. Using older version will trigger a warning in the console, because the <strong>-nogui</strong> command line option was not previously supported.</li>
+</ul>
+
+
+<hr/>
+<p class="post-footer">
+Posted in
+
+<strong>releases</strong>, <strong>plugins</strong> and tagged
+
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>j-link</strong>, <strong>openocd</strong>.
+</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
+</p>
+
+
+</section>
+
+<aside id="sidebar">
+
+<h4><a href="/blog/">Latest News</a></h4>
+
+<ul>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+</ul>
+
+<hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4><a href="/plugins/features/">Features</a></h4>
+
+<h4><a href="/downloads/">Downloads</a></h4>
+
+<ul>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4><a href="/install/">Install</a></h4>
+
+<ul>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
+
+<ul>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
+</ul>
+
+<h4>Important</h4>
+
+<ul>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4>Tutorials</h4>
+
+<ul>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4>How to use</h4>
+
+<ul>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4><a href="/templates/">Templates</a></h4>
+
+<ul>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4><a href="/debug/">Debugging</a></h4>
+
+<ul>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+</ul>
+
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4>Advanced</h4>
+
+<ul>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4><a href="/support/">Support</a></h4>
+
+<ul>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+</ul>
+
+<h4><a href="/developer/">Developer</a></h4>
+
+<ul>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
+</ul>
+
+<h4>Hardware</h4>
+
+<ul>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+</ul>
+
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
+
+<hr />
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</aside>
+
+
+</div>
+
+</div>
+
+
+
+</body>
+
+</html>

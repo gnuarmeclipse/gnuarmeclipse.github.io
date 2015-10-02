@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
+  <title>The GNU ARM Eclipse project has a new home and a new look (GitHub)</title>
+  <meta name="description" content="The GNU ARM Eclipse project was migrated from SourceForge to GitHub.">
+
+  <meta property="og:title" content="The GNU ARM Eclipse project has a new home and a new look (GitHub)" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="article:published_time" content="2015-09-14">
+
+
+  <meta property="article:section" content="news" />
+  <meta property="article:section" content="web" />
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/blog/2015/09/14/web-new-look/">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1><a href="/">GNU ARM Eclipse</a></h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+
+<section id="main-content">
+
+
+<h1 class="post-title">The GNU ARM Eclipse project has a new home and a new look (GitHub)</h1>
+
+
+<p class="post-meta">
+Posted on September 14, 2015 by Liviu Ionescu.
+</p>
+
+<p>The GNU ARM Eclipse project was migrated from <a href="https://sourceforge.net/projects/gnuarmeclipse/">SourceForge</a> to <a href="https://github.com/gnuarmeclipse">GitHub</a>.</p>
+
+<h2>Migration to GitHub</h2>
+
+<p>There are many reasons behind this decision (GitHub looks definitely cool!), but the main one is probably to reduce dependencies on custom DNS domains, like <code>livius.net</code>, which might not be available on long term.</p>
+
+<p><img src="/assets/images/2015/github-gae-header.png" alt="GNU ARM Eclipse GitHub Home"></p>
+
+<h3>Repositories</h3>
+
+<p>Migrating the repositories was the easiest part, each project was pushed into its own repository.</p>
+
+<p>The current project repositories are:</p>
+
+<ul>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins">plug-ins</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools">windows-build-tools</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd">openocd</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu">qemu</a></li>
+<li><a href="https://github.com/gnuarmeclipse/build-scripts">build-scripts</a></li>
+</ul>
+
+<p><img src="/assets/images/2015/github-gae-projects.png" alt="GNU ARM Eclipse GitHub Projects"></p>
+
+<h3>Binary files as Releases</h3>
+
+<p>Migration of binary files was a bit more complicated, and, due to GitHub current limitations, is not complete. The main problem was raised by the Eclipse update sites, which require a certain folder structure, and since GitHub does not support adding folders to releases, the Eclipse update sites will remain hosted on SourceForge.</p>
+
+<p>Note: We reported this problem to GitHub support, and in a future version they might allow to add folders to releases, but details are not available.</p>
+
+<p>Apart from the Eclipse update sites, all other binary files will be published as GitHub Releases, attached to the respective project repositories.</p>
+
+<p>The archive of past releases was also migrated from SourceForge to GitHub.</p>
+
+<p><img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases"></p>
+
+<h3>Issues trackers</h3>
+
+<p>The SourceForge trackers were replaced by the GitHub Issues trackers.</p>
+
+<p>The content of the old trackers was not moved to GitHub, since this is much too time consuming, but it is planned to still keep the old trackers themselves available, even if they are locked and new tickets cannot be created there. It is still possible to comment on existing tickets.</p>
+
+<h3>Notifications as watched projects</h3>
+
+<p>In the past, release notifications were handled by a WordPress plug-in, by subscribing to the project blog.</p>
+
+<p>Currently the only GitHub equivalent is to <strong>Watch</strong> projects, which will enable a notification for each project release.</p>
+
+<p>For those interested in receiving notifications, the recommendation is to subscribe to GitHub, by clicking the <strong>Watch</strong> button and selecting <strong>Watching</strong>).</p>
+
+<p><img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases"></p>
+
+<p>Be sure you subscribe to <strong>Watch</strong> the <strong>gnuarmeclipse/gnuarmeclipse.github.io</strong> project to receive notifications for Web posts.</p>
+
+<h2>The Web has a new look</h2>
+
+<p>Finally, the most delicate issue, was to migrate the old documentation sites from the livius.net domain to a public domain.</p>
+
+<p>Since GitHub solution for providing documentation sites is <a href="https://pages.github.com">GitHub Pages</a>, and this service makes the sites available in the <code>github.io</code> domain, it was considered acceptable to migrate the WordPress and MediaWiki sites to GitHub Pages.</p>
+
+<p><img src="/assets/images/2015/github-io-gae-home.png" alt="GNU ARM Eclipse Home Page"></p>
+
+<p>GitHub Pages uses <a href="http://jekyllrb.com">Jekyll</a> to generate static web sites, and the most convenient input format for Jekyll is <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a>, so the migration involved conversion from WordPress internal representation, to markdown. Given the differences, this conversion was not easy, and was done partly with scripts, partly manually. Similarly for MediaWiki, although the conversion from the MediaWiki format to markdown was easier.</p>
+
+<p>Given the complexity of this migration, we are aware that it is very likely that lots of mistakes are still present in the pages; we would appreciate any help in fixing them (use the <a href="https://github.com/gnuarmeclipse/gnuarmeclipse.github.io/issues/1">Web Issues</a> tracker for this).</p>
+
+<p>The web site has two dedicated projects:</p>
+
+<ul>
+<li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse.github.io">gnuarmeclipse.github.io</a></li>
+<li><a href="https://github.com/gnuarmeclipse/gnuarmeclipse.github.io-source">gnuarmeclipse.github.io-source</a></li>
+</ul>
+
+<p>The first one stores the actual static pages of the Web site and the second stores the Jekyll source files for generating the Web site.</p>
+
+<h2>HTTP Redirects</h2>
+
+<p>We are aware that a lot of links to the previous sites are in use. To avoid breaking them, many redirects were installed from the <code>gnuarmeclipse.livius.net/*</code> to <code>gnuarmeclipse.github.io</code>. All other pages not matching the rules in these redirects will be served by the new <code>gnuarmeclipse.livius.net/redirected/</code> page, so both blog and wiki references should not be broken, but land in the new site.</p>
+
+<h2>Old sites</h2>
+
+<p>The previous WordPress and MediaWiki sites were moved back to SourceForge and, for historical reasons, will be preserved there, but will no longer be maintained:</p>
+
+<ul>
+<li><a href="http://gnuarmeclipse.sourceforge.net/blog/"><code>http://gnuarmeclipse.sourceforge.net/blog/</code></a></li>
+<li><a href="http://gnuarmeclipse.sourceforge.net/wiki/"><code>http://gnuarmeclipse.sourceforge.net/wiki/</code></a></li>
+</ul>
+
+
+<hr/>
+<p class="post-footer">
+Posted in
+
+<strong>news</strong>, <strong>web</strong>.
+</br>Last modified on Fri Oct  2 10:04:08 2015 UTC.
+</p>
+
+
+</section>
+
+<aside id="sidebar">
+
+<h4><a href="/blog/">Latest News</a></h4>
+
+<ul>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+</ul>
+
+<hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4><a href="/plugins/features/">Features</a></h4>
+
+<h4><a href="/downloads/">Downloads</a></h4>
+
+<ul>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4><a href="/install/">Install</a></h4>
+
+<ul>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
+
+<ul>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
+</ul>
+
+<h4>Important</h4>
+
+<ul>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4>Tutorials</h4>
+
+<ul>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4>How to use</h4>
+
+<ul>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4><a href="/templates/">Templates</a></h4>
+
+<ul>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4><a href="/debug/">Debugging</a></h4>
+
+<ul>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+</ul>
+
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4>Advanced</h4>
+
+<ul>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4><a href="/support/">Support</a></h4>
+
+<ul>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+</ul>
+
+<h4><a href="/developer/">Developer</a></h4>
+
+<ul>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
+</ul>
+
+<h4>Hardware</h4>
+
+<ul>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+</ul>
+
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
+
+<hr />
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</aside>
+
+
+</div>
+
+</div>
+
+
+
+</body>
+
+</html>

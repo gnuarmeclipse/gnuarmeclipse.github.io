@@ -1,263 +1,537 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>GNU ARM Eclipse</title>
-    <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
-    <link>http://gnuarmeclipse.github.io/</link>
-    <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Sep 2015 17:14:27 +0300</pubDate>
-    <lastBuildDate>Tue, 29 Sep 2015 17:14:27 +0300</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
-    
-      <item>
-        <title>ARM Connected Community article, September 2015</title>
-        <description>&lt;p&gt;A new article was published on the &lt;a href=&quot;http://community.arm.com&quot;&gt;ARM Connected Community&lt;/a&gt; site, under the name &lt;strong&gt;&lt;a href=&quot;http://community.arm.com/groups/tools/blog/2015/09/29/the-gnu-arm-eclipse-project-has-a-new-look-and-a-new-home&quot;&gt;The GNU ARM Eclipse project has a new look and a new home at GitHub&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<generator uri="http://jekyllrb.com" version="2.5.3">Jekyll</generator>
+<link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/atom+xml" />
+<link href="http://gnuarmeclipse.github.io/" rel="alternate" type="text/html" />
+<updated>2015-10-02T16:54:02+00:00</updated>
+<id>http://gnuarmeclipse.github.io/</id>
+<title>GNU ARM Eclipse</title>
+<subtitle>A family of Eclipse CDT extensions and tools for GNU ARM development</subtitle>
+<entry>
+<title>ARM Connected Community article, September 2015</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/09/29/arm-connected-community-article/" rel="alternate" type="text/html" title="ARM Connected Community article, September 2015" />
+<published>2015-09-29T13:51:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/09/29/arm-connected-community-article</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/09/29/arm-connected-community-article/">&lt;p&gt;A new article was published on the &lt;a href=&quot;http://community.arm.com&quot;&gt;ARM Connected Community&lt;/a&gt; site, under the name &lt;strong&gt;&lt;a href=&quot;http://community.arm.com/groups/tools/blog/2015/09/29/the-gnu-arm-eclipse-project-has-a-new-look-and-a-new-home&quot;&gt;The GNU ARM Eclipse project has a new look and a new home at GitHub&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 
-</description>
-        <pubDate>Tue, 29 Sep 2015 19:51:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/09/29/arm-connected-community-article/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/09/29/arm-connected-community-article/</guid>
-        
-        <category>article</category>
-        
-        <category>arm</category>
-        
-        <category>connected</category>
-        
-        
-        <category>news</category>
-        
-        <category>article</category>
-        
-      </item>
-    
-      <item>
-        <title>The GNU ARM Eclipse project has a new home and a new look (GitHub)</title>
-        <description>&lt;p&gt;The GNU ARM Eclipse project was migrated from &lt;a href=&quot;https://sourceforge.net/projects/gnuarmeclipse/&quot;&gt;SourceForge&lt;/a&gt; to &lt;a href=&quot;https://github.com/gnuarmeclipse&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/arm-com-article-2015-09.png&quot; alt=&quot;ARM Connected Community article&quot;&gt;&lt;/p&gt;
 
-</description>
-        <pubDate>Mon, 14 Sep 2015 16:41:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/09/14/web-new-look/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/09/14/web-new-look/</guid>
-        
-        
-        <category>news</category>
-        
-        <category>web</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</title>
-        <description>&lt;p&gt;Version 2.9.3-201508190739 is a maintenance release; it fixes a small issue in the QEMU Debugger tab, which now uses persistent values for the board/device names only when none of them were assigned to the project from the CMSIS definitions.&lt;/p&gt;
+&lt;p&gt;(for backup reasons, a &lt;a href=&quot;%7B%7B%20site.baseurl%20%7D%7D/articles/arm-com-2015-09/&quot;&gt;local&lt;/a&gt; copy is also available).&lt;/p&gt;
+</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="article" />
+<category term="arm" />
+<category term="connected" />
+<summary>A new article was published on the ARM Connected Community site, under the name The GNU ARM Eclipse project has a new look and a new home at GitHub.</summary>
+</entry>
+<entry>
+<title>The GNU ARM Eclipse project has a new home and a new look (GitHub)</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/09/14/web-new-look/" rel="alternate" type="text/html" title="The GNU ARM Eclipse project has a new home and a new look (GitHub)" />
+<published>2015-09-14T10:41:00+00:00</published>
+<updated>2015-10-02T10:04:08+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/09/14/web-new-look</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/09/14/web-new-look/">&lt;p&gt;The GNU ARM Eclipse project was migrated from &lt;a href=&quot;https://sourceforge.net/projects/gnuarmeclipse/&quot;&gt;SourceForge&lt;/a&gt; to &lt;a href=&quot;https://github.com/gnuarmeclipse&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
-</description>
-        <pubDate>Wed, 19 Aug 2015 15:00:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/08/19/plugins-v2.9.3-201508190739-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/19/plugins-v2.9.3-201508190739-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>CMSIS</category>
-        
-        <category>qemu</category>
-        
-        
-        <category>plugins</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</title>
-        <description>&lt;p&gt;Version 2.3.50-201508161112 is a maintenance partial release, fixing the GNU/Linux distribution.&lt;/p&gt;
+&lt;h2&gt;Migration to GitHub&lt;/h2&gt;
 
-</description>
-        <pubDate>Sun, 16 Aug 2015 23:09:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/08/16/qemu-v2-3-50-20150816-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/16/qemu-v2-3-50-20150816-released/</guid>
-        
-        <category>Linux</category>
-        
-        <category>rpath</category>
-        
-        <category>qemu</category>
-        
-        
-        <category>qemu</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</title>
-        <description>&lt;p&gt;Version 2.9.2-201508071246 is a maintenance release; the main improvements include support for multi-LED boards in the STM32F4 C++ template and more elaborate PLL settings in the STM32F4 templates.&lt;/p&gt;
+&lt;p&gt;There are many reasons behind this decision (GitHub looks definitely cool!), but the main one is probably to reduce dependencies on custom DNS domains, like &lt;code&gt;livius.net&lt;/code&gt;, which might not be available on long term.&lt;/p&gt;
 
-</description>
-        <pubDate>Fri, 07 Aug 2015 15:00:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/08/07/plugins-v2.9.2-201508071246-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/07/plugins-v2.9.2-201508071246-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>qemu</category>
-        
-        <category>STM32F4</category>
-        
-        <category>STM32F4-Discovery</category>
-        
-        
-        <category>plugins</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</title>
-        <description>&lt;p&gt;Version 2.3.50-201508051820 is a maintenance partial release, adding support for Windows 64-bits.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/github-gae-header.png&quot; alt=&quot;GNU ARM Eclipse GitHub Home&quot;&gt;&lt;/p&gt;
 
-</description>
-        <pubDate>Wed, 05 Aug 2015 23:09:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150805-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150805-released/</guid>
-        
-        <category>windows</category>
-        
-        <category>64-bits</category>
-        
-        <category>sigsetjmp</category>
-        
-        <category>qemu</category>
-        
-        
-        <category>qemu</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</title>
-        <description>&lt;p&gt;Version 2.3.50-201508041609 is a maintenance release, fixing the graphical rendering on Windows and adding support for NUCLEO-F411RE.&lt;/p&gt;
+&lt;h3&gt;Repositories&lt;/h3&gt;
 
-</description>
-        <pubDate>Wed, 05 Aug 2015 00:29:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150804-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/05/qemu-v2-3-50-20150804-released/</guid>
-        
-        <category>411re</category>
-        
-        <category>nucleo</category>
-        
-        <category>qemu</category>
-        
-        
-        <category>qemu</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse QEMU v2.3.50-20150801*-dev released</title>
-        <description>&lt;p&gt;Version 2.3.50-201508012214 is the first production release of the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt;. It supports a range of STM boards, and fully implements the user LEDs available on these boards, presenting them graphically, in real time animation, over the board picture.&lt;/p&gt;
+&lt;p&gt;Migrating the repositories was the easiest part, each project was pushed into its own repository.&lt;/p&gt;
 
-</description>
-        <pubDate>Sun, 02 Aug 2015 05:00:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/08/02/qemu-v2-3-50-20150801-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/02/qemu-v2-3-50-20150801-released/</guid>
-        
-        <category>GPIO</category>
-        
-        <category>LED</category>
-        
-        <category>qemu</category>
-        
-        <category>STM</category>
-        
-        <category>SysTick</category>
-        
-        
-        <category>qemu</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.9.1.201508011813 released</title>
-        <description>&lt;p&gt;Version 2.9.1.201508011813 is a new release; the main improvement is the new version of the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt; emulator (including a graphical LED emulator), paired with a new version of the QEMU Debugging plug-in; also embedded applications can now be executed in Run mode, not only in Debug mode.&lt;/p&gt;
+&lt;p&gt;The current project repositories are:&lt;/p&gt;
 
-</description>
-        <pubDate>Sat, 01 Aug 2015 15:00:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/08/01/plugins-v2.9.1-201508011813-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/08/01/plugins-v2.9.1-201508011813-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>cmsis-packs</category>
-        
-        <category>Cortex-M</category>
-        
-        <category>Eclipse</category>
-        
-        <category>gcc</category>
-        
-        <category>hal</category>
-        
-        <category>qemu</category>
-        
-        <category>STM32F4</category>
-        
-        
-        <category>plugins</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released</title>
-        <description>&lt;p&gt;Version v2.6-201507152002 is a new release of the GNU ARM Eclipse Windows Build Tools, adding support for Windows 64-bits.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/plug-ins&quot;&gt;plug-ins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/windows-build-tools&quot;&gt;windows-build-tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/openocd&quot;&gt;openocd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/qemu&quot;&gt;qemu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/build-scripts&quot;&gt;build-scripts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-</description>
-        <pubDate>Wed, 15 Jul 2015 15:00:00 +0300</pubDate>
-        <link>http://gnuarmeclipse.github.io/2015/07/15/windows-build-tools-v2.6-20150715-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/2015/07/15/windows-build-tools-v2.6-20150715-released/</guid>
-        
-        <category>windows</category>
-        
-        <category>setup</category>
-        
-        <category>build</category>
-        
-        <category>make</category>
-        
-        <category>rm</category>
-        
-        <category>busybox</category>
-        
-        
-        <category>windows-build-tools</category>
-        
-        <category>releases</category>
-        
-      </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/github-gae-projects.png&quot; alt=&quot;GNU ARM Eclipse GitHub Projects&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Binary files as Releases&lt;/h3&gt;
+
+&lt;p&gt;Migration of binary files was a bit more complicated, and, due to GitHub current limitations, is not complete. The main problem was raised by the Eclipse update sites, which require a certain folder structure, and since GitHub does not support adding folders to releases, the Eclipse update sites will remain hosted on SourceForge.&lt;/p&gt;
+
+&lt;p&gt;Note: We reported this problem to GitHub support, and in a future version they might allow to add folders to releases, but details are not available.&lt;/p&gt;
+
+&lt;p&gt;Apart from the Eclipse update sites, all other binary files will be published as GitHub Releases, attached to the respective project repositories.&lt;/p&gt;
+
+&lt;p&gt;The archive of past releases was also migrated from SourceForge to GitHub.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/github-gae-releases.png&quot; alt=&quot;GNU ARM Eclipse GitHub Releases&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Issues trackers&lt;/h3&gt;
+
+&lt;p&gt;The SourceForge trackers were replaced by the GitHub Issues trackers.&lt;/p&gt;
+
+&lt;p&gt;The content of the old trackers was not moved to GitHub, since this is much too time consuming, but it is planned to still keep the old trackers themselves available, even if they are locked and new tickets cannot be created there. It is still possible to comment on existing tickets.&lt;/p&gt;
+
+&lt;h3&gt;Notifications as watched projects&lt;/h3&gt;
+
+&lt;p&gt;In the past, release notifications were handled by a WordPress plug-in, by subscribing to the project blog.&lt;/p&gt;
+
+&lt;p&gt;Currently the only GitHub equivalent is to &lt;strong&gt;Watch&lt;/strong&gt; projects, which will enable a notification for each project release.&lt;/p&gt;
+
+&lt;p&gt;For those interested in receiving notifications, the recommendation is to subscribe to GitHub, by clicking the &lt;strong&gt;Watch&lt;/strong&gt; button and selecting &lt;strong&gt;Watching&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/github-gae-releases.png&quot; alt=&quot;GNU ARM Eclipse GitHub Releases&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Be sure you subscribe to &lt;strong&gt;Watch&lt;/strong&gt; the &lt;strong&gt;gnuarmeclipse/gnuarmeclipse.github.io&lt;/strong&gt; project to receive notifications for Web posts.&lt;/p&gt;
+
+&lt;h2&gt;The Web has a new look&lt;/h2&gt;
+
+&lt;p&gt;Finally, the most delicate issue, was to migrate the old documentation sites from the livius.net domain to a public domain.&lt;/p&gt;
+
+&lt;p&gt;Since GitHub solution for providing documentation sites is &lt;a href=&quot;https://pages.github.com&quot;&gt;GitHub Pages&lt;/a&gt;, and this service makes the sites available in the &lt;code&gt;github.io&lt;/code&gt; domain, it was considered acceptable to migrate the WordPress and MediaWiki sites to GitHub Pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/github-io-gae-home.png&quot; alt=&quot;GNU ARM Eclipse Home Page&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHub Pages uses &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; to generate static web sites, and the most convenient input format for Jekyll is &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;markdown&lt;/a&gt;, so the migration involved conversion from WordPress internal representation, to markdown. Given the differences, this conversion was not easy, and was done partly with scripts, partly manually. Similarly for MediaWiki, although the conversion from the MediaWiki format to markdown was easier.&lt;/p&gt;
+
+&lt;p&gt;Given the complexity of this migration, we are aware that it is very likely that lots of mistakes are still present in the pages; we would appreciate any help in fixing them (use the &lt;a href=&quot;https://github.com/gnuarmeclipse/gnuarmeclipse.github.io/issues/1&quot;&gt;Web Issues&lt;/a&gt; tracker for this).&lt;/p&gt;
+
+&lt;p&gt;The web site has two dedicated projects:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/gnuarmeclipse.github.io&quot;&gt;gnuarmeclipse.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/gnuarmeclipse.github.io-source&quot;&gt;gnuarmeclipse.github.io-source&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first one stores the actual static pages of the Web site and the second stores the Jekyll source files for generating the Web site.&lt;/p&gt;
+
+&lt;h2&gt;HTTP Redirects&lt;/h2&gt;
+
+&lt;p&gt;We are aware that a lot of links to the previous sites are in use. To avoid breaking them, many redirects were installed from the &lt;code&gt;gnuarmeclipse.livius.net/*&lt;/code&gt; to &lt;code&gt;gnuarmeclipse.github.io&lt;/code&gt;. All other pages not matching the rules in these redirects will be served by the new &lt;code&gt;gnuarmeclipse.livius.net/redirected/&lt;/code&gt; page, so both blog and wiki references should not be broken, but land in the new site.&lt;/p&gt;
+
+&lt;h2&gt;Old sites&lt;/h2&gt;
+
+&lt;p&gt;The previous WordPress and MediaWiki sites were moved back to SourceForge and, for historical reasons, will be preserved there, but will no longer be maintained:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://gnuarmeclipse.sourceforge.net/blog/&quot;&gt;&lt;code&gt;http://gnuarmeclipse.sourceforge.net/blog/&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gnuarmeclipse.sourceforge.net/wiki/&quot;&gt;&lt;code&gt;http://gnuarmeclipse.sourceforge.net/wiki/&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<summary>The GNU ARM Eclipse project was migrated from SourceForge to GitHub.</summary>
+</entry>
+<entry>
+<title>GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/08/19/plugins-v2.9.3-201508190739-released/" rel="alternate" type="text/html" title="GNU ARM Eclipse plug-ins v2.9.3-201508190739 released" />
+<published>2015-08-19T12:00:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/08/19/plugins-v2.9.3-201508190739-released</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">&lt;p&gt;Version 2.9.3-201508190739 is a maintenance release; it fixes a small issue in the QEMU Debugger tab, which now uses persistent values for the board/device names only when none of them were assigned to the project from the CMSIS definitions.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
+</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="GNU" />
+<category term="ARM" />
+<category term="Eclipse" />
+<category term="CMSIS" />
+<category term="qemu" />
+<summary>Version 2.9.3-201508190739 is a maintenance release; it fixes a small issue in the QEMU Debugger tab, which now uses persistent values for the board/device names only when none of them were assigned to the project from the CMSIS definitions.</summary>
+</entry>
+<entry>
+<title>GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/08/16/qemu-v2-3-50-20150816-released/" rel="alternate" type="text/html" title="GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released" />
+<published>2015-08-16T20:09:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/08/16/qemu-v2-3-50-20150816-released</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/08/16/qemu-v2-3-50-20150816-released/">&lt;p&gt;Version 2.3.50-201508161112 is a maintenance partial release, fixing the GNU/Linux distribution.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Addressed issues&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the build script for the GNU/Linux distribution did not generate the correct was &lt;strong&gt;rpath&lt;/strong&gt; for the executable and shared libraries, as per &lt;a href=&quot;https://sourceforge.net/p/gnuarmeclipse/support-requests/160/&quot;&gt;support-request:#160&lt;/a&gt;; fixed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;The new GNU/Linux QEMU can be downloaded from the &lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;GitHub Releases&lt;/a&gt; page. The packages for other platforms are available from previous releases.&lt;/p&gt;
+
+&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;e6d58d4174aa3b4e42c050da73e52eb2  
+gnuarmeclipse-qemu-debian32-2.3.50-201508161112-dev.tgz
+
+e9af057490dae54946dde460a1aa2c29  
+gnuarmeclipse-qemu-debian64-2.3.50-201508161112-dev.tgz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="Linux" />
+<category term="rpath" />
+<category term="qemu" />
+<summary>Version 2.3.50-201508161112 is a maintenance partial release, fixing the GNU/Linux distribution.</summary>
+</entry>
+<entry>
+<title>GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/08/07/plugins-v2.9.2-201508071246-released/" rel="alternate" type="text/html" title="GNU ARM Eclipse plug-ins v2.9.2-201508071246 released" />
+<published>2015-08-07T12:00:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/08/07/plugins-v2.9.2-201508071246-released</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">&lt;p&gt;Version 2.9.2-201508071246 is a maintenance release; the main improvements include support for multi-LED boards in the STM32F4 C++ template and more elaborate PLL settings in the STM32F4 templates.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;New features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the STM32F4 template was extended to generate projects that can blink &lt;strong&gt;multiple LEDs&lt;/strong&gt;, with special focus on the &lt;strong&gt;STM32F4-Discovery&lt;/strong&gt; board, which features 4 user LEDs; this project is now the default test project, and can be easily &lt;strong&gt;tested on QEMU&lt;/strong&gt; which fully support this board.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the projects generated by the templates, the following issues were addressed:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[bugs:#193] the &lt;code&gt;_initialize\_hardware()&lt;/code&gt; always set &lt;strong&gt;VTOR&lt;/strong&gt;, which does not exist on small Cortex-M0/M0+ cores; the setting is now conditioned by &lt;code&gt;__ARM_ARCH_7M__&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;since for HAL projects it is mandatory to have the &lt;strong&gt;SysTick&lt;/strong&gt; running at 1000 Hz, the call to &lt;code&gt;HAL_IncTick()&lt;/code&gt; was added to al templates, conditionally included by &lt;code&gt;USE_HAL_DRIVER&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;[feature-requests:#67] the HAL function name to set the clock is &lt;code&gt;SystemClock_Config()&lt;/code&gt;; the &lt;code&gt;configure_system_clock()&lt;/code&gt; function was renamed &lt;code&gt;SystemClock_Config()&lt;/code&gt;, defined as weak, to allow it be redefined in CubeMX projects;&lt;/li&gt;
+&lt;li&gt;[feature-requests:#67] the PLL logic for STM32F4 was improved, to be specific to each device; small devices use max 84 MHz, the rest max 168 MHz; this setting is conservative, although the maximum speed is higher, it was preferred in order to keep the USB functional;&lt;/li&gt;
+&lt;li&gt;[support-requests:#155] ]support for boards that do not use external clock but only internal RC oscillator was added; just define the clock frequency (HSE) to 0 in the template wizard and the clock initialisations will use the HSI.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="GNU" />
+<category term="ARM" />
+<category term="Eclipse" />
+<category term="qemu" />
+<category term="STM32F4" />
+<category term="STM32F4-Discovery" />
+<summary>Version 2.9.2-201508071246 is a maintenance release; the main improvements include support for multi-LED boards in the STM32F4 C++ template and more elaborate PLL settings in the STM32F4 templates.</summary>
+</entry>
+<entry>
+<title>GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/08/05/qemu-v2-3-50-20150805-released/" rel="alternate" type="text/html" title="GNU ARM Eclipse QEMU v2.3.50-20150805*-dev released" />
+<published>2015-08-05T20:09:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/08/05/qemu-v2-3-50-20150805-released</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/08/05/qemu-v2-3-50-20150805-released/">&lt;p&gt;Version 2.3.50-201508051820 is a maintenance partial release, adding support for Windows 64-bits.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Addressed issues&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;_WIN64&lt;/code&gt; use of &lt;code&gt;sigsetjmp()&lt;/code&gt; was fixed and now the Windows 64-bits distribution is fully functional.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;The new Windows 64-bits QEMU can be downloaded from the &lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;GitHub Releases&lt;/a&gt; page. The packages for other platforms are available from previous releases.&lt;/p&gt;
+
+&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;f4d0618158f37284416f0e13aba83160  
+gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="windows" />
+<category term="64-bits" />
+<category term="sigsetjmp" />
+<category term="qemu" />
+<summary>Version 2.3.50-201508051820 is a maintenance partial release, adding support for Windows 64-bits.</summary>
+</entry>
+<entry>
+<title>GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/08/04/qemu-v2-3-50-20150804-released/" rel="alternate" type="text/html" title="GNU ARM Eclipse QEMU v2.3.50-20150804*-dev released" />
+<published>2015-08-04T21:29:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/08/04/qemu-v2-3-50-20150804-released</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/08/04/qemu-v2-3-50-20150804-released/">&lt;p&gt;Version 2.3.50-201508041609 is a maintenance release, fixing the graphical rendering on Windows and adding support for NUCLEO-F411RE.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Addressed issues&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the problem affecting the graphical rendering was identified; an explicit event loop was added and rendering seems ok now, on all platforms, including Windows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;New features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the &lt;strong&gt;NUCLEO-F411RE&lt;/strong&gt; board was added, using &lt;strong&gt;STM32F411RE&lt;/strong&gt; device.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Known problems&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;due to a wrong &lt;strong&gt;rpath&lt;/strong&gt; definitions, in certain conditions, the GNU/Linux distribution failed to start;&lt;/del&gt; &lt;strong&gt;fixed in release 2.3.50-201508161112-dev&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;The new QEMU can be downloaded from the &lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;GitHub Releases&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;9f82a62194b57fdbbdf9c689c2209710  
+gnuarmeclipse-qemu-debian32-2.3.50-201508041609-dev.tgz
+
+513c858cf247f5ad7e98853f5afec6d5  
+gnuarmeclipse-qemu-debian64-2.3.50-201508041609-dev.tgz
+
+a2326fe2f576a182f6df4db9784180e6
+gnuarmeclipse-qemu-osx-2.3.50-201508041609-dev.pkg
+
+13713073d9e3e036bb518ae34801c34b  
+gnuarmeclipse-qemu-win32-2.3.50-201508041609-dev-setup.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="411re" />
+<category term="nucleo" />
+<category term="qemu" />
+<summary>Version 2.3.50-201508041609 is a maintenance release, fixing the graphical rendering on Windows and adding support for NUCLEO-F411RE.</summary>
+</entry>
+<entry>
+<title>GNU ARM Eclipse QEMU v2.3.50-20150801*-dev released</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/08/02/qemu-v2-3-50-20150801-released/" rel="alternate" type="text/html" title="GNU ARM Eclipse QEMU v2.3.50-20150801*-dev released" />
+<published>2015-08-02T02:00:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/08/02/qemu-v2-3-50-20150801-released</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/08/02/qemu-v2-3-50-20150801-released/">&lt;p&gt;Version 2.3.50-201508012214 is the first production release of the &lt;a href=&quot;%7B%7B%20site.baseurl%20%7D%7D/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt;. It supports a range of STM boards, and fully implements the user LEDs available on these boards, presenting them graphically, in real time animation, over the board picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Animated LEDs&lt;/h2&gt;
+
+&lt;p&gt;In addition to fully supporting the semihosting commands, intended to running unit tests, the GNU ARM Eclipse QEMU is also intended to running the &lt;strong&gt;blinky&lt;/strong&gt; applications generated by the GNU ARM Eclipse templates.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/stm32f4-discovery-leds.png&quot; alt=&quot;The STM32F4-Discovery 4 LEDs&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Supported boards&lt;/h2&gt;
+
+&lt;p&gt;The following boards are fully supported in graphical mode:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mapple&lt;/strong&gt; - LeafLab Arduino-style STM32 microcontroller board (r5)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NUCLEO-F103RB&lt;/strong&gt; - ST Nucleo Development Board for STM32 F1 series&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NetduinoGo&lt;/strong&gt; - Netduino GoBus Development Board with STM32F4&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NetduinoPlus2&lt;/strong&gt; - Netduino Development Board with STM32F4&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OLIMEXINO-STM32&lt;/strong&gt; - Olimex Mapple (Arduino-like) Development Board&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;STM32-E407&lt;/strong&gt; - Olimex Development Board for STM32F407ZGT6&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;STM32-H103&lt;/strong&gt; - Olimex Header Board for STM32F103RBT6&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;STM32-P103&lt;/strong&gt; - Olimex Prototype Board for STM32F103RBT6&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;STM32-P107&lt;/strong&gt; - Olimex Prototype Board for STM32F107VCT6&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;STM32F4-Discovery&lt;/strong&gt; - ST Discovery kit for STM32F407/417 lines&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;STM32F429I-Discovery&lt;/strong&gt; - ST Discovery kit for STM32F429/439 lines&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;generic&lt;/strong&gt; - Generic Cortex-M board; use -mcu to define the device&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note: the rest of the boards listed in the previous QEMU release will be added in future versions.&lt;/p&gt;
+
+&lt;h2&gt;Supported MCUs&lt;/h2&gt;
+
+&lt;p&gt;The following Cortex-M3 and Cortex-M4 microcontrollers are supported:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;STM32F103RB&lt;/li&gt;
+&lt;li&gt;STM32F107VC&lt;/li&gt;
+&lt;li&gt;STM32F405RG&lt;/li&gt;
+&lt;li&gt;STM32F407VG&lt;/li&gt;
+&lt;li&gt;STM32F407ZG&lt;/li&gt;
+&lt;li&gt;STM32F429ZI&lt;/li&gt;
+&lt;li&gt;STM32L152RE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Peripherals &amp;amp; compatibility&lt;/h2&gt;
+
+&lt;p&gt;The main compatibility requirement for the emulator was to support all devices addressed during the standard CMSIS initialisations, which generally refer to PLL &amp;amp; clock settings.&lt;/p&gt;
+
+&lt;p&gt;The next requirement was to fully support the GPIOs, at the level of allowing one or more LEDs to blink.&lt;/p&gt;
+
+&lt;h2&gt;SysTick&lt;/h2&gt;
+
+&lt;p&gt;The blinky projects generated by the GNU ARM Eclipse templates (and all STM32 HAL projects) use the SysTick to measure time, so any realistic emulation should support SysTick. GNU ARM Eclipse QEMU not only does this, but also provides relatively accurate time intervals, and the SysTick exception can be used from simple time measuring to driving a real-time scheduler with a reasonable number of task switches per second (1000 Hz is OK).&lt;/p&gt;
+
+&lt;h2&gt;Changes from 2.2.92&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;–semihosting-cmdline&lt;/strong&gt; was moved to the last position on the command line, and all following options are passed to the emulated application;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;–semihosting-config enable=on&lt;/strong&gt; is default, and may be omitted;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;–image filename.elf&lt;/strong&gt; defines the application executable to be emulated;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;–board name&lt;/strong&gt; defines the CMSIS board name; if missing, the MCU must be defined; to get a list of available boards, use &lt;strong&gt;–board help&lt;/strong&gt;, or &lt;strong&gt;–board ?&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;–mcu name&lt;/strong&gt; defines the CMSIS device name; if missing, the default MCU of the board is used; to get a list of supported devices, use &lt;strong&gt;–mcu help&lt;/strong&gt;, or &lt;strong&gt;–mcu ?&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Known problems&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;QEMU emulates only &lt;strong&gt;Cortex-M3&lt;/strong&gt; and &lt;strong&gt;Cortex-M4&lt;/strong&gt; instructions; specific FP (Floating Point) Cortex-M4 instructions are not yet supported;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;the &lt;strong&gt;64-bits Windows&lt;/strong&gt; version of QEMU still has some problems with the timers, and applications using SysTick fail; until a solution is found, the 32-bits version of QEMU can be used on Windows 64-bits too;&lt;/del&gt; &lt;strong&gt;fixed in release 2.3.50-201508051820-dev&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;the new QEMU uses custom command line options, which makes it slightly incompatible with the experimental version in the previous version (and with the original QEMU); do not try to use the QEMU debugging plug-in with the original QEMU.&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;due to a wrong &lt;strong&gt;rpath&lt;/strong&gt; definitions, in certain conditions, the GNU/Linux distribution failed to start;&lt;/del&gt; &lt;strong&gt;fixed in release 2.3.50-201508161112-dev&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;[August 4, 2015; update]&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A problem affecting QEMU graphical features was discovered: &lt;del&gt;on Windows, if the graphical window is selected or moved, rendering hangs; also rendering during Debug sessions is affected;&lt;/del&gt; on all platforms rendering during Run sessions seems ok, but the window does not react to any events; &lt;strong&gt;fixed in release 2.3.50-201508041609-dev&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;The new QEMU can be downloaded from the &lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;GitHub Releases&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;8eaf34b847e5b65b15f118c980b3f5c4
+gnuarmeclipse-qemu-debian32-2.3.50-201508012214-dev.tgz
+
+969f536db8768604fef113ffcd7a6bcd
+gnuarmeclipse-qemu-debian64-2.3.50-201508012214-dev.tgz
+
+22bd97ade3233134e83ddf55912ec9ef
+gnuarmeclipse-qemu-osx-2.3.50-201508012214-dev.pkg
+
+d0a6114d2ede44ad8bcff40e8baeb21f
+gnuarmeclipse-qemu-win32-2.3.50-201508012214-dev-setup.exe
+
+f4d0618158f37284416f0e13aba83160  
+gnuarmeclipse-qemu-win64-2.3.50-201508051820-dev-setup.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;[August 5, 2015; update]&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The 64-bits Windows package was added as a new &lt;a href=&quot;https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150805&quot;&gt;GitHub Release&lt;/a&gt;.&lt;/p&gt;
+</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="GPIO" />
+<category term="LED" />
+<category term="qemu" />
+<category term="STM" />
+<category term="SysTick" />
+<summary>Version 2.3.50-201508012214 is the first production release of the GNU ARM Eclipse QEMU. It supports a range of STM boards, and fully implements the user LEDs available on these boards, presenting them graphically, in real time animation, over the board picture.</summary>
+</entry>
+<entry>
+<title>GNU ARM Eclipse plug-ins v2.9.1.201508011813 released</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/08/01/plugins-v2.9.1-201508011813-released/" rel="alternate" type="text/html" title="GNU ARM Eclipse plug-ins v2.9.1.201508011813 released" />
+<published>2015-08-01T12:00:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/08/01/plugins-v2.9.1-201508011813-released</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/08/01/plugins-v2.9.1-201508011813-released/">&lt;p&gt;Version 2.9.1.201508011813 is a new release; the main improvement is the new version of the &lt;a href=&quot;%7B%7B%20site.baseurl%20%7D%7D/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt; emulator (including a graphical LED emulator), paired with a new version of the QEMU Debugging plug-in; also embedded applications can now be executed in Run mode, not only in Debug mode.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;New features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;%7B%7B%20site.baseurl%20%7D%7D/2015/04/05/qemu-v2-2-92-20150404-released/&quot;&gt;GNU ARM Eclipse QEMU 2.2.92-20150404*-dev released&lt;/a&gt;;
+&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/board-stm32f4-discovery-leds.png&quot; alt=&quot;The STM32F4-Discovery 4 LEDs&quot;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gnuarmeclipse/windows-build-tools/wiki/Release-v2.6-20150715&quot;&gt;GNU ARM Eclipse Build Tools 2.6-20150715* released&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;a new version of the &lt;strong&gt;QEMU Debugging plug-in&lt;/strong&gt; was added; the board and device definitions are copied from the project CMSIS configuration, if available;
+&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/launch-qemu-debugger.png&quot; alt=&quot;The QEMU Debugger tab&quot;&gt;&lt;/li&gt;
+&lt;li&gt;[feature-requests:#104] all debug launch configurations can also be started in &lt;strong&gt;Run mode&lt;/strong&gt;; the difference is that breakpoint support is disabled, so execution will proceed without halting in breakpoints;
+&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/menu-run-qemu.png&quot; alt=&quot;Accessing QEMU Run configurations&quot;&gt;&lt;/li&gt;
+&lt;li&gt;[feature-requests:#95] support for new ARM architectures (&lt;strong&gt;arm7ve&lt;/strong&gt;, &lt;strong&gt;armv8-a+crc&lt;/strong&gt;) and CPUs (&lt;strong&gt;cortex-a12&lt;/strong&gt;, &lt;strong&gt;cortex-m0.small-multiply&lt;/strong&gt;, &lt;strong&gt;cortex-m0plus.small-multiply&lt;/strong&gt;, &lt;strong&gt;cortex-m1.small-multiply&lt;/strong&gt;) was added; to match the capabilities of GCC 4.9;&lt;/li&gt;
+&lt;li&gt;support for &lt;strong&gt;editing the toolchain path&lt;/strong&gt; for any supported toolchain was added; previously only the default toolchain path was editable;
+&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/preferences-c-build-global-tools-paths.png&quot; alt=&quot;Global toolchain path editor&quot;&gt;&lt;/li&gt;
+&lt;li&gt;support for &lt;strong&gt;configuring the toolchain for non-managed projects&lt;/strong&gt; was added; previously the indexer for non-managed projects could not be configured to match the actual build configuration;
+&lt;img src=&quot;%7B%7B%20site.baseurl%20%7D%7D/assets/images/2015/properties-c-settings-make.png&quot; alt=&quot;The simplified settings for makefile projects&quot;&gt;&lt;/li&gt;
+&lt;li&gt;[support-requests:#155] the STM32F4 template was updated to use &lt;strong&gt;HAL v1.6&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;STM32F446xx&lt;/strong&gt; was added to the STM32F4 template;&lt;/li&gt;
+&lt;li&gt;the QEMU build script was updated to use Docker; the build procedure was extended to download most of the required libraries and build them from sources.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Addressed bugs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[bugs:#188] the &lt;strong&gt;CMSIS Packs Manager&lt;/strong&gt;  failed to download from Nordic URLs, which redirected to another server; the download code was improved to process HTTP redirects;&lt;/li&gt;
+&lt;li&gt;[bugs:#186] non relevant setting are no longer shown in non-manged projects;&lt;/li&gt;
+&lt;li&gt;[bugs:#184] editing the path for other toolchains than the default one was not possible; added.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Template issues&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[feature-requests:#97] the &lt;strong&gt;VTOR register&lt;/strong&gt; is now explicitly set during initialisations, to be sure it matches the address of the vectors;&lt;/li&gt;
+&lt;li&gt;in the &lt;strong&gt;blinky&lt;/strong&gt; projects, the first cycle is a full second with the LED turned on, as a visual feedback that the LED polarity is configured correctly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Known problems&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;none so far&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notes: for QEMU problems, please see the &lt;a href=&quot;%7B%7B%20site.baseurl%20%7D%7D/2015/04/05/qemu-v2-2-92-20150404-released/&quot;&gt;separate post&lt;/a&gt;.&lt;/p&gt;
+</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="GNU" />
+<category term="ARM" />
+<category term="Eclipse" />
+<category term="cmsis-packs" />
+<category term="Cortex-M" />
+<category term="Eclipse" />
+<category term="gcc" />
+<category term="hal" />
+<category term="qemu" />
+<category term="STM32F4" />
+<summary>Version 2.9.1.201508011813 is a new release; the main improvement is the new version of the GNU ARM Eclipse QEMU emulator (including a graphical LED emulator), paired with a new version of the QEMU Debugging plug-in; also embedded applications can now be executed in Run mode, not only in Debug mode.</summary>
+</entry>
+<entry>
+<title>GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released</title>
+<link href="http://gnuarmeclipse.github.io/blog/2015/07/15/windows-build-tools-v2.6-20150715-released/" rel="alternate" type="text/html" title="GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released" />
+<published>2015-07-15T12:00:00+00:00</published>
+<updated>2015-10-02T16:53:50+00:00</updated>
+<id>http://gnuarmeclipse.github.io/blog/2015/07/15/windows-build-tools-v2.6-20150715-released</id>
+<content type="html" xml:base="http://gnuarmeclipse.github.io/blog/2015/07/15/windows-build-tools-v2.6-20150715-released/">&lt;p&gt;Version v2.6-201507152002 is a new release of the GNU ARM Eclipse Windows Build Tools, adding support for Windows 64-bits.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;Binary files »&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Improvements&lt;/h2&gt;
+
+&lt;p&gt;The GNU ARM Eclipse Build Tools v2.6 package includes the &lt;strong&gt;version 4.1 of GNU make&lt;/strong&gt; (built from MSYS2 source files), and version &lt;strong&gt;1.24.0-git of BusyBox&lt;/strong&gt;, which provides a convenient implementation for sh/rm/echo.&lt;/p&gt;
+
+&lt;p&gt;The main change from v2.4 is a patch that allows BusyBox to run correctly on 64-bits Windows systems. Apparently this not only makes usage safer, by avoiding the DLL32 mess, but also slightly improves build performances.&lt;/p&gt;
+
+&lt;h2&gt;Known problems&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;none so far&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;The new Windows Build Tools can be downloaded from the &lt;a href=&quot;%7B%7B%20page.download_url%20%7D%7D&quot;&gt;GitHub Release&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;The MD5 sums of the files are:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;d52c5c3bedc8b34acdcb8384d8b2cfc3  
+gnuarmeclipse-build-tools-win32-2.6-201507152002-setup.exe
+
+a47b0a38355ee9449cb3930beb303762  
+gnuarmeclipse-build-tools-win64-2.6-201507152002-setup.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+<author>
+<name>Liviu Ionescu</name>
+</author>
+<category term="windows" />
+<category term="setup" />
+<category term="build" />
+<category term="make" />
+<category term="rm" />
+<category term="busybox" />
+<summary>Version v2.6-201507152002 is a new release of the GNU ARM Eclipse Windows Build Tools, adding support for Windows 64-bits.</summary>
+</entry>
+</feed>

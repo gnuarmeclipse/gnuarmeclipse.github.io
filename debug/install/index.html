@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
   <title>How to install the debugging components?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
@@ -29,29 +31,31 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
   <link rel="canonical" href="http://gnuarmeclipse.github.io/debug/install/">
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-16767008-16', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
+
+
 
 </head>
 
@@ -76,23 +80,23 @@
 <h1 class="page-title">How to install the debugging components?</h1>
 
 
-<h2 id="quicklinks">Quicklinks</h2>
+<h2>Quicklinks</h2>
 
 <p>If you already installed the plug-ins and the GDB client, and are interested only in J-Link, OpenOCD or QEMU install details, you can directly skip to:</p>
 
 <ul>
-  <li><a href="/debug/jlink/install/" title="SEGGER J-Link Install">SEGGER J-Link install</a></li>
-  <li><a href="/openocd/install/" title="OpenOCD install">OpenOCD install</a></li>
-  <li><a href="/qemu/install/" title="QEMU Install">QEMU install</a></li>
+<li><a href="/debug/jlink/install/" title="SEGGER J-Link Install">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/" title="OpenOCD install">OpenOCD install</a></li>
+<li><a href="/qemu/install/" title="QEMU Install">QEMU install</a></li>
 </ul>
 
-<h2 id="overview">Overview</h2>
+<h2>Overview</h2>
 
 <p>When debugging ARM applications, generally two main components are required:</p>
 
 <ul>
-  <li>a hardware <strong>JTAG/SWD probe</strong></li>
-  <li>several <strong>software</strong> components</li>
+<li>a hardware <strong>JTAG/SWD probe</strong></li>
+<li>several <strong>software</strong> components</li>
 </ul>
 
 <p>The hardware probe can be either a separate device, connected via a flat cable to the debugged board, or, for many affordable <em>discovery</em> boards, can be directly integrated on the evaluation board, having a separate USB connector.</p>
@@ -102,66 +106,64 @@
 <p>As for software, debugging is generally a complex operation, and in Eclipse it requires multiple components:</p>
 
 <ul>
-  <li>one or more Eclipse Debugging <strong>plug-ins</strong></li>
-  <li>the GDB <strong>debugger</strong> (client) application</li>
-  <li>the GDB <strong>server</strong> application</li>
-  <li>the hardware <strong>drivers</strong> required by the JTAG/SWD probe</li>
+<li>one or more Eclipse Debugging <strong>plug-ins</strong></li>
+<li>the GDB <strong>debugger</strong> (client) application</li>
+<li>the GDB <strong>server</strong> application</li>
+<li>the hardware <strong>drivers</strong> required by the JTAG/SWD probe</li>
 </ul>
 
 <p>The GNU ARM Eclipse project recommends three debugging solutions:</p>
 
 <ul>
-  <li>the <strong>SEGGER J-Link</strong> probe &amp; GDB server, as <strong>a highly professional solution</strong>, supporting both JTAG and SWD, plus SWO trace output;</li>
-  <li>the <strong>OpenOCD</strong> application as <strong>an universal tool</strong>, supporting most cheap JTAG probes, but with limitations (currently it does not support SWD and implicitly no SWO, it is slower, configuration might be sometimes cryptical, there are many driver incompatibilities on Windows, etc);</li>
-  <li>the <a href="/qemu/" title="The GNU ARM Eclipse QEMU">GNU ARM Eclipse QEMU</a> emulator, supporting several Cortex-M boards.</li>
+<li>the <strong>SEGGER J-Link</strong> probe &amp; GDB server, as <strong>a highly professional solution</strong>, supporting both JTAG and SWD, plus SWO trace output;</li>
+<li>the <strong>OpenOCD</strong> application as <strong>an universal tool</strong>, supporting most cheap JTAG probes, but with limitations (currently it does not support SWD and implicitly no SWO, it is slower, configuration might be sometimes cryptical, there are many driver incompatibilities on Windows, etc);</li>
+<li>the <a href="/qemu/" title="The GNU ARM Eclipse QEMU">GNU ARM Eclipse QEMU</a> emulator, supporting several Cortex-M boards.</li>
 </ul>
 
 <p>For an explanation why the SEGGER J-Link was selected, please go to the <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link Debugging</a> page and read the introduction section.</p>
 
-<h2 id="eclipse-plug-ins">Eclipse plug-ins</h2>
+<h2>Eclipse plug-ins</h2>
 
 <p>If you recently installed the GNU ARM Eclipse plug-ins (version 2.x or higher), you probably already have the debugging plug-ins. If not, go to the <a href="/plugins/install/" title="Plug-ins install">plug-ins install</a> page and be sure you enable the entries named <strong>GNU ARM C/C++ J-Link Debugging</strong>, <strong>GNU ARM C/C++ OpenOCD Debugging</strong> and <strong>GNU ARM C/C++ QEMU Debugging</strong>.</p>
 
-<p><img src="/images/2014/01/DebuggingPluginsInstall1.png" alt="" /></p>
+<p><img src="/assets/images/2014/01/DebuggingPluginsInstall1.png" alt=""></p>
 
 <p>Specific plug-in install documentation is available from separate pages:</p>
 
 <ul>
-  <li><a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link plug-in</a></li>
-  <li><a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">OpenOCD plug-in</a></li>
-  <li><a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU plug-in</a></li>
+<li><a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link plug-in</a></li>
+<li><a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU plug-in</a></li>
 </ul>
 
-<h2 id="gdb-client">GDB client</h2>
+<h2>GDB client</h2>
 
 <p>The GDB client (GDB stands for <strong>G</strong>NU <strong>D</strong>e<strong>b</strong>ugger) is part of the GNU Toolchains, and is located in the same folder as all GNU toolchain binaries (compiler, linker, etc). The application name uses the same prefix/suffix as the compiler (for example, the debugger for embedded applications is arm-none-eabi-gdb).</p>
 
 <p>To check if GDB is functional on your machine, use the following command (adjust the path for your system):</p>
-
-<pre><code>$ /usr/local/gcc-arm-none-eabi-4_7-2013q3/bin/arm-none-eabi-gdb --version
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ /usr/local/gcc-arm-none-eabi-4_7-2013q3/bin/arm-none-eabi-gdb --version
 GNU gdb (GNU Tools for ARM Embedded Processors) 7.4.1.20130913-cvs
-</code></pre>
-
+</code></pre></div>
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain version. Generally only debugging .ELF applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 
-<h3 id="non-gnu-toolchains">Non-GNU toolchains</h3>
+<h3>Non-GNU toolchains</h3>
 
 <p>Debugging applications generated by <strong>non-GNU toolchains</strong> (like the obsolete ARM CC), although not completely excluded, is <strong>not supported</strong>.</p>
 
-<h2 id="gdb-server--drivers">GDB server &amp; drivers</h2>
+<h2>GDB server &amp; drivers</h2>
 
 <p>For the GDB server, there are two recommended solutions, <strong>J-Link GDB Server</strong> and <strong>OpenOCD</strong>. Detailed installation instructions are available in separate pages:</p>
 
 <ul>
-  <li><a href="/debug/jlink/install/" title="SEGGER J-Link Install">SEGGER J-Link install</a></li>
-  <li><a href="/openocd/install/" title="OpenOCD install">OpenOCD install</a></li>
+<li><a href="/debug/jlink/install/" title="SEGGER J-Link Install">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/" title="OpenOCD install">OpenOCD install</a></li>
 </ul>
 
 <p>Normally if you already have a J-Link probe (or an OpenSDA J-Link compatible evaluation board), there is no absolute need to install OpenOCD, but it is sometimes useful to have a back-up solution in case you want to compare different behaviours, so the recommendation is to have both installed.</p>
 
 <p>Similarly, if you do not have a J-Link (yet), there is no need to install the J-Link support at this moment; you can very well start your tests with OpenOCD alone. However, especially if your evaluation board has an integrated JTAG, once you overcome the initial apprentice status and want to use more advanced debug techniques, like SWO traces, or even want to debug your own boards, you will need an external JTAG, and in this case the recommended solution is to use J-Link.</p>
 
-<h2 id="alternate-solutions">Alternate solutions</h2>
+<h2>Alternate solutions</h2>
 
 <p>J-Link and OpenOCD are not the only existing solutions, but probably are the most portable ones. J-Link is a single piece of hardware that can be used with most ARM processors. At the other end of the spectrum is OpenOCD, a single piece of software that, within limits, can be used with most JTAG probes, especially on GNU/Linux.</p>
 
@@ -170,203 +172,198 @@ GNU gdb (GNU Tools for ARM Embedded Processors) 7.4.1.20130913-cvs
 <p>To save you time, we compiled a list of other GDB servers, with some of their features and  limitations:</p>
 
 <ul>
-  <li>the original <strong>STM32 ST-Link Utility</strong> software, available from STM as part number <a href="http://www.st.com/web/en/catalog/tools/PF258168">STSW-LINK004</a>, also implements a GDB server for the ST-LINK probes; runs on Windows only</li>
-  <li>the <strong>stlink</strong> GDB server from <strong>texane</strong>, a <a href="https://github.com/texane/stlink">GitHub</a> project, implements the ST-LINK protocol; can be compiled from sources on GNU/Linux and OS X; on Windows can be compiled using Cygwin</li>
-  <li>the CooCox GDB server; supports multiple JTAG probes; runs on Windows only</li>
-  <li>the Atollic GDB server, part of the Atollic suite; the server seems to start separately, but attempts to connect to it fail, probably due to some protection checks</li>
+<li>the original <strong>STM32 ST-Link Utility</strong> software, available from STM as part number <a href="http://www.st.com/web/en/catalog/tools/PF258168">STSW-LINK004</a>, also implements a GDB server for the ST-LINK probes; runs on Windows only</li>
+<li>the <strong>stlink</strong> GDB server from <strong>texane</strong>, a <a href="https://github.com/texane/stlink">GitHub</a> project, implements the ST-LINK protocol; can be compiled from sources on GNU/Linux and OS X; on Windows can be compiled using Cygwin</li>
+<li>the CooCox GDB server; supports multiple JTAG probes; runs on Windows only</li>
+<li>the Atollic GDB server, part of the Atollic suite; the server seems to start separately, but attempts to connect to it fail, probably due to some protection checks</li>
 </ul>
 
-<h2 id="opensda">OpenSDA</h2>
+<h2>OpenSDA</h2>
 
-<p>Another interesting solution is Freescale’s <strong>OpenSDA</strong> debug/programming interface. For the Kinetis L based Freedom Development Boards, SEGGER provides a high performance <a href="http://www.segger.com/opensda.html">OpenSDA</a> implementation fully compatible with the J-Link Lite, so the J-Link plug-in can be successfully used for these evaluation boards without having a physical J-Link probe. More details on installing OpenSDA can be found on <a href="http://mcuoneclipse.com/2013/05/16/freedom-board-with-segger-opensda-debug-firmware/">MCU on Eclipse</a>.</p>
-
+<p>Another interesting solution is Freescale&#39;s <strong>OpenSDA</strong> debug/programming interface. For the Kinetis L based Freedom Development Boards, SEGGER provides a high performance <a href="http://www.segger.com/opensda.html">OpenSDA</a> implementation fully compatible with the J-Link Lite, so the J-Link plug-in can be successfully used for these evaluation boards without having a physical J-Link probe. More details on installing OpenSDA can be found on <a href="http://mcuoneclipse.com/2013/05/16/freedom-board-with-segger-opensda-debug-firmware/">MCU on Eclipse</a>.</p>
 
 
 <hr/>
-<p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
-</p>
+<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
 
 
 </section>
 
 <aside id="sidebar">
 
-
-<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+<h4><a href="/blog/">Latest News</a></h4>
 
 <ul>
-  <li><a href="/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-  <li><a href="/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
 
 <hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+<h4><a href="/plugins/features/">Features</a></h4>
 
-<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
-
-<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
-
-<ul>
-  <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
-</ul>
-
-<h4 id="installinstall"><a href="/install/">Install</a></h4>
+<h4><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-  <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
-    <ul>
-      <li><a href="/debug/install/">Overview</a></li>
-      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-      <li><a href="/openocd/install/">OpenOCD install</a></li>
-      <li><a href="/qemu/install/">QEMU install</a></li>
-    </ul>
-  </li>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4 id="important">Important</h4>
+<h4><a href="/install/">Install</a></h4>
 
 <ul>
-  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-  <li><a href="/toolchain/path/">Toolchain path</a></li>
-  <li><a href="/eclipse/project/portability/">Project portability</a></li>
-</ul>
-
-<h4 id="tutorials">Tutorials</h4>
-
-<ul>
-  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
-</ul>
-
-<h4 id="how-to-use">How to use</h4>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
 
 <ul>
-  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
 </ul>
 
-<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
+<h4>Important</h4>
 
 <ul>
-  <li><a href="/templates/">Overview</a></li>
-  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
-  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
+<h4>Tutorials</h4>
 
 <ul>
-  <li><a href="/debug/">Overview</a></li>
-  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4>How to use</h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install/">QEMU Install</a></li>
-  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-  <li><a href="/qemu/build-procedure/">How to build</a></li>
-  <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4><a href="/templates/">Templates</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
-  <li><a href="/openocd/install/">OpenOCD Install</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/openocd/build-procedure/">How to build</a></li>
-  <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4><a href="/debug/">Debugging</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-  <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4 id="advanced">Advanced</h4>
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="supportsupport"><a href="/support/">Support</a></h4>
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/support/">Overview</a></li>
-  <li><a href="/support/known-issues/">Known issues</a></li>
-  <li><a href="/support/faq/">FAQ</a></li>
-  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/developer/build-procedure">How to build</a></li>
-  <li><a href="/developer/publish-procedure">How to publish</a></li>
-  <li><a href="/developer/change-log">Change log</a></li>
-  <li><a href="/developer/contribute/">Contribute</a></li>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="hardware">Hardware</h4>
+<h4>Advanced</h4>
 
 <ul>
-  <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a></li>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4 id="articles">Articles</h4>
+<h4><a href="/support/">Support</a></h4>
 
 <ul>
-  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4 id="licenses">Licenses</h4>
+<h4><a href="/developer/">Developer</a></h4>
 
 <ul>
-  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-  <li><a href="/licenses/tools/">Tools</a></li>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4 id="finance">Finance</h4>
+<h4>Hardware</h4>
 
 <ul>
-  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4 id="aboutabout"><a href="/about/">About</a></h4>
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
 
 <hr />
-
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -375,8 +372,8 @@ Last modified on Sun Sep 27 13:06:17 2015 EEST.
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-
 </aside>
+
 
 </div>
 

@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
   <title>ilg.gnuarmeclipse.debug.gdbjtag.openocd - persistent values</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
@@ -14,7 +16,7 @@
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-11">
+  <meta property="article:published_time" content="2015-09-10">
 
 
 
@@ -29,29 +31,31 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
   <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.openocd/">
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-16767008-16', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
+
+
 
 </head>
 
@@ -76,18 +80,15 @@
 <h1 class="page-title">ilg.gnuarmeclipse.debug.gdbjtag.openocd - persistent values</h1>
 
 
-<h2 id="the-workspace-storage">The workspace storage</h2>
+<h2>The workspace storage</h2>
 
 <p>The OpenOCD settings are persistent for each workspace and the storage is located at:</p>
-
-<pre><code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.openocd.prefs
-</code></pre>
-
-<h2 id="properties">Properties</h2>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.openocd.prefs
+</code></pre></div>
+<h2>Properties</h2>
 
 <p>The persistent properties are:</p>
-
-<pre><code>gdb.client.commands=set mem inaccessible-by-default off
+<div class="highlight"><pre><code class="language-text" data-lang="text">gdb.client.commands=set mem inaccessible-by-default off
 gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 gdb.client.other=
 gdb.openocd.doInitialReset=true
@@ -100,58 +101,47 @@ gdb.openocd.preRunReset.type=halt
 gdb.server.doStart=true
 gdb.server.executable=${openocd_path}/${openocd_executable}
 gdb.server.other=-f board/stm32f4discovery.cfg
-</code></pre>
-
-<h2 id="launcher-defaults">Launcher defaults</h2>
+</code></pre></div>
+<h2>Launcher defaults</h2>
 
 <p>The following defaults are available to configure the OpenOCD debug launcher:</p>
-
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.executable=${openocd_path}/${openocd_executable}
+<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.executable=${openocd_path}/${openocd_executable}
 ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 
 ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discovery.cfg
-</code></pre>
-
+</code></pre></div>
 <p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
-
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/tab.main.checkProgram=false
-</code></pre>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.openocd/tab.main.checkProgram=false
+</code></pre></div>
 <p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
 
-<h2 id="install-defaults">Install defaults</h2>
+<h2>Install defaults</h2>
 
 <p>Defining these two properties will provide default values to the corresponding fields in the <strong>Run/Debug</strong> → <strong>OpenOCD</strong> preferences page. The same variables are visible in the <strong>Run/Debug</strong> → <strong>String Substitution</strong> page.</p>
 
-<h3 id="the-executable-name">The executable name</h3>
+<h3>The executable name</h3>
 
 <p>The plug-in will use this definition as default for <strong>${openocd_executable}</strong>.</p>
-
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/executable.name=openocd
-</code></pre>
-
-<h3 id="the-executable-location">The executable location</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.openocd/executable.name=openocd
+</code></pre></div>
+<h3>The executable location</h3>
 
 <p>The plug-in will take a best effort approach to find a location to be used as default for <strong>${openocd_path}</strong>.</p>
-
-<pre><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/install.folder=/Applications/GNU ARM Eclipse/OpenOCD/bin
-</code></pre>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.openocd/install.folder=/Applications/GNU ARM Eclipse/OpenOCD/bin
+</code></pre></div>
 <p>If this preference is defined and the executable is there, the plug-in will use it.</p>
 
 <p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\GNU ARM Eclipse\OpenOCD</strong> subkey, and the executable is found there, the plug-in will use it.</p>
 
 <p>Otherwise the plug-in will try a folder search.</p>
-
-<pre><code>search.path=\
+<div class="highlight"><pre><code class="language-text" data-lang="text">search.path=\
 ${user.home}/Applications/GNU ARM Eclipse/OpenOCD:\
 ${user.home}/local/GNU ARM Eclipse/OpenOCD:\
 ${user.home}/local/gnuarmeclipse/OpenOCD:\
 /Applications/GNU ARM Eclipse/OpenOCD:\
 /opt/local:\
 /usr/local
-</code></pre>
-
+</code></pre></div>
 <p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
 
 <p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/bin/${openocd_executable}</strong>; if multiple such subfolders are found (in case multiple versions, like 0.8.0, 0.9.0-dev), the list of names is ordered lexicographically and the last one is used.</p>
@@ -160,190 +150,186 @@ ${user.home}/local/gnuarmeclipse/OpenOCD:\
 
 
 <hr/>
-<p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
-</p>
+<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
 
 
 </section>
 
 <aside id="sidebar">
 
-
-<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+<h4><a href="/blog/">Latest News</a></h4>
 
 <ul>
-  <li><a href="/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-  <li><a href="/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
 
 <hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+<h4><a href="/plugins/features/">Features</a></h4>
 
-<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
-
-<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
-
-<ul>
-  <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
-</ul>
-
-<h4 id="installinstall"><a href="/install/">Install</a></h4>
+<h4><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-  <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
-    <ul>
-      <li><a href="/debug/install/">Overview</a></li>
-      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-      <li><a href="/openocd/install/">OpenOCD install</a></li>
-      <li><a href="/qemu/install/">QEMU install</a></li>
-    </ul>
-  </li>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4 id="important">Important</h4>
+<h4><a href="/install/">Install</a></h4>
 
 <ul>
-  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-  <li><a href="/toolchain/path/">Toolchain path</a></li>
-  <li><a href="/eclipse/project/portability/">Project portability</a></li>
-</ul>
-
-<h4 id="tutorials">Tutorials</h4>
-
-<ul>
-  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
-</ul>
-
-<h4 id="how-to-use">How to use</h4>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
 
 <ul>
-  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
 </ul>
 
-<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
+<h4>Important</h4>
 
 <ul>
-  <li><a href="/templates/">Overview</a></li>
-  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
-  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
+<h4>Tutorials</h4>
 
 <ul>
-  <li><a href="/debug/">Overview</a></li>
-  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4>How to use</h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install/">QEMU Install</a></li>
-  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-  <li><a href="/qemu/build-procedure/">How to build</a></li>
-  <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4><a href="/templates/">Templates</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
-  <li><a href="/openocd/install/">OpenOCD Install</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/openocd/build-procedure/">How to build</a></li>
-  <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4><a href="/debug/">Debugging</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-  <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4 id="advanced">Advanced</h4>
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="supportsupport"><a href="/support/">Support</a></h4>
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/support/">Overview</a></li>
-  <li><a href="/support/known-issues/">Known issues</a></li>
-  <li><a href="/support/faq/">FAQ</a></li>
-  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/developer/build-procedure">How to build</a></li>
-  <li><a href="/developer/publish-procedure">How to publish</a></li>
-  <li><a href="/developer/change-log">Change log</a></li>
-  <li><a href="/developer/contribute/">Contribute</a></li>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="hardware">Hardware</h4>
+<h4>Advanced</h4>
 
 <ul>
-  <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a></li>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4 id="articles">Articles</h4>
+<h4><a href="/support/">Support</a></h4>
 
 <ul>
-  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4 id="licenses">Licenses</h4>
+<h4><a href="/developer/">Developer</a></h4>
 
 <ul>
-  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-  <li><a href="/licenses/tools/">Tools</a></li>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4 id="finance">Finance</h4>
+<h4>Hardware</h4>
 
 <ul>
-  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4 id="aboutabout"><a href="/about/">About</a></h4>
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
 
 <hr />
-
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -352,8 +338,8 @@ Last modified on Sun Sep 27 13:06:17 2015 EEST.
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-
 </aside>
+
 
 </div>
 

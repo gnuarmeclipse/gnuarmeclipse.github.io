@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
   <title>Toolchain path management</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
@@ -14,7 +16,7 @@
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-12">
+  <meta property="article:published_time" content="2015-09-11">
 
 
 
@@ -29,29 +31,31 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
   <link rel="canonical" href="http://gnuarmeclipse.github.io/toolchain/path/">
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-16767008-16', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
+
+
 
 </head>
 
@@ -76,53 +80,53 @@
 <h1 class="page-title">Toolchain path management</h1>
 
 
-<h2 id="overview">Overview</h2>
+<h2>Overview</h2>
 
 <p>Generally toolchain path management is an advanced feature, required when multiple toolchains are installed on a machine.</p>
 
-<h2 id="why-use-multiple-toolchains">Why use multiple toolchains?</h2>
+<h2>Why use multiple toolchains?</h2>
 
-<h3 id="production-environments">Production environments</h3>
+<h3>Production environments</h3>
 
 <p>In production environments, when doing maintenance for old products, to obtain repetitive results, it is strongly recommended to build old versions with their original toolchain version.</p>
 
 <p>Since toolchains developers are quite active, releasing several versions each year, it soon becomes necessary to manage multiple toolchains, each with multiple versions.</p>
 
-<h3 id="rd-environments">R&amp;D environments</h3>
+<h3>R&amp;D environments</h3>
 
 <p>In addition to production environments, in research environments, developers usually experiment with multiple toolchains and toolchain versions, to test their programs.</p>
 
-<h2 id="path-management-in-commercial-ides">Path management in commercial IDEs</h2>
+<h2>Path management in commercial IDEs</h2>
 
 <p>Most of the commercial IDEs include the toolchain packed in the distribution, and handle the path to it automatically and transparently for the user. When using the supplied toolchain, things are extremely easy. Using other toolchains/versions is a different story, more complicated and sometimes even impossible.</p>
 
-<h2 id="default-path-management-in-eclipse-cdt">Default path management in Eclipse CDT</h2>
+<h2>Default path management in Eclipse CDT</h2>
 
 <p>By default, the Eclipse managed build plug-ins do not handle the toolchain path at all, and rely on the proper setting of the environment PATH to reach the toolchain binaries. The PATH can be set in different places:</p>
 
 <ul>
-  <li>in the environment where Eclipse is started (either a system global setting or a per user setting)</li>
-  <li>in the Eclipse workspace, common for all projects</li>
-  <li>in the project build configuration</li>
+<li>in the environment where Eclipse is started (either a system global setting or a per user setting)</li>
+<li>in the Eclipse workspace, common for all projects</li>
+<li>in the project build configuration</li>
 </ul>
 
 <p>This mechanism can be both flexible and a source of nuisance. When only a single toolchain is installed, any global setting is acceptable and the exact method makes no real difference.</p>
 
 <p>However, when multiple toolchains are installed, the use of any global setting is strongly discouraged, since it soon leads to serious problems generally due to messing headers and executables between different toolchains. In this case the only recommended solution is to define the toolchain path for each build configuration.</p>
 
-<p><img src="/images/2014/02/ProjectEnvironment.png" alt="Toolchain path in project environment" /></p>
+<p><img src="/assets/images/2014/02/ProjectEnvironment.png" alt="Toolchain path in project environment"></p>
 
-<h2 id="cdt-cross-build-plug-in">CDT Cross build plug-in</h2>
+<h2>CDT Cross build plug-in</h2>
 
 <p>The integrated CDT Cross build plug-in does exactly this, defines a path for each projects. Unfortunately it stores this setting in the .cproject file, making it non-portable between different machines, and even worse between different platforms (Windows/Unix).</p>
 
-<h2 id="what-is-project-portability">What is project portability?</h2>
+<h2>What is project portability?</h2>
 
 <p>In short, a portable project is a project that can be used without changes on any workspace on any platform.</p>
 
 <p>For more details, please see the separate <a href="/eclipse/project/portability/" title="Project portability">Project portability</a> page.</p>
 
-<h2 id="the-gnu-arm-eclipse-solution">The GNU ARM Eclipse solution</h2>
+<h2>The GNU ARM Eclipse solution</h2>
 
 <p>Generating portable projects was one of the design requirements of the GNU ARM Eclipse cross build plug-in, at the same time with the apparently conflicting requirement for handling multiple toolchains and versions.</p>
 
@@ -130,226 +134,219 @@
 
 <p>The default (and the recommended) setting, is to use the global toolchain path.</p>
 
-<p><img src="/images/2014/02/ToolchainsProperties.png" alt="" /></p>
+<p><img src="/assets/images/2014/02/ToolchainsProperties.png" alt=""></p>
 
 <p>The displayed path is associated with the selected toolchain. To change the toolchain path use the hyperlinks; it is recommended to use the global page, but, if needed, the toolchain path can also be configured per workspace or even per project.</p>
 
-<p><img src="/images/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths" /></p>
+<p><img src="/assets/images/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths"></p>
 
 <p>Using the global toolchain path does not store any data in the project configuration files, but in the Eclipse folders, so the project portability is not affected.</p>
 
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2>Troubleshooting</h2>
 
-<h3 id="no-toolchain-path">No toolchain path</h3>
+<h3>No toolchain path</h3>
 
 <p>Forgetting to set the toolchain path, or setting a wrong value, is easy to diagnose, since the Eclipse editor will be full of red markers to all definitions related to system headers, and, even more explictly, the build will fail:</p>
 
-<p><img src="/images/2014/02/NoToolchainPath.png" alt="Missing or wrong path" /></p>
+<p><img src="/assets/images/2014/02/NoToolchainPath.png" alt="Missing or wrong path"></p>
 
 <p>If so, enter the project <strong>C/C++ Settings</strong>, the <strong>Toolchains</strong> tab, and add/correct the toolchain path (see above).</p>
 
-<h3 id="checking-the-compiler-version">Checking the compiler version</h3>
+<h3>Checking the compiler version</h3>
 
 <p>If you are not sure that the plug-in selected the desired toolchain, you can insert a pre-build action to display the version. The command to do this is</p>
-
-<pre><code>${cross_prefix}${cross_c}${cross_suffix} --version
-</code></pre>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">${cross_prefix}${cross_c}${cross_suffix} --version
+</code></pre></div>
 <p>The page to setup this is the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Settings</strong> → <strong>Build Steps</strong>:</p>
 
-<p><img src="/images/2014/02/PreBuildVersion.png" alt="Pre-build step to display compiler version" /></p>
+<p><img src="/assets/images/2014/02/PreBuildVersion.png" alt="Pre-build step to display compiler version"></p>
 
-<h3 id="the-installer-already-updated-the-system-path">The installer already updated the system path</h3>
+<h3>The installer already updated the system path</h3>
 
 <p>If you used an unfriendly installer, which already updated the system path without asking, you should manually fix this situation, and <strong>remove the toolchain path from the system path</strong>.</p>
 
 
-
 <hr/>
-<p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
-</p>
+<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
 
 
 </section>
 
 <aside id="sidebar">
 
-
-<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+<h4><a href="/blog/">Latest News</a></h4>
 
 <ul>
-  <li><a href="/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-  <li><a href="/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
 
 <hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+<h4><a href="/plugins/features/">Features</a></h4>
 
-<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
-
-<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
-
-<ul>
-  <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
-</ul>
-
-<h4 id="installinstall"><a href="/install/">Install</a></h4>
+<h4><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-  <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
-    <ul>
-      <li><a href="/debug/install/">Overview</a></li>
-      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-      <li><a href="/openocd/install/">OpenOCD install</a></li>
-      <li><a href="/qemu/install/">QEMU install</a></li>
-    </ul>
-  </li>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4 id="important">Important</h4>
+<h4><a href="/install/">Install</a></h4>
 
 <ul>
-  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-  <li><a href="/toolchain/path/">Toolchain path</a></li>
-  <li><a href="/eclipse/project/portability/">Project portability</a></li>
-</ul>
-
-<h4 id="tutorials">Tutorials</h4>
-
-<ul>
-  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
-</ul>
-
-<h4 id="how-to-use">How to use</h4>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
 
 <ul>
-  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
 </ul>
 
-<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
+<h4>Important</h4>
 
 <ul>
-  <li><a href="/templates/">Overview</a></li>
-  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
-  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
+<h4>Tutorials</h4>
 
 <ul>
-  <li><a href="/debug/">Overview</a></li>
-  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4>How to use</h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install/">QEMU Install</a></li>
-  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-  <li><a href="/qemu/build-procedure/">How to build</a></li>
-  <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4><a href="/templates/">Templates</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
-  <li><a href="/openocd/install/">OpenOCD Install</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/openocd/build-procedure/">How to build</a></li>
-  <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4><a href="/debug/">Debugging</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-  <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4 id="advanced">Advanced</h4>
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="supportsupport"><a href="/support/">Support</a></h4>
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/support/">Overview</a></li>
-  <li><a href="/support/known-issues/">Known issues</a></li>
-  <li><a href="/support/faq/">FAQ</a></li>
-  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/developer/build-procedure">How to build</a></li>
-  <li><a href="/developer/publish-procedure">How to publish</a></li>
-  <li><a href="/developer/change-log">Change log</a></li>
-  <li><a href="/developer/contribute/">Contribute</a></li>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="hardware">Hardware</h4>
+<h4>Advanced</h4>
 
 <ul>
-  <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a></li>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4 id="articles">Articles</h4>
+<h4><a href="/support/">Support</a></h4>
 
 <ul>
-  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4 id="licenses">Licenses</h4>
+<h4><a href="/developer/">Developer</a></h4>
 
 <ul>
-  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-  <li><a href="/licenses/tools/">Tools</a></li>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4 id="finance">Finance</h4>
+<h4>Hardware</h4>
 
 <ul>
-  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4 id="aboutabout"><a href="/about/">About</a></h4>
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
 
 <hr />
-
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -358,8 +355,8 @@ Last modified on Sun Sep 27 13:06:17 2015 EEST.
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-
 </aside>
+
 
 </div>
 

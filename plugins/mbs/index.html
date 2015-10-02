@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
   <title>How to use the managed build plug-ins?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
@@ -14,7 +16,7 @@
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-12">
+  <meta property="article:published_time" content="2015-09-11">
 
 
 
@@ -29,29 +31,31 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
   <link rel="canonical" href="http://gnuarmeclipse.github.io/plugins/mbs/">
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-16767008-16', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
+
+
 
 </head>
 
@@ -76,15 +80,15 @@
 <h1 class="page-title">How to use the managed build plug-ins?</h1>
 
 
-<h2 id="prerequisites">Prerequisites</h2>
+<h2>Prerequisites</h2>
 
 <p>After successfully installing the cross build plug-in, before being able to start using it, it is necessary to install one or more toolchains, specific for the projects you plan to create.</p>
 
-<h3 id="toolchain">Toolchain</h3>
+<h3>Toolchain</h3>
 
-<p>For embedded ARM projects, it is recommended to use the <a href="http://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> (arm-none-eabi-*). For all other projects, a good point to start the search for toolchains is the <a href="http://launchpad.net/gcc-linaro">Linaro</a> project<strong>.</strong></p>
+<p>For embedded ARM projects, it is recommended to use the <a href="http://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> (arm-none-eabi-<em>). For all other projects, a good point to start the search for toolchains is the <a href="http://launchpad.net/gcc-linaro">Linaro</a> project</em><em>.</em>*</p>
 
-<h3 id="build-tools-make--rm">Build tools (make &amp; rm)</h3>
+<h3>Build tools (make &amp; rm)</h3>
 
 <p>If you run on OS X or GNU/Linux, things are easier, since <strong>rm</strong> should already be part of the system, and <strong>make</strong>, if not already there, can be installed by adding the developer package.</p>
 
@@ -93,8 +97,7 @@
 <p>On GNU/Linux, depending on your distribution, <strong>make</strong> might be in the standard distribution, or you might need to install some specific developer packages.</p>
 
 <p>In both cases, to check if make is available, run the following command:</p>
-
-<pre><code>$ make --version
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ make --version
 GNU Make 3.81
 Copyright (C) 2006  Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.
@@ -102,71 +105,68 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE.
 
 This program built for i386-apple-darwin11.3.0
-</code></pre>
-
+</code></pre></div>
 <p>Although the managed build process does not require special features from make, it is mandatory that it is a <strong>GNU Make</strong>, preferably as recent as possible.</p>
 
 <p>On Windows things are a bit more complicated, since neither make nor rm are part of the standard distribution, and need to be installed separately. For more information, please read the separate page <a href="/windows-build-tools/" title="Build tools (make &amp; rm) on Windows">Build tools (make &amp; rm) on Windows</a>.</p>
 
-<h3 id="toolchain-path">Toolchain path</h3>
+<h3>Toolchain path</h3>
 
 <p>The locations where the toolchains are installed are not relevant for the plug-in, since the toolchain path is a parameter that can be configured for each toolchain or even for each project.</p>
 
 <p>However, one detail may be important: during toolchain installation, <strong>DO NOT add the toolchain path to the system path</strong>. If the install procedure does this automatically, then better remove it by hand, to avoid further problems.</p>
 
-<h2 id="build-a-test-executable-application">Build a test executable application</h2>
+<h2>Build a test executable application</h2>
 
 <p>Probably the main purpose of this plug-in is to built executable applications, more specifically embedded applications to be executed from flash.</p>
 
-<h3 id="create-a-new-cc-project">Create a new C/C++ project</h3>
+<h3>Create a new C/C++ project</h3>
 
 <p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or the button in the upper left corner), and select <strong>C Project</strong> or <strong>C++ Project</strong>:</p>
 
-<p><img src="/images/2013/10/NewCProject.png" alt="NewCProject" /></p>
+<p><img src="/assets/images/2013/10/NewCProject.png" alt="NewCProject"></p>
 
 <p>For more details on creating projects, please see the <strong><a href="/tutorials/hello-arm/" title="Create a test project tutorial">Create test project tutorial</a></strong> separate page.</p>
 
-<h3 id="assign-a-device-to-the-project">Assign a device to the project</h3>
+<h3>Assign a device to the project</h3>
 
 <p>To benefit from the additional information made available by the new packs technology, it is recommended to assign a a device name to the project, in fact to each build configuration.</p>
 
-<p><img src="/images/2013/10/Devices.png" alt="Assigning a device to the project" /></p>
+<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project"></p>
 
-<h3 id="configure-the-target-processor">Configure the target processor</h3>
+<h3>Configure the target processor</h3>
 
 <p>By default, new projects are configured to generate code for the ARM Cortex-M3 processor (in a future version will use the value from the device assigned above).</p>
 
 <p>When using other processors, it is necessary to inform the plug-in of the details, in the Target Processor settings page.</p>
 
-<p><img src="/images/2013/10/TargetProcessor.png" alt="Setting the target processor" /></p>
+<p><img src="/assets/images/2013/10/TargetProcessor.png" alt="Setting the target processor"></p>
 
 <p>In addition to the ARM family, various other configuration details can be set here, like floating point and unaligned access.</p>
 
 <p>When selecting AArch64 processors in the toolchain setting page, the ARM configuration is disabled, and the AArch64 ones become enabled.</p>
 
-<h3 id="configure-the-toolchain-path">Configure the toolchain path</h3>
+<h3>Configure the toolchain path</h3>
 
 <p>When the new projects are created with the GNU ARM Eclipse templates, the toolchain path is already configured. Only when importing projects into a fresh workspace, the toolchain path needs to be configured manually for the first build.</p>
 
-<p><img src="/images/2014/02/ToolchainsProperties.png" alt="Toolchain properties" /></p>
+<p><img src="/assets/images/2014/02/ToolchainsProperties.png" alt="Toolchain properties"></p>
 
 <p>Since this setting refer to the global toolchain path, it will be remembered for all projects using the same toolchain.</p>
 
-<h3 id="configure-the-linker-script">Configure the linker script</h3>
+<h3>Configure the linker script</h3>
 
 <p>Linker scripts are usually perceived as some impossible to comprehend, mysterious thing, but the truth is that customising them is not that complicated.</p>
 
 <p>The <strong>Hello World ARM Cortex-M3 C Project</strong> template provides a starting point for the linker script. In fact there are two scripts, one with the memory definitions (<em>ldscripts/mem.ld</em>) and one with the sections definitions (<em>ldscripts/sections.ld</em>).</p>
 
 <p>For example, the default memory definitions look like this:</p>
-
-<pre><code>MEMORY
+<div class="highlight"><pre><code class="language-text" data-lang="text">MEMORY
 {
   FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 128K
   RAM (rwx)  : ORIGIN = 0x20000000, LENGTH = 20K
 }
-</code></pre>
-
+</code></pre></div>
 <p>The syntax is quite obvious, the default configurations is for a processor with 128 K flash and 20 K RAM (for example the SM32F103xB family).</p>
 
 <p>If your processor is larger (most probably), edit the <em>LENGTH</em> values accordingly.</p>
@@ -175,13 +175,13 @@ This program built for i386-apple-darwin11.3.0
 
 <p>Samples of such definitions can usually be found in the toolchain <em>share</em> folder.</p>
 
-<h3 id="startup-file">Startup file</h3>
+<h3>Startup file</h3>
 
 <p>The startup file generally depends on the specific processor. The one provided by the <strong>Hello World ARM Cortex-M3 C Project</strong> template can be used only as a sample, but for a practical applications it is not complete, since processor specific vectors are not there and need to be added.</p>
 
 <p>Generally the startup file should be taken from the processor CMSIS &amp; peripheral libraries provided by the processor manufacturer.</p>
 
-<h3 id="path-persistence">Path persistence</h3>
+<h3>Path persistence</h3>
 
 <p>The paths entered in the <em>New Project</em> wizard are stored in a centralised storage in the workspace; for each toolchain that is used, an absolute path is associated; on further wizard invocation this path will be automatically suggested.</p>
 
@@ -189,226 +189,221 @@ This program built for i386-apple-darwin11.3.0
 
 <p>In addition to executable applications, this plug-in can also be used to build libraries, static or shared, usually for embedded GNU/Linux systems.</p>
 
-<h3 id="static-libraries">Static libraries</h3>
+<h3>Static libraries</h3>
 
 <p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or the button in the upper left corner), and select the <strong>C Project</strong> and in the C Project window:</p>
 
 <ul>
-  <li>in the <em>Project name:</em> field enter the name of the new project, for example <strong>staticLib</strong></li>
-  <li>in the <em>Project type:</em> section expand the <strong>Static Library</strong> type and select <strong>Empty Project</strong></li>
-  <li>in the <em>Toolchains:</em> section select <strong>Cross ARM GCC</strong></li>
-  <li>click the <strong>Next &gt;</strong> button</li>
+<li>in the <em>Project name:</em> field enter the name of the new project, for example <strong>staticLib</strong></li>
+<li>in the <em>Project type:</em> section expand the <strong>Static Library</strong> type and select <strong>Empty Project</strong></li>
+<li>in the <em>Toolchains:</em> section select <strong>Cross ARM GCC</strong></li>
+<li>click the <strong>Next &gt;</strong> button</li>
 </ul>
 
-<p><img src="/images/2013/10/StaticCLib.png" alt="Create a static library C project" /></p>
+<p><img src="/assets/images/2013/10/StaticCLib.png" alt="Create a static library C project"></p>
 
 <p>In the <em>Select Configurations</em> page</p>
 
 <ul>
-  <li>accept the <em>Debug/Release</em> configurations and click the <strong>Next &gt;</strong> button</li>
-  <li>in the <em>Cross GNU ARM Toolchain</em> select the toolchain and enter the path</li>
-  <li>click the <strong>Finish</strong> button</li>
+<li>accept the <em>Debug/Release</em> configurations and click the <strong>Next &gt;</strong> button</li>
+<li>in the <em>Cross GNU ARM Toolchain</em> select the toolchain and enter the path</li>
+<li>click the <strong>Finish</strong> button</li>
 </ul>
 
 <p>When building static libraries, after all source files are compiled, instead of the link step, the make process calls the archiver to pack all objects together.</p>
 
-<p><img src="/images/2013/10/ConfigureArchiver.png" alt="Configure the archiver" /></p>
+<p><img src="/assets/images/2013/10/ConfigureArchiver.png" alt="Configure the archiver"></p>
 
 <p>Due to the specifics of building libraries, there are no secondary targets (no binary, listing or size).</p>
 
-<h3 id="shared-libraries">Shared libraries</h3>
+<h3>Shared libraries</h3>
 
 <p>The process is similar to static libraries, just that in the final step the linker is called, with special options, to create the shared library.</p>
 
 <p>This feature is useful mainly to larger systems, that support shared libraries, like GNU/Linux; it is of no use for small embedded systems.</p>
 
 
-
 <hr/>
-<p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
-</p>
+<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
 
 
 </section>
 
 <aside id="sidebar">
 
-
-<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+<h4><a href="/blog/">Latest News</a></h4>
 
 <ul>
-  <li><a href="/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-  <li><a href="/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
 
 <hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+<h4><a href="/plugins/features/">Features</a></h4>
 
-<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
-
-<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
-
-<ul>
-  <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
-</ul>
-
-<h4 id="installinstall"><a href="/install/">Install</a></h4>
+<h4><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-  <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
-    <ul>
-      <li><a href="/debug/install/">Overview</a></li>
-      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-      <li><a href="/openocd/install/">OpenOCD install</a></li>
-      <li><a href="/qemu/install/">QEMU install</a></li>
-    </ul>
-  </li>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4 id="important">Important</h4>
+<h4><a href="/install/">Install</a></h4>
 
 <ul>
-  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-  <li><a href="/toolchain/path/">Toolchain path</a></li>
-  <li><a href="/eclipse/project/portability/">Project portability</a></li>
-</ul>
-
-<h4 id="tutorials">Tutorials</h4>
-
-<ul>
-  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
-</ul>
-
-<h4 id="how-to-use">How to use</h4>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
 
 <ul>
-  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
 </ul>
 
-<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
+<h4>Important</h4>
 
 <ul>
-  <li><a href="/templates/">Overview</a></li>
-  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
-  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
+<h4>Tutorials</h4>
 
 <ul>
-  <li><a href="/debug/">Overview</a></li>
-  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4>How to use</h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install/">QEMU Install</a></li>
-  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-  <li><a href="/qemu/build-procedure/">How to build</a></li>
-  <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4><a href="/templates/">Templates</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
-  <li><a href="/openocd/install/">OpenOCD Install</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/openocd/build-procedure/">How to build</a></li>
-  <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4><a href="/debug/">Debugging</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-  <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4 id="advanced">Advanced</h4>
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="supportsupport"><a href="/support/">Support</a></h4>
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/support/">Overview</a></li>
-  <li><a href="/support/known-issues/">Known issues</a></li>
-  <li><a href="/support/faq/">FAQ</a></li>
-  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/developer/build-procedure">How to build</a></li>
-  <li><a href="/developer/publish-procedure">How to publish</a></li>
-  <li><a href="/developer/change-log">Change log</a></li>
-  <li><a href="/developer/contribute/">Contribute</a></li>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="hardware">Hardware</h4>
+<h4>Advanced</h4>
 
 <ul>
-  <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a></li>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4 id="articles">Articles</h4>
+<h4><a href="/support/">Support</a></h4>
 
 <ul>
-  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4 id="licenses">Licenses</h4>
+<h4><a href="/developer/">Developer</a></h4>
 
 <ul>
-  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-  <li><a href="/licenses/tools/">Tools</a></li>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4 id="finance">Finance</h4>
+<h4>Hardware</h4>
 
 <ul>
-  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4 id="aboutabout"><a href="/about/">About</a></h4>
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
 
 <hr />
-
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -417,8 +412,8 @@ Last modified on Sun Sep 27 13:06:17 2015 EEST.
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-
 </aside>
+
 
 </div>
 

@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
   <title>Tutorial: Create a Blinky ARM test project</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
@@ -29,29 +31,31 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
   <link rel="canonical" href="http://gnuarmeclipse.github.io/tutorials/blinky-arm/">
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-16767008-16', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
+
+
 
 </head>
 
@@ -82,7 +86,7 @@
 
 <p>Note2: this tutorial requires a recent version of the STM32F4 template, not older than 20150807.</p>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<h2>Prerequisites</h2>
 
 <p>Before creating a new project, please be sure you checked all prerequisites described in the <a href="/plugins/mbs/">How to use</a> page, especially the need to install the <a href="/windows-build-tools/install/">build tools</a> if you use Windows as your development platform.</p>
 
@@ -90,357 +94,352 @@
 
 <p>Note: the multi-LED template is currently available only for ST32F4, and only for C++, since it allows to easily instantiate multiple BlinkLed objects.</p>
 
-<h2 id="create-a-new-c-project">Create a new C++ project</h2>
+<h2>Create a new C++ project</h2>
 
 <p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or the button in the upper left corner), and select the <strong>C++ Project</strong>:</p>
 
-<p><img src="/images/2015/08/NewCppProject.png" alt="Create a new C++ project" /></p>
+<p><img src="/assets/images/2015/08/NewCppProject.png" alt="Create a new C++ project"></p>
 
 <p>In the <strong>C++ Project</strong> window:</p>
 
 <ul>
-  <li>in the <em>Project name:</em> field enter the name of the new project, for example <strong>blinky</strong></li>
-  <li>in the <em>Project type:</em> section expand the <strong>Executable</strong> type and select <strong>STM32F4xx C/C++ Project</strong></li>
-  <li>in the <em>Toolchains:</em> section select <strong>Cross ARM GCC</strong></li>
-  <li>click the <strong>Next &gt;</strong> button</li>
+<li>in the <em>Project name:</em> field enter the name of the new project, for example <strong>blinky</strong></li>
+<li>in the <em>Project type:</em> section expand the <strong>Executable</strong> type and select <strong>STM32F4xx C/C++ Project</strong></li>
+<li>in the <em>Toolchains:</em> section select <strong>Cross ARM GCC</strong></li>
+<li>click the <strong>Next &gt;</strong> button</li>
 </ul>
 
-<p><img src="/images/2015/08/NewCppBlinkyProject.png" alt="New C++ blinky project" /></p>
+<p><img src="/assets/images/2015/08/NewCppBlinkyProject.png" alt="New C++ blinky project"></p>
 
 <p>In the <strong>Target processor settings</strong> window be sure to:</p>
 
 <ul>
-  <li>select the <strong>STM32F407xx</strong> chip family</li>
-  <li>set the <em>Flash size (kB)</em> field to 1024 kB</li>
-  <li>set the <em>Clock (Hz):</em> field to 8000000</li>
-  <li>for a more complete example, change the <em>Use system calls:</em> fields to <strong>Semihosting (POSIX system calls via host)</strong></li>
-  <li>click the <strong>Next &gt;</strong> button.</li>
+<li>select the <strong>STM32F407xx</strong> chip family</li>
+<li>set the <em>Flash size (kB)</em> field to 1024 kB</li>
+<li>set the <em>Clock (Hz):</em> field to 8000000</li>
+<li>for a more complete example, change the <em>Use system calls:</em> fields to <strong>Semihosting (POSIX system calls via host)</strong></li>
+<li>click the <strong>Next &gt;</strong> button.</li>
 </ul>
 
-<p><img src="/images/2015/08/BlinkyProcessorSettings1.png" alt="" /></p>
+<p><img src="/assets/images/2015/08/BlinkyProcessorSettings1.png" alt=""></p>
 
 <p>In the <strong>Folders</strong> page leave the suggested folders unchanged and click the <strong>Next &gt;</strong> button.</p>
 
-<p><img src="/images/2015/08/BlinkyFolderSettings.png" alt="Blinky project folder settings" /></p>
+<p><img src="/assets/images/2015/08/BlinkyFolderSettings.png" alt="Blinky project folder settings"></p>
 
 <p>In the <strong>Select Configurations</strong> page leave the suggested Debug/Release configurations checked and click the <strong>Next &gt;</strong> button.</p>
 
-<p><img src="/images/2015/08/BlinkyConfigurations.png" alt="Blinky project configurations" /></p>
+<p><img src="/assets/images/2015/08/BlinkyConfigurations.png" alt="Blinky project configurations"></p>
 
 <p>In the <strong>Cross GNU ARM Toolchain</strong> window:</p>
 
 <ul>
-  <li>select the <em>Toolchain name:</em> <strong>GNU Tools for ARM Embedded Processors</strong> (mandatory)</li>
-  <li>browse for the <strong>bin</strong> folder within the toolchain folder; don’t be afraid to use the absolute address, it is not stored in the project;</li>
-  <li>click the <strong>Finish</strong> button</li>
+<li>select the <em>Toolchain name:</em> <strong>GNU Tools for ARM Embedded Processors</strong> (mandatory)</li>
+<li>browse for the <strong>bin</strong> folder within the toolchain folder; don&#39;t be afraid to use the absolute address, it is not stored in the project;</li>
+<li>click the <strong>Finish</strong> button</li>
 </ul>
 
-<p><img src="/images/2015/08/BlinkyToolchain.png" alt="Blinky toolchain and path selection" /></p>
+<p><img src="/assets/images/2015/08/BlinkyToolchain.png" alt="Blinky toolchain and path selection"></p>
 
 <p>Note 1: when selecting the path, be sure you select the <strong>/bin</strong> folder where the programs with long, prefixed names are stored, and not the inner /bin folder where the short name programs may be available.</p>
 
 <p>Note 2: DO NOT SKIP this step, it is mandatory to have a correct toolchain path defined in order for the build to complete correctly.</p>
 
-<p><img src="/images/2013/10/HelloToolchainPath.png" alt="" /></p>
+<p><img src="/assets/images/2013/10/HelloToolchainPath.png" alt=""></p>
 
 <p>The result of the wizard is a simple project, with a <strong>main()</strong> function printing a greeting on the standard output.</p>
 
-<p><img src="/images/2015/08/BlinkyProject.png" alt="The new C++ project" /></p>
+<p><img src="/assets/images/2015/08/BlinkyProject.png" alt="The new C++ project"></p>
 
-<h2 id="build-the-project">Build the project</h2>
+<h2>Build the project</h2>
 
 <p>To start the build:</p>
 
 <ul>
-  <li>select the new project in the <em>Project Explorer</em> section</li>
-  <li>click the <strong>hammer</strong> icon</li>
+<li>select the new project in the <em>Project Explorer</em> section</li>
+<li>click the <strong>hammer</strong> icon</li>
 </ul>
 
-<p><img src="/images/2013/10/HammerBuild1.png" alt="" /></p>
+<p><img src="/assets/images/2013/10/HammerBuild1.png" alt=""></p>
 
 <p>The build process should leave in the <em>Console</em> window a listing like this:</p>
 
-<p><img src="/images/2015/08/BlinkyProjectBuildConsole.png" alt="The build console" /></p>
+<p><img src="/assets/images/2015/08/BlinkyProjectBuildConsole.png" alt="The build console"></p>
 
 <p>The files created by the build process are left in a folder named by the name of the configuration, for example <em>Debug</em> or <em>Release</em>.</p>
 
-<p><img src="/images/2015/08/BlinkyBuildResult1.png" alt="" /></p>
+<p><img src="/assets/images/2015/08/BlinkyBuildResult1.png" alt=""></p>
 
 <p>As seen above, the <em>Debug</em> folder is populated with:</p>
 
 <ul>
-  <li>all make files required for the build (<strong>makefile</strong> and various <strong>*.mk</strong> files, generated by CDT),</li>
-  <li>the object files and dependency files generated during the build (<strong>main.o</strong> and <strong>main.d</strong>)  and</li>
-  <li>the final executable file, with all debug symbols, useful for a debug session (<strong>blinky.elf</strong>)</li>
-  <li>the binary executable file, ready to be programmed in flash (<strong>blinky.hex</strong>)</li>
-  <li>a program map, with all symbols and their associated addresses (<strong>blinky.map</strong>)</li>
+<li>all make files required for the build (<strong>makefile</strong> and various <em>**.mk</em>* files, generated by CDT),</li>
+<li>the object files and dependency files generated during the build (<strong>main.o</strong> and <strong>main.d</strong>)  and</li>
+<li>the final executable file, with all debug symbols, useful for a debug session (<strong>blinky.elf</strong>)</li>
+<li>the binary executable file, ready to be programmed in flash (<strong>blinky.hex</strong>)</li>
+<li>a program map, with all symbols and their associated addresses (<strong>blinky.map</strong>)</li>
 </ul>
 
-<h2 id="assign-a-board-and-device-to-the-project">Assign a board and device to the project</h2>
+<h2>Assign a board and device to the project</h2>
 
 <p>Although optional, it is highly recommended to assign a board and a device to the project, using the packs definitions. If you did not do it before, install the STM32F4 package, as explained in the <a href="/plugins/packs-manager/" title="Packs manager">Packs Manager</a> page.</p>
 
 <p>To assign the board and device:</p>
 
 <ul>
-  <li>select the project</li>
-  <li>either with right click or via <em>Project</em> menu, enter <em>Properties</em></li>
-  <li>expand the <em>C/C++ Build</em> entry</li>
-  <li>select the <em>Settings</em> entry</li>
-  <li>select the <em>Devices</em> tab</li>
-  <li>in the Boards section, expand <strong>STMicroelectronics</strong></li>
-  <li>expand <strong>STM32F4-Discovery</strong></li>
-  <li>select <strong>STM32F407VG</strong></li>
-  <li>click <strong>OK</strong></li>
+<li>select the project</li>
+<li>either with right click or via <em>Project</em> menu, enter <em>Properties</em></li>
+<li>expand the <em>C/C++ Build</em> entry</li>
+<li>select the <em>Settings</em> entry</li>
+<li>select the <em>Devices</em> tab</li>
+<li>in the Boards section, expand <strong>STMicroelectronics</strong></li>
+<li>expand <strong>STM32F4-Discovery</strong></li>
+<li>select <strong>STM32F407VG</strong></li>
+<li>click <strong>OK</strong></li>
 </ul>
 
-<p><img src="/images/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice" /></p>
+<p><img src="/assets/images/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice"></p>
 
-<h2 id="run-the-test-with-qemu"><strong>Run the test with QEMU</strong></h2>
+<h2><strong>Run the test with QEMU</strong></h2>
 
 <p>The most convenient way to run this test is to use the <a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU Debugging plug-in</a>. Actually, with the latest plug-ins, you can directly Run the application, you do not need to Debug it.</p>
 
 <p>As for any debugging plug-in,</p>
 
 <ul>
-  <li>select the <strong>blinky.elf</strong> file</li>
-  <li>either with right click <em>Run As…</em> or in the <em>Run</em> menu, select <strong>Run Configurations</strong></li>
-  <li>doble click the <em>GDB QEMU Debugging</em></li>
-  <li>select the <em>Debugger</em> tab</li>
-  <li>check if the <em>Board name:</em> and <em>Device name:</em> are correctly filled-in; without assigning the board and device to the project, these fields must be filled in manually;</li>
-  <li>enable <strong>Extra verbose</strong></li>
+<li>select the <strong>blinky.elf</strong> file</li>
+<li>either with right click <em>Run As...</em> or in the <em>Run</em> menu, select <strong>Run Configurations</strong></li>
+<li>doble click the <em>GDB QEMU Debugging</em></li>
+<li>select the <em>Debugger</em> tab</li>
+<li>check if the <em>Board name:</em> and <em>Device name:</em> are correctly filled-in; without assigning the board and device to the project, these fields must be filled in manually;</li>
+<li>enable <strong>Extra verbose</strong></li>
 </ul>
 
-<p><img src="/images/2015/08/BlinkyQEMUDebuggerTab.png" alt="The QEMU Debugger tab" /></p>
+<p><img src="/assets/images/2015/08/BlinkyQEMUDebuggerTab.png" alt="The QEMU Debugger tab"></p>
 
 <p>When done, click the <strong>Run</strong> button.</p>
 
 <p>If you did not disable the graphic windows, an animated image of the board is shown, with the 4 LEDs blinking.</p>
 
-<p><img src="/images/2015/08/STM32F4-Discovery-LEDs.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
+<p><img src="/assets/images/2015/08/STM32F4-Discovery-LEDs.png" alt="The STM32F4-Discovery 4 LEDs"></p>
 
 <p>The QEMU process also displays some information in its console:</p>
 
-<p><img src="/images/2015/08/QEMUconsole.png" alt="QEMU console with semihosting output" /></p>
+<p><img src="/assets/images/2015/08/QEMUconsole.png" alt="QEMU console with semihosting output"></p>
 
-<h2 id="semihosting">Semihosting</h2>
+<h2>Semihosting</h2>
 
 <p>Contrary to usual POSIX environments, like GNU/Linux, embedded systems usually do not provide standard input/output devices. In the code generated by the template, the output of the printf() calls, including trace_printf(), is redirected to a special debugging channel implemented by most debuggers, using the semihosting protocol.</p>
 
-<h2 id="next-step">Next step</h2>
+<h2>Next step</h2>
 
 <p>Once you checked the development environment to be functional, proceed with creating real projects using the <a href="/templates/stm32f/" title="STM32Fxx templates">STM32Fx</a> templates, Freescale <a href="/templates/klxx/" title="KLxx template">KLxx</a> templates, or, if your target processor is not yet supported, using the Generic <a href="/templates/cortexm/" title="Generic Cortex-M template">Cortex-M</a> template.</p>
 
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2>Troubleshooting</h2>
 
 <p>The usual sources for build failures are:</p>
 
 <ul>
-  <li>a wrong or missing toolchain path; go to the project <em>Properties</em> → <em>C/C++ Build</em> → <em>Settings</em> → the <em>Toolchains</em> tab and define the correct path;</li>
+<li>a wrong or missing toolchain path; go to the project <em>Properties</em> → <em>C/C++ Build</em> → <em>Settings</em> → the <em>Toolchains</em> tab and define the correct path;</li>
 </ul>
 
-<p><img src="/images/2015/08/GlobalToolsPath.png" alt="" /></p>
+<p><img src="/assets/images/2015/08/GlobalToolsPath.png" alt=""></p>
 
 <p>Set the toolchain path for all projects and workspaces.</p>
 
 <ul>
-  <li>missing build tools (make &amp; rm) on Windows; install the <a href="">build tools</a>;</li>
-  <li>a wrong or missing QEMU path; go to the project <em>Properties</em> → <em>Run/Debug</em> → <em>QEMU</em> and define the correct path;</li>
+<li>missing build tools (make &amp; rm) on Windows; install the <a href="">build tools</a>;</li>
+<li>a wrong or missing QEMU path; go to the project <em>Properties</em> → <em>Run/Debug</em> → <em>QEMU</em> and define the correct path;</li>
 </ul>
 
-<p><img src="/images/2015/08/QEMUPath.png" alt="The QEMU path" /></p>
+<p><img src="/assets/images/2015/08/QEMUPath.png" alt="The QEMU path"></p>
 
-<h2 id="support">Support</h2>
+<h2>Support</h2>
 
 <p>If something went wrong and you cannot build the project, please check the <a href="/plugins/mbs/">How to use</a>, the <a href="/support/faq/">FAQ</a> and the <a href="/support/known-issues/">Known issues</a> pages. If you do not find the answer to your question, please read the <a href="/support/">Support</a> page on how to record a support request in the Support tracker. Do not post comments on this page unless they are related to the text (the phrasing is not correct, you discovered typos, etc).</p>
 
 
-
 <hr/>
-<p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
-</p>
+<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
 
 
 </section>
 
 <aside id="sidebar">
 
-
-<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+<h4><a href="/blog/">Latest News</a></h4>
 
 <ul>
-  <li><a href="/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-  <li><a href="/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
 
 <hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+<h4><a href="/plugins/features/">Features</a></h4>
 
-<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
-
-<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
-
-<ul>
-  <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
-</ul>
-
-<h4 id="installinstall"><a href="/install/">Install</a></h4>
+<h4><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-  <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
-    <ul>
-      <li><a href="/debug/install/">Overview</a></li>
-      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-      <li><a href="/openocd/install/">OpenOCD install</a></li>
-      <li><a href="/qemu/install/">QEMU install</a></li>
-    </ul>
-  </li>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4 id="important">Important</h4>
+<h4><a href="/install/">Install</a></h4>
 
 <ul>
-  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-  <li><a href="/toolchain/path/">Toolchain path</a></li>
-  <li><a href="/eclipse/project/portability/">Project portability</a></li>
-</ul>
-
-<h4 id="tutorials">Tutorials</h4>
-
-<ul>
-  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
-</ul>
-
-<h4 id="how-to-use">How to use</h4>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
 
 <ul>
-  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
 </ul>
 
-<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
+<h4>Important</h4>
 
 <ul>
-  <li><a href="/templates/">Overview</a></li>
-  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
-  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
+<h4>Tutorials</h4>
 
 <ul>
-  <li><a href="/debug/">Overview</a></li>
-  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4>How to use</h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install/">QEMU Install</a></li>
-  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-  <li><a href="/qemu/build-procedure/">How to build</a></li>
-  <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4><a href="/templates/">Templates</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
-  <li><a href="/openocd/install/">OpenOCD Install</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/openocd/build-procedure/">How to build</a></li>
-  <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4><a href="/debug/">Debugging</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-  <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4 id="advanced">Advanced</h4>
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="supportsupport"><a href="/support/">Support</a></h4>
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/support/">Overview</a></li>
-  <li><a href="/support/known-issues/">Known issues</a></li>
-  <li><a href="/support/faq/">FAQ</a></li>
-  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/developer/build-procedure">How to build</a></li>
-  <li><a href="/developer/publish-procedure">How to publish</a></li>
-  <li><a href="/developer/change-log">Change log</a></li>
-  <li><a href="/developer/contribute/">Contribute</a></li>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="hardware">Hardware</h4>
+<h4>Advanced</h4>
 
 <ul>
-  <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a></li>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4 id="articles">Articles</h4>
+<h4><a href="/support/">Support</a></h4>
 
 <ul>
-  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4 id="licenses">Licenses</h4>
+<h4><a href="/developer/">Developer</a></h4>
 
 <ul>
-  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-  <li><a href="/licenses/tools/">Tools</a></li>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4 id="finance">Finance</h4>
+<h4>Hardware</h4>
 
 <ul>
-  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4 id="aboutabout"><a href="/about/">About</a></h4>
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
 
 <hr />
-
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -449,8 +448,8 @@ Last modified on Sun Sep 27 13:06:17 2015 EEST.
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-
 </aside>
+
 
 </div>
 

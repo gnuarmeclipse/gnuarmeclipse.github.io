@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
   <title>How to install the GNU ARM Eclipse plug-ins?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
@@ -14,7 +16,7 @@
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-12">
+  <meta property="article:published_time" content="2015-09-11">
 
 
 
@@ -29,29 +31,31 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
   <link rel="canonical" href="http://gnuarmeclipse.github.io/plugins/install/">
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-16767008-16', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
+
+
 
 </head>
 
@@ -76,104 +80,102 @@
 <h1 class="page-title">How to install the GNU ARM Eclipse plug-ins?</h1>
 
 
-<h2 id="quicklinks">Quicklinks</h2>
+<h2>Quicklinks</h2>
 
 <p>If you know what this is all about and you just need the update site details:</p>
 
 <ul>
-  <li>name: <strong>GNU ARM Eclipse Plug-ins</strong></li>
-  <li>URL: <code>http://gnuarmeclipse.sourceforge.net/updates</code></li>
+<li>name: <strong>GNU ARM Eclipse Plug-ins</strong></li>
+<li>URL: <code>http://gnuarmeclipse.sourceforge.net/updates</code></li>
 </ul>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<h2>Prerequisites</h2>
 
 <p>Since these are Eclipse plug-ins, they obviously require a functional Eclipse CDT, which requires Java.</p>
 
-<h3 id="win-xp---a-word-of-caution">Win XP - a word of caution</h3>
+<h3>Win XP - a word of caution</h3>
 
 <p>For the old-timers, a word of caution about Windows XP: recent Java distributions (from 7 up) are <a href="http://www.oracle.com/technetwork/java/javase/config-417990.html">no longer certified for XP</a>, so, even if they might seem to work, you are on thin ice. If possible, avoid using XP at all; otherwise use only the 32-bit version, with 32-bit Java and Eclipse.</p>
 
-<h3 id="win-xp-64">Win XP 64</h3>
+<h3>Win XP 64</h3>
 
 <p>The warning is even more important for Win XP 64, which, in certain configurations, has difficulties to start 32-bit applications (like the JLink GDB Server or OpenOCD). Although generally Win XP 64 is not recommended at all, if you really need to use it, preferably experiment with a 32-bit Java and a 32-bit Eclipse.</p>
 
 <p>However please note that no support requests referring to Win XP 64 will be processed.</p>
 
-<h3 id="java">Java</h3>
+<h3>Java</h3>
 
 <p>The recommended package is the official <a href="http://www.oracle.com/technetwork/java/javase/index.html">Oracle <strong>Java SE</strong></a>. The <strong>OpenJDK Java</strong> used in Ubuntu is also fine. The minimum is JDK 1.7, or even JRE 1.7 (the Java Runtime Environment), but, as said before, better use the latest JDK. On OS X the last Apple Java implementation is 1.6, so it is required to use the Oracle 1.7 or later.</p>
 
 <p>For example, on Ubuntu 12.04 LTS, you can install the OpenJDK run-time and test if it was properly installed with the following commands:</p>
-
-<pre><code>$ sudo apt-get install openjdk-7-jre
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ sudo apt-get install openjdk-7-jre
 $ java -version
-java version "1.7.0_55"
+java version &quot;1.7.0_55&quot;
 OpenJDK Runtime Environment (IcedTea 2.4.7) (7u55-2.4.7-1ubuntu1~0.12.04.2)
 OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
-</code></pre>
-
-<h3 id="eclipse--cdt">Eclipse &amp; CDT</h3>
+</code></pre></div>
+<h3>Eclipse &amp; CDT</h3>
 
 <p>The oldest Eclipse supported by the plug-ins is Eclipse 4.3 Kepler (CDT 8.3), and the recommended version is 4.4 SR2. Do not try to install them on Juno, Indigo, or older versions, since the install will fail.</p>
 
 <p>Just go to the <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and get the <strong>Eclipse IDE for C/C++ Developers</strong> archive appropriate for your platform, preferably the 64-bit version. Unpack it at a place of your choice and start using it.</p>
 
-<h3 id="cdt">CDT</h3>
+<h3>CDT</h3>
 
 <p>The minimum CDT version is 8.3. Do not try to use earlier versions, since either the install will fail, or it will not run properly.</p>
 
 <p>As mentioned before, the recommended way is to use a fresh <strong>Eclipse IDE for C/C++ Developers</strong> for the cross ARM development projects. Even if you did so, but especially if you did not do so, it is a good idea to check if you really have the latest version available. For this, enter the <em>Eclipse</em> menu and go to <strong>Help</strong> → <strong>Install New Software</strong></p>
 
-<p><img src="/images/2013/10/InstallNewSoftware.png" alt="Install new software" /></p>
+<p><img src="/assets/images/2013/10/InstallNewSoftware.png" alt="Install new software"></p>
 
 <ul>
-  <li>select <em>Work with:</em> <strong>Kepler</strong></li>
-  <li>if the <em>Group items by category </em>is enabled, expand the <strong>Programming Languages</strong> group</li>
-  <li>select the <strong>C/C++ Development Tools</strong> feature</li>
-  <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
+<li>select <em>Work with:</em> <strong>Kepler</strong></li>
+<li>if the <em>Group items by category </em>is enabled, expand the <strong>Programming Languages</strong> group</li>
+<li>select the <strong>C/C++ Development Tools</strong> feature</li>
+<li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
 </ul>
 
-<p><img src="/images/2013/10/InstallCDT.png" alt="CDT install" /></p>
+<p><img src="/assets/images/2013/10/InstallCDT.png" alt="CDT install"></p>
 
-<h3 id="compatibility-issues">Compatibility issues</h3>
+<h3>Compatibility issues</h3>
 
 <p>Please note that starting with 1.1.x, compatibility with Eclipses previous than 4.3 Kepler was no longer possible. If, for any reasons, you need a solution for older Eclipse versions, you can try the GNU ARM Eclipse Plug-in version 0.5.5, but please keep in mind that this old version is no longer maintained.</p>
 
-<h2 id="plug-ins-install">Plug-ins install</h2>
+<h2>Plug-ins install</h2>
 
 <p>The following samples are from Eclipse 4.3 Kepler on OS X. Other platforms may behave slightly different, but the idea is the same.</p>
 
 <p><strong>Warning:</strong> Be sure your Eclipse is 4.3 or later, otherwise the plug-ins will refuse to install, claiming <strong>Missing requirements</strong> and <strong>Cannot satisfy dependency</strong>.</p>
 
-<h3 id="the-recommended-way">The recommended way</h3>
+<h3>The recommended way</h3>
 
-<p>The recommended way to install these plug-ins is to use the Eclipse standard install/update mechanism: In the <em>Eclipse</em> menu: <strong>Help</strong> → <strong>Install New Software…</strong></p>
-
-<ul>
-  <li>in the <em>Install</em> window, click the <strong>Add…</strong> button (on future updates, just select the URL in the <strong>Work with:</strong> combo)</li>
-  <li>fill in <em>Name:</em> with <strong>GNU ARM Eclipse Plug-ins</strong></li>
-  <li>fill in <em>Location:</em> with <strong>http://gnuarmeclipse.sourceforge.net/updates</strong></li>
-  <li>click the <strong>OK</strong> button</li>
-</ul>
-
-<p><img src="/images/2013/10/AddRepository.png" alt="AddRepository" /></p>
+<p>The recommended way to install these plug-ins is to use the Eclipse standard install/update mechanism: In the <em>Eclipse</em> menu: <strong>Help</strong> → <strong>Install New Software...</strong></p>
 
 <ul>
-  <li>normally the main window should list a group named <strong>CDT GNU Cross Development Tools</strong>; expand it</li>
-  <li>(in case the main window will list <em>There are no categorized items</em>, you are probably using a very old version; disable the Group items by category option)</li>
-  <li>select all the plug-ins (the one marked <em>End of life</em> is needed only for compatibility with previous version, normally can be safely skipped)</li>
-  <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
+<li>in the <em>Install</em> window, click the <strong>Add...</strong> button (on future updates, just select the URL in the <strong>Work with:</strong> combo)</li>
+<li>fill in <em>Name:</em> with <strong>GNU ARM Eclipse Plug-ins</strong></li>
+<li>fill in <em>Location:</em> with <strong>http://gnuarmeclipse.sourceforge.net/updates</strong></li>
+<li>click the <strong>OK</strong> button</li>
 </ul>
 
-<p><img src="/images/2014/04/PluginsInstall.png" alt="Plug-ins install" /></p>
+<p><img src="/assets/images/2013/10/AddRepository.png" alt="AddRepository"></p>
+
+<ul>
+<li>normally the main window should list a group named <strong>CDT GNU Cross Development Tools</strong>; expand it</li>
+<li>(in case the main window will list <em>There are no categorized items</em>, you are probably using a very old version; disable the Group items by category option)</li>
+<li>select all the plug-ins (the one marked <em>End of life</em> is needed only for compatibility with previous version, normally can be safely skipped)</li>
+<li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
+</ul>
+
+<p><img src="/assets/images/2014/04/PluginsInstall.png" alt="Plug-ins install"></p>
 
 <p>Once you define the update site URL, further updates are greatly simplified (<strong>Help</strong> → <strong>Check For Updates</strong>).</p>
 
-<h3 id="installation-problems">Installation problems</h3>
+<h3>Installation problems</h3>
 
 <p>There are cases when the on-line access to the SourceForge mirror servers might not be reliable. In these cases the Eclipse update system may fail. For example:</p>
 
-<p><img src="/images/2013/10/FailedInstall.png" alt="Failed install" /></p>
+<p><img src="/assets/images/2013/10/FailedInstall.png" alt="Failed install"></p>
 
 <p>If this happens, Eclipse remains in a confused state and rarely can recover itself.</p>
 
@@ -181,260 +183,255 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 
 <p>For this go to Eclipse menu → <strong>Preferences</strong> → <strong>Install/Update</strong> → <strong>Available Software Sites</strong>:</p>
 
-<p><img src="/images/2013/10/AvailableSites.png" alt="Remove from available site list" /></p>
+<p><img src="/assets/images/2013/10/AvailableSites.png" alt="Remove from available site list"></p>
 
 <p>If this still fails, the alternative method is to manually download the latest version archive and to perform the install from it, as presented below.</p>
 
-<h3 id="the-alternate-way">The alternate way</h3>
+<h3>The alternate way</h3>
 
-<p>If, for any reason, you need to install a specific version of the plug-in, the solution is to download the archive from <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a> and to point the Eclipse update mechanism to the local archive: In the* Eclipse* menu: <strong>Help</strong> → <strong>Install New Software…</strong></p>
+<p>If, for any reason, you need to install a specific version of the plug-in, the solution is to download the archive from <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a> and to point the Eclipse update mechanism to the local archive: In the* Eclipse<em> menu: </em><em>Help</em><em> → </em><em>Install New Software...</em>*</p>
 
 <ul>
-  <li>in the <em>Install</em> window, click the <strong>Add…</strong> button</li>
-  <li>in the <em>Add Repository</em> window, click the <strong>Archive…</strong> button
-        * in the <em>Repository archive</em> window, select the downloaded .zip archive
-        * click the <strong>OK</strong> button</li>
-  <li>click the OK button</li>
-  <li>follow the usual installation procedure</li>
+<li>in the <em>Install</em> window, click the <strong>Add...</strong> button</li>
+<li>in the <em>Add Repository</em> window, click the <strong>Archive...</strong> button
+      * in the <em>Repository archive</em> window, select the downloaded .zip archive
+      * click the <strong>OK</strong> button</li>
+<li>click the OK button</li>
+<li>follow the usual installation procedure</li>
 </ul>
 
-<p><img src="/images/2013/10/AddArchiveRepository.png" alt="Add repository from archive" /></p>
+<p><img src="/assets/images/2013/10/AddArchiveRepository.png" alt="Add repository from archive"></p>
 
-<h2 id="off-line-install">Off-line install</h2>
+<h2>Off-line install</h2>
 
 <p>If, for any reasons, you need to install the GNU ARM Eclipse plug-ins on a system without permanent Internet connection, and decide for the alternate way presented above, please be aware that the debug plug-ins require the presence of the <strong>C/C++ GDB Hardware Debugging</strong> plug-in. Usually this plug-in is not included in the standard package, but is present in the <strong>CDT Optional Features</strong> category, packed with the CDT archives available from the <a href="https://www.eclipse.org/cdt/downloads.php">CDT download site</a>. Download the desired archive, add it to your update sites, select the C/C++ GDB Hardware Debugging plug-in, restart as usual, and then install the GNU ARM Eclipse plug-ins from the local archive, as above.</p>
 
-<p><img src="/images/2013/10/GDB_Hardware_Install.png" alt="Install the GDB Hardware" /></p>
+<p><img src="/assets/images/2013/10/GDB_Hardware_Install.png" alt="Install the GDB Hardware"></p>
 
 <p>Note: Attempts to install the GNU ARM Eclipse plug-ins off-line without having the C/C++ GDB Hardware Debugging installed fails with an error related to installing the <em>ilg.gnuarmeclipse.debug.gdbjtag.jlink.feature.group</em> and other debugging features.</p>
 
 <p>On-line install do not have this problem since the Eclipse automatically downloads the C/C++ GDB Hardware Debugging plug-in from the CDT update site.</p>
 
-<h2 id="plug-ins-versions">Plug-ins versions</h2>
+<h2>Plug-ins versions</h2>
 
 <p>One of the confusing details of the GNU ARM Eclipse plug-ins versioning system is matching the version from the release announcement (for example <strong>Version 2.6.1-201502281154 released</strong>) with existing plug-ins/features.</p>
 
 <p>The short answer is that the announced version refers to the update site, also packed as an archive, and available from SourceForge. The same version is also used for the <strong>ilg.gnuarmeclipse.core</strong> plug-in:</p>
 
-<p><img src="/images/2013/10/Plugins.png" alt="Installed plug-ins" /></p>
+<p><img src="/assets/images/2013/10/Plugins.png" alt="Installed plug-ins"></p>
 
 <p>Although the core plug-in is referred by all features, this version number cannot be found in the list of the features:</p>
 
-<p><img src="/images/2013/10/Features.png" alt="Installed features" /></p>
+<p><img src="/assets/images/2013/10/Features.png" alt="Installed features"></p>
 
 <p>However, the common point for all these magic numbers is the release date, <em>201502281154</em> in this case, which is identical for all plug-ins and features.</p>
 
 <p>Thus, the recommended method to <strong>identify plug-ins and features</strong> is <strong>by date, not by version</strong>, which differs from object to object.</p>
 
-<h2 id="set-workspace-preferences">Set workspace preferences</h2>
+<h2>Set workspace preferences</h2>
 
 <p>After completing the installation of the plug-ins it is recommended to <a href="/eclipse/workspace/preferences/" title="Workspace preferences">set the workspace preference</a>.</p>
 
-<h2 id="toolchain-and-debugging-support">Toolchain and debugging support</h2>
+<h2>Toolchain and debugging support</h2>
 
 <p>By completing the above steps, the Eclipse environment is ready, and you can start creating projects right away. However, for being able to build and debug these projects, you also need to install:</p>
 
 <ul>
-  <li>the <a href="/toolchain/install/" title="Toolchain install">toolchain</a></li>
-  <li>the optional <a href="/windows-build-tools/" title="Build tools (make &amp; rm) on Windows">build tools</a> (if you are running on Windows)</li>
-  <li>the <a href="/debug/" title="Debugging">debugging</a> tools</li>
+<li>the <a href="/toolchain/install/" title="Toolchain install">toolchain</a></li>
+<li>the optional <a href="/windows-build-tools/" title="Build tools (make &amp; rm) on Windows">build tools</a> (if you are running on Windows)</li>
+<li>the <a href="/debug/" title="Debugging">debugging</a> tools</li>
 </ul>
 
 <p>It is also highly recommended to install the Packs plug-in, to switch to the Packs perspective and using the <a href="/plugins/packs-manager/" title="Packs manager">Packs manager</a> to install the packages related to the devices in use. Even if Packs support is not complete yet, you still can benefit from the existing CMSIS Packs, for example by using the <a href="/debug/peripheral-registers/" title="The peripherals registers view">peripherals registers view</a> in debug, the documentation view in the C/C++ perspective, etc.</p>
 
 <p>Follow the above steps and when everything is ready, proceed to <a href="/tutorials/hello-arm/" title="Tutorial: Create a test project">create and build a test project</a>.</p>
 
-<h2 id="support">Support</h2>
+<h2>Support</h2>
 
 <p>If you encountered any problems when installing the plug-ins, pleas refer to the <a href="/support/">Support</a> page and <strong>do not</strong> post comments to the blog pages containing support requests.</p>
 
 
-
 <hr/>
-<p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
-</p>
+<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
 
 
 </section>
 
 <aside id="sidebar">
 
-
-<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+<h4><a href="/blog/">Latest News</a></h4>
 
 <ul>
-  <li><a href="/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-  <li><a href="/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
 
 <hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+<h4><a href="/plugins/features/">Features</a></h4>
 
-<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
-
-<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
-
-<ul>
-  <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
-</ul>
-
-<h4 id="installinstall"><a href="/install/">Install</a></h4>
+<h4><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-  <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
-    <ul>
-      <li><a href="/debug/install/">Overview</a></li>
-      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-      <li><a href="/openocd/install/">OpenOCD install</a></li>
-      <li><a href="/qemu/install/">QEMU install</a></li>
-    </ul>
-  </li>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4 id="important">Important</h4>
+<h4><a href="/install/">Install</a></h4>
 
 <ul>
-  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-  <li><a href="/toolchain/path/">Toolchain path</a></li>
-  <li><a href="/eclipse/project/portability/">Project portability</a></li>
-</ul>
-
-<h4 id="tutorials">Tutorials</h4>
-
-<ul>
-  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
-</ul>
-
-<h4 id="how-to-use">How to use</h4>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
 
 <ul>
-  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
 </ul>
 
-<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
+<h4>Important</h4>
 
 <ul>
-  <li><a href="/templates/">Overview</a></li>
-  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
-  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
+<h4>Tutorials</h4>
 
 <ul>
-  <li><a href="/debug/">Overview</a></li>
-  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4>How to use</h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install/">QEMU Install</a></li>
-  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-  <li><a href="/qemu/build-procedure/">How to build</a></li>
-  <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4><a href="/templates/">Templates</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
-  <li><a href="/openocd/install/">OpenOCD Install</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/openocd/build-procedure/">How to build</a></li>
-  <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4><a href="/debug/">Debugging</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-  <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4 id="advanced">Advanced</h4>
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="supportsupport"><a href="/support/">Support</a></h4>
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/support/">Overview</a></li>
-  <li><a href="/support/known-issues/">Known issues</a></li>
-  <li><a href="/support/faq/">FAQ</a></li>
-  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/developer/build-procedure">How to build</a></li>
-  <li><a href="/developer/publish-procedure">How to publish</a></li>
-  <li><a href="/developer/change-log">Change log</a></li>
-  <li><a href="/developer/contribute/">Contribute</a></li>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="hardware">Hardware</h4>
+<h4>Advanced</h4>
 
 <ul>
-  <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a></li>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4 id="articles">Articles</h4>
+<h4><a href="/support/">Support</a></h4>
 
 <ul>
-  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4 id="licenses">Licenses</h4>
+<h4><a href="/developer/">Developer</a></h4>
 
 <ul>
-  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-  <li><a href="/licenses/tools/">Tools</a></li>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4 id="finance">Finance</h4>
+<h4>Hardware</h4>
 
 <ul>
-  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4 id="aboutabout"><a href="/about/">About</a></h4>
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
 
 <hr />
-
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -443,8 +440,8 @@ Last modified on Sun Sep 27 13:06:17 2015 EEST.
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-
 </aside>
+
 
 </div>
 

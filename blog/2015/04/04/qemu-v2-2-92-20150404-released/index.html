@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
+  <title>GNU ARM Eclipse QEMU v2.2.92-20150404*-dev released</title>
+  <meta name="description" content="This is the initial release of the GNU ARM Eclipse QEMU. It is mainly a technology preview (most of the supported boards are present, but functionality is li...">
+
+  <meta property="og:title" content="GNU ARM Eclipse QEMU v2.2.92-20150404*-dev released" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="article:published_time" content="2015-04-04">
+
+
+  <meta property="article:section" content="releases" />
+  <meta property="article:section" content="qemu" />
+
+  <meta property="article:tag" content="cortex-m" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="emulation" />
+  <meta property="article:tag" content="gdb" />
+  <meta property="article:tag" content="qemu" />
+  <meta property="article:tag" content="semihosting" />
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+
+  <link rel="canonical" href="http://gnuarmeclipse.github.io/blog/2015/04/04/qemu-v2-2-92-20150404-released/">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1><a href="/">GNU ARM Eclipse</a></h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+
+<section id="main-content">
+
+
+<h1 class="post-title">GNU ARM Eclipse QEMU v2.2.92-20150404*-dev released</h1>
+
+
+<p class="post-meta">
+Posted on April 4, 2015 by Liviu Ionescu.
+</p>
+
+<p>This is the initial release of the <a href="/qemu">GNU ARM Eclipse QEMU</a>. It is mainly a technology preview (most of the supported boards are present, but functionality is limited and only projects created with the generic Cortex-M3 template are supported).</p>
+
+<p><a href="https://github.com/gnuarmeclipse/qemu/releases/edit/gae-2.2.92-20150404">Binary files »</a></p>
+
+<h2>Supported boards</h2>
+
+<p>The boards initially added to <strong>GNU ARM Eclipse QEMU</strong> are:</p>
+
+<ul>
+<li>EK-TM4C123GXL – TI Tiva C Series TM4C123GXL LaunchPad Evaluation Kit (Experimental)</li>
+<li>FRDM-K20D50M – Freescale Freedom Development Platform for Kinetis K20 USB MCUs (Experimental)</li>
+<li>FRDM-K22F – Freescale Freedom Development Platform for Kinetis K22 MCUs (Experimental)</li>
+<li>FRDM-K64F – Freescale Freedom Development Platform for Kinetis K6[34] and K24 MCUs (Experimental)</li>
+<li>FRDM-KL25Z – Freescale Freedom Development Platform for Kinetis KL[12][45] MCUs (Experimental)</li>
+<li>FRDM-KL26Z – Freescale Freedom Development Platform for Kinetis KL[12]6 MCUs (Experimental)</li>
+<li>FRDM-KL43Z – Freescale Freedom Development Platform for Kinetis KL[34]3, KL[12]7 MCUs (Experimental)</li>
+<li>FRDM-KL46Z – Freescale Freedom Development Platform for Kinetis KL[34]x MCUs (Experimental)</li>
+<li>LPCXpresso-LPC1769 – Embedded Artists LPCXpresso LPC1769 Development Board (Experimental)</li>
+<li>Mapple – LeafLab Arduino-style STM32 microcontroller board (Experimental)</li>
+<li>NUCLEO-F103RB – ST Nucleo Development Board for STM32 F1 series (Experimental)</li>
+<li>NUCLEO-F334R8 – ST Nucleo Development Board for STM32 F3 series (Experimental)</li>
+<li>NUCLEO-F411RE – ST Nucleo Development Board for STM32 F4 series (Experimental)</li>
+<li>NUCLEO-L152RE – ST Nucleo Development Board with STM32L152RET6 (Experimental)</li>
+<li>Netduino2 – Netduino Development Board with STM32F2 (Experimental)</li>
+<li>NetduinoGo – Netduino GoBus Development Board with STM32F4 (Experimental)</li>
+<li>NetduinoPlus2 – Netduino Development Board with STM32F4 (Experimental)</li>
+<li>OLIMEXINO-STM32 – Olimex Mapple (Arduino-like) Development Board (Experimental)</li>
+<li>SAM3-H256 – Olimex Header Board for ATSAM3S4BA (Experimental)</li>
+<li>STM32-E407 – Olimex Development Board for STM32F407ZGT6 (Experimental)</li>
+<li>STM32-H103 – Olimex Header Board for STM32F103RBT6 (Experimental)</li>
+<li>STM32-P103 – Olimex Prototype Board for STM32F103RBT6 (Experimental)</li>
+<li>STM32-P107 – Olimex Prototype Board for STM32F107VCT6 (Experimental)</li>
+<li>STM32F0-Discovery – ST Discovery kit for STM32F051 line (Experimental)</li>
+<li>STM32F3-Discovery – ST Discovery kit for STM32F303 line (Experimental)</li>
+<li>STM32F4-Discovery – ST Discovery kit for STM32F407/417 lines (Experimental)</li>
+<li>STM32F429I-Discovery – ST Discovery kit for STM32F429/439 lines (Experimental)</li>
+<li>STM32VL-Discovery – ST Discovery kit for STM32F100 Value Line (Experimental)</li>
+<li>TWR-K60F120M – Freescale Kinetis K60 120 MHz Tower System Module (Experimental)</li>
+<li>XMC 2Go – Infineon XMC 2Go Kit with XMC1100 (Experimental)</li>
+<li>XMC1100 Boot Kit – Infineon CPU Card XMC1100 Boot Kit Entry Series (Experimental)</li>
+<li>XMC1200 Boot Kit – Infineon CPU Card XMC1200 Boot Kit Feature Series (Experimental)</li>
+<li>XMC1300 Boot Kit – Infineon CPU Card XMC1300 Boot Kit Control Series (Experimental)</li>
+<li>XMC4200 Enterprise Kit – Infineon CPU Board XMC4200 Actuator (Experimental)</li>
+<li>XMC4400 Enterprise Kit – Infineon CPU Board XMC4400 General Purpose (Experimental)</li>
+<li>XMC4500 Enterprise Kit – Infineon CPU Board XMC4500 General Purpose (Experimental)</li>
+<li>XMC4500 Relax Kit – Infineon CPU Board XMC4500 Relax Kit (Experimental)</li>
+<li>XMC4500 Relax Lite Kit – Infineon CPU Board XMC4500 Relax Lite Kit (Experimental)</li>
+</ul>
+
+<p>As clearly marked, support for these boards is <strong>experimental.</strong> The boards generally include the right ARM core ID and should reflect the real memory banks, but since currently QEMU supports only Cortex-M3 cores, the boards behave like Cortex-M3 cores, so the emulation is not yet very accurate.</p>
+
+<h2>Changes from QEMU 2.2.92</h2>
+
+<ul>
+<li><strong>-verbose</strong> added, with multiple levels to increase verbosity; the first level of verbosity is always enabled by the plug-in, to get the feedback required when starting the server backend for the debugging session;</li>
+<li><strong>-semihosting-cmdline</strong> added, to define the semihosting command line, required when running unit tests;</li>
+<li>build script for OS X, Debian 32-bit/64-bit and Windows 32-bit/64-bit (using MinGW-w64) added; the required libraries are build locally</li>
+</ul>
+
+<h2>Eclipse plug-in</h2>
+
+<p>The <strong>GNU ARM Eclipse QEMU</strong> is by design intended to be integrated with the <strong>GNU ARM Eclipse plug-ins</strong>. QEMU behaves like a GDB server, allowing to load the application into processor memory and debug as any real board. (Note: the Eclipse plug-in will be available shortly).</p>
+
+<h2>Known problems</h2>
+
+<p><del>The 64-bits version for Windows has some run-time problems and does not execute properly;</del> it was deleted from the released files section; until a solution will be available, the 32-bits version of QEMU can be used on Windows 64-bits; <strong>fixed in release 2.3.50-201508051820-dev</strong>.</p>
+
+<h2>Download</h2>
+
+<p>The new QEMU can be downloaded from the <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.2.92-20150404">GitHub Releases</a> page.</p>
+
+
+<hr/>
+<p class="post-footer">
+Posted in
+
+<strong>releases</strong>, <strong>qemu</strong> and tagged
+
+<strong>cortex-m</strong>, <strong>eclipse</strong>, <strong>emulation</strong>, <strong>gdb</strong>, <strong>qemu</strong>, <strong>semihosting</strong>.
+</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
+</p>
+
+
+</section>
+
+<aside id="sidebar">
+
+<h4><a href="/blog/">Latest News</a></h4>
+
+<ul>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+</ul>
+
+<hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4><a href="/plugins/features/">Features</a></h4>
+
+<h4><a href="/downloads/">Downloads</a></h4>
+
+<ul>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4><a href="/install/">Install</a></h4>
+
+<ul>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
+
+<ul>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
+</ul>
+
+<h4>Important</h4>
+
+<ul>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4>Tutorials</h4>
+
+<ul>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4>How to use</h4>
+
+<ul>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4><a href="/templates/">Templates</a></h4>
+
+<ul>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4><a href="/debug/">Debugging</a></h4>
+
+<ul>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+</ul>
+
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4>Advanced</h4>
+
+<ul>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4><a href="/support/">Support</a></h4>
+
+<ul>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+</ul>
+
+<h4><a href="/developer/">Developer</a></h4>
+
+<ul>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
+</ul>
+
+<h4>Hardware</h4>
+
+<ul>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+</ul>
+
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
+
+<hr />
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</aside>
+
+
+</div>
+
+</div>
+
+
+
+</body>
+
+</html>

@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+
   <title>How to build the OpenOCD binaries?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
@@ -29,29 +31,31 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
   <link rel="canonical" href="http://gnuarmeclipse.github.io/openocd/build-procedure/">
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="http://gnuarmeclipse.github.io/feed.xml" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-16767008-16', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
+
+
 
 </head>
 
@@ -80,86 +84,77 @@
 
 <p>The script was developed on OS X, but it also runs on any recent GNU/Linux distribution (just that in this case it cannot generate the OS X package).</p>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<h2>Prerequisites</h2>
 
 <p>The main trick that made the multi-platform build possible is <a href="https://www.docker.com">Docker</a>.</p>
 
 <p>Containers based on three docker images are used, one packing MinGW-w64 in a Debian 8, and two packing the basic system in Debian 7 (separate 32/64-bits containers). The more conservative Debian 7 was preferred to generate the GNU/Linux versions, to avoid problems when attempting to run the executables on older versions.</p>
 
-<h3 id="os-x">OS X</h3>
+<h3>OS X</h3>
 
-<h4 id="install-docker">Install Docker</h4>
+<h4>Install Docker</h4>
 
 <p>On OS X, install the boot2docker, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on Mac OS X</a> instructions.</p>
 
-<h4 id="install-the-command-line-tools">Install the Command Line Tools</h4>
+<h4>Install the Command Line Tools</h4>
 
 <p>The OS X compiler and other development tools are packed in a separate Xcode add-on. The best place to get it is from the <a href="https://developer.apple.com/xcode/downloads/">Developer</a> site, although this might require enrolling to the developer program (free of charge).</p>
 
 <p>To test if the compiler is available, use:</p>
-
-<pre><code>$ gcc --version
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ gcc --version
 Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
 Apple LLVM version 6.1.0 (clang-602.0.49) (based on LLVM 3.6.0svn)
 Target: x86_64-apple-darwin14.3.0
 Thread model: posix
-</code></pre>
-
-<h4 id="install-macports">Install MacPorts</h4>
+</code></pre></div>
+<h4>Install MacPorts</h4>
 
 <p>The build procedure requires the presence of <a href="http://www.macports.org">MacPorts</a>. Install it according to the documentation.</p>
 
-<h4 id="install-required-macports-packages">Install required MacPorts packages</h4>
+<h4>Install required MacPorts packages</h4>
 
 <p>Install the following packages:</p>
-
-<pre><code>sudo port install libtool automake autoconf pkgconfig wget
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo port install libtool automake autoconf pkgconfig wget
 sudo port install cmake boost libconfuse swig-python
 sudo port install texinfo texlive
-</code></pre>
+</code></pre></div>
+<h3>GNU/Linux</h3>
 
-<h3 id="gnulinux">GNU/Linux</h3>
-
-<h4 id="install-docker-1">Install Docker</h4>
+<h4>Install Docker</h4>
 
 <p>For any GNU/Linux distribution, follow the <a href="https://docs.docker.com/installation/#installation">specific instructions</a>.</p>
 
-<h4 id="install-required-packages">Install required packages</h4>
+<h4>Install required packages</h4>
 
 <p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<strong>curl</strong>, <strong>git</strong>, <strong>automake</strong>, <strong>patch</strong>, <strong>tar</strong>, <strong>unzip</strong>).</p>
 
 <p>The script checks for them; if the script fails, install them and re-run.</p>
 
-<h3 id="docker-images">Docker images</h3>
+<h3>Docker images</h3>
 
 <p>The Docker images are available from <a href="https://hub.docker.com/u/ilegeul/">Docker Hub</a>. They were build using the Dockerfiles available from <a href="https://github.com/ilg-ul/docker">ilg-ul/docker on GitHub</a>.</p>
 
-<h2 id="download-the-build-script">Download the build script</h2>
+<h2>Download the build script</h2>
 
 <p>The script is available from the SourceForge git repository and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">viewed online</a>.</p>
 
 <p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
-
-<pre><code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh \
+<div class="highlight"><pre><code class="language-text" data-lang="text">curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh \
 -o ~/Downloads/build-openocd.sh
-</code></pre>
-
-<h2 id="check-the-script">Check the script</h2>
+</code></pre></div>
+<h2>Check the script</h2>
 
 <p>The script creates a temporary build <strong>Work/openocd</strong> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine WORK_FOLDER variable before invoking the script.</p>
 
-<h2 id="preload-the-docker-images">Preload the Docker images</h2>
+<h2>Preload the Docker images</h2>
 
 <p>Docker does not require to explicitly download new images, but does this automatically at first use.</p>
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
-
-<pre><code>bash ~/Downloads/build-openocd.sh preload-images
-</code></pre>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh preload-images
+</code></pre></div>
 <p>The result should look similar to:</p>
-
-<pre><code>$ docker images
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ilegeul/debian      8-gnuarm-mingw      b8261b27add4        3 minutes ago       2.692 GB
 ilegeul/debian      8-gnuarm-gcc        ba65c1716b6e        12 minutes ago      1.437 GB
@@ -169,16 +164,12 @@ ilegeul/debian      7                   a4ad8e2c6d76        4 days ago          
 ilegeul/debian32    7                   64980af805ad        4 days ago          93.65 MB
 debian              8                   65688f7c61c4        6 weeks ago         122.8 MB
 hello-world         latest              e45a5af57b00        4 months ago        910 B
-</code></pre>
-
-<h2 id="build-all-distribution-files">Build all distribution files</h2>
-
-<pre><code>bash ~/Downloads/build-openocd.sh --all
-</code></pre>
-
+</code></pre></div>
+<h2>Build all distribution files</h2>
+<div class="highlight"><pre><code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh --all
+</code></pre></div>
 <p>About half an hour later, the output of the build script is a set of 5 files in the output folder:</p>
-
-<pre><code>$ ls -l output
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ ls -l output
 total 105616
 drwxr-xr-x  8 ilg  staff      272 May 11 15:28 debian32
 drwxr-xr-x  8 ilg  staff      272 May 11 15:20 debian64
@@ -190,31 +181,25 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:20 debian64
 drwxr-xr-x  8 ilg  staff      272 May 11 15:33 osx
 drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win32
 drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
-</code></pre>
+</code></pre></div>
+<h2>Subsequent runs</h2>
 
-<h2 id="subsequent-runs">Subsequent runs</h2>
+<h3>Separate platform specific builds</h3>
 
-<h3 id="separate-platform-specific-builds">Separate platform specific builds</h3>
-
-<p>Instead of <strong>–all</strong>, you can use any combination of:</p>
-
-<pre><code>--win32 --win64 --debian32 --debian64 --osx
-</code></pre>
-
-<h3 id="clean">clean</h3>
+<p>Instead of <strong>--all</strong>, you can use any combination of:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">--win32 --win64 --debian32 --debian64 --osx
+</code></pre></div>
+<h3>clean</h3>
 
 <p>To remove all build files, use:</p>
-
-<pre><code>bash ~/Downloads/build-openocd.sh clean
-</code></pre>
-
-<h2 id="install-hierarchy">Install hierarchy</h2>
+<div class="highlight"><pre><code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh clean
+</code></pre></div>
+<h2>Install hierarchy</h2>
 
 <p>The procedure to install GNU ARM Eclipse OpenOCD is platform specific, but relatively straight forward (a Windows setup, an OS X install or a TGZ archive on GNU/Linux). The setup/install asks no special questions, and the defaults are generally ok for most installations.</p>
 
 <p>After install, this package should create structure like this (only the first two depth levels are shown):</p>
-
-<pre><code>$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/OpenOCD
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/OpenOCD
 /Applications/GNU\ ARM\ Eclipse/OpenOCD
 ├── bin
 │   └── openocd
@@ -243,228 +228,219 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
     └── tools
 
 16 directories, 9 files
-</code></pre>
-
+</code></pre></div>
 <p>No other files are installed in any system folders or other locations.</p>
 
-<h2 id="uninstall">Uninstall</h2>
+<h2>Uninstall</h2>
 
 <p>To uninstall OpenOCD from a Windows machine, use the <strong>openocd-uninstall.exe</strong> program.</p>
 
 <p>On OS X and GNU/Linux, the GNU ARM Eclipse OpenOCD install folder is self-contained and removing it is enough for completely removing the application.</p>
 
-<h2 id="test">Test</h2>
+<h2>Test</h2>
 
 <p>A simple test is performed by the script at the end, by launching the executable to check if all shared/dynamic libraries are correctly used.</p>
 
 <p>For a true test you need to first install the package and then run the program form the final location. For example on OS X the output should look like:</p>
-
-<pre><code>$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/bin/openocd --version
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/bin/openocd --version
 GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00022-g2628c74 (2015-01-15-20:44)
 Licensed under GNU GPL v2
 For bug reports, read
     http://openocd.sourceforge.net/doc/doxygen/bugs.html
-</code></pre>
-
-<h2 id="stop-boot2docker">Stop boot2docker</h2>
+</code></pre></div>
+<h2>Stop boot2docker</h2>
 
 <p>On OS X, the build script automatically starts <strong>boot2docker</strong>, if needed.</p>
 
 <p>When done, be sure you stop boot2docker, to free significant resources (a VirtualBox Ubuntu machine).</p>
-
-<pre><code>boot2docker stop
-</code></pre>
-
-<h2 id="more-build-details">More build details</h2>
+<div class="highlight"><pre><code class="language-text" data-lang="text">boot2docker stop
+</code></pre></div>
+<h2>More build details</h2>
 
 <p>The script is quite complex, and an attempt to explain its functionality would require some effort. For the final authoritative details, please refer to the comments available in the <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">script</a>.</p>
 
 
 <hr/>
-<p class="page-footer">
-Last modified on Sun Sep 27 13:06:17 2015 EEST.
-</p>
+<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
 
 
 </section>
 
 <aside id="sidebar">
 
-
-<h4 id="latest-newsnews"><a href="/news">Latest News</a></h4>
+<h4><a href="/blog/">Latest News</a></h4>
 
 <ul>
-  <li><a href="/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-  <li><a href="/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-  <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-  <li><a href="/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-  <li><a href="/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
 
 <hr />
+<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+<h4><a href="/plugins/features/">Features</a></h4>
 
-<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
-
-<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
-
-<ul>
-  <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
-</ul>
-
-<h4 id="installinstall"><a href="/install/">Install</a></h4>
+<h4><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-  <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
-    <ul>
-      <li><a href="/debug/install/">Overview</a></li>
-      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-      <li><a href="/openocd/install/">OpenOCD install</a></li>
-      <li><a href="/qemu/install/">QEMU install</a></li>
-    </ul>
-  </li>
+<li><a href="/downloads/">Overview</a></li>
+<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4 id="important">Important</h4>
+<h4><a href="/install/">Install</a></h4>
 
 <ul>
-  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-  <li><a href="/toolchain/path/">Toolchain path</a></li>
-  <li><a href="/eclipse/project/portability/">Project portability</a></li>
-</ul>
-
-<h4 id="tutorials">Tutorials</h4>
-
-<ul>
-  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
-</ul>
-
-<h4 id="how-to-use">How to use</h4>
+<li><a href="/install/">Overview</a></li>
+<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+<li><a href="/debug/install/">Debugging components</a>
 
 <ul>
-  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+<li><a href="/debug/install/">Overview</a></li>
+<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+<li><a href="/openocd/install/">OpenOCD install</a></li>
+<li><a href="/qemu/install/">QEMU install</a></li>
+</ul></li>
 </ul>
 
-<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
+<h4>Important</h4>
 
 <ul>
-  <li><a href="/templates/">Overview</a></li>
-  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
-  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+<li><a href="/toolchain/path/">Toolchain path</a></li>
+<li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
+<h4>Tutorials</h4>
 
 <ul>
-  <li><a href="/debug/">Overview</a></li>
-  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4>How to use</h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
-  <li><a href="/qemu/install/">QEMU Install</a></li>
-  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-  <li><a href="/qemu/build-procedure/">How to build</a></li>
-  <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4><a href="/templates/">Templates</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
-  <li><a href="/openocd/install/">OpenOCD Install</a></li>
-  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-  <li><a href="/openocd/build-procedure/">How to build</a></li>
-  <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+<li><a href="/templates/">Overview</a></li>
+<li><a href="/templates/cortexm/">Cortex-M template</a></li>
+<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4><a href="/debug/">Debugging</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-  <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+<li><a href="/debug/">Overview</a></li>
+<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4 id="advanced">Advanced</h4>
+<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+<li><a href="/qemu/">Overview</a> (read me first!)</li>
+<li><a href="/qemu/install/">QEMU Install</a></li>
+<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+<li><a href="/qemu/build-procedure/">How to build</a></li>
+<li><a href="/qemu/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="supportsupport"><a href="/support/">Support</a></h4>
+<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/support/">Overview</a></li>
-  <li><a href="/support/known-issues/">Known issues</a></li>
-  <li><a href="/support/faq/">FAQ</a></li>
-  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1">Report plug-ins issue</a></li>
+<li><a href="/openocd/">Overview</a> (read me first!)</li>
+<li><a href="/openocd/install/">OpenOCD Install</a></li>
+<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+<li><a href="/openocd/build-procedure/">How to build</a></li>
+<li><a href="/openocd/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/developer/build-procedure">How to build</a></li>
-  <li><a href="/developer/publish-procedure">How to publish</a></li>
-  <li><a href="/developer/change-log">Change log</a></li>
-  <li><a href="/developer/contribute/">Contribute</a></li>
+<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+<li><a href="/windows-build-tools/releases/">Releases</a></li>
+<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4 id="hardware">Hardware</h4>
+<h4>Advanced</h4>
 
 <ul>
-  <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a></li>
+<li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4 id="articles">Articles</h4>
+<h4><a href="/support/">Support</a></h4>
 
 <ul>
-  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+<li><a href="/support/">Overview</a></li>
+<li><a href="/support/known-issues/">Known issues</a></li>
+<li><a href="/support/faq/">FAQ</a></li>
+<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4 id="licenses">Licenses</h4>
+<h4><a href="/developer/">Developer</a></h4>
 
 <ul>
-  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-  <li><a href="/licenses/tools/">Tools</a></li>
+<li><a href="/developer/build-procedure/">How to build</a></li>
+<li><a href="/developer/publish-procedure/">How to publish</a></li>
+<li><a href="/developer/change-log">Change log</a></li>
+<li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4 id="finance">Finance</h4>
+<h4>Hardware</h4>
 
 <ul>
-  <li><a href="/finance/sponsorship/">Sponsorship</a></li>
+<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4 id="aboutabout"><a href="/about/">About</a></h4>
+<h4>Articles</h4>
+
+<ul>
+<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+</ul>
+
+<h4>Licenses</h4>
+
+<ul>
+<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+<li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4>Finance</h4>
+
+<ul>
+<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4><a href="/about/">About</a></h4>
 
 <hr />
-
+<a href="/feed.xml"><img src="/assets/images/feed.png" alt="RSS"></a>
+<hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -473,8 +449,8 @@ Last modified on Sun Sep 27 13:06:17 2015 EEST.
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-
 </aside>
+
 
 </div>
 
