@@ -266,7 +266,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/2014/</loc>
-    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/change-log/2014/</loc>
@@ -278,11 +278,11 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/</loc>
-    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/change-log/</loc>
-    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/change-log/</loc>
@@ -434,7 +434,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/</loc>
-    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
+    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/support/</loc>
@@ -442,11 +442,11 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/</loc>
-    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
+    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/</loc>
-    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
+    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/packs-manager/</loc>
@@ -547,5 +547,20 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page2/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page3/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page4/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page5/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page6/</loc>
   </url>
 </urlset>

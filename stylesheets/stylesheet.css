@@ -636,7 +636,7 @@ form {
 #main-content h2 {
   margin-bottom: 8px;
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  line-height: 1.1;
+  line-height: 1.4;
   margin-bottom: 10px;
   font-size: 22px;
   font-weight: bold;
@@ -833,6 +833,14 @@ a.post-smaller {
 
 p.page-footer {
   font-size: 80%;
+}
+
+hr.page-footer {
+  margin-bottom: 5px;
+}
+
+hr.post-footer {
+  margin-bottom: 5px;
 }
 
 .inner h1 a {

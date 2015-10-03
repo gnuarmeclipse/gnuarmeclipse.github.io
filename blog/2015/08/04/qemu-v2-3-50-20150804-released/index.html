@@ -92,34 +92,64 @@
 Posted on August 4, 2015 by Liviu Ionescu.
 </p>
 
-<p>Version 2.3.50-201508041609 is a maintenance release, fixing the graphical rendering on Windows and adding support for NUCLEO-F411RE.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Addressed issues</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">New features</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Known problems</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Download</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 2.3.50-201508041609 is a maintenance release, fixing the graphical rendering on Windows and adding support for NUCLEO-F411RE.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150804">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150804">Binary files »</a>
+</p>
 
-<h2>Addressed issues</h2>
+<h2 id="tocAnchor-1-1">Addressed issues</h2>
 
 <ul>
 <li>the problem affecting the graphical rendering was identified; an explicit event loop was added and rendering seems ok now, on all platforms, including Windows.</li>
 </ul>
 
-<h2>New features</h2>
+<h2 id="tocAnchor-1-2">New features</h2>
 
 <ul>
 <li>the <strong>NUCLEO-F411RE</strong> board was added, using <strong>STM32F411RE</strong> device.</li>
 </ul>
 
-<h2>Known problems</h2>
+<h2 id="tocAnchor-1-3">Known problems</h2>
 
 <ul>
 <li><del>due to a wrong <strong>rpath</strong> definitions, in certain conditions, the GNU/Linux distribution failed to start;</del> <strong>fixed in release 2.3.50-201508161112-dev</strong>.</li>
 </ul>
 
-<h2>Download</h2>
+<h2 id="tocAnchor-1-4">Download</h2>
 
 <p>The new QEMU can be downloaded from the <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.3.50-20150804">GitHub Releases</a> page.</p>
 
 <p>The MD5 sums of the files are:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">9f82a62194b57fdbbdf9c689c2209710  
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">9f82a62194b57fdbbdf9c689c2209710  
 gnuarmeclipse-qemu-debian32-2.3.50-201508041609-dev.tgz
 
 513c858cf247f5ad7e98853f5afec6d5  
@@ -130,9 +160,10 @@ gnuarmeclipse-qemu-osx-2.3.50-201508041609-dev.pkg
 
 13713073d9e3e036bb518ae34801c34b  
 gnuarmeclipse-qemu-win32-2.3.50-201508041609-dev-setup.exe
-</code></pre></div>
+</code></pre>
+</div>
 
-<hr/>
+<hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 

@@ -89,15 +89,57 @@
 Posted on September 14, 2015 by Liviu Ionescu.
 </p>
 
-<p>The GNU ARM Eclipse project was migrated from <a href="https://sourceforge.net/projects/gnuarmeclipse/">SourceForge</a> to <a href="https://github.com/gnuarmeclipse">GitHub</a>.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Migration to GitHub</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Repositories</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Binary files as Releases</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Issues trackers</span></a>
+</li>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">Notifications as watched projects</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">2</span> <span class="toctext">The Web has a new look</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">3</span> <span class="toctext">HTTP Redirects</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">4</span> <span class="toctext">Old sites</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>The GNU ARM Eclipse project was migrated from <a href="https://sourceforge.net/projects/gnuarmeclipse/">SourceForge</a> to <a href="https://github.com/gnuarmeclipse">GitHub</a>.</p>
 
-<h2>Migration to GitHub</h2>
+<h2 id="tocAnchor-1-1">Migration to GitHub</h2>
 
 <p>There are many reasons behind this decision (GitHub looks definitely cool!), but the main one is probably to reduce dependencies on custom DNS domains, like <code>livius.net</code>, which might not be available on long term.</p>
 
-<p><img src="/assets/images/2015/github-gae-header.png" alt="GNU ARM Eclipse GitHub Home"></p>
+<p>
+<img src="/assets/images/2015/github-gae-header.png" alt="GNU ARM Eclipse GitHub Home" />
+</p>
 
-<h3>Repositories</h3>
+<h3 id="tocAnchor-1-1-1">Repositories</h3>
 
 <p>Migrating the repositories was the easiest part, each project was pushed into its own repository.</p>
 
@@ -111,9 +153,11 @@ Posted on September 14, 2015 by Liviu Ionescu.
 <li><a href="https://github.com/gnuarmeclipse/build-scripts">build-scripts</a></li>
 </ul>
 
-<p><img src="/assets/images/2015/github-gae-projects.png" alt="GNU ARM Eclipse GitHub Projects"></p>
+<p>
+<img src="/assets/images/2015/github-gae-projects.png" alt="GNU ARM Eclipse GitHub Projects" />
+</p>
 
-<h3>Binary files as Releases</h3>
+<h3 id="tocAnchor-1-1-2">Binary files as Releases</h3>
 
 <p>Migration of binary files was a bit more complicated, and, due to GitHub current limitations, is not complete. The main problem was raised by the Eclipse update sites, which require a certain folder structure, and since GitHub does not support adding folders to releases, the Eclipse update sites will remain hosted on SourceForge.</p>
 
@@ -123,15 +167,17 @@ Posted on September 14, 2015 by Liviu Ionescu.
 
 <p>The archive of past releases was also migrated from SourceForge to GitHub.</p>
 
-<p><img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases"></p>
+<p>
+<img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases" />
+</p>
 
-<h3>Issues trackers</h3>
+<h3 id="tocAnchor-1-1-3">Issues trackers</h3>
 
 <p>The SourceForge trackers were replaced by the GitHub Issues trackers.</p>
 
 <p>The content of the old trackers was not moved to GitHub, since this is much too time consuming, but it is planned to still keep the old trackers themselves available, even if they are locked and new tickets cannot be created there. It is still possible to comment on existing tickets.</p>
 
-<h3>Notifications as watched projects</h3>
+<h3 id="tocAnchor-1-1-4">Notifications as watched projects</h3>
 
 <p>In the past, release notifications were handled by a WordPress plug-in, by subscribing to the project blog.</p>
 
@@ -139,17 +185,21 @@ Posted on September 14, 2015 by Liviu Ionescu.
 
 <p>For those interested in receiving notifications, the recommendation is to subscribe to GitHub, by clicking the <strong>Watch</strong> button and selecting <strong>Watching</strong>).</p>
 
-<p><img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases"></p>
+<p>
+<img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases" />
+</p>
 
 <p>Be sure you subscribe to <strong>Watch</strong> the <strong>gnuarmeclipse/gnuarmeclipse.github.io</strong> project to receive notifications for Web posts.</p>
 
-<h2>The Web has a new look</h2>
+<h2 id="tocAnchor-1-6">The Web has a new look</h2>
 
 <p>Finally, the most delicate issue, was to migrate the old documentation sites from the livius.net domain to a public domain.</p>
 
 <p>Since GitHub solution for providing documentation sites is <a href="https://pages.github.com">GitHub Pages</a>, and this service makes the sites available in the <code>github.io</code> domain, it was considered acceptable to migrate the WordPress and MediaWiki sites to GitHub Pages.</p>
 
-<p><img src="/assets/images/2015/github-io-gae-home.png" alt="GNU ARM Eclipse Home Page"></p>
+<p>
+<img src="/assets/images/2015/github-io-gae-home.png" alt="GNU ARM Eclipse Home Page" />
+</p>
 
 <p>GitHub Pages uses <a href="http://jekyllrb.com">Jekyll</a> to generate static web sites, and the most convenient input format for Jekyll is <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a>, so the migration involved conversion from WordPress internal representation, to markdown. Given the differences, this conversion was not easy, and was done partly with scripts, partly manually. Similarly for MediaWiki, although the conversion from the MediaWiki format to markdown was easier.</p>
 
@@ -164,11 +214,11 @@ Posted on September 14, 2015 by Liviu Ionescu.
 
 <p>The first one stores the actual static pages of the Web site and the second stores the Jekyll source files for generating the Web site.</p>
 
-<h2>HTTP Redirects</h2>
+<h2 id="tocAnchor-1-7">HTTP Redirects</h2>
 
 <p>We are aware that a lot of links to the previous sites are in use. To avoid breaking them, many redirects were installed from the <code>gnuarmeclipse.livius.net/*</code> to <code>gnuarmeclipse.github.io</code>. All other pages not matching the rules in these redirects will be served by the new <code>gnuarmeclipse.livius.net/redirected/</code> page, so both blog and wiki references should not be broken, but land in the new site.</p>
 
-<h2>Old sites</h2>
+<h2 id="tocAnchor-1-8">Old sites</h2>
 
 <p>The previous WordPress and MediaWiki sites were moved back to SourceForge and, for historical reasons, will be preserved there, but will no longer be maintained:</p>
 
@@ -178,7 +228,7 @@ Posted on September 14, 2015 by Liviu Ionescu.
 </ul>
 
 
-<hr/>
+<hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 

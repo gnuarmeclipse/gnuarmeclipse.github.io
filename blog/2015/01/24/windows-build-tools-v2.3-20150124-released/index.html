@@ -94,11 +94,45 @@
 Posted on January 24, 2015 by Liviu Ionescu.
 </p>
 
-<p>Version 2.3-201501242223 is a new release of the GNU ARM Eclipse Windows Build Tools.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Improvements</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Setup</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Uninstall</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">More details</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Known problems</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Download</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 2.3-201501242223 is a new release of the GNU ARM Eclipse Windows Build Tools.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.3">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.3">Binary files »</a>
+</p>
 
-<h2>Improvements</h2>
+<h2 id="tocAnchor-1-1">Improvements</h2>
 
 <p>The GNU ARM Eclipse Build Tools v2.3 package includes the <strong>version 4.1 of GNU make</strong> (built from source files), and version 1.23 of BusyBox, which provides a convenient implementation for sh/rm/echo.</p>
 
@@ -106,11 +140,13 @@ Posted on January 24, 2015 by Liviu Ionescu.
 
 <p>For those interested in technical details, if <strong>make</strong> does not find a <strong>/bin/sh</strong> in the path, it falls back to using the Microsoft <strong>cmd.exe</strong> when launching sub-processes. As with other Windows implementations, compared to Unix shells, cmd.exe is severely restricted, also impacting the make correct behaviour.</p>
 
-<h2>Setup</h2>
+<h2 id="tocAnchor-1-2">Setup</h2>
 
 <p>For user convenience, an usual Windows setup wizard is provided.</p>
 
-<p><img src="/assets/images/2015/win-build-tools-setup.png" alt="Build Tools setup"></p>
+<p>
+<img src="/assets/images/2015/win-build-tools-setup.png" alt="Build Tools setup" />
+</p>
 
 <p>After running the setup, the tools are installed in the <code>C:\Program Files\GNU ARM Eclipse\Build Tools</code> folder (for 32-bits machines), or in the <code>C:\Program Files (x86)\GNU ARM Eclipse\Build Tools</code> folder (for 64-bits machines).</p>
 
@@ -118,29 +154,32 @@ Posted on January 24, 2015 by Liviu Ionescu.
 
 <p>All executables are 32-bits applications, statically linked, so there should be no DLL problems when using them.</p>
 
-<h2>Uninstall</h2>
+<h2 id="tocAnchor-1-3">Uninstall</h2>
 
 <p>If needed, you can completely remove the package from your system by running the provided uninstall (<strong>build-tools-uninstall.exe</strong>).</p>
 
-<h2>More details</h2>
+<h2 id="tocAnchor-1-4">More details</h2>
 
 <p>For more details please read the <a href="/windows-build-tools/">Build Tools for Windows</a> page.</p>
 
-<h2>Known problems</h2>
+<h2 id="tocAnchor-1-5">Known problems</h2>
 
 <ul>
 <li>?</li>
 </ul>
 
-<h2>Download</h2>
+<h2 id="tocAnchor-1-6">Download</h2>
 
 <p>The new Windows Build Tools can be downloaded from the <a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.3">GitHub Release</a> page.</p>
 
 <p>The available files are:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">gnuarmeclipse-build-tools-win32-2.3-201501242223-setup.exe
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">gnuarmeclipse-build-tools-win32-2.3-201501242223-setup.exe
+</code></pre>
+</div>
 
-<hr/>
+<hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 

@@ -96,13 +96,38 @@
 Posted on October 14, 2014 by Liviu Ionescu.
 </p>
 
-<p>Version 2.4.1 is a major release. The main additions, which extend the <strong>CMSIS Packs</strong> support, are a <strong>peripherals registers view</strong> in debug, and a <strong>documentation view</strong> in the C/C++ perspective.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">New features</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Bugs fixed</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Other changes</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 2.4.1 is a major release. The main additions, which extend the <strong>CMSIS Packs</strong> support, are a <strong>peripherals registers view</strong> in debug, and a <strong>documentation view</strong> in the C/C++ perspective.</p>
 
 <p>The addition of the peripherals registers views is the first step to improve the debugging capabilities of GNU ARM Eclipse plug-ins with complex features, available usually in commercial suites.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.4.1-201410142110">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.4.1-201410142110">Binary files »</a>
+</p>
 
-<h2>New features</h2>
+<h2 id="tocAnchor-1-1">New features</h2>
 
 <ul>
 <li>a new <strong>Devices</strong> tab was added to the <strong>C/C++ Build</strong> → <strong>Settings</strong> page, to associate a device, and possibly a board, to the project build configuration. The CMSIS Packs installed packages serve as the only source for devices and boards definitions, so it is necessary to first install the desired packages for this tab to be populated;</li>
@@ -114,7 +139,7 @@ Posted on October 14, 2014 by Liviu Ionescu.
 <li>partial support for CMSIS Packs PDSC v1.3 added, to open various types of files in outlines.</li>
 </ul>
 
-<h2>Bugs fixed</h2>
+<h2 id="tocAnchor-1-2">Bugs fixed</h2>
 
 <ul>
 <li>[bugs:#98] clicking the Debug icon opened a contextual launcher, usually wrong, instead of the last used launch configuration; a preference was changed and now the last used configuration is used;</li>
@@ -125,7 +150,7 @@ Posted on October 14, 2014 by Liviu Ionescu.
 <li>[bugs:#126] although it was clearly documented that the plug-ins require Eclipse Kepler to run, some of the dependencies were not updated, and it was possible to install the plug-ins on certain older versions; the dependencies were updated.</li>
 </ul>
 
-<h2>Other changes</h2>
+<h2 id="tocAnchor-1-3">Other changes</h2>
 
 <ul>
 <li>the update site was not automatically added to the Eclipse update sites; fixed (the URL was added in a p2.inf file);</li>
@@ -134,7 +159,7 @@ Posted on October 14, 2014 by Liviu Ionescu.
 </ul>
 
 
-<hr/>
+<hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 

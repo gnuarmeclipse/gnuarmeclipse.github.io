@@ -95,11 +95,42 @@
 Posted on April 4, 2015 by Liviu Ionescu.
 </p>
 
-<p>This is the initial release of the <a href="/qemu">GNU ARM Eclipse QEMU</a>. It is mainly a technology preview (most of the supported boards are present, but functionality is limited and only projects created with the generic Cortex-M3 template are supported).</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Supported boards</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Changes from QEMU 2.2.92</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Eclipse plug-in</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Known problems</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Download</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>This is the initial release of the <a href="/qemu">GNU ARM Eclipse QEMU</a>. It is mainly a technology preview (most of the supported boards are present, but functionality is limited and only projects created with the generic Cortex-M3 template are supported).</p>
 
-<p><a href="https://github.com/gnuarmeclipse/qemu/releases/edit/gae-2.2.92-20150404">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/qemu/releases/edit/gae-2.2.92-20150404">Binary files »</a>
+</p>
 
-<h2>Supported boards</h2>
+<h2 id="tocAnchor-1-1">Supported boards</h2>
 
 <p>The boards initially added to <strong>GNU ARM Eclipse QEMU</strong> are:</p>
 
@@ -146,7 +177,7 @@ Posted on April 4, 2015 by Liviu Ionescu.
 
 <p>As clearly marked, support for these boards is <strong>experimental.</strong> The boards generally include the right ARM core ID and should reflect the real memory banks, but since currently QEMU supports only Cortex-M3 cores, the boards behave like Cortex-M3 cores, so the emulation is not yet very accurate.</p>
 
-<h2>Changes from QEMU 2.2.92</h2>
+<h2 id="tocAnchor-1-2">Changes from QEMU 2.2.92</h2>
 
 <ul>
 <li><strong>-verbose</strong> added, with multiple levels to increase verbosity; the first level of verbosity is always enabled by the plug-in, to get the feedback required when starting the server backend for the debugging session;</li>
@@ -154,20 +185,20 @@ Posted on April 4, 2015 by Liviu Ionescu.
 <li>build script for OS X, Debian 32-bit/64-bit and Windows 32-bit/64-bit (using MinGW-w64) added; the required libraries are build locally</li>
 </ul>
 
-<h2>Eclipse plug-in</h2>
+<h2 id="tocAnchor-1-3">Eclipse plug-in</h2>
 
 <p>The <strong>GNU ARM Eclipse QEMU</strong> is by design intended to be integrated with the <strong>GNU ARM Eclipse plug-ins</strong>. QEMU behaves like a GDB server, allowing to load the application into processor memory and debug as any real board. (Note: the Eclipse plug-in will be available shortly).</p>
 
-<h2>Known problems</h2>
+<h2 id="tocAnchor-1-4">Known problems</h2>
 
 <p><del>The 64-bits version for Windows has some run-time problems and does not execute properly;</del> it was deleted from the released files section; until a solution will be available, the 32-bits version of QEMU can be used on Windows 64-bits; <strong>fixed in release 2.3.50-201508051820-dev</strong>.</p>
 
-<h2>Download</h2>
+<h2 id="tocAnchor-1-5">Download</h2>
 
 <p>The new QEMU can be downloaded from the <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.2.92-20150404">GitHub Releases</a> page.</p>
 
 
-<hr/>
+<hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 

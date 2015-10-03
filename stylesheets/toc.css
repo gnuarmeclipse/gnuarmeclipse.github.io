@@ -48,6 +48,7 @@
 
 #toc {
   border: solid 1px #ddd;
+  line-height: 1.3;
 }
 
 #toctitle h2:before {
@@ -71,7 +72,6 @@
 
 .tocnumber, .toctext {
   font-size: 90%;
-  line-hight: 1;
 }
 
 table#toc {
