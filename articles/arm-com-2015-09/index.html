@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>Article: The GNU ARM Eclipse project has a new look and a new home at GitHub</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -36,10 +36,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/articles/arm-com-2015-09/">
+  <link rel="canonical" href="/articles/arm-com-2015-09/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -89,29 +92,75 @@
 <h1 class="page-title">Article: The GNU ARM Eclipse project has a new look and a new home at GitHub</h1>
 
 
-<p><small>(This article was published in the <a href="http://community.arm.com/groups/tools/blog/2015/09/29/the-gnu-arm-eclipse-project-has-a-new-look-and-a-new-home">ARM Connected Community </a> blog, on 29.08.2015).</small></p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">New look</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">New project home on GitHub</span></a>
+<ul>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-3-1"><span class="tocnumber">3.1</span> <span class="toctext">Repositories</span></a>
+</li>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-3-2"><span class="tocnumber">3.2</span> <span class="toctext">Binary files as Releases</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-3-3"><span class="tocnumber">3.3</span> <span class="toctext">Issues trackers</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#tocAnchor-1-3-4"><span class="tocnumber">3.4</span> <span class="toctext">Notifications via watched projects</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">4</span> <span class="toctext">More info</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>
+<small>(This article was published in the <a href="http://community.arm.com/groups/tools/blog/2015/09/29/the-gnu-arm-eclipse-project-has-a-new-look-and-a-new-home">ARM Connected Community </a> blog, on 29.08.2015).</small>
+</p>
 
-<h2>Overview</h2>
+<h2 id="tocAnchor-1-1">Overview</h2>
 
 <p>The <strong><a href="https://github.com/gnuarmeclipse">GNU ARM Eclipse project</a></strong> includes a set of open source Eclipse plug-ins and tools to create/build/debug/manage <strong>ARM</strong> (32-bit) and <strong>AArch64</strong> (64-bit) applications and static/shared libraries, using the latest <strong>GNU ARM GCC</strong> toolchains. </p>
 
-<h2>New look</h2>
+<h2 id="tocAnchor-1-2">New look</h2>
 
 <p>Starting with September 2015, the <a href="http://gnuarmeclipse.github.io">GNU ARM Eclipse web</a> site has a completely new look:</p>
 
-<p><img src="/assets/images/2015/github-io-gae-home.png" alt="GNU ARM Eclipse Home Page"></p>
+<p>
+<img src="/assets/images/2015/github-io-gae-home.png" alt="GNU ARM Eclipse Home Page" />
+</p>
 
 <p>Apart from the aspect (definitely cool!), the main functional change is the addition of the right sidebar, to facilitate access to the project documentation.</p>
 
 <p>The new site no longer uses WordPress; instead, it is entirely static and was generated with <a href="http://jekyllrb.com">Jekyll</a>.</p>
 
-<h2>New project home on GitHub</h2>
+<h2 id="tocAnchor-1-3">New project home on GitHub</h2>
 
 <p>With <strong>GitHub</strong> gaining more and more traction, the <strong>GNU ARM Eclipse</strong> project was migrated from <a href="https://sourceforge.net/projects/gnuarmeclipse/">SourceForge</a> to <a href="https://github.com/gnuarmeclipse">GitHub</a>.</p>
 
-<p><img src="/assets/images/2015/github-gae-header.png" alt="GNU ARM Eclipse GitHub Home"></p>
+<p>
+<img src="/assets/images/2015/github-gae-header.png" alt="GNU ARM Eclipse GitHub Home" />
+</p>
 
-<h3>Repositories</h3>
+<h3 id="tocAnchor-1-3-1">Repositories</h3>
 
 <p>The migration of repositories was easy, each project was pushed into its own repository.</p>
 
@@ -125,39 +174,45 @@
 <li><a href="https://github.com/gnuarmeclipse/build-scripts">build-scripts</a></li>
 </ul>
 
-<p><img src="/assets/images/2015/github-gae-projects.png" alt="GNU ARM Eclipse GitHub Projects"></p>
+<p>
+<img src="/assets/images/2015/github-gae-projects.png" alt="GNU ARM Eclipse GitHub Projects" />
+</p>
 
-<h3>Binary files as Releases</h3>
+<h3 id="tocAnchor-1-3-2">Binary files as Releases</h3>
 
-<p>The migration of binary files was a bit more complicated, and, due to current GitHub limitations, is incomplete. The main problem was raised by the two Eclipse update sites, which require a certain folder structure, and since GitHub currently does not support adding folders to releases, the Eclipse update sites will remain hosted on SourceForge (at http://gnuarmeclipse.sourceforge.net/updates).</p>
+<p>The migration of binary files was a bit more complicated, and, due to current GitHub limitations, is incomplete. The main problem was raised by the two Eclipse update sites, which require a certain folder structure, and since GitHub currently does not support adding folders to releases, the Eclipse update sites will remain hosted on SourceForge (at <a href="http://gnuarmeclipse.sourceforge.net/updates">http://gnuarmeclipse.sourceforge.net/updates</a>).</p>
 
 <p>Except the Eclipse update sites, all future binary files will be published as GitHub Releases, attached to the respective project repositories.</p>
 
 <p>The archive of past releases was also migrated from SourceForge to GitHub.</p>
 
-<p><img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases"></p>
+<p>
+<img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases" />
+</p>
 
-<h3>Issues trackers</h3>
+<h3 id="tocAnchor-1-3-3">Issues trackers</h3>
 
 <p>The SourceForge trackers were replaced by the GitHub Issues trackers, one for each project.</p>
 
 <p>It is planned to preserve the content of the old SourceForge trackers, even if now they are locked and new tickets cannot be created there.</p>
 
-<h3>Notifications via watched projects</h3>
+<h3 id="tocAnchor-1-3-4">Notifications via watched projects</h3>
 
 <p>For those interested in receiving notifications, the recommended way is to subscribe to the GitHub projects, by clicking the <strong>Watch</strong> button and selecting <strong>Watching</strong>).</p>
 
-<p><img src="/assets/images/2015/github-gae-watching.png" alt="GNU ARM Eclipse GitHub Watching"></p>
+<p>
+<img src="/assets/images/2015/github-gae-watching.png" alt="GNU ARM Eclipse GitHub Watching" />
+</p>
 
 <p>In addition to the <strong>gnuarmeclipse/plug-ins</strong> project, it is also recommended to subscribe to the <strong>gnuarmeclipse/gnuarmeclipse.github.io</strong> project, to receive notifications for new Web posts.</p>
 
-<h2>More info</h2>
+<h2 id="tocAnchor-1-8">More info</h2>
 
 <p>For more details about the <strong>GNU ARM Eclipse</strong> project, please refer to the project site <a href="http://gnuarmeclipse.github.io/">http://gnuarmeclipse.github.io/</a>.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>How to install GNU ARM Eclipse?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/install/">
+  <link rel="canonical" href="/install/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,7 +83,51 @@
 <h1 class="page-title">How to install GNU ARM Eclipse?</h1>
 
 
-<h2>Overview</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">ARM Toolchain</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Windows Build Tools</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">SEGGER J-Link</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">OpenOCD</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">QEMU</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">7</span> <span class="toctext">Java</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">8</span> <span class="toctext">Eclipse &amp; CDT</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">9</span> <span class="toctext">Plug-ins</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#tocAnchor-1-10"><span class="tocnumber">10</span> <span class="toctext">Workspace preferences</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Overview</h2>
 
 <p>Although GNU ARM Eclipse is not yet a packed suite to be installed in a single step, the separate steps are relatively easy to perform, and installing the plug-ins and the tools can be successfully completed even by non-experienced users.</p>
 
@@ -90,13 +137,13 @@
 
 <p>The recommended sequence is described below.</p>
 
-<h2>ARM Toolchain</h2>
+<h2 id="tocAnchor-1-2">ARM Toolchain</h2>
 
 <p>This is generally a mandatory step for all platforms, since most platforms do not come by default with an ARM toolchain.</p>
 
 <p>Please follow the steps in the <a href="/toolchain/install">Toolchain install</a> page.</p>
 
-<h2>Windows Build Tools</h2>
+<h2 id="tocAnchor-1-3">Windows Build Tools</h2>
 
 <p>This step is Windows specific, and it is highly recommended to use the GNU ARM Eclipse Windows Build Tools, and avoid other <code>make.exe</code> programs, even if they apparently work, since subtle differences in path processing exists between different versions of <code>make</code>.</p>
 
@@ -104,23 +151,23 @@
 
 <p>POSIX platforms generally include <code>make</code> in the system distribution, or might require to install some developer packages.</p>
 
-<h2>SEGGER J-Link</h2>
+<h2 id="tocAnchor-1-4">SEGGER J-Link</h2>
 
 <p>SEGGER J-Link is the recommended debugger and, if available, please follow the steps in the <a href="/debug/jlink/install">How to install the SEGGER J-Link</a> page.</p>
 
-<h2>OpenOCD</h2>
+<h2 id="tocAnchor-1-5">OpenOCD</h2>
 
 <p>For the unfortunate developers who do not have a J-Link available, the alternative is to follow the steps in the <a href="/openocd/install">How to install the OpenOCD binaries</a> page.</p>
 
 <p>OpenOCD might be needed when using development boards with integrated debuggers, like STM32F4-DISCOVERY boards, although the recommended solution is to prepare a <a href="/developer/j-link-stm32-boards">custom cable</a> and connect them to J-Link.</p>
 
-<h2>QEMU</h2>
+<h2 id="tocAnchor-1-6">QEMU</h2>
 
 <p>QEMU is a hardware emulator that can be successfully used to run simple <em>blinky</em> applications, and the default tutorial requires QEMU, so it is highly recommended to install it.</p>
 
 <p>Please follow the steps in the <a href="/qemu/install/">How to install the QEMU binaries</a> page.</p>
 
-<h2>Java</h2>
+<h2 id="tocAnchor-1-7">Java</h2>
 
 <p>As a prerequisite for Eclipse, Java is required.</p>
 
@@ -128,23 +175,23 @@
 
 <p>More details are available in the <a href="/plugins/install/">How to install the GNU ARM Eclipse plug-ins</a> page.</p>
 
-<h2>Eclipse &amp; CDT</h2>
+<h2 id="tocAnchor-1-8">Eclipse &amp; CDT</h2>
 
 <p>Eclipse is the development platform where the GNU ARM Eclipse plug-ins run. Generally it is not available by default on most platforms and requires separate installation.</p>
 
 <p>More details are available in the <a href="/plugins/install/">How to install the GNU ARM Eclipse plug-ins</a> page.</p>
 
-<h2>Plug-ins</h2>
+<h2 id="tocAnchor-1-9">Plug-ins</h2>
 
 <p>Once the Java &amp; Eclipse are functional, please proceed with plug-ins install, as explains in the  <a href="/plugins/install/">How to install the GNU ARM Eclipse plug-ins</a> page.</p>
 
-<h2>Workspace preferences</h2>
+<h2 id="tocAnchor-1-10">Workspace preferences</h2>
 
 <p>As the last install step, but actually a step to be performed after creating each and any Eclipse workspace, it is highly recommended to follow the steps in the <a href="/eclipse/workspace/preferences">Workspace preferences</a> page.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

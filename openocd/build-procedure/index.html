@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>How to build the OpenOCD binaries?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/openocd/build-procedure/">
+  <link rel="canonical" href="/openocd/build-procedure/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,17 +83,83 @@
 <h1 class="page-title">How to build the OpenOCD binaries?</h1>
 
 
-<p>The latest version of the build script is a single run, multi-platform build, generating the Windows 32, Windows 64, GNU/Linux 32, GNU/Linux 64 and OS X distribution packages at once.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Prerequisites</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">OS X</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">GNU/Linux</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Docker images</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">2</span> <span class="toctext">Download the build script</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">3</span> <span class="toctext">Check the script</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">4</span> <span class="toctext">Preload the Docker images</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">5</span> <span class="toctext">Build all distribution files</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">6</span> <span class="toctext">Subsequent runs</span></a>
+<ul>
+<li class="toc_level-2 toc_section-10">
+<a href="#tocAnchor-1-9-1"><span class="tocnumber">6.1</span> <span class="toctext">Separate platform specific builds</span></a>
+</li>
+<li class="toc_level-2 toc_section-11">
+<a href="#tocAnchor-1-9-2"><span class="tocnumber">6.2</span> <span class="toctext">clean</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#tocAnchor-1-12"><span class="tocnumber">7</span> <span class="toctext">Install hierarchy</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#tocAnchor-1-13"><span class="tocnumber">8</span> <span class="toctext">Uninstall</span></a>
+</li>
+<li class="toc_level-1 toc_section-14">
+<a href="#tocAnchor-1-14"><span class="tocnumber">9</span> <span class="toctext">Test</span></a>
+</li>
+<li class="toc_level-1 toc_section-15">
+<a href="#tocAnchor-1-15"><span class="tocnumber">10</span> <span class="toctext">Stop boot2docker</span></a>
+</li>
+<li class="toc_level-1 toc_section-16">
+<a href="#tocAnchor-1-16"><span class="tocnumber">11</span> <span class="toctext">More build details</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>The latest version of the build script is a single run, multi-platform build, generating the Windows 32, Windows 64, GNU/Linux 32, GNU/Linux 64 and OS X distribution packages at once.</p>
 
 <p>The script was developed on OS X, but it also runs on any recent GNU/Linux distribution (just that in this case it cannot generate the OS X package).</p>
 
-<h2>Prerequisites</h2>
+<h2 id="tocAnchor-1-1">Prerequisites</h2>
 
 <p>The main trick that made the multi-platform build possible is <a href="https://www.docker.com">Docker</a>.</p>
 
 <p>Containers based on three docker images are used, one packing MinGW-w64 in a Debian 8, and two packing the basic system in Debian 7 (separate 32/64-bits containers). The more conservative Debian 7 was preferred to generate the GNU/Linux versions, to avoid problems when attempting to run the executables on older versions.</p>
 
-<h3>OS X</h3>
+<h3 id="tocAnchor-1-1-1">OS X</h3>
 
 <h4>Install Docker</h4>
 
@@ -101,12 +170,15 @@
 <p>The OS X compiler and other development tools are packed in a separate Xcode add-on. The best place to get it is from the <a href="https://developer.apple.com/xcode/downloads/">Developer</a> site, although this might require enrolling to the developer program (free of charge).</p>
 
 <p>To test if the compiler is available, use:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ gcc --version
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ gcc --version
 Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
 Apple LLVM version 6.1.0 (clang-602.0.49) (based on LLVM 3.6.0svn)
 Target: x86_64-apple-darwin14.3.0
 Thread model: posix
-</code></pre></div>
+</code></pre>
+</div>
 <h4>Install MacPorts</h4>
 
 <p>The build procedure requires the presence of <a href="http://www.macports.org">MacPorts</a>. Install it according to the documentation.</p>
@@ -114,11 +186,14 @@ Thread model: posix
 <h4>Install required MacPorts packages</h4>
 
 <p>Install the following packages:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo port install libtool automake autoconf pkgconfig wget
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">sudo port install libtool automake autoconf pkgconfig wget
 sudo port install cmake boost libconfuse swig-python
 sudo port install texinfo texlive
-</code></pre></div>
-<h3>GNU/Linux</h3>
+</code></pre>
+</div>
+<h3 id="tocAnchor-1-1-2">GNU/Linux</h3>
 
 <h4>Install Docker</h4>
 
@@ -130,31 +205,39 @@ sudo port install texinfo texlive
 
 <p>The script checks for them; if the script fails, install them and re-run.</p>
 
-<h3>Docker images</h3>
+<h3 id="tocAnchor-1-1-3">Docker images</h3>
 
 <p>The Docker images are available from <a href="https://hub.docker.com/u/ilegeul/">Docker Hub</a>. They were build using the Dockerfiles available from <a href="https://github.com/ilg-ul/docker">ilg-ul/docker on GitHub</a>.</p>
 
-<h2>Download the build script</h2>
+<h2 id="tocAnchor-1-5">Download the build script</h2>
 
 <p>The script is available from the SourceForge git repository and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">viewed online</a>.</p>
 
 <p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh \
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh \
 -o ~/Downloads/build-openocd.sh
-</code></pre></div>
-<h2>Check the script</h2>
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-6">Check the script</h2>
 
 <p>The script creates a temporary build <strong>Work/openocd</strong> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine WORK_FOLDER variable before invoking the script.</p>
 
-<h2>Preload the Docker images</h2>
+<h2 id="tocAnchor-1-7">Preload the Docker images</h2>
 
 <p>Docker does not require to explicitly download new images, but does this automatically at first use.</p>
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh preload-images
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh preload-images
+</code></pre>
+</div>
 <p>The result should look similar to:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ docker images
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ilegeul/debian      8-gnuarm-mingw      b8261b27add4        3 minutes ago       2.692 GB
 ilegeul/debian      8-gnuarm-gcc        ba65c1716b6e        12 minutes ago      1.437 GB
@@ -164,12 +247,18 @@ ilegeul/debian      7                   a4ad8e2c6d76        4 days ago          
 ilegeul/debian32    7                   64980af805ad        4 days ago          93.65 MB
 debian              8                   65688f7c61c4        6 weeks ago         122.8 MB
 hello-world         latest              e45a5af57b00        4 months ago        910 B
-</code></pre></div>
-<h2>Build all distribution files</h2>
-<div class="highlight"><pre><code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh --all
-</code></pre></div>
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-8">Build all distribution files</h2>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh --all
+</code></pre>
+</div>
 <p>About half an hour later, the output of the build script is a set of 5 files in the output folder:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ ls -l output
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ ls -l output
 total 105616
 drwxr-xr-x  8 ilg  staff      272 May 11 15:28 debian32
 drwxr-xr-x  8 ilg  staff      272 May 11 15:20 debian64
@@ -181,25 +270,34 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:20 debian64
 drwxr-xr-x  8 ilg  staff      272 May 11 15:33 osx
 drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win32
 drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
-</code></pre></div>
-<h2>Subsequent runs</h2>
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-9">Subsequent runs</h2>
 
-<h3>Separate platform specific builds</h3>
+<h3 id="tocAnchor-1-9-1">Separate platform specific builds</h3>
 
 <p>Instead of <strong>--all</strong>, you can use any combination of:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">--win32 --win64 --debian32 --debian64 --osx
-</code></pre></div>
-<h3>clean</h3>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">--win32 --win64 --debian32 --debian64 --osx
+</code></pre>
+</div>
+<h3 id="tocAnchor-1-9-2">clean</h3>
 
 <p>To remove all build files, use:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh clean
-</code></pre></div>
-<h2>Install hierarchy</h2>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">bash ~/Downloads/build-openocd.sh clean
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-12">Install hierarchy</h2>
 
 <p>The procedure to install GNU ARM Eclipse OpenOCD is platform specific, but relatively straight forward (a Windows setup, an OS X install or a TGZ archive on GNU/Linux). The setup/install asks no special questions, and the defaults are generally ok for most installations.</p>
 
 <p>After install, this package should create structure like this (only the first two depth levels are shown):</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/OpenOCD
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/OpenOCD
 /Applications/GNU\ ARM\ Eclipse/OpenOCD
 ├── bin
 │   └── openocd
@@ -228,40 +326,47 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
     └── tools
 
 16 directories, 9 files
-</code></pre></div>
+</code></pre>
+</div>
 <p>No other files are installed in any system folders or other locations.</p>
 
-<h2>Uninstall</h2>
+<h2 id="tocAnchor-1-13">Uninstall</h2>
 
 <p>To uninstall OpenOCD from a Windows machine, use the <strong>openocd-uninstall.exe</strong> program.</p>
 
 <p>On OS X and GNU/Linux, the GNU ARM Eclipse OpenOCD install folder is self-contained and removing it is enough for completely removing the application.</p>
 
-<h2>Test</h2>
+<h2 id="tocAnchor-1-14">Test</h2>
 
 <p>A simple test is performed by the script at the end, by launching the executable to check if all shared/dynamic libraries are correctly used.</p>
 
 <p>For a true test you need to first install the package and then run the program form the final location. For example on OS X the output should look like:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/bin/openocd --version
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/bin/openocd --version
 GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00022-g2628c74 (2015-01-15-20:44)
 Licensed under GNU GPL v2
 For bug reports, read
     http://openocd.sourceforge.net/doc/doxygen/bugs.html
-</code></pre></div>
-<h2>Stop boot2docker</h2>
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-15">Stop boot2docker</h2>
 
 <p>On OS X, the build script automatically starts <strong>boot2docker</strong>, if needed.</p>
 
 <p>When done, be sure you stop boot2docker, to free significant resources (a VirtualBox Ubuntu machine).</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">boot2docker stop
-</code></pre></div>
-<h2>More build details</h2>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">boot2docker stop
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-16">More build details</h2>
 
 <p>The script is quite complex, and an attempt to explain its functionality would require some effort. For the final authoritative details, please refer to the comments available in the <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">script</a>.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

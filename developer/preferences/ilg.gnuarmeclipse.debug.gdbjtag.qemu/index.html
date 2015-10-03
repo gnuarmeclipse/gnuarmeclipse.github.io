@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>ilg.gnuarmeclipse.debug.gdbjtag.qemu - persistent values</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.qemu/">
+  <link rel="canonical" href="/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.qemu/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,17 +83,56 @@
 <h1 class="page-title">ilg.gnuarmeclipse.debug.gdbjtag.qemu - persistent values</h1>
 
 
-<h2>The workspace storage</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">The workspace storage</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Properties</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Launcher defaults</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Install defaults</span></a>
+<ul>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-4-1"><span class="tocnumber">4.1</span> <span class="toctext">The executable name</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-4-2"><span class="tocnumber">4.2</span> <span class="toctext">The executable location</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">The workspace storage</h2>
 
 <p>The QEMU setting are persistent for each workspace and the storage is located at:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.qemu.prefs
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.qemu.prefs
+</code></pre>
+</div>
 <p>The properties in this file define the device name and all other setting from the interface.</p>
 
-<h2>Properties</h2>
+<h2 id="tocAnchor-1-2">Properties</h2>
 
 <p>The persistent properties are:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">gdb.client.commands=set mem inaccessible-by-default off
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">gdb.client.commands=set mem inaccessible-by-default off
 gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 gdb.client.other=
 gdb.qemu.boardName=STM32F4-Discovery
@@ -105,45 +147,61 @@ gdb.qemu.preRun.other=
 gdb.server.doStart=true
 gdb.server.executable=${qemu_path}/${qemu_executable}
 gdb.server.other=
-</code></pre></div>
-<h2>Launcher defaults</h2>
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-3">Launcher defaults</h2>
 
 <p>The following defaults are available to configure the QEMU debug launcher:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.qemu/gdb.server.executable=${qemu_path}/${qemu_executable}
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.qemu/gdb.server.executable=${qemu_path}/${qemu_executable}
 ilg.gnuarmeclipse.debug.gdbjtag.qemu/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
-</code></pre></div>
+</code></pre>
+</div>
 <p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.qemu/tab.main.checkProgram=false
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.qemu/tab.main.checkProgram=false
+</code></pre>
+</div>
 <p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
 
-<h2>Install defaults</h2>
+<h2 id="tocAnchor-1-4">Install defaults</h2>
 
 <p>Defining these two properties will provide default values to the corresponding fields in the <strong>Run/Debug</strong> → <strong>QEMU</strong> preferences page. The same variables are visible in the <strong>Run/Debug</strong> → <strong>String Substitution</strong> page.</p>
 
-<h3>The executable name</h3>
+<h3 id="tocAnchor-1-4-1">The executable name</h3>
 
 <p>The plug-in will use this definition as default for <strong>${qemu_executable}</strong>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.qemu/executable.name=qemu-system-gnuarmeclipse
-</code></pre></div>
-<h3>The executable location</h3>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.qemu/executable.name=qemu-system-gnuarmeclipse
+</code></pre>
+</div>
+<h3 id="tocAnchor-1-4-2">The executable location</h3>
 
 <p>The plug-in will take a best effort approach to find a location to be used as default for <strong>${qemu_path}</strong>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.qemu/install.folder=/Applications/GNU ARM Eclipse/QEMU/2.2.92-201504041609-dev/bin
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.qemu/install.folder=/Applications/GNU ARM Eclipse/QEMU/2.2.92-201504041609-dev/bin
+</code></pre>
+</div>
 <p>If this preference is defined and the executable is there, the plug-in will use it.</p>
 
 <p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\GNU ARM Eclipse\QEMU</strong> subkey, and the executable is found there, the plug-in will use it.</p>
 
 <p>Otherwise the plug-in will try a folder search.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">search.path=\
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">search.path=\
 ${user.home}/Applications/GNU ARM Eclipse/QEMU:\
 ${user.home}/local/GNU ARM Eclipse/QEMU:\
 ${user.home}/local/gnuarmeclipse/QEMU:\
 /Applications/GNU ARM Eclipse/QEMU:\
 /opt/local:\
 /usr/local
-</code></pre></div>
+</code></pre>
+</div>
 <p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
 
 <p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/bin/${qemu_executable}</strong>; if multiple such subfolders are found (in case multiple versions), the list of names is ordered lexicographically and the last one is used.</p>
@@ -152,7 +210,7 @@ ${user.home}/local/gnuarmeclipse/QEMU:\
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

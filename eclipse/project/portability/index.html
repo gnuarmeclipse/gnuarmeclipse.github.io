@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>Project portability</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/eclipse/project/portability/">
+  <link rel="canonical" href="/eclipse/project/portability/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,71 +83,126 @@
 <h1 class="page-title">Project portability</h1>
 
 
-<h2>Goal</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Goal</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">What this means?</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Collaborative scenario</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Things to observe for project portability</span></a>
+<ul>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-4-1"><span class="tocnumber">4.1</span> <span class="toctext">Toolchain path</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-4-2"><span class="tocnumber">4.2</span> <span class="toctext">Include paths</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#tocAnchor-1-4-3"><span class="tocnumber">4.3</span> <span class="toctext">Linker script files</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#tocAnchor-1-4-4"><span class="tocnumber">4.4</span> <span class="toctext">Library paths</span></a>
+</li>
+<li class="toc_level-2 toc_section-9">
+<a href="#tocAnchor-1-4-5"><span class="tocnumber">4.5</span> <span class="toctext">Debug launch configuration</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Goal</h2>
 
 <p>In short, a portable project is a project that can be used without changes on any workspace on any platform.</p>
 
-<h2>What this means?</h2>
+<h2 id="tocAnchor-1-2">What this means?</h2>
 
 <p>In practical terms, for a project to be portable, this means that all Eclipse configuration files (mainly .cproject, but possibly other files, like debug launch configurations), should not contain references to resource described via absolute paths, or assume fixed locations for resources that can be installed on different locations on different platforms, or use programs that have different names on different platform, etc.</p>
 
-<h2>Collaborative scenario</h2>
+<h2 id="tocAnchor-1-3">Collaborative scenario</h2>
 
 <p>To fully understand the importance of this issue, imagine a team of programmers collaboratively working on a project and sharing the sources via a common repository. Except extremely strict organisations, developers tend to have their own preferences which also affect their choices for different development platforms (Windows, OS X, GNU/Linux). If everything else can be configured to be more or less identical on all platforms, it happens quite often the path to the toolchain to be different on each platform. Storing the actual toolchain path in the project configuration (shared via the repository), leads to non-portable projects, since always the last commit to the repository will update the path to the one used by the most recent contributor. This will certainly make all other developers unhappy, since after synchronising with the repository, they must manually update the path back to their own location.</p>
 
-<h2>Things to observe for project portability</h2>
+<h2 id="tocAnchor-1-4">Things to observe for project portability</h2>
 
-<h3>Toolchain path</h3>
+<h3 id="tocAnchor-1-4-1">Toolchain path</h3>
 
 <p>The toolchain path is the classical example of detail that can ruin project portability. Starting with version 2.x, the GNU ARM Eclipse cross build plug-in does not store any toolchain path in .cproject, and does not use such a path; all details related to the toolchain path are stored in the Eclipse workspace, to each toolchain is associated one path, and eventually, for special configurations, for each project can be associated one path. For more details see the separate <a href="/toolchain/path/" title="Toolchain path management">Toolchain path management</a> page.</p>
 
-<h3>Include paths</h3>
+<h3 id="tocAnchor-1-4-2">Include paths</h3>
 
 <p>The second common mistake that can compromise project portability is to add absolute references to folders where to search for the include files.</p>
 
 <p>The recommended method to enter include path referring to local project folders is to use relative paths.</p>
 
-<p><img src="/assets/images/2014/02/IncludePath.png" alt="Define relative include paths"></p>
+<p>
+<img src="/assets/images/2014/02/IncludePath.png" alt="Define relative include paths" />
+</p>
 
 <p>In most usual cases CDT is smart enough to know the environment where the build process is executed, to properly process these paths. For example when the build is started in the default Debug or Release folders, the actual paths to the include folders is one step up, so it is automatically prefixed with <code>../</code>.</p>
 
-<p><img src="/assets/images/2014/02/UseRelativePaths.png" alt="Use of relative include paths"></p>
+<p>
+<img src="/assets/images/2014/02/UseRelativePaths.png" alt="Use of relative include paths" />
+</p>
 
 <p>An alternative solution is to use the CDT predefined macros, to create paths relative either to the current project folder, with ${ProjDirPath},</p>
 
-<p><img src="/assets/images/2014/02/UseProjDirPath.png" alt="Use ProjDirPath for include paths"></p>
+<p>
+<img src="/assets/images/2014/02/UseProjDirPath.png" alt="Use ProjDirPath for include paths" />
+</p>
 
 <p>or something like <code>${workspace_loc:/other_proj/libs/misc/include}</code> relative to any project in the workspace.</p>
 
-<h3>Linker script files</h3>
+<h3 id="tocAnchor-1-4-3">Linker script files</h3>
 
 <p>Similar solutions can be considered for entering linker scripts. The recommended method is to enter the script names without any path</p>
 
-<p><img src="/assets/images/2014/02/ScriptFiles.png" alt="Add script files by simple names"></p>
+<p>
+<img src="/assets/images/2014/02/ScriptFiles.png" alt="Add script files by simple names" />
+</p>
 
 <p>and to define the path to the folder where they are located (usually named <strong>ldscripts</strong>).</p>
 
-<p><img src="/assets/images/2014/02/ldscriptsFolder.png" alt="Enter location for linker scripts"></p>
+<p>
+<img src="/assets/images/2014/02/ldscriptsFolder.png" alt="Enter location for linker scripts" />
+</p>
 
 <p>As for the include paths, CDT is smart enough to make this definition relative to the build folder:</p>
 
-<p><img src="/assets/images/2014/02/ldscriptsUsage.png" alt="Relative linker scripts folder"></p>
+<p>
+<img src="/assets/images/2014/02/ldscriptsUsage.png" alt="Relative linker scripts folder" />
+</p>
 
 <p>Alternate solutions are to use paths relative to ${ProjDirPath} or ${workspace_loc}.</p>
 
-<h3>Library paths</h3>
+<h3 id="tocAnchor-1-4-4">Library paths</h3>
 
 <p>Another equally important mistake can be to use absolute paths in the linker configuration, used to search for libraries.</p>
 
 <p>Definitions are similar to the ones explained above for the location of the linker scripts.</p>
 
-<h3>Debug launch configuration</h3>
+<h3 id="tocAnchor-1-4-5">Debug launch configuration</h3>
 
 <p>The Eclipse debugging system can be configured to store the debug launch configurations either in a common place in workspace, or in each project. In the later case, special care must be considered to avoid using non-portable definitions, like GDB Server name, command line options, etc.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>The OpenOCD debugging Eclipse plug-in</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/debug/openocd/">
+  <link rel="canonical" href="/debug/openocd/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,7 +83,87 @@
 <h1 class="page-title">The OpenOCD debugging Eclipse plug-in</h1>
 
 
-<h2>Why a new plug-in?</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Why a new plug-in?</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Prerequisites</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">Non-GNU toolchains</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">3</span> <span class="toctext">OpenOCD plug-in usage</span></a>
+<ul>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-4-1"><span class="tocnumber">3.1</span> <span class="toctext">Define the OpenOCD folder location</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-4-2"><span class="tocnumber">3.2</span> <span class="toctext">Create the debugger configuration</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">4</span> <span class="toctext">Start a debug session</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">5</span> <span class="toctext">Debug operations</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">6</span> <span class="toctext">View consoles</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#tocAnchor-1-10"><span class="tocnumber">7</span> <span class="toctext">Show console when standard out/error change</span></a>
+</li>
+<li class="toc_level-1 toc_section-11">
+<a href="#tocAnchor-1-11"><span class="tocnumber">8</span> <span class="toctext">The Restart button</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#tocAnchor-1-12"><span class="tocnumber">9</span> <span class="toctext">Using a remote GDB server</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#tocAnchor-1-13"><span class="tocnumber">10</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toc_level-2 toc_section-14">
+<a href="#tocAnchor-1-13-1"><span class="tocnumber">10.1</span> <span class="toctext">Missing or wrong openocd_path</span></a>
+</li>
+<li class="toc_level-2 toc_section-15">
+<a href="#tocAnchor-1-13-2"><span class="tocnumber">10.2</span> <span class="toctext">Wrong configuration selection</span></a>
+</li>
+<li class="toc_level-2 toc_section-16">
+<a href="#tocAnchor-1-13-3"><span class="tocnumber">10.3</span> <span class="toctext">Start OpenOCD manually</span></a>
+</li>
+<li class="toc_level-2 toc_section-17">
+<a href="#tocAnchor-1-13-4"><span class="tocnumber">10.4</span> <span class="toctext">Chase for hanged OpenOCD processes</span></a>
+</li>
+<li class="toc_level-2 toc_section-18">
+<a href="#tocAnchor-1-13-5"><span class="tocnumber">10.5</span> <span class="toctext">Compare with GDB Hardware Debugging</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-19">
+<a href="#tocAnchor-1-19"><span class="tocnumber">11</span> <span class="toctext">No GDB initialisation files loaded</span></a>
+</li>
+<li class="toc_level-1 toc_section-20">
+<a href="#tocAnchor-1-20"><span class="tocnumber">12</span> <span class="toctext">More details</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Why a new plug-in?</h2>
 
 <p>By default, Eclipse supports OpenOCD via the GDB Hardware Debugging plug-in, which starts OpenOCD not as a separate daemon, but as a pipe end. This is functional, but restricts it even further.</p>
 
@@ -90,7 +173,7 @@
 
 <p>Unfortunately SWD support in the current OpenOCD version (0.8.x) is not that great, and we could not yet figure out a way to get the SWO tracing info out of OpenOCD, so currently there is no special tracing window available.</p>
 
-<h2>Prerequisites</h2>
+<h2 id="tocAnchor-1-2">Prerequisites</h2>
 
 <p>Before being able to use any JTAG probe with OpenOCD, you must separately install:</p>
 
@@ -105,13 +188,13 @@
 
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain. Generally only debugging .elf applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 
-<h3>Non-GNU toolchains</h3>
+<h3 id="tocAnchor-1-2-1">Non-GNU toolchains</h3>
 
 <p>Debugging applications generated by <strong>non-GNU toolchains</strong> (like the obsolete ARM CC), although not completely excluded, is <strong>not supported</strong>.</p>
 
-<h2>OpenOCD plug-in usage</h2>
+<h2 id="tocAnchor-1-4">OpenOCD plug-in usage</h2>
 
-<h3>Define the OpenOCD folder location</h3>
+<h3 id="tocAnchor-1-4-1">Define the OpenOCD folder location</h3>
 
 <p>Before starting work with OpenOCD, it is recommended to define a global variable with the path to the folder where OpenOCD executables are located.</p>
 
@@ -123,36 +206,44 @@
 <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/OpenOCDPath.png" alt=""></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDPath.png" alt="" />
+</p>
 
 <p>It is recommended to define the path to the OpenOCD relative to this variable in all your debug configurations, to have a single place to update the path when you want to use another version of the OpenOCD tools installed in a different location.</p>
 
-<h3>Create the debugger configuration</h3>
+<h3 id="tocAnchor-1-4-2">Create the debugger configuration</h3>
 
 <p>Being a standard debugger, this plug-in also uses the Eclipse standard method of creating debugger configurations for each application. After you successfully build your application, you can create a new debug configuration following these steps:</p>
 
 <ul>
-<li>select the project (don&#39;t skip it, this is important, see later)</li>
+<li>select the project (don't skip it, this is important, see later)</li>
 <li>build it and ensure the executable file is available</li>
 <li>expand the Debug/Release folder and select the new executable file</li>
 <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon</li>
 <li>double click on the <strong>GDB OpenOCD Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/OpenOCDDebugConfigs.png" alt="OpenOCD debug configurations"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDDebugConfigs.png" alt="OpenOCD debug configurations" />
+</p>
 
 <ul>
 <li>a multi-tab page will be displayed</li>
 <li>if you started this procedure with the executable file selected, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example <code>Debug/blink1.elf</code>).</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/OpenOCDMainTab.png" alt="The OpenOCD Main tab"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDMainTab.png" alt="The OpenOCD Main tab" />
+</p>
 
 <ul>
 <li>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/OpenOCDDebuggerTab.png" alt="OpenOCD Debugger tab"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDDebuggerTab.png" alt="OpenOCD Debugger tab" />
+</p>
 
 <ul>
 <li>the only field that usually requires attention is the OpenOCD <strong>Config options:</strong>, where you should add one or more configuration scripts</li>
@@ -160,7 +251,9 @@
 <li>click the third tab, named <strong>Startup</strong>, which contains some specific OpenOCD options used to configure the debug session; defaults are generally enough</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/OpenOCDStartupTab.png" alt="The OpenOCD Startup tab"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDStartupTab.png" alt="The OpenOCD Startup tab" />
+</p>
 
 <ul>
 <li><p>the order of sections/fields reflect the order commands are sent to GDB; for example the above generates:</p>
@@ -169,8 +262,8 @@
 monitor halt
 ...
 monitor arm semihosting enable
-symbol-file &quot;/.../blink1/Debug/blink1.elf&quot;
-load &quot;/.../blink1/Debug/blink1.elf&quot;
+symbol-file "/.../blink1/Debug/blink1.elf"
+load "/.../blink1/Debug/blink1.elf"
 tbreak main
 monitor reset halt
 monitor halt
@@ -179,20 +272,24 @@ continue</p></li>
 <li><p>select the <strong>Common</strong> tab, set the <em>Save as:</em> field to <strong>Shared file</strong> and accept the current project name</p></li>
 </ul>
 
-<p><img src="/assets/images/2013/12/OpenOCDCommonTab.png" alt="Shared debug configuration"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDCommonTab.png" alt="Shared debug configuration" />
+</p>
 
 <ul>
 <li>this will arrange for the debug configuration to be saved in the project, not in the workspace storage</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/OpenOCDSharedDebug.png" alt="Debug configuration stored in the project"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDSharedDebug.png" alt="Debug configuration stored in the project" />
+</p>
 
 <ul>
 <li>click the <strong>Apply</strong> button</li>
 <li>click the <strong>Close</strong> button</li>
 </ul>
 
-<h2>Start a debug session</h2>
+<h2 id="tocAnchor-1-7">Start a debug session</h2>
 
 <p>Before starting a debug session, be sure that:</p>
 
@@ -206,26 +303,32 @@ continue</p></li>
 
 <ul>
 <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations...</strong></li>
-<li>if necessary, expand the<strong> GDB OpenOCD Debugging</strong> group</li>
+<li>if necessary, expand the*<em> GDB OpenOCD Debugging</em>* group</li>
 <li>select the newly defined configuration</li>
 <li>click the <strong>Debug</strong> button</li>
 </ul>
 
 <p>Alternatively, for later sessions, you can use the bug specific icon. Do not press it directly, since it will not behave as expected; instead, click the down arrow button:</p>
 
-<p><img src="/assets/images/2013/12/OpenOCDStartDebugArrow.png" alt="Down arrow debug"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDStartDebugArrow.png" alt="Down arrow debug" />
+</p>
 
 <p>This will open a new window where you can select the desired debug configuration:</p>
 
-<p><img src="/assets/images/2013/12/DebugSelection.png" alt="Select the debug configuration"></p>
+<p>
+<img src="/assets/images/2013/12/DebugSelection.png" alt="Select the debug configuration" />
+</p>
 
 <p>If everything is ok, after a few seconds required to start the server, to allow it to connect to the target, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
 
-<p><img src="/assets/images/2013/12/OpenOCDConsoles.png" alt="The new debug session, with two consoles"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDConsoles.png" alt="The new debug session, with two consoles" />
+</p>
 
 <p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code>main()</code> function, which in this case is a tracing <code>printf()</code>.</p>
 
-<h2>Debug operations</h2>
+<h2 id="tocAnchor-1-8">Debug operations</h2>
 
 <p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code>main()</code> function), you can perform any debug operation you need.</p>
 
@@ -244,75 +347,85 @@ continue</p></li>
 
 <p>For more details please read the <a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_debug_prog.htm">Running and debugging projects</a> section in the Eclipse documentation.</p>
 
-<h2>View consoles</h2>
+<h2 id="tocAnchor-1-9">View consoles</h2>
 
 <p>Each debug process has a dedicated console, to display its standard output and standard error, or to get input for the standard input.</p>
 
 <p>To see the console of any process, just select the process in the top left window. For example the gdb client console might look like this:</p>
 
-<p><img src="/assets/images/2013/12/OpenOCDclientConsole.png" alt="The GDB client console"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDclientConsole.png" alt="The GDB client console" />
+</p>
 
 <p>The semihosting tracing messages are displayed in the same window as the OpenOCD output:</p>
 
-<p><img src="/assets/images/2013/12/OpenOCDTraceConsole.png" alt="The tracing console"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDTraceConsole.png" alt="The tracing console" />
+</p>
 
-<h2>Show console when standard out/error change</h2>
+<h2 id="tocAnchor-1-10">Show console when standard out/error change</h2>
 
 <p>This is the default Eclipse behaviour when multiple consoles are active, to automatically switch to the latest updated. In our case, especially when the tracing console is also active, the focus will jump between windows, making things impossible to follow.</p>
 
 <p>This mode can be identified by the status of the buttons on the right side of the Debugging view.</p>
 
-<p><img src="/assets/images/2013/12/OpenOCDShowConsole.png" alt="Show console when standard out/err changes"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDShowConsole.png" alt="Show console when standard out/err changes" />
+</p>
 
 <p>To make the display stable on the desired console, disable both buttons. To switch between consoles, select them either in the top left Debug view, or using the right button, as shown above.</p>
 
-<h2>The Restart button</h2>
+<h2 id="tocAnchor-1-11">The Restart button</h2>
 
 <p>Apparently not a big deal, but quite useful for repeated debug sessions, <strong>the Restart button</strong> can be used at any time during a debug session, and the result is that a reset is dispatched to the target board via the JTAG/SWD interface and the debug session is restarted.</p>
 
-<p><img src="/assets/images/2013/12/RestartButton.png" alt="The restart button"></p>
+<p>
+<img src="/assets/images/2013/12/RestartButton.png" alt="The restart button" />
+</p>
 
-<p>Note: Due to some bugs in Eclipse, the implementation of his simple button has encountered several problems. Depending on the version you are using, the first time you click this button you might get a message box informing that the button was not enabled. Ignore this message, close the message box and click the button again, this time it&#39;ll be effective.</p>
+<p>Note: Due to some bugs in Eclipse, the implementation of his simple button has encountered several problems. Depending on the version you are using, the first time you click this button you might get a message box informing that the button was not enabled. Ignore this message, close the message box and click the button again, this time it'll be effective.</p>
 
-<h2>Using a remote GDB server</h2>
+<h2 id="tocAnchor-1-12">Using a remote GDB server</h2>
 
 <p>If, for any reason, you need to run the GDB server on a remote machine (for example the development board is connected via OpenOCD to a machine in your office, but you are in another location), you can still use the plug-in to run debugging session. For this to work, just disable <strong>Start the GDB server locally</strong> in the <strong>Debugger</strong> tab and instead of <em>localhost</em> for the <strong>Host name or IP address</strong>, enter the name or address where the GDB server can be accessed.</p>
 
 <p>Then you must manually start the OpenOCD process on the remote machine and only then you can start the debugging session.</p>
 
-<h2>Troubleshooting</h2>
+<h2 id="tocAnchor-1-13">Troubleshooting</h2>
 
-<h3>Missing or wrong openocd_path</h3>
+<h3 id="tocAnchor-1-13-1">Missing or wrong openocd_path</h3>
 
-<p>The first failure to start a debug session is missing to enter the OpenOCD path. Without it, the launching sequence will complain <em>Cannot run program &quot;/openocd&quot;</em>.</p>
+<p>The first failure to start a debug session is missing to enter the OpenOCD path. Without it, the launching sequence will complain <em>Cannot run program "/openocd"</em>.</p>
 
-<p><img src="/assets/images/2013/12/OpenOCDCannotRun.png" alt="Cannot run OpenOCD"></p>
+<p>
+<img src="/assets/images/2013/12/OpenOCDCannotRun.png" alt="Cannot run OpenOCD" />
+</p>
 
 <p>Define the <strong>openocd_path</strong> as instructed above and the session should start properly.</p>
 
-<h3>Wrong configuration selection</h3>
+<h3 id="tocAnchor-1-13-2">Wrong configuration selection</h3>
 
 <p>If the configuration files that you selected in the plug-in does not match the device physically connected, the OpenOCD starts, but remains in a confused state. The session does not start and usually requires to restart Eclipse.</p>
 
 <p>Select the correct device and the session should start properly.</p>
 
-<h3>Start OpenOCD manually</h3>
+<h3 id="tocAnchor-1-13-3">Start OpenOCD manually</h3>
 
 <p>If you still fail to configure the plug-in to start OpenOCD automatically, proceed as when using a remote GDB server, i.e. go to the Debugger tab and disable the <strong>Start OpenOCD locally</strong>, then start it manually in a separate terminal. Tweak the command line options until you get the right behaviour, and then retry the same options with the plug-in.</p>
 
-<h3>Chase for hanged OpenOCD processes</h3>
+<h3 id="tocAnchor-1-13-4">Chase for hanged OpenOCD processes</h3>
 
 <p>One usual error case is to retry a debug session while a previous OpenOCD is still active (either running or hanged, started by a previous run of the plug-in or manually). In this case the new OpenOCD has no chance to work, and the plug-in will most certainly fail, sometimes even without clear error messages.</p>
 
 <p>Be sure you chase and kill all previous OpenOCD or GDB processes, using the system process inspector, before starting new debug sessions.</p>
 
-<h3>Compare with GDB Hardware Debugging</h3>
+<h3 id="tocAnchor-1-13-5">Compare with GDB Hardware Debugging</h3>
 
 <p>If you still cannot make it work, before filling any support tickets, please try to launch the debug session using the GDB Hardware Debugging plug-in, in the DSF launcher configuration (not the Legacy GDB Hardware Debugging Launcher). If you get the same behaviour, the problem is OpenOCD related (OpenOCD is notorious for subtle bugs), and cannot be fixed in the plug-in.</p>
 
-<p>If the GDB Hardware Debugging plug-in works and the GDB OpenOCD debugging plug-in doesn&#39;t, rerun both of them with the log enabled, on exactly the same executable, and compare the results. If you do not discover the problem, open a support ticket and attach the log files.</p>
+<p>If the GDB Hardware Debugging plug-in works and the GDB OpenOCD debugging plug-in doesn't, rerun both of them with the log enabled, on exactly the same executable, and compare the results. If you do not discover the problem, open a support ticket and attach the log files.</p>
 
-<h2>No GDB initialisation files loaded</h2>
+<h2 id="tocAnchor-1-19">No GDB initialisation files loaded</h2>
 
 <p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
 
@@ -320,13 +433,13 @@ continue</p></li>
 
 <p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server, in this case the OpenOCD server.</p>
 
-<h2>More details</h2>
+<h2 id="tocAnchor-1-20">More details</h2>
 
 <p>Although the plug-in takes care of most of the configuration options, and provides reasonable defaults for the usual cases, it is recommended to read the OpenOCD manuals, available in the <strong>doc</strong> folder of your install location.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

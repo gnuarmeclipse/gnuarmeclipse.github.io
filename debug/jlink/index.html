@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>The J-Link debugging Eclipse plug-in</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/debug/jlink/">
+  <link rel="canonical" href="/debug/jlink/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,7 +83,99 @@
 <h1 class="page-title">The J-Link debugging Eclipse plug-in</h1>
 
 
-<h2>Quicklinks</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Quicklinks</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Why a new plug-in?</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Prerequisites</span></a>
+<ul>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-3-1"><span class="tocnumber">3.1</span> <span class="toctext">Non-GNU toolchains</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">4</span> <span class="toctext">J-Link plug-in usage</span></a>
+<ul>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-5-1"><span class="tocnumber">4.1</span> <span class="toctext">Define the J-Link folder location</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#tocAnchor-1-5-2"><span class="tocnumber">4.2</span> <span class="toctext">Associate a device to the project</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#tocAnchor-1-5-3"><span class="tocnumber">4.3</span> <span class="toctext">Create the debugger launch configuration</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">5</span> <span class="toctext">Start a debug session</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#tocAnchor-1-10"><span class="tocnumber">6</span> <span class="toctext">Debug operations</span></a>
+</li>
+<li class="toc_level-1 toc_section-11">
+<a href="#tocAnchor-1-11"><span class="tocnumber">7</span> <span class="toctext">View consoles</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#tocAnchor-1-12"><span class="tocnumber">8</span> <span class="toctext">Show console when standard out/error change</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#tocAnchor-1-13"><span class="tocnumber">9</span> <span class="toctext">The Restart button</span></a>
+</li>
+<li class="toc_level-1 toc_section-14">
+<a href="#tocAnchor-1-14"><span class="tocnumber">10</span> <span class="toctext">Using a remote GDB server</span></a>
+</li>
+<li class="toc_level-1 toc_section-15">
+<a href="#tocAnchor-1-15"><span class="tocnumber">11</span> <span class="toctext">Connect to running target</span></a>
+</li>
+<li class="toc_level-1 toc_section-16">
+<a href="#tocAnchor-1-16"><span class="tocnumber">12</span> <span class="toctext">No GDB initialisation files loaded</span></a>
+</li>
+<li class="toc_level-1 toc_section-17">
+<a href="#tocAnchor-1-17"><span class="tocnumber">13</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toc_level-2 toc_section-18">
+<a href="#tocAnchor-1-17-1"><span class="tocnumber">13.1</span> <span class="toctext">Missing or wrong jlink_path</span></a>
+</li>
+<li class="toc_level-2 toc_section-19">
+<a href="#tocAnchor-1-17-2"><span class="tocnumber">13.2</span> <span class="toctext">Wrong device selection</span></a>
+</li>
+<li class="toc_level-2 toc_section-20">
+<a href="#tocAnchor-1-17-3"><span class="tocnumber">13.3</span> <span class="toctext">J-Link hangups</span></a>
+</li>
+<li class="toc_level-2 toc_section-21">
+<a href="#tocAnchor-1-17-4"><span class="tocnumber">13.4</span> <span class="toctext">Cannot start applications running from RAM</span></a>
+</li>
+<li class="toc_level-2 toc_section-22">
+<a href="#tocAnchor-1-17-5"><span class="tocnumber">13.5</span> <span class="toctext">Error while launching command: gdb --version</span></a>
+</li>
+<li class="toc_level-2 toc_section-23">
+<a href="#tocAnchor-1-17-6"><span class="tocnumber">13.6</span> <span class="toctext">Using a different build plug-in or not supported compiler</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-24">
+<a href="#tocAnchor-1-24"><span class="tocnumber">14</span> <span class="toctext">More info</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Quicklinks</h2>
 
 <p>If you already know what are the features of the new plug-in and just want to know how to install/use it, you can directly skip to:</p>
 
@@ -89,7 +184,7 @@
 <li><a href="/debug/jlink/#j-link-plug-in-use">J-Link plug-in usage</a></li>
 </ul>
 
-<h2>Why a new plug-in?</h2>
+<h2 id="tocAnchor-1-2">Why a new plug-in?</h2>
 
 <p>Until now, debugging with the J-Link probe in Eclipse was done via the GDB Hardware Debugging plug-in. For experimental projects it was more or less ok, but for serious development it was quite tedious. The missing features, that were added to this plug-in, are:</p>
 
@@ -103,7 +198,7 @@
 <li>support for SWO registers configuration to match a given system clock frequency</li>
 </ul>
 
-<h2>Prerequisites</h2>
+<h2 id="tocAnchor-1-3">Prerequisites</h2>
 
 <p>Before being able to use the J-Link probe with the GNU ARM Eclipse plug-ins, you must separately install:</p>
 
@@ -117,13 +212,13 @@
 
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain. Generally only debugging .elf applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 
-<h3>Non-GNU toolchains</h3>
+<h3 id="tocAnchor-1-3-1">Non-GNU toolchains</h3>
 
 <p>Debugging applications generated by <strong>non-GNU toolchains</strong> (like the obsolete ARM CC), although not completely excluded, is <strong>not supported</strong>.</p>
 
-<h2>J-Link plug-in usage</h2>
+<h2 id="tocAnchor-1-5">J-Link plug-in usage</h2>
 
-<h3>Define the J-Link folder location</h3>
+<h3 id="tocAnchor-1-5-1">Define the J-Link folder location</h3>
 
 <p>Before starting work with the J-Link tools, it is required to define the path to the J-Link folder.</p>
 
@@ -131,25 +226,32 @@
 <li>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> → <strong>SEGGER J-Link</strong></li>
 </ul>
 
-<p><img src="/assets/images/2015/03/JLinkPreferences.png" alt="J-Link preferences page"><br>
-* click the <strong>Restore Defaults</strong> button
-* the plug-in will suggest the default values computed when Eclipse started; if a new version of SEGGER was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button
-* check the <strong>Executable</strong> field; it must define the name of the command line J-Link GDB server executable; in most cases it should be set correctly; if not, edit it to match the correct name;
-* check the <strong>Folder</strong> field; it must point to the actual folder where the J-Link tools were installed on your platform, for example <strong>/Applications/SEGGER/JLink</strong> on OS X
-* click the <strong>OK</strong> button
-* <strong>Windows warning:</strong> please note that on Windows there are two GDB server executables, one with a UI and one to be used as a command line (JLinkGDBServerCL.exe); you obviously need to configure the executable field to point to <strong>JLinkGDBServerCL.exe</strong>;</p>
+<p>
+<img src="/assets/images/2015/03/JLinkPreferences.png" alt="J-Link preferences page" />
+</p>
+
+<ul>
+<li>click the <strong>Restore Defaults</strong> button</li>
+<li>the plug-in will suggest the default values computed when Eclipse started; if a new version of SEGGER was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
+<li>check the <strong>Executable</strong> field; it must define the name of the command line J-Link GDB server executable; in most cases it should be set correctly; if not, edit it to match the correct name;</li>
+<li>check the <strong>Folder</strong> field; it must point to the actual folder where the J-Link tools were installed on your platform, for example <strong>/Applications/SEGGER/JLink</strong> on OS X</li>
+<li>click the <strong>OK</strong> button</li>
+<li><strong>Windows warning:</strong> please note that on Windows there are two GDB server executables, one with a UI and one to be used as a command line (JLinkGDBServerCL.exe); you obviously need to configure the executable field to point to <strong>JLinkGDBServerCL.exe</strong>;</li>
+</ul>
 
 <p>By default, the GDB server is defined as <strong>${jlink_path}/${jlink_gdbserver}</strong>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to keep this definition in all your debug configurations, and also to have a single place to update the path when a new version of the J-Link tools is released.</p>
 
-<h3>Associate a device to the project</h3>
+<h3 id="tocAnchor-1-5-2">Associate a device to the project</h3>
 
 <p>Although not absolutely mandatory, it is recommended to associate a device to the project, so that creating the debugger launch configuration will automatically fill-in the device name.</p>
 
-<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project"></p>
+<p>
+<img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" />
+</p>
 
 <p>Follow the steps in the separate page <a href="/eclipse/project/assign-device/">Associate a device to the project</a> and return to this page to continue.</p>
 
-<h3>Create the debugger launch configuration</h3>
+<h3 id="tocAnchor-1-5-3">Create the debugger launch configuration</h3>
 
 <p>Being a standard debugger, this plug-in also uses the Eclipse standard method of creating debugger configurations for each application. After you successfully build your application, you can create a new debug configuration following these steps:</p>
 
@@ -160,26 +262,34 @@
 <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations...</strong> or select the down arrow at the right of the bug icon.</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/DebugConfigurations.png" alt=""></p>
+<p>
+<img src="/assets/images/2013/12/DebugConfigurations.png" alt="" />
+</p>
 
 <ul>
-<li>double click the<strong> GDB SEGGER J-Link Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button.</li>
+<li>double click the*<em> GDB SEGGER J-Link Debugging</em><em> group, or select it and click the top leftmost *</em>New** button.</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/JLinkDebugConfiguration.png" alt="J-Link Debug Configurations"></p>
+<p>
+<img src="/assets/images/2013/12/JLinkDebugConfiguration.png" alt="J-Link Debug Configurations" />
+</p>
 
 <ul>
 <li>a multi-tab page will be displayed;</li>
 <li>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example Debug/blink1.elf).</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/DebugMainTab.png" alt="The Main tab"></p>
+<p>
+<img src="/assets/images/2013/12/DebugMainTab.png" alt="The Main tab" />
+</p>
 
 <ul>
 <li>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start the GDB server and the GDB client.</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/JLinkDebuggerTab.png" alt=""></p>
+<p>
+<img src="/assets/images/2013/12/JLinkDebuggerTab.png" alt="" />
+</p>
 
 <ul>
 <li>the only field that usually requires attention is the <strong>Device name</strong>, which must identify the processor family; if you assigned the device to the project, this field is automatically filled-in; usually this name is the family name; if you do not know it for your processor, follow the link at the right and copy/paste the string from the <a href="http://www.segger.com/supported-devices.html">SEGGER web page</a>;</li>
@@ -190,7 +300,9 @@
 <li>click the third tab, named <strong>Startup</strong>, which contains specific J-Link options used to configure the debug session.</li>
 </ul>
 
-<p><img src="/assets/images/2013/12/JLingStartupTab.png" alt="The J-Link Startup tab"></p>
+<p>
+<img src="/assets/images/2013/12/JLingStartupTab.png" alt="The J-Link Startup tab" />
+</p>
 
 <ul>
 <li>if you built the project with retargetting support for ITM/SWO, enter the CPU frequency and the desired SWO sampling frequency; for this to work with J-Link, the SWO sampling frequency must be a submultiple of 6MHz (6000000, 3000000, 2000000, 1500000, 1000000, etc) and the CPU frequency must be a multiple of the SWO sampling frequency (these apparently very complicated requirements end up as a pre-scaler value in an ARM register);</li>
@@ -205,7 +317,9 @@
 </ul></li>
 </ul>
 
-<p><img src="/assets/images/2013/12/SharedDebug.png" alt="Shared debug configuration"></p>
+<p>
+<img src="/assets/images/2013/12/SharedDebug.png" alt="Shared debug configuration" />
+</p>
 
 <ul>
 <li>click the <strong>Close</strong> button</li>
@@ -213,9 +327,11 @@
 
 <p>With the above settings, the debug configuration will be saved in the project, not in the workspace storage.</p>
 
-<p><img src="/assets/images/2013/12/ProjectSharedDebug.png" alt="Debug configuration stored in the project"></p>
+<p>
+<img src="/assets/images/2013/12/ProjectSharedDebug.png" alt="Debug configuration stored in the project" />
+</p>
 
-<h2>Start a debug session</h2>
+<h2 id="tocAnchor-1-9">Start a debug session</h2>
 
 <p>Before starting a debug session, be sure that:</p>
 
@@ -236,21 +352,27 @@
 
 <p>Alternatively, on subsequent runs, you can use the bug specific icon. By default this will start the previously used debug launch configuration; to start a different configuration, use the down arrow button:</p>
 
-<p><img src="/assets/images/2013/12/StartDebugArrow.png" alt="Down arrow debug"></p>
+<p>
+<img src="/assets/images/2013/12/StartDebugArrow.png" alt="Down arrow debug" />
+</p>
 
 <p>This will open a new window where you can select the desired debug configuration:</p>
 
-<p><img src="/assets/images/2013/12/DebugSelection.png" alt="Select the debug configuration"></p>
+<p>
+<img src="/assets/images/2013/12/DebugSelection.png" alt="Select the debug configuration" />
+</p>
 
 <p>If everything is ok, after a few seconds required to start the server, to allow it to connect to the target, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
 
-<p><img src="/assets/images/2013/12/DebugSessionClient.png" alt="The new debug session, with three consoles"></p>
+<p>
+<img src="/assets/images/2013/12/DebugSessionClient.png" alt="The new debug session, with three consoles" />
+</p>
 
 <p>The new debug session, with three consoles.</p>
 
 <p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <em>main()</em> function, which in this case is a tracing <em>printf()</em>.</p>
 
-<h2>Debug operations</h2>
+<h2 id="tocAnchor-1-10">Debug operations</h2>
 
 <p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <strong>main()</strong> function), you can perform any debug operation you need.</p>
 
@@ -269,105 +391,123 @@
 
 <p>For more details please read the <a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_debug_prog.htm">Running and debugging projects</a> section in the Eclipse documentation.</p>
 
-<h2>View consoles</h2>
+<h2 id="tocAnchor-1-11">View consoles</h2>
 
 <p>Each debug process has a dedicated console, to display its standard output and standard error, or to get input for the standard input.</p>
 
 <p>To see the console of any process, just select the process in the top left window. For example the server console might look like this:</p>
 
-<p><img src="/assets/images/2013/12/DebugSessionServer.png" alt="The GDB server console"></p>
+<p>
+<img src="/assets/images/2013/12/DebugSessionServer.png" alt="The GDB server console" />
+</p>
 
 <p>Similarly for the tracing console:</p>
 
-<p><img src="/assets/images/2013/12/DebugSessionSWO.png" alt="The tracing console"></p>
+<p>
+<img src="/assets/images/2013/12/DebugSessionSWO.png" alt="The tracing console" />
+</p>
 
-<h2>Show console when standard out/error change</h2>
+<h2 id="tocAnchor-1-12">Show console when standard out/error change</h2>
 
 <p>This is the default Eclipse behaviour when multiple consoles are active, to automatically switch to the latest updated. In our case, especially when the Semihosting/SWV console is also active, the focus will jump between windows, making things impossible to follow.</p>
 
 <p>This mode can be identified by the status of the buttons on the right side of the Debugging view.</p>
 
-<p><img src="/assets/images/2013/12/ShowConsole.png" alt="Show console when standard out/err changes"></p>
+<p>
+<img src="/assets/images/2013/12/ShowConsole.png" alt="Show console when standard out/err changes" />
+</p>
 
 <p>To make the display stable on the desired console, disable both buttons. To switch between consoles, select them either in the top left Debug view, or using the right button, as shown above.</p>
 
-<h2>The Restart button</h2>
+<h2 id="tocAnchor-1-13">The Restart button</h2>
 
 <p>Apparently not a big deal, but quite useful for repeated debug sessions, <strong>the Restart button</strong> can be used at any time during a debug session, and the result is that a reset is dispatched to the target board via the JTAG/SWD interface and the debug session is restarted.</p>
 
-<p><img src="/assets/images/2013/12/RestartButton.png" alt="The restart button"></p>
+<p>
+<img src="/assets/images/2013/12/RestartButton.png" alt="The restart button" />
+</p>
 
-<p>Note: Due to some bugs in Eclipse, the implementation of his simple button has encountered several problems. Depending on the version you are using, the first time you click this button you might get a message box informing that the button was not enabled. Ignore this message, close the message box and click the button again, this time it&#39;ll be effective.</p>
+<p>Note: Due to some bugs in Eclipse, the implementation of his simple button has encountered several problems. Depending on the version you are using, the first time you click this button you might get a message box informing that the button was not enabled. Ignore this message, close the message box and click the button again, this time it'll be effective.</p>
 
-<h2>Using a remote GDB server</h2>
+<h2 id="tocAnchor-1-14">Using a remote GDB server</h2>
 
 <p>If, for any reason, you need to run the GDB server on a remote machine (for example the development board is connected via J-Link to a machine in your office, but you are in another location), you can still use the plug-in to run debugging session. For this to work, just disable <strong>Start the GDB server locally</strong> in the <strong>Debugger</strong> tab and instead of <em>localhost</em> for the <strong>Host name or IP address</strong>, enter the name or address where the GDB server can be accessed.</p>
 
 <p>Then you must manually start the JLinkGDBServer process on the remote machine and only then you can start the debugging session.</p>
 
-<h2>Connect to running target</h2>
+<h2 id="tocAnchor-1-15">Connect to running target</h2>
 
 <p>This is an advanced feature, allowing debugging of a target that was started outside the debugger.</p>
 
 <p>To make this possible, enable the <strong>Connect to running target</strong> option in the <strong>Debugger</strong> tab:</p>
 
-<p><img src="/assets/images/2015/03/ConnectToRunning.png" alt="Connect to running target"></p>
+<p>
+<img src="/assets/images/2015/03/ConnectToRunning.png" alt="Connect to running target" />
+</p>
 
-<p>With this option, the J-Link plug-in will no longer reset the target and will no longer download the code into the target&#39;s memory, leaving the target virtually unaffected, even after the debug session is started.</p>
+<p>With this option, the J-Link plug-in will no longer reset the target and will no longer download the code into the target's memory, leaving the target virtually unaffected, even after the debug session is started.</p>
 
-<p>To start interacting with the target, it must be halted, using the debugger&#39;s <strong>Halt</strong> command. After examining the target&#39;s memory, setting breakpoints, etc, execution can be resumed, and the debug session terminated, leaving the target running.</p>
+<p>To start interacting with the target, it must be halted, using the debugger's <strong>Halt</strong> command. After examining the target's memory, setting breakpoints, etc, execution can be resumed, and the debug session terminated, leaving the target running.</p>
 
-<h2>No GDB initialisation files loaded</h2>
+<h2 id="tocAnchor-1-16">No GDB initialisation files loaded</h2>
 
 <p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
 
 <p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section:</p>
 
-<p><img src="/assets/images/2015/launch-jlink-debugger-client.png" alt=""></p>
+<p>
+<img src="/assets/images/2015/launch-jlink-debugger-client.png" alt="" />
+</p>
 
 <p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server, in this case the J-Link GDB server.</p>
 
-<h2>Troubleshooting</h2>
+<h2 id="tocAnchor-1-17">Troubleshooting</h2>
 
-<h3>Missing or wrong jlink_path</h3>
+<h3 id="tocAnchor-1-17-1">Missing or wrong jlink_path</h3>
 
-<p>The first failure to start a debug session is missing to enter the J-Link path. Without it, the launching sequence will complain <em>Cannot run program &quot;/JLinkGDBServer&amp;&quot;</em>.</p>
+<p>The first failure to start a debug session is missing to enter the J-Link path. Without it, the launching sequence will complain <em>Cannot run program "/JLinkGDBServer&amp;"</em>.</p>
 
-<p><img src="/assets/images/2013/12/JLinkCannotRun.png" alt="Cannot run the JLinkGDBServer"></p>
+<p>
+<img src="/assets/images/2013/12/JLinkCannotRun.png" alt="Cannot run the JLinkGDBServer" />
+</p>
 
 <p>Define the <strong>jlink_path</strong> as instructed above and the session should start properly.</p>
 
-<h3>Wrong device selection</h3>
+<h3 id="tocAnchor-1-17-2">Wrong device selection</h3>
 
 <p>If the devices that you selected in the plug-in does not match the device physically connected, the GDB server session fails and the entire debug session is cancelled. You can identify this case by studying the GDB server log.</p>
 
-<p><img src="/assets/images/2013/12/WrongDevice.png" alt="Wrong device"></p>
+<p>
+<img src="/assets/images/2013/12/WrongDevice.png" alt="Wrong device" />
+</p>
 
 <p>Select the device properly and the session should start properly.</p>
 
-<h3>J-Link hangups</h3>
+<h3 id="tocAnchor-1-17-3">J-Link hangups</h3>
 
 <p>Although SEGGER took special measures to avoid J-Link firmware hangups, in case you suspect such a situation (the JLinkGDBServer refuses to connect to the USB device, or to the target), it might help to power cycle the J-Link, by disconnecting and reconnecting the USB cable.</p>
 
-<h3>Cannot start applications running from RAM</h3>
+<h3 id="tocAnchor-1-17-4">Cannot start applications running from RAM</h3>
 
 <p>Please be sure you disable the <strong>Pre-run reset and halt</strong> option in the <strong>Startup</strong> tab, this usually does not preserve the RAM content.</p>
 
-<h3>Error while launching command: gdb --version</h3>
+<h3 id="tocAnchor-1-17-5">Error while launching command: gdb --version</h3>
 
 <p>If you kept the GDB client executable defined as <strong>${cross_prefix}gdb${cross_suffix}</strong>, the above error means that the macros could not be substituted with the correct prefix/suffix. There can be several reasons for this. One might be that you did not associate the debug launcher to a project. Check the <strong>Main</strong> tab and be sure the field <strong>Project:</strong> refer to the correct project. Next time when you create the debug configuration, be sure you follow the above suggestions (select .elf, <strong>Debug Configurations</strong>, double click on <strong>GDB SEGGER J-Link Debugging</strong>. Another reason is presented below.</p>
 
-<h3>Using a different build plug-in or not supported compiler</h3>
+<h3 id="tocAnchor-1-17-6">Using a different build plug-in or not supported compiler</h3>
 
 <p>Another reason for not being able to start the debug session is that your project was not build with the GNU ARM Eclipse managed build plug-in. If you are using another build plug-in, or an exotic/obsolete toolchain, you need to replace <strong>${cross_prefix}gdb${cross_suffix}</strong> with the actual name of the gdb client available in your toolchain, since the ${cross_*} macros are available only in projects managed by the GNU ARM Eclipse build plug-in.</p>
 
-<h2><strong>More info</strong></h2>
+<h2 id="tocAnchor-1-24">
+<strong>More info</strong>
+</h2>
 
 <p>Although the plug-in takes care of most of the configuration options, and provides reasonable defaults for the usual cases, it is recommended to read the SEGGER manuals, available from the Doc folder in the installation location or directly from the <a href="http://www.segger.com/jlink-software.html">SEGGER J-Link page</a>.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
 
 
 </section>

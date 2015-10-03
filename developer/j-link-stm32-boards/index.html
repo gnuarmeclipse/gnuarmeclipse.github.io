@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>Using J-Link with the STM32 boards</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/j-link-stm32-boards/">
+  <link rel="canonical" href="/developer/j-link-stm32-boards/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,9 +83,44 @@
 <h1 class="page-title">Using J-Link with the STM32 boards</h1>
 
 
-<p>This page explains how to build a cable to connect the J-Link to STM32 DISCOVERY and NUCLEO boards.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">The J-Link to ST cable</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">The ST 6-pin SWD connector</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">The J-Link 20-pin JTAG/SWD connector</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">The target detect strap</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Jumpers</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">7</span> <span class="toctext">Conclusion</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>This page explains how to build a cable to connect the J-Link to STM32 DISCOVERY and NUCLEO boards.</p>
 
-<h2>Overview</h2>
+<h2 id="tocAnchor-1-1">Overview</h2>
 
 <p>As most vendors do, ST also designed the cheap STM32 DISCOVERY and NUCLEO boards to include an on-board programmer. The protocol used by this programmer is ST-LINK/V2, an ST protocol. Unfortunately ST does not provide a portable GDB server to support the ST-LINK/V2 protocol, and using these STM32 boards out of the box on GNU/Linux or OS X is not possible.</p>
 
@@ -90,7 +128,7 @@
 
 <p>Preferably the J-Link debug plug-in would be used, but, for costs reasons, ST did not provide the standard JTAG connector, so it is currently not possible to connect to these boards with J-Link.</p>
 
-<h2>The J-Link to ST cable</h2>
+<h2 id="tocAnchor-1-2">The J-Link to ST cable</h2>
 
 <p>For those equipped with a soldering iron, it is relatively easy to adapt the existing 6-pin connector to J-Link.</p>
 
@@ -99,14 +137,14 @@
 <p>The bill of materials includes:</p>
 
 <ul>
-<li>  a 6 wire ribbon cable, about 15 cm (6&quot;) long</li>
-<li>  a 6-pin 2.54mm (0.1&quot;) female, single raw, in-line connector, to match the STM board header</li>
-<li>  a 20-pin 2.54mm (0.1&quot;) female, dual raw (2x10), in-line connector, to match the J-Link male connector</li>
+<li>  a 6 wire ribbon cable, about 15 cm (6") long</li>
+<li>  a 6-pin 2.54mm (0.1") female, single raw, in-line connector, to match the STM board header</li>
+<li>  a 20-pin 2.54mm (0.1") female, dual raw (2x10), in-line connector, to match the J-Link male connector</li>
 </ul>
 
 <p>Solder the ribbon cable to the 6-pin connector, and be sure you mark the first pin with a different colour, to later help you plug the connector in the proper position.</p>
 
-<h2>The ST 6-pin SWD connector</h2>
+<h2 id="tocAnchor-1-3">The ST 6-pin SWD connector</h2>
 
 <p>The signals on this 6-pin are:</p>
 
@@ -119,7 +157,7 @@
 <li>  6 - SWO → 13 (blue)</li>
 </ul>
 
-<h2>The J-Link 20-pin JTAG/SWD connector</h2>
+<h2 id="tocAnchor-1-4">The J-Link 20-pin JTAG/SWD connector</h2>
 
 <p>The signals on the 20-pin are split into two groups, the even number pins are on one raw, and, except pin 2, all are connected to GND, and the odd number pins are:</p>
 
@@ -142,21 +180,21 @@
 
 <p>The correspondence between the two connectors is represented on each connector by the second number.</p>
 
-<h2>The target detect strap</h2>
+<h2 id="tocAnchor-1-5">The target detect strap</h2>
 
 <p>After building the ribbon cable, the ST board needs a strap to connect the pin 1 of the 6-pin connector to Vcc, to signal J-Link that the target board is present and powered.</p>
 
-<h2>Jumpers</h2>
+<h2 id="tocAnchor-1-6">Jumpers</h2>
 
 <p>The ST boards have a pair of jumpers, that need to be installed, for the programming signals to be connected from the 6-pin connector to the target processor.</p>
 
-<h2>Conclusion</h2>
+<h2 id="tocAnchor-1-7">Conclusion</h2>
 
 <p>With this cable it is now possible to connect to the ST board with an external J-Link probe, to program the flash and run debugging sessions.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>GNU ARM Eclipse Developer page</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/">
+  <link rel="canonical" href="/developer/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,9 +83,66 @@
 <h1 class="page-title">GNU ARM Eclipse Developer page</h1>
 
 
-<h2>Under the hood</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Under the hood</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Runtime preferences</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Debugging options</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">GNU ARM Eclipse extension points</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">2</span> <span class="toctext">Miscellaneous</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">3</span> <span class="toctext">How to build</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">4</span> <span class="toctext">Hardware</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">5</span> <span class="toctext">References</span></a>
+<ul>
+<li class="toc_level-2 toc_section-9">
+<a href="#tocAnchor-1-8-1"><span class="tocnumber">5.1</span> <span class="toctext">Eclipse</span></a>
+</li>
+<li class="toc_level-2 toc_section-10">
+<a href="#tocAnchor-1-8-2"><span class="tocnumber">5.2</span> <span class="toctext">Other</span></a>
+</li>
+<li class="toc_level-2 toc_section-11">
+<a href="#tocAnchor-1-8-3"><span class="tocnumber">5.3</span> <span class="toctext">Installers</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#tocAnchor-1-8-4"><span class="tocnumber">5.4</span> <span class="toctext">References to GNU ARM Eclipse</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#tocAnchor-1-13"><span class="tocnumber">6</span> <span class="toctext">Releases</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Under the hood</h2>
 
-<h3>Runtime preferences</h3>
+<h3 id="tocAnchor-1-1-1">Runtime preferences</h3>
 
 <ul>
 <li><a href="/developer/eclipse/runtime-preferences">How Eclipse runtime preferences and defaults work</a></li>
@@ -92,14 +152,14 @@
 <li><a href="/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.qemu">ilg.gnuarmeclipse.debug.gdbjtag.qemu</a> persistent values (workspace)</li>
 </ul>
 
-<h3>Debugging options</h3>
+<h3 id="tocAnchor-1-1-2">Debugging options</h3>
 
 <ul>
 <li><a href="/developer/eclipse/debugging-options">How Eclipse debugging options work</a></li>
 <li><a href="https://wiki.eclipse.org/FAQ_How_do_I_use_the_platform_debug_tracing_facility">Platform tracing facility</a></li>
 </ul>
 
-<h3>GNU ARM Eclipse extension points</h3>
+<h3 id="tocAnchor-1-1-3">GNU ARM Eclipse extension points</h3>
 
 <p>The GNU ARM Eclipse plug-ins define several custom extension points, to facilitate the integration with third-party plug-ins.</p>
 
@@ -108,14 +168,14 @@
 <li><a href="/developer/extension/ilg.gnuarmeclipse.debug.core.svdpath">ilg.gnuarmeclipse.debug.core.svdPath</a> (SVD Path Manager)</li>
 </ul>
 
-<h2>Miscellaneous</h2>
+<h2 id="tocAnchor-1-5">Miscellaneous</h2>
 
 <ul>
 <li><a href="/developer/eclipse/tips-tricks">Eclipse Development Tips &amp; Tricks</a></li>
 <li><a href="/developer/pad-file">PAD file</a></li>
 </ul>
 
-<h2>How to build</h2>
+<h2 id="tocAnchor-1-6">How to build</h2>
 
 <p>How to build the plug-ins from sources and publish them.</p>
 
@@ -127,15 +187,15 @@
 <li><a href="/developer/change-log">Change log</a> (<a href="/developer/change-log/2014">2014</a>) (<a href="/developer/change-log/2013">2013</a>) (<a href="/developer/change-log/v05x">v0.5.x</a>)</li>
 </ul>
 
-<h2>Hardware</h2>
+<h2 id="tocAnchor-1-7">Hardware</h2>
 
 <ul>
 <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a> (how to build a cable to connect the J-Link to STM32 DISCOVERY and NUCLEO boards)</li>
 </ul>
 
-<h2>References</h2>
+<h2 id="tocAnchor-1-8">References</h2>
 
-<h3>Eclipse</h3>
+<h3 id="tocAnchor-1-8-1">Eclipse</h3>
 
 <ul>
 <li>  <a href="http://wiki.eclipse.org/Main_Page">Eclipse.org Wiki</a></li>
@@ -146,7 +206,7 @@
 <li>  <a href="http://wiki.eclipse.org/CDT/cdt-debug-dsf-gdb-extensibility">CDT DSF debug</a></li>
 </ul>
 
-<h3>Other</h3>
+<h3 id="tocAnchor-1-8-2">Other</h3>
 
 <ul>
 <li>  <a href="http://www.keil.com/pack/doc/cmsis/General/html/index.html">ARM CMSIS</a></li>
@@ -155,20 +215,20 @@
 <li>  <a href="https://sourceforge.net/p/forge/site-support/6343/">Forge site support #6343 Project description not propagated to all tools</a></li>
 </ul>
 
-<h3>Installers</h3>
+<h3 id="tocAnchor-1-8-3">Installers</h3>
 
 <ul>
 <li>  <a href="http://nsis.sourceforge.net/Main_Page">NSIS</a></li>
 <li>  <a href="http://blogs.msdn.com/b/windows_installer_team/archive/2009/09/02/authoring-a-single-package-for-per-user-or-per-machine-installation-context-in-windows-7.aspx">Single Package</a></li>
 </ul>
 
-<h3>References to GNU ARM Eclipse</h3>
+<h3 id="tocAnchor-1-8-4">References to GNU ARM Eclipse</h3>
 
 <ul>
 <li><a href="http://www.amazon.com/Getting-Started-STM32-Nucleo-Development-ebook/dp/B00WBU4BPW">Getting Started With STM32 Nucleo Development</a></li>
 </ul>
 
-<h2>Releases</h2>
+<h2 id="tocAnchor-1-13">Releases</h2>
 
 <ul>
 <li><a href="/2015/08/19/plugins-v2.9.3-201508190739-released/">latest release</a> <a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.9.3-201508190739">(download)</a></li>
@@ -177,7 +237,7 @@
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

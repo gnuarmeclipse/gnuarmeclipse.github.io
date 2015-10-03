@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>How to install the debugging components?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/debug/install/">
+  <link rel="canonical" href="/debug/install/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,7 +83,47 @@
 <h1 class="page-title">How to install the debugging components?</h1>
 
 
-<h2>Quicklinks</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Quicklinks</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Eclipse plug-ins</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">GDB client</span></a>
+<ul>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-4-1"><span class="tocnumber">4.1</span> <span class="toctext">Non-GNU toolchains</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">5</span> <span class="toctext">GDB server &amp; drivers</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">6</span> <span class="toctext">Alternate solutions</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">7</span> <span class="toctext">OpenSDA</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Quicklinks</h2>
 
 <p>If you already installed the plug-ins and the GDB client, and are interested only in J-Link, OpenOCD or QEMU install details, you can directly skip to:</p>
 
@@ -90,7 +133,7 @@
 <li><a href="/qemu/install/" title="QEMU Install">QEMU install</a></li>
 </ul>
 
-<h2>Overview</h2>
+<h2 id="tocAnchor-1-2">Overview</h2>
 
 <p>When debugging ARM applications, generally two main components are required:</p>
 
@@ -122,11 +165,13 @@
 
 <p>For an explanation why the SEGGER J-Link was selected, please go to the <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link Debugging</a> page and read the introduction section.</p>
 
-<h2>Eclipse plug-ins</h2>
+<h2 id="tocAnchor-1-3">Eclipse plug-ins</h2>
 
 <p>If you recently installed the GNU ARM Eclipse plug-ins (version 2.x or higher), you probably already have the debugging plug-ins. If not, go to the <a href="/plugins/install/" title="Plug-ins install">plug-ins install</a> page and be sure you enable the entries named <strong>GNU ARM C/C++ J-Link Debugging</strong>, <strong>GNU ARM C/C++ OpenOCD Debugging</strong> and <strong>GNU ARM C/C++ QEMU Debugging</strong>.</p>
 
-<p><img src="/assets/images/2014/01/DebuggingPluginsInstall1.png" alt=""></p>
+<p>
+<img src="/assets/images/2014/01/DebuggingPluginsInstall1.png" alt="" />
+</p>
 
 <p>Specific plug-in install documentation is available from separate pages:</p>
 
@@ -136,21 +181,24 @@
 <li><a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU plug-in</a></li>
 </ul>
 
-<h2>GDB client</h2>
+<h2 id="tocAnchor-1-4">GDB client</h2>
 
-<p>The GDB client (GDB stands for <strong>G</strong>NU <strong>D</strong>e<strong>b</strong>ugger) is part of the GNU Toolchains, and is located in the same folder as all GNU toolchain binaries (compiler, linker, etc). The application name uses the same prefix/suffix as the compiler (for example, the debugger for embedded applications is arm-none-eabi-gdb).</p>
+<p>The GDB client (GDB stands for <strong>G</strong>NU <strong>D</strong>e*<em>b</em>*ugger) is part of the GNU Toolchains, and is located in the same folder as all GNU toolchain binaries (compiler, linker, etc). The application name uses the same prefix/suffix as the compiler (for example, the debugger for embedded applications is arm-none-eabi-gdb).</p>
 
 <p>To check if GDB is functional on your machine, use the following command (adjust the path for your system):</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ /usr/local/gcc-arm-none-eabi-4_7-2013q3/bin/arm-none-eabi-gdb --version
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ /usr/local/gcc-arm-none-eabi-4_7-2013q3/bin/arm-none-eabi-gdb --version
 GNU gdb (GNU Tools for ARM Embedded Processors) 7.4.1.20130913-cvs
-</code></pre></div>
+</code></pre>
+</div>
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain version. Generally only debugging .ELF applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 
-<h3>Non-GNU toolchains</h3>
+<h3 id="tocAnchor-1-4-1">Non-GNU toolchains</h3>
 
 <p>Debugging applications generated by <strong>non-GNU toolchains</strong> (like the obsolete ARM CC), although not completely excluded, is <strong>not supported</strong>.</p>
 
-<h2>GDB server &amp; drivers</h2>
+<h2 id="tocAnchor-1-6">GDB server &amp; drivers</h2>
 
 <p>For the GDB server, there are two recommended solutions, <strong>J-Link GDB Server</strong> and <strong>OpenOCD</strong>. Detailed installation instructions are available in separate pages:</p>
 
@@ -163,7 +211,7 @@ GNU gdb (GNU Tools for ARM Embedded Processors) 7.4.1.20130913-cvs
 
 <p>Similarly, if you do not have a J-Link (yet), there is no need to install the J-Link support at this moment; you can very well start your tests with OpenOCD alone. However, especially if your evaluation board has an integrated JTAG, once you overcome the initial apprentice status and want to use more advanced debug techniques, like SWO traces, or even want to debug your own boards, you will need an external JTAG, and in this case the recommended solution is to use J-Link.</p>
 
-<h2>Alternate solutions</h2>
+<h2 id="tocAnchor-1-7">Alternate solutions</h2>
 
 <p>J-Link and OpenOCD are not the only existing solutions, but probably are the most portable ones. J-Link is a single piece of hardware that can be used with most ARM processors. At the other end of the spectrum is OpenOCD, a single piece of software that, within limits, can be used with most JTAG probes, especially on GNU/Linux.</p>
 
@@ -178,13 +226,13 @@ GNU gdb (GNU Tools for ARM Embedded Processors) 7.4.1.20130913-cvs
 <li>the Atollic GDB server, part of the Atollic suite; the server seems to start separately, but attempts to connect to it fail, probably due to some protection checks</li>
 </ul>
 
-<h2>OpenSDA</h2>
+<h2 id="tocAnchor-1-8">OpenSDA</h2>
 
-<p>Another interesting solution is Freescale&#39;s <strong>OpenSDA</strong> debug/programming interface. For the Kinetis L based Freedom Development Boards, SEGGER provides a high performance <a href="http://www.segger.com/opensda.html">OpenSDA</a> implementation fully compatible with the J-Link Lite, so the J-Link plug-in can be successfully used for these evaluation boards without having a physical J-Link probe. More details on installing OpenSDA can be found on <a href="http://mcuoneclipse.com/2013/05/16/freedom-board-with-segger-opensda-debug-firmware/">MCU on Eclipse</a>.</p>
+<p>Another interesting solution is Freescale's <strong>OpenSDA</strong> debug/programming interface. For the Kinetis L based Freedom Development Boards, SEGGER provides a high performance <a href="http://www.segger.com/opensda.html">OpenSDA</a> implementation fully compatible with the J-Link Lite, so the J-Link plug-in can be successfully used for these evaluation boards without having a physical J-Link probe. More details on installing OpenSDA can be found on <a href="http://mcuoneclipse.com/2013/05/16/freedom-board-with-segger-opensda-debug-firmware/">MCU on Eclipse</a>.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

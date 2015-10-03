@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>GNU ARM Eclipse plug-ins v1.1.7-201312221905 released</title>
   <meta name="description" content="The main change is the addition of the J-Link debugging plug-in, that supports the SEGGER J-Link JTAG/SWD probe, including extra features, like transparent i...">
@@ -36,10 +36,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/blog/2013/12/22/plugins-v1.1.7-201312221905-released/">
+  <link rel="canonical" href="/blog/2013/12/22/plugins-v1.1.7-201312221905-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -101,7 +104,7 @@ Posted on December 22, 2013 by Liviu Ionescu.
 
 <ul>
 <li>[feature-request:#23] the <em><strong>echo</strong></em> command was added to the Cross Build Tools archive to prevent the <em>missing command</em> error that affected the Windows versions of the plug-in when new projects were created</li>
-<li>[feature-request:#22] the STM32F4 template automatically sets the PLL<em>M definition as HSE</em>VALUE/1000000.</li>
+<li>[feature-request:#22] the STM32F4 template automatically sets the PLL_M definition as HSE_VALUE/1000000.</li>
 </ul>
 
 <p>Bugs fixed:</p>

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>KLxx template</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/templates/klxx/">
+  <link rel="canonical" href="/templates/klxx/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,43 +83,75 @@
 <h1 class="page-title">KLxx template</h1>
 
 
-<h2>Overview</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Project creation</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Overview</h2>
 
 <p>The KLxx template is currently able to generate projects for the Kinetis KL25 and KL46 processor families.</p>
 
-<p>Functionality is similar across all families, so we&#39;ll describe in details only the KL25 family.</p>
+<p>Functionality is similar across all families, so we'll describe in details only the KL25 family.</p>
 
-<h2>Project creation</h2>
+<h2 id="tocAnchor-1-2">Project creation</h2>
 
 <p>To create a new, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or the button in the upper left corner), and select <strong>C Project</strong> or <strong>C++ Project</strong>:</p>
 
-<p><img src="/assets/images/2014/02/KL25NewProject.png" alt="Create a new KL25 C++ project"></p>
+<p>
+<img src="/assets/images/2014/02/KL25NewProject.png" alt="Create a new KL25 C++ project" />
+</p>
 
 <p>Select the target processor and related settings:</p>
 
-<p><img src="/assets/images/2014/02/KL25TargetSelection.png" alt="Select the target details"></p>
+<p>
+<img src="/assets/images/2014/02/KL25TargetSelection.png" alt="Select the target details" />
+</p>
 
 <p>Eventually configure the folders where you want the projects to be stored:</p>
 
-<p><img src="/assets/images/2014/02/KL25Folders.png" alt="Configure the project folders"></p>
+<p>
+<img src="/assets/images/2014/02/KL25Folders.png" alt="Configure the project folders" />
+</p>
 
 <p>As for all C/C++ projects configure (usually just accept the suggested) build configurations:</p>
 
-<p><img src="/assets/images/2014/02/KL25Configs.png" alt="Accept the build configurations"></p>
+<p>
+<img src="/assets/images/2014/02/KL25Configs.png" alt="Accept the build configurations" />
+</p>
 
 <p>Finally select the toolchain and eventually configure the toolchain path:</p>
 
-<p><img src="/assets/images/2014/02/KL25Toolchain.png" alt="Select the toolchain"></p>
+<p>
+<img src="/assets/images/2014/02/KL25Toolchain.png" alt="Select the toolchain" />
+</p>
 
 <p>Click the <strong>Finish</strong> button and the project is created.</p>
 
 <p>The KL25 project structure is:</p>
 
-<p><img src="/assets/images/2014/02/TemplateProjectStructure.png" alt="Common project structure"></p>
+<p>
+<img src="/assets/images/2014/02/TemplateProjectStructure.png" alt="Common project structure" />
+</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

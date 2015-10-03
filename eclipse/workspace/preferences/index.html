@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>Workspace preferences</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/eclipse/workspace/preferences/">
+  <link rel="canonical" href="/eclipse/workspace/preferences/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,9 +83,50 @@
 <h1 class="page-title">Workspace preferences</h1>
 
 
-<p>Eclipse has some unusual defaults, and this is one of the reasons sometimes Eclipse fails to meet beginner expectations. Fortunately this can be easily fixed, each time after creating a new workspace it is recommended to check and maybe change the settings below.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Save automatically and Text file encoding</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Use active build configuration for indexing</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Show line numbers</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Editor folding</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Insert spaces for tabs</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Code formatter</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">7</span> <span class="toctext">Build console</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">8</span> <span class="toctext">Doxygen</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">9</span> <span class="toctext">Debug previous application</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Eclipse has some unusual defaults, and this is one of the reasons sometimes Eclipse fails to meet beginner expectations. Fortunately this can be easily fixed, each time after creating a new workspace it is recommended to check and maybe change the settings below.</p>
 
-<h2>Save automatically and Text file encoding</h2>
+<h2 id="tocAnchor-1-1">Save automatically and Text file encoding</h2>
 
 <p>Sometimes users are very confused to see that after the edit/compile/run cycle nothing changed in the program behaviour, although the editor clearly shows the changes. Usually the main reason is that the file was not actually saved and the build process used the previous version of the file. To automatically save edited files before build,</p>
 
@@ -106,15 +150,17 @@
 <li>disable the <strong>Build automatically</strong> option</li>
 </ul>
 
-<p>When you&#39;re done:</p>
+<p>When you're done:</p>
 
 <ul>
 <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2014/06/PreferencesSave.png" alt="Preferences: Save automatically"></p>
+<p>
+<img src="/assets/images/2014/06/PreferencesSave.png" alt="Preferences: Save automatically" />
+</p>
 
-<h2>Use active build configuration for indexing</h2>
+<h2 id="tocAnchor-1-2">Use active build configuration for indexing</h2>
 
 <p>Eclipse CDT has a very powerful indexer, which parses the source code on the fly and provides hints, auto-completion help, error reporting, etc while editing, without having to start the build process. For this indexer to be accurate, it must be in sync with the compiler, in terms of options and environment. For the indexer to automatically sync when changing from one configuration to another, check if the indexer was set to use the active configuration:</p>
 
@@ -124,9 +170,11 @@
 <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2014/06/PreferencesIndexer.png" alt="Indexer: Use active build configuration"></p>
+<p>
+<img src="/assets/images/2014/06/PreferencesIndexer.png" alt="Indexer: Use active build configuration" />
+</p>
 
-<h2>Show line numbers</h2>
+<h2 id="tocAnchor-1-3">Show line numbers</h2>
 
 <p>Although not critical, while editing source files, it is useful to see the line numbers, and also a hint that the line may be too long:</p>
 
@@ -138,9 +186,11 @@
 <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2014/06/PreferencesLineNumbers.png" alt="Editor preferences"></p>
+<p>
+<img src="/assets/images/2014/06/PreferencesLineNumbers.png" alt="Editor preferences" />
+</p>
 
-<h2>Editor folding</h2>
+<h2 id="tocAnchor-1-4">Editor folding</h2>
 
 <p>To better view the entire content of the source files, it is recommended to disable editor folding:</p>
 
@@ -150,21 +200,27 @@
 <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2014/06/PreferencesFolding.png" alt="Disable folding"></p>
+<p>
+<img src="/assets/images/2014/06/PreferencesFolding.png" alt="Disable folding" />
+</p>
 
-<h2>Insert spaces for tabs</h2>
+<h2 id="tocAnchor-1-5">Insert spaces for tabs</h2>
 
 <p>Using real tabs has the big disadvantage that the text appearance depends on the viewer tab size settings, which sometimes can create major readability problems.</p>
 
 <p>To avoid all these, it is recommended to avoid using tabs, ad replace them with spaces.</p>
 
-<p><img src="/assets/images/2014/06/PreferencesSpaces.png" alt="Insert spaces for tabs"></p>
+<p>
+<img src="/assets/images/2014/06/PreferencesSpaces.png" alt="Insert spaces for tabs" />
+</p>
 
 <p>To check if the text indeed has spaces and not tabs, enable the <strong>Show Whitespace Characters</strong>:</p>
 
-<p><img src="/assets/images/2014/06/Show_white_spaces.png" alt="Show whitespace characters"></p>
+<p>
+<img src="/assets/images/2014/06/Show_white_spaces.png" alt="Show whitespace characters" />
+</p>
 
-<h2>Code formatter</h2>
+<h2 id="tocAnchor-1-6">Code formatter</h2>
 
 <p>Eclipse CDT has a very useful feature allowing to automatically reformat a piece of code to comply to a given style. The recommended style is GNU. To set it:</p>
 
@@ -173,7 +229,9 @@
 <li>in the <strong>Active profile:</strong> field, select <strong>GNU [built-in]</strong></li>
 </ul>
 
-<p><img src="/assets/images/2014/06/PreferencesFormatter1.png" alt=""></p>
+<p>
+<img src="/assets/images/2014/06/PreferencesFormatter1.png" alt="" />
+</p>
 
 <p>Except very special company policies, it is generally recommended to NOT change the individual formatter style, and to apply the GNU format to all source files in a project before committing to the repository.</p>
 
@@ -181,7 +239,9 @@
 
 <p>For this, click the <strong>Edit...</strong> button.</p>
 
-<p><img src="/assets/images/2014/06/Style_GNU_with_spacs.png" alt="Change the tab policy to use spaces only"></p>
+<p>
+<img src="/assets/images/2014/06/Style_GNU_with_spacs.png" alt="Change the tab policy to use spaces only" />
+</p>
 
 <p>Change the tab policy to <strong>Spaces only</strong>, and the <strong>indentation</strong> and <strong>tab size</strong> to 2.</p>
 
@@ -198,7 +258,7 @@
 
 <p>The same action can be triggered with a right click and a <strong>Source</strong> → <strong>Format</strong> or even easier, with a keyboard shortcut (<strong>cmd+shift+F</strong> on OS X).</p>
 
-<h2>Build console</h2>
+<h2 id="tocAnchor-1-7">Build console</h2>
 
 <p>The build console is the place where the progress of the build process is presented, and where the compile/link errors are shown.</p>
 
@@ -212,11 +272,13 @@
 <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2014/06/PreferencesBuildConsole.png" alt="Build console preferences"></p>
+<p>
+<img src="/assets/images/2014/06/PreferencesBuildConsole.png" alt="Build console preferences" />
+</p>
 
 <p>When all settings are done, click the <strong>OK</strong> button.</p>
 
-<h2>Doxygen</h2>
+<h2 id="tocAnchor-1-8">Doxygen</h2>
 
 <p>To enable support for documentation tool comments:</p>
 
@@ -229,9 +291,11 @@
 
 <p>Note: currently only JavaDoc style comments are supported, i.e. with /** comments and @ commands.</p>
 
-<p><img src="/assets/images/2014/06/Doxygen.png" alt="Enable Doxygen support"></p>
+<p>
+<img src="/assets/images/2014/06/Doxygen.png" alt="Enable Doxygen support" />
+</p>
 
-<h2>Debug previous application</h2>
+<h2 id="tocAnchor-1-9">Debug previous application</h2>
 
 <p>Another Eclipse default that needs to be changed is the way programs are debugged. Eclipse remembers the previous debug configuration used and can present it as the default for the main debug button.</p>
 
@@ -242,11 +306,13 @@
 <li>select <strong>Always launch the previously launched application</strong> in the <strong>Launch Operation</strong> section.</li>
 </ul>
 
-<p><img src="/assets/images/2014/06/LaunchPrevious.png" alt="Launch previously used application"></p>
+<p>
+<img src="/assets/images/2014/06/LaunchPrevious.png" alt="Launch previously used application" />
+</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

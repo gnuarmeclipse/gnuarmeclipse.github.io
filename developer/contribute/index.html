@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>Contribute</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/contribute/">
+  <link rel="canonical" href="/developer/contribute/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,49 +83,87 @@
 <h1 class="page-title">Contribute</h1>
 
 
-<p>If these plug-ins were useful for you, and you want to help make them even better, your contributions will be highly appreciated.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Bug reports</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Feature requests</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Beta testing</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Provide patches</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Contribute development boards</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Pecuniary contributions</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>If these plug-ins were useful for you, and you want to help make them even better, your contributions will be highly appreciated.</p>
 
 <p>Here are some ideas on how you can contribute to GNU ARM Eclipse plug-ins:</p>
 
-<h2>Bug reports</h2>
+<h2 id="tocAnchor-1-1">Bug reports</h2>
 
 <p>If you notice something that does not behave as expected, please take the time to investigate the issue; it might be a wrong use case, but it might also be a bug, either in Eclipse CDT or in the GNU ARM Eclipse plug-ins.</p>
 
 <p>Try to investigate as mush as possible and when you have a sequence of steps that can be used to reproduce the bug, please file a new report in the <a href="https://sourceforge.net/p/gnuarmeclipse/bugs/">Bugs</a> tracker.</p>
 
-<h2>Feature requests</h2>
+<h2 id="tocAnchor-1-2">Feature requests</h2>
 
 <p>Every user is different, and every project may have some specifics. Obviously we could not think of all possible use cases, so if you think you have some suggestions on how to make your experience with the plug-ins even more enjoyable, please let us know by adding a new entry in the <a href="https://sourceforge.net/p/gnuarmeclipse/feature-requests/">Feature requests</a> tracker.</p>
 
-<h2>Beta testing</h2>
+<h2 id="tocAnchor-1-3">Beta testing</h2>
 
 <p>As the plug-ins provide more and more features, testing them becomes more and more time intensive.</p>
 
 <p>If you are willing to contribute some time to this project, beta testing new features would be highly appreciated.</p>
 
-<p><strong>To be notified on new features that require testing, please subscribe to the <a href="https://sourceforge.net/p/gnuarmeclipse/beta-versions/">Beta versions</a> tracker, either by email or RSS (use the top right icons).</strong></p>
+<p>
+<strong>To be notified on new features that require testing, please subscribe to the <a href="https://sourceforge.net/p/gnuarmeclipse/beta-versions/">Beta versions</a> tracker, either by email or RSS (use the top right icons).</strong>
+</p>
 
 <p>The beta versions are available from:</p>
 
-<p><strong>http://gnuarmeclipse.sourceforge.net/updates-test</strong></p>
+<p>
+<strong>
+<a href="http://gnuarmeclipse.sourceforge.net/updates-test">http://gnuarmeclipse.sourceforge.net/updates-test</a>
+</strong>
+</p>
 
 <p>After performing the tests, please add your feedback separately to each new feature, preferably with suggestions on how to improve things.</p>
 
-<h2>Provide patches</h2>
+<h2 id="tocAnchor-1-4">Provide patches</h2>
 
 <p>If you are more experienced, and are not afraid of the Eclipse plug-ins development environment, you can directly experiment adding new features and even new plug-ins, and provide patches.</p>
 
-<h2>Contribute development boards</h2>
+<h2 id="tocAnchor-1-5">Contribute development boards</h2>
 
 <p>If you need project templates for new processors, it is highly probable that we do not have development boards with those processors available. If these processors are of general interest, we might consider adding templates for them, but only if you promise to perform the run tests on your boards. Alternatively, if you have spare development boards available, you can send them to us for a more expedite testing. (Please contact us for details before shipping anything).</p>
 
-<h2>Pecuniary contributions</h2>
+<h2 id="tocAnchor-1-6">Pecuniary contributions</h2>
 
-<p>Although we&#39;ll do our best to continue the development for the GNU ARM Eclipse plug-ins as free software, the world around us is governed by banks and financial institutions, and even mathematicians came up with a <em><a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">no free lunch theorem</a></em>. So, as everywhere, if you are willing to contribute, we&#39;ll be grateful for any contribution. (Please contact us for details).</p>
+<p>Although we'll do our best to continue the development for the GNU ARM Eclipse plug-ins as free software, the world around us is governed by banks and financial institutions, and even mathematicians came up with a <em><a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">no free lunch theorem</a></em>. So, as everywhere, if you are willing to contribute, we'll be grateful for any contribution. (Please contact us for details).</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

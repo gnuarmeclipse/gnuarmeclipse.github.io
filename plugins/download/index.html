@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>Downloads</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/plugins/download/">
+  <link rel="canonical" href="/plugins/download/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,43 +83,76 @@
 <h1 class="page-title">Downloads</h1>
 
 
-<h2>The Eclipse way</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">The Eclipse way</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Beta versions</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">2</span> <span class="toctext">The local archive way</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">The Eclipse way</h2>
 
 <p>Installing Eclipse usually does not require to separately download any binary, since Eclipse provides a special mechanism to install and update plug-ins.</p>
 
 <p>The GNU ARM Eclipse plug-ins update site URL is still on SourceForge:</p>
 
-<p><code>http://gnuarmeclipse.sourceforge.net/updates</code></p>
+<p>
+<code>http://gnuarmeclipse.sourceforge.net/updates</code>
+</p>
 
 <p>More details are available in the <a href="/plugins/install/">Install</a> page.</p>
 
-<h3>Beta versions</h3>
+<h3 id="tocAnchor-1-1-1">Beta versions</h3>
 
 <p>For previews, experimental releases are posted to a separate update site:</p>
 
-<p><code>http://gnuarmeclipse.sourceforge.net/updates-test</code></p>
+<p>
+<code>http://gnuarmeclipse.sourceforge.net/updates-test</code>
+</p>
 
 <p>Sometimes you can use this site to test some features that are not completely implemented, or that might change before a final version is released.</p>
 
 <p>This site is not always updated; use it carefully, back up your workspace, and do not use it for production projects.</p>
 
-<h2>The local archive way</h2>
+<h2 id="tocAnchor-1-3">The local archive way</h2>
 
 <p>If, for any reasons, you need to revert to a specific version, or the Eclipse mechanism to install new software fails,  you can always download the desired version and manually install the plug-ins from the local archive.</p>
 
 <p>All versions of the plug-ins are available via the <a href="https://github.com/gnuarmeclipse/plug-ins/releases">GitHub Releases</a> page. For details how to reach it, see the <a href="/downloads/">Downloads</a> page.</p>
 
-<p><img src="/assets/images/2015/github-gae-plugins-releases.png" alt="Plug-ins Releases"></p>
+<p>
+<img src="/assets/images/2015/github-gae-plugins-releases.png" alt="Plug-ins Releases" />
+</p>
 
 <p>Just navigate to the <a href="https://github.com/gnuarmeclipse/plug-ins/releases/latest">Latest release</a> page (or the desired version) and download the attached archive, it should be a <strong>zip</strong> file with a long name like:</p>
 
-<p><code>ilg.gnuarmeclipse.repository-2.9.3-201508190739.zip</code></p>
+<p>
+<code>ilg.gnuarmeclipse.repository-2.9.3-201508190739.zip</code>
+</p>
 
 <p>Please note that not all plug-in versions run on all Eclipse versions, and usually new plug-in versions may require new Eclipse versions, so better try to stay as up-to-date with the Eclipse as possible. (For Eclipse Kepler 4.3 and later, use versions 1.x; for older Eclipses, try the final 0.5.5 version, but keep in mind it is no longer maintained).</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

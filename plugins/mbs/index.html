@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>How to use the managed build plug-ins?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/plugins/mbs/">
+  <link rel="canonical" href="/plugins/mbs/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,15 +83,75 @@
 <h1 class="page-title">How to use the managed build plug-ins?</h1>
 
 
-<h2>Prerequisites</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Prerequisites</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Toolchain</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Build tools (make &amp; rm)</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Toolchain path</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">2</span> <span class="toctext">Build a test executable application</span></a>
+<ul>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-5-1"><span class="tocnumber">2.1</span> <span class="toctext">Create a new C/C++ project</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#tocAnchor-1-5-2"><span class="tocnumber">2.2</span> <span class="toctext">Assign a device to the project</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#tocAnchor-1-5-3"><span class="tocnumber">2.3</span> <span class="toctext">Configure the target processor</span></a>
+</li>
+<li class="toc_level-2 toc_section-9">
+<a href="#tocAnchor-1-5-4"><span class="tocnumber">2.4</span> <span class="toctext">Configure the toolchain path</span></a>
+</li>
+<li class="toc_level-2 toc_section-10">
+<a href="#tocAnchor-1-5-5"><span class="tocnumber">2.5</span> <span class="toctext">Configure the linker script</span></a>
+</li>
+<li class="toc_level-2 toc_section-11">
+<a href="#tocAnchor-1-5-6"><span class="tocnumber">2.6</span> <span class="toctext">Startup file</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#tocAnchor-1-5-7"><span class="tocnumber">2.7</span> <span class="toctext">Path persistence</span></a>
+</li>
+<li class="toc_level-2 toc_section-13">
+<a href="#tocAnchor-1-5-8"><span class="tocnumber">2.8</span> <span class="toctext">Static libraries</span></a>
+</li>
+<li class="toc_level-2 toc_section-14">
+<a href="#tocAnchor-1-5-9"><span class="tocnumber">2.9</span> <span class="toctext">Shared libraries</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Prerequisites</h2>
 
 <p>After successfully installing the cross build plug-in, before being able to start using it, it is necessary to install one or more toolchains, specific for the projects you plan to create.</p>
 
-<h3>Toolchain</h3>
+<h3 id="tocAnchor-1-1-1">Toolchain</h3>
 
 <p>For embedded ARM projects, it is recommended to use the <a href="http://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> (arm-none-eabi-<em>). For all other projects, a good point to start the search for toolchains is the <a href="http://launchpad.net/gcc-linaro">Linaro</a> project</em><em>.</em>*</p>
 
-<h3>Build tools (make &amp; rm)</h3>
+<h3 id="tocAnchor-1-1-2">Build tools (make &amp; rm)</h3>
 
 <p>If you run on OS X or GNU/Linux, things are easier, since <strong>rm</strong> should already be part of the system, and <strong>make</strong>, if not already there, can be installed by adding the developer package.</p>
 
@@ -97,7 +160,9 @@
 <p>On GNU/Linux, depending on your distribution, <strong>make</strong> might be in the standard distribution, or you might need to install some specific developer packages.</p>
 
 <p>In both cases, to check if make is available, run the following command:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ make --version
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ make --version
 GNU Make 3.81
 Copyright (C) 2006  Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.
@@ -105,68 +170,80 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE.
 
 This program built for i386-apple-darwin11.3.0
-</code></pre></div>
+</code></pre>
+</div>
 <p>Although the managed build process does not require special features from make, it is mandatory that it is a <strong>GNU Make</strong>, preferably as recent as possible.</p>
 
 <p>On Windows things are a bit more complicated, since neither make nor rm are part of the standard distribution, and need to be installed separately. For more information, please read the separate page <a href="/windows-build-tools/" title="Build tools (make &amp; rm) on Windows">Build tools (make &amp; rm) on Windows</a>.</p>
 
-<h3>Toolchain path</h3>
+<h3 id="tocAnchor-1-1-3">Toolchain path</h3>
 
 <p>The locations where the toolchains are installed are not relevant for the plug-in, since the toolchain path is a parameter that can be configured for each toolchain or even for each project.</p>
 
 <p>However, one detail may be important: during toolchain installation, <strong>DO NOT add the toolchain path to the system path</strong>. If the install procedure does this automatically, then better remove it by hand, to avoid further problems.</p>
 
-<h2>Build a test executable application</h2>
+<h2 id="tocAnchor-1-5">Build a test executable application</h2>
 
 <p>Probably the main purpose of this plug-in is to built executable applications, more specifically embedded applications to be executed from flash.</p>
 
-<h3>Create a new C/C++ project</h3>
+<h3 id="tocAnchor-1-5-1">Create a new C/C++ project</h3>
 
 <p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or the button in the upper left corner), and select <strong>C Project</strong> or <strong>C++ Project</strong>:</p>
 
-<p><img src="/assets/images/2013/10/NewCProject.png" alt="NewCProject"></p>
+<p>
+<img src="/assets/images/2013/10/NewCProject.png" alt="NewCProject" />
+</p>
 
 <p>For more details on creating projects, please see the <strong><a href="/tutorials/hello-arm/" title="Create a test project tutorial">Create test project tutorial</a></strong> separate page.</p>
 
-<h3>Assign a device to the project</h3>
+<h3 id="tocAnchor-1-5-2">Assign a device to the project</h3>
 
 <p>To benefit from the additional information made available by the new packs technology, it is recommended to assign a a device name to the project, in fact to each build configuration.</p>
 
-<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project"></p>
+<p>
+<img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" />
+</p>
 
-<h3>Configure the target processor</h3>
+<h3 id="tocAnchor-1-5-3">Configure the target processor</h3>
 
 <p>By default, new projects are configured to generate code for the ARM Cortex-M3 processor (in a future version will use the value from the device assigned above).</p>
 
 <p>When using other processors, it is necessary to inform the plug-in of the details, in the Target Processor settings page.</p>
 
-<p><img src="/assets/images/2013/10/TargetProcessor.png" alt="Setting the target processor"></p>
+<p>
+<img src="/assets/images/2013/10/TargetProcessor.png" alt="Setting the target processor" />
+</p>
 
 <p>In addition to the ARM family, various other configuration details can be set here, like floating point and unaligned access.</p>
 
 <p>When selecting AArch64 processors in the toolchain setting page, the ARM configuration is disabled, and the AArch64 ones become enabled.</p>
 
-<h3>Configure the toolchain path</h3>
+<h3 id="tocAnchor-1-5-4">Configure the toolchain path</h3>
 
 <p>When the new projects are created with the GNU ARM Eclipse templates, the toolchain path is already configured. Only when importing projects into a fresh workspace, the toolchain path needs to be configured manually for the first build.</p>
 
-<p><img src="/assets/images/2014/02/ToolchainsProperties.png" alt="Toolchain properties"></p>
+<p>
+<img src="/assets/images/2014/02/ToolchainsProperties.png" alt="Toolchain properties" />
+</p>
 
 <p>Since this setting refer to the global toolchain path, it will be remembered for all projects using the same toolchain.</p>
 
-<h3>Configure the linker script</h3>
+<h3 id="tocAnchor-1-5-5">Configure the linker script</h3>
 
 <p>Linker scripts are usually perceived as some impossible to comprehend, mysterious thing, but the truth is that customising them is not that complicated.</p>
 
 <p>The <strong>Hello World ARM Cortex-M3 C Project</strong> template provides a starting point for the linker script. In fact there are two scripts, one with the memory definitions (<em>ldscripts/mem.ld</em>) and one with the sections definitions (<em>ldscripts/sections.ld</em>).</p>
 
 <p>For example, the default memory definitions look like this:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">MEMORY
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">MEMORY
 {
   FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 128K
   RAM (rwx)  : ORIGIN = 0x20000000, LENGTH = 20K
 }
-</code></pre></div>
+</code></pre>
+</div>
 <p>The syntax is quite obvious, the default configurations is for a processor with 128 K flash and 20 K RAM (for example the SM32F103xB family).</p>
 
 <p>If your processor is larger (most probably), edit the <em>LENGTH</em> values accordingly.</p>
@@ -175,13 +252,13 @@ This program built for i386-apple-darwin11.3.0
 
 <p>Samples of such definitions can usually be found in the toolchain <em>share</em> folder.</p>
 
-<h3>Startup file</h3>
+<h3 id="tocAnchor-1-5-6">Startup file</h3>
 
 <p>The startup file generally depends on the specific processor. The one provided by the <strong>Hello World ARM Cortex-M3 C Project</strong> template can be used only as a sample, but for a practical applications it is not complete, since processor specific vectors are not there and need to be added.</p>
 
 <p>Generally the startup file should be taken from the processor CMSIS &amp; peripheral libraries provided by the processor manufacturer.</p>
 
-<h3>Path persistence</h3>
+<h3 id="tocAnchor-1-5-7">Path persistence</h3>
 
 <p>The paths entered in the <em>New Project</em> wizard are stored in a centralised storage in the workspace; for each toolchain that is used, an absolute path is associated; on further wizard invocation this path will be automatically suggested.</p>
 
@@ -189,7 +266,7 @@ This program built for i386-apple-darwin11.3.0
 
 <p>In addition to executable applications, this plug-in can also be used to build libraries, static or shared, usually for embedded GNU/Linux systems.</p>
 
-<h3>Static libraries</h3>
+<h3 id="tocAnchor-1-5-8">Static libraries</h3>
 
 <p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or the button in the upper left corner), and select the <strong>C Project</strong> and in the C Project window:</p>
 
@@ -200,7 +277,9 @@ This program built for i386-apple-darwin11.3.0
 <li>click the <strong>Next &gt;</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2013/10/StaticCLib.png" alt="Create a static library C project"></p>
+<p>
+<img src="/assets/images/2013/10/StaticCLib.png" alt="Create a static library C project" />
+</p>
 
 <p>In the <em>Select Configurations</em> page</p>
 
@@ -212,11 +291,13 @@ This program built for i386-apple-darwin11.3.0
 
 <p>When building static libraries, after all source files are compiled, instead of the link step, the make process calls the archiver to pack all objects together.</p>
 
-<p><img src="/assets/images/2013/10/ConfigureArchiver.png" alt="Configure the archiver"></p>
+<p>
+<img src="/assets/images/2013/10/ConfigureArchiver.png" alt="Configure the archiver" />
+</p>
 
 <p>Due to the specifics of building libraries, there are no secondary targets (no binary, listing or size).</p>
 
-<h3>Shared libraries</h3>
+<h3 id="tocAnchor-1-5-9">Shared libraries</h3>
 
 <p>The process is similar to static libraries, just that in the final step the linker is called, with special options, to create the shared library.</p>
 
@@ -224,7 +305,7 @@ This program built for i386-apple-darwin11.3.0
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

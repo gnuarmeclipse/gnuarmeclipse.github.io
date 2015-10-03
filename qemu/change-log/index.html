@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>The 2015 QEMU Change Log</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/qemu/change-log/">
+  <link rel="canonical" href="/qemu/change-log/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,9 +83,214 @@
 <h1 class="page-title">The 2015 QEMU Change Log</h1>
 
 
-<h2>2015</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">2015</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">2015-08-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">2015-08-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">2015-07-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">2015-07-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-1-5"><span class="tocnumber">1.5</span> <span class="toctext">2015-07-26</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#tocAnchor-1-1-6"><span class="tocnumber">1.6</span> <span class="toctext">2015-07-24</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#tocAnchor-1-1-7"><span class="tocnumber">1.7</span> <span class="toctext">2015-07-23</span></a>
+</li>
+<li class="toc_level-2 toc_section-9">
+<a href="#tocAnchor-1-1-8"><span class="tocnumber">1.8</span> <span class="toctext">2015-07-20</span></a>
+</li>
+<li class="toc_level-2 toc_section-10">
+<a href="#tocAnchor-1-1-9"><span class="tocnumber">1.9</span> <span class="toctext">2015-07-18</span></a>
+</li>
+<li class="toc_level-2 toc_section-11">
+<a href="#tocAnchor-1-1-10"><span class="tocnumber">1.10</span> <span class="toctext">2015-07-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#tocAnchor-1-1-11"><span class="tocnumber">1.11</span> <span class="toctext">2015-07-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-13">
+<a href="#tocAnchor-1-1-12"><span class="tocnumber">1.12</span> <span class="toctext">2015-07-08</span></a>
+</li>
+<li class="toc_level-2 toc_section-14">
+<a href="#tocAnchor-1-1-13"><span class="tocnumber">1.13</span> <span class="toctext">2015-07-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-15">
+<a href="#tocAnchor-1-1-14"><span class="tocnumber">1.14</span> <span class="toctext">2015-07-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-16">
+<a href="#tocAnchor-1-1-15"><span class="tocnumber">1.15</span> <span class="toctext">2015-07-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-17">
+<a href="#tocAnchor-1-1-16"><span class="tocnumber">1.16</span> <span class="toctext">2015-07-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-18">
+<a href="#tocAnchor-1-1-17"><span class="tocnumber">1.17</span> <span class="toctext">2015-07-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-19">
+<a href="#tocAnchor-1-1-18"><span class="tocnumber">1.18</span> <span class="toctext">2015-07-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-20">
+<a href="#tocAnchor-1-1-19"><span class="tocnumber">1.19</span> <span class="toctext">2015-06-30</span></a>
+</li>
+<li class="toc_level-2 toc_section-21">
+<a href="#tocAnchor-1-1-20"><span class="tocnumber">1.20</span> <span class="toctext">2015-06-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-22">
+<a href="#tocAnchor-1-1-21"><span class="tocnumber">1.21</span> <span class="toctext">2015-06-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-23">
+<a href="#tocAnchor-1-1-22"><span class="tocnumber">1.22</span> <span class="toctext">2015-06-27</span></a>
+</li>
+<li class="toc_level-2 toc_section-24">
+<a href="#tocAnchor-1-1-23"><span class="tocnumber">1.23</span> <span class="toctext">2015-06-25</span></a>
+</li>
+<li class="toc_level-2 toc_section-25">
+<a href="#tocAnchor-1-1-24"><span class="tocnumber">1.24</span> <span class="toctext">2015-06-24</span></a>
+</li>
+<li class="toc_level-2 toc_section-26">
+<a href="#tocAnchor-1-1-25"><span class="tocnumber">1.25</span> <span class="toctext">2015-06-22</span></a>
+</li>
+<li class="toc_level-2 toc_section-27">
+<a href="#tocAnchor-1-1-26"><span class="tocnumber">1.26</span> <span class="toctext">2015-06-21</span></a>
+</li>
+<li class="toc_level-2 toc_section-28">
+<a href="#tocAnchor-1-1-27"><span class="tocnumber">1.27</span> <span class="toctext">2015-06-20</span></a>
+</li>
+<li class="toc_level-2 toc_section-29">
+<a href="#tocAnchor-1-1-28"><span class="tocnumber">1.28</span> <span class="toctext">2015-06-19</span></a>
+</li>
+<li class="toc_level-2 toc_section-30">
+<a href="#tocAnchor-1-1-29"><span class="tocnumber">1.29</span> <span class="toctext">2015-06-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-31">
+<a href="#tocAnchor-1-1-30"><span class="tocnumber">1.30</span> <span class="toctext">2015-06-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-32">
+<a href="#tocAnchor-1-1-31"><span class="tocnumber">1.31</span> <span class="toctext">2015-06-15</span></a>
+</li>
+<li class="toc_level-2 toc_section-33">
+<a href="#tocAnchor-1-1-32"><span class="tocnumber">1.32</span> <span class="toctext">2015-06-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-34">
+<a href="#tocAnchor-1-1-33"><span class="tocnumber">1.33</span> <span class="toctext">2015-06-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-35">
+<a href="#tocAnchor-1-1-34"><span class="tocnumber">1.34</span> <span class="toctext">2015-06-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-36">
+<a href="#tocAnchor-1-1-35"><span class="tocnumber">1.35</span> <span class="toctext">2015-06-11</span></a>
+</li>
+<li class="toc_level-2 toc_section-37">
+<a href="#tocAnchor-1-1-36"><span class="tocnumber">1.36</span> <span class="toctext">2015-06-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-38">
+<a href="#tocAnchor-1-1-37"><span class="tocnumber">1.37</span> <span class="toctext">2015-06-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-39">
+<a href="#tocAnchor-1-1-38"><span class="tocnumber">1.38</span> <span class="toctext">2015-06-08</span></a>
+</li>
+<li class="toc_level-2 toc_section-40">
+<a href="#tocAnchor-1-1-39"><span class="tocnumber">1.39</span> <span class="toctext">2015-06-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-41">
+<a href="#tocAnchor-1-1-40"><span class="tocnumber">1.40</span> <span class="toctext">2015-06-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-42">
+<a href="#tocAnchor-1-1-41"><span class="tocnumber">1.41</span> <span class="toctext">2015-06-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-43">
+<a href="#tocAnchor-1-1-42"><span class="tocnumber">1.42</span> <span class="toctext">2015-06-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-44">
+<a href="#tocAnchor-1-1-43"><span class="tocnumber">1.43</span> <span class="toctext">2015-06-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-45">
+<a href="#tocAnchor-1-1-44"><span class="tocnumber">1.44</span> <span class="toctext">2015-05-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-46">
+<a href="#tocAnchor-1-1-45"><span class="tocnumber">1.45</span> <span class="toctext">2015-05-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-47">
+<a href="#tocAnchor-1-1-46"><span class="tocnumber">1.46</span> <span class="toctext">2015-05-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-48">
+<a href="#tocAnchor-1-1-47"><span class="tocnumber">1.47</span> <span class="toctext">2015-05-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-49">
+<a href="#tocAnchor-1-1-48"><span class="tocnumber">1.48</span> <span class="toctext">2015-04-27</span></a>
+</li>
+<li class="toc_level-2 toc_section-50">
+<a href="#tocAnchor-1-1-49"><span class="tocnumber">1.49</span> <span class="toctext">2015-04-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-51">
+<a href="#tocAnchor-1-1-50"><span class="tocnumber">1.50</span> <span class="toctext">2015-04-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-52">
+<a href="#tocAnchor-1-1-51"><span class="tocnumber">1.51</span> <span class="toctext">2015-04-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-53">
+<a href="#tocAnchor-1-1-52"><span class="tocnumber">1.52</span> <span class="toctext">2015-04-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-54">
+<a href="#tocAnchor-1-1-53"><span class="tocnumber">1.53</span> <span class="toctext">2015-04-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-55">
+<a href="#tocAnchor-1-1-54"><span class="tocnumber">1.54</span> <span class="toctext">2015-04-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-56">
+<a href="#tocAnchor-1-1-55"><span class="tocnumber">1.55</span> <span class="toctext">2015-04-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-57">
+<a href="#tocAnchor-1-1-56"><span class="tocnumber">1.56</span> <span class="toctext">2015-04-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-58">
+<a href="#tocAnchor-1-1-57"><span class="tocnumber">1.57</span> <span class="toctext">2015-03-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-59">
+<a href="#tocAnchor-1-1-58"><span class="tocnumber">1.58</span> <span class="toctext">2015-03-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-60">
+<a href="#tocAnchor-1-1-59"><span class="tocnumber">1.59</span> <span class="toctext">2015-03-26</span></a>
+</li>
+<li class="toc_level-2 toc_section-61">
+<a href="#tocAnchor-1-1-60"><span class="tocnumber">1.60</span> <span class="toctext">2015-01-25</span></a>
+</li>
+<li class="toc_level-2 toc_section-62">
+<a href="#tocAnchor-1-1-61"><span class="tocnumber">1.61</span> <span class="toctext">2015-01-20</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-63">
+<a href="#tocAnchor-1-63"><span class="tocnumber">2</span> <span class="toctext">2014</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">2015</h2>
 
-<h3>2015-08-04</h3>
+<h3 id="tocAnchor-1-1-1">2015-08-04</h3>
 
 <ul>
 <li>SDL event loop added (to fix responsivness &amp; Windows bug)</li>
@@ -117,7 +325,7 @@
 </ul></li>
 </ul>
 
-<h3>2015-08-01</h3>
+<h3 id="tocAnchor-1-1-2">2015-08-01</h3>
 
 <ul>
 <li>version 2.3.50-201508012000-dev released
@@ -149,37 +357,37 @@
 <li>image for NUCLEO-F411RE added; board not enabled</li>
 </ul>
 
-<h3>2015-07-31</h3>
+<h3 id="tocAnchor-1-1-3">2015-07-31</h3>
 
 <ul>
 <li>gpio-led.c: orange led colour; more verbosity</li>
 </ul>
 
-<h3>2015-07-29</h3>
+<h3 id="tocAnchor-1-1-4">2015-07-29</h3>
 
 <ul>
-<li>cortexm-helper.c: fix cm<em>board</em>get_name() warning</li>
+<li>cortexm-helper.c: fix cm_board_get_name() warning</li>
 </ul>
 
-<h3>2015-07-26</h3>
+<h3 id="tocAnchor-1-1-5">2015-07-26</h3>
 
 <ul>
 <li>gpio-led: led colour properly displayed in console</li>
 <li>stm32-gpio.c: is_enabled() implemented</li>
 </ul>
 
-<h3>2015-07-24</h3>
+<h3 id="tocAnchor-1-1-6">2015-07-24</h3>
 
 <ul>
 <li>cortexm-helper: board &amp; mcu help</li>
-<li>cortexm-helper: cm<em>object</em>new_mcu(machine, name)</li>
+<li>cortexm-helper: cm_object_new_mcu(machine, name)</li>
 <li>gpio-led: x,y points to led center, not corner</li>
-<li>vl.c: &#39;Board not supported&#39; error message + exit</li>
+<li>vl.c: 'Board not supported' error message + exit</li>
 <li>stm32 boards: pictures &amp; LEDs added</li>
-<li>stm32 boards: use cm<em>board</em>get_desc()</li>
+<li>stm32 boards: use cm_board_get_desc()</li>
 </ul>
 
-<h3>2015-07-23</h3>
+<h3 id="tocAnchor-1-1-7">2015-07-23</h3>
 
 <ul>
 <li>STM32F4-Discovery.jpg, much shorter</li>
@@ -190,7 +398,7 @@
 <li>sdl-x11.patch with lower case X</li>
 <li>cortexm-board.c added</li>
 <li>null-machine.c disabled</li>
-<li>Makefile.obj: ifeq ($(CONFIG<em>GNU</em>ARM_ECLIPSE),n)</li>
+<li>Makefile.obj: ifeq ($(CONFIG_GNU_ARM_ECLIPSE),n)</li>
 <li>cpu.c: filter out non cortex-m cpus</li>
 <li>boards.h: mcu_device field added to machine</li>
 <li>machine.c: cast to void* for image_filename</li>
@@ -199,7 +407,7 @@
 <li>dtc &amp; pixman modules removed</li>
 </ul>
 
-<h3>2015-07-20</h3>
+<h3 id="tocAnchor-1-1-8">2015-07-20</h3>
 
 <ul>
 <li>qemu.nsi: add share folder, for the images</li>
@@ -208,51 +416,51 @@
 <li>cortexm-helper.c: error processing in sdl init</li>
 </ul>
 
-<h3>2015-07-18</h3>
+<h3 id="tocAnchor-1-1-9">2015-07-18</h3>
 
 <ul>
 <li>build: sdl patches added</li>
 </ul>
 
-<h3>2015-07-17</h3>
+<h3 id="tocAnchor-1-1-10">2015-07-17</h3>
 
 <ul>
 <li>images: STM32F4-Discovery.png added</li>
-<li>cortexm-helper: use IMG<em>Load for SDL</em>LoadBMP</li>
-<li>configure: sdl=&quot;yes&quot;</li>
+<li>cortexm-helper: use IMG_Load for SDL_LoadBMP</li>
+<li>configure: sdl="yes"</li>
 <li>vl.c: default display type is NONE</li>
 <li>po: regenerated, only creation date updated</li>
 <li>cortexm-helper: reference to SDL_image.h</li>
-<li>cortexm-nvic: remove external system<em>clock</em>scale</li>
-<li>configure: add -lSDL<em>image to sdl</em>libs</li>
+<li>cortexm-nvic: remove external system_clock_scale</li>
+<li>configure: add -lSDL_image to sdl_libs</li>
 </ul>
 
-<h3>2015-07-16</h3>
+<h3 id="tocAnchor-1-1-11">2015-07-16</h3>
 
 <ul>
-<li>vl.c: find<em>file QEMU</em>FILE<em>TYPE</em>IMAGES added</li>
+<li>vl.c: find_file QEMU_FILE_TYPE_IMAGES added</li>
 <li>gpio-led: add graphical blink support</li>
-<li>cortexm-helper: add board<em>image</em>init</li>
+<li>cortexm-helper: add board_image_init</li>
 <li>stm32-boards: F4-Discovery with graphical leds</li>
 <li>all other stm32 boards with null graphical</li>
 </ul>
 
-<h3>2015-07-08</h3>
+<h3 id="tocAnchor-1-1-12">2015-07-08</h3>
 
 <ul>
 <li>stm32f429xx added</li>
 <li>STM32F429I-Discovery board added</li>
 </ul>
 
-<h3>2015-07-07</h3>
+<h3 id="tocAnchor-1-1-13">2015-07-07</h3>
 
 <ul>
-<li>cortexm-helper: cortexm<em>bitband</em>init() prototype</li>
+<li>cortexm-helper: cortexm_bitband_init() prototype</li>
 <li>gpio-led: GPIOLEDInfo added</li>
 <li>STM32F4-Discovery with array of LEDInfo</li>
 <li>stm32 periph-bitband added</li>
 <li>stm32-pwr added</li>
-<li>cortexm-mcu: public cortexm<em>bitband</em>init()</li>
+<li>cortexm-mcu: public cortexm_bitband_init()</li>
 <li>peripheral: verbose check address duplicate</li>
 <li>stm32-flash: f4 implemented</li>
 <li>stm32-rcc: f4 implemented</li>
@@ -267,38 +475,38 @@
 <li>doc: suported boards documented</li>
 </ul>
 
-<h3>2015-07-05</h3>
+<h3 id="tocAnchor-1-1-14">2015-07-05</h3>
 
 <ul>
 <li>stm32-gpio: f4 implemented, not yet tested.</li>
-<li>bitfield: register<em>bitfield</em>new<em>with</em>info()</li>
+<li>bitfield: register_bitfield_new_with_info()</li>
 <li>register: Info structure cleaned</li>
-<li>peripheral: peripheral<em>new</em>with_info() added</li>
-<li>stm32-gpio: use peripheral<em>new</em>with_info()</li>
-<li>stm32-rcc: use peripheral<em>new</em>with_info()</li>
+<li>peripheral: peripheral_new_with_info() added</li>
+<li>stm32-gpio: use peripheral_new_with_info()</li>
+<li>stm32-rcc: use peripheral_new_with_info()</li>
 <li>register: move actions from info to setters</li>
 <li>stm32-gpio, stm32-rcc: use pre/post setters</li>
-<li>cortexm-helper: cm<em>object</em>property_add() added</li>
-<li>peripheral, register: create<em>auto</em>bits delayed</li>
+<li>cortexm-helper: cm_object_property_add() added</li>
+<li>peripheral, register: create_auto_bits delayed</li>
 <li>bitfield: remove auto-bit</li>
 <li>stm32-gpio, -flash, -rcc: auto-bits as props</li>
-<li>stm32-gpio, -flash, -rcc: *<em>create</em>objects()</li>
+<li>stm32-gpio, -flash, -rcc: *_create_objects()</li>
 </ul>
 
-<h3>2015-07-04</h3>
+<h3 id="tocAnchor-1-1-15">2015-07-04</h3>
 
 <ul>
 <li>peripheral: pre/post actions moved to register</li>
 <li>stm32-gpio: use prev_value for odr</li>
-<li>cortexm-helper.h: peripheral<em>register</em>t added</li>
+<li>cortexm-helper.h: peripheral_register_t added</li>
 <li>peripheral-register: no more custom types</li>
-<li>peripheral<em>register</em>new<em>with</em>info()</li>
+<li>peripheral_register_new_with_info()</li>
 <li>peripheral: reset_mask added</li>
 <li>stm32-rcc: explicit &amp;handler</li>
 <li>stm32-gpio: F1 callbacks renamed to stm32f1_*</li>
 </ul>
 
-<h3>2015-07-03</h3>
+<h3 id="tocAnchor-1-1-16">2015-07-03</h3>
 
 <ul>
 <li>peripheral-register: derived class functional</li>
@@ -307,47 +515,47 @@
 <li>register: remove name from type_info</li>
 <li>register: copy writable bits to object</li>
 <li>stm32-rcc: use new objects; F1 &amp; F1CL ok</li>
-<li>bitfield: width<em>bits replaces last</em>bit</li>
+<li>bitfield: width_bits replaces last_bit</li>
 <li>peripheral: is_enabled callback added</li>
 <li>register: raw_get/set/or/and</li>
 <li>stm32-gpio: reworked with objects</li>
-<li>cortexm-helper: + cm<em>object</em>get<em>child</em>by_name()</li>
-<li>bitfield: fix register<em>bitfield</em>read_value()</li>
-<li>stm32-rcc: stm32<em>rcc</em>update_clocks() use fields</li>
+<li>cortexm-helper: + cm_object_get_child_by_name()</li>
+<li>bitfield: fix register_bitfield_read_value()</li>
+<li>stm32-rcc: stm32_rcc_update_clocks() use fields</li>
 <li>stm32-gpio: reference to rcc without u.</li>
 </ul>
 
-<h3>2015-07-02</h3>
+<h3 id="tocAnchor-1-1-17">2015-07-02</h3>
 
 <ul>
 <li>register &amp; bitfield: crosslinks removed</li>
 </ul>
 
-<h3>2015-07-01</h3>
+<h3 id="tocAnchor-1-1-18">2015-07-01</h3>
 
 <ul>
 <li>peripheral-register: endianness implemented</li>
 <li>bitfield: cleared-by, set-by</li>
-<li>register: parent<em>read, parent</em>write added</li>
+<li>register: parent_read, parent_write added</li>
 </ul>
 
-<h3>2015-06-30</h3>
+<h3 id="tocAnchor-1-1-19">2015-06-30</h3>
 
 <ul>
 <li>peripheral, peripheral-register, register-bitfield</li>
 <li>peripheral-register: add size-bits</li>
 <li>stm32: add prefix, peripheral suffix</li>
-<li>cortexm &amp; stm32: use &quot;cortexm:&quot; &quot;stm32:&quot; prefix</li>
-<li>cortexm-helper.c: cm<em>object</em>get_parent() added</li>
-<li>peripheral: register<em>size</em>bits added</li>
+<li>cortexm &amp; stm32: use "cortexm:" "stm32:" prefix</li>
+<li>cortexm-helper.c: cm_object_get_parent() added</li>
+<li>peripheral: register_size_bits added</li>
 <li>register &amp; bitfield: inits, defaults fixed</li>
 <li>stm32-flash: use rw-mode</li>
-<li>cortexm-helper.h: <em>is</em>instance<em>of</em>typename added</li>
+<li>cortexm-helper.h: _is_instance_of_typename added</li>
 <li>peripheral,register, bitfield: partly functional</li>
 <li>stm32-flash: functional with new infrastructure</li>
 </ul>
 
-<h3>2015-06-29</h3>
+<h3 id="tocAnchor-1-1-20">2015-06-29</h3>
 
 <ul>
 <li>cortexm-helper: prop-str() with null fixed</li>
@@ -363,7 +571,7 @@
 <li>stm32-xxx template: updated to use registers</li>
 </ul>
 
-<h3>2015-06-28</h3>
+<h3 id="tocAnchor-1-1-21">2015-06-28</h3>
 
 <ul>
 <li>build: fix compile errors on win</li>
@@ -371,15 +579,15 @@
 <li>cortexm many: copyright cosmetics (dot)</li>
 <li>cortexm-nvic: register_types() name (plural)</li>
 <li>qom-qopbjects.c: log_mask for setter</li>
-<li>stm32-gpio/rcc; itm: node name &#39;mmio&#39;</li>
+<li>stm32-gpio/rcc; itm: node name 'mmio'</li>
 <li>register32: readable-bits, writable-bits rename</li>
 <li>cortexm-helper.c: support for parenting</li>
 <li>cortexm-mcu/stm32-mcu: restructure hierarchy</li>
 <li>template: register_types() name (plural)</li>
-<li>template: node name &#39;mmio&#39;</li>
+<li>template: node name 'mmio'</li>
 </ul>
 
-<h3>2015-06-27</h3>
+<h3 id="tocAnchor-1-1-22">2015-06-27</h3>
 
 <ul>
 <li>cortexm: migrate qdev -&gt; qom</li>
@@ -392,51 +600,51 @@
 <li>stm32-olimex-boards use new helpers that exit</li>
 </ul>
 
-<h3>2015-06-25</h3>
+<h3 id="tocAnchor-1-1-23">2015-06-25</h3>
 
 <ul>
-<li>cortexm-helper: cm<em>board</em>greeting() moved here</li>
-<li>cortexm-helper: cm<em>prop</em>set_bool() added</li>
+<li>cortexm-helper: cm_board_greeting() moved here</li>
+<li>cortexm-helper: cm_prop_set_bool() added</li>
 <li>gpio-led: use set_string() to init led messages</li>
 <li>stm32-olimex-boards: all implemented</li>
 <li>memory.c: read trace added again</li>
 <li>stm32-rcc: f1cl functional</li>
-<li>cortex-mcu: *<em>do</em>unassigned<em>access</em>callback</li>
+<li>cortex-mcu: *<em>do_unassigned_access</em>callback</li>
 <li>cortexm-mcu: mem sizes as uint32_t</li>
 <li>stm32f407 capabilities added</li>
 <li>stm32f407xx added</li>
 </ul>
 
-<h3>2015-06-24</h3>
+<h3 id="tocAnchor-1-1-24">2015-06-24</h3>
 
 <ul>
-<li>Merge branch &#39;target-arm.next&#39; into gnuarmeclipse-dev</li>
+<li>Merge branch 'target-arm.next' into gnuarmeclipse-dev</li>
 <li>template: remove constructor</li>
 </ul>
 
-<h3>2015-06-22</h3>
+<h3 id="tocAnchor-1-1-25">2015-06-22</h3>
 
 <ul>
 <li>cortexm-helper.h added</li>
 <li>cortexm-nvic added</li>
 <li>cortexm-mcu: use new NVIC</li>
 <li>stm32-mcu(s) use realize() &amp; reset() helpers</li>
-<li>qdev<em>class</em>realize() added to cortexm-helper</li>
+<li>qdev_class_realize() added to cortexm-helper</li>
 <li>cortexm-nvic: use parent_reset</li>
-<li>stm32-mcus: use qdev<em>class</em>realize()</li>
+<li>stm32-mcus: use qdev_class_realize()</li>
 <li>stm32-mcu: group parent definitions in header</li>
 <li>stm32-gpio-led removed</li>
-<li>cortexm-helper.h: add DEFINE<em>PROP</em>CONST_STRING</li>
+<li>cortexm-helper.h: add DEFINE_PROP_CONST_STRING</li>
 <li>cortexm-mcu, stm32-mcu &amp; stm32-mcus: constructor</li>
 <li>armv7m-itm renamed cortexm-itm</li>
 <li>cortexm-itm: updated to new structure</li>
 <li>cortexm-helper: more defs from cortexm-mcu</li>
 <li>gpio-led: move PROP_* defs to cortexm-helper.h</li>
-<li>stm32<em>sys</em>bus_device/stm32-gpio/stm32-rcc/stm32-flash: updated to new structure</li>
+<li>stm32_sys_bus_device/stm32-gpio/stm32-rcc/stm32-flash: updated to new structure</li>
 <li>qom &amp; qdev: log property settings</li>
 </ul>
 
-<h3>2015-06-21</h3>
+<h3 id="tocAnchor-1-1-26">2015-06-21</h3>
 
 <ul>
 <li>arm-semi.c: validate cmdline</li>
@@ -446,21 +654,21 @@
 <li>stm32-h103 board no longer experimental</li>
 </ul>
 
-<h3>2015-06-20</h3>
+<h3 id="tocAnchor-1-1-27">2015-06-20</h3>
 
 <ul>
-<li>Merge branch &#39;target-arm.next&#39; into gnuarmeclipse-dev</li>
+<li>Merge branch 'target-arm.next' into gnuarmeclipse-dev</li>
 </ul>
 
-<h3>2015-06-19</h3>
+<h3 id="tocAnchor-1-1-28">2015-06-19</h3>
 
 <ul>
-<li>rom<em>reset &amp; cpu</em>reset: qemu<em>log</em>functio_name()</li>
+<li>rom_reset &amp; cpu_reset: qemu_log_functio_name()</li>
 <li>stm32-capabilities: gpiog, to be used by L1</li>
 <li>cortexm-mcu.c: comments added</li>
 </ul>
 
-<h3>2015-06-17</h3>
+<h3 id="tocAnchor-1-1-29">2015-06-17</h3>
 
 <ul>
 <li>/cortexm container added; nvic &amp; itm inside</li>
@@ -468,7 +676,7 @@
 <li>generic-gpio-led non-abstract</li>
 <li>gpio-led files renamed without generic</li>
 <li>gpio-led: references to gpio-led.h updated</li>
-<li>qdev-properties: qdev<em>prop</em>set_bool() added</li>
+<li>qdev-properties: qdev_prop_set_bool() added</li>
 <li>stm32-mcu: create_gpio static</li>
 <li>stm32-gpio-led.o removed from build</li>
 <li>gpio-led: use properties to configure</li>
@@ -479,14 +687,14 @@
 <li>fix qemu formatting</li>
 </ul>
 
-<h3>2015-06-16</h3>
+<h3 id="tocAnchor-1-1-30">2015-06-16</h3>
 
 <ul>
 <li>generic-gpio-led: logic moved out of realize()</li>
 <li>stm32-gpio-led: more comments added</li>
 </ul>
 
-<h3>2015-06-15</h3>
+<h3 id="tocAnchor-1-1-31">2015-06-15</h3>
 
 <ul>
 <li>stm32-mcu: alias rcc hse/lse properties</li>
@@ -496,15 +704,15 @@
 <li>stm32-mcu restructure</li>
 </ul>
 
-<h3>2015-06-14</h3>
+<h3 id="tocAnchor-1-1-32">2015-06-14</h3>
 
 <ul>
 <li>capabilities: remove .device_name</li>
 <li>stm32 capabilities separate from cm capabilities</li>
-<li>parent<em>realize: with object</em>class<em>by</em>name</li>
+<li>parent_realize: with object_class_by_name</li>
 </ul>
 
-<h3>2015-06-13</h3>
+<h3 id="tocAnchor-1-1-33">2015-06-13</h3>
 
 <ul>
 <li>cortexm-mcu: marked as abstract</li>
@@ -515,29 +723,29 @@
 <li>stm32 &amp; generic-led use constructors</li>
 </ul>
 
-<h3>2015-06-12</h3>
+<h3 id="tocAnchor-1-1-34">2015-06-12</h3>
 
 <ul>
 <li>stm32: add reference to RCC in GPIO</li>
 <li>stm32-olimex-boards: led message with parenthesis</li>
 </ul>
 
-<h3>2015-06-11</h3>
+<h3 id="tocAnchor-1-1-35">2015-06-11</h3>
 
 <ul>
 <li>cortexm helper, with cpu_ and qdev_ functions</li>
 <li>cortexm &amp; stm32: inits moved away from realize()</li>
 <li>cortexm.h renamed cortexm-mcu.h</li>
 <li>stm32-mcu: use qdev-create()</li>
-<li>stm32-mcu: add stm32<em>mcu</em>get<em>gpio</em>dev()</li>
+<li>stm32-mcu: add stm32_mcu_get_gpio_dev()</li>
 <li>stm32-olimex-boards.c: add h103 green led</li>
 </ul>
 
-<h3>2015-06-10</h3>
+<h3 id="tocAnchor-1-1-36">2015-06-10</h3>
 
 <ul>
 <li>qdev: qdev_realize() added</li>
-<li>stm32-mcu: get<em>rcc</em>dev() added as inline</li>
+<li>stm32-mcu: get_rcc_dev() added as inline</li>
 <li>stm32: vl capabilities; hsi &amp; lsi freq</li>
 <li>stm32-mcu: add hsi-freq-hz &amp; lsi-freq-hz props</li>
 <li>stm32-mcus: stm32f103 define hsi &amp; lsi</li>
@@ -550,13 +758,13 @@
 <li>stm32 gpio with irqs</li>
 </ul>
 
-<h3>2015-06-09</h3>
+<h3 id="tocAnchor-1-1-37">2015-06-09</h3>
 
 <ul>
 <li>cpu.c: log MSP &amp; PC</li>
 <li>stm32-xxx template renamed</li>
 <li>memory: log skip ITM</li>
-<li>sysbus: log sysbus<em>mmio</em>map_common() calls</li>
+<li>sysbus: log sysbus_mmio_map_common() calls</li>
 <li>stm32-rcc &amp; flash: increase size to 0x400</li>
 <li>armv7m-itm: cosmetics in size &amp; addr</li>
 <li>stm32-gpio: added</li>
@@ -564,10 +772,10 @@
 <li>stm32-xxx template inspired from gpio</li>
 </ul>
 
-<h3>2015-06-08</h3>
+<h3 id="tocAnchor-1-1-38">2015-06-08</h3>
 
 <ul>
-<li>log: &quot;trace_mr&quot; added</li>
+<li>log: "trace_mr" added</li>
 <li>loader.c: add verbosity from loaded segments</li>
 <li>cortexm-mcu: split  regions_create and reset</li>
 <li>stm32-mcu: override regions_create</li>
@@ -578,162 +786,162 @@
 <li>rename stm32 peripheral .c files</li>
 <li>stm32-mcu.h split from stm32.h</li>
 <li>loader: make rom_reset public</li>
-<li>cortexm: do a rom<em>reset() before cpu</em>reset()</li>
+<li>cortexm: do a rom_reset() before cpu_reset()</li>
 </ul>
 
-<h3>2015-06-06</h3>
+<h3 id="tocAnchor-1-1-39">2015-06-06</h3>
 
 <ul>
 <li>armv7m_itm.[ch] - object renamed armv7m-itm</li>
 <li>stm32 rcc &amp; flash devices added to stm32 mcu</li>
 </ul>
 
-<h3>2015-06-04</h3>
+<h3 id="tocAnchor-1-1-40">2015-06-04</h3>
 
 <ul>
 <li>licenses updated to GPL</li>
-<li>cortexm boards: cortexm<em>board</em>greeting() simplified</li>
-<li>cortexm: cortexm<em>mcu</em>init()</li>
+<li>cortexm boards: cortexm_board_greeting() simplified</li>
+<li>cortexm: cortexm_mcu_init()</li>
 <li>cortexm: reformat with spaces instead of tabs</li>
 <li>cortexm: display_model added to state</li>
 <li>Beckus original code added from 8d3b35e</li>
 </ul>
 
-<h3>2015-06-03</h3>
+<h3 id="tocAnchor-1-1-41">2015-06-03</h3>
 
 <ul>
 <li>armv7m_itm added</li>
-<li>cortexm: use &#39;realize&#39;; construct ITM object</li>
+<li>cortexm: use 'realize'; construct ITM object</li>
 <li>stm32: add stm32-mcu object</li>
 <li>armv7m_nvic: add log trace</li>
 </ul>
 
-<h3>2015-06-02</h3>
+<h3 id="tocAnchor-1-1-42">2015-06-02</h3>
 
 <ul>
 <li>LOG_TRACE added to log</li>
 <li>verbosity_level: check condition &gt;=</li>
 </ul>
 
-<h3>2015-06-01</h3>
+<h3 id="tocAnchor-1-1-43">2015-06-01</h3>
 
 <ul>
 <li>sysemu.h: verbosity_t enum added</li>
 <li>cortexm.c: configurable bitband_init()</li>
 <li>verbosity.h as separate header</li>
-<li>stm32<em>mcus &amp; stm32</em>boards updated for new framework</li>
+<li>stm32_mcus &amp; stm32_boards updated for new framework</li>
 </ul>
 
-<h3>2015-05-31</h3>
+<h3 id="tocAnchor-1-1-44">2015-05-31</h3>
 
 <ul>
 <li>cortexm: new cortexm-mcu type added</li>
 </ul>
 
-<h3>2015-05-29</h3>
+<h3 id="tocAnchor-1-1-45">2015-05-29</h3>
 
 <ul>
 <li>cortexm: restructure core_init()</li>
 </ul>
 
-<h3>2015-05-12</h3>
+<h3 id="tocAnchor-1-1-46">2015-05-12</h3>
 
 <ul>
 <li>check EACCES to avoid exiting with wrong config path</li>
 </ul>
 
-<h3>2015-05-12</h3>
+<h3 id="tocAnchor-1-1-47">2015-05-12</h3>
 
 <ul>
 <li>strrchr &amp; QEMU_WORDSIZE</li>
 </ul>
 
-<h3>2015-04-27</h3>
+<h3 id="tocAnchor-1-1-48">2015-04-27</h3>
 
 <ul>
-<li>Merge branch &#39;master&#39; into gnuarmeclipse-dev</li>
+<li>Merge branch 'master' into gnuarmeclipse-dev</li>
 </ul>
 
-<h3>2015-04-14</h3>
+<h3 id="tocAnchor-1-1-49">2015-04-14</h3>
 
 <ul>
 <li>semihosting-cmdline must be the last one</li>
 </ul>
 
-<h3>2015-04-13</h3>
+<h3 id="tocAnchor-1-1-50">2015-04-13</h3>
 
 <ul>
 <li>arm semi: stderr goes to stderr.</li>
 </ul>
 
-<h3>2015-04-09</h3>
+<h3 id="tocAnchor-1-1-51">2015-04-09</h3>
 
 <ul>
 <li>updated for Docker; win64 still not functional</li>
 </ul>
 
-<h3>2015-04-05</h3>
+<h3 id="tocAnchor-1-1-52">2015-04-05</h3>
 
 <ul>
 <li>build: remove reference to bootstrap</li>
 </ul>
 
-<h3>2015-04-03</h3>
+<h3 id="tocAnchor-1-1-53">2015-04-03</h3>
 
 <ul>
 <li>release 2.2.92-20150404*-dev</li>
 <li>build: update Debian prerequisites</li>
 </ul>
 
-<h3>2015-04-03</h3>
+<h3 id="tocAnchor-1-1-54">2015-04-03</h3>
 
 <ul>
 <li>-semihosting-cmdline added</li>
 <li>big cleanup</li>
 </ul>
 
-<h3>2015-04-02</h3>
+<h3 id="tocAnchor-1-1-55">2015-04-02</h3>
 
 <ul>
 <li>configure defaults without bz2 and usb</li>
 <li>build-qemu.sh functional on all platforms</li>
 </ul>
 
-<h3>2015-04-01</h3>
+<h3 id="tocAnchor-1-1-56">2015-04-01</h3>
 
 <ul>
 <li>win32/64 builds mostly static</li>
 <li>linux build ok; pixman library added; all static</li>
 </ul>
 
-<h3>2015-03-31</h3>
+<h3 id="tocAnchor-1-1-57">2015-03-31</h3>
 
 <ul>
 <li>win32/64 build pass &amp; shows version</li>
 </ul>
 
-<h3>2015-03-28</h3>
+<h3 id="tocAnchor-1-1-58">2015-03-28</h3>
 
 <ul>
 <li>win32/64: zlib &amp; iconv added to build</li>
 </ul>
 
-<h3>2015-03-26</h3>
+<h3 id="tocAnchor-1-1-59">2015-03-26</h3>
 
 <ul>
 <li>osx build ok</li>
 <li>kinetis header redundancy fixed</li>
 <li>debian 64/32-bit build ok</li>
-<li>add CONFIG<em>GNU</em>ARM_ECLIPSE</li>
+<li>add CONFIG_GNU_ARM_ECLIPSE</li>
 </ul>
 
-<h3>2015-01-25</h3>
+<h3 id="tocAnchor-1-1-60">2015-01-25</h3>
 
 <ul>
 <li>build script for Ubuntu</li>
 </ul>
 
-<h3>2015-01-20</h3>
+<h3 id="tocAnchor-1-1-61">2015-01-20</h3>
 
 <ul>
 <li>darwin pkgbuild added</li>
@@ -745,11 +953,13 @@
 <li>debian build script functional</li>
 </ul>
 
-<h2><a href="/qemu/change-log/2014">2014</a></h2>
+<h2 id="tocAnchor-1-63">
+<a href="/qemu/change-log/2014">2014</a>
+</h2>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

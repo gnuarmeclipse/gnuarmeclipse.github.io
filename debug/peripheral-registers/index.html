@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>The peripherals registers view</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/debug/peripheral-registers/">
+  <link rel="canonical" href="/debug/peripheral-registers/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,37 +83,113 @@
 <h1 class="page-title">The peripherals registers view</h1>
 
 
-<p>After the success of the <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link plug-in</a>, which significantly reduced the configuration effort to start a debug session, the most requested feature was a way of examining/modifying the peripheral registers.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Prerequisites</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">The Packs plug-ins</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Install required packs</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Associate a device to the project</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">2</span> <span class="toctext">The debug configuration</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">3</span> <span class="toctext">The Peripherals view</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">4</span> <span class="toctext">Maximal peripherals list</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">5</span> <span class="toctext">System registers</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">6</span> <span class="toctext">The Memory monitors</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#tocAnchor-1-10"><span class="tocnumber">7</span> <span class="toctext">Special access registers</span></a>
+</li>
+<li class="toc_level-1 toc_section-11">
+<a href="#tocAnchor-1-11"><span class="tocnumber">8</span> <span class="toctext">Tool tips</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#tocAnchor-1-12"><span class="tocnumber">9</span> <span class="toctext">Editing</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#tocAnchor-1-13"><span class="tocnumber">10</span> <span class="toctext">Filtering</span></a>
+</li>
+<li class="toc_level-1 toc_section-14">
+<a href="#tocAnchor-1-14"><span class="tocnumber">11</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toc_level-2 toc_section-15">
+<a href="#tocAnchor-1-14-1"><span class="tocnumber">11.1</span> <span class="toctext">Zero values?</span></a>
+</li>
+<li class="toc_level-2 toc_section-16">
+<a href="#tocAnchor-1-14-2"><span class="tocnumber">11.2</span> <span class="toctext">"No devices available, install packs first"</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-17">
+<a href="#tocAnchor-1-17"><span class="tocnumber">12</span> <span class="toctext">Support</span></a>
+</li>
+<li class="toc_level-1 toc_section-18">
+<a href="#tocAnchor-1-18"><span class="tocnumber">13</span> <span class="toctext">Credits</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>After the success of the <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link plug-in</a>, which significantly reduced the configuration effort to start a debug session, the most requested feature was a way of examining/modifying the peripheral registers.</p>
 
 <p>There were other solutions already available for this, but all required the availability of various hardware definitions files, plus the manual selection of the appropriate file for the current debug configuration.</p>
 
 <p>The GNU ARM Eclipse plug-in approach is a more integrated one, based on <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html">CMSIS Packs</a>. In fact the main reason for introducing the peripheral registers view only now was the need for the CMSIS Packs technology to mature and of course a CMSIS Packs Manager implementation.</p>
 
-<h2>Prerequisites</h2>
+<h2 id="tocAnchor-1-1">Prerequisites</h2>
 
-<h3>The Packs plug-ins</h3>
+<h3 id="tocAnchor-1-1-1">The Packs plug-ins</h3>
 
 <p>The first thing required is the presence of the Packs plug-ins. To check if they are installed, use the <strong>About Eclipse</strong> menu and click the <strong>Installation Details</strong> button.</p>
 
-<p><img src="/assets/images/2014/10/PacksFeature.png" alt="Check the presence of the Packs plug-ins"></p>
+<p>
+<img src="/assets/images/2014/10/PacksFeature.png" alt="Check the presence of the Packs plug-ins" />
+</p>
 
 <p>If not present, it is recommended to first read the <a href="/plugins/packs-manager/" title="Packs manager">Packs manager</a> documentation page where installation details are also provided.</p>
 
-<h3>Install required packs</h3>
+<h3 id="tocAnchor-1-1-2">Install required packs</h3>
 
 <p>Once the Packs plug-ins are available, and the list of available packages was retrieved, it is necessary to install the packages related to the devices used by the projects under development.</p>
 
 <p>Please note that failure to do so will prevent the device selection window to make the desired device available for selection.</p>
 
-<h3>Associate a device to the project</h3>
+<h3 id="tocAnchor-1-1-3">Associate a device to the project</h3>
 
 <p>Even if a future release will automatically make this association via a wizard during project creation, it is still recommended to check it, and adjust if needed.</p>
 
 <p>For more details, please visit the <a href="/eclipse/project/assign-device/" title="Associate a device to the project">separate page</a>.</p>
 
-<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project"></p>
+<p>
+<img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" />
+</p>
 
-<h2>The debug configuration</h2>
+<h2 id="tocAnchor-1-5">The debug configuration</h2>
 
 <p>With the device associated to the build configuration, the debug configuration is created and started the usual way:</p>
 
@@ -120,31 +199,35 @@
 <li>double click the <strong>GDB SEGGER J-Link Debugging</strong></li>
 </ul>
 
-<p><strong>Device name automatic configuration</strong></p>
+<p>
+<strong>Device name automatic configuration</strong>
+</p>
 
 <p>Since the device name is (should be) known, the J-Link <strong>Device name</strong> field is automatically configured with the CMSIS device name.</p>
 
-<h2>The Peripherals view</h2>
+<h2 id="tocAnchor-1-6">The Peripherals view</h2>
 
 <p>After starting the debug session, the typical <strong>Debug</strong> perspective is shown.</p>
 
 <p>New to this perspective is the <strong>Peripherals</strong> view, added to the right of the <strong>Registers</strong> view, in the same window with <strong>Variables</strong> and <strong>Breakpoints</strong>. If, for any reasons, this view is not shown, although the Packs plug-ins were installed, try to perform a <strong>Reset</strong> on the Debug perspective.</p>
 
-<p><img src="/assets/images/2013/10/PeripheralRegisters.png" alt="The peripheral registers view"></p>
+<p>
+<img src="/assets/images/2013/10/PeripheralRegisters.png" alt="The peripheral registers view" />
+</p>
 
 <p>The <strong>Peripherals</strong> view lists all peripherals available in the device hardware description .SVD file provided by the silicon vendor.</p>
 
 <p>The list includes the peripheral name, the peripheral memory address, a short description and a check box that can be used to select the peripherals to be monitored in the debug session.</p>
 
-<h2>Maximal peripherals list</h2>
+<h2 id="tocAnchor-1-7">Maximal peripherals list</h2>
 
 <p>Some silicon vendors, like ST, provide a single .SVD file for an entire family of devices. Although this avoids a lot of redundancy, with the current .SVD specifications it is not possible to filter out the devices not used by some family members, so in such cases expect to encounter peripherals that actually are not available in some devices.</p>
 
-<h2>System registers</h2>
+<h2 id="tocAnchor-1-8">System registers</h2>
 
 <p>The current SVD specifications do not cover very well if/how the vendor should define the system registers, like <strong>SysTick</strong>, <strong>NVIC</strong>, <strong>Debug</strong>, etc, so it is up to the silicon vendors how to do it; some define the system registers grouped in one single custom peripheral, some in multiple peripherals, and <strong>some do not even define all system registers</strong>.</p>
 
-<h2>The Memory monitors</h2>
+<h2 id="tocAnchor-1-9">The Memory monitors</h2>
 
 <p>Since for most modern devices the peripherals are memory mapped devices, in the GNU ARM Eclipse implementation, selecting a peripheral in the Peripherals view does not open a separate window, but a standard <strong>Memory monitor</strong>, mapped to the corresponding peripheral memory area.</p>
 
@@ -164,51 +247,53 @@
 
 <p>All of them are currently supported and depicted in a hierarchical way.</p>
 
-<h2>Special access registers</h2>
+<h2 id="tocAnchor-1-10">Special access registers</h2>
 
 <p>According to SVD, registers or fields can have special access rights, like <strong>read-only</strong> (highlighted in light yellow) or <strong>write-only</strong> (highlighted in light blue).</p>
 
-<h2>Tool tips</h2>
+<h2 id="tocAnchor-1-11">Tool tips</h2>
 
 <p>By hovering the mouse over the peripheral monitor window, additional details are shown as tool tips. Different content is shown for different columns, for example the <strong>Register</strong> column will show detailed descriptions, the <strong>Address</strong> column will show offset and size, and the <strong>Value</strong> column will show reset value and mask.</p>
 
-<h2>Editing</h2>
+<h2 id="tocAnchor-1-12">Editing</h2>
 
 <p>The values of the non read-only registers can be changed using <strong>in-place-editing</strong>, in the corresponding cell of the <strong>Value</strong> column.</p>
 
 <p>Registers and fields are synchronised, editing the value of a field will also change the value of the parent register, and editing the value of a register will also change the affected fields.</p>
 
-<h2>Filtering</h2>
+<h2 id="tocAnchor-1-13">Filtering</h2>
 
 <p>It is possible to filter the content of the peripheral monitor by register name. To enter the filtering conditions, right click anywhere in the monitor rendering window and select the <strong>Add Filter...</strong> action.</p>
 
-<p><img src="/assets/images/2014/10/PeripheralMenu.png" alt="Peripheral monitor menu"></p>
+<p>
+<img src="/assets/images/2014/10/PeripheralMenu.png" alt="Peripheral monitor menu" />
+</p>
 
 <p>Note: In the initial release the functionality behind this menu needs more polishing...</p>
 
-<h2>Troubleshooting</h2>
+<h2 id="tocAnchor-1-14">Troubleshooting</h2>
 
-<h3>Zero values?</h3>
+<h3 id="tocAnchor-1-14-1">Zero values?</h3>
 
-<p>The first question some people might raise is <em>&quot;why so many peripherals have zero values?&quot;</em>. Well, most probably because they are not enabled, so reading them leads usually to zeroes. Or because they do not exist for the actual device, and are present there because the silicon vendor provides a single file for the entire family.</p>
+<p>The first question some people might raise is <em>"why so many peripherals have zero values?"</em>. Well, most probably because they are not enabled, so reading them leads usually to zeroes. Or because they do not exist for the actual device, and are present there because the silicon vendor provides a single file for the entire family.</p>
 
-<h3>&quot;No devices available, install packs first&quot;</h3>
+<h3 id="tocAnchor-1-14-2">"No devices available, install packs first"</h3>
 
 <p>If your devices window is empty, you did not read carefully the above steps. You need to update the list of available packages, then install the ones you need.</p>
 
-<h2>Support</h2>
+<h2 id="tocAnchor-1-17">Support</h2>
 
 <p>In case you encounter bugs or problems, the usual SourceForge support trackers are available.</p>
 
-<p>If you have problems with the actual registers/fields definitions, well, there isn&#39;t much that we can do to fix them, but we still can forward your complains to ARM/Keil, to further forward them to the silicon vendors.</p>
+<p>If you have problems with the actual registers/fields definitions, well, there isn't much that we can do to fix them, but we still can forward your complains to ARM/Keil, to further forward them to the silicon vendors.</p>
 
-<h2>Credits</h2>
+<h2 id="tocAnchor-1-18">Credits</h2>
 
 <p>The use of a memory monitor to view peripheral registers, and the look and feel of the interface was inspired by the (now defunct) <strong>Red Suite 5</strong> by <strong>Code Red</strong> (acquired by NXP). Many thanks for providing the inspiration!</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

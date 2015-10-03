@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>How to install the GNU ARM Eclipse plug-ins?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/plugins/install/">
+  <link rel="canonical" href="/plugins/install/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,7 +83,76 @@
 <h1 class="page-title">How to install the GNU ARM Eclipse plug-ins?</h1>
 
 
-<h2>Quicklinks</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Quicklinks</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Prerequisites</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">Win XP - a word of caution</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-2-2"><span class="tocnumber">2.2</span> <span class="toctext">Win XP 64</span></a>
+</li>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-2-3"><span class="tocnumber">2.3</span> <span class="toctext">Java</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-2-4"><span class="tocnumber">2.4</span> <span class="toctext">Eclipse &amp; CDT</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#tocAnchor-1-2-5"><span class="tocnumber">2.5</span> <span class="toctext">CDT</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#tocAnchor-1-2-6"><span class="tocnumber">2.6</span> <span class="toctext">Compatibility issues</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">3</span> <span class="toctext">Plug-ins install</span></a>
+<ul>
+<li class="toc_level-2 toc_section-10">
+<a href="#tocAnchor-1-9-1"><span class="tocnumber">3.1</span> <span class="toctext">The recommended way</span></a>
+</li>
+<li class="toc_level-2 toc_section-11">
+<a href="#tocAnchor-1-9-2"><span class="tocnumber">3.2</span> <span class="toctext">Installation problems</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#tocAnchor-1-9-3"><span class="tocnumber">3.3</span> <span class="toctext">The alternate way</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#tocAnchor-1-13"><span class="tocnumber">4</span> <span class="toctext">Off-line install</span></a>
+</li>
+<li class="toc_level-1 toc_section-14">
+<a href="#tocAnchor-1-14"><span class="tocnumber">5</span> <span class="toctext">Plug-ins versions</span></a>
+</li>
+<li class="toc_level-1 toc_section-15">
+<a href="#tocAnchor-1-15"><span class="tocnumber">6</span> <span class="toctext">Set workspace preferences</span></a>
+</li>
+<li class="toc_level-1 toc_section-16">
+<a href="#tocAnchor-1-16"><span class="tocnumber">7</span> <span class="toctext">Toolchain and debugging support</span></a>
+</li>
+<li class="toc_level-1 toc_section-17">
+<a href="#tocAnchor-1-17"><span class="tocnumber">8</span> <span class="toctext">Support</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Quicklinks</h2>
 
 <p>If you know what this is all about and you just need the update site details:</p>
 
@@ -89,76 +161,85 @@
 <li>URL: <code>http://gnuarmeclipse.sourceforge.net/updates</code></li>
 </ul>
 
-<h2>Prerequisites</h2>
+<h2 id="tocAnchor-1-2">Prerequisites</h2>
 
 <p>Since these are Eclipse plug-ins, they obviously require a functional Eclipse CDT, which requires Java.</p>
 
-<h3>Win XP - a word of caution</h3>
+<h3 id="tocAnchor-1-2-1">Win XP - a word of caution</h3>
 
 <p>For the old-timers, a word of caution about Windows XP: recent Java distributions (from 7 up) are <a href="http://www.oracle.com/technetwork/java/javase/config-417990.html">no longer certified for XP</a>, so, even if they might seem to work, you are on thin ice. If possible, avoid using XP at all; otherwise use only the 32-bit version, with 32-bit Java and Eclipse.</p>
 
-<h3>Win XP 64</h3>
+<h3 id="tocAnchor-1-2-2">Win XP 64</h3>
 
 <p>The warning is even more important for Win XP 64, which, in certain configurations, has difficulties to start 32-bit applications (like the JLink GDB Server or OpenOCD). Although generally Win XP 64 is not recommended at all, if you really need to use it, preferably experiment with a 32-bit Java and a 32-bit Eclipse.</p>
 
 <p>However please note that no support requests referring to Win XP 64 will be processed.</p>
 
-<h3>Java</h3>
+<h3 id="tocAnchor-1-2-3">Java</h3>
 
 <p>The recommended package is the official <a href="http://www.oracle.com/technetwork/java/javase/index.html">Oracle <strong>Java SE</strong></a>. The <strong>OpenJDK Java</strong> used in Ubuntu is also fine. The minimum is JDK 1.7, or even JRE 1.7 (the Java Runtime Environment), but, as said before, better use the latest JDK. On OS X the last Apple Java implementation is 1.6, so it is required to use the Oracle 1.7 or later.</p>
 
 <p>For example, on Ubuntu 12.04 LTS, you can install the OpenJDK run-time and test if it was properly installed with the following commands:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ sudo apt-get install openjdk-7-jre
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ sudo apt-get install openjdk-7-jre
 $ java -version
-java version &quot;1.7.0_55&quot;
+java version "1.7.0_55"
 OpenJDK Runtime Environment (IcedTea 2.4.7) (7u55-2.4.7-1ubuntu1~0.12.04.2)
 OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
-</code></pre></div>
-<h3>Eclipse &amp; CDT</h3>
+</code></pre>
+</div>
+<h3 id="tocAnchor-1-2-4">Eclipse &amp; CDT</h3>
 
 <p>The oldest Eclipse supported by the plug-ins is Eclipse 4.3 Kepler (CDT 8.3), and the recommended version is 4.4 SR2. Do not try to install them on Juno, Indigo, or older versions, since the install will fail.</p>
 
 <p>Just go to the <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and get the <strong>Eclipse IDE for C/C++ Developers</strong> archive appropriate for your platform, preferably the 64-bit version. Unpack it at a place of your choice and start using it.</p>
 
-<h3>CDT</h3>
+<h3 id="tocAnchor-1-2-5">CDT</h3>
 
 <p>The minimum CDT version is 8.3. Do not try to use earlier versions, since either the install will fail, or it will not run properly.</p>
 
 <p>As mentioned before, the recommended way is to use a fresh <strong>Eclipse IDE for C/C++ Developers</strong> for the cross ARM development projects. Even if you did so, but especially if you did not do so, it is a good idea to check if you really have the latest version available. For this, enter the <em>Eclipse</em> menu and go to <strong>Help</strong> → <strong>Install New Software</strong></p>
 
-<p><img src="/assets/images/2013/10/InstallNewSoftware.png" alt="Install new software"></p>
+<p>
+<img src="/assets/images/2013/10/InstallNewSoftware.png" alt="Install new software" />
+</p>
 
 <ul>
 <li>select <em>Work with:</em> <strong>Kepler</strong></li>
-<li>if the <em>Group items by category </em>is enabled, expand the <strong>Programming Languages</strong> group</li>
+<li>if the <em>Group items by category *is enabled, expand the </em><em>Programming Languages</em>* group</li>
 <li>select the <strong>C/C++ Development Tools</strong> feature</li>
 <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
 </ul>
 
-<p><img src="/assets/images/2013/10/InstallCDT.png" alt="CDT install"></p>
+<p>
+<img src="/assets/images/2013/10/InstallCDT.png" alt="CDT install" />
+</p>
 
-<h3>Compatibility issues</h3>
+<h3 id="tocAnchor-1-2-6">Compatibility issues</h3>
 
 <p>Please note that starting with 1.1.x, compatibility with Eclipses previous than 4.3 Kepler was no longer possible. If, for any reasons, you need a solution for older Eclipse versions, you can try the GNU ARM Eclipse Plug-in version 0.5.5, but please keep in mind that this old version is no longer maintained.</p>
 
-<h2>Plug-ins install</h2>
+<h2 id="tocAnchor-1-9">Plug-ins install</h2>
 
 <p>The following samples are from Eclipse 4.3 Kepler on OS X. Other platforms may behave slightly different, but the idea is the same.</p>
 
 <p><strong>Warning:</strong> Be sure your Eclipse is 4.3 or later, otherwise the plug-ins will refuse to install, claiming <strong>Missing requirements</strong> and <strong>Cannot satisfy dependency</strong>.</p>
 
-<h3>The recommended way</h3>
+<h3 id="tocAnchor-1-9-1">The recommended way</h3>
 
 <p>The recommended way to install these plug-ins is to use the Eclipse standard install/update mechanism: In the <em>Eclipse</em> menu: <strong>Help</strong> → <strong>Install New Software...</strong></p>
 
 <ul>
 <li>in the <em>Install</em> window, click the <strong>Add...</strong> button (on future updates, just select the URL in the <strong>Work with:</strong> combo)</li>
 <li>fill in <em>Name:</em> with <strong>GNU ARM Eclipse Plug-ins</strong></li>
-<li>fill in <em>Location:</em> with <strong>http://gnuarmeclipse.sourceforge.net/updates</strong></li>
+<li>fill in <em>Location:</em> with <strong><a href="http://gnuarmeclipse.sourceforge.net/updates">http://gnuarmeclipse.sourceforge.net/updates</a></strong></li>
 <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2013/10/AddRepository.png" alt="AddRepository"></p>
+<p>
+<img src="/assets/images/2013/10/AddRepository.png" alt="AddRepository" />
+</p>
 
 <ul>
 <li>normally the main window should list a group named <strong>CDT GNU Cross Development Tools</strong>; expand it</li>
@@ -167,15 +248,19 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
 </ul>
 
-<p><img src="/assets/images/2014/04/PluginsInstall.png" alt="Plug-ins install"></p>
+<p>
+<img src="/assets/images/2014/04/PluginsInstall.png" alt="Plug-ins install" />
+</p>
 
 <p>Once you define the update site URL, further updates are greatly simplified (<strong>Help</strong> → <strong>Check For Updates</strong>).</p>
 
-<h3>Installation problems</h3>
+<h3 id="tocAnchor-1-9-2">Installation problems</h3>
 
 <p>There are cases when the on-line access to the SourceForge mirror servers might not be reliable. In these cases the Eclipse update system may fail. For example:</p>
 
-<p><img src="/assets/images/2013/10/FailedInstall.png" alt="Failed install"></p>
+<p>
+<img src="/assets/images/2013/10/FailedInstall.png" alt="Failed install" />
+</p>
 
 <p>If this happens, Eclipse remains in a confused state and rarely can recover itself.</p>
 
@@ -183,13 +268,15 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 
 <p>For this go to Eclipse menu → <strong>Preferences</strong> → <strong>Install/Update</strong> → <strong>Available Software Sites</strong>:</p>
 
-<p><img src="/assets/images/2013/10/AvailableSites.png" alt="Remove from available site list"></p>
+<p>
+<img src="/assets/images/2013/10/AvailableSites.png" alt="Remove from available site list" />
+</p>
 
 <p>If this still fails, the alternative method is to manually download the latest version archive and to perform the install from it, as presented below.</p>
 
-<h3>The alternate way</h3>
+<h3 id="tocAnchor-1-9-3">The alternate way</h3>
 
-<p>If, for any reason, you need to install a specific version of the plug-in, the solution is to download the archive from <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a> and to point the Eclipse update mechanism to the local archive: In the* Eclipse<em> menu: </em><em>Help</em><em> → </em><em>Install New Software...</em>*</p>
+<p>If, for any reason, you need to install a specific version of the plug-in, the solution is to download the archive from <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a> and to point the Eclipse update mechanism to the local archive: In the* Eclipse* menu: <strong>Help</strong> → <strong>Install New Software...</strong></p>
 
 <ul>
 <li>in the <em>Install</em> window, click the <strong>Add...</strong> button</li>
@@ -200,39 +287,47 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 <li>follow the usual installation procedure</li>
 </ul>
 
-<p><img src="/assets/images/2013/10/AddArchiveRepository.png" alt="Add repository from archive"></p>
+<p>
+<img src="/assets/images/2013/10/AddArchiveRepository.png" alt="Add repository from archive" />
+</p>
 
-<h2>Off-line install</h2>
+<h2 id="tocAnchor-1-13">Off-line install</h2>
 
 <p>If, for any reasons, you need to install the GNU ARM Eclipse plug-ins on a system without permanent Internet connection, and decide for the alternate way presented above, please be aware that the debug plug-ins require the presence of the <strong>C/C++ GDB Hardware Debugging</strong> plug-in. Usually this plug-in is not included in the standard package, but is present in the <strong>CDT Optional Features</strong> category, packed with the CDT archives available from the <a href="https://www.eclipse.org/cdt/downloads.php">CDT download site</a>. Download the desired archive, add it to your update sites, select the C/C++ GDB Hardware Debugging plug-in, restart as usual, and then install the GNU ARM Eclipse plug-ins from the local archive, as above.</p>
 
-<p><img src="/assets/images/2013/10/GDB_Hardware_Install.png" alt="Install the GDB Hardware"></p>
+<p>
+<img src="/assets/images/2013/10/GDB_Hardware_Install.png" alt="Install the GDB Hardware" />
+</p>
 
 <p>Note: Attempts to install the GNU ARM Eclipse plug-ins off-line without having the C/C++ GDB Hardware Debugging installed fails with an error related to installing the <em>ilg.gnuarmeclipse.debug.gdbjtag.jlink.feature.group</em> and other debugging features.</p>
 
 <p>On-line install do not have this problem since the Eclipse automatically downloads the C/C++ GDB Hardware Debugging plug-in from the CDT update site.</p>
 
-<h2>Plug-ins versions</h2>
+<h2 id="tocAnchor-1-14">Plug-ins versions</h2>
 
 <p>One of the confusing details of the GNU ARM Eclipse plug-ins versioning system is matching the version from the release announcement (for example <strong>Version 2.6.1-201502281154 released</strong>) with existing plug-ins/features.</p>
 
 <p>The short answer is that the announced version refers to the update site, also packed as an archive, and available from SourceForge. The same version is also used for the <strong>ilg.gnuarmeclipse.core</strong> plug-in:</p>
 
-<p><img src="/assets/images/2013/10/Plugins.png" alt="Installed plug-ins"></p>
+<p>
+<img src="/assets/images/2013/10/Plugins.png" alt="Installed plug-ins" />
+</p>
 
 <p>Although the core plug-in is referred by all features, this version number cannot be found in the list of the features:</p>
 
-<p><img src="/assets/images/2013/10/Features.png" alt="Installed features"></p>
+<p>
+<img src="/assets/images/2013/10/Features.png" alt="Installed features" />
+</p>
 
 <p>However, the common point for all these magic numbers is the release date, <em>201502281154</em> in this case, which is identical for all plug-ins and features.</p>
 
 <p>Thus, the recommended method to <strong>identify plug-ins and features</strong> is <strong>by date, not by version</strong>, which differs from object to object.</p>
 
-<h2>Set workspace preferences</h2>
+<h2 id="tocAnchor-1-15">Set workspace preferences</h2>
 
 <p>After completing the installation of the plug-ins it is recommended to <a href="/eclipse/workspace/preferences/" title="Workspace preferences">set the workspace preference</a>.</p>
 
-<h2>Toolchain and debugging support</h2>
+<h2 id="tocAnchor-1-16">Toolchain and debugging support</h2>
 
 <p>By completing the above steps, the Eclipse environment is ready, and you can start creating projects right away. However, for being able to build and debug these projects, you also need to install:</p>
 
@@ -246,13 +341,13 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 
 <p>Follow the above steps and when everything is ready, proceed to <a href="/tutorials/hello-arm/" title="Tutorial: Create a test project">create and build a test project</a>.</p>
 
-<h2>Support</h2>
+<h2 id="tocAnchor-1-17">Support</h2>
 
 <p>If you encountered any problems when installing the plug-ins, pleas refer to the <a href="/support/">Support</a> page and <strong>do not</strong> post comments to the blog pages containing support requests.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
 
 
 </section>

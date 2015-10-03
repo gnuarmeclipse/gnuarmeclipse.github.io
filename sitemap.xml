@@ -2,11 +2,11 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/09/29/arm-connected-community-article/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/09/14/web-new-look/</loc>
-    <lastmod>2015-10-02T10:04:08+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/08/19/plugins-v2.9.3-201508190739-released/</loc>
@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/12/15/debugging-topics-added-faq-page/</loc>
-    <lastmod>2015-10-02T10:04:08+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/12/02/windows-build-tools-v2.0-20141202-released/</loc>
@@ -126,7 +126,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/07/22/projects-week-july-14-2014/</loc>
-    <lastmod>2015-10-02T10:04:08+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/07/19/plugins-v2.3.2-201407190854-released/</loc>
@@ -138,7 +138,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/07/17/arm-connected-community-article/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/07/12/plugins-v2.3.1-201407120554-released/</loc>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/07/04/site-statistics/</loc>
-    <lastmod>2015-10-02T10:04:08+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/04/24/plugins-v2.2.2-201404240550-released/</loc>
@@ -166,7 +166,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/01/22/sourceforge-featured-projects-january-2014/</loc>
-    <lastmod>2015-10-02T10:04:08+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2014/01/11/plugins-v1.8.1-201401111229-released/</loc>
@@ -218,155 +218,155 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2012/01/07/web-new-look/</loc>
-    <lastmod>2015-10-02T10:04:08+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/about/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/articles/arm-com-2014-07/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/articles/arm-com-2015-09/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/eclipse/project/assign-device/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/tutorials/blinky-arm/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/build-prerequisites/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/build-procedure/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/developer/build-procedure/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/build-procedure/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/developer/build-procedure/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/build-procedure/</loc>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/build-procedure/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/2013/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/change-log/2014/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/2014/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/change-log/2014/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/v05x/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/change-log/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/change-log/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/change-log/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/openocd/change-log/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/change-log/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/contribute/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/templates/cortexm/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/development-environment/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/download/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/download/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/plugins/download/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/download/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/download/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/plugins/download/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/downloads/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/eclipse/debugging-options/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/eclipse/runtime-preferences/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/eclipse/tips-tricks/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/extension/ilg.gnuarmeclipse.debug.core.cprojectextra/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/extension/ilg.gnuarmeclipse.debug.core.svdpath/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/support/faq/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/features/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/advanced/headless-builds/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/tutorials/hello-arm/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/</loc>
@@ -374,174 +374,178 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/install/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/install/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/install/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/install/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/debug/install/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/toolchain/install/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/openocd/install/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/debug/install/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/j-link-stm32-boards/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/jlink/install/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/jlink/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/templates/klxx/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/support/known-issues/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/openocd/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/templates/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/support/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/openocd/</loc>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/support/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/</loc>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/packs-manager/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/pad-file/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/toolchain/path/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/finance/paypal-success/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/peripheral-registers/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/licenses/plug-ins/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/eclipse/project/portability/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.jlink/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.openocd/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.qemu/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.managedbuild.cross/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/eclipse/workspace/preferences/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/publish-procedure/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/qemu/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/redirected/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/releases/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/releases/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/releases/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/qemu/releases/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/openocd/releases/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/windows-build-tools/releases/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/support/sourceforge/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/finance/sponsorship/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/templates/stm32f/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/test/</loc>
+    <lastmod>2015-10-03T17:33:27+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/licenses/tools/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
 </urlset>

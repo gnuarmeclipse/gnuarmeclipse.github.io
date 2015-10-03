@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>FAQ</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/support/faq/">
+  <link rel="canonical" href="/support/faq/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,7 +83,106 @@
 <h1 class="page-title">FAQ</h1>
 
 
-<h2>Error: undefined reference to <em>function</em></h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Error: undefined reference to function</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">How can I debug projects compiled with ARM CC?</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">How do I create a C-only (not C++) Cortex-M projects?</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Why my breakpoints are not effective and execution stops somewhere else?</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">How to single-step empty loops?</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Why the debugging flow with -Og is sometimes jumpy?</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">7</span> <span class="toctext">How can I add new SourceForge tickets if no Create Ticket button is available?</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">8</span> <span class="toctext">Plug-ins update from 0.5.x running on Juno to current version fails</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">9</span> <span class="toctext">Semihosting enabled application hangs</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#tocAnchor-1-10"><span class="tocnumber">10</span> <span class="toctext">Unrecognized command line option "-std=gnu11" (or "-std=c++11")</span></a>
+</li>
+<li class="toc_level-1 toc_section-11">
+<a href="#tocAnchor-1-11"><span class="tocnumber">11</span> <span class="toctext">Program "echo" not found in PATH</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#tocAnchor-1-12"><span class="tocnumber">12</span> <span class="toctext">Installation problems on Eclipse 3.8</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#tocAnchor-1-13"><span class="tocnumber">13</span> <span class="toctext">The plug-in seems to ignore assembly .s files. How can I add them to the project?</span></a>
+</li>
+<li class="toc_level-1 toc_section-14">
+<a href="#tocAnchor-1-14"><span class="tocnumber">14</span> <span class="toctext">The generated Makefile seems to be broken. How can I fix it?</span></a>
+</li>
+<li class="toc_level-1 toc_section-15">
+<a href="#tocAnchor-1-15"><span class="tocnumber">15</span> <span class="toctext">I want to see the source code. How can I access the repository?</span></a>
+</li>
+<li class="toc_level-1 toc_section-16">
+<a href="#tocAnchor-1-16"><span class="tocnumber">16</span> <span class="toctext">The build generates a long console listing instead of creating the secondary targets</span></a>
+</li>
+<li class="toc_level-1 toc_section-17">
+<a href="#tocAnchor-1-17"><span class="tocnumber">17</span> <span class="toctext">Cannot run program "make": Launching failed</span></a>
+</li>
+<li class="toc_level-1 toc_section-18">
+<a href="#tocAnchor-1-18"><span class="tocnumber">18</span> <span class="toctext">Program "arm-none-eabi-gcc" not found in PATH</span></a>
+</li>
+<li class="toc_level-1 toc_section-19">
+<a href="#tocAnchor-1-19"><span class="tocnumber">19</span> <span class="toctext">Program "gcc" not found in PATH</span></a>
+</li>
+<li class="toc_level-1 toc_section-20">
+<a href="#tocAnchor-1-20"><span class="tocnumber">20</span> <span class="toctext">The Toolchains tab does not appear on old projects</span></a>
+</li>
+<li class="toc_level-1 toc_section-21">
+<a href="#tocAnchor-1-21"><span class="tocnumber">21</span> <span class="toctext">How to migrate projects created with the old version of the plugin?</span></a>
+</li>
+<li class="toc_level-1 toc_section-22">
+<a href="#tocAnchor-1-22"><span class="tocnumber">22</span> <span class="toctext">Cannot use -c together with -o ... for multiple files</span></a>
+</li>
+<li class="toc_level-1 toc_section-23">
+<a href="#tocAnchor-1-23"><span class="tocnumber">23</span> <span class="toctext">I tried to use Float ABI: hard on Cortex-M4, but the linker fails</span></a>
+</li>
+<li class="toc_level-1 toc_section-24">
+<a href="#tocAnchor-1-24"><span class="tocnumber">24</span> <span class="toctext">Launching the debugger fails with "Error in final launch sequence"</span></a>
+</li>
+<li class="toc_level-1 toc_section-25">
+<a href="#tocAnchor-1-25"><span class="tocnumber">25</span> <span class="toctext">What do the template configurations (standalone, retargetting or semihosting) mean?</span></a>
+</li>
+<li class="toc_level-1 toc_section-26">
+<a href="#tocAnchor-1-26"><span class="tocnumber">26</span> <span class="toctext">Problems, related to old bugs, that should no longer occur</span></a>
+<ul>
+<li class="toc_level-2 toc_section-27">
+<a href="#tocAnchor-1-26-1"><span class="tocnumber">26.1</span> <span class="toctext">I changed the "Remove command", but the value is not effective</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><div style="clear: both;"></div>
+
+<h2 id="tocAnchor-1-1">Error: undefined reference to <em>function</em></h2>
 
 <blockquote>
 <p>I created a simple STM32x project... I can call the functions in RCC and GPIO header files, but while calling functions in TIM header the linker reports an undefined reference.</p>
@@ -90,11 +192,11 @@
 
 <p>If you need to re-include some of the source files you need to right click on the file, select <strong>Resource Configurations</strong> → <strong>Exclude from Build...</strong> and deselect the build configuration you want to include the file.</p>
 
-<h2>How can I debug projects compiled with ARM CC?</h2>
+<h2 id="tocAnchor-1-2">How can I debug projects compiled with ARM CC?</h2>
 
 <p>Generally debugging is done using the GDB client program, which reads only GNU debugging info, preferably from .ELF files. If you can manage to configure non-GNU toolchains to generate .ELF files and to include dwarf debugging info, you are free to experiment with GDB, but please be aware that non-GNU toolchains are not supported by the GNU ARM Eclipse plug-ins.</p>
 
-<h2>How do I create a C-only (not C++) Cortex-M projects?</h2>
+<h2 id="tocAnchor-1-3">How do I create a C-only (not C++) Cortex-M projects?</h2>
 
 <p>Well, easily, with <strong>New C Project</strong>. However if the question is related to the projects generated by the templates, they always use G++ as linker.</p>
 
@@ -108,7 +210,7 @@
 
 <p>If you have no C++ object files in the project, there is no difference.</p>
 
-<h2>Why my breakpoints are not effective and execution stops somewhere else?</h2>
+<h2 id="tocAnchor-1-4">Why my breakpoints are not effective and execution stops somewhere else?</h2>
 
 <blockquote>
 <p>My breakpoints behave erratic, the program does not stop in the desired function but in the function immediately following.</p>
@@ -116,15 +218,15 @@
 
 <p>This is usually the effect of optimisations, if your function was not referred in your program, the linker removed it completely. Eclipse does not know this, and any breakpoint placed in the removed function is in fact placed at the beginning of the next function.</p>
 
-<h2>How to single-step empty loops?</h2>
+<h2 id="tocAnchor-1-5">How to single-step empty loops?</h2>
 
 <blockquote>
-<p>I&#39;m trying to single-step a simple loop, but execution does not stop after a single iteration, the target runs continuously, with permanent interactions with the debugger.</p>
+<p>I'm trying to single-step a simple loop, but execution does not stop after a single iteration, the target runs continuously, with permanent interactions with the debugger.</p>
 </blockquote>
 
 <p>The current GDB has a problem with placing breakpoints <strong>in simple loops</strong>, and <strong>single-stepping fails</strong>. The problem was already reported (<a href="https://bugs.launchpad.net/gcc-arm-embedded/+bug/1401565">bug 1401565</a>). If you really need this, switch to assembly view and single-stepping is again functional.</p>
 
-<h2>Why the debugging flow with -Og is sometimes jumpy?</h2>
+<h2 id="tocAnchor-1-6">Why the debugging flow with -Og is sometimes jumpy?</h2>
 
 <blockquote>
 <p>The manual suggests to use -Og for optimising programs for Debug, but when stepping loops the execution flow is sometimes quite jumpy, moving outside the loop and back.</p>
@@ -132,17 +234,17 @@
 
 <p>In GCC prior 4.9, the definition of <strong>-Og</strong> needs a small adjustment, also add the <strong>-fno-move-loop-invariants</strong> option to the Debug configuration; this will prevent the compiler to move some constant parts of the loop outside it and the execution flow will be more easy to follow. The problem was already reported (<a href="https://bugs.launchpad.net/gcc-arm-embedded/+bug/1395077">bug 1395077</a>). Starting with 4.9, the -fno-move-loop-invariants is added automatically to -Og.</p>
 
-<h2>How can I add new SourceForge tickets if no Create Ticket button is available?</h2>
+<h2 id="tocAnchor-1-7">How can I add new SourceForge tickets if no Create Ticket button is available?</h2>
 
 <blockquote>
-<p>Please excuse me for not using the support ticket tool you provided on sourceforge but I seem to be too incompetent to even spot some type of &quot;add request&quot; button.</p>
+<p>Please excuse me for not using the support ticket tool you provided on sourceforge but I seem to be too incompetent to even spot some type of "add request" button.</p>
 </blockquote>
 
 <p>Following the migration to GitHub, the SourceForge ticketing system was configured as read-only, and new tickets can no longer be added.</p>
 
 <p>Please login to GitHub and use the GitHub Issues trackers.</p>
 
-<h2>Plug-ins update from 0.5.x running on Juno to current version fails</h2>
+<h2 id="tocAnchor-1-8">Plug-ins update from 0.5.x running on Juno to current version fails</h2>
 
 <blockquote>
 <p>Cannot complete the install because one or more required items could not be found.</p>
@@ -152,7 +254,7 @@
 
 <p>The recommended solution is to first upgrade your Eclipse to Kepler 4.3 and then retry to update the plug-ins.</p>
 
-<h2>Semihosting enabled application hangs</h2>
+<h2 id="tocAnchor-1-9">Semihosting enabled application hangs</h2>
 
 <blockquote>
 <p>After usb disconected and reconected program do not run (the example flashing led is not blinking).</p>
@@ -162,17 +264,17 @@
 
 <p>Update: M3/M4 projects generated with version 2.2.1-201404120702 or later check when not running under debugger and skip the trace call, so it is possible to run the application standalone.</p>
 
-<h2>Unrecognized command line option &quot;-std=gnu11&quot; (or &quot;-std=c++11&quot;)</h2>
+<h2 id="tocAnchor-1-10">Unrecognized command line option "-std=gnu11" (or "-std=c++11")</h2>
 
 <p>You are using an old toolchain, pre GCC 4.7. In older versions, the C11 and the C++11 standards were not available, and compilers did not allow to set this option.</p>
 
 <p>Update your toolchain to a modern one, or, if this is not possible, change the <strong>-std=</strong> option to something supported by your toolchain (probably -std=gnu1x, or -std=gnu99; -std=c++0x for C++).</p>
 
-<h2>Program &quot;echo&quot; not found in PATH</h2>
+<h2 id="tocAnchor-1-11">Program "echo" not found in PATH</h2>
 
 <p>You are running on Windows, and did not install the full content of the archive described in the <a href="/windows-build-tools/" title="Build tools (make &amp; rm) on Windows">Build Tools</a> page. The <em>echo</em> program is not used per se, it is just a workaround for a known CDT bug. On OS X and GNU/Linux the <em>echo</em> program is always present, being part of the standard configuration. On Windows it should be installed separately and, for convenience, it is provided in the Build Tools package.</p>
 
-<h2>Installation problems on Eclipse 3.8</h2>
+<h2 id="tocAnchor-1-12">Installation problems on Eclipse 3.8</h2>
 
 <blockquote>
 <p>I was trying to install the plugin in my eclipse 3.8 but I got: Cannot complete the install because one or more required items could not be found.</p>
@@ -180,80 +282,89 @@
 
 <p>Version 1.x or later of the GNU ARM Eclipse plug-ins cannot run on Eclipses older than 4.3 Kepler. Please update Eclipse to the latest version and reinstall the plug-ins.</p>
 
-<h2>The plug-in seems to ignore assembly .s files. How can I add them to the project?</h2>
+<h2 id="tocAnchor-1-13">The plug-in seems to ignore assembly .s files. How can I add them to the project?</h2>
 
 <p>Due to a very complicated portability reason, Eclipse is not able to distinguish, and thus separately process, <strong>.s</strong> and <strong>.S</strong> files. The current CDT configuration associates assembly files only with .asm and .S files, and completely ignores .s files. Although it might be possible to change the Eclipse file associations, I would not recommend this. Better change the assembly file extensions to .S and use the default settings.</p>
 
 <p>Please note that .S assembly files will be processed by <strong>gcc</strong>, not by <strong>as</strong>; this also means that the file will be first preprocessed like all C/C++ files, allowing conditional compilation and macro expansion.</p>
 
-<h2>The generated Makefile seems to be broken. How can I fix it?</h2>
+<h2 id="tocAnchor-1-14">The generated Makefile seems to be broken. How can I fix it?</h2>
 
 <p>If you notice something wrong in the Makefiles, like macro names not substituted, missing sections, labels, etc, the project file might be broken. To fix it, create a new project. Do not copy/paste the damaged one, be sure you create it from scratch. However, you can copy/paste the source files.</p>
 
 <p>As mentioned in the <a href="/support/known-issues/" title="Known problems">Known issues</a>, avoid changing settings for individual files/folders or changing the toolchain for a project, since these are known problems in some CDT version and might damage your project.</p>
 
-<h2>I want to see the source code. How can I access the repository?</h2>
+<h2 id="tocAnchor-1-15">I want to see the source code. How can I access the repository?</h2>
 
 <p>Go to <a href="https://github.com/gnuarmeclipse/plug-ins">GitHub</a>.</p>
 
-<h2>The build generates a long console listing instead of creating the secondary targets</h2>
+<h2 id="tocAnchor-1-16">The build generates a long console listing instead of creating the secondary targets</h2>
 
 <p>You enabled the Internal builder, which does not work properly. Switch back to the External builder and the build will succeed.</p>
 
-<h2>Cannot run program &quot;make&quot;: Launching failed</h2>
+<h2 id="tocAnchor-1-17">Cannot run program "make": Launching failed</h2>
 
 <p>Most probably you are running on Windows, and forgot to add the builder tools or to add the path to them. See the <a href="/windows-build-tools/" title="Build tools (make &amp; rm) on Windows">Build Tools</a> page.</p>
 
-<h2>Program &quot;arm-none-eabi-gcc&quot; not found in PATH</h2>
+<h2 id="tocAnchor-1-18">Program "arm-none-eabi-gcc" not found in PATH</h2>
 
 <p>You most probably did not configure properly the toolchain path, and CDT cannot start the discovery process. Check the path in the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Settings</strong> → <strong>Toolchains</strong> → <strong>Path</strong>.</p>
 
-<p><img src="/assets/images/2013/10/SettingsPathPrefix.png" alt="Setting the toolchain path and preffx"></p>
+<p>
+<img src="/assets/images/2013/10/SettingsPathPrefix.png" alt="Setting the toolchain path and preffx" />
+</p>
 
-<h2>Program &quot;gcc&quot; not found in PATH</h2>
+<h2 id="tocAnchor-1-19">Program "gcc" not found in PATH</h2>
 
 <p>Although it looks like the above, it is worse, since it shows that the prefix is not prepended to the compiler command. Check the prefix in the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Settings</strong> → <strong>Toolchains</strong> → <strong>Prefix</strong>.</p>
 
-<h2>The Toolchains tab does not appear on old projects</h2>
+<h2 id="tocAnchor-1-20">The Toolchains tab does not appear on old projects</h2>
 
 <p>The <strong>Toolchains</strong> tab is specific to the new version of the plug-in. If you have projects created with the old version (0.5.x), the Toolchains tab does not appear.</p>
 
-<p>You can identify old project by checking the Settings page; if the tool names do not start with &quot;Cross ARM&quot;, or the Target Processor page does not show in the second half options specific to the AArch64 family, then you are not in the case of the new plug-in.</p>
+<p>You can identify old project by checking the Settings page; if the tool names do not start with "Cross ARM", or the Target Processor page does not show in the second half options specific to the AArch64 family, then you are not in the case of the new plug-in.</p>
 
-<h2>How to migrate projects created with the old version of the plugin?</h2>
+<h2 id="tocAnchor-1-21">How to migrate projects created with the old version of the plugin?</h2>
 
 <p>Unfortunately projects created with the old version of the plug-in cannot be migrated by a simple change of the toolchain settings in Eclipse, since CDT has some problems with changing toolchains.</p>
 
 <p>The recommended method is to create a new project, add the source files and update the project options.</p>
 
-<h2>Cannot use -c together with -o ... for multiple files</h2>
+<h2 id="tocAnchor-1-22">Cannot use -c together with -o ... for multiple files</h2>
 
-<p>If the compiler complains something like this, then it might be possible that projects created with versions pre-1.1.3 need an update. First check the list of include folders, for each compiler tool, if the list is there, you&#39;re done; otherwise, adding the folders again usually fixes the problem.</p>
+<p>If the compiler complains something like this, then it might be possible that projects created with versions pre-1.1.3 need an update. First check the list of include folders, for each compiler tool, if the list is there, you're done; otherwise, adding the folders again usually fixes the problem.</p>
 
-<p>If you have lots of folders and re-entereing them is tedious, you can try to manually edit the <code>.cproject</code> file. For this, first close Eclipse, and edit <code>.cproject</code> with a separate editor. Search for the lines with &quot;.include.files&quot;; if below them you see the list of folders, you don&#39;t have to re-enter them again; check if the <code>&lt;option&gt;</code> element has an <code>name=</code> attribute; if not, add it before the superClass attribute, with the following content:</p>
+<p>If you have lots of folders and re-entereing them is tedious, you can try to manually edit the <code>.cproject</code> file. For this, first close Eclipse, and edit <code>.cproject</code> with a separate editor. Search for the lines with ".include.files"; if below them you see the list of folders, you don't have to re-enter them again; check if the <code>&lt;option&gt;</code> element has an <code>name=</code> attribute; if not, add it before the superClass attribute, with the following content:</p>
 
-<p><code>&lt;option id=&quot;...include.paths.NNN&quot; name=&quot;Include paths (-I)&quot; superClass=&quot;...&quot;&gt;</code></p>
+<p>
+<code>&lt;option id="...include.paths.NNN" name="Include paths (-I)" superClass="..."&gt;</code>
+</p>
 
-<h2>I tried to use Float ABI: hard on Cortex-M4, but the linker fails</h2>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Building target: test1.elf
+<h2 id="tocAnchor-1-23">I tried to use Float ABI: hard on Cortex-M4, but the linker fails</h2>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">Building target: test1.elf
 Invoking: Cross ARM C++ Linker
 /usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/bin/ld: error: test1.elf uses VFP register arguments
 /usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o) does not
 /usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/bin/ld: failed to merge target specific data of file
 /usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
 ...
-</code></pre></div>
+</code></pre>
+</div>
 <p>Although on Cortex-M4 the only available FPU hardware is fpv4-sp-d16, the compiler does not have a default defined for this, and it is necessary to explicitly select <strong>FPU Type: fpv4-sp-d16</strong> in the C/C++ Settings page.</p>
 
-<h2>Launching the debugger fails with &quot;Error in final launch sequence&quot;</h2>
+<h2 id="tocAnchor-1-24">Launching the debugger fails with "Error in final launch sequence"</h2>
 
 <p>The GDB client 7.4.1.20130913-cvs, packed in gcc-arm-none-eabi-4_7-2013q3 has some problems to decode DWARF debug information generated by -g3 option and sometimes crashes during launch, generating an obscure Eclipse error message box.</p>
 
-<p><img src="/assets/images/2013/10/final-launch-sequence-error.png" alt=""></p>
+<p>
+<img src="/assets/images/2013/10/final-launch-sequence-error.png" alt="" />
+</p>
 
 <p>The problem is known and the 4_7-2014q1 update should fix it. For the time being, please recompile your project with -g or -g2 to work around this issue.</p>
 
-<h2>What do the template configurations (standalone, retargetting or semihosting) mean?</h2>
+<h2 id="tocAnchor-1-25">What do the template configurations (standalone, retargetting or semihosting) mean?</h2>
 
 <ul>
 <li><strong>Standalone</strong> means a typical embedded configuration, that does not use the POSIX system calls (open, close, read, write, etc).</li>
@@ -261,9 +372,9 @@ Invoking: Cross ARM C++ Linker
 <li><strong>Semihosting</strong> is a special testing configuration, that bridges <strong>all</strong> system calls to the host operating system where the GDB server runs. This configurations is particularly interesting for running test programs that can leave the test results in a file stored on the host, for automated integration in a test suite.</li>
 </ul>
 
-<h2>Problems, related to old bugs, that should no longer occur</h2>
+<h2 id="tocAnchor-1-26">Problems, related to old bugs, that should no longer occur</h2>
 
-<h3>I changed the <em>&quot;Remove command&quot;</em>, but the value is not effective</h3>
+<h3 id="tocAnchor-1-26-1">I changed the <em>"Remove command"</em>, but the value is not effective</h3>
 
 <p>In most usual managed build plug-ins, the <strong>rm</strong> command is hard-wired and it cannot be reconfigured. So its value is assumed to be constant, and, when the makefile is generated, CDT writes it inside the makefile. The GNU ARM Eclipse Plug-in takes a step further, and allows this definition to be reconfigured, but currently cannot trigger the recreation of the makefile.</p>
 
@@ -275,7 +386,7 @@ Invoking: Cross ARM C++ Linker
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
 
 
 </section>

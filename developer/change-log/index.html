@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>The 2015 GNU ARM Eclipse Plug-ins Change Log</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/change-log/">
+  <link rel="canonical" href="/developer/change-log/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,11 +83,252 @@
 <h1 class="page-title">The 2015 GNU ARM Eclipse Plug-ins Change Log</h1>
 
 
-<p>Entries in this file are in reverse chronological order.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">2015</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">2015-08-19</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">2015-08-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">2015-08-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">2015-08-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-1-5"><span class="tocnumber">1.5</span> <span class="toctext">2015-08-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#tocAnchor-1-1-6"><span class="tocnumber">1.6</span> <span class="toctext">2015-08-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#tocAnchor-1-1-7"><span class="tocnumber">1.7</span> <span class="toctext">2015-08-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-9">
+<a href="#tocAnchor-1-1-8"><span class="tocnumber">1.8</span> <span class="toctext">2015-08-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-10">
+<a href="#tocAnchor-1-1-9"><span class="tocnumber">1.9</span> <span class="toctext">2015-07-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-11">
+<a href="#tocAnchor-1-1-10"><span class="tocnumber">1.10</span> <span class="toctext">2015-07-30</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#tocAnchor-1-1-11"><span class="tocnumber">1.11</span> <span class="toctext">2015-07-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-13">
+<a href="#tocAnchor-1-1-12"><span class="tocnumber">1.12</span> <span class="toctext">2015-07-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-14">
+<a href="#tocAnchor-1-1-13"><span class="tocnumber">1.13</span> <span class="toctext">2015-07-23</span></a>
+</li>
+<li class="toc_level-2 toc_section-15">
+<a href="#tocAnchor-1-1-14"><span class="tocnumber">1.14</span> <span class="toctext">2015-07-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-16">
+<a href="#tocAnchor-1-1-15"><span class="tocnumber">1.15</span> <span class="toctext">2015-07-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-17">
+<a href="#tocAnchor-1-1-16"><span class="tocnumber">1.16</span> <span class="toctext">2015-06-23</span></a>
+</li>
+<li class="toc_level-2 toc_section-18">
+<a href="#tocAnchor-1-1-17"><span class="tocnumber">1.17</span> <span class="toctext">2015-06-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-19">
+<a href="#tocAnchor-1-1-18"><span class="tocnumber">1.18</span> <span class="toctext">2015-05-21</span></a>
+</li>
+<li class="toc_level-2 toc_section-20">
+<a href="#tocAnchor-1-1-19"><span class="tocnumber">1.19</span> <span class="toctext">2015-05-21</span></a>
+</li>
+<li class="toc_level-2 toc_section-21">
+<a href="#tocAnchor-1-1-20"><span class="tocnumber">1.20</span> <span class="toctext">2015-05-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-22">
+<a href="#tocAnchor-1-1-21"><span class="tocnumber">1.21</span> <span class="toctext">2015-05-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-23">
+<a href="#tocAnchor-1-1-22"><span class="tocnumber">1.22</span> <span class="toctext">2015-05-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-24">
+<a href="#tocAnchor-1-1-23"><span class="tocnumber">1.23</span> <span class="toctext">2015-05-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-25">
+<a href="#tocAnchor-1-1-24"><span class="tocnumber">1.24</span> <span class="toctext">2015-04-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-26">
+<a href="#tocAnchor-1-1-25"><span class="tocnumber">1.25</span> <span class="toctext">2015-04-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-27">
+<a href="#tocAnchor-1-1-26"><span class="tocnumber">1.26</span> <span class="toctext">2015-04-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-28">
+<a href="#tocAnchor-1-1-27"><span class="tocnumber">1.27</span> <span class="toctext">2015-04-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-29">
+<a href="#tocAnchor-1-1-28"><span class="tocnumber">1.28</span> <span class="toctext">2015-03-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-30">
+<a href="#tocAnchor-1-1-29"><span class="tocnumber">1.29</span> <span class="toctext">2015-03-25</span></a>
+</li>
+<li class="toc_level-2 toc_section-31">
+<a href="#tocAnchor-1-1-30"><span class="tocnumber">1.30</span> <span class="toctext">2015-03-21</span></a>
+</li>
+<li class="toc_level-2 toc_section-32">
+<a href="#tocAnchor-1-1-31"><span class="tocnumber">1.31</span> <span class="toctext">2015-03-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-33">
+<a href="#tocAnchor-1-1-32"><span class="tocnumber">1.32</span> <span class="toctext">2015-03-15</span></a>
+</li>
+<li class="toc_level-2 toc_section-34">
+<a href="#tocAnchor-1-1-33"><span class="tocnumber">1.33</span> <span class="toctext">2015-03-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-35">
+<a href="#tocAnchor-1-1-34"><span class="tocnumber">1.34</span> <span class="toctext">2015-03-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-36">
+<a href="#tocAnchor-1-1-35"><span class="tocnumber">1.35</span> <span class="toctext">2015-03-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-37">
+<a href="#tocAnchor-1-1-36"><span class="tocnumber">1.36</span> <span class="toctext">2015-03-11</span></a>
+</li>
+<li class="toc_level-2 toc_section-38">
+<a href="#tocAnchor-1-1-37"><span class="tocnumber">1.37</span> <span class="toctext">2015-03-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-39">
+<a href="#tocAnchor-1-1-38"><span class="tocnumber">1.38</span> <span class="toctext">2015-03-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-40">
+<a href="#tocAnchor-1-1-39"><span class="tocnumber">1.39</span> <span class="toctext">2015-03-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-41">
+<a href="#tocAnchor-1-1-40"><span class="tocnumber">1.40</span> <span class="toctext">2015-03-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-42">
+<a href="#tocAnchor-1-1-41"><span class="tocnumber">1.41</span> <span class="toctext">2015-03-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-43">
+<a href="#tocAnchor-1-1-42"><span class="tocnumber">1.42</span> <span class="toctext">2015-03-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-44">
+<a href="#tocAnchor-1-1-43"><span class="tocnumber">1.43</span> <span class="toctext">2015-02-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-45">
+<a href="#tocAnchor-1-1-44"><span class="tocnumber">1.44</span> <span class="toctext">2015-02-26</span></a>
+</li>
+<li class="toc_level-2 toc_section-46">
+<a href="#tocAnchor-1-1-45"><span class="tocnumber">1.45</span> <span class="toctext">2015-02-24</span></a>
+</li>
+<li class="toc_level-2 toc_section-47">
+<a href="#tocAnchor-1-1-46"><span class="tocnumber">1.46</span> <span class="toctext">2015-02-20</span></a>
+</li>
+<li class="toc_level-2 toc_section-48">
+<a href="#tocAnchor-1-1-47"><span class="tocnumber">1.47</span> <span class="toctext">2015-02-19</span></a>
+</li>
+<li class="toc_level-2 toc_section-49">
+<a href="#tocAnchor-1-1-48"><span class="tocnumber">1.48</span> <span class="toctext">2015-02-18</span></a>
+</li>
+<li class="toc_level-2 toc_section-50">
+<a href="#tocAnchor-1-1-49"><span class="tocnumber">1.49</span> <span class="toctext">2015-02-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-51">
+<a href="#tocAnchor-1-1-50"><span class="tocnumber">1.50</span> <span class="toctext">2015-02-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-52">
+<a href="#tocAnchor-1-1-51"><span class="tocnumber">1.51</span> <span class="toctext">2015-02-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-53">
+<a href="#tocAnchor-1-1-52"><span class="tocnumber">1.52</span> <span class="toctext">2015-02-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-54">
+<a href="#tocAnchor-1-1-53"><span class="tocnumber">1.53</span> <span class="toctext">2015-02-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-55">
+<a href="#tocAnchor-1-1-54"><span class="tocnumber">1.54</span> <span class="toctext">2015-02-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-56">
+<a href="#tocAnchor-1-1-55"><span class="tocnumber">1.55</span> <span class="toctext">2015-02-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-57">
+<a href="#tocAnchor-1-1-56"><span class="tocnumber">1.56</span> <span class="toctext">2015-02-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-58">
+<a href="#tocAnchor-1-1-57"><span class="tocnumber">1.57</span> <span class="toctext">2015-02-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-59">
+<a href="#tocAnchor-1-1-58"><span class="tocnumber">1.58</span> <span class="toctext">2015-02-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-60">
+<a href="#tocAnchor-1-1-59"><span class="tocnumber">1.59</span> <span class="toctext">2015-02-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-61">
+<a href="#tocAnchor-1-1-60"><span class="tocnumber">1.60</span> <span class="toctext">2015-02-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-62">
+<a href="#tocAnchor-1-1-61"><span class="tocnumber">1.61</span> <span class="toctext">2015-02-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-63">
+<a href="#tocAnchor-1-1-62"><span class="tocnumber">1.62</span> <span class="toctext">2015-01-23</span></a>
+</li>
+<li class="toc_level-2 toc_section-64">
+<a href="#tocAnchor-1-1-63"><span class="tocnumber">1.63</span> <span class="toctext">2015-01-21</span></a>
+</li>
+<li class="toc_level-2 toc_section-65">
+<a href="#tocAnchor-1-1-64"><span class="tocnumber">1.64</span> <span class="toctext">2015-01-20</span></a>
+</li>
+<li class="toc_level-2 toc_section-66">
+<a href="#tocAnchor-1-1-65"><span class="tocnumber">1.65</span> <span class="toctext">2015-01-19</span></a>
+</li>
+<li class="toc_level-2 toc_section-67">
+<a href="#tocAnchor-1-1-66"><span class="tocnumber">1.66</span> <span class="toctext">2015-01-15</span></a>
+</li>
+<li class="toc_level-2 toc_section-68">
+<a href="#tocAnchor-1-1-67"><span class="tocnumber">1.67</span> <span class="toctext">2015-01-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-69">
+<a href="#tocAnchor-1-1-68"><span class="tocnumber">1.68</span> <span class="toctext">2015-01-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-70">
+<a href="#tocAnchor-1-1-69"><span class="tocnumber">1.69</span> <span class="toctext">2015-01-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-71">
+<a href="#tocAnchor-1-1-70"><span class="tocnumber">1.70</span> <span class="toctext">2015-01-08</span></a>
+</li>
+<li class="toc_level-2 toc_section-72">
+<a href="#tocAnchor-1-1-71"><span class="tocnumber">1.71</span> <span class="toctext">2015-01-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-73">
+<a href="#tocAnchor-1-1-72"><span class="tocnumber">1.72</span> <span class="toctext">2015-01-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-74">
+<a href="#tocAnchor-1-1-73"><span class="tocnumber">1.73</span> <span class="toctext">2015-01-03</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-75">
+<a href="#tocAnchor-1-75"><span class="tocnumber">2</span> <span class="toctext">2014</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Entries in this file are in reverse chronological order.</p>
 
-<h2>2015</h2>
+<h2 id="tocAnchor-1-1">2015</h2>
 
-<h3>2015-08-19</h3>
+<h3 id="tocAnchor-1-1-1">2015-08-19</h3>
 
 <ul>
 <li>qemu: cmsis both board&amp;name (use persistent values only when both cmsis board and device are missing)</li>
@@ -126,20 +370,20 @@
 </ul></li>
 </ul>
 
-<h3>2015-08-17</h3>
+<h3 id="tocAnchor-1-1-2">2015-08-17</h3>
 
 <ul>
 <li>add README.md</li>
 <li>also push to GitHub</li>
 </ul>
 
-<h3>2015-08-16</h3>
+<h3 id="tocAnchor-1-1-3">2015-08-16</h3>
 
 <ul>
 <li>build-qemu: debian rpath fix</li>
 </ul>
 
-<h3>2015-08-07</h3>
+<h3 id="tocAnchor-1-1-4">2015-08-07</h3>
 
 <ul>
 <li>templates: kB simbol (not KB)</li>
@@ -180,14 +424,14 @@
 </ul></li>
 </ul>
 
-<h3>2015-08-06</h3>
+<h3 id="tocAnchor-1-1-5">2015-08-06</h3>
 
 <ul>
 <li>templates.stm: weak hard init; PLL warning</li>
 <li>templates.stm: F4 C++ template multi-LED</li>
 </ul>
 
-<h3>2015-08-05</h3>
+<h3 id="tocAnchor-1-1-6">2015-08-05</h3>
 
 <ul>
 <li>templates.core: set VTOR only on ARCH_7M</li>
@@ -195,7 +439,7 @@
 <li>build-qemu.sh: add libwinpthread to win64</li>
 </ul>
 
-<h3>2015-08-03</h3>
+<h3 id="tocAnchor-1-1-7">2015-08-03</h3>
 
 <ul>
 <li>templates.core: HAL_IncTick() in SysTick</li>
@@ -203,7 +447,7 @@
 <li>versions: repository 2.9.2, core 2.4.3, stm 2.3.2, freescale 2.2.7</li>
 </ul>
 
-<h3>2015-08-01</h3>
+<h3 id="tocAnchor-1-1-8">2015-08-01</h3>
 
 <ul>
 <li><p>repository 2.9.1-201508011813 published</p>
@@ -242,24 +486,24 @@
 <li>plugins/ilg.gnuarmeclipse.templates.stm_2.3.1.201508011813.jar</li>
 </ul></li>
 <li><p>gdbjtag.qemu: TabDebugger favours CMSIS defs</p></li>
-<li><p>qemu-feature: no longer &#39;Experimental&#39;</p></li>
+<li><p>qemu-feature: no longer 'Experimental'</p></li>
 <li><p>Copyright notice added where missing</p></li>
 </ul>
 
-<h3>2015-07-31</h3>
+<h3 id="tocAnchor-1-1-9">2015-07-31</h3>
 
 <ul>
 <li>gdbjtag: mode passed to services; breakpoints available only in debug</li>
 </ul>
 
-<h3>2015-07-30</h3>
+<h3 id="tocAnchor-1-1-10">2015-07-30</h3>
 
 <ul>
-<li>gdbjtag: add &#39;mode&#39; to DebuggerCommands</li>
+<li>gdbjtag: add 'mode' to DebuggerCommands</li>
 <li>gdbjtab.qemu/jlink/openocd: make config visible in Run mode</li>
 </ul>
 
-<h3>2015-07-29</h3>
+<h3 id="tocAnchor-1-1-11">2015-07-29</h3>
 
 <ul>
 <li>gdbjtag.qemu: preferences &amp; defaults</li>
@@ -267,34 +511,34 @@
 <li>gdbjtab.qemu: disable graphics button added</li>
 </ul>
 
-<h3>2015-07-28</h3>
+<h3 id="tocAnchor-1-1-12">2015-07-28</h3>
 
 <ul>
-<li>add &#39;GNU with spaces&#39; formatting style</li>
+<li>add 'GNU with spaces' formatting style</li>
 <li>core: getBuildConfigDescription() moved here</li>
 <li>gdbjtag: getCmsisDeviceName() moved to new class</li>
 </ul>
 
-<h3>2015-07-23</h3>
+<h3 id="tocAnchor-1-1-13">2015-07-23</h3>
 
 <ul>
 <li>build-qemu: osx &amp; debian functional</li>
 </ul>
 
-<h3>2015-07-17</h3>
+<h3 id="tocAnchor-1-1-14">2015-07-17</h3>
 
 <ul>
 <li>build-qemu.sh: new OSX build, with SDL</li>
 <li>templates.core: 3/4 blink, 1 full first second</li>
 </ul>
 
-<h3>2015-07-16</h3>
+<h3 id="tocAnchor-1-1-15">2015-07-16</h3>
 
 <ul>
 <li>build-tools.sh: make it work for win64</li>
 </ul>
 
-<h3>2015-06-23</h3>
+<h3 id="tocAnchor-1-1-16">2015-06-23</h3>
 
 <ul>
 <li>packs.data: follow http redirects</li>
@@ -302,13 +546,13 @@
 <li>template.stm32: add STM32F446xx</li>
 </ul>
 
-<h3>2015-06-10</h3>
+<h3 id="tocAnchor-1-1-17">2015-06-10</h3>
 
 <ul>
 <li>build-qemu.sh: check docker only for win/deb</li>
 </ul>
 
-<h3>2015-05-21</h3>
+<h3 id="tocAnchor-1-1-18">2015-05-21</h3>
 
 <ul>
 <li>mbs: add toolchain wizard to make projects too</li>
@@ -318,7 +562,7 @@
 <li>mbs: new arch (arm7ve, armv8-a+crc) and cpu (cortex-a12, cortex-m0.small-multiply, cortex-m0plus.small-multiply, cortex-m1.small-multiply)</li>
 </ul>
 
-<h3>2015-05-21</h3>
+<h3 id="tocAnchor-1-1-19">2015-05-21</h3>
 
 <ul>
 <li>core: getConfigurationsForProject() added</li>
@@ -328,32 +572,32 @@
 <li>mbs: simpler Toolchains tab for make projects</li>
 </ul>
 
-<h3>2015-05-14</h3>
+<h3 id="tocAnchor-1-1-20">2015-05-14</h3>
 
 <ul>
 <li>script to build windows Build Tools added</li>
 </ul>
 
-<h3>2015-05-12</h3>
+<h3 id="tocAnchor-1-1-21">2015-05-12</h3>
 
 <ul>
 <li>qemu build script added</li>
 </ul>
 
-<h3>2015-05-10</h3>
+<h3 id="tocAnchor-1-1-22">2015-05-10</h3>
 
 <ul>
 <li>scripts: openocd docker scripts</li>
 </ul>
 
-<h3>2015-05-06</h3>
+<h3 id="tocAnchor-1-1-23">2015-05-06</h3>
 
 <ul>
 <li>templates, stm: set VTOR</li>
 <li>qemu: --semihosting-cmdline as last option</li>
 </ul>
 
-<h3>2015-04-07</h3>
+<h3 id="tocAnchor-1-1-24">2015-04-07</h3>
 
 <ul>
 <li>release 2.8.1-201504061754 published:
@@ -393,7 +637,7 @@
 </ul></li>
 </ul>
 
-<h3>2015-04-06</h3>
+<h3 id="tocAnchor-1-1-25">2015-04-06</h3>
 
 <ul>
 <li>templates: semihosting argv[1] loops</li>
@@ -401,7 +645,7 @@
 <li>qemu: added to generated Eclipse repository</li>
 </ul>
 
-<h3>2015-04-05</h3>
+<h3 id="tocAnchor-1-1-26">2015-04-05</h3>
 
 <ul>
 <li>qemu: semihosting command line in tab Debugger</li>
@@ -409,27 +653,27 @@
 <li>qemu: implement getProjectName() for argv[0]</li>
 </ul>
 
-<h3>2015-04-02</h3>
+<h3 id="tocAnchor-1-1-27">2015-04-02</h3>
 
 <ul>
 <li>templates: semihosting args quoting fixed</li>
 <li>publish: move archives to project folder, not tmp</li>
 </ul>
 
-<h3>2015-03-31</h3>
+<h3 id="tocAnchor-1-1-28">2015-03-31</h3>
 
 <ul>
 <li>stm: f411 vectors duplicates removed</li>
 </ul>
 
-<h3>2015-03-25</h3>
+<h3 id="tocAnchor-1-1-29">2015-03-25</h3>
 
 <ul>
 <li>templates: use \$(newlibDir) &amp; other macros</li>
 <li>.gitignore /target/</li>
 </ul>
 
-<h3>2015-03-21</h3>
+<h3 id="tocAnchor-1-1-30">2015-03-21</h3>
 
 <ul>
 <li>all debuggers big cleanup in defaults location (moved to DefaultsPreferences)</li>
@@ -472,26 +716,26 @@
 </ul></li>
 </ul>
 
-<h3>2015-03-16</h3>
+<h3 id="tocAnchor-1-1-31">2015-03-16</h3>
 
 <ul>
 <li>gdbjtag, jlink, openocd, qemu: default attributes</li>
 </ul>
 
-<h3>2015-03-15</h3>
+<h3 id="tocAnchor-1-1-32">2015-03-15</h3>
 
 <ul>
 <li>codered: more view shortcuts</li>
 <li>templates: bkpt in default handlers</li>
 </ul>
 
-<h3>2015-03-14</h3>
+<h3 id="tocAnchor-1-1-33">2015-03-14</h3>
 
 <ul>
 <li>codered: preliminary version added</li>
 </ul>
 
-<h3>2015-03-13</h3>
+<h3 id="tocAnchor-1-1-34">2015-03-13</h3>
 
 <ul>
 <li>gdbjtag: preferences for peripherals colours</li>
@@ -499,14 +743,14 @@
 <li>gdbjtag: use fading background</li>
 </ul>
 
-<h3>2015-03-12</h3>
+<h3 id="tocAnchor-1-1-35">2015-03-12</h3>
 
 <ul>
 <li>core: WinReg kludge for SEGGER key</li>
 <li>debuggers: more explicit messages in preferences</li>
 </ul>
 
-<h3>2015-03-11</h3>
+<h3 id="tocAnchor-1-1-36">2015-03-11</h3>
 
 <ul>
 <li>API baseline increased to Kepler SR2 (8.3.0)</li>
@@ -515,13 +759,13 @@
 <li>jlink: preferences &amp; defaults added</li>
 </ul>
 
-<h3>2015-03-09</h3>
+<h3 id="tocAnchor-1-1-37">2015-03-09</h3>
 
 <ul>
 <li>openocd: no config check if remote server</li>
 </ul>
 
-<h3>2015-03-06</h3>
+<h3 id="tocAnchor-1-1-38">2015-03-06</h3>
 
 <ul>
 <li>qemu: preferences page and defaults</li>
@@ -529,13 +773,13 @@
 <li>openocd &amp; qemu: preferences names updated</li>
 </ul>
 
-<h3>2015-03-05</h3>
+<h3 id="tocAnchor-1-1-39">2015-03-05</h3>
 
 <ul>
 <li>openocd: preferences page and defaults</li>
 </ul>
 
-<h3>2015-03-04</h3>
+<h3 id="tocAnchor-1-1-40">2015-03-04</h3>
 
 <ul>
 <li>cross: precedence of toolchain.path fixed</li>
@@ -543,14 +787,14 @@
 <li>all: .options added to distribution</li>
 </ul>
 
-<h3>2015-03-03</h3>
+<h3 id="tocAnchor-1-1-41">2015-03-03</h3>
 
 <ul>
 <li>all: trace messages changed to logged errors</li>
 <li>cross: add PropertyTester for Tools Paths</li>
 </ul>
 
-<h3>2015-03-02</h3>
+<h3 id="tocAnchor-1-1-42">2015-03-02</h3>
 
 <ul>
 <li>templates: C handlers marked as used, to keep LTO happy</li>
@@ -558,7 +802,7 @@
 <li>all: conditional trace println() calls</li>
 </ul>
 
-<h3>2015-02-28</h3>
+<h3 id="tocAnchor-1-1-43">2015-02-28</h3>
 
 <ul>
 <li>qemu: feature temporarily disabled, not ready yet</li>
@@ -596,7 +840,7 @@
 </ul></li>
 </ul>
 
-<h3>2015-02-26</h3>
+<h3 id="tocAnchor-1-1-44">2015-02-26</h3>
 
 <ul>
 <li>cross: hyperlinks to tools paths pages</li>
@@ -604,21 +848,21 @@
 <li>cross: filter in hyperlink to properties removed</li>
 </ul>
 
-<h3>2015-02-24</h3>
+<h3 id="tocAnchor-1-1-45">2015-02-24</h3>
 
 <ul>
 <li>cross: buildTools &amp; toolchain new processing</li>
 <li>cross: defaults to relax DirectoryFieldEditor</li>
 </ul>
 
-<h3>2015-02-20</h3>
+<h3 id="tocAnchor-1-1-46">2015-02-20</h3>
 
 <ul>
 <li>cross: build tools path (complicated) processing</li>
 <li>cross: global tools path back with defaults</li>
 </ul>
 
-<h3>2015-02-19</h3>
+<h3 id="tocAnchor-1-1-47">2015-02-19</h3>
 
 <ul>
 <li>cross: toolchain defaults (name &amp; path) preferences</li>
@@ -626,19 +870,19 @@
 <li>cross: cosmetics m_ -&gt; f; separators</li>
 </ul>
 
-<h3>2015-02-18</h3>
+<h3 id="tocAnchor-1-1-48">2015-02-18</h3>
 
 <ul>
 <li>cross: build tools path support added</li>
 </ul>
 
-<h3>2015-02-17</h3>
+<h3 id="tocAnchor-1-1-49">2015-02-17</h3>
 
 <ul>
 <li>packs: ProgressBar &amp; MessageDialog for Refresh all</li>
 </ul>
 
-<h3>2015-02-16</h3>
+<h3 id="tocAnchor-1-1-50">2015-02-16</h3>
 
 <ul>
 <li>qemu: default &amp; preferences use scopes</li>
@@ -646,31 +890,31 @@
 <li>jlink: default &amp; preferences use scopes</li>
 </ul>
 
-<h3>2015-02-14</h3>
+<h3 id="tocAnchor-1-1-51">2015-02-14</h3>
 
 <ul>
 <li>gdbjtag: asyncExec showView</li>
 </ul>
 
-<h3>2015-02-13</h3>
+<h3 id="tocAnchor-1-1-52">2015-02-13</h3>
 
 <ul>
 <li>gdbjtag: use a retrieval manager</li>
 </ul>
 
-<h3>2015-02-12</h3>
+<h3 id="tocAnchor-1-1-53">2015-02-12</h3>
 
 <ul>
 <li>gdbjtag: PeripheralsVMNode cosmetics</li>
 </ul>
 
-<h3>2015-02-10</h3>
+<h3 id="tocAnchor-1-1-54">2015-02-10</h3>
 
 <ul>
 <li>jlink/openocd/qemu: export *.dsf packages</li>
 </ul>
 
-<h3>2015-02-09</h3>
+<h3 id="tocAnchor-1-1-55">2015-02-09</h3>
 
 <ul>
 <li>jlink: fix NPE in semihosting destroy()</li>
@@ -679,7 +923,7 @@
 <li>openocd: config default added; defaults fixed</li>
 </ul>
 
-<h3>2015-02-07</h3>
+<h3 id="tocAnchor-1-1-56">2015-02-07</h3>
 
 <ul>
 <li>gdbjtag: terminate logic w/o server</li>
@@ -687,13 +931,13 @@
 <li>gdbjtag: prevent a NPE in memory block</li>
 </ul>
 
-<h3>2015-02-06</h3>
+<h3 id="tocAnchor-1-1-57">2015-02-06</h3>
 
 <ul>
 <li>gdbjtag: PeripheralMemoryService inits fixed</li>
 </ul>
 
-<h3>2015-02-05</h3>
+<h3 id="tocAnchor-1-1-58">2015-02-05</h3>
 
 <ul>
 <li>jlink: move all defaults to EclipseDefaults</li>
@@ -701,44 +945,44 @@
 <li>qemu: defaults as for openocd; restore link</li>
 </ul>
 
-<h3>2015-02-04</h3>
+<h3 id="tocAnchor-1-1-59">2015-02-04</h3>
 
 <ul>
 <li>jlink: exit codes updated for v4.96f</li>
 </ul>
 
-<h3>2015-02-03</h3>
+<h3 id="tocAnchor-1-1-60">2015-02-03</h3>
 
 <ul>
 <li>gdbjtag: peripherals are persistent</li>
 </ul>
 
-<h3>2015-02-02</h3>
+<h3 id="tocAnchor-1-1-61">2015-02-02</h3>
 
 <ul>
 <li>gdbjtag: addMemoryBlock() from UI thread</li>
 <li>jlink: add tab.main.checkProgram preference</li>
 </ul>
 
-<h3>2015-01-23</h3>
+<h3 id="tocAnchor-1-1-62">2015-01-23</h3>
 
 <ul>
 <li>gdbjtag: fix NPE in isLaunchConfigurationStarted()</li>
 </ul>
 
-<h3>2015-01-21</h3>
+<h3 id="tocAnchor-1-1-63">2015-01-21</h3>
 
 <ul>
 <li>template.core: weak _start() symbol</li>
 </ul>
 
-<h3>2015-01-20</h3>
+<h3 id="tocAnchor-1-1-64">2015-01-20</h3>
 
 <ul>
 <li>templates: armv6-m simplified exceptions</li>
 </ul>
 
-<h3>2015-01-19</h3>
+<h3 id="tocAnchor-1-1-65">2015-01-19</h3>
 
 <ul>
 <li>gdbjtag: more verbosity on memory monitor</li>
@@ -748,20 +992,20 @@
 <li>gdbjtag: use getImage() from Activator</li>
 </ul>
 
-<h3>2015-01-15</h3>
+<h3 id="tocAnchor-1-1-66">2015-01-15</h3>
 
 <ul>
 <li>cross: quote spaces in library and other objects</li>
 </ul>
 
-<h3>2015-01-14</h3>
+<h3 id="tocAnchor-1-1-67">2015-01-14</h3>
 
 <ul>
 <li>restart: action &amp; delegate moved here</li>
 <li>openocd: mac path includes /bin/</li>
 </ul>
 
-<h3>2015-01-13</h3>
+<h3 id="tocAnchor-1-1-68">2015-01-13</h3>
 
 <ul>
 <li>openocd: refactor field names fName</li>
@@ -771,13 +1015,13 @@
 <li>openocd: best effort openocd_path</li>
 </ul>
 
-<h3>2015-01-10</h3>
+<h3 id="tocAnchor-1-1-69">2015-01-10</h3>
 
 <ul>
 <li>jlink: default settings checked and fixed</li>
 </ul>
 
-<h3>2015-01-08</h3>
+<h3 id="tocAnchor-1-1-70">2015-01-08</h3>
 
 <ul>
 <li>gdbjtag &amp; jlink: terminate logic</li>
@@ -786,7 +1030,7 @@
 <li>jlink: refactor field names fName</li>
 </ul>
 
-<h3>2015-01-06</h3>
+<h3 id="tocAnchor-1-1-71">2015-01-06</h3>
 
 <ul>
 <li>templates: unused params in exceptions</li>
@@ -794,14 +1038,14 @@
 <li>gdbjtag: explicit process terminate()</li>
 </ul>
 
-<h3>2015-01-05</h3>
+<h3 id="tocAnchor-1-1-72">2015-01-05</h3>
 
 <ul>
 <li>jlink: RAM application message</li>
 <li>restart: Mondareddy fix to enable bug</li>
 </ul>
 
-<h3>2015-01-03</h3>
+<h3 id="tocAnchor-1-1-73">2015-01-03</h3>
 
 <ul>
 <li>jlink&amp;openocd&amp;qemu: backslashes (again)</li>
@@ -812,11 +1056,13 @@
 <li>gdbjtag: null checks in dispose()</li>
 </ul>
 
-<h2><a href="/developer/change-log/2014">2014</a></h2>
+<h2 id="tocAnchor-1-75">
+<a href="/developer/change-log/2014">2014</a>
+</h2>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

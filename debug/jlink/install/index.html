@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>How to install the SEGGER J-Link?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/debug/jlink/install/">
+  <link rel="canonical" href="/debug/jlink/install/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,12 +83,60 @@
 <h1 class="page-title">How to install the SEGGER J-Link?</h1>
 
 
-<h2>Why J-Link?</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Why J-Link?</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Documentation</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Windows</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">OS X</span></a>
+<ul>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-5-1"><span class="tocnumber">5.1</span> <span class="toctext">USB</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">6</span> <span class="toctext">GNU/Linux</span></a>
+<ul>
+<li class="toc_level-2 toc_section-8">
+<a href="#tocAnchor-1-7-1"><span class="tocnumber">6.1</span> <span class="toctext">UDEV</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">7</span> <span class="toctext">Testing</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#tocAnchor-1-10"><span class="tocnumber">8</span> <span class="toctext">The J-Link plug-in</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Why J-Link?</h2>
 
 <p>In case you wonder why GNU ARM Eclipse decided to provide support to SEGGER J-Link, the short answer is: <strong>because of <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a> and of SWO.</strong> The long answer may include the following:</p>
 
 <ul>
-<li><strong>wide processor support</strong> (there is probably no unsupported ARM processor in the entire galaxy, and if you find one in a remote quadrant, I&#39;m pretty sure it&#39;ll be shortly added to the list)</li>
+<li><strong>wide processor support</strong> (there is probably no unsupported ARM processor in the entire galaxy, and if you find one in a remote quadrant, I'm pretty sure it'll be shortly added to the list)</li>
 <li>it is a true <strong>multi-platform</strong> solution, providing drivers for <strong>Windows</strong>, <strong>OS X</strong> and <strong>GNU/Linux</strong></li>
 <li>it comes with a <strong>standard GDB server</strong> implementation, compatible with existing ARM toolchains</li>
 <li>in addition to the classical <strong>JTAG</strong> protocol, it implements the new <strong>SWD</strong> protocol</li>
@@ -99,15 +150,15 @@
 
 <p>The J-Link was present on the JTAG market for many years, but, considering the initial prices, only the big companies could afford them. After a fierce fight against Chinese clones, sold for a fraction of the price, in 2012 <a href="http://www.segger.com/">SEGGER</a> decided to introduce a low price version, <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a>, restricted to educational and non-commercial usage, making it the JTAG probe of choice for open source GNU ARM development.</p>
 
-<h2>Overview</h2>
+<h2 id="tocAnchor-1-2">Overview</h2>
 
 <p>J-Link comes not only with a GDB server, but with a complete set of drivers and utilities, packed by SEGGER separately for each platform. The same distribution includes drivers for all J-Link probes, so installation is quite simple. The J-Link binaries are available from the <a href="http://www.segger.com/jlink-software.html">SEGGER site</a>. Download the file appropriate for your development platform. Please note that you need to have the <strong>J-Link serial number</strong> at hand, since the download site will ask for it. You can still download the J-Link software if you do not have the serial number, but you have to pass a multiple step confirmations sequence stating that you are not using illegal clones.</p>
 
-<h2>Documentation</h2>
+<h2 id="tocAnchor-1-3">Documentation</h2>
 
 <p>The J-Link GDB server is documented in the <a href="https://www.segger.com/admin/uploads/productDocs/UM08001_JLink.pdf">UM08001</a> manual, available from the <a href="http://www.segger.com/jlink-software.html">SEGGER J-Link page</a>.</p>
 
-<h2>Windows</h2>
+<h2 id="tocAnchor-1-4">Windows</h2>
 
 <p>The Windows file is a ZIP archive, named like <strong>Setup_JLinkARM_V480.zip</strong>. After unpacking it, a Windows executable file is obtained, named like <strong>Setup_JLinkARM_V480.exe</strong>.</p>
 
@@ -121,11 +172,13 @@
 
 <p>The result of the install is a folder (a new folder for each new version installed), and a set of driver files installed in the system folders, overwritten with each new install.</p>
 
-<p><img src="/assets/images/2014/01/Segger-win.png" alt="SEGGER Windows distribution"></p>
+<p>
+<img src="/assets/images/2014/01/Segger-win.png" alt="SEGGER Windows distribution" />
+</p>
 
 <p>Please note that on Windows, SEGGER provides both graphical interface and <strong>command line versions</strong> (having the names suffixed with <strong>CL</strong>) for most of their tools. For the J-Link plug-in it is recommended to use only the command line version of the  J-Link GDB server (<strong>JLinkGDBServerCL.exe</strong>).</p>
 
-<h2>OS X</h2>
+<h2 id="tocAnchor-1-5">OS X</h2>
 
 <p>The OS X download is an OS X package installer, like <strong>JLink_MacOSX_V480.pkg</strong>.</p>
 
@@ -137,29 +190,36 @@
 
 <p>The result of the install is a folder called <strong>/Applications/SEGGER/JLink/</strong> (the same folder for all versions) where all executables and libraries are stored; please note that, as for many OS X applications, no other driver files are installed in the system folders.</p>
 
-<p><img src="/assets/images/2014/01/Segger-OSX.png" alt="SEGGER OS X distribution"></p>
+<p>
+<img src="/assets/images/2014/01/Segger-OSX.png" alt="SEGGER OS X distribution" />
+</p>
 
-<h3>USB</h3>
+<h3 id="tocAnchor-1-5-1">USB</h3>
 
 <p>On OS X, the USB subsystem automatically identifies and allows access to USB devices, without the need to maintain a manual list similar to the one used by UDEV in GNU/Linux. No other drivers or system configurations are required.</p>
 
-<h2>GNU/Linux</h2>
+<h2 id="tocAnchor-1-7">GNU/Linux</h2>
 
 <p>There are multiple packages available for GNU/Linux on the SEGGER download site, built as Debian/Red Hat packages, in 32/64-bit versions, or plain TGZ archives. Select the one appropriate for you system and use the specific tools to install the package. For example, on Ubuntu, to install the 64-bit .deb file, use the following command:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ sudo dpkg -i jlink_4.80_x86_64.deb
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ sudo dpkg -i jlink_4.80_x86_64.deb
+</code></pre>
+</div>
 <p>The J-Link executables are installed in <strong>/usr/bin</strong>.</p>
 
 <p>In case you have a 64-bit machine and install the 32-bit SEGGER package, you might need several 32-bit libraries, depending on distribution.</p>
 
-<h3>UDEV</h3>
+<h3 id="tocAnchor-1-7-1">UDEV</h3>
 
 <p>The install procedure automatically adds <strong>/etc/udev/rules.d/99-jlink.rules</strong> to define the USB IDs of the J-Link devices. No other drivers are required.</p>
 
-<h2>Testing</h2>
+<h2 id="tocAnchor-1-9">Testing</h2>
 
 <p>To test if J-Link is able to connect to a specific board, you generally need to specify the interface (JTAG or SWD) and the device name. By default, J-Link GDBServer will try JTAG but if only SWD is wired (which is very common on custom hardware), you would need to specify the interface (-if SWD). The device name is needed for targets which require special handling on connect (e.g. due to silicon bugs which make auto-detection impossible). For a list of available device names, please refer to the SEGGER <a href="http://www.segger.com/jlink_supported_devices.html">Supported devices</a> page. Below is an example how to test a JTAG connection to a STM32F103 evaluation board (-device STM32F103RB) on OS X.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ /Applications/SEGGER/JLink/JLinkGDBServer -if JTAG -device STM32F103RB
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ /Applications/SEGGER/JLink/JLinkGDBServer -if JTAG -device STM32F103RB
 SEGGER J-Link GDB Server V4.80 Command Line Version
 
 JLinkARM.dll V4.80 (DLL compiled Dec 20 2013 19:44:31)
@@ -197,22 +257,29 @@ JTAG ID: 0x3BA00477 (Cortex-M3)
 Connected to target
 Waiting for GDB connection...
 ^C
-</code></pre></div>
+</code></pre>
+</div>
 <p>On Windows, to start the GDB server, use back-slashes in the path and the CL (command line) version:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">C:&gt;C:\Program Files\SEGGER\JLinkARM_V480\JLinkGDBServerCL
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">C:&gt;C:\Program Files\SEGGER\JLinkARM_V480\JLinkGDBServerCL
+</code></pre>
+</div>
 <p>On Ubuntu the command is simple:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ /usr/bin/JLinkGDBServer
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">$ /usr/bin/JLinkGDBServer
+</code></pre>
+</div>
 <p>In all cases, the result should be similar to the one obtained on OS X.</p>
 
-<h2>The J-Link plug-in</h2>
+<h2 id="tocAnchor-1-10">The J-Link plug-in</h2>
 
 <p>If you successfully installed SEGGER binaries, you can proceed to the page documenting how to use the GNU ARM Eclipse <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link debugging plug-in</a>.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>STM32Fxx templates</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/templates/stm32f/">
+  <link rel="canonical" href="/templates/stm32f/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,11 +83,48 @@
 <h1 class="page-title">STM32Fxx templates</h1>
 
 
-<h2>Overview</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Create a new project</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">Associate a device to the project</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">3</span> <span class="toctext">Build</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">4</span> <span class="toctext">Exclude unused</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">5</span> <span class="toctext">Load flash and debug</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">6</span> <span class="toctext">Troubleshooting</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Overview</h2>
 
 <p>STM provides a large range of Cortex-M micro-controllers, grouped in several families. The GNU ARM Eclipse plug-ins provide support for F0, F1, F2, F3 and F4. Since all templates share common characteristics, the examples shown here will refer only to the F4 family.</p>
 
-<h2>Create a new project</h2>
+<h2 id="tocAnchor-1-2">Create a new project</h2>
 
 <p>The template can create both C and C++ projects. To create a new C++ project:</p>
 
@@ -93,49 +133,63 @@
 <li>in the <em>Executables</em> group, select the <strong>STM32F4xx C/C++ Project</strong></li>
 </ul>
 
-<p><img src="/assets/images/2014/04/NewF4Project.png" alt="New STM32F4 project"></p>
+<p>
+<img src="/assets/images/2014/04/NewF4Project.png" alt="New STM32F4 project" />
+</p>
 
 <p>Select the MCU and various project settings:</p>
 
-<p><img src="/assets/images/2014/04/F4Target.png" alt="Define MCU and project settings"></p>
+<p>
+<img src="/assets/images/2014/04/F4Target.png" alt="Define MCU and project settings" />
+</p>
 
 <p>Define the names of the destination folders:</p>
 
-<p><img src="/assets/images/2014/04/F4Folders.png" alt="Define destination folder names"></p>
+<p>
+<img src="/assets/images/2014/04/F4Folders.png" alt="Define destination folder names" />
+</p>
 
 <p>Accept the default configuration names:</p>
 
-<p><img src="/assets/images/2014/04/Configurations.png" alt="Build configurations"></p>
+<p>
+<img src="/assets/images/2014/04/Configurations.png" alt="Build configurations" />
+</p>
 
 <p>Define the toolchain name and path:</p>
 
-<p><img src="/assets/images/2014/04/Toolchain.png" alt="Toolchain path"></p>
+<p>
+<img src="/assets/images/2014/04/Toolchain.png" alt="Toolchain path" />
+</p>
 
 <p>Note: DO NOT SKIP this step, it is mandatory to have a correct toolchain path defined in order for the build to complete correctly.</p>
 
 <p>The generated project has the following structure:</p>
 
-<p><img src="/assets/images/2014/02/F4Project.png" alt="Project structure"></p>
+<p>
+<img src="/assets/images/2014/02/F4Project.png" alt="Project structure" />
+</p>
 
-<h3>Associate a device to the project</h3>
+<h3 id="tocAnchor-1-2-1">Associate a device to the project</h3>
 
 <p>Future releases of the wizard will this automatically but for now it is recommended to do it manually.</p>
 
 <p>For more details, please visit the <a href="/eclipse/project/assign-device/">separate page</a>.</p>
 
-<p><img src="/assets/images/2013/10/Devices.png" alt="Assign a device to the project"></p>
+<p>
+<img src="/assets/images/2013/10/Devices.png" alt="Assign a device to the project" />
+</p>
 
-<h2>Build</h2>
+<h2 id="tocAnchor-1-4">Build</h2>
 
 <p>As seen in the above picture, the project builds without errors and runs on the STM32F4DISCOVERY board, blinking the LED and printing trace lines on the debugger output window.</p>
 
-<h2>Exclude unused</h2>
+<h2 id="tocAnchor-1-5">Exclude unused</h2>
 
 <p>By default, the template wizard enables the <strong>Exclude unused</strong> option. The result is that unused device drivers source files, although copied in the project, are excluded from build, mainly to save some build time.</p>
 
 <p>If you need to re-include some of the source files you need to right click on the file, select <strong>Resource Configurations</strong> → <strong>Exclude from Build...</strong> and deselect the build configuration you want to include the file.</p>
 
-<h2>Load flash and debug</h2>
+<h2 id="tocAnchor-1-6">Load flash and debug</h2>
 
 <p>Once you successfully built the project (be sure the text size in the Print Size step is not zero), you need to connect the board to your development machine and download the program into the board flash memory.</p>
 
@@ -145,7 +199,7 @@
 
 <p>For more details on debugging, please refer to the specific <a href="/debug/" title="Debugging">debug</a> pages.</p>
 
-<h2>Troubleshooting</h2>
+<h2 id="tocAnchor-1-7">Troubleshooting</h2>
 
 <p>The usual sources for build failures are:</p>
 
@@ -156,7 +210,7 @@
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

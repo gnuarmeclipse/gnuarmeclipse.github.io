@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>How to install the Windows Build Tools?</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/windows-build-tools/install/">
+  <link rel="canonical" href="/windows-build-tools/install/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,21 +83,48 @@
 <h1 class="page-title">How to install the Windows Build Tools?</h1>
 
 
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
 <h2>Contents</h2>
-
+</div>
 <ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#mentor-sourcery-codebench">Mentor Sourcery CodeBench</a></li>
-<li><a href="#download-the-build-tools-setup">Download the Build Tools setup</a></li>
-<li><a href="#run-the-setup">Run the setup</a></li>
-<li><a href="#check-version">Check version</a></li>
-<li><a href="#check-the-global-tools-path">Check the global tools path</a></li>
-<li><a href="#do-not-update-the-user-or-system-path">DO NOT update the user or system path!</a></li>
-<li><a href="#uninstall">Uninstall</a></li>
-<li><a href="#the-echo-command">The echo command</a></li>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Mentor Sourcery CodeBench</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Download the Windows Build Tools setup</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Run the setup</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Check version</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Check the global tools path</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">7</span> <span class="toctext">DO NOT update the user or system path!</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">8</span> <span class="toctext">Uninstall</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">9</span> <span class="toctext">The echo command</span></a>
+</li>
 </ul>
-
-<h2>Overview</h2>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Overview</h2>
 
 <p>If your development platform is Windows, you need to install two additional command line programs, <strong>make</strong> and <strong>rm</strong>, required by the Eclipse external builder.</p>
 
@@ -102,7 +132,7 @@
 
 <p>On OS X and GNU/Linux these programs are part of the standard distributions, either directly or in separate Developer packages, so the following steps do not apply.</p>
 
-<h2>Mentor Sourcery CodeBench</h2>
+<h2 id="tocAnchor-1-2">Mentor Sourcery CodeBench</h2>
 
 <p>One notable exception is the <strong><a href="http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/editions/lite-edition/">Mentor Sourcery CodeBench Lite</a></strong> toolchain for Windows, which provides two programs, <strong>cs-make</strong> and <strong>cs-rm</strong> (the cs- prefix comes from CodeSourcery, the former name of the company that distributed the toolchain).</p>
 
@@ -110,36 +140,45 @@
 
 <p>So, if you use the CodeBench Lite (not recommended anyway), although you already have these two programs in the toolchain path, if you want to use longer lines and a modern make, preferably install these tools and update the names from cs-make to <strong>make</strong> and from cs-rm to <strong>rm</strong> in the Toolchains configuration tab.</p>
 
-<h2>Download the Windows Build Tools setup</h2>
+<h2 id="tocAnchor-1-3">Download the Windows Build Tools setup</h2>
 
 <p>Otherwise, if you use other toolchains, like the recommended <a href="http://launchpad.net/gcc-arm-embedded"><strong>GNU Tools for ARM Embedded Processors</strong></a>, for your convenience we prepared a small package with the required build tools; just download the most recent <strong>gnuarmeclipse-build-tools-win32-2.*-*-setup.exe</strong> file from the <a href="https://sourceforge.net/projects/gnuarmeclipse/files/Build%20Tools/">SourceForge download area</a> and proceed with the setup.</p>
 
-<h2>Run the setup</h2>
+<h2 id="tocAnchor-1-4">Run the setup</h2>
 
 <p>Run the setup with the default settings:</p>
 
-<p><img src="/assets/images/2015/win-build-tools-setup.png" alt="Windows Build Tools Setup"></p>
+<p>
+<img src="/assets/images/2015/win-build-tools-setup.png" alt="Windows Build Tools Setup" />
+</p>
 
 <p>By default this will install the programs in the <code>C:\Program Files\GNU ARM Eclipse\Build Tools</code> folder:</p>
 
-<p><img src="/assets/images/2015/win-build-tools-setup-destination.png" alt="Default install destination"></p>
+<p>
+<img src="/assets/images/2015/win-build-tools-setup-destination.png" alt="Default install destination" />
+</p>
 
-<h2>Check version</h2>
+<h2 id="tocAnchor-1-5">Check version</h2>
 
 <p>Check if the tool is functional; go to the folder where you installed the tools and run <code>make --version</code>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">C:\Program Files\GNU ARM Eclipse\Build Tools\bin&gt;make --version
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">C:\Program Files\GNU ARM Eclipse\Build Tools\bin&gt;make --version
 GNU Make 4.1
 Built for i686-w64-mingw32
 Copyright (C) 1988-2014 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
-</code></pre></div>
-<h2>Check the global tools path</h2>
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-6">Check the global tools path</h2>
 
 <p>If you installed the build tools as explained above, the setup already added a key to the Windows Registry and the plug-in can read it and automatically configure the PATH.</p>
 
-<p><img src="/assets/images/2015/win-preferences-c-build-global-tools-path.png" alt="Global Tools Path"></p>
+<p>
+<img src="/assets/images/2015/win-preferences-c-build-global-tools-path.png" alt="Global Tools Path" />
+</p>
 
 <p>The above definition will make the build tools accessible to all projects in all workspaces.</p>
 
@@ -147,23 +186,25 @@ There is NO WARRANTY, to the extent permitted by law.
 
 <p>To check if the paths definitions are effective, go to the project properties page and identify the <strong>PATH</strong> variable. Be sure the <strong>Origin</strong> column reads <strong>BUILD SYSTEM</strong>; if you manually edit it, the Origin will change and will read USER, but this is totally not recommended, since manually editing the path disables further automated updates of the path.</p>
 
-<p><img src="/assets/images/2015/win-properties-c-environment.png" alt="Environment PATH"></p>
+<p>
+<img src="/assets/images/2015/win-properties-c-environment.png" alt="Environment PATH" />
+</p>
 
-<h2>DO NOT update the user or system path!</h2>
+<h2 id="tocAnchor-1-7">DO NOT update the user or system path!</h2>
 
 <p>As recommended when installing the toolchain, it is recommended to keep this settings outside the user or system path. Microsoft did not provide these programs in their distribution, and it is better to keep it that way, when you need them just explicitly update the build path to use them.</p>
 
-<h2>Uninstall</h2>
+<h2 id="tocAnchor-1-8">Uninstall</h2>
 
 <p>If needed, you can completely remove the package from your system by running the provided uninstall (<strong>build-tools-uninstall.exe</strong>).</p>
 
-<h2>The echo command</h2>
+<h2 id="tocAnchor-1-9">The echo command</h2>
 
-<p>The package also contains an executable for the <strong>echo</strong> command. It is not mandatory for the build to succeed, but it is recommended to have it in the build path, to avoid an annoying CDT bug, that triggers an error during the first build of a new project, claiming that <em>Program &quot;gcc&quot; not found in PATH</em>.</p>
+<p>The package also contains an executable for the <strong>echo</strong> command. It is not mandatory for the build to succeed, but it is recommended to have it in the build path, to avoid an annoying CDT bug, that triggers an error during the first build of a new project, claiming that <em>Program "gcc" not found in PATH</em>.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
 
 
 </section>

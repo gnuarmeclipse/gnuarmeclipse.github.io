@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>The ilg.gnuarmeclipse.debug.core.cprojectExtra extension point</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/extension/ilg.gnuarmeclipse.debug.core.cprojectextra/">
+  <link rel="canonical" href="/developer/extension/ilg.gnuarmeclipse.debug.core.cprojectextra/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,29 +83,63 @@
 <h1 class="page-title">The ilg.gnuarmeclipse.debug.core.cprojectExtra extension point</h1>
 
 
-<h2>Purpose</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Purpose</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Definition</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">API</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Where is this extension point used?</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Where is this extension point implemented?</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Purpose</h2>
 
 <p>This extension point provides decoupled access to the C project extra data from the debug plug-ins.</p>
 
 <p>It must be implemented by distributions that have their own method of storing extra definitions associated with project configurations (like vendor id and device name).</p>
 
-<h2>Definition</h2>
+<h2 id="tocAnchor-1-2">Definition</h2>
 
-<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd">ilg.gnuarmeclipse.debug.core/schema/cproject<em>extra</em>data.exsd</a>.</p>
+<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd">ilg.gnuarmeclipse.debug.core/schema/cproject_extra_data.exsd</a>.</p>
 
-<h2>API</h2>
+<h2 id="tocAnchor-1-3">API</h2>
 
 <p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.core/src/ilg/gnuarmeclipse/debug/core/data/ICProjectExtraDataManager.java">ICProjectExtraDataManager</a>.</p>
 
 <p>The only function required is:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public Map&lt;String, String&gt; getExtraProperties(IConfiguration config);
-</code></pre></div>
-<h2>Where is this extension point used?</h2>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">public Map&lt;String, String&gt; getExtraProperties(IConfiguration config);
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-4">Where is this extension point used?</h2>
 
 <p>The <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/CProjectExtraDataManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/CProjectExtraDataManagerProxy.java</a> class enumerates all <strong>cprojectExtra</strong> extension points and returns the first one that can provide data for the requested configuration.</p>
 
 <p>This <code>CProjectExtraDataManagerProxy.getExtraProperties(config)</code> is called from <code>PeripheralsService.etPeripherals(IContainerDMContext containerDMContext, DataRequestMonitor&lt;IPeripheralDMContext[]&gt; drm)</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">String vendorId = null;
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">String vendorId = null;
 String deviceName = null;
 
 CProjectExtraDataManagerProxy dataManager = CProjectExtraDataManagerProxy
@@ -133,50 +170,57 @@ if (vendorId != null &amp;&amp; deviceName != null) {
     drm.setStatus(new Status(
             Status.ERROR,
             Activator.PLUGIN_ID,
-            &quot;There are no peripheral descriptions available, assign a device to the project.&quot;));
+            "There are no peripheral descriptions available, assign a device to the project."));
     drm.done();
     return;
 }
-</code></pre></div>
+</code></pre>
+</div>
 <p>As seen above, this extension point is used to get the <strong>cmsis.device.vendor.id</strong> and <strong>cmsis.device.name</strong> associated with a project, and from it get the SVD to populate the Peripherals view.</p>
 
-<h2>Where is this extension point implemented?</h2>
+<h2 id="tocAnchor-1-5">Where is this extension point implemented?</h2>
 
 <p>This extension point is implemented one in <strong>ilg.gnuarmeclipse.managedbuild.cross</strong>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">   &lt;extension
-         point=&quot;ilg.gnuarmeclipse.debug.core.cprojectExtra&quot;&gt;
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">   &lt;extension
+         point="ilg.gnuarmeclipse.debug.core.cprojectExtra"&gt;
       &lt;factory
-            class=&quot;ilg.gnuarmeclipse.managedbuild.cross.xpi.CProjectExtraDataManagerFactory&quot;&gt;
+            class="ilg.gnuarmeclipse.managedbuild.cross.xpi.CProjectExtraDataManagerFactory"&gt;
       &lt;/factory&gt;
    &lt;/extension&gt;
-</code></pre></div>
+</code></pre>
+</div>
 <p>The data manager created by this factory is <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.managedbuild.cross/src/ilg/gnuarmeclipse/managedbuild/cross/xpi/CProjectExtraDataManager.java">ilg.gnuarmeclipse.managedbuild.cross.xpi/CProjectExtraDataManager.java</a> which returns the entire map of extra properties associated with GNU ARM Eclipse projects, stored in .cproject:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">    &lt;storageModule moduleId=&quot;ilg.gnuarmeclipse.managedbuild.packs&quot;&gt;
-        &lt;option id=&quot;cmsis.device.name&quot; value=&quot;STM32F407VG&quot;/&gt;
-        &lt;option id=&quot;cmsis.subfamily.name&quot; value=&quot;STM32F407&quot;/&gt;
-        &lt;option id=&quot;cmsis.family.name&quot; value=&quot;STM32F4 Series&quot;/&gt;
-        &lt;option id=&quot;cmsis.device.vendor.name&quot; value=&quot;STMicroelectronics&quot;/&gt;
-        &lt;option id=&quot;cmsis.device.vendor.id&quot; value=&quot;13&quot;/&gt;
-        &lt;option id=&quot;cmsis.device.pack.vendor&quot; value=&quot;Keil&quot;/&gt;
-        &lt;option id=&quot;cmsis.device.pack.name&quot; value=&quot;STM32F4xx_DFP&quot;/&gt;
-        &lt;option id=&quot;cmsis.device.pack.version&quot; value=&quot;2.3.0&quot;/&gt;
-        &lt;option id=&quot;cmsis.board.name&quot; value=&quot;STM32F4-Discovery&quot;/&gt;
-        &lt;option id=&quot;cmsis.board.revision&quot; value=&quot;Rev.C.1&quot;/&gt;
-        &lt;option id=&quot;cmsis.board.vendor.name&quot; value=&quot;STMicroelectronics&quot;/&gt;
-        &lt;option id=&quot;cmsis.board.clock&quot; value=&quot;8000000&quot;/&gt;
-        &lt;option id=&quot;cmsis.board.pack.vendor&quot; value=&quot;Keil&quot;/&gt;
-        &lt;option id=&quot;cmsis.board.pack.name&quot; value=&quot;STM32F4xx_DFP&quot;/&gt;
-        &lt;option id=&quot;cmsis.board.pack.version&quot; value=&quot;2.3.0&quot;/&gt;
-        &lt;option id=&quot;cmsis.core.name&quot; value=&quot;Cortex-M4&quot;/&gt;
-        &lt;option id=&quot;cmsis.compiler.define&quot; value=&quot;STM32F407xx&quot;/&gt;
-        &lt;memory section=&quot;IRAM1&quot; size=&quot;0x20000&quot; start=&quot;0x20000000&quot; startup=&quot;0&quot;/&gt;
-        &lt;memory section=&quot;IRAM2&quot; size=&quot;0x10000&quot; start=&quot;0x10000000&quot; startup=&quot;0&quot;/&gt;
-        &lt;memory section=&quot;IROM1&quot; size=&quot;0x100000&quot; start=&quot;0x08000000&quot; startup=&quot;1&quot;/&gt;
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">    &lt;storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"&gt;
+        &lt;option id="cmsis.device.name" value="STM32F407VG"/&gt;
+        &lt;option id="cmsis.subfamily.name" value="STM32F407"/&gt;
+        &lt;option id="cmsis.family.name" value="STM32F4 Series"/&gt;
+        &lt;option id="cmsis.device.vendor.name" value="STMicroelectronics"/&gt;
+        &lt;option id="cmsis.device.vendor.id" value="13"/&gt;
+        &lt;option id="cmsis.device.pack.vendor" value="Keil"/&gt;
+        &lt;option id="cmsis.device.pack.name" value="STM32F4xx_DFP"/&gt;
+        &lt;option id="cmsis.device.pack.version" value="2.3.0"/&gt;
+        &lt;option id="cmsis.board.name" value="STM32F4-Discovery"/&gt;
+        &lt;option id="cmsis.board.revision" value="Rev.C.1"/&gt;
+        &lt;option id="cmsis.board.vendor.name" value="STMicroelectronics"/&gt;
+        &lt;option id="cmsis.board.clock" value="8000000"/&gt;
+        &lt;option id="cmsis.board.pack.vendor" value="Keil"/&gt;
+        &lt;option id="cmsis.board.pack.name" value="STM32F4xx_DFP"/&gt;
+        &lt;option id="cmsis.board.pack.version" value="2.3.0"/&gt;
+        &lt;option id="cmsis.core.name" value="Cortex-M4"/&gt;
+        &lt;option id="cmsis.compiler.define" value="STM32F407xx"/&gt;
+        &lt;memory section="IRAM1" size="0x20000" start="0x20000000" startup="0"/&gt;
+        &lt;memory section="IRAM2" size="0x10000" start="0x10000000" startup="0"/&gt;
+        &lt;memory section="IROM1" size="0x100000" start="0x08000000" startup="1"/&gt;
     &lt;/storageModule&gt;
-</code></pre></div>
+</code></pre>
+</div>
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

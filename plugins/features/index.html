@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>GNU ARM Eclipse Plug-ins Features</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/plugins/features/">
+  <link rel="canonical" href="/plugins/features/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,24 +83,68 @@
 <h1 class="page-title">GNU ARM Eclipse Plug-ins Features</h1>
 
 
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
 <h2>Contents</h2>
-
+</div>
 <ul>
-<li><a href="#main-features">Main features</a></li>
-<li><a href="#supported-toolchains">Supported toolchains</a></li>
-<li><a href="#extra-build-steps">Extra build steps</a></li>
-<li><a href="#discovery-options--indexing">Discovery Options &amp; Indexing</a></li>
-<li><a href="#simplified-multiple-tools-configurations">Simplified multiple tools configurations</a></li>
-<li><a href="#fully-configurable-toolchains">Fully configurable toolchains</a></li>
-<li><a href="#advanced-toolchain-path-management">Advanced toolchain path management</a></li>
-<li><a href="#functional-ready-to-run-templates">Functional ready to run templates</a></li>
-<li><a href="#debugging-support">Debugging support</a></li>
-<li><a href="#the-packages-manager-perspective">The packages manager perspective</a></li>
-<li><a href="#peripherals-registers-view-in-debug">Peripherals registers view in debug</a></li>
-<li><a href="#device-and-board-documentation-files">Device and board documentation files</a></li>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Main features</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Supported toolchains</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">ARM toolchains</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-2-2"><span class="tocnumber">2.2</span> <span class="toctext">AArch64 toolchains</span></a>
+</li>
 </ul>
-
-<h2>Main features</h2>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">3</span> <span class="toctext">Extra build steps</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">4</span> <span class="toctext">Discovery Options &amp; Indexing</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">5</span> <span class="toctext">Simplified multiple tools configurations</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">6</span> <span class="toctext">Fully configurable toolchains</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">7</span> <span class="toctext">Advanced toolchain path management</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#tocAnchor-1-10"><span class="tocnumber">8</span> <span class="toctext">Improved project portability</span></a>
+</li>
+<li class="toc_level-1 toc_section-11">
+<a href="#tocAnchor-1-11"><span class="tocnumber">9</span> <span class="toctext">Functional ready to run templates</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#tocAnchor-1-12"><span class="tocnumber">10</span> <span class="toctext">Debugging support</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#tocAnchor-1-13"><span class="tocnumber">11</span> <span class="toctext">The packages manager perspective</span></a>
+</li>
+<li class="toc_level-1 toc_section-14">
+<a href="#tocAnchor-1-14"><span class="tocnumber">12</span> <span class="toctext">Peripherals registers view in debug</span></a>
+</li>
+<li class="toc_level-1 toc_section-15">
+<a href="#tocAnchor-1-15"><span class="tocnumber">13</span> <span class="toctext">Device and board documentation files</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Main features</h2>
 
 <p>The main features of the GNU ARM Eclipse family of plug-ins are:</p>
 
@@ -121,11 +168,11 @@
 <li>... and many more</li>
 </ul>
 
-<h2>Supported toolchains</h2>
+<h2 id="tocAnchor-1-2">Supported toolchains</h2>
 
 <p>The build plug-in supports most existing toolchains currently available for both 32 and 64-bits ARM processors.</p>
 
-<h3>ARM toolchains</h3>
+<h3 id="tocAnchor-1-2-1">ARM toolchains</h3>
 
 <ul>
 <li><a href="http://launchpad.net/gcc-arm-embedded"><strong>GNU Tools for ARM Embedded Processors</strong></a> (arm-none-eabi-*)</li>
@@ -139,7 +186,7 @@
 <li>Yagarto, Summon, etc. <strong>ARM EABI</strong> (arm-none-eabi-*) (obsolete, no longer maintained)</li>
 </ul>
 
-<h3>AArch64 toolchains</h3>
+<h3 id="tocAnchor-1-2-2">AArch64 toolchains</h3>
 
 <ul>
 <li><strong><a href="http://launchpad.net/linaro-toolchain-binaries">Linaro</a> AArch64 bare-metal ELF</strong> (aarch64-none-elf-*)</li>
@@ -148,63 +195,75 @@
 <li><strong><a href="http://launchpad.net/linaro-toolchain-binaries">Linaro</a> AArch64 big-endian Linux GNU</strong> (aarch64_be-linux-gnu-*)</li>
 </ul>
 
-<p><img src="/assets/images/2015/wizard-toolchains.png" alt="The list of supported toolchains"></p>
+<p>
+<img src="/assets/images/2015/wizard-toolchains.png" alt="The list of supported toolchains" />
+</p>
 
-<h2>Extra build steps</h2>
+<h2 id="tocAnchor-1-5">Extra build steps</h2>
 
 <p>In addition to building the ELF file, the build plug-in can also create a binary file (<strong>ihex</strong>, <strong>srec</strong>, <strong>binary</strong>) to be programmed in the processor flash memory.</p>
 
 <p>Since resources are usually limited, the plug-in can also display the program size, and create a listing.</p>
 
-<p><img src="/assets/images/2015/console-build-secondary.png" alt="An example of how secondary targets are generated"></p>
+<p>
+<img src="/assets/images/2015/console-build-secondary.png" alt="An example of how secondary targets are generated" />
+</p>
 
-<h2>Discovery Options &amp; Indexing</h2>
+<h2 id="tocAnchor-1-6">Discovery Options &amp; Indexing</h2>
 
 <p>Frankly, this is mainly a CDT feature, but in order for it to work, the build plug-in must provide the CDT with various toolchain details, like compiler command (for example arm-none-eabi-gcc), compiler options and the right path to the toolchain binary.</p>
 
 <p>To understand <strong>Discovery Options</strong>, you need to understand what <strong>Indexing</strong> is. In order to allow Eclipse user to navigate to definitions, to declarations, to allow smart completion, refactoring and all these nice features, the CDT needs to have <strong>exactly</strong> the same knowledge of the source files as the compiler. For this, it also needs to know the system headers used at compile time and the default preprocessor definitions issued by the compiler. GCC provides a magic combination of command options to do this (<code>-E -P -v -dD ${plugin_state_location}/specs.c</code>), so the CDT needs to issue the proper compiler commands (one for each language, C &amp; C++). The build plug-in provides these details, for each toolchain.</p>
 
-<p>This feature also provides a quick check if you configured properly your environment: after creating a new project, you should see the special folder <strong>Includes</strong> in the root of your project, containing the paths of the system include files used by your compiler. If you don&#39;t see this, you probably misconfigured the toolchain path.</p>
+<p>This feature also provides a quick check if you configured properly your environment: after creating a new project, you should see the special folder <strong>Includes</strong> in the root of your project, containing the paths of the system include files used by your compiler. If you don't see this, you probably misconfigured the toolchain path.</p>
 
-<p><img src="/assets/images/2015/project-explorer-includes.png" alt="Example of automatically detected include paths"></p>
+<p>
+<img src="/assets/images/2015/project-explorer-includes.png" alt="Example of automatically detected include paths" />
+</p>
 
-<h2>Simplified multiple tools configurations</h2>
+<h2 id="tocAnchor-1-7">Simplified multiple tools configurations</h2>
 
 <p>In addition to being tedious, setting options for each tool (C compiler, C++ compiler, linker) might also be a source of subtle errors when incompatible options are used for different tools.</p>
 
 <p>To minimise the risk of such errors, and to make the plug-in easier to use, unlike in most other CDT compiler settings plug-ins, special configuration entries were defined at toolchain level instead of specific tools. Options enabled at this level are used for all tools, without exception.</p>
 
-<p><img src="/assets/images/2015/properties-c-settings-tool-optimization.png" alt="Example of common options used for all tools"></p>
+<p>
+<img src="/assets/images/2015/properties-c-settings-tool-optimization.png" alt="Example of common options used for all tools" />
+</p>
 
-<h2>Fully configurable toolchains</h2>
+<h2 id="tocAnchor-1-8">Fully configurable toolchains</h2>
 
 <p>Toolchain definitions include most of the configurable details, not only the prefix and the path, allowing the use of almost any GNU compatible toolchain.</p>
 
-<p><img src="/assets/images/2015/properties-c-settings-toolchains.png" alt="All toolchain details can be configured"></p>
+<p>
+<img src="/assets/images/2015/properties-c-settings-toolchains.png" alt="All toolchain details can be configured" />
+</p>
 
-<h2>Advanced toolchain path management</h2>
+<h2 id="tocAnchor-1-9">Advanced toolchain path management</h2>
 
 <p>The traditional way of accessing the toolchain components was to add the toolchain path to the system PATH and later do nothing special inside Eclipse. Unfortunately this model does not scale; serious development often requires multiple toolchains (either different versions of the same toolchain, or even toolchains from different sources) on the same machine, and polluting the system PATH is a source of major headaches.</p>
 
 <p>The GNU ARM Eclipse cross build plug-in provides advanced toolchain path management; for more details, please read the separate <a href="/toolchain/path/" title="Toolchain path management">Toolchain path management</a> page</p>
 
-<h2>Improved project portability</h2>
+<h2 id="tocAnchor-1-10">Improved project portability</h2>
 
 <p>Even more, for improved project portability, the toolchain path is stored in the workspace, in preference to the path stored in the project.</p>
 
 <p>Project portability is essential for team collaboration, when multiple developers use different platform to develop a single project. Without project portability, after a Windows machine would commit the project to a central repository, OS X or GNU/Linux users would have to manually adjust the path in their projects after each update, and the other way around; for more details, please read the separate <a href="/eclipse/project/portability/" title="Project portability">Project portability</a> page.</p>
 
-<h2>Functional ready to run templates</h2>
+<h2 id="tocAnchor-1-11">Functional ready to run templates</h2>
 
 <p>For beginners, who need initial help to put all details together for their first project, a complete sample, with startup code, linker scripts, semi-hosting enabled and all necessary options already set, can be a major time saver.</p>
 
 <p>The <strong>Hello </strong><strong>World </strong>ARM Cortex-M3 C Project template was destined exactly for such cases; please see the <a href="/tutorials/hello-arm/">Tutorial: Create a test project</a> for more details.</p>
 
-<p><img src="/assets/images/2015/NewCM3ProjectResult.png" alt="The Cortex-M3 template project"></p>
+<p>
+<img src="/assets/images/2015/NewCM3ProjectResult.png" alt="The Cortex-M3 template project" />
+</p>
 
 <p>Even more, specific templates are available for the STM families of processors <strong>STM32F[01234]x</strong>, and for some Freescale <strong>KLxx</strong> processors. They create the classical application that blinks a LED, and, specific for the Debug configuration, prints a string on the tracing (SWV or semi-hosting) output.</p>
 
-<h2>Debugging support</h2>
+<h2 id="tocAnchor-1-12">Debugging support</h2>
 
 <p>During the lifetime of a project, creating/editing source files and building binaries are certainly important activities, but in many cases the most time is spent during debugging sessions, and a reliable debugging environment is an absolute must.</p>
 
@@ -215,11 +274,13 @@
 <li>the <a href="http://openocd.sourceforge.net">OpenOCD</a> GDB server for many other JTAG probes.</li>
 </ul>
 
-<p><img src="/assets/images/2015/launch-jlink-debugger-tab.png" alt="The J-Link Debugger tab"></p>
+<p>
+<img src="/assets/images/2015/launch-jlink-debugger-tab.png" alt="The J-Link Debugger tab" />
+</p>
 
 <p>We also recommend the use of specific ARM debugging support, like tracing via the SWO output, with a second choice for semihosting output (both are supported by the J-Link plug-in).</p>
 
-<h2>The packages manager perspective</h2>
+<h2 id="tocAnchor-1-13">The packages manager perspective</h2>
 
 <p>The GNU ARM Eclipse plug-ins were the first open source tools to benefit from the new CMSIS Packs technology promoted by ARM.</p>
 
@@ -227,21 +288,27 @@
 
 <p>There are many packages available, mostly maintained by Keil, and in order to conveniently manage them a dedicated perspective was created, with filtering and outline capabilities.</p>
 
-<p><img src="/assets/images/2015/perspective-packs.png" alt="The Packs perspective"></p>
+<p>
+<img src="/assets/images/2015/perspective-packs.png" alt="The Packs perspective" />
+</p>
 
 <p>Among other things, the packages metadata include a complete list of devices, grouped by vendor, family, sub-family, and a list of development boards. These extra data allow to easily associate additional properties (like device name) to projects, and later use these definition to automate other configurations, like debugging sessions.</p>
 
-<p><img src="/assets/images/2015/properties-c-settings-device-tab.png" alt="Assigning a device and board to the project"></p>
+<p>
+<img src="/assets/images/2015/properties-c-settings-device-tab.png" alt="Assigning a device and board to the project" />
+</p>
 
-<h2>Peripherals registers view in debug</h2>
+<h2 id="tocAnchor-1-14">Peripherals registers view in debug</h2>
 
 <p>One of the great features of CMSIS Packs is the availability of hardware descriptions for all Cortex-M devices, with details down to the register field level.</p>
 
 <p>These descriptions can be used to assist the debugger in examining and modifying memory mapped peripheral registers.</p>
 
-<p><img src="/assets/images/2015/debug-view-peripheral-registers.png" alt="The peripheral registers view"></p>
+<p>
+<img src="/assets/images/2015/debug-view-peripheral-registers.png" alt="The peripheral registers view" />
+</p>
 
-<h2>Device and board documentation files</h2>
+<h2 id="tocAnchor-1-15">Device and board documentation files</h2>
 
 <p>The CMSIS packs also provide lots of documentation files, like device data sheets, user manuals, references manuals, and also board related files, including schematics and other manuals.</p>
 
@@ -249,11 +316,13 @@
 
 <p>To open the individual documents, double click their names and specific viewers will open, generally outside Eclipse.</p>
 
-<p><img src="/assets/images/2015/view-documents.png" alt="The documentation view"></p>
+<p>
+<img src="/assets/images/2015/view-documents.png" alt="The documentation view" />
+</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
 
 
 </section>

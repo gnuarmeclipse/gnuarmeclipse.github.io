@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>Toolchain path management</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/toolchain/path/">
+  <link rel="canonical" href="/toolchain/path/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,27 +83,84 @@
 <h1 class="page-title">Toolchain path management</h1>
 
 
-<h2>Overview</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Why use multiple toolchains?</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">Production environments</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-2-2"><span class="tocnumber">2.2</span> <span class="toctext">R&amp;D environments</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">3</span> <span class="toctext">Path management in commercial IDEs</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">4</span> <span class="toctext">Default path management in Eclipse CDT</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">5</span> <span class="toctext">CDT Cross build plug-in</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">6</span> <span class="toctext">What is project portability?</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#tocAnchor-1-9"><span class="tocnumber">7</span> <span class="toctext">The GNU ARM Eclipse solution</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#tocAnchor-1-10"><span class="tocnumber">8</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toc_level-2 toc_section-11">
+<a href="#tocAnchor-1-10-1"><span class="tocnumber">8.1</span> <span class="toctext">No toolchain path</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#tocAnchor-1-10-2"><span class="tocnumber">8.2</span> <span class="toctext">Checking the compiler version</span></a>
+</li>
+<li class="toc_level-2 toc_section-13">
+<a href="#tocAnchor-1-10-3"><span class="tocnumber">8.3</span> <span class="toctext">The installer already updated the system path</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Overview</h2>
 
 <p>Generally toolchain path management is an advanced feature, required when multiple toolchains are installed on a machine.</p>
 
-<h2>Why use multiple toolchains?</h2>
+<h2 id="tocAnchor-1-2">Why use multiple toolchains?</h2>
 
-<h3>Production environments</h3>
+<h3 id="tocAnchor-1-2-1">Production environments</h3>
 
 <p>In production environments, when doing maintenance for old products, to obtain repetitive results, it is strongly recommended to build old versions with their original toolchain version.</p>
 
 <p>Since toolchains developers are quite active, releasing several versions each year, it soon becomes necessary to manage multiple toolchains, each with multiple versions.</p>
 
-<h3>R&amp;D environments</h3>
+<h3 id="tocAnchor-1-2-2">R&amp;D environments</h3>
 
 <p>In addition to production environments, in research environments, developers usually experiment with multiple toolchains and toolchain versions, to test their programs.</p>
 
-<h2>Path management in commercial IDEs</h2>
+<h2 id="tocAnchor-1-5">Path management in commercial IDEs</h2>
 
 <p>Most of the commercial IDEs include the toolchain packed in the distribution, and handle the path to it automatically and transparently for the user. When using the supplied toolchain, things are extremely easy. Using other toolchains/versions is a different story, more complicated and sometimes even impossible.</p>
 
-<h2>Default path management in Eclipse CDT</h2>
+<h2 id="tocAnchor-1-6">Default path management in Eclipse CDT</h2>
 
 <p>By default, the Eclipse managed build plug-ins do not handle the toolchain path at all, and rely on the proper setting of the environment PATH to reach the toolchain binaries. The PATH can be set in different places:</p>
 
@@ -114,19 +174,21 @@
 
 <p>However, when multiple toolchains are installed, the use of any global setting is strongly discouraged, since it soon leads to serious problems generally due to messing headers and executables between different toolchains. In this case the only recommended solution is to define the toolchain path for each build configuration.</p>
 
-<p><img src="/assets/images/2014/02/ProjectEnvironment.png" alt="Toolchain path in project environment"></p>
+<p>
+<img src="/assets/images/2014/02/ProjectEnvironment.png" alt="Toolchain path in project environment" />
+</p>
 
-<h2>CDT Cross build plug-in</h2>
+<h2 id="tocAnchor-1-7">CDT Cross build plug-in</h2>
 
 <p>The integrated CDT Cross build plug-in does exactly this, defines a path for each projects. Unfortunately it stores this setting in the .cproject file, making it non-portable between different machines, and even worse between different platforms (Windows/Unix).</p>
 
-<h2>What is project portability?</h2>
+<h2 id="tocAnchor-1-8">What is project portability?</h2>
 
 <p>In short, a portable project is a project that can be used without changes on any workspace on any platform.</p>
 
 <p>For more details, please see the separate <a href="/eclipse/project/portability/" title="Project portability">Project portability</a> page.</p>
 
-<h2>The GNU ARM Eclipse solution</h2>
+<h2 id="tocAnchor-1-9">The GNU ARM Eclipse solution</h2>
 
 <p>Generating portable projects was one of the design requirements of the GNU ARM Eclipse cross build plug-in, at the same time with the apparently conflicting requirement for handling multiple toolchains and versions.</p>
 
@@ -134,40 +196,51 @@
 
 <p>The default (and the recommended) setting, is to use the global toolchain path.</p>
 
-<p><img src="/assets/images/2014/02/ToolchainsProperties.png" alt=""></p>
+<p>
+<img src="/assets/images/2014/02/ToolchainsProperties.png" alt="" />
+</p>
 
 <p>The displayed path is associated with the selected toolchain. To change the toolchain path use the hyperlinks; it is recommended to use the global page, but, if needed, the toolchain path can also be configured per workspace or even per project.</p>
 
-<p><img src="/assets/images/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths"></p>
+<p>
+<img src="/assets/images/2015/02/GlobalToolsPaths.png" alt="Global Tools Paths" />
+</p>
 
 <p>Using the global toolchain path does not store any data in the project configuration files, but in the Eclipse folders, so the project portability is not affected.</p>
 
-<h2>Troubleshooting</h2>
+<h2 id="tocAnchor-1-10">Troubleshooting</h2>
 
-<h3>No toolchain path</h3>
+<h3 id="tocAnchor-1-10-1">No toolchain path</h3>
 
 <p>Forgetting to set the toolchain path, or setting a wrong value, is easy to diagnose, since the Eclipse editor will be full of red markers to all definitions related to system headers, and, even more explictly, the build will fail:</p>
 
-<p><img src="/assets/images/2014/02/NoToolchainPath.png" alt="Missing or wrong path"></p>
+<p>
+<img src="/assets/images/2014/02/NoToolchainPath.png" alt="Missing or wrong path" />
+</p>
 
 <p>If so, enter the project <strong>C/C++ Settings</strong>, the <strong>Toolchains</strong> tab, and add/correct the toolchain path (see above).</p>
 
-<h3>Checking the compiler version</h3>
+<h3 id="tocAnchor-1-10-2">Checking the compiler version</h3>
 
 <p>If you are not sure that the plug-in selected the desired toolchain, you can insert a pre-build action to display the version. The command to do this is</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">${cross_prefix}${cross_c}${cross_suffix} --version
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">${cross_prefix}${cross_c}${cross_suffix} --version
+</code></pre>
+</div>
 <p>The page to setup this is the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Settings</strong> → <strong>Build Steps</strong>:</p>
 
-<p><img src="/assets/images/2014/02/PreBuildVersion.png" alt="Pre-build step to display compiler version"></p>
+<p>
+<img src="/assets/images/2014/02/PreBuildVersion.png" alt="Pre-build step to display compiler version" />
+</p>
 
-<h3>The installer already updated the system path</h3>
+<h3 id="tocAnchor-1-10-3">The installer already updated the system path</h3>
 
 <p>If you used an unfriendly installer, which already updated the system path without asking, you should manually fix this situation, and <strong>remove the toolchain path from the system path</strong>.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

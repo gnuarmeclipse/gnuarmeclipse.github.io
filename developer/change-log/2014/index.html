@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>The 2014 GNU ARM Eclipse Plug-ins Change Log</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/change-log/2014/">
+  <link rel="canonical" href="/developer/change-log/2014/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,11 +83,522 @@
 <h1 class="page-title">The 2014 GNU ARM Eclipse Plug-ins Change Log</h1>
 
 
-<p>Entries in this file are in reverse chronological order.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">2014</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">2014-12-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">2014-12-30</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">2014-12-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">2014-12-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-1-5"><span class="tocnumber">1.5</span> <span class="toctext">2014-12-27</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#tocAnchor-1-1-6"><span class="tocnumber">1.6</span> <span class="toctext">2014-12-26</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#tocAnchor-1-1-7"><span class="tocnumber">1.7</span> <span class="toctext">2014-12-24</span></a>
+</li>
+<li class="toc_level-2 toc_section-9">
+<a href="#tocAnchor-1-1-8"><span class="tocnumber">1.8</span> <span class="toctext">2014-12-23</span></a>
+</li>
+<li class="toc_level-2 toc_section-10">
+<a href="#tocAnchor-1-1-9"><span class="tocnumber">1.9</span> <span class="toctext">2014-12-22</span></a>
+</li>
+<li class="toc_level-2 toc_section-11">
+<a href="#tocAnchor-1-1-10"><span class="tocnumber">1.10</span> <span class="toctext">2014-12-19</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#tocAnchor-1-1-11"><span class="tocnumber">1.11</span> <span class="toctext">2014-12-18</span></a>
+</li>
+<li class="toc_level-2 toc_section-13">
+<a href="#tocAnchor-1-1-12"><span class="tocnumber">1.12</span> <span class="toctext">2014-12-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-14">
+<a href="#tocAnchor-1-1-13"><span class="tocnumber">1.13</span> <span class="toctext">2014-12-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-15">
+<a href="#tocAnchor-1-1-14"><span class="tocnumber">1.14</span> <span class="toctext">2014-12-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-16">
+<a href="#tocAnchor-1-1-15"><span class="tocnumber">1.15</span> <span class="toctext">2014-12-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-17">
+<a href="#tocAnchor-1-1-16"><span class="tocnumber">1.16</span> <span class="toctext">2014-12-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-18">
+<a href="#tocAnchor-1-1-17"><span class="tocnumber">1.17</span> <span class="toctext">2014-12-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-19">
+<a href="#tocAnchor-1-1-18"><span class="tocnumber">1.18</span> <span class="toctext">2014-12-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-20">
+<a href="#tocAnchor-1-1-19"><span class="tocnumber">1.19</span> <span class="toctext">2014-12-08</span></a>
+</li>
+<li class="toc_level-2 toc_section-21">
+<a href="#tocAnchor-1-1-20"><span class="tocnumber">1.20</span> <span class="toctext">2014-12-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-22">
+<a href="#tocAnchor-1-1-21"><span class="tocnumber">1.21</span> <span class="toctext">2014-12-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-23">
+<a href="#tocAnchor-1-1-22"><span class="tocnumber">1.22</span> <span class="toctext">2014-12-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-24">
+<a href="#tocAnchor-1-1-23"><span class="tocnumber">1.23</span> <span class="toctext">2014-12-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-25">
+<a href="#tocAnchor-1-1-24"><span class="tocnumber">1.24</span> <span class="toctext">2014-11-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-26">
+<a href="#tocAnchor-1-1-25"><span class="tocnumber">1.25</span> <span class="toctext">2014-11-26</span></a>
+</li>
+<li class="toc_level-2 toc_section-27">
+<a href="#tocAnchor-1-1-26"><span class="tocnumber">1.26</span> <span class="toctext">2014-11-20</span></a>
+</li>
+<li class="toc_level-2 toc_section-28">
+<a href="#tocAnchor-1-1-27"><span class="tocnumber">1.27</span> <span class="toctext">2014-11-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-29">
+<a href="#tocAnchor-1-1-28"><span class="tocnumber">1.28</span> <span class="toctext">2014-11-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-30">
+<a href="#tocAnchor-1-1-29"><span class="tocnumber">1.29</span> <span class="toctext">2014-11-15</span></a>
+</li>
+<li class="toc_level-2 toc_section-31">
+<a href="#tocAnchor-1-1-30"><span class="tocnumber">1.30</span> <span class="toctext">2014-11-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-32">
+<a href="#tocAnchor-1-1-31"><span class="tocnumber">1.31</span> <span class="toctext">2014-11-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-33">
+<a href="#tocAnchor-1-1-32"><span class="tocnumber">1.32</span> <span class="toctext">2014-11-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-34">
+<a href="#tocAnchor-1-1-33"><span class="tocnumber">1.33</span> <span class="toctext">2014-11-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-35">
+<a href="#tocAnchor-1-1-34"><span class="tocnumber">1.34</span> <span class="toctext">2014-11-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-36">
+<a href="#tocAnchor-1-1-35"><span class="tocnumber">1.35</span> <span class="toctext">2014-11-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-37">
+<a href="#tocAnchor-1-1-36"><span class="tocnumber">1.36</span> <span class="toctext">2014-10-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-38">
+<a href="#tocAnchor-1-1-37"><span class="tocnumber">1.37</span> <span class="toctext">2014-10-30</span></a>
+</li>
+<li class="toc_level-2 toc_section-39">
+<a href="#tocAnchor-1-1-38"><span class="tocnumber">1.38</span> <span class="toctext">2014-10-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-40">
+<a href="#tocAnchor-1-1-39"><span class="tocnumber">1.39</span> <span class="toctext">2014-10-25</span></a>
+</li>
+<li class="toc_level-2 toc_section-41">
+<a href="#tocAnchor-1-1-40"><span class="tocnumber">1.40</span> <span class="toctext">2014-10-22</span></a>
+</li>
+<li class="toc_level-2 toc_section-42">
+<a href="#tocAnchor-1-1-41"><span class="tocnumber">1.41</span> <span class="toctext">2014-10-15 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-43">
+<a href="#tocAnchor-1-1-42"><span class="tocnumber">1.42</span> <span class="toctext">2014-10-14 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-44">
+<a href="#tocAnchor-1-1-43"><span class="tocnumber">1.43</span> <span class="toctext">2014-10-13 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-45">
+<a href="#tocAnchor-1-1-44"><span class="tocnumber">1.44</span> <span class="toctext">2014-10-12 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-46">
+<a href="#tocAnchor-1-1-45"><span class="tocnumber">1.45</span> <span class="toctext">2014-10-08 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-47">
+<a href="#tocAnchor-1-1-46"><span class="tocnumber">1.46</span> <span class="toctext">2014-10-07 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-48">
+<a href="#tocAnchor-1-1-47"><span class="tocnumber">1.47</span> <span class="toctext">2014-10-06 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-49">
+<a href="#tocAnchor-1-1-48"><span class="tocnumber">1.48</span> <span class="toctext">2014-10-01 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-50">
+<a href="#tocAnchor-1-1-49"><span class="tocnumber">1.49</span> <span class="toctext">2014-09-29 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-51">
+<a href="#tocAnchor-1-1-50"><span class="tocnumber">1.50</span> <span class="toctext">2014-09-27 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-52">
+<a href="#tocAnchor-1-1-51"><span class="tocnumber">1.51</span> <span class="toctext">2014-08-29 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-53">
+<a href="#tocAnchor-1-1-52"><span class="tocnumber">1.52</span> <span class="toctext">2014-08-28 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-54">
+<a href="#tocAnchor-1-1-53"><span class="tocnumber">1.53</span> <span class="toctext">2014-08-26 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-55">
+<a href="#tocAnchor-1-1-54"><span class="tocnumber">1.54</span> <span class="toctext">2014-08-22 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-56">
+<a href="#tocAnchor-1-1-55"><span class="tocnumber">1.55</span> <span class="toctext">2014-08-10 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-57">
+<a href="#tocAnchor-1-1-56"><span class="tocnumber">1.56</span> <span class="toctext">2014-08-09 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-58">
+<a href="#tocAnchor-1-1-57"><span class="tocnumber">1.57</span> <span class="toctext">2014-08-08 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-59">
+<a href="#tocAnchor-1-1-58"><span class="tocnumber">1.58</span> <span class="toctext">2014-08-05 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-60">
+<a href="#tocAnchor-1-1-59"><span class="tocnumber">1.59</span> <span class="toctext">2014-08-01 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-61">
+<a href="#tocAnchor-1-1-60"><span class="tocnumber">1.60</span> <span class="toctext">2014-07-31 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-62">
+<a href="#tocAnchor-1-1-61"><span class="tocnumber">1.61</span> <span class="toctext">2014-07-30 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-63">
+<a href="#tocAnchor-1-1-62"><span class="tocnumber">1.62</span> <span class="toctext">2014-07-29 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-64">
+<a href="#tocAnchor-1-1-63"><span class="tocnumber">1.63</span> <span class="toctext">2014-07-28 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-65">
+<a href="#tocAnchor-1-1-64"><span class="tocnumber">1.64</span> <span class="toctext">2014-07-27 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-66">
+<a href="#tocAnchor-1-1-65"><span class="tocnumber">1.65</span> <span class="toctext">2014-07-26 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-67">
+<a href="#tocAnchor-1-1-66"><span class="tocnumber">1.66</span> <span class="toctext">2014-07-24 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-68">
+<a href="#tocAnchor-1-1-67"><span class="tocnumber">1.67</span> <span class="toctext">2014-07-23 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-69">
+<a href="#tocAnchor-1-1-68"><span class="tocnumber">1.68</span> <span class="toctext">2014-07-22 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-70">
+<a href="#tocAnchor-1-1-69"><span class="tocnumber">1.69</span> <span class="toctext">2014-07-21 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-71">
+<a href="#tocAnchor-1-1-70"><span class="tocnumber">1.70</span> <span class="toctext">2014-07-20 (develop)</span></a>
+</li>
+<li class="toc_level-2 toc_section-72">
+<a href="#tocAnchor-1-1-71"><span class="tocnumber">1.71</span> <span class="toctext">2014-07-19</span></a>
+</li>
+<li class="toc_level-2 toc_section-73">
+<a href="#tocAnchor-1-1-72"><span class="tocnumber">1.72</span> <span class="toctext">2014-07-18</span></a>
+</li>
+<li class="toc_level-2 toc_section-74">
+<a href="#tocAnchor-1-1-73"><span class="tocnumber">1.73</span> <span class="toctext">2014-07-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-75">
+<a href="#tocAnchor-1-1-74"><span class="tocnumber">1.74</span> <span class="toctext">2014-07-15</span></a>
+</li>
+<li class="toc_level-2 toc_section-76">
+<a href="#tocAnchor-1-1-75"><span class="tocnumber">1.75</span> <span class="toctext">2014-07-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-77">
+<a href="#tocAnchor-1-1-76"><span class="tocnumber">1.76</span> <span class="toctext">2014-07-11</span></a>
+</li>
+<li class="toc_level-2 toc_section-78">
+<a href="#tocAnchor-1-1-77"><span class="tocnumber">1.77</span> <span class="toctext">2014-07-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-79">
+<a href="#tocAnchor-1-1-78"><span class="tocnumber">1.78</span> <span class="toctext">2014-07-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-80">
+<a href="#tocAnchor-1-1-79"><span class="tocnumber">1.79</span> <span class="toctext">2014-07-08</span></a>
+</li>
+<li class="toc_level-2 toc_section-81">
+<a href="#tocAnchor-1-1-80"><span class="tocnumber">1.80</span> <span class="toctext">2014-07-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-82">
+<a href="#tocAnchor-1-1-81"><span class="tocnumber">1.81</span> <span class="toctext">2014-07-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-83">
+<a href="#tocAnchor-1-1-82"><span class="tocnumber">1.82</span> <span class="toctext">2014-06-26</span></a>
+</li>
+<li class="toc_level-2 toc_section-84">
+<a href="#tocAnchor-1-1-83"><span class="tocnumber">1.83</span> <span class="toctext">2014-06-24</span></a>
+</li>
+<li class="toc_level-2 toc_section-85">
+<a href="#tocAnchor-1-1-84"><span class="tocnumber">1.84</span> <span class="toctext">2014-06-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-86">
+<a href="#tocAnchor-1-1-85"><span class="tocnumber">1.85</span> <span class="toctext">2014-06-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-87">
+<a href="#tocAnchor-1-1-86"><span class="tocnumber">1.86</span> <span class="toctext">2014-06-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-88">
+<a href="#tocAnchor-1-1-87"><span class="tocnumber">1.87</span> <span class="toctext">2014-06-11</span></a>
+</li>
+<li class="toc_level-2 toc_section-89">
+<a href="#tocAnchor-1-1-88"><span class="tocnumber">1.88</span> <span class="toctext">2014-06-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-90">
+<a href="#tocAnchor-1-1-89"><span class="tocnumber">1.89</span> <span class="toctext">2014-06-08</span></a>
+</li>
+<li class="toc_level-2 toc_section-91">
+<a href="#tocAnchor-1-1-90"><span class="tocnumber">1.90</span> <span class="toctext">2014-06-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-92">
+<a href="#tocAnchor-1-1-91"><span class="tocnumber">1.91</span> <span class="toctext">2014-06-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-93">
+<a href="#tocAnchor-1-1-92"><span class="tocnumber">1.92</span> <span class="toctext">2014-06-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-94">
+<a href="#tocAnchor-1-1-93"><span class="tocnumber">1.93</span> <span class="toctext">2014-06-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-95">
+<a href="#tocAnchor-1-1-94"><span class="tocnumber">1.94</span> <span class="toctext">2014-06-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-96">
+<a href="#tocAnchor-1-1-95"><span class="tocnumber">1.95</span> <span class="toctext">2014-06-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-97">
+<a href="#tocAnchor-1-1-96"><span class="tocnumber">1.96</span> <span class="toctext">2014-05-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-98">
+<a href="#tocAnchor-1-1-97"><span class="tocnumber">1.97</span> <span class="toctext">2014-05-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-99">
+<a href="#tocAnchor-1-1-98"><span class="tocnumber">1.98</span> <span class="toctext">2014-05-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-100">
+<a href="#tocAnchor-1-1-99"><span class="tocnumber">1.99</span> <span class="toctext">2014-05-27</span></a>
+</li>
+<li class="toc_level-2 toc_section-101">
+<a href="#tocAnchor-1-1-100"><span class="tocnumber">1.100</span> <span class="toctext">2014-05-23</span></a>
+</li>
+<li class="toc_level-2 toc_section-102">
+<a href="#tocAnchor-1-1-101"><span class="tocnumber">1.101</span> <span class="toctext">2014-05-19</span></a>
+</li>
+<li class="toc_level-2 toc_section-103">
+<a href="#tocAnchor-1-1-102"><span class="tocnumber">1.102</span> <span class="toctext">2014-05-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-104">
+<a href="#tocAnchor-1-1-103"><span class="tocnumber">1.103</span> <span class="toctext">2014-05-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-105">
+<a href="#tocAnchor-1-1-104"><span class="tocnumber">1.104</span> <span class="toctext">2014-05-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-106">
+<a href="#tocAnchor-1-1-105"><span class="tocnumber">1.105</span> <span class="toctext">2014-05-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-107">
+<a href="#tocAnchor-1-1-106"><span class="tocnumber">1.106</span> <span class="toctext">2014-05-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-108">
+<a href="#tocAnchor-1-1-107"><span class="tocnumber">1.107</span> <span class="toctext">2014-04-30</span></a>
+</li>
+<li class="toc_level-2 toc_section-109">
+<a href="#tocAnchor-1-1-108"><span class="tocnumber">1.108</span> <span class="toctext">2014-04-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-110">
+<a href="#tocAnchor-1-1-109"><span class="tocnumber">1.109</span> <span class="toctext">2014-04-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-111">
+<a href="#tocAnchor-1-1-110"><span class="tocnumber">1.110</span> <span class="toctext">2014-04-27</span></a>
+</li>
+<li class="toc_level-2 toc_section-112">
+<a href="#tocAnchor-1-1-111"><span class="tocnumber">1.111</span> <span class="toctext">2014-04-24</span></a>
+</li>
+<li class="toc_level-2 toc_section-113">
+<a href="#tocAnchor-1-1-112"><span class="tocnumber">1.112</span> <span class="toctext">2014-04-16</span></a>
+</li>
+<li class="toc_level-2 toc_section-114">
+<a href="#tocAnchor-1-1-113"><span class="tocnumber">1.113</span> <span class="toctext">2014-04-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-115">
+<a href="#tocAnchor-1-1-114"><span class="tocnumber">1.114</span> <span class="toctext">2014-04-11</span></a>
+</li>
+<li class="toc_level-2 toc_section-116">
+<a href="#tocAnchor-1-1-115"><span class="tocnumber">1.115</span> <span class="toctext">2014-04-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-117">
+<a href="#tocAnchor-1-1-116"><span class="tocnumber">1.116</span> <span class="toctext">2014-04-09</span></a>
+</li>
+<li class="toc_level-2 toc_section-118">
+<a href="#tocAnchor-1-1-117"><span class="tocnumber">1.117</span> <span class="toctext">2014-04-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-119">
+<a href="#tocAnchor-1-1-118"><span class="tocnumber">1.118</span> <span class="toctext">2014-04-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-120">
+<a href="#tocAnchor-1-1-119"><span class="tocnumber">1.119</span> <span class="toctext">2014-04-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-121">
+<a href="#tocAnchor-1-1-120"><span class="tocnumber">1.120</span> <span class="toctext">2014-04-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-122">
+<a href="#tocAnchor-1-1-121"><span class="tocnumber">1.121</span> <span class="toctext">2014-03-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-123">
+<a href="#tocAnchor-1-1-122"><span class="tocnumber">1.122</span> <span class="toctext">2014-03-30</span></a>
+</li>
+<li class="toc_level-2 toc_section-124">
+<a href="#tocAnchor-1-1-123"><span class="tocnumber">1.123</span> <span class="toctext">2014-03-29</span></a>
+</li>
+<li class="toc_level-2 toc_section-125">
+<a href="#tocAnchor-1-1-124"><span class="tocnumber">1.124</span> <span class="toctext">2014-03-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-126">
+<a href="#tocAnchor-1-1-125"><span class="tocnumber">1.125</span> <span class="toctext">2014-03-27</span></a>
+</li>
+<li class="toc_level-2 toc_section-127">
+<a href="#tocAnchor-1-1-126"><span class="tocnumber">1.126</span> <span class="toctext">2014-03-26</span></a>
+</li>
+<li class="toc_level-2 toc_section-128">
+<a href="#tocAnchor-1-1-127"><span class="tocnumber">1.127</span> <span class="toctext">2014-03-25</span></a>
+</li>
+<li class="toc_level-2 toc_section-129">
+<a href="#tocAnchor-1-1-128"><span class="tocnumber">1.128</span> <span class="toctext">2014-03-24</span></a>
+</li>
+<li class="toc_level-2 toc_section-130">
+<a href="#tocAnchor-1-1-129"><span class="tocnumber">1.129</span> <span class="toctext">2014-03-22</span></a>
+</li>
+<li class="toc_level-2 toc_section-131">
+<a href="#tocAnchor-1-1-130"><span class="tocnumber">1.130</span> <span class="toctext">2014-03-21</span></a>
+</li>
+<li class="toc_level-2 toc_section-132">
+<a href="#tocAnchor-1-1-131"><span class="tocnumber">1.131</span> <span class="toctext">2014-03-20</span></a>
+</li>
+<li class="toc_level-2 toc_section-133">
+<a href="#tocAnchor-1-1-132"><span class="tocnumber">1.132</span> <span class="toctext">2014-03-18</span></a>
+</li>
+<li class="toc_level-2 toc_section-134">
+<a href="#tocAnchor-1-1-133"><span class="tocnumber">1.133</span> <span class="toctext">2014-03-17</span></a>
+</li>
+<li class="toc_level-2 toc_section-135">
+<a href="#tocAnchor-1-1-134"><span class="tocnumber">1.134</span> <span class="toctext">2014-03-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-136">
+<a href="#tocAnchor-1-1-135"><span class="tocnumber">1.135</span> <span class="toctext">2014-03-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-137">
+<a href="#tocAnchor-1-1-136"><span class="tocnumber">1.136</span> <span class="toctext">2014-03-02</span></a>
+</li>
+<li class="toc_level-2 toc_section-138">
+<a href="#tocAnchor-1-1-137"><span class="tocnumber">1.137</span> <span class="toctext">2014-02-24</span></a>
+</li>
+<li class="toc_level-2 toc_section-139">
+<a href="#tocAnchor-1-1-138"><span class="tocnumber">1.138</span> <span class="toctext">2014-02-21</span></a>
+</li>
+<li class="toc_level-2 toc_section-140">
+<a href="#tocAnchor-1-1-139"><span class="tocnumber">1.139</span> <span class="toctext">2014-02-20</span></a>
+</li>
+<li class="toc_level-2 toc_section-141">
+<a href="#tocAnchor-1-1-140"><span class="tocnumber">1.140</span> <span class="toctext">2014-02-19</span></a>
+</li>
+<li class="toc_level-2 toc_section-142">
+<a href="#tocAnchor-1-1-141"><span class="tocnumber">1.141</span> <span class="toctext">2014-02-18</span></a>
+</li>
+<li class="toc_level-2 toc_section-143">
+<a href="#tocAnchor-1-1-142"><span class="tocnumber">1.142</span> <span class="toctext">2014-02-14</span></a>
+</li>
+<li class="toc_level-2 toc_section-144">
+<a href="#tocAnchor-1-1-143"><span class="tocnumber">1.143</span> <span class="toctext">2014-02-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-145">
+<a href="#tocAnchor-1-1-144"><span class="tocnumber">1.144</span> <span class="toctext">2014-02-12</span></a>
+</li>
+<li class="toc_level-2 toc_section-146">
+<a href="#tocAnchor-1-1-145"><span class="tocnumber">1.145</span> <span class="toctext">2014-02-11</span></a>
+</li>
+<li class="toc_level-2 toc_section-147">
+<a href="#tocAnchor-1-1-146"><span class="tocnumber">1.146</span> <span class="toctext">2014-02-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-148">
+<a href="#tocAnchor-1-1-147"><span class="tocnumber">1.147</span> <span class="toctext">2014-02-07</span></a>
+</li>
+<li class="toc_level-2 toc_section-149">
+<a href="#tocAnchor-1-1-148"><span class="tocnumber">1.148</span> <span class="toctext">2014-02-06</span></a>
+</li>
+<li class="toc_level-2 toc_section-150">
+<a href="#tocAnchor-1-1-149"><span class="tocnumber">1.149</span> <span class="toctext">2014-02-05</span></a>
+</li>
+<li class="toc_level-2 toc_section-151">
+<a href="#tocAnchor-1-1-150"><span class="tocnumber">1.150</span> <span class="toctext">2014-02-04</span></a>
+</li>
+<li class="toc_level-2 toc_section-152">
+<a href="#tocAnchor-1-1-151"><span class="tocnumber">1.151</span> <span class="toctext">2014-02-03</span></a>
+</li>
+<li class="toc_level-2 toc_section-153">
+<a href="#tocAnchor-1-1-152"><span class="tocnumber">1.152</span> <span class="toctext">2014-02-01</span></a>
+</li>
+<li class="toc_level-2 toc_section-154">
+<a href="#tocAnchor-1-1-153"><span class="tocnumber">1.153</span> <span class="toctext">2014-01-31</span></a>
+</li>
+<li class="toc_level-2 toc_section-155">
+<a href="#tocAnchor-1-1-154"><span class="tocnumber">1.154</span> <span class="toctext">2014-01-30</span></a>
+</li>
+<li class="toc_level-2 toc_section-156">
+<a href="#tocAnchor-1-1-155"><span class="tocnumber">1.155</span> <span class="toctext">2014-01-28</span></a>
+</li>
+<li class="toc_level-2 toc_section-157">
+<a href="#tocAnchor-1-1-156"><span class="tocnumber">1.156</span> <span class="toctext">2014-01-27</span></a>
+</li>
+<li class="toc_level-2 toc_section-158">
+<a href="#tocAnchor-1-1-157"><span class="tocnumber">1.157</span> <span class="toctext">2014-01-25</span></a>
+</li>
+<li class="toc_level-2 toc_section-159">
+<a href="#tocAnchor-1-1-158"><span class="tocnumber">1.158</span> <span class="toctext">2014-01-22</span></a>
+</li>
+<li class="toc_level-2 toc_section-160">
+<a href="#tocAnchor-1-1-159"><span class="tocnumber">1.159</span> <span class="toctext">2014-01-20</span></a>
+</li>
+<li class="toc_level-2 toc_section-161">
+<a href="#tocAnchor-1-1-160"><span class="tocnumber">1.160</span> <span class="toctext">2014-01-13</span></a>
+</li>
+<li class="toc_level-2 toc_section-162">
+<a href="#tocAnchor-1-1-161"><span class="tocnumber">1.161</span> <span class="toctext">2014-01-11</span></a>
+</li>
+<li class="toc_level-2 toc_section-163">
+<a href="#tocAnchor-1-1-162"><span class="tocnumber">1.162</span> <span class="toctext">2014-01-10</span></a>
+</li>
+<li class="toc_level-2 toc_section-164">
+<a href="#tocAnchor-1-1-163"><span class="tocnumber">1.163</span> <span class="toctext">2014-01-09</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-165">
+<a href="#tocAnchor-1-165"><span class="tocnumber">2</span> <span class="toctext">2013</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Entries in this file are in reverse chronological order.</p>
 
-<h2>2014</h2>
+<h2 id="tocAnchor-1-1">2014</h2>
 
-<h3>2014-12-31</h3>
+<h3 id="tocAnchor-1-1-1">2014-12-31</h3>
 
 <ul>
 <li>jlink: use DebuggerCommandsService</li>
@@ -95,7 +609,7 @@
 <li>jlink&amp;openocd&amp;qemu: double backslashes trimming</li>
 </ul>
 
-<h3>2014-12-30</h3>
+<h3 id="tocAnchor-1-1-2">2014-12-30</h3>
 
 <ul>
 <li>openocd: use DebuggerCommandsService</li>
@@ -103,7 +617,7 @@
 <li>openocd: more Configuration functions</li>
 </ul>
 
-<h3>2014-12-29</h3>
+<h3 id="tocAnchor-1-1-3">2014-12-29</h3>
 
 <ul>
 <li>openocd: debug in RAM</li>
@@ -111,7 +625,7 @@
 <li>jlink: debug in RAM</li>
 </ul>
 
-<h3>2014-12-28</h3>
+<h3 id="tocAnchor-1-1-4">2014-12-28</h3>
 
 <ul>
 <li>openocd: more double backslashes</li>
@@ -122,7 +636,7 @@
 <li>jlink&amp;openocd&amp;qemu: tbreak fix</li>
 </ul>
 
-<h3>2014-12-27</h3>
+<h3 id="tocAnchor-1-1-5">2014-12-27</h3>
 
 <ul>
 <li>core: duplicateBackslashes added</li>
@@ -137,7 +651,7 @@
 <li>qemu: use WindowsRegistry to get path</li>
 </ul>
 
-<h3>2014-12-26</h3>
+<h3 id="tocAnchor-1-1-6">2014-12-26</h3>
 
 <ul>
 <li>openocd: double backslash on windows</li>
@@ -145,14 +659,14 @@
 <li>qemu: references to openocd replaced by qemu</li>
 </ul>
 
-<h3>2014-12-24</h3>
+<h3 id="tocAnchor-1-1-7">2014-12-24</h3>
 
 <ul>
 <li>openocd: updated to use the server backend</li>
 <li>jlink: updated after last openocd changes</li>
 </ul>
 
-<h3>2014-12-23</h3>
+<h3 id="tocAnchor-1-1-8">2014-12-23</h3>
 
 <ul>
 <li>packs.data: explicit disconnect for http connections</li>
@@ -163,14 +677,14 @@
 <li>openocd: dsf files moved to package</li>
 </ul>
 
-<h3>2014-12-22</h3>
+<h3 id="tocAnchor-1-1-9">2014-12-22</h3>
 
 <ul>
 <li>templates.core: semihosting fault processing</li>
 <li>packs: improve URL download error processing</li>
 </ul>
 
-<h3>2014-12-19</h3>
+<h3 id="tocAnchor-1-1-10">2014-12-19</h3>
 
 <ul>
 <li>jlink: cosmetics in the message box</li>
@@ -208,32 +722,32 @@
 </ul></li>
 </ul>
 
-<h3>2014-12-18</h3>
+<h3 id="tocAnchor-1-1-11">2014-12-18</h3>
 
 <ul>
 <li>template.stm: vectors fixed and tested for all</li>
-<li>cortexm &amp; klxx: &#39;cmsis&#39; lower case folder name</li>
+<li>cortexm &amp; klxx: 'cmsis' lower case folder name</li>
 <li>cortexm: defaults m4, DEBUG</li>
 <li>packs: remove cached packs on unzip error</li>
 <li>jlink &amp; gdbjtag: prepareMessageBoxText()</li>
-<li>jlink: &#39;-singlerun -strict -timeout 0&#39;</li>
+<li>jlink: '-singlerun -strict -timeout 0'</li>
 <li>jlink: connect to running button enabled</li>
 </ul>
 
-<h3>2014-12-17</h3>
+<h3 id="tocAnchor-1-1-12">2014-12-17</h3>
 
 <ul>
 <li>jlink &amp; gdbjtag: better synch, windows ok</li>
 </ul>
 
-<h3>2014-12-16</h3>
+<h3 id="tocAnchor-1-1-13">2014-12-16</h3>
 
 <ul>
 <li>jlink &amp; gdbjtag: separate server launch sequence</li>
 <li>jlink &amp; gdbjtag: new start &amp; error reporting ok</li>
 </ul>
 
-<h3>2014-12-14</h3>
+<h3 id="tocAnchor-1-1-14">2014-12-14</h3>
 
 <ul>
 <li>jlink &amp; gdbjtag: server code relocated to GnuArmGdbServerBackend and GdbServerBackend</li>
@@ -241,21 +755,21 @@
 <li>jlink &amp; gdbjtag: serverBackend cleaned &amp; checked</li>
 </ul>
 
-<h3>2014-12-13</h3>
+<h3 id="tocAnchor-1-1-15">2014-12-13</h3>
 
 <ul>
-<li>scripts: add &#39;force&#39; option to always upload</li>
+<li>scripts: add 'force' option to always upload</li>
 <li>gdbjtag &amp; jlink: checkLaunchConfigurationStarted</li>
 </ul>
 
-<h3>2014-12-12</h3>
+<h3 id="tocAnchor-1-1-16">2014-12-12</h3>
 
 <ul>
 <li>gdbjtag: PeripheralMemoryService split into functions</li>
 <li>gdbjtag: new GdbServerBackend added, no content</li>
 </ul>
 
-<h3>2014-12-10</h3>
+<h3 id="tocAnchor-1-1-17">2014-12-10</h3>
 
 <ul>
 <li>gdbjtag: inheritance fully implemented; log() exceptions</li>
@@ -264,32 +778,32 @@
 <li>gdbjtag: update entire peripheral after write</li>
 </ul>
 
-<h3>2014-12-09</h3>
+<h3 id="tocAnchor-1-1-18">2014-12-09</h3>
 
 <ul>
 <li>gdbjtag: edit enumerations functional</li>
 <li>gdbjtag: derivedFrom node searched for all types</li>
 </ul>
 
-<h3>2014-12-08</h3>
+<h3 id="tocAnchor-1-1-19">2014-12-08</h3>
 
 <ul>
 <li>gdbjtag: parseScaledNonNegative conforms to SVD</li>
 <li>gdbjtag: colour in yellow the entire line</li>
 <li>gdbjtag: fix getDisplayResetValue() to show reset value only for registers, skip fields, to avoid excepion</li>
-<li>gdbjtag: ignore &#39;+&#39; at the beginning of scaledNonNegative numbers</li>
+<li>gdbjtag: ignore '+' at the beginning of scaledNonNegative numbers</li>
 <li>show enumerations; not yet editable</li>
 <li>core: capitalizeFirst() affects only first char; remove conversion to lower case</li>
 </ul>
 
-<h3>2014-12-07</h3>
+<h3 id="tocAnchor-1-1-20">2014-12-07</h3>
 
 <ul>
 <li>stm 2.2.3, fsc: 2.2.3, cm: 1.2.3</li>
-<li>templates: nano as boolean, not string, use linker.usenewlibnano=true instead of linker.other += &quot;--specs=nano.specs&quot;</li>
+<li>templates: nano as boolean, not string, use linker.usenewlibnano=true instead of linker.other += "--specs=nano.specs"</li>
 </ul>
 
-<h3>2014-12-06</h3>
+<h3 id="tocAnchor-1-1-21">2014-12-06</h3>
 
 <ul>
 <li>cross: -fno-move-loop-invariants added to the common Optimisations group, for use on Debug</li>
@@ -297,20 +811,20 @@
 <li>templates: add optimization.nomoveloopinvariants</li>
 </ul>
 
-<h3>2014-12-05</h3>
+<h3 id="tocAnchor-1-1-22">2014-12-05</h3>
 
 <ul>
 <li>jlink: counted requestMonitors bugs fixed</li>
 </ul>
 
-<h3>2014-12-04</h3>
+<h3 id="tocAnchor-1-1-23">2014-12-04</h3>
 
 <ul>
 <li>gdbjtag.restart: fix StackOverflow exception by copying the command and the class locally</li>
 <li>gdbjtag.restart: version 1.2.1</li>
 </ul>
 
-<h3>2014-11-28</h3>
+<h3 id="tocAnchor-1-1-24">2014-11-28</h3>
 
 <ul>
 <li>debug.gdbjtag: write-only fields are readable</li>
@@ -318,7 +832,7 @@
 <li>mbs.packs: performApply added on TabDevices</li>
 </ul>
 
-<h3>2014-11-26</h3>
+<h3 id="tocAnchor-1-1-25">2014-11-26</h3>
 
 <ul>
 <li>all templates: default debugging format on debug</li>
@@ -356,27 +870,27 @@
 </ul></li>
 </ul>
 
-<h3>2014-11-20</h3>
+<h3 id="tocAnchor-1-1-26">2014-11-20</h3>
 
 <ul>
 <li>cross: add cortex-m7</li>
 </ul>
 
-<h3>2014-11-17</h3>
+<h3 id="tocAnchor-1-1-27">2014-11-17</h3>
 
 <ul>
 <li>templates: _write.c moved to application</li>
 <li>cross: add explicit newlib nano options</li>
 </ul>
 
-<h3>2014-11-16</h3>
+<h3 id="tocAnchor-1-1-28">2014-11-16</h3>
 
 <ul>
 <li>debug.gdbjtag: Peripherals error processing</li>
 <li>debug.jtag: immediate executor for getPeripherals</li>
 </ul>
 
-<h3>2014-11-15</h3>
+<h3 id="tocAnchor-1-1-29">2014-11-15</h3>
 
 <ul>
 <li>template.stm: multi-region RAM init for F[34]</li>
@@ -385,7 +899,7 @@
 <li>packs: 1.2.2, packs.core: 1.1.2, packs.data: 1.1.2</li>
 </ul>
 
-<h3>2014-11-14</h3>
+<h3 id="tocAnchor-1-1-30">2014-11-14</h3>
 
 <ul>
 <li>openocd: enable support for Peripherals view</li>
@@ -393,41 +907,41 @@
 <li>openocd: version 2.1.1</li>
 </ul>
 
-<h3>2014-11-09</h3>
+<h3 id="tocAnchor-1-1-31">2014-11-09</h3>
 
 <ul>
 <li>template.stm: warnings in vectors fixed</li>
 </ul>
 
-<h3>2014-11-06</h3>
+<h3 id="tocAnchor-1-1-32">2014-11-06</h3>
 
 <ul>
 <li>template.core: default SysTick_Handler returns</li>
 <li>template.stm: disable SysTick after HAL_Init()</li>
 </ul>
 
-<h3>2014-11-05</h3>
+<h3 id="tocAnchor-1-1-33">2014-11-05</h3>
 
 <ul>
-<li>templates.core: OS<em>HAS</em>NO<em>CORE</em>DEBUG</li>
-<li>templates.core: DATA<em>END</em>GUARD_VALUE</li>
+<li>templates.core: OS_HAS_NO_CORE_DEBUG</li>
+<li>templates.core: DATA_END_GUARD_VALUE</li>
 <li>template.cortexm: FLASH ORIGIN=0x0</li>
 <li>cortexm: 1.2.2, stm/freescale/core: 2.2.2</li>
 </ul>
 
-<h3>2014-11-03</h3>
+<h3 id="tocAnchor-1-1-34">2014-11-03</h3>
 
 <ul>
 <li>debug.gdbjtag: clear Peripherals after close.</li>
 </ul>
 
-<h3>2014-11-01</h3>
+<h3 id="tocAnchor-1-1-35">2014-11-01</h3>
 
 <ul>
 <li>debug.gdbjtag: id to colors updated to plug-in</li>
 </ul>
 
-<h3>2014-10-31</h3>
+<h3 id="tocAnchor-1-1-36">2014-10-31</h3>
 
 <ul>
 <li>packs.data &amp; gdbjtag: getSVDAbsolutePath fix</li>
@@ -440,13 +954,13 @@
 <li>jlink: search for linux path /opt/SEGGER/JLink</li>
 </ul>
 
-<h3>2014-10-30</h3>
+<h3 id="tocAnchor-1-1-37">2014-10-30</h3>
 
 <ul>
 <li>svdPath xp added</li>
 </ul>
 
-<h3>2014-10-29</h3>
+<h3 id="tocAnchor-1-1-38">2014-10-29</h3>
 
 <ul>
 <li>debug.gdbjtag: created from debug.core</li>
@@ -454,7 +968,7 @@
 <li>debug &amp; cross: xp renamed cproject.extra</li>
 </ul>
 
-<h3>2014-10-25</h3>
+<h3 id="tocAnchor-1-1-39">2014-10-25</h3>
 
 <ul>
 <li>versions: jlink 2.2.1</li>
@@ -463,7 +977,7 @@
 <li>jlink: copyrights &amp; warnings fixed</li>
 </ul>
 
-<h3>2014-10-22</h3>
+<h3 id="tocAnchor-1-1-40">2014-10-22</h3>
 
 <ul>
 <li>mbs.packs: Edit disabled in Devices</li>
@@ -472,7 +986,7 @@
 <li>versions: jlink 2.2.1</li>
 </ul>
 
-<h3>2014-10-15 (develop)</h3>
+<h3 id="tocAnchor-1-1-41">2014-10-15 (develop)</h3>
 
 <ul>
 <li>cross.packs: Docs NPE fixed</li>
@@ -508,7 +1022,7 @@
 </ul></li>
 </ul>
 
-<h3>2014-10-14 (develop)</h3>
+<h3 id="tocAnchor-1-1-42">2014-10-14 (develop)</h3>
 
 <ul>
 <li>all templates: add -flto option</li>
@@ -516,18 +1030,18 @@
 <li>packs: outline visible on first click</li>
 </ul>
 
-<h3>2014-10-13 (develop)</h3>
+<h3 id="tocAnchor-1-1-43">2014-10-13 (develop)</h3>
 
 <ul>
-<li>Merge branch &#39;stable&#39; into develop</li>
-<li>all templates: accept &#39;/&#39; in folder name</li>
+<li>Merge branch 'stable' into develop</li>
+<li>all templates: accept '/' in folder name</li>
 <li>cross.build: -flto added</li>
 <li>packs: schema 1.3 preliminary support</li>
 <li>packs: outline opens header/source*/linkerScript</li>
 <li>packs: single line pack descriptions</li>
 </ul>
 
-<h3>2014-10-12 (develop)</h3>
+<h3 id="tocAnchor-1-1-44">2014-10-12 (develop)</h3>
 
 <ul>
 <li>debug.core: cluster arrays</li>
@@ -535,39 +1049,39 @@
 <li>templates.core: avoid option duplicates</li>
 </ul>
 
-<h3>2014-10-08 (develop)</h3>
+<h3 id="tocAnchor-1-1-45">2014-10-08 (develop)</h3>
 
 <ul>
 <li>all: explicit dependendencies to Kepler R versions</li>
 <li>debug.core: Peripherals register arrays</li>
 </ul>
 
-<h3>2014-10-07 (develop)</h3>
+<h3 id="tocAnchor-1-1-46">2014-10-07 (develop)</h3>
 
 <ul>
 <li>all features: update site url added via p2.inf</li>
 </ul>
 
-<h3>2014-10-06 (develop)</h3>
+<h3 id="tocAnchor-1-1-47">2014-10-06 (develop)</h3>
 
 <ul>
 <li>all: branding info added to all plug-ins</li>
 </ul>
 
-<h3>2014-10-01 (develop)</h3>
+<h3 id="tocAnchor-1-1-48">2014-10-01 (develop)</h3>
 
 <ul>
 <li>jlink: use cmsis name</li>
 </ul>
 
-<h3>2014-09-29 (develop)</h3>
+<h3 id="tocAnchor-1-1-49">2014-09-29 (develop)</h3>
 
 <ul>
 <li>debug.core: svd empty properties</li>
 <li>packs: fix cache for DevicesTab</li>
 </ul>
 
-<h3>2014-09-27 (develop)</h3>
+<h3 id="tocAnchor-1-1-50">2014-09-27 (develop)</h3>
 
 <ul>
 <li>packs: PacksStorage &amp; GenericParser in core</li>
@@ -576,20 +1090,20 @@
 <li>debug: first functional Peripheral view</li>
 </ul>
 
-<h3>2014-08-29 (develop)</h3>
+<h3 id="tocAnchor-1-1-51">2014-08-29 (develop)</h3>
 
 <ul>
 <li>packs: use DurationMonitor</li>
 <li>debug.core: Peripherals data model finalised</li>
 </ul>
 
-<h3>2014-08-28 (develop)</h3>
+<h3 id="tocAnchor-1-1-52">2014-08-28 (develop)</h3>
 
 <ul>
 <li>core: use some Platform constants</li>
 </ul>
 
-<h3>2014-08-26 (develop)</h3>
+<h3 id="tocAnchor-1-1-53">2014-08-26 (develop)</h3>
 
 <ul>
 <li>core: StringUtils &amp; CProjectPacksStorage &amp; Xml</li>
@@ -599,7 +1113,7 @@
 <li>debug.core: Peripherals display the device list</li>
 </ul>
 
-<h3>2014-08-22 (develop)</h3>
+<h3 id="tocAnchor-1-1-54">2014-08-22 (develop)</h3>
 
 <ul>
 <li>debug.core added</li>
@@ -607,26 +1121,26 @@
 <li>templates: syscalls semihosting stdint.h</li>
 </ul>
 
-<h3>2014-08-10 (develop)</h3>
+<h3 id="tocAnchor-1-1-55">2014-08-10 (develop)</h3>
 
 <ul>
 <li>packs: TabDocs more accurate</li>
 </ul>
 
-<h3>2014-08-09 (develop)</h3>
+<h3 id="tocAnchor-1-1-56">2014-08-09 (develop)</h3>
 
 <ul>
 <li>packs: DocsView takes content from project</li>
 </ul>
 
-<h3>2014-08-08 (develop)</h3>
+<h3 id="tocAnchor-1-1-57">2014-08-08 (develop)</h3>
 
 <ul>
 <li>packs: TabDevices functional</li>
 <li>packs: better model/view separation for TabDevices</li>
 </ul>
 
-<h3>2014-08-05 (develop)</h3>
+<h3 id="tocAnchor-1-1-58">2014-08-05 (develop)</h3>
 
 <ul>
 <li>pack: parser cleanups</li>
@@ -634,13 +1148,13 @@
 <li>packs: OutlineView updated to use Openers</li>
 </ul>
 
-<h3>2014-08-01 (develop)</h3>
+<h3 id="tocAnchor-1-1-59">2014-08-01 (develop)</h3>
 
 <ul>
 <li>debug.packs: shows svd peripherals (unfiltered)</li>
 </ul>
 
-<h3>2014-07-31 (develop)</h3>
+<h3 id="tocAnchor-1-1-60">2014-07-31 (develop)</h3>
 
 <ul>
 <li>packs: install packs missing mkdir fixed</li>
@@ -649,13 +1163,13 @@
 <li>packs: DocsView with absolute path</li>
 </ul>
 
-<h3>2014-07-30 (develop)</h3>
+<h3 id="tocAnchor-1-1-61">2014-07-30 (develop)</h3>
 
 <ul>
 <li>packs: DataManager reorganised; javadocs added</li>
 </ul>
 
-<h3>2014-07-29 (develop)</h3>
+<h3 id="tocAnchor-1-1-62">2014-07-29 (develop)</h3>
 
 <ul>
 <li>packs: tree iterator added</li>
@@ -665,20 +1179,20 @@
 <li>packs: isLeaf() optimisation to ITreeIterator</li>
 </ul>
 
-<h3>2014-07-28 (develop)</h3>
+<h3 id="tocAnchor-1-1-63">2014-07-28 (develop)</h3>
 
 <ul>
 <li>packs: do not go down to variants</li>
 </ul>
 
-<h3>2014-07-27 (develop)</h3>
+<h3 id="tocAnchor-1-1-64">2014-07-27 (develop)</h3>
 
 <ul>
 <li>packs: devices&amp;boards parsed from cached pdsc tree</li>
 <li>pdsc: devices &amp; boards fully in DataManager</li>
 </ul>
 
-<h3>2014-07-26 (develop)</h3>
+<h3 id="tocAnchor-1-1-65">2014-07-26 (develop)</h3>
 
 <ul>
 <li>packs: parsers &amp; serialisers; DocsView</li>
@@ -686,13 +1200,13 @@
 <li>packs: cached devices tree</li>
 </ul>
 
-<h3>2014-07-24 (develop)</h3>
+<h3 id="tocAnchor-1-1-66">2014-07-24 (develop)</h3>
 
 <ul>
 <li>features: include ilg.managedbuild.core</li>
 </ul>
 
-<h3>2014-07-23 (develop)</h3>
+<h3 id="tocAnchor-1-1-67">2014-07-23 (develop)</h3>
 
 <ul>
 <li>packs: packs.ui as a separate plug-in</li>
@@ -703,13 +1217,13 @@
 <li>debug.packs: plug-in created</li>
 </ul>
 
-<h3>2014-07-22 (develop)</h3>
+<h3 id="tocAnchor-1-1-68">2014-07-22 (develop)</h3>
 
 <ul>
 <li>packs: update serialVersionUIDs</li>
 </ul>
 
-<h3>2014-07-21 (develop)</h3>
+<h3 id="tocAnchor-1-1-69">2014-07-21 (develop)</h3>
 
 <ul>
 <li>packs &amp; cross: code moved to data &amp; core</li>
@@ -718,7 +1232,7 @@
 <li>packs.core: additional check in proxy</li>
 </ul>
 
-<h3>2014-07-20 (develop)</h3>
+<h3 id="tocAnchor-1-1-70">2014-07-20 (develop)</h3>
 
 <ul>
 <li>packs: use custom markers</li>
@@ -726,7 +1240,7 @@
 <li>cross: remove dependence to packs</li>
 </ul>
 
-<h3>2014-07-19</h3>
+<h3 id="tocAnchor-1-1-71">2014-07-19</h3>
 
 <ul>
 <li>cross [bugs:#117]: Optimize for debugg (-Og) fixed</li>
@@ -747,7 +1261,7 @@
 <li>packs: core &amp; data plug-ins added (develop)</li>
 </ul>
 
-<h3>2014-07-18</h3>
+<h3 id="tocAnchor-1-1-72">2014-07-18</h3>
 
 <ul>
 <li>packs: devices &amp; boards for build extracted</li>
@@ -756,7 +1270,7 @@
 <li>cross: TabDevices filled in, selections change content</li>
 </ul>
 
-<h3>2014-07-16</h3>
+<h3 id="tocAnchor-1-1-73">2014-07-16</h3>
 
 <ul>
 <li>cross: toolchains.prefs new name</li>
@@ -765,7 +1279,7 @@
 <li>develop branch</li>
 </ul>
 
-<h3>2014-07-15</h3>
+<h3 id="tocAnchor-1-1-74">2014-07-15</h3>
 
 <ul>
 <li>maven update .classpath &amp; .project</li>
@@ -774,10 +1288,10 @@
 <li>repo: 2.3.2 version</li>
 </ul>
 
-<h3>2014-07-12</h3>
+<h3 id="tocAnchor-1-1-75">2014-07-12</h3>
 
 <ul>
-<li>packs: perspective renamed just &#39;Packs&#39;</li>
+<li>packs: perspective renamed just 'Packs'</li>
 <li>stm: version 2.2.1</li>
 <li>2.3.1-201407120554 published
 
@@ -795,7 +1309,7 @@
 </ul></li>
 </ul>
 
-<h3>2014-07-11</h3>
+<h3 id="tocAnchor-1-1-76">2014-07-11</h3>
 
 <ul>
 <li>template.stm: update to use F4 cube 1.3</li>
@@ -803,13 +1317,13 @@
 <li>jlink &amp; openocd: support project-less debug</li>
 </ul>
 
-<h3>2014-07-10</h3>
+<h3 id="tocAnchor-1-1-77">2014-07-10</h3>
 
 <ul>
-<li>openocd: linux path &quot;/usr/bin&quot;</li>
+<li>openocd: linux path "/usr/bin"</li>
 </ul>
 
-<h3>2014-07-09</h3>
+<h3 id="tocAnchor-1-1-78">2014-07-09</h3>
 
 <ul>
 <li>openocd: improved error processing</li>
@@ -817,28 +1331,28 @@
 <li>cross/jlink/openocd: Utils.isMacOSX() fixed</li>
 </ul>
 
-<h3>2014-07-08</h3>
+<h3 id="tocAnchor-1-1-79">2014-07-08</h3>
 
 <ul>
 <li>jlink &amp; openocd: InstanceScope preferences cross: toolchain name &amp; path in Eclipse prefs</li>
 </ul>
 
-<h3>2014-07-07</h3>
+<h3 id="tocAnchor-1-1-80">2014-07-07</h3>
 
 <ul>
-<li>jlink&amp;openocd: executable macros \${jlink<em>gdbserver} \${openocd</em>executable} added</li>
+<li>jlink&amp;openocd: executable macros \${jlink_gdbserver} \${openocd_executable} added</li>
 <li>jlink: version 1.6.1</li>
 <li>openocd: version 1.3.1</li>
-<li>revert &quot;cross: cross command wizard runWithoutWizard&quot;</li>
+<li>revert "cross: cross command wizard runWithoutWizard"</li>
 </ul>
 
-<h3>2014-07-04</h3>
+<h3 id="tocAnchor-1-1-81">2014-07-04</h3>
 
 <ul>
 <li>cross [feature-requests:#49]: cross command wizard runWithoutWizard</li>
 </ul>
 
-<h3>2014-06-26</h3>
+<h3 id="tocAnchor-1-1-82">2014-06-26</h3>
 
 <ul>
 <li>cross [feature-requests:#54]: multiple toolchains defaults</li>
@@ -846,14 +1360,14 @@
 <li>cross [feature-requests:#49]: export managedbuild.cross.ui</li>
 </ul>
 
-<h3>2014-06-24</h3>
+<h3 id="tocAnchor-1-1-83">2014-06-24</h3>
 
 <ul>
 <li>cross [feature-requests:#54]: toolchain defaults</li>
 <li>cross: version 1.10.1</li>
 </ul>
 
-<h3>2014-06-16</h3>
+<h3 id="tocAnchor-1-1-84">2014-06-16</h3>
 
 <ul>
 <li>packs: copy examples functional</li>
@@ -861,13 +1375,13 @@
 <li>repo: version increased to 2.3.1</li>
 </ul>
 
-<h3>2014-06-13</h3>
+<h3 id="tocAnchor-1-1-85">2014-06-13</h3>
 
 <ul>
 <li>packs: views refresh/setInput() fixed</li>
 </ul>
 
-<h3>2014-06-12</h3>
+<h3 id="tocAnchor-1-1-86">2014-06-12</h3>
 
 <ul>
 <li>packs: selectors added to package nodes</li>
@@ -875,78 +1389,78 @@
 <li>packs: RefreshHandler revised</li>
 </ul>
 
-<h3>2014-06-11</h3>
+<h3 id="tocAnchor-1-1-87">2014-06-11</h3>
 
 <ul>
 <li>packs: all views functional, except selections</li>
 </ul>
 
-<h3>2014-06-09</h3>
+<h3 id="tocAnchor-1-1-88">2014-06-09</h3>
 
 <ul>
 <li>packs: outline links functional</li>
 <li>packs: example nodes have outlines</li>
 </ul>
 
-<h3>2014-06-08</h3>
+<h3 id="tocAnchor-1-1-89">2014-06-08</h3>
 
 <ul>
 <li>packs: packs &amp; outline views updated</li>
 </ul>
 
-<h3>2014-06-06</h3>
+<h3 id="tocAnchor-1-1-90">2014-06-06</h3>
 
 <ul>
 <li>packs: KeywordsView updated to use storage</li>
 <li>packs: devices &amp; boards views updated</li>
 </ul>
 
-<h3>2014-06-05</h3>
+<h3 id="tocAnchor-1-1-91">2014-06-05</h3>
 
 <ul>
 <li>packs: storage keeps content</li>
 <li>packs: Node extends Leaf</li>
 </ul>
 
-<h3>2014-06-04</h3>
+<h3 id="tocAnchor-1-1-92">2014-06-04</h3>
 
 <ul>
 <li>packs: ready to parse content.xml</li>
 </ul>
 
-<h3>2014-06-03</h3>
+<h3 id="tocAnchor-1-1-93">2014-06-03</h3>
 
 <ul>
 <li>packs: content.xml generated</li>
 </ul>
 
-<h3>2014-06-02</h3>
+<h3 id="tocAnchor-1-1-94">2014-06-02</h3>
 
 <ul>
 <li>packs: content.xml generated</li>
 </ul>
 
-<h3>2014-06-01</h3>
+<h3 id="tocAnchor-1-1-95">2014-06-01</h3>
 
 <ul>
 <li>packs: components added to outline</li>
 </ul>
 
-<h3>2014-05-31</h3>
+<h3 id="tocAnchor-1-1-96">2014-05-31</h3>
 
 <ul>
 <li>packs: file name convention in a single place</li>
 <li>packs: better filtering</li>
 </ul>
 
-<h3>2014-05-29</h3>
+<h3 id="tocAnchor-1-1-97">2014-05-29</h3>
 
 <ul>
 <li>packs: examples added below versions</li>
 <li>packs: CopyExampleAction added, no content</li>
 </ul>
 
-<h3>2014-05-28</h3>
+<h3 id="tocAnchor-1-1-98">2014-05-28</h3>
 
 <ul>
 <li>pack: open editor/browser in outline</li>
@@ -954,82 +1468,82 @@
 <li>packs: keywords view added</li>
 </ul>
 
-<h3>2014-05-27</h3>
+<h3 id="tocAnchor-1-1-99">2014-05-27</h3>
 
 <ul>
 <li>pack: use of parser for brief too</li>
 </ul>
 
-<h3>2014-05-23</h3>
+<h3 id="tocAnchor-1-1-100">2014-05-23</h3>
 
 <ul>
 <li>pack: full outline functional</li>
 </ul>
 
-<h3>2014-05-19</h3>
+<h3 id="tocAnchor-1-1-101">2014-05-19</h3>
 
 <ul>
 <li>packs: first preliminary published</li>
 <li>packs: devices hierarchy simplified</li>
 </ul>
 
-<h3>2014-05-17</h3>
+<h3 id="tocAnchor-1-1-102">2014-05-17</h3>
 
 <ul>
 <li>packs: install &amp; remove fully functional</li>
 </ul>
 
-<h3>2014-05-14</h3>
+<h3 id="tocAnchor-1-1-103">2014-05-14</h3>
 
 <ul>
 <li>packs: install packs functional</li>
 </ul>
 
-<h3>2014-05-09</h3>
+<h3 id="tocAnchor-1-1-104">2014-05-09</h3>
 
 <ul>
 <li>packs: filters functional</li>
 </ul>
 
-<h3>2014-05-07</h3>
+<h3 id="tocAnchor-1-1-105">2014-05-07</h3>
 
 <ul>
 <li>packs: devices &amp; boards populated</li>
 </ul>
 
-<h3>2014-05-06</h3>
+<h3 id="tocAnchor-1-1-106">2014-05-06</h3>
 
 <ul>
 <li>packs: Packages view has content</li>
 </ul>
 
-<h3>2014-04-30</h3>
+<h3 id="tocAnchor-1-1-107">2014-04-30</h3>
 
 <ul>
 <li>packs: parse CMSIS index.idx functional</li>
 </ul>
 
-<h3>2014-04-29</h3>
+<h3 id="tocAnchor-1-1-108">2014-04-29</h3>
 
 <ul>
 <li>packs: preliminary perspective &amp; views</li>
 <li>packs: table tree view tests</li>
 </ul>
 
-<h3>2014-04-28</h3>
+<h3 id="tocAnchor-1-1-109">2014-04-28</h3>
 
 <ul>
 <li>cross [bugs:#108]: shared lib projects fixed</li>
 <li>versions: cross 1.9.3, global 2.2.3</li>
 </ul>
 
-<h3>2014-04-27</h3>
+<h3 id="tocAnchor-1-1-110">2014-04-27</h3>
 
 <ul>
 <li>packs: preferences functional</li>
 </ul>
 
-<h3>2014-04-24</h3>
+<h3 id="tocAnchor-1-1-111">2014-04-24</h3>
 
 <ul>
 <li>2.2.2-201404240550 published
@@ -1049,14 +1563,14 @@
 <li>in preparation for Eclipse 4.4 Luna, switch development to JDK 7</li>
 </ul>
 
-<h3>2014-04-16</h3>
+<h3 id="tocAnchor-1-1-112">2014-04-16</h3>
 
 <ul>
 <li>cross [bugs:#105]: GNU Linker Error Parser added to c/cpp link tools</li>
 <li>openocd [bugs:#104]: Allocate console for OpenOCD kept grey on windows</li>
 </ul>
 
-<h3>2014-04-12</h3>
+<h3 id="tocAnchor-1-1-113">2014-04-12</h3>
 
 <ul>
 <li>2.2.1-201404120702 published
@@ -1075,28 +1589,28 @@
 </ul></li>
 </ul>
 
-<h3>2014-04-11</h3>
+<h3 id="tocAnchor-1-1-114">2014-04-11</h3>
 
 <ul>
 <li>jlink &amp; openocd: if (DEBUG) in tabs</li>
 <li>versions: jlink 1.5.1, openocd 1.2.1, freescale 2.1.1</li>
 </ul>
 
-<h3>2014-04-10</h3>
+<h3 id="tocAnchor-1-1-115">2014-04-10</h3>
 
 <ul>
 <li>jlink: gdb client commands persistent</li>
 <li>openocd: persistence added to most fields</li>
 </ul>
 
-<h3>2014-04-09</h3>
+<h3 id="tocAnchor-1-1-116">2014-04-09</h3>
 
 <ul>
 <li>jlink: persistence for most fields</li>
 <li>templates.stm: F1 ^M glitch</li>
 </ul>
 
-<h3>2014-04-07</h3>
+<h3 id="tocAnchor-1-1-117">2014-04-07</h3>
 
 <ul>
 <li>templates.core: system updated (_cxx.cpp)</li>
@@ -1108,7 +1622,7 @@
 <li>scripts: copy-from-micro-os.sh added; vectors.sed</li>
 </ul>
 
-<h3>2014-04-03</h3>
+<h3 id="tocAnchor-1-1-118">2014-04-03</h3>
 
 <ul>
 <li>template.stm: F2 config all enabled</li>
@@ -1116,23 +1630,23 @@
 <li>template.cortexm: someWarnings &amp; update to match other templates; copy folders, where possible</li>
 </ul>
 
-<h3>2014-04-02</h3>
+<h3 id="tocAnchor-1-1-119">2014-04-02</h3>
 
 <ul>
 <li>cross build: -Wall default to false</li>
 <li>freescale.pe: updated with options from stm</li>
 <li>templates.stm: someWarnings option added, default to true; mostWarnings default changed to false</li>
 <li>templates.core: newlib assert.c added</li>
-<li>templates.stm: USE<em>FULL</em>ASSERT added; CopyFolders used to copy entire source folders</li>
+<li>templates.stm: USE_FULL_ASSERT added; CopyFolders used to copy entire source folders</li>
 </ul>
 
-<h3>2014-04-01</h3>
+<h3 id="tocAnchor-1-1-120">2014-04-01</h3>
 
 <ul>
 <li>templates.stm: F2 functional</li>
 </ul>
 
-<h3>2014-03-31</h3>
+<h3 id="tocAnchor-1-1-121">2014-03-31</h3>
 
 <ul>
 <li>templates.stm: F3 functional</li>
@@ -1141,21 +1655,21 @@
 <li>templates.stm: clean old files</li>
 </ul>
 
-<h3>2014-03-30</h3>
+<h3 id="tocAnchor-1-1-122">2014-03-30</h3>
 
 <ul>
 <li>templates.stm: excludeUnused; no TRACE</li>
 <li>templates.stm: F[01] no TRACE</li>
 </ul>
 
-<h3>2014-03-29</h3>
+<h3 id="tocAnchor-1-1-123">2014-03-29</h3>
 
 <ul>
 <li>templates.core: Trace.h inlines</li>
 <li>templates.cortexm: updated after F1</li>
 </ul>
 
-<h3>2014-03-28</h3>
+<h3 id="tocAnchor-1-1-124">2014-03-28</h3>
 
 <ul>
 <li>templates.(core|stm): always blinky prints seconds</li>
@@ -1168,7 +1682,7 @@
 <li>template.stm: stm32f0* warnings fixed</li>
 </ul>
 
-<h3>2014-03-27</h3>
+<h3 id="tocAnchor-1-1-125">2014-03-27</h3>
 
 <ul>
 <li>templates.core: common functional for F1 &amp; F4</li>
@@ -1183,16 +1697,16 @@
 <li>tempates.stm: F4 clock init uses HSE_VALUE</li>
 </ul>
 
-<h3>2014-03-26</h3>
+<h3 id="tocAnchor-1-1-126">2014-03-26</h3>
 
 <ul>
 <li>template cortexm &amp; stm: ccnature</li>
 <li>jlink: server Other with macro substitution</li>
-<li>cross build: -MT&quot;\$@&quot; replaced by cmdLineGenerator, to filter the .d to .o</li>
+<li>cross build: -MT"\$@" replaced by cmdLineGenerator, to filter the .d to .o</li>
 <li>jlink: default server speed increased to 1000</li>
 </ul>
 
-<h3>2014-03-25</h3>
+<h3 id="tocAnchor-1-1-127">2014-03-25</h3>
 
 <ul>
 <li>templates.core: processes with absolute path; ConditionalAddFiles/AppendCreate also work with absolute paths</li>
@@ -1212,13 +1726,13 @@
 <li>info: BUILD with 256M ram for maven</li>
 </ul>
 
-<h3>2014-03-24</h3>
+<h3 id="tocAnchor-1-1-128">2014-03-24</h3>
 
 <ul>
 <li>templates.stm: F4 overhauled, compiles</li>
 </ul>
 
-<h3>2014-03-22</h3>
+<h3 id="tocAnchor-1-1-129">2014-03-22</h3>
 
 <ul>
 <li>templates.core: Eclipse-BundleShape: dir</li>
@@ -1227,24 +1741,24 @@
 <li>templates.core: cmsis_device.h added</li>
 </ul>
 
-<h3>2014-03-21</h3>
+<h3 id="tocAnchor-1-1-130">2014-03-21</h3>
 
 <ul>
 <li>templates.core: common code added here</li>
 <li>cortexm: revised to use the common files</li>
 </ul>
 
-<h3>2014-03-20</h3>
+<h3 id="tocAnchor-1-1-131">2014-03-20</h3>
 
 <ul>
 <li>template cortexm: preliminary version</li>
 <li>template cortexm: use micro-os sources</li>
 </ul>
 
-<h3>2014-03-18</h3>
+<h3 id="tocAnchor-1-1-132">2014-03-18</h3>
 
 <ul>
-<li>cross build: first attempt to fix major dependency bug -MT&quot;\$@&quot;, using updated command line</li>
+<li>cross build: first attempt to fix major dependency bug -MT"\$@", using updated command line</li>
 <li>cross build: warnings and optimisations
 
 <ul>
@@ -1266,7 +1780,7 @@
 <li>cross build: .unitialized removed</li>
 </ul>
 
-<h3>2014-03-17</h3>
+<h3 id="tocAnchor-1-1-133">2014-03-17</h3>
 
 <ul>
 <li>cross build: options and defaults
@@ -1283,7 +1797,7 @@
 <li>cross build: --save-temps added to .S/.c/.cpp</li>
 </ul>
 
-<h3>2014-03-04</h3>
+<h3 id="tocAnchor-1-1-134">2014-03-04</h3>
 
 <ul>
 <li>jlink: second reset warning added</li>
@@ -1291,34 +1805,34 @@
 <li>openocd: launch cwd set to project</li>
 </ul>
 
-<h3>2014-03-03</h3>
+<h3 id="tocAnchor-1-1-135">2014-03-03</h3>
 
 <ul>
 <li>stm: F4 chip names updated</li>
 <li>cross build: ProjectStorage exceptions; after project rename there were many exception due to name change; turned into println()</li>
 </ul>
 
-<h3>2014-03-02</h3>
+<h3 id="tocAnchor-1-1-136">2014-03-02</h3>
 
 <ul>
 <li>stm: refurbished, with similar c &amp; c++</li>
 <li>template.core: ConditionalSetProperty added</li>
 </ul>
 
-<h3>2014-02-24</h3>
+<h3 id="tocAnchor-1-1-137">2014-02-24</h3>
 
 <ul>
 <li>freescale: c++ separate LED code</li>
 <li>templates.core: ConditionalAppendToMBSString added</li>
 </ul>
 
-<h3>2014-02-21</h3>
+<h3 id="tocAnchor-1-1-138">2014-02-21</h3>
 
 <ul>
 <li>freescale: fully configurable leds</li>
 </ul>
 
-<h3>2014-02-20</h3>
+<h3 id="tocAnchor-1-1-139">2014-02-20</h3>
 
 <ul>
 <li>cross: -mcpu &amp; -march updated for 4.8</li>
@@ -1328,10 +1842,10 @@
 <li>-mcpu= +arm610 +cortex-r5 +cortex-r7 +generic-armv7-a</li>
 <li>-march= +armv6s-m +armv7e-m</li>
 </ul></li>
-<li>cross: cs-make/cs-rm instead of cs<em>make/cs</em>rm</li>
+<li>cross: cs-make/cs-rm instead of cs_make/cs_rm</li>
 </ul>
 
-<h3>2014-02-19</h3>
+<h3 id="tocAnchor-1-1-140">2014-02-19</h3>
 
 <ul>
 <li>cross: TabToolchains with enable/disable for specific lib/exe fields</li>
@@ -1339,7 +1853,7 @@
 <li>jlink &amp; openocd: TabDebugger shared (private changed to protected)</li>
 </ul>
 
-<h3>2014-02-18</h3>
+<h3 id="tocAnchor-1-1-141">2014-02-18</h3>
 
 <ul>
 <li>2.1.2-201402180751 published (maintenance release)
@@ -1359,7 +1873,7 @@
 <li>F4 bug fixed (no defs issued, build failed)</li>
 </ul>
 
-<h3>2014-02-14</h3>
+<h3 id="tocAnchor-1-1-142">2014-02-14</h3>
 
 <ul>
 <li>2.1.1-201402140758 published
@@ -1378,7 +1892,7 @@
 <li>jlink: compatibility with old config added</li>
 </ul>
 
-<h3>2014-02-13</h3>
+<h3 id="tocAnchor-1-1-143">2014-02-13</h3>
 
 <ul>
 <li>cross: toolchain path no longer stored in .cproject</li>
@@ -1386,7 +1900,7 @@
 <li>freescale.pe: updated for new wizard process name</li>
 </ul>
 
-<h3>2014-02-12</h3>
+<h3 id="tocAnchor-1-1-144">2014-02-12</h3>
 
 <ul>
 <li>jlink: gdb client other options field added</li>
@@ -1396,7 +1910,7 @@
 <li>jlink/cross: wider text fields (for linux)</li>
 </ul>
 
-<h3>2014-02-11</h3>
+<h3 id="tocAnchor-1-1-145">2014-02-11</h3>
 
 <ul>
 <li>cross: prefer-&gt;use global path</li>
@@ -1404,7 +1918,7 @@
 <li>openocd: larger config edit</li>
 </ul>
 
-<h3>2014-02-10</h3>
+<h3 id="tocAnchor-1-1-146">2014-02-10</h3>
 
 <ul>
 <li>templates: support for C++ projects</li>
@@ -1413,21 +1927,21 @@
 <li>jlink/openocd/freescale: removed Experimental</li>
 </ul>
 
-<h3>2014-02-07</h3>
+<h3 id="tocAnchor-1-1-147">2014-02-07</h3>
 
 <ul>
 <li>freescale: klxx blinky cleaned</li>
-<li>freescale: klxx template, variant &#39;empty&#39; added</li>
+<li>freescale: klxx template, variant 'empty' added</li>
 </ul>
 
-<h3>2014-02-06</h3>
+<h3 id="tocAnchor-1-1-148">2014-02-06</h3>
 
 <ul>
-<li>freescale: kl25 code moved to kl25<em>sc</em>rev10 and trimmed, to make place to kl46</li>
+<li>freescale: kl25 code moved to kl25_sc_rev10 and trimmed, to make place to kl46</li>
 <li>freescale: MKL46Z4 added</li>
 </ul>
 
-<h3>2014-02-05</h3>
+<h3 id="tocAnchor-1-1-149">2014-02-05</h3>
 
 <ul>
 <li>freescale.pe: selective manual/auto wizard</li>
@@ -1435,7 +1949,7 @@
 <li>jlink: -s default for the server</li>
 </ul>
 
-<h3>2014-02-04</h3>
+<h3 id="tocAnchor-1-1-150">2014-02-04</h3>
 
 <ul>
 <li>freescale: main.c split; no empty posible</li>
@@ -1444,13 +1958,13 @@
 <li>freescale: use conditional processes</li>
 </ul>
 
-<h3>2014-02-03</h3>
+<h3 id="tocAnchor-1-1-151">2014-02-03</h3>
 
 <ul>
 <li>jlink: server default speed 30; larger type fields</li>
 </ul>
 
-<h3>2014-02-01</h3>
+<h3 id="tocAnchor-1-1-152">2014-02-01</h3>
 
 <ul>
 <li>freescale: semihosting argc/argv functional</li>
@@ -1459,19 +1973,19 @@
 <li>jlink: enable swo mask saved as hex</li>
 </ul>
 
-<h3>2014-01-31</h3>
+<h3 id="tocAnchor-1-1-153">2014-01-31</h3>
 
 <ul>
 <li>jlink: clrbp before and regs after reset</li>
 </ul>
 
-<h3>2014-01-30</h3>
+<h3 id="tocAnchor-1-1-154">2014-01-30</h3>
 
 <ul>
 <li>jlink: no monitor interface/device/endianess used, all config done via server</li>
 </ul>
 
-<h3>2014-01-28</h3>
+<h3 id="tocAnchor-1-1-155">2014-01-28</h3>
 
 <ul>
 <li>restart: debug Restart button as separate plug-in</li>
@@ -1481,7 +1995,7 @@
 <li>freescale: klxx led functional</li>
 </ul>
 
-<h3>2014-01-27</h3>
+<h3 id="tocAnchor-1-1-156">2014-01-27</h3>
 
 <ul>
 <li>freescale: KLxx template builds properly</li>
@@ -1489,11 +2003,11 @@
 <li>freescale: klxx memory map fixed</li>
 </ul>
 
-<h3>2014-01-25</h3>
+<h3 id="tocAnchor-1-1-157">2014-01-25</h3>
 
 <p>freescale: PEx code moved to separate plug-in</p>
 
-<h3>2014-01-22</h3>
+<h3 id="tocAnchor-1-1-158">2014-01-22</h3>
 
 <ul>
 <li>jlink: other options split into substrings</li>
@@ -1501,32 +2015,32 @@
 <li>cross: -T browseType changed to ‘file’, to allow browsing</li>
 </ul>
 
-<h3>2014-01-20</h3>
+<h3 id="tocAnchor-1-1-159">2014-01-20</h3>
 
 <ul>
 <li>freescale: template for pex added</li>
 </ul>
 
-<h3>2014-01-13</h3>
+<h3 id="tocAnchor-1-1-160">2014-01-13</h3>
 
 <ul>
 <li>jlink: symbols loaded not before connection, but just before load</li>
 </ul>
 
-<h3>2014-01-11</h3>
+<h3 id="tocAnchor-1-1-161">2014-01-11</h3>
 
 <ul>
-<li>1.8.1-201401111229 published (cross<em>1.7.1, stm</em>1.6.1, jlink 1.2.1, core 1.1.1)</li>
+<li>1.8.1-201401111229 published (cross_1.7.1, stm_1.6.1, jlink 1.2.1, core 1.1.1)</li>
 <li>cross: create listing defaults to false</li>
 </ul>
 
-<h3>2014-01-10</h3>
+<h3 id="tocAnchor-1-1-162">2014-01-10</h3>
 
 <ul>
 <li>STM more explanations in trace_impl.h</li>
 </ul>
 
-<h3>2014-01-09</h3>
+<h3 id="tocAnchor-1-1-163">2014-01-09</h3>
 
 <ul>
 <li>STM F4 template with different ram size in mem.ld</li>
@@ -1534,11 +2048,13 @@
 <li>cross: FPU unit persistency fixed</li>
 </ul>
 
-<h2><a href="/developer/change-log/2013">2013</a></h2>
+<h2 id="tocAnchor-1-165">
+<a href="/developer/change-log/2013">2013</a>
+</h2>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

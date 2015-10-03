@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>GNU ARM Eclipse plug-ins v2.1.1-201402140758 released</title>
   <meta name="description" content="The main change (marked by the increase of the major number to 2.x) is that debugging support in GNU ARM Eclipse became official (the previous Experimental s...">
@@ -39,10 +39,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/blog/2014/02/14/plugins-v2.1.1-201402140758-released/">
+  <link rel="canonical" href="/blog/2014/02/14/plugins-v2.1.1-201402140758-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -105,7 +108,7 @@ Posted on February 14, 2014 by Liviu Ionescu.
 <ul>
 <li>the debug plug-in for <strong>OpenOCD</strong> was added</li>
 <li>the <strong>Freescale KLxx template</strong> was added, currently with KL25 and KL46 members implemented; it can generate <em>blinky/empty</em> projects, in 3 variants (standalone/retargetting/semihosting)</li>
-<li>the <strong>Freescale Processor Expert template</strong> was added; it can generate projects that use the Processor Expert tools; invoking the PEx wizard automatically will be possible from vPEx<em>DRV</em>10.4 up</li>
+<li>the <strong>Freescale Processor Expert template</strong> was added; it can generate projects that use the Processor Expert tools; invoking the PEx wizard automatically will be possible from vPEx_DRV_10.4 up</li>
 <li>[feature-request:#30] significant project <strong>portability improvements</strong>: in the build plug-in, the toolchain path mechanism was changed and made more explicit; it allows to define one path for each toolchain, and also, upon explicit request, one path for each project; no more path stored in .cproject.</li>
 </ul>
 

@@ -7,16 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>ilg.gnuarmeclipse.managedbuild.cross - persistent values & toolchain ids</title>
+  <title>Page Title</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="ilg.gnuarmeclipse.managedbuild.cross - persistent values & toolchain ids" />
+  <meta property="og:title" content="Page Title" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-10">
 
 
 
@@ -27,10 +26,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.managedbuild.cross/">
+  <link rel="canonical" href="/test/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -77,80 +79,44 @@
 <section id="main-content">
 
 
-<h1 class="page-title">ilg.gnuarmeclipse.managedbuild.cross - persistent values & toolchain ids</h1>
+<h1 class="page-title">Page Title</h1>
 
 
-<h2>The build tools path</h2>
+<h2 id="tocAnchor-1-1">Header 2</h2>
 
-<p>The build tools path preference is:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">buildTools.path=C:/Program Files/GNU ARM Eclipse/Build Tools/bin
-</code></pre></div>
-<p>This value can be stored in all persistent scopes (Eclipse, workspace, project).</p>
+<p>Text <strong>bold</strong> text.</p>
 
-<h2>The default toolchain</h2>
+<h3 id="tocAnchor-1-1-1">Header 3</h3>
 
-<p>The default toolchain preference is:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">toolchain.name=GNU Tools for ARM Embedded Processors
-</code></pre></div>
-<p>It is stored in the Eclipse scope.</p>
+<p>Text <em>italic</em> text.</p>
 
-<h2>Toolchain paths</h2>
+<h4>Header 4</h4>
 
-<p>The toolchain path preferences are:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">toolchain.path.1287942917=/usr/local/gcc-arm-none-eabi-4_8-2014q2/bin
-</code></pre></div>
-<p>The toolchain ID is described below.</p>
+<p>Text <code>code</code> text.</p>
 
-<p>Currently these preferences are stored in the Eclipse scope.</p>
+<ul>
+<li>one</li>
+<li>two</li>
+</ul>
 
-<h2>Toolchain IDs</h2>
+<blockquote>
+<p>note</p>
+</blockquote>
 
-<p>The numerical value in the path property is the toolchain ID, computed as the absolute value of the <strong>Java hash of the name string</strong>.</p>
+<hr />
 
-<p>The list of supported toolchains and their IDs:</p>
+<p>More text</p>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">Code line 1
+Code line 2
+</code></pre>
+</div>
+<p>More text</p>
 
-<p>|Name|ID|
-|----|---|
-|GNU Tools for ARM Embedded Processors|1287942917|
-|Sourcery CodeBench Lite for ARM EABI|730666677|
-|Sourcery CodeBench Lite for ARM GNU/Linux|132202943|
-|devkitPro ARM EABI|599899493|
-|Yagarto, Summon, etc. ARM EABI|1195655929|
-|Linaro ARMv7 bare-metal EABI|976189281|
-|Linaro ARMv7 big-endian bare-metal EABI|1341156853|
-|Linaro ARMv7 Linux GNU EABI HF|280381241|
-|Linaro ARMv7 big-endian Linux GNU EABI HF|1733862821|
-|Linaro AArch64 bare-metal ELF|1871385609|
-|Linaro AArch64 big-endian bare-metal ELF|2048201829|
-|Linaro AArch64 Linux GNU|1246627524|
-|Linaro AArch64 big-endian Linux GNU|681852136|
-|Custom|2029746065|</p>
-
-<p>Note: in March 2015, the name of the <strong>Linaro ARMv7 big-endian Linux GNU EABI HF</strong> toolchain was updated to be consistent with the other names (lower case big-endian instead of Big-Endian).</p>
-
-<h2>Defaults</h2>
-
-<p>All persistent values can be given defaults, for example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.managedbuild.cross/buildTools.path=C:/Program Files/GNU ARM Eclipse/Build Tools/bin
-
-ilg.gnuarmeclipse.managedbuild.cross/toolchain.name=GNU Tools for ARM Embedded Processors
-ilg.gnuarmeclipse.managedbuild.cross/toolchain.path.1287942917=/usr/local/gcc-arm-none-eabi-4_8-2014q2/bin
-</code></pre></div>
-<p>Defaults only properties:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"># One of the following will be set to toolchain.search.path.1287942917.
-toolchain.search.path.windows.1287942917=${user.home}/AppData/Local/Programs/GNU Tools ARM Embedded;c:/Program Files/GNU Tools ARM Embedded;c:/Program Files (x86)/GNU Tools ARM Embedded
-toolchain.search.path.linux.1287942917=${user.home}/local:/usr/local
-toolchain.search.path.osx.1287942917=${user.home}/Applications/GNU Tools ARM Embedded:${user.home}/local:/usr/local
-
-# Set to false to disable the folder check.
-global.toolchain.path.strict=true
-global.buildTools.path.strict=true
-workspace.toolchain.path.strict=true
-workspace.buildTools.path.strict=true
-</code></pre></div>
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
 
 
 </section>

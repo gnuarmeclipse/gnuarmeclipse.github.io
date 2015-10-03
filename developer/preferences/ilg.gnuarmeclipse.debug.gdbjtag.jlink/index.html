@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>ilg.gnuarmeclipse.debug.gdbjtag.jlink - persistent values</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.jlink/">
+  <link rel="canonical" href="/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.jlink/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,15 +83,54 @@
 <h1 class="page-title">ilg.gnuarmeclipse.debug.gdbjtag.jlink - persistent values</h1>
 
 
-<h2>The workspace storage</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">The workspace storage</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">The Properties</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Launcher defaults</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Install defaults</span></a>
+<ul>
+<li class="toc_level-2 toc_section-5">
+<a href="#tocAnchor-1-4-1"><span class="tocnumber">4.1</span> <span class="toctext">The executable name</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#tocAnchor-1-4-2"><span class="tocnumber">4.2</span> <span class="toctext">The executable location</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">The workspace storage</h2>
 
 <p>The J-Link settings are persistent in the workspace scope, and the storage file is located at:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.jlink.prefs
-</code></pre></div>
-<h2>The Properties</h2>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.jlink.prefs
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-2">The Properties</h2>
 
 <p>The J-Link preferences define the device name and all other J-Link related setting from the plug-in settings page.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">flashDeviceName=STM32F407VG
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">flashDeviceName=STM32F407VG
 gdb.client.commands=set mem inaccessible-by-default off
 gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 gdb.client.other=
@@ -117,57 +159,73 @@ gdb.server.executable=${jlink_path}/${jlink_gdbserver}
 gdb.server.interface=swd
 gdb.server.other=-singlerun -strict -timeout 0
 gdb.server.speed=1000
-</code></pre></div>
-<h2>Launcher defaults</h2>
+</code></pre>
+</div>
+<h2 id="tocAnchor-1-3">Launcher defaults</h2>
 
 <p>All persistent values can have defaults.</p>
 
 <p>For example the following defaults (plus many more) are available to configure the J-Link debug launcher:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.executable=${jlink_path}/${jlink_gdbserver}
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.executable=${jlink_path}/${jlink_gdbserver}
 ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 
 ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.interface=swd (or jtag)
 
 ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.jlink.enableSemihosting=true
 ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
-</code></pre></div>
+</code></pre>
+</div>
 <p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.jlink/tab.main.checkProgram=false
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.jlink/tab.main.checkProgram=false
+</code></pre>
+</div>
 <p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
 
-<h2>Install defaults</h2>
+<h2 id="tocAnchor-1-4">Install defaults</h2>
 
 <p>Defining these two properties will provide default values to the corresponding fields in the <strong>Run/Debug</strong> → <strong>SEGGER J-Link</strong> preferences page. The same variables are visible in the <strong>Run/Debug</strong> → <strong>String Substitution</strong> page.</p>
 
-<h3>The executable name</h3>
+<h3 id="tocAnchor-1-4-1">The executable name</h3>
 
 <p>The plug-in will use this definition as default for <strong>\${jlink_gdbserver}</strong>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.jlink/executable.name=JLinkGDBServer
-</code></pre></div>
-<h3>The executable location</h3>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.jlink/executable.name=JLinkGDBServer
+</code></pre>
+</div>
+<h3 id="tocAnchor-1-4-2">The executable location</h3>
 
 <p>The plug-in will take a best effort approach to find a location to be used as default for <strong>{jlink_path}</strong>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.jlink/install.folder=/Applications/SEGGER/Jlink
-</code></pre></div>
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">ilg.gnuarmeclipse.debug.gdbjtag.jlink/install.folder=/Applications/SEGGER/Jlink
+</code></pre>
+</div>
 <p>If this preference is defined and the executable is there, the plug-in will use it.</p>
 
 <p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\SEGGER\J-Link</strong> subkey, and the executable is found there, the plug-in will use it.</p>
 
 <p>Otherwise the plug-in will try a folder search.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">search.path=\
+<div class="highlight">
+<pre>
+<code class="language-text" data-lang="text">search.path=\
 ${user.home}/Applications/SEGGER:\
 /Applications/SEGGER
-</code></pre></div>
+</code></pre>
+</div>
 <p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
 
-<p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/${jlink_gdbserver}</strong>; if multiple such subfolders are found (in case multiple versions, like J-Link<em>V494, J-Link</em>V496), the list of names is ordered lexicographically and the last one is used.</p>
+<p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/${jlink_gdbserver}</strong>; if multiple such subfolders are found (in case multiple versions, like J-Link_V494, J-Link_V496), the list of names is ordered lexicographically and the last one is used.</p>
 
 <p>If not found, another test for <strong>folder/${jlink_gdbserver}</strong> is made.</p>
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>

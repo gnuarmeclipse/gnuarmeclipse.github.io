@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>About</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/about/">
+  <link rel="canonical" href="/about/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,28 +83,55 @@
 <h1 class="page-title">About</h1>
 
 
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
 <h2>Contents</h2>
-
+</div>
 <ul>
-<li><a href="#the-project">The project</a></li>
-<li><a href="#first-edition">First edition</a></li>
-<li><a href="#second-edition">Second edition</a></li>
-<li><a href="#migration-to-github">Migration to GitHub</a></li>
-<li><a href="#pad-file">PAD file</a></li>
-<li><a href="#credits">Credits</a></li>
-<li><a href="#this-site">This site</a></li>
-<li><a href="#the-author">The author</a></li>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">The project</span></a>
+<ul>
+<li class="toc_level-2 toc_section-2">
+<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">First edition</span></a>
+</li>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Second Edition</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Migration to GitHub</span></a>
+</li>
 </ul>
-
-<h2>The project</h2>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">2</span> <span class="toctext">PAD file</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">3</span> <span class="toctext">Credits</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#tocAnchor-1-7"><span class="tocnumber">4</span> <span class="toctext">This site</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#tocAnchor-1-8"><span class="tocnumber">5</span> <span class="toctext">The author</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">The project</h2>
 
 <p>The <strong>GNU ARM Eclipse plug-in</strong> project was registered on <a href="http://sourceforge.net/projects/gnuarmeclipse/">SourceForge</a> in November 2006, and initially included an XML only plug-in definition; although functional, it was somehow limited.</p>
 
-<h3>First edition</h3>
+<h3 id="tocAnchor-1-1-1">First edition</h3>
 
 <p>The first fully functional edition of the plug-in (version 0.5.3) was announced in March 2009, when the plug-in was practically recreated, functionality was extended and more toolchains were supported. The Eclipse specifics, like adding a feature project and an update site project were also added.</p>
 
-<h3>Second Edition</h3>
+<h3 id="tocAnchor-1-1-2">Second Edition</h3>
 
 <p>In September 2013, based on the Eclipse CDT and the new developments in ARM Toolchains, work on the second edition of the plug-in started, involving a major rewrite, inspired by the CDT Cross Compile plug-in.</p>
 
@@ -113,19 +143,19 @@
 
 <p>In July 2014, the experimental version of the Packs plug-in was published, providing management support (list/install/uninstall/outline) for CMSIS Packs.</p>
 
-<h3>Migration to GitHub</h3>
+<h3 id="tocAnchor-1-1-3">Migration to GitHub</h3>
 
 <p>In August 2015 the project was migrated to <a href="https://github.com/gnuarmeclipse">GitHub</a> and restructured as separate sub-projects. For a more stability over time, the blog and wiki sites hosted on the private livius.net server were migrate to the public GitHub Pages.</p>
 
 <p>With this migration also the name was reduced to <strong>GNU ARM Eclipse</strong>.</p>
 
-<h2>PAD file</h2>
+<h2 id="tocAnchor-1-5">PAD file</h2>
 
 <p>The project <a href="http://en.wikipedia.org/wiki/Portable_Application_Description">PAD file</a> is publically available <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/info/GNU_ARM_Eclipse_pad.xml">here</a>.</p>
 
 <p>Note: the current limitation of 120 characters for URLs prevents the GitHub release URLs to be published in PAD files.</p>
 
-<h2>Credits</h2>
+<h2 id="tocAnchor-1-6">Credits</h2>
 
 <p>Many thanks to:</p>
 
@@ -134,7 +164,7 @@
 <li>my good friend Dan Maiorescu, for his invaluable support during the design, development and testing of the plug-ins.</li>
 </ul>
 
-<h2>This site</h2>
+<h2 id="tocAnchor-1-7">This site</h2>
 
 <p>The first project wiki was created in August 2008 using the SourceForge hosted apps.</p>
 
@@ -142,13 +172,13 @@
 
 <p>Unfortunately SourceForge introduced the policy of blocking outgoing traffic from the Project web pages, and managing WordPress and MediaWiki sites on SourceForge servers became unpractical.</p>
 
-<p>In October 2013, the project documentation was moved to an external <a href="http://wordpress.org/">WordPress</a> site, and was intended to improve communication with users by keeping them informed about current issues and releases. The original URL was http://gnuarmeclipse.livius.net/blog.</p>
+<p>In October 2013, the project documentation was moved to an external <a href="http://wordpress.org/">WordPress</a> site, and was intended to improve communication with users by keeping them informed about current issues and releases. The original URL was <a href="http://gnuarmeclipse.livius.net/blog">http://gnuarmeclipse.livius.net/blog</a>.</p>
 
-<p>The developer specific pages were also moved to an external MediaWiki site. The original URL was http://gnuarmeclipse.livius.net/wiki.</p>
+<p>The developer specific pages were also moved to an external MediaWiki site. The original URL was <a href="http://gnuarmeclipse.livius.net/wiki">http://gnuarmeclipse.livius.net/wiki</a>.</p>
 
 <p>In Aug 2015 those two sites were first migrated to GitHub Wiki, with content split between multiple projects. Then the entire project pages was migrated to a GitHub Pages site, located at <a href="http://gnuarmeclipse.github.io/">http://gnuarmeclipse.github.io/</a>.</p>
 
-<h2>The author</h2>
+<h2 id="tocAnchor-1-8">The author</h2>
 
 <p>This plug-in is currently maintained by <strong>Liviu Ionescu</strong>, a senior IT engineer, with expertise in operating systems, compilers, embedded systems and Internet technologies.</p>
 
@@ -156,7 +186,7 @@
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
 
 
 </section>

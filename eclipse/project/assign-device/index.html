@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link type="application/atom+xml" rel="alternate" href="http://gnuarmeclipse.github.io/feed.xml" title="GNU ARM Eclipse" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
   <title>Associate a device to the project</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
@@ -27,10 +27,13 @@
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/toc.css" media="screen">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
 
-  <link rel="canonical" href="http://gnuarmeclipse.github.io/eclipse/project/assign-device/">
+  <link rel="canonical" href="/eclipse/project/assign-device/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -80,27 +83,63 @@
 <h1 class="page-title">Associate a device to the project</h1>
 
 
-<h2>Overview</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Prerequisites</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">The Packs plug-ins</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#tocAnchor-1-2-2"><span class="tocnumber">2.2</span> <span class="toctext">Install required packs</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#tocAnchor-1-5"><span class="tocnumber">3</span> <span class="toctext">Assign device</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#tocAnchor-1-6"><span class="tocnumber">4</span> <span class="toctext">Benefits</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="tocAnchor-1-1">Overview</h2>
 
 <p>One of the advantages of using the new packs technology is that the extra metadata (which include a complete list of devices, grouped by vendor, family, sub-family, and a list of development boards) can be used to automate the creation of other configurations, like project build configurations and debugging configurations, or assist other processes, like providing detailed register/field definitions to the debugger.</p>
 
-<h2>Prerequisites</h2>
+<h2 id="tocAnchor-1-2">Prerequisites</h2>
 
-<h3>The Packs plug-ins</h3>
+<h3 id="tocAnchor-1-2-1">The Packs plug-ins</h3>
 
 <p>For the device list to be populated, it is required that the Packs plug-ins are first installed. To check this, use the <strong>About Eclipse</strong> menu and click the <strong>Installation Details</strong> button.</p>
 
-<p><img src="/assets/images/2014/10/PacksFeature.png" alt="Check the presence of the Packs plug-ins"></p>
+<p>
+<img src="/assets/images/2014/10/PacksFeature.png" alt="Check the presence of the Packs plug-ins" />
+</p>
 
 <p>If not present, it is recommended to first read the <a href="/plugins/packs-manager/">Packs manager</a> documentation page where installation details are also provided.</p>
 
-<h3>Install required packs</h3>
+<h3 id="tocAnchor-1-2-2">Install required packs</h3>
 
 <p>Once the Packs plug-ins are available, and the list of available packages was retrieved, it is necessary to install the packages related to the devices used by the projects under development.</p>
 
 <p>Please note that failure to do so will prevent the device selection window to make the desired device available for selection.</p>
 
-<h2>Assign device</h2>
+<h2 id="tocAnchor-1-5">Assign device</h2>
 
 <p><strong>Important notice</strong>: for an even higher flexibility, different devices can be assigned to different <strong>build configuration</strong>, so it is possible to have different devices for different configurations. One direct consequence is that you need to be careful to associate the appropriate devices to <strong>all</strong> configurations. The Eclipse interface allows to configure <strong>All configurations</strong> at a time, just select this option in the top selection.</p>
 
@@ -118,9 +157,11 @@
 
 <p>If you are using a development board, and this board has a corresponding definition in a package, it is recommended to associate the device below the board instead of the individual device from the Devices section, since this will also make available the board documentation files.</p>
 
-<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project"></p>
+<p>
+<img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" />
+</p>
 
-<h2>Benefits</h2>
+<h2 id="tocAnchor-1-6">Benefits</h2>
 
 <p>The benefits of assigning a device to the project are:</p>
 
@@ -136,7 +177,7 @@
 
 
 <hr/>
-<p class="page-footer">Last modified on Fri Oct  2 16:53:50 2015 UTC.</p>
+<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
 
 
 </section>
