@@ -1303,6 +1303,10 @@ table#post-navigation td:nth-child(4){
   vertical-align: middle;
 }
 
+.fb-like.fb_iframe_widget {
+  vertical-align: middle;
+}
+
 
 #toc, .toc, .mw-warning {
     background-color: #F9F9F9;
