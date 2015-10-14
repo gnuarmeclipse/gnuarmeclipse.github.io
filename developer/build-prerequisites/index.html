@@ -100,233 +100,239 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Install &amp; Configure Eclipse</span></a>
+<a href="#install--configure-eclipse"><span class="tocnumber">1</span> <span class="toctext">Install &amp; Configure Eclipse</span></a>
 <ul>
 <li class="toc_level-2 toc_section-2">
-<a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Install Java</span></a>
+<a href="#install-java"><span class="tocnumber">1.1</span> <span class="toctext">Install Java</span></a>
 </li>
 <li class="toc_level-2 toc_section-3">
-<a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Prepare folders</span></a>
+<a href="#prepare-folders"><span class="tocnumber">1.2</span> <span class="toctext">Prepare folders</span></a>
 </li>
 <li class="toc_level-2 toc_section-4">
-<a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Install Eclipse RCP</span></a>
+<a href="#install-eclipse-rcp"><span class="tocnumber">1.3</span> <span class="toctext">Install Eclipse RCP</span></a>
 </li>
 <li class="toc_level-2 toc_section-5">
-<a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">Create and configure the workspace</span></a>
+<a href="#create-and-configure-the-workspace"><span class="tocnumber">1.4</span> <span class="toctext">Create and configure the workspace</span></a>
 </li>
 <li class="toc_level-2 toc_section-6">
-<a href="#tocAnchor-1-1-5"><span class="tocnumber">1.5</span> <span class="toctext">Install Eclipse CDT</span></a>
+<a href="#install-eclipse-cdt"><span class="tocnumber">1.5</span> <span class="toctext">Install Eclipse CDT</span></a>
 </li>
 </ul>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#tocAnchor-1-7"><span class="tocnumber">2</span> <span class="toctext">Clone the repository</span></a>
+<a href="#clone-the-repository"><span class="tocnumber">2</span> <span class="toctext">Clone the repository</span></a>
 </li>
 <li class="toc_level-1 toc_section-8">
-<a href="#tocAnchor-1-8"><span class="tocnumber">3</span> <span class="toctext">Import the projects</span></a>
+<a href="#import-the-projects"><span class="tocnumber">3</span> <span class="toctext">Import the projects</span></a>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#tocAnchor-1-9"><span class="tocnumber">4</span> <span class="toctext">Associate to Git</span></a>
+<a href="#associate-to-git"><span class="tocnumber">4</span> <span class="toctext">Associate to Git</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><h2 id="tocAnchor-1-1">Install &amp; Configure Eclipse</h2>
+</div><h2 id="install--configure-eclipse">Install &amp; Configure Eclipse</h2>
 
-<h3 id="tocAnchor-1-1-1">Install Java</h3>
+<h3 id="install-java">Install Java</h3>
 
 <p>Install Sun JDK 1.7 or later (required since Eclipse 4.4); JRE is not enough, without JDK you will not be able to run debug sessions.</p>
 
-<h3 id="tocAnchor-1-1-2">Prepare folders</h3>
+<h3 id="prepare-folders">Prepare folders</h3>
 
 <ul>
-<li>  in a place of you choice, create a folder <strong>GNU ARM Eclipse</strong></li>
-<li>  inside it create two more folders, <strong>Eclipses</strong> and <strong>Eclipse Workspaces</strong></li>
+  <li>in a place of you choice, create a folder <strong>GNU ARM Eclipse</strong></li>
+  <li>inside it create two more folders, <strong>Eclipses</strong> and <strong>Eclipse Workspaces</strong></li>
 </ul>
 
-<h3 id="tocAnchor-1-1-3">Install Eclipse RCP</h3>
+<h3 id="install-eclipse-rcp">Install Eclipse RCP</h3>
 
 <p>This instance of Eclipse will be used for actual development.</p>
 
 <ul>
-<li>  go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a></li>
-<li>  download <strong>Eclipse for RCP and RAP Developers</strong>, preferably the 64-bit version (for example eclipse-rcp-luna-R-macosx-cocoa-x86_64.tar.gz)</li>
-<li>  unpack the archive</li>
-<li>  rename eclipse to <strong>eclipse-44-rcp-cdt</strong></li>
-<li>  move it to <strong>.../GNU ARM Eclipse/Eclipses</strong></li>
-<li>  on Windows, create a shortcut for eclipse.exe, rename it <strong>Eclipse 4.4 RCP CDT - Shortcut</strong> and copy it to the desktop or a place of your choice</li>
-<li>  on OS X, create a Finder alias for Eclipse.app, rename it <strong>Eclipse 4.4 RCP CDT alias</strong> and move it to a place of your choice</li>
-<li>  on GNU/Linux, create a link for eclipse, rename it <strong>Eclipse 4.4 RCP CDT alias</strong> and move it to a place of your choice</li>
-<li>  start the new Eclipse</li>
-<li>  create a new workspace, preferably in a separate folder, like <strong>Eclipse Workspaces/workspace-44-rcp</strong> (note: be sure you create the workspace where you need it to be, since moving later is generally not supported by Eclipse; if you need this, preferably create a new workspace)</li>
-<li>  check if you installed the right Eclipse; go to the Eclipse menu <strong>Help</strong> (<strong>Eclipse</strong> on OS X) → <strong>About Eclipse</strong> and the first line should read <strong>Eclipse for RCP and RAP Developers</strong></li>
-<li>  <strong>Help</strong> → <strong>Install New Software</strong>
-
-<ul>
-<li>Work with: Luna - <a href="http://download.eclipse.org/releases/luna">http://download.eclipse.org/releases/luna</a></li>
-<li>In <strong>Programming Languages</strong>
-
-<ul>
-<li>select <strong>C/C++ Development Tools</strong></li>
-<li>select <strong>C/C++ Development Tools SDK</strong></li>
-</ul></li>
-<li>In <strong>Mobile and Device Development</strong>
-
-<ul>
-<li>select <strong>C/C++ GDB Hardware Debugging</strong></li>
-</ul></li>
-<li>click the <strong>Next</strong> button</li>
-<li>accept the terms of the license agreement</li>
-<li>click the <strong>Finish</strong> button</li>
-<li>wait for the new plug-ins to be installed</li>
-</ul></li>
-<li>  restart
-Note: without the CDT sources available in the SDK, the extension point schemas will not be available so attempts to add new elements to the extensions will not be possible, and only 'Generic' elements will be offered.</li>
-<li>  install base API
-
-<ul>
-<li>go to <a href="http://www.eclipse.org/cdt/downloads.php">http://www.eclipse.org/cdt/downloads.php</a>, and download <strong>cdt-master-8.3.0.zip</strong> (required to keep compatibility with Kepler 4.3)</li>
-<li>unpack the archive</li>
-<li>move the new folder to in the Eclipses folder</li>
-<li>in Eclipse menu: <strong>Preferences...</strong> → <strong>Plug-in Development</strong> → <strong>API Baselines</strong></li>
-<li>click the <strong>Add Baseline...</strong> button
-
-<ul>
-<li>set Name: to 8.3.0</li>
-<li>browse Location: to .../GNU ARM Eclipse/cdt-master-8.3.0 (or set to this folder and click the <strong>Reset</strong> button)</li>
-<li>click the <strong>Finish</strong> button</li>
-</ul></li>
-<li>click the <strong>OK</strong> button</li>
-<li>click the <strong>OK</strong> button</li>
-</ul></li>
+  <li>go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a></li>
+  <li>download <strong>Eclipse for RCP and RAP Developers</strong>, preferably the 64-bit version (for example eclipse-rcp-luna-R-macosx-cocoa-x86_64.tar.gz)</li>
+  <li>unpack the archive</li>
+  <li>rename eclipse to <strong>eclipse-44-rcp-cdt</strong></li>
+  <li>move it to <strong>…/GNU ARM Eclipse/Eclipses</strong></li>
+  <li>on Windows, create a shortcut for eclipse.exe, rename it <strong>Eclipse 4.4 RCP CDT - Shortcut</strong> and copy it to the desktop or a place of your choice</li>
+  <li>on OS X, create a Finder alias for Eclipse.app, rename it <strong>Eclipse 4.4 RCP CDT alias</strong> and move it to a place of your choice</li>
+  <li>on GNU/Linux, create a link for eclipse, rename it <strong>Eclipse 4.4 RCP CDT alias</strong> and move it to a place of your choice</li>
+  <li>start the new Eclipse</li>
+  <li>create a new workspace, preferably in a separate folder, like <strong>Eclipse Workspaces/workspace-44-rcp</strong> (note: be sure you create the workspace where you need it to be, since moving later is generally not supported by Eclipse; if you need this, preferably create a new workspace)</li>
+  <li>check if you installed the right Eclipse; go to the Eclipse menu <strong>Help</strong> (<strong>Eclipse</strong> on OS X) → <strong>About Eclipse</strong> and the first line should read <strong>Eclipse for RCP and RAP Developers</strong></li>
+  <li><strong>Help</strong> → <strong>Install New Software</strong></li>
+  <li>Work with: Luna - <a href="http://download.eclipse.org/releases/luna">http://download.eclipse.org/releases/luna</a>
+    <ul>
+      <li>In <strong>Programming Languages</strong>
+        <ul>
+          <li>select <strong>C/C++ Development Tools</strong></li>
+          <li>select <strong>C/C++ Development Tools SDK</strong></li>
+        </ul>
+      </li>
+      <li>In <strong>Mobile and Device Development</strong>
+        <ul>
+          <li>select <strong>C/C++ GDB Hardware Debugging</strong></li>
+        </ul>
+      </li>
+      <li>click the <strong>Next</strong> button</li>
+      <li>accept the terms of the license agreement</li>
+      <li>click the <strong>Finish</strong> button</li>
+    </ul>
+  </li>
+  <li>wait for the new plug-ins to be installed</li>
+  <li>restart<br />
+  Note: without the CDT sources available in the SDK, the extension point schemas will not be available so attempts to add new elements to the extensions will not be possible, and only ‘Generic’ elements will be offered.</li>
+  <li>install base API</li>
+  <li>go to <a href="http://www.eclipse.org/cdt/downloads.php">http://www.eclipse.org/cdt/downloads.php</a>, and download <strong>cdt-master-8.3.0.zip</strong> (required to keep compatibility with Kepler 4.3)</li>
+  <li>unpack the archive</li>
+  <li>move the new folder to in the Eclipses folder</li>
+  <li>in Eclipse menu: <strong>Preferences…</strong> → <strong>Plug-in Development</strong> → <strong>API Baselines</strong>
+    <ul>
+      <li>click the <strong>Add Baseline…</strong> button
+        <ul>
+          <li>set Name: to 8.3.0</li>
+          <li>browse Location: to …/GNU ARM Eclipse/cdt-master-8.3.0 (or set to this folder and click the <strong>Reset</strong> button)</li>
+          <li>click the <strong>Finish</strong> button</li>
+        </ul>
+      </li>
+      <li>click the <strong>OK</strong> button</li>
+    </ul>
+  </li>
+  <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-4">Create and configure the workspace</h3>
+<h3 id="create-and-configure-the-workspace">Create and configure the workspace</h3>
 
 <ul>
-<li>  change the workspace preferences
-
-<ul>
-<li>go to Eclipse menu → <strong>Preferences</strong></li>
-<li><strong>General</strong> → <strong>Workspace</strong></li>
-<li>disable <strong>Build automatically</strong></li>
-<li>enable <strong>Refresh on access</strong></li>
-<li>enable <strong>Save automatically before rebuild</strong></li>
-<li>set <strong>Text file encoding: UTF-8</strong></li>
-<li>press the <strong>Apply</strong> button</li>
-<li><strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
-<li>enable <strong>Show Print Margin</strong> (80)</li>
-<li>enable <strong>Show Line Numbers</strong></li>
-<li>press the <strong>Apply</strong> button</li>
-<li>press the <strong>OK</strong> button</li>
-<li><strong>Run/Debug</strong> → <strong>Console</strong></li>
-<li>disable Limit console output</li>
-<li><strong>Java</strong> → <strong>Editor</strong> → <strong>Folding</strong></li>
-<li>disable <strong>Header Comments</strong></li>
-<li>disable <strong>Imports</strong></li>
-</ul></li>
+  <li>change the workspace preferences</li>
+  <li>go to Eclipse menu → <strong>Preferences</strong></li>
+  <li><strong>General</strong> → <strong>Workspace</strong>
+    <ul>
+      <li>disable <strong>Build automatically</strong></li>
+      <li>enable <strong>Refresh on access</strong></li>
+      <li>enable <strong>Save automatically before rebuild</strong></li>
+      <li>set <strong>Text file encoding: UTF-8</strong></li>
+      <li>press the <strong>Apply</strong> button</li>
+    </ul>
+  </li>
+  <li><strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong>
+    <ul>
+      <li>enable <strong>Show Print Margin</strong> (80)</li>
+      <li>enable <strong>Show Line Numbers</strong></li>
+      <li>press the <strong>Apply</strong> button</li>
+      <li>press the <strong>OK</strong> button</li>
+    </ul>
+  </li>
+  <li><strong>Run/Debug</strong> → <strong>Console</strong>
+    <ul>
+      <li>disable Limit console output</li>
+    </ul>
+  </li>
+  <li><strong>Java</strong> → <strong>Editor</strong> → <strong>Folding</strong>
+    <ul>
+      <li>disable <strong>Header Comments</strong></li>
+      <li>disable <strong>Imports</strong></li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="tocAnchor-1-1-5">Install Eclipse CDT</h3>
+<h3 id="install-eclipse-cdt">Install Eclipse CDT</h3>
 
 <p>This separate instance of Eclipse will be used to test the plug-in.</p>
 
 <ul>
-<li>  go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a></li>
-<li>  download <strong>Eclipse IDE for C/C++ Developers</strong> (eclipse-cpp-luna-R-macosx-cocoa-x86_64.tar.gz)</li>
-<li>  unpack the archive</li>
-<li>  rename <strong>eclipse</strong> to <strong>eclipse-4.4-cdt-test</strong></li>
-<li>  on Mac OS X, enter the folder, make a Finder alias of the <strong>Eclipse.app</strong>, rename it <strong>Eclipse 4.4 CDT test alias</strong> and move it to a place of your choice (the Desktop, for example)</li>
+  <li>go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a></li>
+  <li>download <strong>Eclipse IDE for C/C++ Developers</strong> (eclipse-cpp-luna-R-macosx-cocoa-x86_64.tar.gz)</li>
+  <li>unpack the archive</li>
+  <li>rename <strong>eclipse</strong> to <strong>eclipse-4.4-cdt-test</strong></li>
+  <li>on Mac OS X, enter the folder, make a Finder alias of the <strong>Eclipse.app</strong>, rename it <strong>Eclipse 4.4 CDT test alias</strong> and move it to a place of your choice (the Desktop, for example)</li>
 </ul>
 
-<h2 id="tocAnchor-1-7">Clone the repository</h2>
+<h2 id="clone-the-repository">Clone the repository</h2>
 
 <p>On Unix systems, the recommended method is using a command line:</p>
-<div class="highlight">
+
 <pre>
-<code class="language-text" data-lang="text">$ cd .../GNU ARM Eclipse
+<code>$ cd .../GNU ARM Eclipse
 $ git clone https://github.com/gnuarmeclipse/plug-ins.git plug-ins.git
 </code></pre>
-</div>
+
 <p>On Windows, without a git command, you can use Eclipse to clone the Git repository</p>
 
 <ul>
-<li>Eclipse Menu: <strong>File</strong> → <strong>Import</strong>
-
-<ul>
-<li>Git → <strong>Projects from Git</strong></li>
-<li>click <strong>Next</strong></li>
-</ul></li>
-<li>Select Repository Source
-
-<ul>
-<li>select <strong>Clone URI</strong></li>
-<li>click <strong>Next</strong></li>
-</ul></li>
-<li>Source Git Repository
-
-<ul>
-<li>URI: <a href="https://github.com/gnuarmeclipse/plug-ins.git">https://github.com/gnuarmeclipse/plug-ins.git</a></li>
-<li>click <strong>Next</strong></li>
-</ul></li>
-<li>Branch Selection
-
-<ul>
-<li>select all branches</li>
-<li>click <strong>Next</strong></li>
-</ul></li>
-<li>Local Destination
-
-<ul>
-<li>Directory: .../GNU ARM Eclipse/plug-ins.git</li>
-<li>Initial branch: stable (or devel, for the latest development version)</li>
-<li>click <strong>Next</strong></li>
-</ul></li>
-<li>Select a wizard to use for importing projects
-
-<ul>
-<li>click <strong>Cancel</strong> (do NOT import any projects)</li>
-</ul></li>
+  <li>Eclipse Menu: <strong>File</strong> → <strong>Import</strong>
+    <ul>
+      <li>Git → <strong>Projects from Git</strong></li>
+      <li>click <strong>Next</strong></li>
+    </ul>
+  </li>
+  <li>Select Repository Source
+    <ul>
+      <li>select <strong>Clone URI</strong></li>
+      <li>click <strong>Next</strong></li>
+    </ul>
+  </li>
+  <li>Source Git Repository
+    <ul>
+      <li>URI: https://github.com/gnuarmeclipse/plug-ins.git</li>
+      <li>click <strong>Next</strong></li>
+    </ul>
+  </li>
+  <li>Branch Selection
+    <ul>
+      <li>select all branches</li>
+      <li>click <strong>Next</strong></li>
+    </ul>
+  </li>
+  <li>Local Destination
+    <ul>
+      <li>Directory: …/GNU ARM Eclipse/plug-ins.git</li>
+      <li>Initial branch: stable (or devel, for the latest development version)</li>
+      <li>click <strong>Next</strong></li>
+    </ul>
+  </li>
+  <li>Select a wizard to use for importing projects
+    <ul>
+      <li>click <strong>Cancel</strong> (do NOT import any projects)</li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="tocAnchor-1-8">Import the projects</h2>
+<h2 id="import-the-projects">Import the projects</h2>
 
 <p>Import projects using Maven</p>
 
 <ul>
-<li>Eclipse Menu: <strong>File</strong> → <strong>Import</strong></li>
-<li>Select
-
-<ul>
-<li>Maven → <strong>Existing Maven Projects</strong></li>
-<li>click <strong>Next</strong></li>
-</ul></li>
-<li>Maven Projects
-
-<ul>
-<li>Root Directory: .../GNU ARM Eclipse/plug-ins.git</li>
-<li>Add project(s) to working set: GNU ARM Eclipse</li>
-<li>click <strong>Finish</strong>
-If doing this on a fresh Eclipse, accept to install <strong>Tycho Project Configurators</strong>.
+  <li>Eclipse Menu: <strong>File</strong> → <strong>Import</strong></li>
+  <li>Select
+    <ul>
+      <li>Maven → <strong>Existing Maven Projects</strong></li>
+      <li>click <strong>Next</strong></li>
+    </ul>
+  </li>
+  <li>Maven Projects
+    <ul>
+      <li>Root Directory: …/GNU ARM Eclipse/plug-ins.git</li>
+      <li>Add project(s) to working set: GNU ARM Eclipse</li>
+      <li>click <strong>Finish</strong><br />
+If doing this on a fresh Eclipse, accept to install <strong>Tycho Project Configurators</strong>.<br />
 Restart.</li>
-</ul></li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="tocAnchor-1-9">Associate to Git</h2>
+<h2 id="associate-to-git">Associate to Git</h2>
 
 <ul>
-<li>  select al projects</li>
-<li>  right click Share projects
-
-<ul>
-<li>select Git</li>
-<li>click <strong>Next</strong></li>
-<li>accept the locations</li>
-<li>click <strong>Finish</strong></li>
-</ul></li>
-<li>  select projects one by one; the git repository should appear after the project names</li>
+  <li>select al projects</li>
+  <li>right click Share projects</li>
+  <li>select Git</li>
+  <li>click <strong>Next</strong></li>
+  <li>accept the locations</li>
+  <li>click <strong>Finish</strong></li>
+  <li>select projects one by one; the git repository should appear after the project names</li>
 </ul>
 
 
@@ -339,174 +345,176 @@ Restart.</li>
 
 <aside id="sidebar">
 
-<h4><a href="/blog/">Latest News</a></h4>
+<h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
-<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+  <li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+  <li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
+
 
 <hr />
-<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/plugins/features/">Features</a></h4>
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/downloads/">Downloads</a></h4>
+<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-<li><a href="/downloads/">Overview</a></li>
-<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4><a href="/install/">Install</a></h4>
+<h4 id="installinstall"><a href="/install/">Install</a></h4>
 
 <ul>
-<li><a href="/install/">Overview</a></li>
-<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-<li><a href="/debug/install/">Debugging components</a>
-
-<ul>
-<li><a href="/debug/install/">Overview</a></li>
-<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-<li><a href="/openocd/install/">OpenOCD install</a></li>
-<li><a href="/qemu/install/">QEMU install</a></li>
-</ul></li>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging components</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h4>Important</h4>
+<h4 id="important">Important</h4>
 
 <ul>
-<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-<li><a href="/toolchain/path/">Toolchain path</a></li>
-<li><a href="/eclipse/project/portability/">Project portability</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4>Tutorials</h4>
+<h4 id="tutorials">Tutorials</h4>
 
 <ul>
-<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4>How to use</h4>
+<h4 id="how-to-use">How to use</h4>
 
 <ul>
-<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4><a href="/templates/">Templates</a></h4>
+<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
 
 <ul>
-<li><a href="/templates/">Overview</a></li>
-<li><a href="/templates/cortexm/">Cortex-M template</a></li>
-<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4><a href="/debug/">Debugging</a></h4>
+<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
 
 <ul>
-<li><a href="/debug/">Overview</a></li>
-<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-<li><a href="/qemu/">Overview</a> (read me first!)</li>
-<li><a href="/qemu/install/">QEMU Install</a></li>
-<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-<li><a href="/qemu/build-procedure/">How to build</a></li>
-<li><a href="/qemu/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-<li><a href="/openocd/">Overview</a> (read me first!)</li>
-<li><a href="/openocd/install/">OpenOCD Install</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/openocd/build-procedure/">How to build</a></li>
-<li><a href="/openocd/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-<li><a href="/windows-build-tools/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4>Advanced</h4>
+<h4 id="advanced">Advanced</h4>
 
 <ul>
-<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4><a href="/support/">Support</a></h4>
+<h4 id="supportsupport"><a href="/support/">Support</a></h4>
 
 <ul>
-<li><a href="/support/">Overview</a></li>
-<li><a href="/support/known-issues/">Known issues</a></li>
-<li><a href="/support/faq/">FAQ</a></li>
-<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4><a href="/developer/">Developer</a></h4>
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
 
 <ul>
-<li><a href="/developer/build-procedure/">How to build</a></li>
-<li><a href="/developer/publish-procedure/">How to publish</a></li>
-<li><a href="/developer/change-log">Change log</a></li>
-<li><a href="/developer/contribute/">Contribute</a></li>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4>Hardware</h4>
+<h4 id="hardware">Hardware</h4>
 
 <ul>
-<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4>Articles</h4>
+<h4 id="articles">Articles</h4>
 
 <ul>
-<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
 </ul>
 
-<h4>Licenses</h4>
+<h4 id="licenses">Licenses</h4>
 
 <ul>
-<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-<li><a href="/licenses/tools/">Tools</a></li>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
 </ul>
 
-<h4>Finance</h4>
+<h4 id="finance">Finance</h4>
 
 <ul>
-<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
 </ul>
 
-<h4><a href="/about/">About</a></h4>
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
 
 <hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
@@ -528,10 +536,12 @@ Restart.</li>
 <div class="site-footer">
   <div class="site-footer-links left">
     <ul>
-<li>© 2015 Liviu Ionescu</li>
-<li>Hosted on GitHub Pages</li>
-<li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
-<li><div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
+  <li>© 2015 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
 </ul>
 
   </div>
@@ -540,11 +550,11 @@ Restart.</li>
   </a>
   <div class="site-footer-links right">
     <ul>
-<li><a href="/">Home</a></li>
-<li><a href="/blog/">News</a></li>
-<li><a href="/downloads/">Downloads</a></li>
-<li><a href="/support/">Support</a></li>
-<li><a href="/about/">About</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
 </ul>
 
   </div>

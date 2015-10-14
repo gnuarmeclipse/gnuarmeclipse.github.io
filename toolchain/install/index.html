@@ -100,51 +100,51 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<a href="#overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Download</span></a>
+<a href="#download"><span class="tocnumber">2</span> <span class="toctext">Download</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Windows</span></a>
+<a href="#windows"><span class="tocnumber">3</span> <span class="toctext">Windows</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">OS X</span></a>
+<a href="#os-x"><span class="tocnumber">4</span> <span class="toctext">OS X</span></a>
 <ul>
 <li class="toc_level-2 toc_section-5">
-<a href="#tocAnchor-1-4-1"><span class="tocnumber">4.1</span> <span class="toctext">MacPorts</span></a>
+<a href="#macports"><span class="tocnumber">4.1</span> <span class="toctext">MacPorts</span></a>
 </li>
 </ul>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#tocAnchor-1-6"><span class="tocnumber">5</span> <span class="toctext">GNU/Linux</span></a>
+<a href="#gnulinux"><span class="tocnumber">5</span> <span class="toctext">GNU/Linux</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#tocAnchor-1-7"><span class="tocnumber">6</span> <span class="toctext">Toolchain path</span></a>
+<a href="#toolchain-path"><span class="tocnumber">6</span> <span class="toctext">Toolchain path</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><h2 id="tocAnchor-1-1">Overview</h2>
+</div><h2 id="overview">Overview</h2>
 
 <p>The build plug-in is highly configurable in terms of executable names and location, so you can use any 32/64-bits ARM GNU toolchain you preffer, but, for better results, the recommended toolchain for <strong>bare metal</strong> target applications is <a href="http://launchpad.net/gcc-arm-embedded"><strong>GCC ARM Embedded</strong></a> (formerly GNU Tools for ARM Embedded Processors); for <strong>GNU/Linux</strong> target applications, the <strong><a href="http://www.linaro.org/downloads/">Linaro</a></strong> family of toolchains provides a large selection of choices, for various specific needs (little/big endian, 32/64-bits, etc).</p>
 
 <p>Please note the distinction between the <strong>target platform</strong> and the <strong>host/development platform</strong>.</p>
 
 <ul>
-<li>the target platform defines the environment where the application will be executed, and in general can be either a bare metal (the application sits directly on the hardware and has intimate control of it, usually including a form of scheduler to allow multiple threads to execute pseudo-simultaneously on the same processor), and applications that sit on top of an operating system, usually a distribution of GNU/Linux optimised for embedded environments</li>
-<li>the host/development platform is the platform where the development tools are executed, usually as cross compilers, and can be, in our case, any platform that supports Eclipse, for example Windows, OS X, GNU/Linux, BSD, etc.</li>
+  <li>the target platform defines the environment where the application will be executed, and in general can be either a bare metal (the application sits directly on the hardware and has intimate control of it, usually including a form of scheduler to allow multiple threads to execute pseudo-simultaneously on the same processor), and applications that sit on top of an operating system, usually a distribution of GNU/Linux optimised for embedded environments</li>
+  <li>the host/development platform is the platform where the development tools are executed, usually as cross compilers, and can be, in our case, any platform that supports Eclipse, for example Windows, OS X, GNU/Linux, BSD, etc.</li>
 </ul>
 
 <blockquote>
-<p>Note: Be sure you select the proper toolchain for the target platform, otherwise builds will not succeed, or the generated applications will fail to run. <strong>Do not</strong> try to use the GCC ARM Embedded to build  GNU/Linux applications, because the executables will not run on anything than bare metal, and <strong>do not try to use the Linaro toolchains for bare metal applications</strong>.</p>
+  <p>Note: Be sure you select the proper toolchain for the target platform, otherwise builds will not succeed, or the generated applications will fail to run. <strong>Do not</strong> try to use the GCC ARM Embedded to build  GNU/Linux applications, because the executables will not run on anything than bare metal, and <strong>do not try to use the Linaro toolchains for bare metal applications</strong>.</p>
 </blockquote>
 
 <p>The installation details described below assume the selection of the GCC ARM Embedded toolchain. For other toolchains, please follow the specific installation instructions.</p>
 
-<h2 id="tocAnchor-1-2">Download</h2>
+<h2 id="download">Download</h2>
 
 <p>Due to portability reasons, the GNU ARM Eclipse plug-ins do not include any toolchain binaries, but they can be downloaded either from the <a href="http://launchpad.net/gcc-arm-embedded">GCC ARM Embedded project page</a>, or, even better, from the <a href="http://launchpad.net/gcc-arm-embedded/+download">All downloads</a> page, where it is a bit easier to identify which file is required.</p>
 
@@ -158,174 +158,169 @@
 <img src="/assets/images/2014/01/LaunchpadDownloads.png" alt="The launchpad download page" />
 </p>
 
-<h2 id="tocAnchor-1-3">Windows</h2>
+<h2 id="windows">Windows</h2>
 
 <p>The following steps can be performed on Windows:</p>
 
 <ul>
-<li>download the latest Windows installer <strong>.exe</strong> file (currently <code>gcc-arm-none-eabi-4_8-2014q2-20140609-win32.exe</code>, about 84MB)</li>
-<li>locate the file (usually in the <code>...\Downloads\</code>  folder) and double click it to start the installer</li>
-<li>authenticate with the administrative password, to allow the installer write in system locations</li>
+  <li>download the latest Windows installer <strong>.exe</strong> file (currently <code>gcc-arm-none-eabi-4_8-2014q2-20140609-win32.exe</code>, about 84MB)</li>
+  <li>locate the file (usually in the <code>...\Downloads\</code>  folder) and double click it to start the installer</li>
+  <li>
+    <p>authenticate with the administrative password, to allow the installer write in system locations</p>
+
+    <p><img src="/assets/images/2014/01/MS_admin.png" alt="MS_admin" /></p>
+  </li>
+  <li>select the desired language</li>
+  <li>confirm that you want to install the toolchain</li>
+  <li>accept the terms of the license agreement</li>
+  <li>
+    <p>accept the destination folder, usually a version specific sub-folder of <code>C:\Program Files\</code></p>
+
+    <blockquote>
+      <p>Note: It is highly recommended to <strong>do not to change the install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    </blockquote>
+
+    <p><img src="/assets/images/2014/01/MS_destination_location.png" alt="The destination folder" /></p>
+  </li>
+  <li>wait a few moments for the installer to copy files</li>
+  <li>
+    <p>in the final window be sure you <strong>disable adding the toolchain path to the environment</strong></p>
+
+    <p><img src="/assets/images/2014/01/MS_finish.png" alt="Disable adding toolchain path to environment" /></p>
+  </li>
+  <li>read the <code>readme.txt</code> file</li>
+  <li>test if the compiler is functional</li>
 </ul>
 
-<p>
-<img src="/assets/images/2014/01/MS_admin.png" alt="MS_admin" />
-</p>
-
-<ul>
-<li>select the desired language</li>
-<li>confirm that you want to install the toolchain</li>
-<li>accept the terms of the license agreement</li>
-<li>accept the destination folder, usually a version specific sub-folder of <code>C:\Program Files\</code></li>
-</ul>
-
-<blockquote>
-<p>Note: It is highly recommended to <strong>do not to change the install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
-</blockquote>
-
-<p>
-<img src="/assets/images/2014/01/MS_destination_location.png" alt="The destination folder" />
-</p>
-
-<ul>
-<li>wait a few moments for the installer to copy files</li>
-<li>in the final window be sure you <strong>disable adding the toolchain path to the environment</strong></li>
-</ul>
-
-<p>
-<img src="/assets/images/2014/01/MS_finish.png" alt="Disable adding toolchain path to environment" />
-</p>
-
-<ul>
-<li>read the <code>readme.txt</code> file</li>
-<li>test if the compiler is functional</li>
-</ul>
-<div class="highlight">
 <pre>
-<code class="language-text" data-lang="text">C:\Users\Liviu Ionescu\&gt;"C:\Program Files\GNU Tools ARM Embedded\4.8 2014q2\bin\arm-none-eabi-gcc.exe" --version
+<code>C:\Users\Liviu Ionescu\&gt;"C:\Program Files\GNU Tools ARM Embedded\4.8 2014q2\bin\arm-none-eabi-gcc.exe" --version
 arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-branch revision 211358]
 </code></pre>
-</div>
+
 <p>For Windows, the next step would be to install the <a href="/windows-build-tools/">build tools (make &amp; rm)</a>.</p>
 
 <p>The complete toolchain documentation is available in the <code>...\share\doc\pdf\</code> folder.</p>
 
-<p>If you'll ever need to remove the toolchain, there is an <strong>uninstall.exe</strong> program available in the toolchain root folder.</p>
+<p>If you’ll ever need to remove the toolchain, there is an <strong>uninstall.exe</strong> program available in the toolchain root folder.</p>
 
-<h2 id="tocAnchor-1-4">OS X</h2>
+<h2 id="os-x">OS X</h2>
 
 <p>The following steps can be performed on OS X:</p>
 
 <ul>
-<li>download the latest OS X install tarball file (currently <code>gcc-arm-none-eabi-4_8-2014q2-20140609-mac.tar.bz2</code>, about 66MB)</li>
-<li>locate the file (usually in the <code>$HOME/Downloads</code> folder)</li>
-<li>decide on a location to install the toolchain; the recommended folder is <code>/usr/local/</code></li>
-<li>unpack the archive in the destination folder</li>
+  <li>download the latest OS X install tarball file (currently <code>gcc-arm-none-eabi-4_8-2014q2-20140609-mac.tar.bz2</code>, about 66MB)</li>
+  <li>locate the file (usually in the <code>$HOME/Downloads</code> folder)</li>
+  <li>decide on a location to install the toolchain; the recommended folder is <code>/usr/local/</code></li>
+  <li>
+    <p>unpack the archive in the destination folder</p>
+
+    <blockquote>
+      <p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    </blockquote>
+  </li>
 </ul>
 
-<blockquote>
-<p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
-</blockquote>
-<div class="highlight">
 <pre>
-<code class="language-text" data-lang="text">$ sudo mkdir -p /usr/local
+<code>$ sudo mkdir -p /usr/local
 $ cd /usr/local
 $ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_8-2014q2-20140609-mac.tar.bz2
 </code></pre>
-</div>
+
 <ul>
-<li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q2</code></li>
-<li>test if the compiler is functional</li>
+  <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q2</code></li>
+  <li>test if the compiler is functional</li>
 </ul>
-<div class="highlight">
+
 <pre>
-<code class="language-text" data-lang="text">$ /usr/local/gcc-arm-none-eabi-4_8-2014q2/bin/arm-none-eabi-gcc --version
+<code>$ /usr/local/gcc-arm-none-eabi-4_8-2014q2/bin/arm-none-eabi-gcc --version
 arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-branch revision 211358]
 </code></pre>
-</div>
+
 <blockquote>
-<p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+  <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
 </blockquote>
 
 <p>The complete toolchain documentation is available in the <code>.../share/doc/pdf/</code> folder.</p>
 
-<p>If you'll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_8-2014q2</code>, there are no other components stored in system folders.</p>
+<p>If you’ll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_8-2014q2</code>, there are no other components stored in system folders.</p>
 
-<h3 id="tocAnchor-1-4-1">MacPorts</h3>
+<h3 id="macports">MacPorts</h3>
 
 <p>In case you have MacPorts installed, be sure you remove the MacPorts path from the user path (edit the <strong>.profile</strong> in your home folder and comment out the line where <code>/opt/local/</code> is added in front of the PATH), especially if you installed any toolchain inside MacPorts, since this will be a serious source of confusion.</p>
 
-<h2 id="tocAnchor-1-6">GNU/Linux</h2>
+<h2 id="gnulinux">GNU/Linux</h2>
 
 <p>The following steps were performed on <strong>Ubuntu 14.04 LTSx64</strong> (please adjust them accordingly for other distributions):</p>
 
 <ul>
-<li>since the toolchain executables are 32-bits apps, when running on 64-bits machines, be sure you install the following 32-bits libraries (for different versions check the toolchain README for the actual list):</li>
-</ul>
-<div class="highlight">
-<pre>
-<code class="language-text" data-lang="text">$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
-</code></pre>
-</div>
-<ul>
-<li>on Ubuntu 15.04 the following libraries are required:</li>
-</ul>
-<div class="highlight">
-<pre>
-<code class="language-text" data-lang="text">$ sudo apt-get install lib32ncurses5
-</code></pre>
-</div>
-<ul>
-<li>on Ubuntu 12 LTSx64 all 32-bits libraries were packed in ia32-libs, so you can also use, but be prepared to get a lot of useless libraries:</li>
-</ul>
-<div class="highlight">
-<pre>
-<code class="language-text" data-lang="text">$ sudo apt-get install ia32-libs
-</code></pre>
-</div>
-<ul>
-<li>download the latest Linux install tarball file (currently <code>gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2</code>, more than 60MB)</li>
-<li>locate the file (usually in the <code>$HOME/Downloads/</code>  folder)</li>
-<li>decide on a location to install the toolchain; the recommended folder is <code>/usr/local/</code></li>
-<li>unpack the archive in the destination folder</li>
+  <li>since the toolchain executables are 32-bits apps, when running on 64-bits machines, be sure you install the following 32-bits libraries (for different versions check the toolchain README for the actual list):</li>
 </ul>
 
-<blockquote>
-<p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
-</blockquote>
-<div class="highlight">
 <pre>
-<code class="language-text" data-lang="text">$ cd /usr/local
+<code>$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
+</code></pre>
+
+<ul>
+  <li>on Ubuntu 15.04 the following libraries are required:</li>
+</ul>
+
+<pre>
+<code>$ sudo apt-get install lib32ncurses5
+</code></pre>
+
+<ul>
+  <li>on Ubuntu 12 LTSx64 all 32-bits libraries were packed in ia32-libs, so you can also use, but be prepared to get a lot of useless libraries:</li>
+</ul>
+
+<pre>
+<code>$ sudo apt-get install ia32-libs
+</code></pre>
+
+<ul>
+  <li>download the latest Linux install tarball file (currently <code>gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2</code>, more than 60MB)</li>
+  <li>locate the file (usually in the <code>$HOME/Downloads/</code>  folder)</li>
+  <li>decide on a location to install the toolchain; the recommended folder is <code>/usr/local/</code></li>
+  <li>
+    <p>unpack the archive in the destination folder</p>
+
+    <blockquote>
+      <p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<pre>
+<code>$ cd /usr/local
 $ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2
 </code></pre>
-</div>
+
 <ul>
-<li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code></li>
-<li>test if the compiler is functional</li>
+  <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code></li>
+  <li>test if the compiler is functional</li>
 </ul>
-<div class="highlight">
+
 <pre>
-<code class="language-text" data-lang="text">$ /usr/local/gcc-arm-none-eabi-4_8-2014q1/bin/arm-none-eabi-gcc --version
+<code>$ /usr/local/gcc-arm-none-eabi-4_8-2014q1/bin/arm-none-eabi-gcc --version
 arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (release) [ARM/embedded-4_8-branch revision 208322]
 </code></pre>
-</div>
+
 <blockquote>
-<p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+  <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
 </blockquote>
 
 <p>The complete toolchain documentation is available in the <code>.../share/doc/pdf/</code> folder.</p>
 
-<p>If you'll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code>, there are no other components stored in system folders.</p>
+<p>If you’ll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code>, there are no other components stored in system folders.</p>
 
-<h2 id="tocAnchor-1-7">Toolchain path</h2>
+<h2 id="toolchain-path">Toolchain path</h2>
 
 <p>To be sure you did not miss this recommendation, here it is again:</p>
 
 <blockquote>
-<p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+  <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
 </blockquote>
 
-<p>If there would be only one single version of one single toolchain in existence, then it wouldn't be a problem, but as soon as you start real world applications, you will face at least the need to keep multiple versions of the same toolchain installed, if not multiple toolchains, and this is when your trouble starts.</p>
+<p>If there would be only one single version of one single toolchain in existence, then it wouldn’t be a problem, but as soon as you start real world applications, you will face at least the need to keep multiple versions of the same toolchain installed, if not multiple toolchains, and this is when your trouble starts.</p>
 
 <p>The GNU ARM Eclipse plug-in has an advanced <a href="/toolchain/path/">toolchain path management</a> (presented in more detail in the separate page). Use it!</p>
 
@@ -339,174 +334,176 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (releas
 
 <aside id="sidebar">
 
-<h4><a href="/blog/">Latest News</a></h4>
+<h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
-<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+  <li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+  <li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
+
 
 <hr />
-<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/plugins/features/">Features</a></h4>
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/downloads/">Downloads</a></h4>
+<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-<li><a href="/downloads/">Overview</a></li>
-<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4><a href="/install/">Install</a></h4>
+<h4 id="installinstall"><a href="/install/">Install</a></h4>
 
 <ul>
-<li><a href="/install/">Overview</a></li>
-<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-<li><a href="/debug/install/">Debugging components</a>
-
-<ul>
-<li><a href="/debug/install/">Overview</a></li>
-<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-<li><a href="/openocd/install/">OpenOCD install</a></li>
-<li><a href="/qemu/install/">QEMU install</a></li>
-</ul></li>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging components</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h4>Important</h4>
+<h4 id="important">Important</h4>
 
 <ul>
-<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-<li><a href="/toolchain/path/">Toolchain path</a></li>
-<li><a href="/eclipse/project/portability/">Project portability</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4>Tutorials</h4>
+<h4 id="tutorials">Tutorials</h4>
 
 <ul>
-<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4>How to use</h4>
+<h4 id="how-to-use">How to use</h4>
 
 <ul>
-<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4><a href="/templates/">Templates</a></h4>
+<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
 
 <ul>
-<li><a href="/templates/">Overview</a></li>
-<li><a href="/templates/cortexm/">Cortex-M template</a></li>
-<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4><a href="/debug/">Debugging</a></h4>
+<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
 
 <ul>
-<li><a href="/debug/">Overview</a></li>
-<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-<li><a href="/qemu/">Overview</a> (read me first!)</li>
-<li><a href="/qemu/install/">QEMU Install</a></li>
-<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-<li><a href="/qemu/build-procedure/">How to build</a></li>
-<li><a href="/qemu/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-<li><a href="/openocd/">Overview</a> (read me first!)</li>
-<li><a href="/openocd/install/">OpenOCD Install</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/openocd/build-procedure/">How to build</a></li>
-<li><a href="/openocd/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-<li><a href="/windows-build-tools/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4>Advanced</h4>
+<h4 id="advanced">Advanced</h4>
 
 <ul>
-<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4><a href="/support/">Support</a></h4>
+<h4 id="supportsupport"><a href="/support/">Support</a></h4>
 
 <ul>
-<li><a href="/support/">Overview</a></li>
-<li><a href="/support/known-issues/">Known issues</a></li>
-<li><a href="/support/faq/">FAQ</a></li>
-<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4><a href="/developer/">Developer</a></h4>
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
 
 <ul>
-<li><a href="/developer/build-procedure/">How to build</a></li>
-<li><a href="/developer/publish-procedure/">How to publish</a></li>
-<li><a href="/developer/change-log">Change log</a></li>
-<li><a href="/developer/contribute/">Contribute</a></li>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4>Hardware</h4>
+<h4 id="hardware">Hardware</h4>
 
 <ul>
-<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4>Articles</h4>
+<h4 id="articles">Articles</h4>
 
 <ul>
-<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
 </ul>
 
-<h4>Licenses</h4>
+<h4 id="licenses">Licenses</h4>
 
 <ul>
-<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-<li><a href="/licenses/tools/">Tools</a></li>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
 </ul>
 
-<h4>Finance</h4>
+<h4 id="finance">Finance</h4>
 
 <ul>
-<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
 </ul>
 
-<h4><a href="/about/">About</a></h4>
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
 
 <hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
@@ -528,10 +525,12 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (releas
 <div class="site-footer">
   <div class="site-footer-links left">
     <ul>
-<li>© 2015 Liviu Ionescu</li>
-<li>Hosted on GitHub Pages</li>
-<li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
-<li><div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
+  <li>© 2015 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
 </ul>
 
   </div>
@@ -540,11 +539,11 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (releas
   </a>
   <div class="site-footer-links right">
     <ul>
-<li><a href="/">Home</a></li>
-<li><a href="/blog/">News</a></li>
-<li><a href="/downloads/">Downloads</a></li>
-<li><a href="/support/">Support</a></li>
-<li><a href="/about/">About</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
 </ul>
 
   </div>

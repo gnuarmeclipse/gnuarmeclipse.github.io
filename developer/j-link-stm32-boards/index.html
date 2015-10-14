@@ -100,25 +100,25 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<a href="#overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">The J-Link to ST cable</span></a>
+<a href="#the-j-link-to-st-cable"><span class="tocnumber">2</span> <span class="toctext">The J-Link to ST cable</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">The ST 6-pin SWD connector</span></a>
+<a href="#the-st-6-pin-swd-connector"><span class="tocnumber">3</span> <span class="toctext">The ST 6-pin SWD connector</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">The J-Link 20-pin JTAG/SWD connector</span></a>
+<a href="#the-j-link-20-pin-jtagswd-connector"><span class="tocnumber">4</span> <span class="toctext">The J-Link 20-pin JTAG/SWD connector</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">The target detect strap</span></a>
+<a href="#the-target-detect-strap"><span class="tocnumber">5</span> <span class="toctext">The target detect strap</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Jumpers</span></a>
+<a href="#jumpers"><span class="tocnumber">6</span> <span class="toctext">Jumpers</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#tocAnchor-1-7"><span class="tocnumber">7</span> <span class="toctext">Conclusion</span></a>
+<a href="#conclusion"><span class="tocnumber">7</span> <span class="toctext">Conclusion</span></a>
 </li>
 </ul>
 </td>
@@ -127,7 +127,7 @@
 </table>
 </div><p>This page explains how to build a cable to connect the J-Link to STM32 DISCOVERY and NUCLEO boards.</p>
 
-<h2 id="tocAnchor-1-1">Overview</h2>
+<h2 id="overview">Overview</h2>
 
 <p>As most vendors do, ST also designed the cheap STM32 DISCOVERY and NUCLEO boards to include an on-board programmer. The protocol used by this programmer is ST-LINK/V2, an ST protocol. Unfortunately ST does not provide a portable GDB server to support the ST-LINK/V2 protocol, and using these STM32 boards out of the box on GNU/Linux or OS X is not possible.</p>
 
@@ -135,7 +135,7 @@
 
 <p>Preferably the J-Link debug plug-in would be used, but, for costs reasons, ST did not provide the standard JTAG connector, so it is currently not possible to connect to these boards with J-Link.</p>
 
-<h2 id="tocAnchor-1-2">The J-Link to ST cable</h2>
+<h2 id="the-j-link-to-st-cable">The J-Link to ST cable</h2>
 
 <p>For those equipped with a soldering iron, it is relatively easy to adapt the existing 6-pin connector to J-Link.</p>
 
@@ -144,58 +144,58 @@
 <p>The bill of materials includes:</p>
 
 <ul>
-<li>  a 6 wire ribbon cable, about 15 cm (6") long</li>
-<li>  a 6-pin 2.54mm (0.1") female, single raw, in-line connector, to match the STM board header</li>
-<li>  a 20-pin 2.54mm (0.1") female, dual raw (2x10), in-line connector, to match the J-Link male connector</li>
+  <li>a 6 wire ribbon cable, about 15 cm (6”) long</li>
+  <li>a 6-pin 2.54mm (0.1”) female, single raw, in-line connector, to match the STM board header</li>
+  <li>a 20-pin 2.54mm (0.1”) female, dual raw (2x10), in-line connector, to match the J-Link male connector</li>
 </ul>
 
 <p>Solder the ribbon cable to the 6-pin connector, and be sure you mark the first pin with a different colour, to later help you plug the connector in the proper position.</p>
 
-<h2 id="tocAnchor-1-3">The ST 6-pin SWD connector</h2>
+<h2 id="the-st-6-pin-swd-connector">The ST 6-pin SWD connector</h2>
 
 <p>The signals on this 6-pin are:</p>
 
 <ul>
-<li>  1 - Vcc → 1 (brown)</li>
-<li>  2 - JTCK/SWCLK → 9 (red)</li>
-<li>  3 - GND → any of 4,<strong>6</strong>,8,10,12,14,16,18,20 (orange)</li>
-<li>  4 - JTMS/SWDIO → 7 (yellow)</li>
-<li>  5 - NRST → 15 (green)</li>
-<li>  6 - SWO → 13 (blue)</li>
+  <li>1 - Vcc → 1 (brown)</li>
+  <li>2 - JTCK/SWCLK → 9 (red)</li>
+  <li>3 - GND → any of 4,<strong>6</strong>,8,10,12,14,16,18,20 (orange)</li>
+  <li>4 - JTMS/SWDIO → 7 (yellow)</li>
+  <li>5 - NRST → 15 (green)</li>
+  <li>6 - SWO → 13 (blue)</li>
 </ul>
 
-<h2 id="tocAnchor-1-4">The J-Link 20-pin JTAG/SWD connector</h2>
+<h2 id="the-j-link-20-pin-jtagswd-connector">The J-Link 20-pin JTAG/SWD connector</h2>
 
 <p>The signals on the 20-pin are split into two groups, the even number pins are on one raw, and, except pin 2, all are connected to GND, and the odd number pins are:</p>
 
 <ul>
-<li>  1 - Viref → 1 (brown)</li>
-<li>  3 - nRST</li>
-<li>  5 - TDI</li>
-<li>  7 - TMS/SWDIO → 4 (yellow)</li>
-<li>  9 - TCK/SWCLK → 2 (red)</li>
-<li>  11 - RTCK</li>
-<li>  13 - TDO/SWO → 6 (blue)</li>
-<li>  15 - RESET → 5 (green)</li>
-<li>  17 - DBGQ</li>
-<li>  19 - 5V out</li>
-<li>  2 - NC</li>
-<li>  4 - GND</li>
-<li>  6 - GND → 3 (orange)</li>
-<li>  8,10,12,12,16,18,20 - GND</li>
+  <li>1 - Viref → 1 (brown)</li>
+  <li>3 - nRST</li>
+  <li>5 - TDI</li>
+  <li>7 - TMS/SWDIO → 4 (yellow)</li>
+  <li>9 - TCK/SWCLK → 2 (red)</li>
+  <li>11 - RTCK</li>
+  <li>13 - TDO/SWO → 6 (blue)</li>
+  <li>15 - RESET → 5 (green)</li>
+  <li>17 - DBGQ</li>
+  <li>19 - 5V out</li>
+  <li>2 - NC</li>
+  <li>4 - GND</li>
+  <li>6 - GND → 3 (orange)</li>
+  <li>8,10,12,12,16,18,20 - GND</li>
 </ul>
 
 <p>The correspondence between the two connectors is represented on each connector by the second number.</p>
 
-<h2 id="tocAnchor-1-5">The target detect strap</h2>
+<h2 id="the-target-detect-strap">The target detect strap</h2>
 
 <p>After building the ribbon cable, the ST board needs a strap to connect the pin 1 of the 6-pin connector to Vcc, to signal J-Link that the target board is present and powered.</p>
 
-<h2 id="tocAnchor-1-6">Jumpers</h2>
+<h2 id="jumpers">Jumpers</h2>
 
 <p>The ST boards have a pair of jumpers, that need to be installed, for the programming signals to be connected from the 6-pin connector to the target processor.</p>
 
-<h2 id="tocAnchor-1-7">Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>With this cable it is now possible to connect to the ST board with an external J-Link probe, to program the flash and run debugging sessions.</p>
 
@@ -209,174 +209,176 @@
 
 <aside id="sidebar">
 
-<h4><a href="/blog/">Latest News</a></h4>
+<h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
-<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+  <li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+  <li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
+
 
 <hr />
-<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/plugins/features/">Features</a></h4>
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/downloads/">Downloads</a></h4>
+<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-<li><a href="/downloads/">Overview</a></li>
-<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4><a href="/install/">Install</a></h4>
+<h4 id="installinstall"><a href="/install/">Install</a></h4>
 
 <ul>
-<li><a href="/install/">Overview</a></li>
-<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-<li><a href="/debug/install/">Debugging components</a>
-
-<ul>
-<li><a href="/debug/install/">Overview</a></li>
-<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-<li><a href="/openocd/install/">OpenOCD install</a></li>
-<li><a href="/qemu/install/">QEMU install</a></li>
-</ul></li>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging components</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h4>Important</h4>
+<h4 id="important">Important</h4>
 
 <ul>
-<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-<li><a href="/toolchain/path/">Toolchain path</a></li>
-<li><a href="/eclipse/project/portability/">Project portability</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4>Tutorials</h4>
+<h4 id="tutorials">Tutorials</h4>
 
 <ul>
-<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4>How to use</h4>
+<h4 id="how-to-use">How to use</h4>
 
 <ul>
-<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4><a href="/templates/">Templates</a></h4>
+<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
 
 <ul>
-<li><a href="/templates/">Overview</a></li>
-<li><a href="/templates/cortexm/">Cortex-M template</a></li>
-<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4><a href="/debug/">Debugging</a></h4>
+<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
 
 <ul>
-<li><a href="/debug/">Overview</a></li>
-<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-<li><a href="/qemu/">Overview</a> (read me first!)</li>
-<li><a href="/qemu/install/">QEMU Install</a></li>
-<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-<li><a href="/qemu/build-procedure/">How to build</a></li>
-<li><a href="/qemu/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-<li><a href="/openocd/">Overview</a> (read me first!)</li>
-<li><a href="/openocd/install/">OpenOCD Install</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/openocd/build-procedure/">How to build</a></li>
-<li><a href="/openocd/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-<li><a href="/windows-build-tools/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4>Advanced</h4>
+<h4 id="advanced">Advanced</h4>
 
 <ul>
-<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4><a href="/support/">Support</a></h4>
+<h4 id="supportsupport"><a href="/support/">Support</a></h4>
 
 <ul>
-<li><a href="/support/">Overview</a></li>
-<li><a href="/support/known-issues/">Known issues</a></li>
-<li><a href="/support/faq/">FAQ</a></li>
-<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4><a href="/developer/">Developer</a></h4>
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
 
 <ul>
-<li><a href="/developer/build-procedure/">How to build</a></li>
-<li><a href="/developer/publish-procedure/">How to publish</a></li>
-<li><a href="/developer/change-log">Change log</a></li>
-<li><a href="/developer/contribute/">Contribute</a></li>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4>Hardware</h4>
+<h4 id="hardware">Hardware</h4>
 
 <ul>
-<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4>Articles</h4>
+<h4 id="articles">Articles</h4>
 
 <ul>
-<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
 </ul>
 
-<h4>Licenses</h4>
+<h4 id="licenses">Licenses</h4>
 
 <ul>
-<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-<li><a href="/licenses/tools/">Tools</a></li>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
 </ul>
 
-<h4>Finance</h4>
+<h4 id="finance">Finance</h4>
 
 <ul>
-<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
 </ul>
 
-<h4><a href="/about/">About</a></h4>
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
 
 <hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
@@ -398,10 +400,12 @@
 <div class="site-footer">
   <div class="site-footer-links left">
     <ul>
-<li>© 2015 Liviu Ionescu</li>
-<li>Hosted on GitHub Pages</li>
-<li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
-<li><div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
+  <li>© 2015 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
 </ul>
 
   </div>
@@ -410,11 +414,11 @@
   </a>
   <div class="site-footer-links right">
     <ul>
-<li><a href="/">Home</a></li>
-<li><a href="/blog/">News</a></li>
-<li><a href="/downloads/">Downloads</a></li>
-<li><a href="/support/">Support</a></li>
-<li><a href="/about/">About</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
 </ul>
 
   </div>

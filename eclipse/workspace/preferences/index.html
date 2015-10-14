@@ -100,31 +100,31 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Save automatically and Text file encoding</span></a>
+<a href="#save-automatically-and-text-file-encoding"><span class="tocnumber">1</span> <span class="toctext">Save automatically and Text file encoding</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Use active build configuration for indexing</span></a>
+<a href="#use-active-build-configuration-for-indexing"><span class="tocnumber">2</span> <span class="toctext">Use active build configuration for indexing</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Show line numbers</span></a>
+<a href="#show-line-numbers"><span class="tocnumber">3</span> <span class="toctext">Show line numbers</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Editor folding</span></a>
+<a href="#editor-folding"><span class="tocnumber">4</span> <span class="toctext">Editor folding</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Insert spaces for tabs</span></a>
+<a href="#insert-spaces-for-tabs"><span class="tocnumber">5</span> <span class="toctext">Insert spaces for tabs</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Code formatter</span></a>
+<a href="#code-formatter"><span class="tocnumber">6</span> <span class="toctext">Code formatter</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#tocAnchor-1-7"><span class="tocnumber">7</span> <span class="toctext">Build console</span></a>
+<a href="#build-console"><span class="tocnumber">7</span> <span class="toctext">Build console</span></a>
 </li>
 <li class="toc_level-1 toc_section-8">
-<a href="#tocAnchor-1-8"><span class="tocnumber">8</span> <span class="toctext">Doxygen</span></a>
+<a href="#doxygen"><span class="tocnumber">8</span> <span class="toctext">Doxygen</span></a>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#tocAnchor-1-9"><span class="tocnumber">9</span> <span class="toctext">Debug previous application</span></a>
+<a href="#debug-previous-application"><span class="tocnumber">9</span> <span class="toctext">Debug previous application</span></a>
 </li>
 </ul>
 </td>
@@ -133,85 +133,85 @@
 </table>
 </div><p>Eclipse has some unusual defaults, and this is one of the reasons sometimes Eclipse fails to meet beginner expectations. Fortunately this can be easily fixed, each time after creating a new workspace it is recommended to check and maybe change the settings below.</p>
 
-<h2 id="tocAnchor-1-1">Save automatically and Text file encoding</h2>
+<h2 id="save-automatically-and-text-file-encoding">Save automatically and Text file encoding</h2>
 
 <p>Sometimes users are very confused to see that after the edit/compile/run cycle nothing changed in the program behaviour, although the editor clearly shows the changes. Usually the main reason is that the file was not actually saved and the build process used the previous version of the file. To automatically save edited files before build,</p>
 
 <ul>
-<li>go to the Eclipse menu <strong>Preferences...</strong> → <strong>General</strong> → <strong>Workspace</strong></li>
-<li>enable <strong>Save automatically before build</strong></li>
+  <li>go to the Eclipse menu <strong>Preferences…</strong> → <strong>General</strong> → <strong>Workspace</strong></li>
+  <li>enable <strong>Save automatically before build</strong></li>
 </ul>
 
 <p>In the same page, select the default text file encoding to <strong>UTF-8</strong>. Without this setting, special characters like diacritics, are generally replaced with question marks (for example the µOS++ name used in the template generated source files is shown as ??OS++ or even ��OS++).</p>
 
 <ul>
-<li>in the <strong>Text file encoding</strong> section</li>
-<li>click the <strong>Other</strong> button</li>
-<li>select <strong>UTF-8</strong> in the combo box</li>
+  <li>in the <strong>Text file encoding</strong> section</li>
+  <li>click the <strong>Other</strong> button</li>
+  <li>select <strong>UTF-8</strong> in the combo box</li>
 </ul>
 
 <p>It is also recommended to:</p>
 
 <ul>
-<li>check the <strong>New text file line delimiter</strong> to be set to Unix</li>
-<li>disable the <strong>Build automatically</strong> option</li>
+  <li>check the <strong>New text file line delimiter</strong> to be set to Unix</li>
+  <li>disable the <strong>Build automatically</strong> option</li>
 </ul>
 
-<p>When you're done:</p>
+<p>When you’re done:</p>
 
 <ul>
-<li>click the <strong>Apply</strong> button</li>
+  <li>click the <strong>Apply</strong> button</li>
 </ul>
 
 <p>
 <img src="/assets/images/2014/06/PreferencesSave.png" alt="Preferences: Save automatically" />
 </p>
 
-<h2 id="tocAnchor-1-2">Use active build configuration for indexing</h2>
+<h2 id="use-active-build-configuration-for-indexing">Use active build configuration for indexing</h2>
 
 <p>Eclipse CDT has a very powerful indexer, which parses the source code on the fly and provides hints, auto-completion help, error reporting, etc while editing, without having to start the build process. For this indexer to be accurate, it must be in sync with the compiler, in terms of options and environment. For the indexer to automatically sync when changing from one configuration to another, check if the indexer was set to use the active configuration:</p>
 
 <ul>
-<li>go to the Eclipse menu <strong>Preferences...</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
-<li>enable <strong>Use active build configuration</strong></li>
-<li>click the <strong>Apply</strong> button</li>
+  <li>go to the Eclipse menu <strong>Preferences…</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
+  <li>enable <strong>Use active build configuration</strong></li>
+  <li>click the <strong>Apply</strong> button</li>
 </ul>
 
 <p>
 <img src="/assets/images/2014/06/PreferencesIndexer.png" alt="Indexer: Use active build configuration" />
 </p>
 
-<h2 id="tocAnchor-1-3">Show line numbers</h2>
+<h2 id="show-line-numbers">Show line numbers</h2>
 
 <p>Although not critical, while editing source files, it is useful to see the line numbers, and also a hint that the line may be too long:</p>
 
 <ul>
-<li>go to the Eclipse menu <strong>Preferences...</strong> → <strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
-<li>enable <strong>Show line numbers</strong></li>
-<li>enable <strong>Show print margin</strong></li>
-<li>set the <strong>Print margin column</strong> at 80</li>
-<li>click the <strong>Apply</strong> button</li>
+  <li>go to the Eclipse menu <strong>Preferences…</strong> → <strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
+  <li>enable <strong>Show line numbers</strong></li>
+  <li>enable <strong>Show print margin</strong></li>
+  <li>set the <strong>Print margin column</strong> at 80</li>
+  <li>click the <strong>Apply</strong> button</li>
 </ul>
 
 <p>
 <img src="/assets/images/2014/06/PreferencesLineNumbers.png" alt="Editor preferences" />
 </p>
 
-<h2 id="tocAnchor-1-4">Editor folding</h2>
+<h2 id="editor-folding">Editor folding</h2>
 
 <p>To better view the entire content of the source files, it is recommended to disable editor folding:</p>
 
 <ul>
-<li>go to the Eclipse menu <strong>Preferences...</strong> → <strong>C/C++</strong> → <strong>Editor</strong> → <strong>Folding</strong></li>
-<li>disable <strong>Header Comments</strong> (in fact it is recommended to disable all foldings)</li>
-<li>click the <strong>Apply</strong> button</li>
+  <li>go to the Eclipse menu <strong>Preferences…</strong> → <strong>C/C++</strong> → <strong>Editor</strong> → <strong>Folding</strong></li>
+  <li>disable <strong>Header Comments</strong> (in fact it is recommended to disable all foldings)</li>
+  <li>click the <strong>Apply</strong> button</li>
 </ul>
 
 <p>
 <img src="/assets/images/2014/06/PreferencesFolding.png" alt="Disable folding" />
 </p>
 
-<h2 id="tocAnchor-1-5">Insert spaces for tabs</h2>
+<h2 id="insert-spaces-for-tabs">Insert spaces for tabs</h2>
 
 <p>Using real tabs has the big disadvantage that the text appearance depends on the viewer tab size settings, which sometimes can create major readability problems.</p>
 
@@ -227,13 +227,13 @@
 <img src="/assets/images/2014/06/Show_white_spaces.png" alt="Show whitespace characters" />
 </p>
 
-<h2 id="tocAnchor-1-6">Code formatter</h2>
+<h2 id="code-formatter">Code formatter</h2>
 
 <p>Eclipse CDT has a very useful feature allowing to automatically reformat a piece of code to comply to a given style. The recommended style is GNU. To set it:</p>
 
 <ul>
-<li>go to the Eclipse menu <strong>Preferences...</strong> → <strong>C/C++</strong> → <strong>Code Style</strong> → <strong>Formatter</strong></li>
-<li>in the <strong>Active profile:</strong> field, select <strong>GNU [built-in]</strong></li>
+  <li>go to the Eclipse menu <strong>Preferences…</strong> → <strong>C/C++</strong> → <strong>Code Style</strong> → <strong>Formatter</strong></li>
+  <li>in the <strong>Active profile:</strong> field, select <strong>GNU [built-in]</strong></li>
 </ul>
 
 <p>
@@ -244,7 +244,7 @@
 
 <p>However, there is one detail that need to be changed, and this is the tab processing policy.</p>
 
-<p>For this, click the <strong>Edit...</strong> button.</p>
+<p>For this, click the <strong>Edit…</strong> button.</p>
 
 <p>
 <img src="/assets/images/2014/06/Style_GNU_with_spacs.png" alt="Change the tab policy to use spaces only" />
@@ -259,24 +259,24 @@
 <p>To reformat a file:</p>
 
 <ul>
-<li>select the file in the</li>
-<li>go to the Eclipse menu <strong>Source</strong> → <strong>Format</strong></li>
+  <li>select the file in the</li>
+  <li>go to the Eclipse menu <strong>Source</strong> → <strong>Format</strong></li>
 </ul>
 
 <p>The same action can be triggered with a right click and a <strong>Source</strong> → <strong>Format</strong> or even easier, with a keyboard shortcut (<strong>cmd+shift+F</strong> on OS X).</p>
 
-<h2 id="tocAnchor-1-7">Build console</h2>
+<h2 id="build-console">Build console</h2>
 
 <p>The build console is the place where the progress of the build process is presented, and where the compile/link errors are shown.</p>
 
 <p>The CDT defaults need some tweaks, to increase the number of lines and to make the lines wrap:</p>
 
 <ul>
-<li>go to the Eclipse menu <strong>Preferences...</strong> → <strong>C/C++</strong> → <strong>Build</strong> → <strong>Console</strong></li>
-<li>enable <strong>Wrap lines on the console</strong></li>
-<li>enable <strong>Bring console to top when building</strong></li>
-<li>increase the <strong>Limit console output:</strong> field, for example from 500 to 5000 lines</li>
-<li>click the <strong>Apply</strong> button</li>
+  <li>go to the Eclipse menu <strong>Preferences…</strong> → <strong>C/C++</strong> → <strong>Build</strong> → <strong>Console</strong></li>
+  <li>enable <strong>Wrap lines on the console</strong></li>
+  <li>enable <strong>Bring console to top when building</strong></li>
+  <li>increase the <strong>Limit console output:</strong> field, for example from 500 to 5000 lines</li>
+  <li>click the <strong>Apply</strong> button</li>
 </ul>
 
 <p>
@@ -285,13 +285,13 @@
 
 <p>When all settings are done, click the <strong>OK</strong> button.</p>
 
-<h2 id="tocAnchor-1-8">Doxygen</h2>
+<h2 id="doxygen">Doxygen</h2>
 
 <p>To enable support for documentation tool comments:</p>
 
 <ul>
-<li>go to the Eclipse menu <strong>Preferences...</strong> → <strong>C/C++</strong> → <strong>Editor</strong></li>
-<li>select <strong>Doxygen</strong> in the Documentation tool comments</li>
+  <li>go to the Eclipse menu <strong>Preferences…</strong> → <strong>C/C++</strong> → <strong>Editor</strong></li>
+  <li>select <strong>Doxygen</strong> in the Documentation tool comments</li>
 </ul>
 
 <p>This will allow, for example, auto-completion for Doxygen comments, you can type only <strong>/</strong>** and the rest of the comment is automatically inserted.</p>
@@ -302,15 +302,15 @@
 <img src="/assets/images/2014/06/Doxygen.png" alt="Enable Doxygen support" />
 </p>
 
-<h2 id="tocAnchor-1-9">Debug previous application</h2>
+<h2 id="debug-previous-application">Debug previous application</h2>
 
 <p>Another Eclipse default that needs to be changed is the way programs are debugged. Eclipse remembers the previous debug configuration used and can present it as the default for the main debug button.</p>
 
 <p>To change this setting:</p>
 
 <ul>
-<li>go to the Eclipse menu <strong>Preferences...</strong> → <strong>Run/Debug</strong> → <strong>Launching</strong></li>
-<li>select <strong>Always launch the previously launched application</strong> in the <strong>Launch Operation</strong> section.</li>
+  <li>go to the Eclipse menu <strong>Preferences…</strong> → <strong>Run/Debug</strong> → <strong>Launching</strong></li>
+  <li>select <strong>Always launch the previously launched application</strong> in the <strong>Launch Operation</strong> section.</li>
 </ul>
 
 <p>
@@ -327,174 +327,176 @@
 
 <aside id="sidebar">
 
-<h4><a href="/blog/">Latest News</a></h4>
+<h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
-<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+  <li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+  <li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
+
 
 <hr />
-<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/plugins/features/">Features</a></h4>
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/downloads/">Downloads</a></h4>
+<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-<li><a href="/downloads/">Overview</a></li>
-<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4><a href="/install/">Install</a></h4>
+<h4 id="installinstall"><a href="/install/">Install</a></h4>
 
 <ul>
-<li><a href="/install/">Overview</a></li>
-<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-<li><a href="/debug/install/">Debugging components</a>
-
-<ul>
-<li><a href="/debug/install/">Overview</a></li>
-<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-<li><a href="/openocd/install/">OpenOCD install</a></li>
-<li><a href="/qemu/install/">QEMU install</a></li>
-</ul></li>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging components</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h4>Important</h4>
+<h4 id="important">Important</h4>
 
 <ul>
-<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-<li><a href="/toolchain/path/">Toolchain path</a></li>
-<li><a href="/eclipse/project/portability/">Project portability</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4>Tutorials</h4>
+<h4 id="tutorials">Tutorials</h4>
 
 <ul>
-<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4>How to use</h4>
+<h4 id="how-to-use">How to use</h4>
 
 <ul>
-<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4><a href="/templates/">Templates</a></h4>
+<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
 
 <ul>
-<li><a href="/templates/">Overview</a></li>
-<li><a href="/templates/cortexm/">Cortex-M template</a></li>
-<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4><a href="/debug/">Debugging</a></h4>
+<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
 
 <ul>
-<li><a href="/debug/">Overview</a></li>
-<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-<li><a href="/qemu/">Overview</a> (read me first!)</li>
-<li><a href="/qemu/install/">QEMU Install</a></li>
-<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-<li><a href="/qemu/build-procedure/">How to build</a></li>
-<li><a href="/qemu/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-<li><a href="/openocd/">Overview</a> (read me first!)</li>
-<li><a href="/openocd/install/">OpenOCD Install</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/openocd/build-procedure/">How to build</a></li>
-<li><a href="/openocd/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-<li><a href="/windows-build-tools/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4>Advanced</h4>
+<h4 id="advanced">Advanced</h4>
 
 <ul>
-<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4><a href="/support/">Support</a></h4>
+<h4 id="supportsupport"><a href="/support/">Support</a></h4>
 
 <ul>
-<li><a href="/support/">Overview</a></li>
-<li><a href="/support/known-issues/">Known issues</a></li>
-<li><a href="/support/faq/">FAQ</a></li>
-<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4><a href="/developer/">Developer</a></h4>
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
 
 <ul>
-<li><a href="/developer/build-procedure/">How to build</a></li>
-<li><a href="/developer/publish-procedure/">How to publish</a></li>
-<li><a href="/developer/change-log">Change log</a></li>
-<li><a href="/developer/contribute/">Contribute</a></li>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4>Hardware</h4>
+<h4 id="hardware">Hardware</h4>
 
 <ul>
-<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4>Articles</h4>
+<h4 id="articles">Articles</h4>
 
 <ul>
-<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
 </ul>
 
-<h4>Licenses</h4>
+<h4 id="licenses">Licenses</h4>
 
 <ul>
-<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-<li><a href="/licenses/tools/">Tools</a></li>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
 </ul>
 
-<h4>Finance</h4>
+<h4 id="finance">Finance</h4>
 
 <ul>
-<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
 </ul>
 
-<h4><a href="/about/">About</a></h4>
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
 
 <hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
@@ -516,10 +518,12 @@
 <div class="site-footer">
   <div class="site-footer-links left">
     <ul>
-<li>© 2015 Liviu Ionescu</li>
-<li>Hosted on GitHub Pages</li>
-<li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
-<li><div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
+  <li>© 2015 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
 </ul>
 
   </div>
@@ -528,11 +532,11 @@
   </a>
   <div class="site-footer-links right">
     <ul>
-<li><a href="/">Home</a></li>
-<li><a href="/blog/">News</a></li>
-<li><a href="/downloads/">Downloads</a></li>
-<li><a href="/support/">Support</a></li>
-<li><a href="/about/">About</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
 </ul>
 
   </div>

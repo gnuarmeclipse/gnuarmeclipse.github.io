@@ -100,81 +100,81 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Why J-Link?</span></a>
+<a href="#why-j-link"><span class="tocnumber">1</span> <span class="toctext">Why J-Link?</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a>
+<a href="#overview"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Documentation</span></a>
+<a href="#documentation"><span class="tocnumber">3</span> <span class="toctext">Documentation</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Windows</span></a>
+<a href="#windows"><span class="tocnumber">4</span> <span class="toctext">Windows</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">OS X</span></a>
+<a href="#os-x"><span class="tocnumber">5</span> <span class="toctext">OS X</span></a>
 <ul>
 <li class="toc_level-2 toc_section-6">
-<a href="#tocAnchor-1-5-1"><span class="tocnumber">5.1</span> <span class="toctext">USB</span></a>
+<a href="#usb"><span class="tocnumber">5.1</span> <span class="toctext">USB</span></a>
 </li>
 </ul>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#tocAnchor-1-7"><span class="tocnumber">6</span> <span class="toctext">GNU/Linux</span></a>
+<a href="#gnulinux"><span class="tocnumber">6</span> <span class="toctext">GNU/Linux</span></a>
 <ul>
 <li class="toc_level-2 toc_section-8">
-<a href="#tocAnchor-1-7-1"><span class="tocnumber">6.1</span> <span class="toctext">UDEV</span></a>
+<a href="#udev"><span class="tocnumber">6.1</span> <span class="toctext">UDEV</span></a>
 </li>
 </ul>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#tocAnchor-1-9"><span class="tocnumber">7</span> <span class="toctext">Testing</span></a>
+<a href="#testing"><span class="tocnumber">7</span> <span class="toctext">Testing</span></a>
 </li>
 <li class="toc_level-1 toc_section-10">
-<a href="#tocAnchor-1-10"><span class="tocnumber">8</span> <span class="toctext">The J-Link plug-in</span></a>
+<a href="#the-j-link-plug-in"><span class="tocnumber">8</span> <span class="toctext">The J-Link plug-in</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><h2 id="tocAnchor-1-1">Why J-Link?</h2>
+</div><h2 id="why-j-link">Why J-Link?</h2>
 
 <p>In case you wonder why GNU ARM Eclipse decided to provide support to SEGGER J-Link, the short answer is: <strong>because of <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a> and of SWO.</strong> The long answer may include the following:</p>
 
 <ul>
-<li><strong>wide processor support</strong> (there is probably no unsupported ARM processor in the entire galaxy, and if you find one in a remote quadrant, I'm pretty sure it'll be shortly added to the list)</li>
-<li>it is a true <strong>multi-platform</strong> solution, providing drivers for <strong>Windows</strong>, <strong>OS X</strong> and <strong>GNU/Linux</strong></li>
-<li>it comes with a <strong>standard GDB server</strong> implementation, compatible with existing ARM toolchains</li>
-<li>in addition to the classical <strong>JTAG</strong> protocol, it implements the new <strong>SWD</strong> protocol</li>
-<li>when SWD is selected, it is capable to sample the <strong>SWO</strong> pin, for trace messages and other ARM specific debugging</li>
-<li>it is fast, up to <strong>15 MHz</strong> for <strong>JTAG</strong> clock and up to <strong>7.5 MHz SWO</strong> sampling frequency for the new <strong>V9</strong> hardware (12 MHz JTAG / 6 MHz SWO for V8, and even up to <strong>100 MHz SWO</strong> for the high-performance <strong>ULTRA+, PRO</strong> models)</li>
-<li>it supports all possible target voltages, from <strong>1.2V to 5V</strong></li>
-<li>in addition to the regular debugging functionality, it is also able to write the internal flash, and, even more, it uses a smart flash writing algorithm, to avoid useless writes if the flash blocks did not change</li>
-<li>it is a mature, proven product, with a great support team</li>
-<li>it provides an entire range of probes, <a href="http://www.segger.com/jlink_base.html">J-Link</a>, <a href="http://www.segger.com/jlink-pro.html">J-Link Pro</a>, including a <strong>special priced version for educational use</strong>, the <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a> (available from many distributors, for example from <a href="http://uk.farnell.com/segger/8-08-90-j-link-edu/jtag-emulator-j-link-edu-usb/dp/2098545">Farnell</a>)</li>
+  <li><strong>wide processor support</strong> (there is probably no unsupported ARM processor in the entire galaxy, and if you find one in a remote quadrant, I’m pretty sure it’ll be shortly added to the list)</li>
+  <li>it is a true <strong>multi-platform</strong> solution, providing drivers for <strong>Windows</strong>, <strong>OS X</strong> and <strong>GNU/Linux</strong></li>
+  <li>it comes with a <strong>standard GDB server</strong> implementation, compatible with existing ARM toolchains</li>
+  <li>in addition to the classical <strong>JTAG</strong> protocol, it implements the new <strong>SWD</strong> protocol</li>
+  <li>when SWD is selected, it is capable to sample the <strong>SWO</strong> pin, for trace messages and other ARM specific debugging</li>
+  <li>it is fast, up to <strong>15 MHz</strong> for <strong>JTAG</strong> clock and up to <strong>7.5 MHz SWO</strong> sampling frequency for the new <strong>V9</strong> hardware (12 MHz JTAG / 6 MHz SWO for V8, and even up to <strong>100 MHz SWO</strong> for the high-performance <strong>ULTRA+, PRO</strong> models)</li>
+  <li>it supports all possible target voltages, from <strong>1.2V to 5V</strong></li>
+  <li>in addition to the regular debugging functionality, it is also able to write the internal flash, and, even more, it uses a smart flash writing algorithm, to avoid useless writes if the flash blocks did not change</li>
+  <li>it is a mature, proven product, with a great support team</li>
+  <li>it provides an entire range of probes, <a href="http://www.segger.com/jlink_base.html">J-Link</a>, <a href="http://www.segger.com/jlink-pro.html">J-Link Pro</a>, including a <strong>special priced version for educational use</strong>, the <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a> (available from many distributors, for example from <a href="http://uk.farnell.com/segger/8-08-90-j-link-edu/jtag-emulator-j-link-edu-usb/dp/2098545">Farnell</a>)</li>
 </ul>
 
 <p>The J-Link was present on the JTAG market for many years, but, considering the initial prices, only the big companies could afford them. After a fierce fight against Chinese clones, sold for a fraction of the price, in 2012 <a href="http://www.segger.com/">SEGGER</a> decided to introduce a low price version, <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a>, restricted to educational and non-commercial usage, making it the JTAG probe of choice for open source GNU ARM development.</p>
 
-<h2 id="tocAnchor-1-2">Overview</h2>
+<h2 id="overview">Overview</h2>
 
 <p>J-Link comes not only with a GDB server, but with a complete set of drivers and utilities, packed by SEGGER separately for each platform. The same distribution includes drivers for all J-Link probes, so installation is quite simple. The J-Link binaries are available from the <a href="http://www.segger.com/jlink-software.html">SEGGER site</a>. Download the file appropriate for your development platform. Please note that you need to have the <strong>J-Link serial number</strong> at hand, since the download site will ask for it. You can still download the J-Link software if you do not have the serial number, but you have to pass a multiple step confirmations sequence stating that you are not using illegal clones.</p>
 
-<h2 id="tocAnchor-1-3">Documentation</h2>
+<h2 id="documentation">Documentation</h2>
 
 <p>The J-Link GDB server is documented in the <a href="https://www.segger.com/admin/uploads/productDocs/UM08001_JLink.pdf">UM08001</a> manual, available from the <a href="http://www.segger.com/jlink-software.html">SEGGER J-Link page</a>.</p>
 
-<h2 id="tocAnchor-1-4">Windows</h2>
+<h2 id="windows">Windows</h2>
 
 <p>The Windows file is a ZIP archive, named like <strong>Setup_JLinkARM_V480.zip</strong>. After unpacking it, a Windows executable file is obtained, named like <strong>Setup_JLinkARM_V480.exe</strong>.</p>
 
 <ul>
-<li>double click it to start the installation process</li>
-<li>enter the administrative password</li>
-<li>accept the license</li>
-<li>accept the destination folder (C:\Program Files\SEGGER\JLinkARM_V480)</li>
-<li>accept the default USB driver</li>
+  <li>double click it to start the installation process</li>
+  <li>enter the administrative password</li>
+  <li>accept the license</li>
+  <li>accept the destination folder (C:\Program Files\SEGGER\JLinkARM_V480)</li>
+  <li>accept the default USB driver</li>
 </ul>
 
 <p>The result of the install is a folder (a new folder for each new version installed), and a set of driver files installed in the system folders, overwritten with each new install.</p>
@@ -185,14 +185,14 @@
 
 <p>Please note that on Windows, SEGGER provides both graphical interface and <strong>command line versions</strong> (having the names suffixed with <strong>CL</strong>) for most of their tools. For the J-Link plug-in it is recommended to use only the command line version of the  J-Link GDB server (<strong>JLinkGDBServerCL.exe</strong>).</p>
 
-<h2 id="tocAnchor-1-5">OS X</h2>
+<h2 id="os-x">OS X</h2>
 
 <p>The OS X download is an OS X package installer, like <strong>JLink_MacOSX_V480.pkg</strong>.</p>
 
 <ul>
-<li>double click it to start the installation process</li>
-<li>accept the license</li>
-<li>enter the administrative password, required to write in the global /Applications folder</li>
+  <li>double click it to start the installation process</li>
+  <li>accept the license</li>
+  <li>enter the administrative password, required to write in the global /Applications folder</li>
 </ul>
 
 <p>The result of the install is a folder called <strong>/Applications/SEGGER/JLink/</strong> (the same folder for all versions) where all executables and libraries are stored; please note that, as for many OS X applications, no other driver files are installed in the system folders.</p>
@@ -201,32 +201,32 @@
 <img src="/assets/images/2014/01/Segger-OSX.png" alt="SEGGER OS X distribution" />
 </p>
 
-<h3 id="tocAnchor-1-5-1">USB</h3>
+<h3 id="usb">USB</h3>
 
 <p>On OS X, the USB subsystem automatically identifies and allows access to USB devices, without the need to maintain a manual list similar to the one used by UDEV in GNU/Linux. No other drivers or system configurations are required.</p>
 
-<h2 id="tocAnchor-1-7">GNU/Linux</h2>
+<h2 id="gnulinux">GNU/Linux</h2>
 
 <p>There are multiple packages available for GNU/Linux on the SEGGER download site, built as Debian/Red Hat packages, in 32/64-bit versions, or plain TGZ archives. Select the one appropriate for you system and use the specific tools to install the package. For example, on Ubuntu, to install the 64-bit .deb file, use the following command:</p>
-<div class="highlight">
+
 <pre>
-<code class="language-text" data-lang="text">$ sudo dpkg -i jlink_4.80_x86_64.deb
+<code>$ sudo dpkg -i jlink_4.80_x86_64.deb
 </code></pre>
-</div>
+
 <p>The J-Link executables are installed in <strong>/usr/bin</strong>.</p>
 
 <p>In case you have a 64-bit machine and install the 32-bit SEGGER package, you might need several 32-bit libraries, depending on distribution.</p>
 
-<h3 id="tocAnchor-1-7-1">UDEV</h3>
+<h3 id="udev">UDEV</h3>
 
 <p>The install procedure automatically adds <strong>/etc/udev/rules.d/99-jlink.rules</strong> to define the USB IDs of the J-Link devices. No other drivers are required.</p>
 
-<h2 id="tocAnchor-1-9">Testing</h2>
+<h2 id="testing">Testing</h2>
 
 <p>To test if J-Link is able to connect to a specific board, you generally need to specify the interface (JTAG or SWD) and the device name. By default, J-Link GDBServer will try JTAG but if only SWD is wired (which is very common on custom hardware), you would need to specify the interface (-if SWD). The device name is needed for targets which require special handling on connect (e.g. due to silicon bugs which make auto-detection impossible). For a list of available device names, please refer to the SEGGER <a href="http://www.segger.com/jlink_supported_devices.html">Supported devices</a> page. Below is an example how to test a JTAG connection to a STM32F103 evaluation board (-device STM32F103RB) on OS X.</p>
-<div class="highlight">
+
 <pre>
-<code class="language-text" data-lang="text">$ /Applications/SEGGER/JLink/JLinkGDBServer -if JTAG -device STM32F103RB
+<code>$ /Applications/SEGGER/JLink/JLinkGDBServer -if JTAG -device STM32F103RB
 SEGGER J-Link GDB Server V4.80 Command Line Version
 
 JLinkARM.dll V4.80 (DLL compiled Dec 20 2013 19:44:31)
@@ -265,24 +265,25 @@ Connected to target
 Waiting for GDB connection...
 ^C
 </code></pre>
-</div>
+
 <p>On Windows, to start the GDB server, use back-slashes in the path and the CL (command line) version:</p>
-<div class="highlight">
+
 <pre>
-<code class="language-text" data-lang="text">C:&gt;C:\Program Files\SEGGER\JLinkARM_V480\JLinkGDBServerCL
+<code>C:&gt;C:\Program Files\SEGGER\JLinkARM_V480\JLinkGDBServerCL
 </code></pre>
-</div>
+
 <p>On Ubuntu the command is simple:</p>
-<div class="highlight">
+
 <pre>
-<code class="language-text" data-lang="text">$ /usr/bin/JLinkGDBServer
+<code>$ /usr/bin/JLinkGDBServer
 </code></pre>
-</div>
+
 <p>In all cases, the result should be similar to the one obtained on OS X.</p>
 
-<h2 id="tocAnchor-1-10">The J-Link plug-in</h2>
+<h2 id="the-j-link-plug-in">The J-Link plug-in</h2>
 
 <p>If you successfully installed SEGGER binaries, you can proceed to the page documenting how to use the GNU ARM Eclipse <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link debugging plug-in</a>.</p>
+
 
 
 <hr class="page-footer"/>
@@ -294,174 +295,176 @@ Waiting for GDB connection...
 
 <aside id="sidebar">
 
-<h4><a href="/blog/">Latest News</a></h4>
+<h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
-<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+  <li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+  <li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
+
 
 <hr />
-<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/plugins/features/">Features</a></h4>
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/downloads/">Downloads</a></h4>
+<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-<li><a href="/downloads/">Overview</a></li>
-<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4><a href="/install/">Install</a></h4>
+<h4 id="installinstall"><a href="/install/">Install</a></h4>
 
 <ul>
-<li><a href="/install/">Overview</a></li>
-<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-<li><a href="/debug/install/">Debugging components</a>
-
-<ul>
-<li><a href="/debug/install/">Overview</a></li>
-<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-<li><a href="/openocd/install/">OpenOCD install</a></li>
-<li><a href="/qemu/install/">QEMU install</a></li>
-</ul></li>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging components</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h4>Important</h4>
+<h4 id="important">Important</h4>
 
 <ul>
-<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-<li><a href="/toolchain/path/">Toolchain path</a></li>
-<li><a href="/eclipse/project/portability/">Project portability</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4>Tutorials</h4>
+<h4 id="tutorials">Tutorials</h4>
 
 <ul>
-<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4>How to use</h4>
+<h4 id="how-to-use">How to use</h4>
 
 <ul>
-<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4><a href="/templates/">Templates</a></h4>
+<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
 
 <ul>
-<li><a href="/templates/">Overview</a></li>
-<li><a href="/templates/cortexm/">Cortex-M template</a></li>
-<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4><a href="/debug/">Debugging</a></h4>
+<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
 
 <ul>
-<li><a href="/debug/">Overview</a></li>
-<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-<li><a href="/qemu/">Overview</a> (read me first!)</li>
-<li><a href="/qemu/install/">QEMU Install</a></li>
-<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-<li><a href="/qemu/build-procedure/">How to build</a></li>
-<li><a href="/qemu/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-<li><a href="/openocd/">Overview</a> (read me first!)</li>
-<li><a href="/openocd/install/">OpenOCD Install</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/openocd/build-procedure/">How to build</a></li>
-<li><a href="/openocd/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-<li><a href="/windows-build-tools/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4>Advanced</h4>
+<h4 id="advanced">Advanced</h4>
 
 <ul>
-<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4><a href="/support/">Support</a></h4>
+<h4 id="supportsupport"><a href="/support/">Support</a></h4>
 
 <ul>
-<li><a href="/support/">Overview</a></li>
-<li><a href="/support/known-issues/">Known issues</a></li>
-<li><a href="/support/faq/">FAQ</a></li>
-<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4><a href="/developer/">Developer</a></h4>
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
 
 <ul>
-<li><a href="/developer/build-procedure/">How to build</a></li>
-<li><a href="/developer/publish-procedure/">How to publish</a></li>
-<li><a href="/developer/change-log">Change log</a></li>
-<li><a href="/developer/contribute/">Contribute</a></li>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4>Hardware</h4>
+<h4 id="hardware">Hardware</h4>
 
 <ul>
-<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4>Articles</h4>
+<h4 id="articles">Articles</h4>
 
 <ul>
-<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
 </ul>
 
-<h4>Licenses</h4>
+<h4 id="licenses">Licenses</h4>
 
 <ul>
-<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-<li><a href="/licenses/tools/">Tools</a></li>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
 </ul>
 
-<h4>Finance</h4>
+<h4 id="finance">Finance</h4>
 
 <ul>
-<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
 </ul>
 
-<h4><a href="/about/">About</a></h4>
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
 
 <hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
@@ -483,10 +486,12 @@ Waiting for GDB connection...
 <div class="site-footer">
   <div class="site-footer-links left">
     <ul>
-<li>© 2015 Liviu Ionescu</li>
-<li>Hosted on GitHub Pages</li>
-<li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
-<li><div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
+  <li>© 2015 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
 </ul>
 
   </div>
@@ -495,11 +500,11 @@ Waiting for GDB connection...
   </a>
   <div class="site-footer-links right">
     <ul>
-<li><a href="/">Home</a></li>
-<li><a href="/blog/">News</a></li>
-<li><a href="/downloads/">Downloads</a></li>
-<li><a href="/support/">Support</a></li>
-<li><a href="/about/">About</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
 </ul>
 
   </div>

@@ -90,672 +90,625 @@
 <h1 class="page-title">The 2015 QEMU Change Log</h1>
 
 
-<h2 id="tocAnchor-1-1">2015</h2>
+<h2 id="section">2015</h2>
 
-<h3 id="tocAnchor-1-1-1">2015-08-04</h3>
-
-<ul>
-<li>SDL event loop added (to fix responsivness &amp; Windows bug)</li>
-<li>stm32f411re added</li>
-<li>nucleo-f411re board added</li>
-<li>version 2.3.50-201508041609-dev released
+<h3 id="section-1">2015-08-04</h3>
 
 <ul>
-<li>Supported boards:</li>
-<li>Mapple - LeafLab Arduino-style STM32 microcontroller board (r5)</li>
-<li>NUCLEO-F103RB -  ST Nucleo Development Board for STM32 F1 series</li>
-<li>NUCLEO-F411RE - ST Nucleo Development Board for STM32 F4 series</li>
-<li>NetduinoGo  - Netduino GoBus Development Board with STM32F4</li>
-<li>NetduinoPlus2 - Netduino Development Board with STM32F4</li>
-<li>OLIMEXINO-STM32 - Olimex Mapple (Arduino-like) Development Board</li>
-<li>STM32-E407 - Olimex Development Board for STM32F407ZGT6</li>
-<li>STM32-H103 - Olimex Header Board for STM32F103RBT6</li>
-<li>STM32-P103 - Olimex Prototype Board for STM32F103RBT6</li>
-<li>STM32-P107 - Olimex Prototype Board for STM32F107VCT6</li>
-<li>STM32F4-Discovery - ST Discovery kit for STM32F407/417 lines</li>
-<li>STM32F429I-Discovery - ST Discovery kit for STM32F429/439 lines</li>
-<li>generic  - Generic Cortex-M board; use -mcu to define the device</li>
-<li>Supported MCUs:</li>
-<li>STM32F103RB</li>
-<li>STM32F107VC</li>
-<li>STM32F405RG</li>
-<li>STM32F407VG</li>
-<li>STM32F407ZG</li>
-<li>STM32F411RE</li>
-<li>STM32F429ZI</li>
-<li>STM32L152RE</li>
-</ul></li>
+  <li>SDL event loop added (to fix responsivness &amp; Windows bug)</li>
+  <li>stm32f411re added</li>
+  <li>nucleo-f411re board added</li>
+  <li>version 2.3.50-201508041609-dev released
+    <ul>
+      <li>Supported boards:
+        <ul>
+          <li>Mapple - LeafLab Arduino-style STM32 microcontroller board (r5)</li>
+          <li>NUCLEO-F103RB -  ST Nucleo Development Board for STM32 F1 series</li>
+          <li>NUCLEO-F411RE - ST Nucleo Development Board for STM32 F4 series</li>
+          <li>NetduinoGo  - Netduino GoBus Development Board with STM32F4</li>
+          <li>NetduinoPlus2 - Netduino Development Board with STM32F4</li>
+          <li>OLIMEXINO-STM32 - Olimex Mapple (Arduino-like) Development Board</li>
+          <li>STM32-E407 - Olimex Development Board for STM32F407ZGT6</li>
+          <li>STM32-H103 - Olimex Header Board for STM32F103RBT6</li>
+          <li>STM32-P103 - Olimex Prototype Board for STM32F103RBT6</li>
+          <li>STM32-P107 - Olimex Prototype Board for STM32F107VCT6</li>
+          <li>STM32F4-Discovery - ST Discovery kit for STM32F407/417 lines</li>
+          <li>STM32F429I-Discovery - ST Discovery kit for STM32F429/439 lines</li>
+          <li>generic  - Generic Cortex-M board; use -mcu to define the device</li>
+        </ul>
+      </li>
+      <li>Supported MCUs:
+        <ul>
+          <li>STM32F103RB</li>
+          <li>STM32F107VC</li>
+          <li>STM32F405RG</li>
+          <li>STM32F407VG</li>
+          <li>STM32F407ZG</li>
+          <li>STM32F411RE</li>
+          <li>STM32F429ZI</li>
+          <li>STM32L152RE</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="tocAnchor-1-1-2">2015-08-01</h3>
+<h3 id="section-2">2015-08-01</h3>
 
 <ul>
-<li>version 2.3.50-201508012000-dev released
-
-<ul>
-<li>Supported boards:</li>
-<li>Mapple - LeafLab Arduino-style STM32 microcontroller board (r5)</li>
-<li>NUCLEO-F103RB -  ST Nucleo Development Board for STM32 F1 series</li>
-<li>NetduinoGo  - Netduino GoBus Development Board with STM32F4</li>
-<li>NetduinoPlus2 - Netduino Development Board with STM32F4</li>
-<li>OLIMEXINO-STM32 - Olimex Mapple (Arduino-like) Development Board</li>
-<li>STM32-E407 - Olimex Development Board for STM32F407ZGT6</li>
-<li>STM32-H103 - Olimex Header Board for STM32F103RBT6</li>
-<li>STM32-P103 - Olimex Prototype Board for STM32F103RBT6</li>
-<li>STM32-P107 - Olimex Prototype Board for STM32F107VCT6</li>
-<li>STM32F4-Discovery - ST Discovery kit for STM32F407/417 lines</li>
-<li>STM32F429I-Discovery - ST Discovery kit for STM32F429/439 lines</li>
-<li>generic  - Generic Cortex-M board; use -mcu to define the device</li>
-<li>Supported MCUs:</li>
-<li>STM32F103RB</li>
-<li>STM32F107VC</li>
-<li>STM32F405RG</li>
-<li>STM32F407VG</li>
-<li>STM32F407ZG</li>
-<li>STM32F429ZI</li>
-<li>STM32L152RE</li>
-</ul></li>
-<li>stm32-nucleo-boards.c: NUCLEO-F103RB image added</li>
-<li>image for NUCLEO-F411RE added; board not enabled</li>
+  <li>version 2.3.50-201508012000-dev released
+    <ul>
+      <li>Supported boards:
+        <ul>
+          <li>Mapple - LeafLab Arduino-style STM32 microcontroller board (r5)</li>
+          <li>NUCLEO-F103RB -  ST Nucleo Development Board for STM32 F1 series</li>
+          <li>NetduinoGo  - Netduino GoBus Development Board with STM32F4</li>
+          <li>NetduinoPlus2 - Netduino Development Board with STM32F4</li>
+          <li>OLIMEXINO-STM32 - Olimex Mapple (Arduino-like) Development Board</li>
+          <li>STM32-E407 - Olimex Development Board for STM32F407ZGT6</li>
+          <li>STM32-H103 - Olimex Header Board for STM32F103RBT6</li>
+          <li>STM32-P103 - Olimex Prototype Board for STM32F103RBT6</li>
+          <li>STM32-P107 - Olimex Prototype Board for STM32F107VCT6</li>
+          <li>STM32F4-Discovery - ST Discovery kit for STM32F407/417 lines</li>
+          <li>STM32F429I-Discovery - ST Discovery kit for STM32F429/439 lines</li>
+          <li>generic  - Generic Cortex-M board; use -mcu to define the device</li>
+        </ul>
+      </li>
+      <li>Supported MCUs:
+        <ul>
+          <li>STM32F103RB</li>
+          <li>STM32F107VC</li>
+          <li>STM32F405RG</li>
+          <li>STM32F407VG</li>
+          <li>STM32F407ZG</li>
+          <li>STM32F429ZI</li>
+          <li>STM32L152RE</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>stm32-nucleo-boards.c: NUCLEO-F103RB image added</li>
+  <li>image for NUCLEO-F411RE added; board not enabled</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-3">2015-07-31</h3>
-
+<h3 id="section-3">2015-07-31</h3>
 <ul>
-<li>gpio-led.c: orange led colour; more verbosity</li>
+  <li>gpio-led.c: orange led colour; more verbosity</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-4">2015-07-29</h3>
-
+<h3 id="section-4">2015-07-29</h3>
 <ul>
-<li>cortexm-helper.c: fix cm_board_get_name() warning</li>
+  <li>cortexm-helper.c: fix cm_board_get_name() warning</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-5">2015-07-26</h3>
-
+<h3 id="section-5">2015-07-26</h3>
 <ul>
-<li>gpio-led: led colour properly displayed in console</li>
-<li>stm32-gpio.c: is_enabled() implemented</li>
+  <li>gpio-led: led colour properly displayed in console</li>
+  <li>stm32-gpio.c: is_enabled() implemented</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-6">2015-07-24</h3>
-
+<h3 id="section-6">2015-07-24</h3>
 <ul>
-<li>cortexm-helper: board &amp; mcu help</li>
-<li>cortexm-helper: cm_object_new_mcu(machine, name)</li>
-<li>gpio-led: x,y points to led center, not corner</li>
-<li>vl.c: 'Board not supported' error message + exit</li>
-<li>stm32 boards: pictures &amp; LEDs added</li>
-<li>stm32 boards: use cm_board_get_desc()</li>
+  <li>cortexm-helper: board &amp; mcu help</li>
+  <li>cortexm-helper: cm_object_new_mcu(machine, name)</li>
+  <li>gpio-led: x,y points to led center, not corner</li>
+  <li>vl.c: ‘Board not supported’ error message + exit</li>
+  <li>stm32 boards: pictures &amp; LEDs added</li>
+  <li>stm32 boards: use cm_board_get_desc()</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-7">2015-07-23</h3>
-
+<h3 id="section-7">2015-07-23</h3>
 <ul>
-<li>STM32F4-Discovery.jpg, much shorter</li>
-<li>build: nsis, add images folder</li>
-<li>cortexm-helper: IMG_Init, plus more errors</li>
-<li>vl.c, oslib-win32.c: path in windows format</li>
-<li>tm32f4-discovery: temporary with both png &amp; jpg</li>
-<li>sdl-x11.patch with lower case X</li>
-<li>cortexm-board.c added</li>
-<li>null-machine.c disabled</li>
-<li>Makefile.obj: ifeq ($(CONFIG_GNU_ARM_ECLIPSE),n)</li>
-<li>cpu.c: filter out non cortex-m cpus</li>
-<li>boards.h: mcu_device field added to machine</li>
-<li>machine.c: cast to void* for image_filename</li>
-<li>qemu-options.hx: -board, -mcu added</li>
-<li>vl.c: -board &amp; -mcu parsed</li>
-<li>dtc &amp; pixman modules removed</li>
+  <li>STM32F4-Discovery.jpg, much shorter</li>
+  <li>build: nsis, add images folder</li>
+  <li>cortexm-helper: IMG_Init, plus more errors</li>
+  <li>vl.c, oslib-win32.c: path in windows format</li>
+  <li>tm32f4-discovery: temporary with both png &amp; jpg</li>
+  <li>sdl-x11.patch with lower case X</li>
+  <li>cortexm-board.c added</li>
+  <li>null-machine.c disabled</li>
+  <li>Makefile.obj: ifeq ($(CONFIG_GNU_ARM_ECLIPSE),n)</li>
+  <li>cpu.c: filter out non cortex-m cpus</li>
+  <li>boards.h: mcu_device field added to machine</li>
+  <li>machine.c: cast to void* for image_filename</li>
+  <li>qemu-options.hx: -board, -mcu added</li>
+  <li>vl.c: -board &amp; -mcu parsed</li>
+  <li>dtc &amp; pixman modules removed</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-8">2015-07-20</h3>
-
+<h3 id="section-8">2015-07-20</h3>
 <ul>
-<li>qemu.nsi: add share folder, for the images</li>
-<li>configure: revert to no x11 if not needed</li>
-<li>.mak: remove most unused devices</li>
-<li>cortexm-helper.c: error processing in sdl init</li>
+  <li>qemu.nsi: add share folder, for the images</li>
+  <li>configure: revert to no x11 if not needed</li>
+  <li>.mak: remove most unused devices</li>
+  <li>cortexm-helper.c: error processing in sdl init</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-9">2015-07-18</h3>
-
+<h3 id="section-9">2015-07-18</h3>
 <ul>
-<li>build: sdl patches added</li>
+  <li>build: sdl patches added</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-10">2015-07-17</h3>
-
+<h3 id="section-10">2015-07-17</h3>
 <ul>
-<li>images: STM32F4-Discovery.png added</li>
-<li>cortexm-helper: use IMG_Load for SDL_LoadBMP</li>
-<li>configure: sdl="yes"</li>
-<li>vl.c: default display type is NONE</li>
-<li>po: regenerated, only creation date updated</li>
-<li>cortexm-helper: reference to SDL_image.h</li>
-<li>cortexm-nvic: remove external system_clock_scale</li>
-<li>configure: add -lSDL_image to sdl_libs</li>
+  <li>images: STM32F4-Discovery.png added</li>
+  <li>cortexm-helper: use IMG_Load for SDL_LoadBMP</li>
+  <li>configure: sdl=”yes”</li>
+  <li>vl.c: default display type is NONE</li>
+  <li>po: regenerated, only creation date updated</li>
+  <li>cortexm-helper: reference to SDL_image.h</li>
+  <li>cortexm-nvic: remove external system_clock_scale</li>
+  <li>configure: add -lSDL_image to sdl_libs</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-11">2015-07-16</h3>
-
+<h3 id="section-11">2015-07-16</h3>
 <ul>
-<li>vl.c: find_file QEMU_FILE_TYPE_IMAGES added</li>
-<li>gpio-led: add graphical blink support</li>
-<li>cortexm-helper: add board_image_init</li>
-<li>stm32-boards: F4-Discovery with graphical leds</li>
-<li>all other stm32 boards with null graphical</li>
+  <li>vl.c: find_file QEMU_FILE_TYPE_IMAGES added</li>
+  <li>gpio-led: add graphical blink support</li>
+  <li>cortexm-helper: add board_image_init</li>
+  <li>stm32-boards: F4-Discovery with graphical leds</li>
+  <li>all other stm32 boards with null graphical</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-12">2015-07-08</h3>
-
+<h3 id="section-12">2015-07-08</h3>
 <ul>
-<li>stm32f429xx added</li>
-<li>STM32F429I-Discovery board added</li>
+  <li>stm32f429xx added</li>
+  <li>STM32F429I-Discovery board added</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-13">2015-07-07</h3>
-
+<h3 id="section-13">2015-07-07</h3>
 <ul>
-<li>cortexm-helper: cortexm_bitband_init() prototype</li>
-<li>gpio-led: GPIOLEDInfo added</li>
-<li>STM32F4-Discovery with array of LEDInfo</li>
-<li>stm32 periph-bitband added</li>
-<li>stm32-pwr added</li>
-<li>cortexm-mcu: public cortexm_bitband_init()</li>
-<li>peripheral: verbose check address duplicate</li>
-<li>stm32-flash: f4 implemented</li>
-<li>stm32-rcc: f4 implemented</li>
-<li>cortexm-nvic: exit when attempting to enable FP</li>
-<li>gpio-led: active-low copied from Info</li>
-<li>make: configs moved to gnuarmeclipse</li>
-<li>stm32-pwr: implemented for F1 too</li>
-<li>stm32-rcc: conditional hserdy follows hsion</li>
-<li>cortex-mcu: Flash/RAM kB spelling</li>
-<li>stm32-mcus: stm32f405xx added</li>
-<li>stm32: all F10[37]/F40[57] boards defined</li>
-<li>doc: suported boards documented</li>
+  <li>cortexm-helper: cortexm_bitband_init() prototype</li>
+  <li>gpio-led: GPIOLEDInfo added</li>
+  <li>STM32F4-Discovery with array of LEDInfo</li>
+  <li>stm32 periph-bitband added</li>
+  <li>stm32-pwr added</li>
+  <li>cortexm-mcu: public cortexm_bitband_init()</li>
+  <li>peripheral: verbose check address duplicate</li>
+  <li>stm32-flash: f4 implemented</li>
+  <li>stm32-rcc: f4 implemented</li>
+  <li>cortexm-nvic: exit when attempting to enable FP</li>
+  <li>gpio-led: active-low copied from Info</li>
+  <li>make: configs moved to gnuarmeclipse</li>
+  <li>stm32-pwr: implemented for F1 too</li>
+  <li>stm32-rcc: conditional hserdy follows hsion</li>
+  <li>cortex-mcu: Flash/RAM kB spelling</li>
+  <li>stm32-mcus: stm32f405xx added</li>
+  <li>stm32: all F10[37]/F40[57] boards defined</li>
+  <li>doc: suported boards documented</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-14">2015-07-05</h3>
-
+<h3 id="section-14">2015-07-05</h3>
 <ul>
-<li>stm32-gpio: f4 implemented, not yet tested.</li>
-<li>bitfield: register_bitfield_new_with_info()</li>
-<li>register: Info structure cleaned</li>
-<li>peripheral: peripheral_new_with_info() added</li>
-<li>stm32-gpio: use peripheral_new_with_info()</li>
-<li>stm32-rcc: use peripheral_new_with_info()</li>
-<li>register: move actions from info to setters</li>
-<li>stm32-gpio, stm32-rcc: use pre/post setters</li>
-<li>cortexm-helper: cm_object_property_add() added</li>
-<li>peripheral, register: create_auto_bits delayed</li>
-<li>bitfield: remove auto-bit</li>
-<li>stm32-gpio, -flash, -rcc: auto-bits as props</li>
-<li>stm32-gpio, -flash, -rcc: *_create_objects()</li>
+  <li>stm32-gpio: f4 implemented, not yet tested.</li>
+  <li>bitfield: register_bitfield_new_with_info()</li>
+  <li>register: Info structure cleaned</li>
+  <li>peripheral: peripheral_new_with_info() added</li>
+  <li>stm32-gpio: use peripheral_new_with_info()</li>
+  <li>stm32-rcc: use peripheral_new_with_info()</li>
+  <li>register: move actions from info to setters</li>
+  <li>stm32-gpio, stm32-rcc: use pre/post setters</li>
+  <li>cortexm-helper: cm_object_property_add() added</li>
+  <li>peripheral, register: create_auto_bits delayed</li>
+  <li>bitfield: remove auto-bit</li>
+  <li>stm32-gpio, -flash, -rcc: auto-bits as props</li>
+  <li>stm32-gpio, -flash, -rcc: *_create_objects()</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-15">2015-07-04</h3>
-
+<h3 id="section-15">2015-07-04</h3>
 <ul>
-<li>peripheral: pre/post actions moved to register</li>
-<li>stm32-gpio: use prev_value for odr</li>
-<li>cortexm-helper.h: peripheral_register_t added</li>
-<li>peripheral-register: no more custom types</li>
-<li>peripheral_register_new_with_info()</li>
-<li>peripheral: reset_mask added</li>
-<li>stm32-rcc: explicit &amp;handler</li>
-<li>stm32-gpio: F1 callbacks renamed to stm32f1_*</li>
+  <li>peripheral: pre/post actions moved to register</li>
+  <li>stm32-gpio: use prev_value for odr</li>
+  <li>cortexm-helper.h: peripheral_register_t added</li>
+  <li>peripheral-register: no more custom types</li>
+  <li>peripheral_register_new_with_info()</li>
+  <li>peripheral: reset_mask added</li>
+  <li>stm32-rcc: explicit &amp;handler</li>
+  <li>stm32-gpio: F1 callbacks renamed to stm32f1_*</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-16">2015-07-03</h3>
-
+<h3 id="section-16">2015-07-03</h3>
 <ul>
-<li>peripheral-register: derived class functional</li>
-<li>stm32-flash: use derived acr type</li>
-<li>peripheral, register: pre-read, post-write added</li>
-<li>register: remove name from type_info</li>
-<li>register: copy writable bits to object</li>
-<li>stm32-rcc: use new objects; F1 &amp; F1CL ok</li>
-<li>bitfield: width_bits replaces last_bit</li>
-<li>peripheral: is_enabled callback added</li>
-<li>register: raw_get/set/or/and</li>
-<li>stm32-gpio: reworked with objects</li>
-<li>cortexm-helper: + cm_object_get_child_by_name()</li>
-<li>bitfield: fix register_bitfield_read_value()</li>
-<li>stm32-rcc: stm32_rcc_update_clocks() use fields</li>
-<li>stm32-gpio: reference to rcc without u.</li>
+  <li>peripheral-register: derived class functional</li>
+  <li>stm32-flash: use derived acr type</li>
+  <li>peripheral, register: pre-read, post-write added</li>
+  <li>register: remove name from type_info</li>
+  <li>register: copy writable bits to object</li>
+  <li>stm32-rcc: use new objects; F1 &amp; F1CL ok</li>
+  <li>bitfield: width_bits replaces last_bit</li>
+  <li>peripheral: is_enabled callback added</li>
+  <li>register: raw_get/set/or/and</li>
+  <li>stm32-gpio: reworked with objects</li>
+  <li>cortexm-helper: + cm_object_get_child_by_name()</li>
+  <li>bitfield: fix register_bitfield_read_value()</li>
+  <li>stm32-rcc: stm32_rcc_update_clocks() use fields</li>
+  <li>stm32-gpio: reference to rcc without u.</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-17">2015-07-02</h3>
-
+<h3 id="section-17">2015-07-02</h3>
 <ul>
-<li>register &amp; bitfield: crosslinks removed</li>
+  <li>register &amp; bitfield: crosslinks removed</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-18">2015-07-01</h3>
-
+<h3 id="section-18">2015-07-01</h3>
 <ul>
-<li>peripheral-register: endianness implemented</li>
-<li>bitfield: cleared-by, set-by</li>
-<li>register: parent_read, parent_write added</li>
+  <li>peripheral-register: endianness implemented</li>
+  <li>bitfield: cleared-by, set-by</li>
+  <li>register: parent_read, parent_write added</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-19">2015-06-30</h3>
-
+<h3 id="section-19">2015-06-30</h3>
 <ul>
-<li>peripheral, peripheral-register, register-bitfield</li>
-<li>peripheral-register: add size-bits</li>
-<li>stm32: add prefix, peripheral suffix</li>
-<li>cortexm &amp; stm32: use "cortexm:" "stm32:" prefix</li>
-<li>cortexm-helper.c: cm_object_get_parent() added</li>
-<li>peripheral: register_size_bits added</li>
-<li>register &amp; bitfield: inits, defaults fixed</li>
-<li>stm32-flash: use rw-mode</li>
-<li>cortexm-helper.h: _is_instance_of_typename added</li>
-<li>peripheral,register, bitfield: partly functional</li>
-<li>stm32-flash: functional with new infrastructure</li>
+  <li>peripheral, peripheral-register, register-bitfield</li>
+  <li>peripheral-register: add size-bits</li>
+  <li>stm32: add prefix, peripheral suffix</li>
+  <li>cortexm &amp; stm32: use “cortexm:” “stm32:” prefix</li>
+  <li>cortexm-helper.c: cm_object_get_parent() added</li>
+  <li>peripheral: register_size_bits added</li>
+  <li>register &amp; bitfield: inits, defaults fixed</li>
+  <li>stm32-flash: use rw-mode</li>
+  <li>cortexm-helper.h: _is_instance_of_typename added</li>
+  <li>peripheral,register, bitfield: partly functional</li>
+  <li>stm32-flash: functional with new infrastructure</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-20">2015-06-29</h3>
-
+<h3 id="section-20">2015-06-29</h3>
 <ul>
-<li>cortexm-helper: prop-str() with null fixed</li>
-<li>bitfield: added</li>
-<li>register: updated from register32</li>
-<li>peripheral32: updated to create register objects</li>
-<li>stm32-flash: updated to use BitfieldInfo</li>
-<li>cortexm-helper: property-add added</li>
-<li>bitfield: renamed register-bitfield</li>
-<li>register: renamed peripheral-register</li>
-<li>peripheral32: renamed peripheral</li>
-<li>stm32-flash: use new peripheral &amp; co</li>
-<li>stm32-xxx template: updated to use registers</li>
+  <li>cortexm-helper: prop-str() with null fixed</li>
+  <li>bitfield: added</li>
+  <li>register: updated from register32</li>
+  <li>peripheral32: updated to create register objects</li>
+  <li>stm32-flash: updated to use BitfieldInfo</li>
+  <li>cortexm-helper: property-add added</li>
+  <li>bitfield: renamed register-bitfield</li>
+  <li>register: renamed peripheral-register</li>
+  <li>peripheral32: renamed peripheral</li>
+  <li>stm32-flash: use new peripheral &amp; co</li>
+  <li>stm32-xxx template: updated to use registers</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-21">2015-06-28</h3>
-
+<h3 id="section-21">2015-06-28</h3>
 <ul>
-<li>build: fix compile errors on win</li>
-<li>stm32-rcc: remove conditional registration</li>
-<li>cortexm many: copyright cosmetics (dot)</li>
-<li>cortexm-nvic: register_types() name (plural)</li>
-<li>qom-qopbjects.c: log_mask for setter</li>
-<li>stm32-gpio/rcc; itm: node name 'mmio'</li>
-<li>register32: readable-bits, writable-bits rename</li>
-<li>cortexm-helper.c: support for parenting</li>
-<li>cortexm-mcu/stm32-mcu: restructure hierarchy</li>
-<li>template: register_types() name (plural)</li>
-<li>template: node name 'mmio'</li>
+  <li>build: fix compile errors on win</li>
+  <li>stm32-rcc: remove conditional registration</li>
+  <li>cortexm many: copyright cosmetics (dot)</li>
+  <li>cortexm-nvic: register_types() name (plural)</li>
+  <li>qom-qopbjects.c: log_mask for setter</li>
+  <li>stm32-gpio/rcc; itm: node name ‘mmio’</li>
+  <li>register32: readable-bits, writable-bits rename</li>
+  <li>cortexm-helper.c: support for parenting</li>
+  <li>cortexm-mcu/stm32-mcu: restructure hierarchy</li>
+  <li>template: register_types() name (plural)</li>
+  <li>template: node name ‘mmio’</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-22">2015-06-27</h3>
-
+<h3 id="section-22">2015-06-27</h3>
 <ul>
-<li>cortexm: migrate qdev -&gt; qom</li>
-<li>peripheral32 &amp; register32 added</li>
-<li>template stm32-xxx: properties added</li>
-<li>monitor.c: verbosity moved up</li>
-<li>cortexm: more qom migration</li>
-<li>cortexm-mcu: always register reset callback</li>
-<li>cortexm-helper: add property setters</li>
-<li>stm32-olimex-boards use new helpers that exit</li>
+  <li>cortexm: migrate qdev -&gt; qom</li>
+  <li>peripheral32 &amp; register32 added</li>
+  <li>template stm32-xxx: properties added</li>
+  <li>monitor.c: verbosity moved up</li>
+  <li>cortexm: more qom migration</li>
+  <li>cortexm-mcu: always register reset callback</li>
+  <li>cortexm-helper: add property setters</li>
+  <li>stm32-olimex-boards use new helpers that exit</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-23">2015-06-25</h3>
-
+<h3 id="section-23">2015-06-25</h3>
 <ul>
-<li>cortexm-helper: cm_board_greeting() moved here</li>
-<li>cortexm-helper: cm_prop_set_bool() added</li>
-<li>gpio-led: use set_string() to init led messages</li>
-<li>stm32-olimex-boards: all implemented</li>
-<li>memory.c: read trace added again</li>
-<li>stm32-rcc: f1cl functional</li>
-<li>cortex-mcu: *<em>do_unassigned_access</em>callback</li>
-<li>cortexm-mcu: mem sizes as uint32_t</li>
-<li>stm32f407 capabilities added</li>
-<li>stm32f407xx added</li>
+  <li>cortexm-helper: cm_board_greeting() moved here</li>
+  <li>cortexm-helper: cm_prop_set_bool() added</li>
+  <li>gpio-led: use set_string() to init led messages</li>
+  <li>stm32-olimex-boards: all implemented</li>
+  <li>memory.c: read trace added again</li>
+  <li>stm32-rcc: f1cl functional</li>
+  <li>cortex-mcu: *_do_unassigned_access_callback</li>
+  <li>cortexm-mcu: mem sizes as uint32_t</li>
+  <li>stm32f407 capabilities added</li>
+  <li>stm32f407xx added</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-24">2015-06-24</h3>
-
+<h3 id="section-24">2015-06-24</h3>
 <ul>
-<li>Merge branch 'target-arm.next' into gnuarmeclipse-dev</li>
-<li>template: remove constructor</li>
+  <li>Merge branch ‘target-arm.next’ into gnuarmeclipse-dev</li>
+  <li>template: remove constructor</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-25">2015-06-22</h3>
-
+<h3 id="section-25">2015-06-22</h3>
 <ul>
-<li>cortexm-helper.h added</li>
-<li>cortexm-nvic added</li>
-<li>cortexm-mcu: use new NVIC</li>
-<li>stm32-mcu(s) use realize() &amp; reset() helpers</li>
-<li>qdev_class_realize() added to cortexm-helper</li>
-<li>cortexm-nvic: use parent_reset</li>
-<li>stm32-mcus: use qdev_class_realize()</li>
-<li>stm32-mcu: group parent definitions in header</li>
-<li>stm32-gpio-led removed</li>
-<li>cortexm-helper.h: add DEFINE_PROP_CONST_STRING</li>
-<li>cortexm-mcu, stm32-mcu &amp; stm32-mcus: constructor</li>
-<li>armv7m-itm renamed cortexm-itm</li>
-<li>cortexm-itm: updated to new structure</li>
-<li>cortexm-helper: more defs from cortexm-mcu</li>
-<li>gpio-led: move PROP_* defs to cortexm-helper.h</li>
-<li>stm32_sys_bus_device/stm32-gpio/stm32-rcc/stm32-flash: updated to new structure</li>
-<li>qom &amp; qdev: log property settings</li>
+  <li>cortexm-helper.h added</li>
+  <li>cortexm-nvic added</li>
+  <li>cortexm-mcu: use new NVIC</li>
+  <li>stm32-mcu(s) use realize() &amp; reset() helpers</li>
+  <li>qdev_class_realize() added to cortexm-helper</li>
+  <li>cortexm-nvic: use parent_reset</li>
+  <li>stm32-mcus: use qdev_class_realize()</li>
+  <li>stm32-mcu: group parent definitions in header</li>
+  <li>stm32-gpio-led removed</li>
+  <li>cortexm-helper.h: add DEFINE_PROP_CONST_STRING</li>
+  <li>cortexm-mcu, stm32-mcu &amp; stm32-mcus: constructor</li>
+  <li>armv7m-itm renamed cortexm-itm</li>
+  <li>cortexm-itm: updated to new structure</li>
+  <li>cortexm-helper: more defs from cortexm-mcu</li>
+  <li>gpio-led: move PROP_* defs to cortexm-helper.h</li>
+  <li>stm32_sys_bus_device/stm32-gpio/stm32-rcc/stm32-flash: updated to new structure</li>
+  <li>qom &amp; qdev: log property settings</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-26">2015-06-21</h3>
-
+<h3 id="section-26">2015-06-21</h3>
 <ul>
-<li>arm-semi.c: validate cmdline</li>
-<li>add --image</li>
-<li>cortexm-mcu: inits starting from cpu_model</li>
-<li>cortexm-mcu: comment out old bootinfo patch</li>
-<li>stm32-h103 board no longer experimental</li>
+  <li>arm-semi.c: validate cmdline</li>
+  <li>add –image</li>
+  <li>cortexm-mcu: inits starting from cpu_model</li>
+  <li>cortexm-mcu: comment out old bootinfo patch</li>
+  <li>stm32-h103 board no longer experimental</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-27">2015-06-20</h3>
-
+<h3 id="section-27">2015-06-20</h3>
 <ul>
-<li>Merge branch 'target-arm.next' into gnuarmeclipse-dev</li>
+  <li>Merge branch ‘target-arm.next’ into gnuarmeclipse-dev</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-28">2015-06-19</h3>
-
+<h3 id="section-28">2015-06-19</h3>
 <ul>
-<li>rom_reset &amp; cpu_reset: qemu_log_functio_name()</li>
-<li>stm32-capabilities: gpiog, to be used by L1</li>
-<li>cortexm-mcu.c: comments added</li>
+  <li>rom_reset &amp; cpu_reset: qemu_log_functio_name()</li>
+  <li>stm32-capabilities: gpiog, to be used by L1</li>
+  <li>cortexm-mcu.c: comments added</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-29">2015-06-17</h3>
-
+<h3 id="section-29">2015-06-17</h3>
 <ul>
-<li>/cortexm container added; nvic &amp; itm inside</li>
-<li>/stm32 container; rcc, flash, gpio[%c] in</li>
-<li>generic-gpio-led non-abstract</li>
-<li>gpio-led files renamed without generic</li>
-<li>gpio-led: references to gpio-led.h updated</li>
-<li>qdev-properties: qdev_prop_set_bool() added</li>
-<li>stm32-mcu: create_gpio static</li>
-<li>stm32-gpio-led.o removed from build</li>
-<li>gpio-led: use properties to configure</li>
-<li>stm32-olimex-boards: h103 uses new gpio-led</li>
-<li>gpio-led.h: remove Info structure</li>
-<li>cortexm capabilities further split</li>
-<li>stm32: add F2, F3, L1 families</li>
-<li>fix qemu formatting</li>
+  <li>/cortexm container added; nvic &amp; itm inside</li>
+  <li>/stm32 container; rcc, flash, gpio[%c] in</li>
+  <li>generic-gpio-led non-abstract</li>
+  <li>gpio-led files renamed without generic</li>
+  <li>gpio-led: references to gpio-led.h updated</li>
+  <li>qdev-properties: qdev_prop_set_bool() added</li>
+  <li>stm32-mcu: create_gpio static</li>
+  <li>stm32-gpio-led.o removed from build</li>
+  <li>gpio-led: use properties to configure</li>
+  <li>stm32-olimex-boards: h103 uses new gpio-led</li>
+  <li>gpio-led.h: remove Info structure</li>
+  <li>cortexm capabilities further split</li>
+  <li>stm32: add F2, F3, L1 families</li>
+  <li>fix qemu formatting</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-30">2015-06-16</h3>
-
+<h3 id="section-30">2015-06-16</h3>
 <ul>
-<li>generic-gpio-led: logic moved out of realize()</li>
-<li>stm32-gpio-led: more comments added</li>
+  <li>generic-gpio-led: logic moved out of realize()</li>
+  <li>stm32-gpio-led: more comments added</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-31">2015-06-15</h3>
-
+<h3 id="section-31">2015-06-15</h3>
 <ul>
-<li>stm32-mcu: alias rcc hse/lse properties</li>
-<li>stm32-mcus: use capabilities table</li>
-<li>stm32-common.h renamed stm32-capabilities.h</li>
-<li>stm32-capabilities guard macros updated</li>
-<li>stm32-mcu restructure</li>
+  <li>stm32-mcu: alias rcc hse/lse properties</li>
+  <li>stm32-mcus: use capabilities table</li>
+  <li>stm32-common.h renamed stm32-capabilities.h</li>
+  <li>stm32-capabilities guard macros updated</li>
+  <li>stm32-mcu restructure</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-32">2015-06-14</h3>
-
+<h3 id="section-32">2015-06-14</h3>
 <ul>
-<li>capabilities: remove .device_name</li>
-<li>stm32 capabilities separate from cm capabilities</li>
-<li>parent_realize: with object_class_by_name</li>
+  <li>capabilities: remove .device_name</li>
+  <li>stm32 capabilities separate from cm capabilities</li>
+  <li>parent_realize: with object_class_by_name</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-33">2015-06-13</h3>
-
+<h3 id="section-33">2015-06-13</h3>
 <ul>
-<li>cortexm-mcu: marked as abstract</li>
-<li>generic &amp; stm32-gpio-led: added</li>
-<li>stm32-olimex-boards: h103 use stm32-gpio-led</li>
-<li>stm32.h renamed stm32-mcus.h</li>
-<li>cortexm &amp; stm: define construct() virtual</li>
-<li>stm32 &amp; generic-led use constructors</li>
+  <li>cortexm-mcu: marked as abstract</li>
+  <li>generic &amp; stm32-gpio-led: added</li>
+  <li>stm32-olimex-boards: h103 use stm32-gpio-led</li>
+  <li>stm32.h renamed stm32-mcus.h</li>
+  <li>cortexm &amp; stm: define construct() virtual</li>
+  <li>stm32 &amp; generic-led use constructors</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-34">2015-06-12</h3>
-
+<h3 id="section-34">2015-06-12</h3>
 <ul>
-<li>stm32: add reference to RCC in GPIO</li>
-<li>stm32-olimex-boards: led message with parenthesis</li>
+  <li>stm32: add reference to RCC in GPIO</li>
+  <li>stm32-olimex-boards: led message with parenthesis</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-35">2015-06-11</h3>
-
+<h3 id="section-35">2015-06-11</h3>
 <ul>
-<li>cortexm helper, with cpu_ and qdev_ functions</li>
-<li>cortexm &amp; stm32: inits moved away from realize()</li>
-<li>cortexm.h renamed cortexm-mcu.h</li>
-<li>stm32-mcu: use qdev-create()</li>
-<li>stm32-mcu: add stm32_mcu_get_gpio_dev()</li>
-<li>stm32-olimex-boards.c: add h103 green led</li>
+  <li>cortexm helper, with cpu_ and qdev_ functions</li>
+  <li>cortexm &amp; stm32: inits moved away from realize()</li>
+  <li>cortexm.h renamed cortexm-mcu.h</li>
+  <li>stm32-mcu: use qdev-create()</li>
+  <li>stm32-mcu: add stm32_mcu_get_gpio_dev()</li>
+  <li>stm32-olimex-boards.c: add h103 green led</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-36">2015-06-10</h3>
-
+<h3 id="section-36">2015-06-10</h3>
 <ul>
-<li>qdev: qdev_realize() added</li>
-<li>stm32-mcu: get_rcc_dev() added as inline</li>
-<li>stm32: vl capabilities; hsi &amp; lsi freq</li>
-<li>stm32-mcu: add hsi-freq-hz &amp; lsi-freq-hz props</li>
-<li>stm32-mcus: stm32f103 define hsi &amp; lsi</li>
-<li>h103: set hse &amp; lse props</li>
-<li>stm32-rcc: update clock functional</li>
-<li>cortexm-mcu: properties *-size-kb renamed</li>
-<li>gnuameclipse/docs: folder added</li>
-<li>cortexm &amp; stm32: callbacks suffixed</li>
-<li>armv7m-itm.* renamed with dash</li>
-<li>stm32 gpio with irqs</li>
+  <li>qdev: qdev_realize() added</li>
+  <li>stm32-mcu: get_rcc_dev() added as inline</li>
+  <li>stm32: vl capabilities; hsi &amp; lsi freq</li>
+  <li>stm32-mcu: add hsi-freq-hz &amp; lsi-freq-hz props</li>
+  <li>stm32-mcus: stm32f103 define hsi &amp; lsi</li>
+  <li>h103: set hse &amp; lse props</li>
+  <li>stm32-rcc: update clock functional</li>
+  <li>cortexm-mcu: properties *-size-kb renamed</li>
+  <li>gnuameclipse/docs: folder added</li>
+  <li>cortexm &amp; stm32: callbacks suffixed</li>
+  <li>armv7m-itm.* renamed with dash</li>
+  <li>stm32 gpio with irqs</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-37">2015-06-09</h3>
-
+<h3 id="section-37">2015-06-09</h3>
 <ul>
-<li>cpu.c: log MSP &amp; PC</li>
-<li>stm32-xxx template renamed</li>
-<li>memory: log skip ITM</li>
-<li>sysbus: log sysbus_mmio_map_common() calls</li>
-<li>stm32-rcc &amp; flash: increase size to 0x400</li>
-<li>armv7m-itm: cosmetics in size &amp; addr</li>
-<li>stm32-gpio: added</li>
-<li>stm32-mcu: include children gpio objects</li>
-<li>stm32-xxx template inspired from gpio</li>
+  <li>cpu.c: log MSP &amp; PC</li>
+  <li>stm32-xxx template renamed</li>
+  <li>memory: log skip ITM</li>
+  <li>sysbus: log sysbus_mmio_map_common() calls</li>
+  <li>stm32-rcc &amp; flash: increase size to 0x400</li>
+  <li>armv7m-itm: cosmetics in size &amp; addr</li>
+  <li>stm32-gpio: added</li>
+  <li>stm32-mcu: include children gpio objects</li>
+  <li>stm32-xxx template inspired from gpio</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-38">2015-06-08</h3>
-
+<h3 id="section-38">2015-06-08</h3>
 <ul>
-<li>log: "trace_mr" added</li>
-<li>loader.c: add verbosity from loaded segments</li>
-<li>cortexm-mcu: split  regions_create and reset</li>
-<li>stm32-mcu: override regions_create</li>
-<li>memory.c: add verbosity to memory regions</li>
-<li>monitor: limit verbosity to gdb instance</li>
-<li>monitor: readline_update emptied</li>
-<li>stm32-mcu extracted; dash names</li>
-<li>rename stm32 peripheral .c files</li>
-<li>stm32-mcu.h split from stm32.h</li>
-<li>loader: make rom_reset public</li>
-<li>cortexm: do a rom_reset() before cpu_reset()</li>
+  <li>log: “trace_mr” added</li>
+  <li>loader.c: add verbosity from loaded segments</li>
+  <li>cortexm-mcu: split  regions_create and reset</li>
+  <li>stm32-mcu: override regions_create</li>
+  <li>memory.c: add verbosity to memory regions</li>
+  <li>monitor: limit verbosity to gdb instance</li>
+  <li>monitor: readline_update emptied</li>
+  <li>stm32-mcu extracted; dash names</li>
+  <li>rename stm32 peripheral .c files</li>
+  <li>stm32-mcu.h split from stm32.h</li>
+  <li>loader: make rom_reset public</li>
+  <li>cortexm: do a rom_reset() before cpu_reset()</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-39">2015-06-06</h3>
-
+<h3 id="section-39">2015-06-06</h3>
 <ul>
-<li>armv7m_itm.[ch] - object renamed armv7m-itm</li>
-<li>stm32 rcc &amp; flash devices added to stm32 mcu</li>
+  <li>armv7m_itm.[ch] - object renamed armv7m-itm</li>
+  <li>stm32 rcc &amp; flash devices added to stm32 mcu</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-40">2015-06-04</h3>
-
+<h3 id="section-40">2015-06-04</h3>
 <ul>
-<li>licenses updated to GPL</li>
-<li>cortexm boards: cortexm_board_greeting() simplified</li>
-<li>cortexm: cortexm_mcu_init()</li>
-<li>cortexm: reformat with spaces instead of tabs</li>
-<li>cortexm: display_model added to state</li>
-<li>Beckus original code added from 8d3b35e</li>
+  <li>licenses updated to GPL</li>
+  <li>cortexm boards: cortexm_board_greeting() simplified</li>
+  <li>cortexm: cortexm_mcu_init()</li>
+  <li>cortexm: reformat with spaces instead of tabs</li>
+  <li>cortexm: display_model added to state</li>
+  <li>Beckus original code added from 8d3b35e</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-41">2015-06-03</h3>
-
+<h3 id="section-41">2015-06-03</h3>
 <ul>
-<li>armv7m_itm added</li>
-<li>cortexm: use 'realize'; construct ITM object</li>
-<li>stm32: add stm32-mcu object</li>
-<li>armv7m_nvic: add log trace</li>
+  <li>armv7m_itm added</li>
+  <li>cortexm: use ‘realize’; construct ITM object</li>
+  <li>stm32: add stm32-mcu object</li>
+  <li>armv7m_nvic: add log trace</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-42">2015-06-02</h3>
-
+<h3 id="section-42">2015-06-02</h3>
 <ul>
-<li>LOG_TRACE added to log</li>
-<li>verbosity_level: check condition &gt;=</li>
+  <li>LOG_TRACE added to log</li>
+  <li>verbosity_level: check condition &gt;=</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-43">2015-06-01</h3>
-
+<h3 id="section-43">2015-06-01</h3>
 <ul>
-<li>sysemu.h: verbosity_t enum added</li>
-<li>cortexm.c: configurable bitband_init()</li>
-<li>verbosity.h as separate header</li>
-<li>stm32_mcus &amp; stm32_boards updated for new framework</li>
+  <li>sysemu.h: verbosity_t enum added</li>
+  <li>cortexm.c: configurable bitband_init()</li>
+  <li>verbosity.h as separate header</li>
+  <li>stm32_mcus &amp; stm32_boards updated for new framework</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-44">2015-05-31</h3>
-
+<h3 id="section-44">2015-05-31</h3>
 <ul>
-<li>cortexm: new cortexm-mcu type added</li>
+  <li>cortexm: new cortexm-mcu type added</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-45">2015-05-29</h3>
-
+<h3 id="section-45">2015-05-29</h3>
 <ul>
-<li>cortexm: restructure core_init()</li>
+  <li>cortexm: restructure core_init()</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-46">2015-05-12</h3>
-
+<h3 id="section-46">2015-05-12</h3>
 <ul>
-<li>check EACCES to avoid exiting with wrong config path</li>
+  <li>check EACCES to avoid exiting with wrong config path</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-47">2015-05-12</h3>
-
+<h3 id="section-47">2015-05-12</h3>
 <ul>
-<li>strrchr &amp; QEMU_WORDSIZE</li>
+  <li>strrchr &amp; QEMU_WORDSIZE</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-48">2015-04-27</h3>
-
+<h3 id="section-48">2015-04-27</h3>
 <ul>
-<li>Merge branch 'master' into gnuarmeclipse-dev</li>
+  <li>Merge branch ‘master’ into gnuarmeclipse-dev</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-49">2015-04-14</h3>
-
+<h3 id="section-49">2015-04-14</h3>
 <ul>
-<li>semihosting-cmdline must be the last one</li>
+  <li>semihosting-cmdline must be the last one</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-50">2015-04-13</h3>
-
+<h3 id="section-50">2015-04-13</h3>
 <ul>
-<li>arm semi: stderr goes to stderr.</li>
+  <li>arm semi: stderr goes to stderr.</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-51">2015-04-09</h3>
-
+<h3 id="section-51">2015-04-09</h3>
 <ul>
-<li>updated for Docker; win64 still not functional</li>
+  <li>updated for Docker; win64 still not functional</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-52">2015-04-05</h3>
-
+<h3 id="section-52">2015-04-05</h3>
 <ul>
-<li>build: remove reference to bootstrap</li>
+  <li>build: remove reference to bootstrap</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-53">2015-04-03</h3>
-
+<h3 id="section-53">2015-04-03</h3>
 <ul>
-<li>release 2.2.92-20150404*-dev</li>
-<li>build: update Debian prerequisites</li>
+  <li>release 2.2.92-20150404*-dev</li>
+  <li>build: update Debian prerequisites</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-54">2015-04-03</h3>
-
+<h3 id="section-54">2015-04-03</h3>
 <ul>
-<li>-semihosting-cmdline added</li>
-<li>big cleanup</li>
+  <li>-semihosting-cmdline added</li>
+  <li>big cleanup</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-55">2015-04-02</h3>
-
+<h3 id="section-55">2015-04-02</h3>
 <ul>
-<li>configure defaults without bz2 and usb</li>
-<li>build-qemu.sh functional on all platforms</li>
+  <li>configure defaults without bz2 and usb</li>
+  <li>build-qemu.sh functional on all platforms</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-56">2015-04-01</h3>
-
+<h3 id="section-56">2015-04-01</h3>
 <ul>
-<li>win32/64 builds mostly static</li>
-<li>linux build ok; pixman library added; all static</li>
+  <li>win32/64 builds mostly static</li>
+  <li>linux build ok; pixman library added; all static</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-57">2015-03-31</h3>
-
+<h3 id="section-57">2015-03-31</h3>
 <ul>
-<li>win32/64 build pass &amp; shows version</li>
+  <li>win32/64 build pass &amp; shows version</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-58">2015-03-28</h3>
-
+<h3 id="section-58">2015-03-28</h3>
 <ul>
-<li>win32/64: zlib &amp; iconv added to build</li>
+  <li>win32/64: zlib &amp; iconv added to build</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-59">2015-03-26</h3>
-
+<h3 id="section-59">2015-03-26</h3>
 <ul>
-<li>osx build ok</li>
-<li>kinetis header redundancy fixed</li>
-<li>debian 64/32-bit build ok</li>
-<li>add CONFIG_GNU_ARM_ECLIPSE</li>
+  <li>osx build ok</li>
+  <li>kinetis header redundancy fixed</li>
+  <li>debian 64/32-bit build ok</li>
+  <li>add CONFIG_GNU_ARM_ECLIPSE</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-60">2015-01-25</h3>
-
+<h3 id="section-60">2015-01-25</h3>
 <ul>
-<li>build script for Ubuntu</li>
+  <li>build script for Ubuntu</li>
 </ul>
 
-<h3 id="tocAnchor-1-1-61">2015-01-20</h3>
-
+<h3 id="section-61">2015-01-20</h3>
 <ul>
-<li>darwin pkgbuild added</li>
-<li>add install-pdf to make install</li>
-<li>add os x build script</li>
-<li>os x build script, add dtc submodule</li>
-<li>debian build: preliminary files (from os x files)</li>
-<li>kinetis header duplicate definition removed</li>
-<li>debian build script functional</li>
+  <li>darwin pkgbuild added</li>
+  <li>add install-pdf to make install</li>
+  <li>add os x build script</li>
+  <li>os x build script, add dtc submodule</li>
+  <li>debian build: preliminary files (from os x files)</li>
+  <li>kinetis header duplicate definition removed</li>
+  <li>debian build script functional</li>
 </ul>
 
-<h2 id="tocAnchor-1-63">2014</h2>
+<h2 id="section-62">2014</h2>
 
 <p>See <a href="/qemu/change-log/2014">2014</a>.</p>
 
@@ -769,174 +722,176 @@
 
 <aside id="sidebar">
 
-<h4><a href="/blog/">Latest News</a></h4>
+<h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
-<li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-<li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-<li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
-<li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
-<li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
+  <li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
+  <li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
+  <li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
+  <li><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></li>
+  <li><a href="/blog/2015/08/07/plugins-v2.9.2-201508071246-released/">GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</a></li>
 </ul>
+
 
 <hr />
-<h4><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/plugins/features/">Features</a></h4>
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
-<h4><a href="/downloads/">Downloads</a></h4>
+<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
 
 <ul>
-<li><a href="/downloads/">Overview</a></li>
-<li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-<li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-<li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-<li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
-<h4><a href="/install/">Install</a></h4>
+<h4 id="installinstall"><a href="/install/">Install</a></h4>
 
 <ul>
-<li><a href="/install/">Overview</a></li>
-<li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
-<li><a href="/toolchain/install/">Toolchain(s) install</a></li>
-<li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-<li><a href="/debug/install/">Debugging components</a>
-
-<ul>
-<li><a href="/debug/install/">Overview</a></li>
-<li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
-<li><a href="/openocd/install/">OpenOCD install</a></li>
-<li><a href="/qemu/install/">QEMU install</a></li>
-</ul></li>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging components</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h4>Important</h4>
+<h4 id="important">Important</h4>
 
 <ul>
-<li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
-<li><a href="/toolchain/path/">Toolchain path</a></li>
-<li><a href="/eclipse/project/portability/">Project portability</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
 </ul>
 
-<h4>Tutorials</h4>
+<h4 id="tutorials">Tutorials</h4>
 
 <ul>
-<li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
-<li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
 </ul>
 
-<h4>How to use</h4>
+<h4 id="how-to-use">How to use</h4>
 
 <ul>
-<li><a href="/plugins/mbs/">The managed build plug-in</a></li>
-<li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
-<li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
 </ul>
 
-<h4><a href="/templates/">Templates</a></h4>
+<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
 
 <ul>
-<li><a href="/templates/">Overview</a></li>
-<li><a href="/templates/cortexm/">Cortex-M template</a></li>
-<li><a href="/templates/stm32f/">STM32Fxx template</a></li>
-<li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
 </ul>
 
-<h4><a href="/debug/">Debugging</a></h4>
+<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
 
 <ul>
-<li><a href="/debug/">Overview</a></li>
-<li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/debug/qemu/">The QEMU plug-in</a></li>
-<li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
 </ul>
 
-<h4><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-<li><a href="/qemu/">Overview</a> (read me first!)</li>
-<li><a href="/qemu/install/">QEMU Install</a></li>
-<li><a href="/debug/qemu/">Eclipse plug-in</a></li>
-<li><a href="/qemu/build-procedure/">How to build</a></li>
-<li><a href="/qemu/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-<li><a href="/openocd/">Overview</a> (read me first!)</li>
-<li><a href="/openocd/install/">OpenOCD Install</a></li>
-<li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
-<li><a href="/openocd/build-procedure/">How to build</a></li>
-<li><a href="/openocd/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
-<h4><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-<li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
-<li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
-<li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
-<li><a href="/windows-build-tools/releases/">Releases</a></li>
-<li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
-<h4>Advanced</h4>
+<h4 id="advanced">Advanced</h4>
 
 <ul>
-<li><a href="/advanced/headless-builds/">Headless builds</a></li>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
 </ul>
 
-<h4><a href="/support/">Support</a></h4>
+<h4 id="supportsupport"><a href="/support/">Support</a></h4>
 
 <ul>
-<li><a href="/support/">Overview</a></li>
-<li><a href="/support/known-issues/">Known issues</a></li>
-<li><a href="/support/faq/">FAQ</a></li>
-<li><a href="/support/sourceforge/">SourceForge tickets</a></li>
-<li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
 </ul>
 
-<h4><a href="/developer/">Developer</a></h4>
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
 
 <ul>
-<li><a href="/developer/build-procedure/">How to build</a></li>
-<li><a href="/developer/publish-procedure/">How to publish</a></li>
-<li><a href="/developer/change-log">Change log</a></li>
-<li><a href="/developer/contribute/">Contribute</a></li>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
 </ul>
 
-<h4>Hardware</h4>
+<h4 id="hardware">Hardware</h4>
 
 <ul>
-<li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
 </ul>
 
-<h4>Articles</h4>
+<h4 id="articles">Articles</h4>
 
 <ul>
-<li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
-<li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
 </ul>
 
-<h4>Licenses</h4>
+<h4 id="licenses">Licenses</h4>
 
 <ul>
-<li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
-<li><a href="/licenses/tools/">Tools</a></li>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
 </ul>
 
-<h4>Finance</h4>
+<h4 id="finance">Finance</h4>
 
 <ul>
-<li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
 </ul>
 
-<h4><a href="/about/">About</a></h4>
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
 
 <hr />
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
@@ -958,10 +913,12 @@
 <div class="site-footer">
   <div class="site-footer-links left">
     <ul>
-<li>© 2015 Liviu Ionescu</li>
-<li>Hosted on GitHub Pages</li>
-<li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
-<li><div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
+  <li>© 2015 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
 </ul>
 
   </div>
@@ -970,11 +927,11 @@
   </a>
   <div class="site-footer-links right">
     <ul>
-<li><a href="/">Home</a></li>
-<li><a href="/blog/">News</a></li>
-<li><a href="/downloads/">Downloads</a></li>
-<li><a href="/support/">Support</a></li>
-<li><a href="/about/">About</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
 </ul>
 
   </div>
