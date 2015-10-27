@@ -148,7 +148,7 @@
 
 <p>Due to portability reasons, the GNU ARM Eclipse plug-ins do not include any toolchain binaries, but they can be downloaded either from the <a href="http://launchpad.net/gcc-arm-embedded">GCC ARM Embedded project page</a>, or, even better, from the <a href="http://launchpad.net/gcc-arm-embedded/+download">All downloads</a> page, where it is a bit easier to identify which file is required.</p>
 
-<p>Versions from 4.7 up to 4.9-2014-q4 were tested and are known to work properly.</p>
+<p>Versions from 4_7 up to 4_9-2015q3 were tested and are known to work properly.</p>
 
 <p>
 <img src="/assets/images/2014/01/Launchpad.png" alt="Launchpad" />
@@ -163,7 +163,7 @@
 <p>The following steps can be performed on Windows:</p>
 
 <ul>
-  <li>download the latest Windows installer <strong>.exe</strong> file (currently <code>gcc-arm-none-eabi-4_8-2014q2-20140609-win32.exe</code>, about 84MB)</li>
+  <li>download the latest Windows installer <strong>.exe</strong> file (currently <code>gcc-arm-none-eabi-4_9-2015q3-20150921-win32.exe</code>, about 84 MB)</li>
   <li>locate the file (usually in the <code>...\Downloads\</code>  folder) and double click it to start the installer</li>
   <li>
     <p>authenticate with the administrative password, to allow the installer write in system locations</p>
@@ -189,13 +189,14 @@
     <p><img src="/assets/images/2014/01/MS_finish.png" alt="Disable adding toolchain path to environment" /></p>
   </li>
   <li>read the <code>readme.txt</code> file</li>
-  <li>test if the compiler is functional</li>
-</ul>
+  <li>
+    <p>test if the compiler is functional</p>
 
-<pre>
-<code>C:\Users\Liviu Ionescu\&gt;"C:\Program Files\GNU Tools ARM Embedded\4.8 2014q2\bin\arm-none-eabi-gcc.exe" --version
+    <pre><code>C:\Users\Liviu Ionescu\&gt;"C:\Program Files\GNU Tools ARM Embedded\4.8 2014q2\bin\arm-none-eabi-gcc.exe" --version
 arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-branch revision 211358]
 </code></pre>
+  </li>
+</ul>
 
 <p>For Windows, the next step would be to install the <a href="/windows-build-tools/">build tools (make &amp; rm)</a>.</p>
 
@@ -208,7 +209,7 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (releas
 <p>The following steps can be performed on OS X:</p>
 
 <ul>
-  <li>download the latest OS X install tarball file (currently <code>gcc-arm-none-eabi-4_8-2014q2-20140609-mac.tar.bz2</code>, about 66MB)</li>
+  <li>download the latest OS X install tarball file (currently <code>gcc-arm-none-eabi-4_9-2015q3-20150921-mac.tar.bz2</code>, about 66 MB)</li>
   <li>locate the file (usually in the <code>$HOME/Downloads</code> folder)</li>
   <li>decide on a location to install the toolchain; the recommended folder is <code>/usr/local/</code></li>
   <li>
@@ -217,32 +218,29 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (releas
     <blockquote>
       <p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
     </blockquote>
-  </li>
-</ul>
 
-<pre>
-<code>$ sudo mkdir -p /usr/local
+    <pre><code>$ sudo mkdir -p /usr/local
 $ cd /usr/local
-$ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_8-2014q2-20140609-mac.tar.bz2
+$ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_9-2015q3-20150921-mac.tar.bz2
 </code></pre>
+  </li>
+  <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_9-2015q3</code></li>
+  <li>
+    <p>test if the compiler is functional</p>
 
-<ul>
-  <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q2</code></li>
-  <li>test if the compiler is functional</li>
-</ul>
-
-<pre>
-<code>$ /usr/local/gcc-arm-none-eabi-4_8-2014q2/bin/arm-none-eabi-gcc --version
+    <pre><code>$ /usr/local/gcc-arm-none-eabi-4_8-2014q1/bin/arm-none-eabi-gcc --version
 arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-branch revision 211358]
 </code></pre>
 
-<blockquote>
-  <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
-</blockquote>
+    <blockquote>
+      <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+    </blockquote>
+  </li>
+</ul>
 
 <p>The complete toolchain documentation is available in the <code>.../share/doc/pdf/</code> folder.</p>
 
-<p>If you’ll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_8-2014q2</code>, there are no other components stored in system folders.</p>
+<p>If you’ll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_9-2015q3</code>, there are no other components stored in system folders.</p>
 
 <h3 id="macports">MacPorts</h3>
 
@@ -253,31 +251,31 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (releas
 <p>The following steps were performed on <strong>Ubuntu 14.04 LTSx64</strong> (please adjust them accordingly for other distributions):</p>
 
 <ul>
-  <li>since the toolchain executables are 32-bits apps, when running on 64-bits machines, be sure you install the following 32-bits libraries (for different versions check the toolchain README for the actual list):</li>
-</ul>
+  <li>
+    <p>since the toolchain executables are 32-bits apps, when running on 64-bits machines, be sure you install the following 32-bits libraries (for different versions check the toolchain README for the actual list):</p>
 
-<pre>
-<code>$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
+    <pre><code>$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
 </code></pre>
+  </li>
+  <li>
+    <p>on Ubuntu 15.04 the following libraries are required:</p>
 
-<ul>
-  <li>on Ubuntu 15.04 the following libraries are required:</li>
-</ul>
-
-<pre>
-<code>$ sudo apt-get install lib32ncurses5
+    <pre><code>$ sudo apt-get install lib32ncurses5
 </code></pre>
+  </li>
+  <li>
+    <p>on Ubuntu 12 LTSx64 all 32-bits libraries were packed in ia32-libs, so you can also use, but be prepared to get a lot of useless libraries:</p>
 
-<ul>
-  <li>on Ubuntu 12 LTSx64 all 32-bits libraries were packed in ia32-libs, so you can also use, but be prepared to get a lot of useless libraries:</li>
-</ul>
-
-<pre>
-<code>$ sudo apt-get install ia32-libs
+    <pre><code>$ sudo apt-get install ia32-libs
 </code></pre>
+  </li>
+  <li>
+    <p>download the latest Linux install tarball file from <a href="https://launchpad.net/gcc-arm-embedded/+download">Launchpad</a> (currently <code>gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2</code>, more than 60 MB)</p>
 
-<ul>
-  <li>download the latest Linux install tarball file (currently <code>gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2</code>, more than 60MB)</li>
+    <blockquote>
+      <p>Note: DO NOT install the ARM GCC package that comes with your distribution, especially if it is newer than the one provided by Launchpad, since generally it is not supported, and debugging sessions might fail.</p>
+    </blockquote>
+  </li>
   <li>locate the file (usually in the <code>$HOME/Downloads/</code>  folder)</li>
   <li>decide on a location to install the toolchain; the recommended folder is <code>/usr/local/</code></li>
   <li>
@@ -286,31 +284,28 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (releas
     <blockquote>
       <p>Note: It is highly recommended to <strong>do not use a different install path</strong>, since the plug-in tries to automatically discover the toolchain in this default location.</p>
     </blockquote>
-  </li>
-</ul>
 
-<pre>
-<code>$ cd /usr/local
-$ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2
+    <pre><code>$ cd /usr/local
+$ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
 </code></pre>
-
-<ul>
+  </li>
   <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code></li>
-  <li>test if the compiler is functional</li>
-</ul>
+  <li>
+    <p>test if the compiler is functional</p>
 
-<pre>
-<code>$ /usr/local/gcc-arm-none-eabi-4_8-2014q1/bin/arm-none-eabi-gcc --version
+    <pre><code>$ /usr/local/gcc-arm-none-eabi-4_8-2014q1/bin/arm-none-eabi-gcc --version
 arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (release) [ARM/embedded-4_8-branch revision 208322]
 </code></pre>
 
-<blockquote>
-  <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
-</blockquote>
+    <blockquote>
+      <p><strong>DO NOT add the toolchain path to the user or system path!</strong></p>
+    </blockquote>
+  </li>
+</ul>
 
 <p>The complete toolchain documentation is available in the <code>.../share/doc/pdf/</code> folder.</p>
 
-<p>If you’ll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code>, there are no other components stored in system folders.</p>
+<p>If you’ll ever need to remove the toolchain, just remove the <code>/usr/local/gcc-arm-none-4_9-2015q3</code>, there are no other components stored in system folders.</p>
 
 <h2 id="toolchain-path">Toolchain path</h2>
 
@@ -326,7 +321,7 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (releas
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
+<p class="page-footer">Last modified on Tue Oct 27 11:04:18 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/toolchain/install/" data-layout="button"></div>
 
 
