@@ -9,26 +9,19 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v2.6.1-201502281154 released</title>
-  <meta name="description" content="Version 2.6.1-201502281154 is a new release; the main improvements include: significant stability and reliability changes to the Peripheral view, making it p...">
+  <title>GNU ARM Eclipse OpenOCD v0.10.0-201510281129-dev released</title>
+  <meta name="description" content="Version v0.10.0-201510281129-dev is a maintenance release. It includes binaries for Windows, OS X and GNU/Linux.">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.6.1-201502281154 released" />
+  <meta property="og:title" content="GNU ARM Eclipse OpenOCD v0.10.0-201510281129-dev released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-02-28">
+  <meta property="article:published_time" content="2015-10-28">
 
 
   <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="openocd" />
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
-  <meta property="article:tag" content="j-link" />
-  <meta property="article:tag" content="openocd" />
-  <meta property="article:tag" content="peripherals-view" />
-  <meta property="article:tag" content="toolchain-path" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -38,7 +31,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2015/02/28/plugins-v2.6.1-201502281154-released/">
+  <link rel="canonical" href="/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -97,90 +90,40 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2015/01/31/openocd-v0.8.0-20150131-released/">←</a></td>
-    <td><a href="/blog/2015/01/31/openocd-v0.8.0-20150131-released/">GNU ARM Eclipse OpenOCD v0.8.0-20150131* released</a></td>
+    <td><a href="/blog/2015/09/29/arm-connected-community-article/">←</a></td>
+    <td><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></td>
     <td></td>
-    <td><a href="/blog/2015/03/20/openocd-v0.8.0-20150320-released/">GNU ARM Eclipse OpenOCD v0.8.0-20150320* released</a></td>
-    <td><a href="/blog/2015/03/20/openocd-v0.8.0-20150320-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v2.6.1-201502281154 released</h1>
+<h1 class="post-title">GNU ARM Eclipse OpenOCD v0.10.0-201510281129-dev released</h1>
 
 
 <p class="post-meta">
-Posted on February 28, 2015 by Liviu Ionescu.
+Posted on October 28, 2015 by Liviu Ionescu.
 </p>
 
-<p>Version 2.6.1-201502281154 is a new release; the main improvements include: significant <strong>stability and reliability</strong> changes to the <strong>Peripheral view</strong>, making it production ready; a new <strong>mechanism to manage the toolchain path and build tools path</strong>; for a better integration with the debug plug-ins, a new distribution of OpenOCD was added as a subproject named <strong>GNU ARM Eclipse OpenOCD</strong>.</p>
+<p>Version v0.10.0-201510281129-dev is a maintenance release. It includes binaries for Windows, OS X and GNU/Linux.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.6.1-201502281154">Binary files »</a></p>
+<p><a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.10.0-20151028">Binary files »</a></p>
 
-<p>New features:</p>
+<p>For those who want the latest OpenOCD features before the stable version is announced, the latest OpenOCD version built from the development repository was released in packages explicitly marked as <code>-dev</code>.</p>
 
-<ul>
-  <li>in addition to the toolchain path, the <strong>build tools path</strong> can now be defined explicitly and is automatically added to the PATH environment variable;</li>
-  <li>a new mechanism to store and process the <strong>toolchain path</strong> and the <strong>build tools paths</strong> was added; normally tool paths are defined <strong>globally</strong>, for all workspaces, but the user can explicitly define paths <strong>per workspace</strong> or even <strong>per project</strong>; for this mechanism two Preference pages (<strong>Global Tools Paths</strong> and <strong>Workspace Tools Paths</strong>) and a Properties page (Tools Paths) were added; the old code in the Toolchains tab used to modify the toolcahin path was removed and hyperlinks to the new pages were added;<br />
-<img src="/assets/images/2015/preferences-c-build-global-tools-paths.png" alt="Global Tools Path" /></li>
-  <li>a new mechanism to <strong>auto-discover the SEGGER install path</strong> was added to the J-Link debug plug-in; on Windows the WindowsRegistry is used; on OS X and GNU/Linux several fixed locations are searched;</li>
-  <li>the OpenOCD plug-in also does a fair job to auto-discover the install path;</li>
-  <li><strong>debugging in RAM was improved</strong>; a new setting was added and when debugging in RAM, the code is downloaded with every reset;</li>
-  <li>in a combined effort with SEGGER, a new mechanism to process errors in the J-Link plug-in was implemented; the GDB server returns distinct exit codes for each error, and the plug-in properly displays them;</li>
-  <li>Eclipse preferences were added to configure various J-Link defaults, like <em>Use semihosting</em>, Use <em>SWD</em>;</li>
-  <li>since the general behaviour of the debug plug-ins configuration pages was to persistently store user settings and use them as defaults when new launch configurations were created, in order to return all these setting to their defaults a <strong>Restore defaults</strong> link was added;</li>
-  <li>the <strong>Peripherals</strong> used in a debug session were made persistent to the next session;</li>
-  <li>the new Build Tools v2.3 include a better shell version, instead of the Windows cmd.exe, so the annoying 8K limit on command line lengths was removed.</li>
-</ul>
+<p>The OpenOCD developers claim that the development versions should be generally safe to use. In case you encounter problems, please revert to the latest 0.9.0 stable release.</p>
 
-<p>The following bugs were addressed:</p>
-
-<ul>
-  <li>[bugs:#163] error processing in the Packs Manager was improved; a visible progress bar was added; in case of download errors, a MessageDialog allows the user to retry/ignore/cancel the download.</li>
-  <li>in certain conditions, the URL connections used by the <strong>Refresh All</strong> command in the Packs Manager were not released immediately; fixed;</li>
-  <li>in certain conditions when the J-Link was waiting to connect to the probe, the Cancel button was not effective; fixed;</li>
-  <li>[bugs:#161, #149] the new GDB code used to start the debug sessions no longer supported external GDB servers; fixed;</li>
-  <li>[bugs:#155, #154; feature-requests:#75] on Windows, some paths used by the debugging plug-ins triggered errors; the problem was present only when some fields were filled in with non-POSIX paths, using backslashes; code to automatically duplicate the backslashes was added for Windows;</li>
-  <li>[bugs:#138] due to a bug inherited from the CDT debug classes, the initial break set to main() remained permanent, consuming one hard breakpoint; fixed, the break set in main() is clearly marked as a temporary break;</li>
-  <li>in certain conditions, the Restart button used to restart the debugged target did not work properly, even sometimes triggered an Eclipse platform bug that ended in exceptions; fixed;</li>
-  <li>[bugs:#160] in certain conditions the termination login in the J-Link plug-in failed to close all processes, and the session remained partly active, preventing to start a new session; fixed;</li>
-  <li>[bugs:#149] use of image resources was sub-optimal, leading to spilling resources, which, on Windows, in certain conditions, crashed the entire Eclipse; all image creation code was changed to use the system ImageRegistry, which manages resources properly;</li>
-  <li>[bugs:#165] when duplicating an existing Eclipse build configuration, the value for “Per project path” was not preserved; fixed, the value was moved to preferences and is unique for all build configurations;</li>
-  <li>[bugs:#158] parallel build did not work, due to a make problem; fixed since Build Tools v2.3;</li>
-  <li>[bugs:#150] Restart was not functional when debugging applications running from ram; fixed.</li>
-</ul>
-
-<p>In the projects generated by the templates, the following issues were addressed:</p>
-
-<ul>
-  <li>the ARM-v7m <code>HardFault_Handler</code> code was extended to include semihosting; this allows to run applications with semihosting calls without the debugger connected;</li>
-  <li>[bugs:#157] unfortunately ARM-v6m does not include the necessary registers, so this new HardFault_Handler is of little use for Cortex-M0/M+ cores;</li>
-  <li>the _start() symbol was marked as weak, to allow the application to redefine it;</li>
-  <li>the STM32F4 template was updated to use HAL v1.4.0.</li>
-</ul>
-
-<p>Known problems:</p>
-
-<ul>
-  <li>none, so far…</li>
-</ul>
-
-<p>Notes:</p>
-
-<ul>
-  <li>the new J-Link error processing code requires <strong>SEGGER J-Link version 4.96f or latter</strong>.</li>
-</ul>
+<p>The debug plug-in generally discovers the latest installed version, by using the Windows registry keys or by searching several designated folders. If you need to use a different version, update the <code>${openocd_path}</code> variable accordingly.</p>
 
 
 <hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 
-<strong>releases</strong>, <strong>plugins</strong> and tagged
-
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>j-link</strong>, <strong>openocd</strong>, <strong>peripherals-view</strong>, <strong>toolchain-path</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/02/28/plugins-v2.6.1-201502281154-released/" data-layout="button"></div>
+<strong>releases</strong>, <strong>openocd</strong>.
+</br>Last modified on Wed Oct 28 17:06:57 2015 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/" data-layout="button"></div>
 </p>
 
 

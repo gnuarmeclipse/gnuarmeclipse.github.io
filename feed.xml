@@ -5,9 +5,25 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Oct 2015 16:54:25 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Oct 2015 16:54:25 +0000</lastBuildDate>
+    <pubDate>Wed, 28 Oct 2015 17:07:09 +0000</pubDate>
+    <lastBuildDate>Wed, 28 Oct 2015 17:07:09 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse OpenOCD v0.10.0-201510281129-dev released</title>
+        <description>&lt;p&gt;Version v0.10.0-201510281129-dev is a maintenance release. It includes binaries for Windows, OS X and GNU/Linux.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 28 Oct 2015 12:00:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/</guid>
+        
+        
+        <category>releases</category>
+        
+        <category>openocd</category>
+        
+      </item>
     
       <item>
         <title>ARM Connected Community article, September 2015</title>
@@ -228,34 +244,6 @@
         <category>releases</category>
         
         <category>plugins</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse Windows Build Tools v2.6-201507152002 released</title>
-        <description>&lt;p&gt;Version v2.6-201507152002 is a new release of the GNU ARM Eclipse Windows Build Tools, adding support for Windows 64-bits.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 15 Jul 2015 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/07/15/windows-build-tools-v2.6-20150715-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/07/15/windows-build-tools-v2.6-20150715-released/</guid>
-        
-        <category>windows</category>
-        
-        <category>setup</category>
-        
-        <category>build</category>
-        
-        <category>make</category>
-        
-        <category>rm</category>
-        
-        <category>busybox</category>
-        
-        
-        <category>releases</category>
-        
-        <category>windows-build-tools</category>
         
       </item>
     
