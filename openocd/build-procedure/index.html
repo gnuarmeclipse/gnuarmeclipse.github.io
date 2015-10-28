@@ -227,9 +227,16 @@ sudo port install texinfo texlive
 -o ~/Downloads/build-openocd.sh
 </code></pre>
 
+<p>Alternatively, in a development environment, the entire <code>build-scripts.git</code> can be cloned, and a link to <code>Downloads</code> created:</p>
+
+<pre>
+<code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-openocd.sh \
+~/Downloads/build-openocd.sh
+</code></pre>
+
 <h2 id="check-the-script">Check the script</h2>
 
-<p>The script creates a temporary build <strong>Work/openocd</strong> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine WORK_FOLDER variable before invoking the script.</p>
+<p>The script creates a temporary build <code>Work/openocd</code> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine <code>WORK_FOLDER</code> variable before invoking the script.</p>
 
 <h2 id="preload-the-docker-images">Preload the Docker images</h2>
 
@@ -259,10 +266,10 @@ hello-world         latest              e45a5af57b00        4 months ago        
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
 <pre>
-<code>bash ~/Downloads/build-openocd.sh --all
+<code>caffeinate bash ~/Downloads/build-openocd.sh --all
 </code></pre>
 
-<p>About half an hour later, the output of the build script is a set of 5 files in the output folder:</p>
+<p>About half an hour later (<code>caffeinate</code> is used to make sure the system does not go to sleep while left unattended), the output of the build script is a set of 5 files in the output folder:</p>
 
 <pre>
 <code>$ ls -l output
@@ -283,7 +290,7 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <h3 id="separate-platform-specific-builds">Separate platform specific builds</h3>
 
-<p>Instead of <strong>–all</strong>, you can use any combination of:</p>
+<p>Instead of <code>--all</code>, you can use any combination of:</p>
 
 <pre>
 <code>--win32 --win64 --debian32 --debian64 --osx
@@ -339,7 +346,7 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <h2 id="uninstall">Uninstall</h2>
 
-<p>To uninstall OpenOCD from a Windows machine, use the <strong>openocd-uninstall.exe</strong> program.</p>
+<p>To uninstall OpenOCD from a Windows machine, use the <code>openocd-uninstall.exe</code> program.</p>
 
 <p>On OS X and GNU/Linux, the GNU ARM Eclipse OpenOCD install folder is self-contained and removing it is enough for completely removing the application.</p>
 
@@ -359,9 +366,9 @@ For bug reports, read
 
 <h2 id="stop-boot2docker">Stop boot2docker</h2>
 
-<p>On OS X, the build script automatically starts <strong>boot2docker</strong>, if needed.</p>
+<p>On OS X, the build script automatically starts <code>boot2docker</code>, if needed.</p>
 
-<p>When done, be sure you stop boot2docker, to free significant resources (a VirtualBox Ubuntu machine).</p>
+<p>When done, be sure you stop <code>boot2docker</code>, to free significant resources (a VirtualBox Ubuntu machine).</p>
 
 <pre>
 <code>boot2docker stop
@@ -373,7 +380,7 @@ For bug reports, read
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
+<p class="page-footer">Last modified on Tue Oct 27 21:52:04 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/build-procedure/" data-layout="button"></div>
 
 

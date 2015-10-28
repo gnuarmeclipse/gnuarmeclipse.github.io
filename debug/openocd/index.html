@@ -163,7 +163,10 @@
 <a href="#no-gdb-initialisation-files-loaded"><span class="tocnumber">11</span> <span class="toctext">No GDB initialisation files loaded</span></a>
 </li>
 <li class="toc_level-1 toc_section-20">
-<a href="#more-details"><span class="tocnumber">12</span> <span class="toctext">More details</span></a>
+<a href="#semihosting-writes-are-very-slow"><span class="tocnumber">12</span> <span class="toctext">Semihosting writes are very slow</span></a>
+</li>
+<li class="toc_level-1 toc_section-21">
+<a href="#more-details"><span class="tocnumber">13</span> <span class="toctext">More details</span></a>
 </li>
 </ul>
 </td>
@@ -203,21 +206,22 @@
 
 <h3 id="define-the-openocd-folder-location">Define the OpenOCD folder location</h3>
 
-<p>Before starting work with OpenOCD, it is recommended to define a global variable with the path to the folder where OpenOCD executables are located.</p>
+<p>Before starting work with OpenOCD, it is recommended to define the path to the folder where OpenOCD executables are located.</p>
 
 <ul>
-  <li>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> → <strong>String Substitutions</strong></li>
-  <li>the <code>openocd_path</code> should be already there, so click the <strong>Edit…</strong> button (if you are using old versions of the plug-in, click the <strong>New…</strong> button and add it)</li>
-  <li>in the <em>Value:</em> field enter the actual folder where the OpenOCD binary was installed on your platform, for example <code>C:\Program Files\GNU ARM Eclipse\OpenOCD\bin</code> on Windows, <code>/Applications/GNU ARM Eclipse/OpenOCD/bin/</code> on OS X, or <code>/opt/gnuarmeclipse/openocd/bin/</code> on GNU/Linux</li>
-  <li>similarly for the <code>openocd_executable</code> variable, update it to match the name of the OpenOCD executable (usually the default <code>openocd</code> will do it)</li>
-  <li>click the <strong>OK</strong> button</li>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> → <strong>OpenOCD</strong></p>
+
+    <p><img src="/assets/images/2015/03/preferences-run-openocd.png" alt="OpenOCD preferences page" /></p>
+  </li>
+  <li>click the <strong>Restore Defaults</strong> button</li>
+  <li>the plug-in will suggest the default values computed when Eclipse started; if a new version of OpenOCD was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
+  <li>check the <strong>Executable</strong> field; it must define the name of the command line OpenOCD executable; in most cases it should be set correctly; if not, edit it to match the correct name;</li>
+  <li>check the <strong>Folder</strong> field; it must point to the actual folder where the OpenOCD tools were installed on your platform, for example <code>C:\Program Files\GNU ARM Eclipse\OpenOCD\bin</code> on Windows, <code>/Applications/GNU ARM Eclipse/OpenOCD/bin/</code> on OS X, or <code>/opt/gnuarmeclipse/openocd/bin/</code> on GNU/Linux</li>
+  <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<p>
-<img src="/assets/images/2013/12/OpenOCDPath.png" alt="" />
-</p>
-
-<p>It is recommended to define the path to the OpenOCD relative to this variable in all your debug configurations, to have a single place to update the path when you want to use another version of the OpenOCD tools installed in a different location.</p>
+<p>By default, the GDB server is defined as <code>${openocd_path}/${openocd_executable}</code>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to define the path to the OpenOCD relative to this variable in all your debug configurations, to have a single place to update the path when you want to use another version of the OpenOCD tools installed in a different location.</p>
 
 <h3 id="create-the-debugger-configuration">Create the debugger configuration</h3>
 
@@ -425,13 +429,17 @@ continue
 
 <p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server, in this case the OpenOCD server.</p>
 
+<h2 id="semihosting-writes-are-very-slow">Semihosting writes are very slow</h2>
+
+<p>Yes, unfortunately this is an OpenOCD limitation. Avoid writing to <code>stderr</code>, which is excruciatingly slow.</p>
+
 <h2 id="more-details">More details</h2>
 
 <p>Although the plug-in takes care of most of the configuration options, and provides reasonable defaults for the usual cases, it is recommended to read the OpenOCD manuals, available in the <strong>doc</strong> folder of your install location.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Oct 28 14:09:04 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/debug/openocd/" data-layout="button"></div>
 
 
