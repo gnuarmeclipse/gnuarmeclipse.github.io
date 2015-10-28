@@ -259,19 +259,20 @@ GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036 (2015-01-18-12:57)
 
 <p>In case you use an older distribution and encounter difficulties to run <strong>GNU ARM Eclipse OpenOCD</strong>, you can also try to build it from sources on your machine. As a last resort, if your distribution includes an OpenOCD package, you can install it using the specific tools.</p>
 
-<p>To install this package, unpack the archive and copy it to:</p>
+<p>To install this package, unpack the archive and copy it to  <code>/opt/gnuarmeclipse/openocd/*</code></p>
 
-<ul>
-  <li><code>/opt/gnuarmeclipse/openocd/*</code></li>
-</ul>
+<pre>
+<code>sudo mkdir -p /opt/gnuarmeclipse
+cd /opt/gnuarmeclipse
+sudo tar xvf ~/Downloads/~/Downloads/gnuarmeclipse-openocd-debian64-0.10.0-201510281129-dev.tgz
+</code></pre>
 
 <p>Note: although perfectly possible to install it in any location, it is recommended to use this location, since by default the plug-in searches for the executable in this location.</p>
 
 <p>To check if OpenOCD starts and is recent, use:</p>
 
 <pre>
-<code>$ /opt/gnuarmeclipse/openocd/0.8.0-201501181257/bin/openocd --version
-GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036 (2015-01-18-12:57)
+<code>$ /opt/gnuarmeclipse/openocd/0.10.0-201510281129-dev/bin/openocd --version   GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.10.0-dev-00141-g09aeb96-dirty (2015-10-28-11:56)
 </code></pre>
 
 <h3 id="udev">UDEV</h3>
@@ -279,7 +280,7 @@ GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036 (2015-01-18-12:57)
 <p>For the JTAG probes implemented as USB devices (actually most of them), the last installation step on GNU/Linux is to configure the UDEV subsystem. OpenOCD provides an UDEV rules file defining all the supported IDs; to install it, just copy the file to /etc/udev/rules.d and eventually notify the daemon:</p>
 
 <pre>
-<code>$ sudo cp /opt/gnuarmeclipse/openocd/0.8.0-201501181257/contrib/99-openocd.rules \
+<code>$ sudo cp /opt/gnuarmeclipse/openocd/0.10.0-201510281129-dev/contrib/99-openocd.rules \
  /etc/udev/rules.d/
 $ sudo udevadm control --reload-rules
 </code></pre>
@@ -314,7 +315,7 @@ Info : stm32f4x.cpu: hardware has 6 	breakpoints, 4 watchpoints
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Oct 28 14:09:04 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/install/" data-layout="button"></div>
 
 

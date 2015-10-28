@@ -231,7 +231,7 @@
 
 <ul>
   <li>
-    <p>in the <em>Eclipse</em> menu, go to <strong>Preferences</strong> → <strong>Run/Debug</strong> → <strong>SEGGER J-Link</strong></p>
+    <p>in the <em>Eclipse</em> menu, go to <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> → <strong>SEGGER J-Link</strong></p>
 
     <p><img src="/assets/images/2015/03/JLinkPreferences.png" alt="J-Link preferences page" /></p>
   </li>
@@ -287,7 +287,7 @@
   <li>the only field that usually requires attention is the <strong>Device name</strong>, which must identify the processor family; if you assigned the device to the project, this field is automatically filled-in; usually this name is the family name; if you do not know it for your processor, follow the link at the right and copy/paste the string from the <a href="http://www.segger.com/supported-devices.html">SEGGER web page</a>;</li>
   <li>for portability reasons, the GDB server and GDB client executables are defined using variables; it is highly recommended to keep these definitions;</li>
   <li>the <strong>${cross_prefix}</strong> and the <strong>${cross_suffix}</strong> variables are defined automatically using the toolchain definitions; unless you are debugging a project-less ELF, leave them as is;</li>
-  <li>the values of the <strong>${jlink_path}</strong> and <strong>${jlink_gdbserver}</strong> can be manually edited in the <strong>Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong> configuration page (if you do not find this page, upgrade the plug-ins);</li>
+  <li>the values of the <code>${jlink_path}</code> and <code>${jlink_gdbserver}</code> can be manually edited in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong> configuration page (if you do not find this page, upgrade the plug-ins);</li>
   <li>the <strong>Connect to running target</strong> option allow to start a debug session without performing any reset or program download, so that the target will continue to run unaffected, until explicitly halted by the debugger (Note: this option requires the latest plug-in and SEGGER versions);</li>
   <li>
     <p>click the third tab, named <strong>Startup</strong>, which contains specific J-Link options used to configure the debug session.</p>
@@ -491,7 +491,7 @@
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/debug/jlink/" data-layout="button"></div>
 
 

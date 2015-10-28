@@ -254,19 +254,19 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (releas
   <li>
     <p>since the toolchain executables are 32-bits apps, when running on 64-bits machines, be sure you install the following 32-bits libraries (for different versions check the toolchain README for the actual list):</p>
 
-    <pre><code>$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
+    <pre><code>$ sudo apt-get -y install lib32z1 lib32ncurses5 lib32bz2-1.0
 </code></pre>
   </li>
   <li>
     <p>on Ubuntu 15.04 the following libraries are required:</p>
 
-    <pre><code>$ sudo apt-get install lib32ncurses5
+    <pre><code>$ sudo apt-get -y install lib32ncurses5
 </code></pre>
   </li>
   <li>
     <p>on Ubuntu 12 LTSx64 all 32-bits libraries were packed in ia32-libs, so you can also use, but be prepared to get a lot of useless libraries:</p>
 
-    <pre><code>$ sudo apt-get install ia32-libs
+    <pre><code>$ sudo apt-get -y install ia32-libs
 </code></pre>
   </li>
   <li>
@@ -289,7 +289,7 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (releas
 $ sudo tar xjf ~/Downloads/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
 </code></pre>
   </li>
-  <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_8-2014q1</code></li>
+  <li>the result should be a folder like <code>/usr/local/gcc-arm-none-eabi-4_9-2015q3</code></li>
   <li>
     <p>test if the compiler is functional</p>
 
@@ -321,7 +321,7 @@ arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (releas
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Tue Oct 27 11:04:18 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/toolchain/install/" data-layout="button"></div>
 
 

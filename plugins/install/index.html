@@ -186,14 +186,14 @@
 
 <p>The recommended package is the official <a href="http://www.oracle.com/technetwork/java/javase/index.html">Oracle <strong>Java SE</strong></a>. The <strong>OpenJDK Java</strong> used in Ubuntu is also fine. The minimum is JDK 1.7, or even JRE 1.7 (the Java Runtime Environment), but, as said before, better use the latest JDK. On OS X the last Apple Java implementation is 1.6, so it is required to use the Oracle 1.7 or later.</p>
 
-<p>For example, on Ubuntu 12.04 LTS, you can install the OpenJDK run-time and test if it was properly installed with the following commands:</p>
+<p>For example, on Ubuntu 14.04 LTS, you can install the OpenJDK run-time and test if it was properly installed with the following commands:</p>
 
 <pre>
-<code>$ sudo apt-get install openjdk-7-jre
+<code>$ sudo apt-get -y install default-jdk
 $ java -version
-java version "1.7.0_55"
-OpenJDK Runtime Environment (IcedTea 2.4.7) (7u55-2.4.7-1ubuntu1~0.12.04.2)
-OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
+java version "1.7.0_85"
+OpenJDK Runtime Environment (IcedTea 2.6.1) (7u85-2.6.1-5ubuntu0.14.04.1)
+OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 </code></pre>
 
 <h3 id="eclipse--cdt">Eclipse &amp; CDT</h3>
@@ -235,7 +235,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 
 <h3 id="the-recommended-way">The recommended way</h3>
 
-<p>The recommended way to install these plug-ins is to use the Eclipse standard install/update mechanism: In the <em>Eclipse</em> menu: <strong>Help</strong> → <strong>Install New Software…</strong></p>
+<p>The recommended way to install these plug-ins is to use the Eclipse standard install/update mechanism: In the <em>Eclipse</em> menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
 
 <ul>
   <li>in the <em>Install</em> window, click the <strong>Add…</strong> button (on future updates, just select the URL in the <strong>Work with:</strong> combo)</li>
@@ -273,7 +273,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 
 <p>The workaround is to remove the GNU ARM Eclipse update site from the available sites, restart Eclipse and add it again.</p>
 
-<p>For this go to Eclipse menu → <strong>Preferences</strong> → <strong>Install/Update</strong> → <strong>Available Software Sites</strong>:</p>
+<p>For this go to <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Install/Update</strong> → <strong>Available Software Sites</strong>:</p>
 
 <p>
 <img src="/assets/images/2013/10/AvailableSites.png" alt="Remove from available site list" />
@@ -283,7 +283,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 
 <h3 id="the-alternate-way">The alternate way</h3>
 
-<p>If, for any reason, you need to install a specific version of the plug-in, the solution is to download the archive from <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a> and to point the Eclipse update mechanism to the local archive: In the* Eclipse* menu: <strong>Help</strong> → <strong>Install New Software…</strong></p>
+<p>If, for any reason, you need to install a specific version of the plug-in, the solution is to download the archive from <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a> and to point the Eclipse update mechanism to the local archive: In the* Eclipse* menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
 
 <ul>
   <li>in the <em>Install</em> window, click the <strong>Add…</strong> button</li>
@@ -355,7 +355,7 @@ OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/plugins/install/" data-layout="button"></div>
 
 
