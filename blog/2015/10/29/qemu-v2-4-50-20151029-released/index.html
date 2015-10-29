@@ -9,17 +9,20 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>Associate a device to the project</title>
-  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+  <title>GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</title>
+  <meta name="description" content="Version 2.4.50-201510290935 is a maintenance release, fixing the graphical rendering on OS X 10.11 and the typo related to the name of the Maple board.">
 
-  <meta property="og:title" content="Associate a device to the project" />
+  <meta property="og:title" content="GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-11">
+  <meta property="article:published_time" content="2015-10-29">
 
 
+  <meta property="article:section" content="releases" />
+  <meta property="article:section" content="qemu" />
 
+  <meta property="article:tag" content="os x" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -29,7 +32,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/eclipse/project/assign-device/">
+  <link rel="canonical" href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -86,9 +89,23 @@
 <div id="site-body">
 <section id="main-content">
 
+<table id="post-navigation">
+  <tr>
+    <td><a href="/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/">←</a></td>
+    <td><a href="/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-201510281129-dev released</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-<h1 class="page-title">Associate a device to the project</h1>
 
+<h1 class="post-title">GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</h1>
+
+
+<p class="post-meta">
+Posted on October 29, 2015 by Liviu Ionescu.
+</p>
 
 <div id="toc-container">
 <table class="toc" id="toc">
@@ -100,109 +117,66 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<a href="#addressed-issues"><span class="tocnumber">1</span> <span class="toctext">Addressed issues</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#prerequisites"><span class="tocnumber">2</span> <span class="toctext">Prerequisites</span></a>
-<ul>
-<li class="toc_level-2 toc_section-3">
-<a href="#a-project-created-by-gnu-arm-eclipse-plug-ins"><span class="tocnumber">2.1</span> <span class="toctext">A project created by GNU ARM Eclipse plug-ins</span></a>
+<a href="#versioning"><span class="tocnumber">2</span> <span class="toctext">Versioning</span></a>
 </li>
-<li class="toc_level-2 toc_section-4">
-<a href="#the-packs-plug-ins"><span class="tocnumber">2.2</span> <span class="toctext">The Packs plug-ins</span></a>
-</li>
-<li class="toc_level-2 toc_section-5">
-<a href="#install-required-packs"><span class="tocnumber">2.3</span> <span class="toctext">Install required packs</span></a>
-</li>
-</ul>
-</li>
-<li class="toc_level-1 toc_section-6">
-<a href="#assign-device"><span class="tocnumber">3</span> <span class="toctext">Assign device</span></a>
-</li>
-<li class="toc_level-1 toc_section-7">
-<a href="#benefits"><span class="tocnumber">4</span> <span class="toctext">Benefits</span></a>
+<li class="toc_level-1 toc_section-3">
+<a href="#download"><span class="tocnumber">3</span> <span class="toctext">Download</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><h2 id="overview">Overview</h2>
-
-<p>One of the advantages of using the new packs technology is that the extra metadata (which include a complete list of devices, grouped by vendor, family, sub-family, and a list of development boards) can be used to automate the creation of other configurations, like project build configurations and debugging configurations, or assist other processes, like providing detailed register/field definitions to the debugger.</p>
-
-<h2 id="prerequisites">Prerequisites</h2>
-
-<h3 id="a-project-created-by-gnu-arm-eclipse-plug-ins">A project created by GNU ARM Eclipse plug-ins</h3>
-
-<p>The <strong>Devices</strong> tab is visible in the <strong>Settings</strong> properties page only for projects created by the GNU ARM Eclipse plug-ins.</p>
-
-<p>It is not possible to assign devices/boards to projects created by other plug-ins, because they lack the mechanisms to handle such additional data.</p>
-
-<h3 id="the-packs-plug-ins">The Packs plug-ins</h3>
-
-<p>For the device list to be populated, it is required that the Packs plug-ins are first installed. To check this, use the <strong>About Eclipse</strong> menu and click the <strong>Installation Details</strong> button.</p>
+</div><p>Version 2.4.50-201510290935 is a maintenance release, fixing the graphical rendering on OS X 10.11 and the typo related to the name of the Maple board.</p>
 
 <p>
-<img src="/assets/images/2014/10/PacksFeature.png" alt="Check the presence of the Packs plug-ins" />
+<a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.4.50-20151029">Binary files »</a>
 </p>
 
-<p>If not present, it is recommended to first read the <a href="/plugins/packs-manager/">Packs manager</a> documentation page where installation details are also provided.</p>
-
-<h3 id="install-required-packs">Install required packs</h3>
-
-<p>Once the Packs plug-ins are available, and the list of available packages was retrieved, it is necessary to install the packages related to the devices used by the projects under development.</p>
-
-<p>Please note that failure to do so will prevent the device selection window to make the desired device available for selection.</p>
-
-<h2 id="assign-device">Assign device</h2>
-
-<blockquote>
-  <p><strong>Notice</strong>: for an even higher flexibility, different devices can be assigned to different <strong>build configuration</strong>, so it is possible to have different devices for different configurations.</p>
-</blockquote>
-
-<p>One direct consequence is that you need to be careful to associate the appropriate devices to <strong>all</strong> configurations. The Eclipse interface allows to configure <strong>All configurations</strong> at a time, just select this option in the top selection.</p>
-
-<blockquote>
-  <p><strong>Notice</strong>: The Devices tab is visible in the <strong>Settings</strong> properties page only for projects created by the GNU ARM Eclipse plug-ins.</p>
-</blockquote>
-
-<p>To assign devices to projects:</p>
+<h2 id="addressed-issues">Addressed issues</h2>
 
 <ul>
-  <li>in the <strong>Project explorer</strong> view, select the desired project</li>
-  <li>go to the <em>Eclipse</em> menu and select <strong>Project</strong> → <strong>Properties</strong></li>
-  <li>go to <strong>C/C++ Build</strong> → <strong>Setting</strong></li>
-  <li>select the desired configuration (like Debug, Release, etc)</li>
-  <li>click the <strong>Devices</strong> tab</li>
-  <li>expand the required nodes and select exactly the device used by the project</li>
-  <li>click <strong>OK</strong></li>
+  <li>the problem affecting the graphical rendering on OS X 10.11 was identified as a bug in the SDL_Image v1.2.12 library; the workaround was to revert to v1.2.10; rendering seems ok now, on all platforms;</li>
+  <li>the name of the Maple board was misspeled; fixed.</li>
 </ul>
 
-<p>If you are using a development board, and this board has a corresponding definition in a package, it is recommended to associate the device below the board instead of the individual device from the Devices section, since this will also make available the board documentation files.</p>
+<h2 id="versioning">Versioning</h2>
 
-<p>
-<img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" />
+<p>The content is identical to that of 2.3.50, just that in the mean time the official release is 2.4.</p>
+
+<h2 id="download">Download</h2>
+
+<p>The new QEMU can be downloaded from the <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.4.50-20151029">GitHub Releases</a> page.</p>
+
+<p>The MD5 sums of the files are:</p>
+
+<pre>
+<code>00fa757a9bd0f80ce897e6d546183b58  gnuarmeclipse-qemu-debian32-2.4.50-201510290935-dev.tgz
+
+69588b16c19006275cb79aba7ee2c3f8  gnuarmeclipse-qemu-debian64-2.4.50-201510290935-dev.tgz
+
+8709c93b74f4085f5a0eacaa075300a9 gnuarmeclipse-qemu-osx-2.4.50-201510290935-dev.pkg
+
+39b0c7dd39ef499ab630bd74ca87b6c3  gnuarmeclipse-qemu-win32-2.4.50-201510290935-dev-setup.exe
+
+70881d71c1516aeb9c7efc514cd1f32c  gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
+
+</code></pre>
+
+
+<hr class="post-footer"/>
+<p class="post-footer">
+Posted in
+
+<strong>releases</strong>, <strong>qemu</strong> and tagged
+
+<strong>os x</strong>.
+</br>Last modified on Thu Oct 29 10:04:47 2015 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/10/29/qemu-v2-4-50-20151029-released/" data-layout="button"></div>
 </p>
-
-<h2 id="benefits">Benefits</h2>
-
-<p>The benefits of assigning a device to the project are:</p>
-
-<ul>
-  <li>when creating J-Link debug configurations, the device name will be automatically set to the selected device</li>
-  <li>during the debugging session, the Peripheral view will be populated with the device peripheral registers</li>
-  <li>the documentation view (available in the C/C++ view, next to the Outline view) will be populated with the files available for the device</li>
-</ul>
-
-<p>An even better packs integration (planned for the future release), will make this setting even more convenient, by starting the projects templates with this selection; it is also planned to use this extra data to automatically set the build ARM family.</p>
-
-<p>Accompanying the device there is also a set of definition for the memory map, which will be used in a future release to automatically generate the linker scripts.</p>
-
-
-<hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri Oct  9 11:07:00 2015 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/eclipse/project/assign-device/" data-layout="button"></div>
 
 
 </section>

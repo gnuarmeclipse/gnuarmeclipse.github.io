@@ -5,9 +5,27 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Oct 2015 17:07:09 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Oct 2015 17:07:09 +0000</lastBuildDate>
+    <pubDate>Thu, 29 Oct 2015 10:05:20 +0000</pubDate>
+    <lastBuildDate>Thu, 29 Oct 2015 10:05:20 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</title>
+        <description>&lt;p&gt;Version 2.4.50-201510290935 is a maintenance release, fixing the graphical rendering on OS X 10.11 and the typo related to the name of the Maple board.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 29 Oct 2015 12:00:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2015/10/29/qemu-v2-4-50-20151029-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/10/29/qemu-v2-4-50-20151029-released/</guid>
+        
+        <category>os x</category>
+        
+        
+        <category>releases</category>
+        
+        <category>qemu</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse OpenOCD v0.10.0-201510281129-dev released</title>
@@ -208,42 +226,6 @@
         <category>releases</category>
         
         <category>qemu</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.9.1.201508011813 released</title>
-        <description>&lt;p&gt;Version 2.9.1.201508011813 is a new release; the main improvement is the new version of the &lt;a href=&quot;/qemu&quot;&gt;GNU ARM Eclipse QEMU&lt;/a&gt; emulator (including a graphical LED emulator), paired with a new version of the QEMU Debugging plug-in; also embedded applications can now be executed in Run mode, not only in Debug mode.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 01 Aug 2015 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/08/01/plugins-v2.9.1-201508011813-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/08/01/plugins-v2.9.1-201508011813-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>cmsis-packs</category>
-        
-        <category>Cortex-M</category>
-        
-        <category>Eclipse</category>
-        
-        <category>gcc</category>
-        
-        <category>hal</category>
-        
-        <category>qemu</category>
-        
-        <category>STM32F4</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
         
       </item>
     
