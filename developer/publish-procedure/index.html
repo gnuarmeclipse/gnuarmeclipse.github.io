@@ -133,13 +133,13 @@
 <a href="#clean-the-mess-in-the-local-archive-folder"><span class="tocnumber">11</span> <span class="toctext">Clean the mess in the local archive folder</span></a>
 </li>
 <li class="toc_level-1 toc_section-12">
-<a href="#create-a-new-github-release"><span class="tocnumber">12</span> <span class="toctext">Create a new GitHub release</span></a>
+<a href="#merge-develop-into-master"><span class="tocnumber">12</span> <span class="toctext">Merge develop into master</span></a>
 </li>
 <li class="toc_level-1 toc_section-13">
-<a href="#update-the-wiki-page"><span class="tocnumber">13</span> <span class="toctext">Update the Wiki page</span></a>
+<a href="#create-a-new-github-release"><span class="tocnumber">13</span> <span class="toctext">Create a new GitHub release</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#update-the-latest-release-link"><span class="tocnumber">14</span> <span class="toctext">Update the latest release link</span></a>
+<a href="#update-the-web-page"><span class="tocnumber">14</span> <span class="toctext">Update the Web page</span></a>
 </li>
 </ul>
 </td>
@@ -350,33 +350,38 @@ logout
   <li>move the other archives to <strong>internal</strong></li>
 </ul>
 
+<h2 id="merge-develop-into-master">Merge develop into master</h2>
+
+<ul>
+  <li>in SourceTree, switch to the <strong>master</strong> branch</li>
+  <li>merge the <strong>develop</strong> branch into <strong>master</strong></li>
+  <li>switch to <strong>develop</strong></li>
+  <li>push both branches to GitHub and SourceForge</li>
+</ul>
+
 <h2 id="create-a-new-github-release">Create a new GitHub release</h2>
 
 <ul>
   <li>go to the <a href="https://github.com/gnuarmeclipse/plug-ins/releases">GitHub Releases</a> page</li>
   <li>click <strong>Draft a new release</strong></li>
   <li>name the tag like <strong>v2.9.3-201508190739</strong></li>
-  <li>select the commit</li>
+  <li>select the develop branch</li>
   <li>name the release like <strong>GNU ARM Eclipse plug-ins v2.9.3-201508190739</strong></li>
-  <li>as description, copy the first paragraph from the Wiki page</li>
-  <li>add a link to the Wiki page <code>[Continue reading »]()</code></li>
+  <li>as description, copy the first paragraph from the Web release page</li>
+  <li>add a link to the Web page <code>[Continue reading »]()</code></li>
   <li>attach binaries (drag and drop from the archives folder will do it)</li>
   <li>click the <strong>Publish Release</strong> button</li>
 </ul>
 
 <p>Note: at this moment the system should send a notification to all clients watching this project.</p>
 
-<h2 id="update-the-wiki-page">Update the Wiki page</h2>
+<h2 id="update-the-web-page">Update the Web page</h2>
 
-<p>Go to the Wiki <a href="https://github.com/gnuarmeclipse/plug-ins/wiki/Releases">Releases</a> and update the page to include the link to the new Release.</p>
-
-<h2 id="update-the-latest-release-link">Update the <em>latest release</em> link</h2>
-
-<p>In the <a href="https://github.com/gnuarmeclipse/plug-ins/wiki">main Wiki</a> page, go to the Releases section and update the <strong>latest release</strong> link to point to the newly added Wiki page and release.</p>
+<p>Go to the Web page and update it to include the link to the new Release.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
+<p class="page-footer">Last modified on Thu Oct 29 18:59:05 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/publish-procedure/" data-layout="button"></div>
 
 
@@ -387,11 +392,11 @@ logout
 <h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2015/10/29/plugins-v2.10.1-201510291730-released/">GNU ARM Eclipse plug-ins v2.10.1-201510291730 released</a></li>
   <li><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</a></li>
   <li><a href="/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-20151028*-dev released</a></li>
   <li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
   <li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
-  <li><a href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</a></li>
 </ul>
 
 

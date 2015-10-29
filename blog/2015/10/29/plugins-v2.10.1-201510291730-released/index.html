@@ -9,14 +9,14 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v0.5.5.201310221100 released</title>
-  <meta name="description" content="Although for 0.5.5 there are no further improvements planed, due to a bug report [bugs:#56], it was necessary to release a maintenance version, to correct th...">
+  <title>GNU ARM Eclipse plug-ins v2.10.1-201510291730 released</title>
+  <meta name="description" content="Version 2.10.1-201510291730 is a new release; the main improvement is adding support for Cortex-M7, adding a STM32F7xx template, and an Analog Devices ADuCM3...">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v0.5.5.201310221100 released" />
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.10.1-201510291730 released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2013-10-22">
+  <meta property="article:published_time" content="2015-10-29">
 
 
   <meta property="article:section" content="releases" />
@@ -25,6 +25,12 @@
   <meta property="article:tag" content="gnu" />
   <meta property="article:tag" content="arm" />
   <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="cortex-m7" />
+  <meta property="article:tag" content="stm32f7" />
+  <meta property="article:tag" content="hal" />
+  <meta property="article:tag" content="qemu" />
+  <meta property="article:tag" content="openocd" />
+  <meta property="article:tag" content="aducm36x" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -34,7 +40,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2013/10/22/plugins-v0.5.5.201310221100-released/">
+  <link rel="canonical" href="/blog/2015/10/29/plugins-v2.10.1-201510291730-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -93,33 +99,95 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2013/10/21/plugins-v1.1.2-201310210535-released/">←</a></td>
-    <td><a href="/blog/2013/10/21/plugins-v1.1.2-201310210535-released/">GNU ARM Eclipse plug-ins v1.1.2.201310210535 released</a></td>
+    <td><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">←</a></td>
+    <td><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</a></td>
     <td></td>
-    <td><a href="/blog/2013/10/29/plugins-v1.1.3-201310290722-released/">GNU ARM Eclipse plug-ins v1.1.3-201310290722 released</a></td>
-    <td><a href="/blog/2013/10/29/plugins-v1.1.3-201310290722-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v0.5.5.201310221100 released</h1>
+<h1 class="post-title">GNU ARM Eclipse plug-ins v2.10.1-201510291730 released</h1>
 
 
 <p class="post-meta">
-Posted on October 22, 2013 by Liviu Ionescu.
+Posted on October 29, 2015 by Liviu Ionescu.
 </p>
 
-<p>Although for 0.5.5 there are no further improvements planed, due to a bug report [<a href="https://sourceforge.net/p/gnuarmeclipse/bugs/56/">bugs:#56</a>], it was necessary to release a maintenance version, to correct the bug.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#new-features"><span class="tocnumber">1</span> <span class="toctext">New features</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#addressed-bugs"><span class="tocnumber">2</span> <span class="toctext">Addressed bugs</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#template-issues"><span class="tocnumber">3</span> <span class="toctext">Template issues</span></a>
+<ul>
+<li class="toc_level-2 toc_section-4">
+<a href="#other-changes"><span class="tocnumber">3.1</span> <span class="toctext">Other changes</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#known-problems"><span class="tocnumber">4</span> <span class="toctext">Known problems</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 2.10.1-201510291730 is a new release; the main improvement is adding support for Cortex-M7, adding a STM32F7xx template, and an Analog Devices ADuCM36x template.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v0.5.5-201310221100">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.10.1-201510291730">Binary files »</a>
+</p>
 
-<p>The bug was introduced only in 0.5.5.201310111213, when the build procedure changed from Eclipse Update site to Maven Tycho, to match the build procedure of version 1.x.</p>
+<h2 id="new-features">New features</h2>
 
-<p>Due to a wrong .classpath inherited from the Eclipse build, access to java classes inside the plug-in was impossible, and functionality was severely impacted.</p>
+<ul>
+  <li><a href="/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-20151028*-dev released</a>;</li>
+  <li><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</a>;</li>
+  <li>[<a href="https://sourceforge.net/p/gnuarmeclipse/feature-requests/103/">SF features-request#103</a>] a template for the current STM32F7 family was added, with support for STM32F746_EVAL;</li>
+  <li>[<a href="https://sourceforge.net/p/gnuarmeclipse/feature-requests/107/">SF features-request#107</a>] Analog Devices contributed a template for the ADuCM36[01] devices;</li>
+  <li>[<a href="https://sourceforge.net/p/gnuarmeclipse/feature-requests/108/">SF features-request#108</a>] the generic Cortex-M template was extended to also create Cortex-M7 projects;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/13">#13</a>] the <strong>Devices</strong> tab is now visible to all projects, not only those generated by GNU ARM Eclipse.</li>
+</ul>
 
-<p>The .classpath was fixed and the entire build procedure was checked to work with Maven.</p>
+<h2 id="addressed-bugs">Addressed bugs</h2>
 
-<p>For convenience, this version is packed together with 1.1.2.201310221203.</p>
+<ul>
+  <li>[<a href="https://sourceforge.net/p/gnuarmeclipse/bugs/195/">SF bugs#195</a>] the content of the <strong>Toolchains</strong> tab was not updated when the build configuration changed; fixed.</li>
+</ul>
+
+<h2 id="template-issues">Template issues</h2>
+
+<ul>
+  <li>the <strong>CMSIS Core</strong> was updated to v4.4;</li>
+  <li>the <strong>STM32F4 HAL</strong> was updated to v1.9.0;</li>
+  <li>the implementation of <code>assert_failed()</code> was made <code>weak</code>.</li>
+</ul>
+
+<h3 id="other-changes">Other changes</h3>
+
+<ul>
+  <li>part of the <strong>µOS++ III</strong> code used by the templates (ARM Core, STM32F4 CMSIS, STM32F4 HAL) was migrated to separate packages, available in the GitHub project <a href="https://github.com/xpacks">xPacks</a>. Eventually the entire dependency on <strong>µOS++ III</strong> will be migrated to separate packages.</li>
+</ul>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>none so far</li>
+</ul>
 
 
 <hr class="post-footer"/>
@@ -128,9 +196,9 @@ Posted in
 
 <strong>releases</strong>, <strong>plugins</strong> and tagged
 
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2013/10/22/plugins-v0.5.5.201310221100-released/" data-layout="button"></div>
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cortex-m7</strong>, <strong>stm32f7</strong>, <strong>hal</strong>, <strong>qemu</strong>, <strong>openocd</strong>, <strong>aducm36x</strong>.
+</br>Last modified on Thu Oct 29 18:58:30 2015 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/10/29/plugins-v2.10.1-201510291730-released/" data-layout="button"></div>
 </p>
 
 

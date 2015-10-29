@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://gnuarmeclipse.github.io/blog/2015/10/29/plugins-v2.10.1-201510291730-released/</loc>
+    <lastmod>2015-10-29T18:58:30+00:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/10/29/qemu-v2-4-50-20151029-released/</loc>
     <lastmod>2015-10-29T10:12:40+00:00</lastmod>
   </url>
@@ -42,7 +46,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/08/01/plugins-v2.9.1-201508011813-released/</loc>
-    <lastmod>2015-10-02T16:53:50+00:00</lastmod>
+    <lastmod>2015-10-29T18:58:30+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/07/15/windows-build-tools-v2.6-20150715-released/</loc>
@@ -286,7 +290,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/</loc>
-    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
+    <lastmod>2015-10-29T18:58:30+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/change-log/</loc>
@@ -506,7 +510,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/publish-procedure/</loc>
-    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+    <lastmod>2015-10-29T18:59:05+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/debug/qemu/</loc>
