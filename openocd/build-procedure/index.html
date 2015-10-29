@@ -206,9 +206,21 @@ sudo port install texinfo texlive
 
 <p>For any GNU/Linux distribution, follow the <a href="https://docs.docker.com/installation/#installation">specific instructions</a>.</p>
 
+<h4 id="configure-docker-to-run-as-regular-user">Configure Docker to run as regular user</h4>
+
+<p>To allow docker to run as a regular user, you need to be a member of the <code>docker</code> group.</p>
+
+<pre>
+<code>$ sudo groupadd docker
+$ sudo gpasswd -a ${USER} docker
+$ sudo service docker restart
+</code></pre>
+
+<p>To make these changes effective, logout and login.</p>
+
 <h4 id="install-required-packages">Install required packages</h4>
 
-<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<strong>curl</strong>, <strong>git</strong>, <strong>automake</strong>, <strong>patch</strong>, <strong>tar</strong>, <strong>unzip</strong>).</p>
+<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<code>curl</code>, <code>git</code>, <code>automake</code>, <code>patch</code>, <code>tar</code>, <code>unzip</code>).</p>
 
 <p>The script checks for them; if the script fails, install them and re-run.</p>
 
@@ -266,7 +278,13 @@ hello-world         latest              e45a5af57b00        4 months ago        
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
 <pre>
-<code>caffeinate bash ~/Downloads/build-openocd.sh --all
+<code>$ bash ~/Downloads/build-openocd.sh --all
+</code></pre>
+
+<p>On OS X, to prevent sleep, use:</p>
+
+<pre>
+<code>$ caffeinate bash ~/Downloads/build-openocd.sh --all
 </code></pre>
 
 <p>About half an hour later (<code>caffeinate</code> is used to make sure the system does not go to sleep while left unattended), the output of the build script is a set of 5 files in the output folder:</p>
@@ -368,7 +386,7 @@ For bug reports, read
 
 <p>On OS X, the build script automatically starts <code>boot2docker</code>, if needed.</p>
 
-<p>When done, be sure you stop <code>boot2docker</code>, to free significant resources (a VirtualBox Ubuntu machine).</p>
+<p>When done, be sure you stop it, to free significant resources (a VirtualBox Ubuntu machine).</p>
 
 <pre>
 <code>boot2docker stop
@@ -380,7 +398,7 @@ For bug reports, read
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Tue Oct 27 21:52:04 2015 UTC.</p>
+<p class="page-footer">Last modified on Thu Oct 29 11:17:52 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/build-procedure/" data-layout="button"></div>
 
 

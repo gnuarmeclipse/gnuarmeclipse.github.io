@@ -148,11 +148,11 @@
 <p>For user convenience, the Windows versions of <strong>GNU ARM Eclipse QEMU</strong> are packed as Windows setup wizards. Go to the <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li>gnuarmeclipse-qemu-win32-2.2.92-201504041652-dev-setup.exe</li>
-  <li>gnuarmeclipse-qemu-win64-2.2.92-201504041652-dev-setup.exe</li>
+  <li><code>gnuarmeclipse-qemu-win32-2.2.92-201504041652-dev-setup.exe</code></li>
+  <li><code>gnuarmeclipse-qemu-win64-2.2.92-201504041652-dev-setup.exe</code></li>
 </ul>
 
-<p>Select the win64 file for 64-bits machines and the win32 file for 32-bits machines.</p>
+<p>Select the <code>-win64-</code> file for 64-bits machines and the <code>-win32-</code> file for 32-bits machines.</p>
 
 <p>Run the setup as usual.</p>
 
@@ -187,6 +187,7 @@ Copyright (c) 2003-2008 Fabrice Bellard
 </code></pre>
 
 <h4 id="drivers">Drivers</h4>
+
 <p>For usual Cortex-M emulation, there are no special drivers required.</p>
 
 <h3 id="os-x">OS X</h3>
@@ -194,10 +195,10 @@ Copyright (c) 2003-2008 Fabrice Bellard
 <p>For user convenience, the OS X version of GNU ARM Eclipse QEMU is packed as an OS X install package. Go to the <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li>gnuarmeclipse-qemu-osx-2.2.92-201504041609-dev.pkg</li>
+  <li><code>gnuarmeclipse-qemu-osx-2.2.92-201504041609-dev.pkg</code></li>
 </ul>
 
-<p>As the name implies, this is an OS X package, that can be installed on any recent 64-bit OS X (it was tested on 10.10).</p>
+<p>As the name implies, this is an OS X package, that can be installed on any recent 64-bit OS X (the latest version was tested on 10.11).</p>
 
 <p>Run the install as usual.</p>
 
@@ -230,19 +231,21 @@ Copyright (c) 2003-2008 Fabrice Bellard
 <p>The GNU/Linux versions of GNU ARM Eclipse QEMU are packed as TGZ archives. Go to the <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li>gnuarmeclipse-qemu-debian64-2.2.92-201504041716-dev.tgz</li>
-  <li>gnuarmeclipse-qemu-debian32-2.2.92-201504041746-dev.tgz</li>
+  <li><code>gnuarmeclipse-qemu-debian64-2.2.92-201504041716-dev.tgz</code></li>
+  <li><code>gnuarmeclipse-qemu-debian32-2.2.92-201504041746-dev.tgz</code></li>
 </ul>
 
-<p>As the name implies, these are Debian <strong>tar.gz</strong> archives, but can be executed on most recent GNU/Linux distributions (they were built on Debian 8 and were tested on Debian, Ubuntu, Manjaro, SuSE and Fedora). Select the debian64 file for 64-bits machines and the debian32 file for 32-bits machines.</p>
+<p>As the name implies, these are Debian <code>tar.gz</code> archives, but can be executed on most recent GNU/Linux distributions (they were built on Debian 8 and were tested on Debian, Ubuntu, Manjaro, SuSE and Fedora). Select the <code>-debian64-</code> file for 64-bits machines and the <code>-debian32-</code> file for 32-bits machines.</p>
 
 <p>Note: if your distribution already provides ready to run QEMU binaries, they currently cannot be used with the GNU ARM Eclipse plug-ins, because they lack the Cortex-M support; you need to install the <strong>GNU ARM Eclipse QEMU</strong>.</p>
 
-<p>To install this package, unpack the distribution archive and copy it to:</p>
+<p>To install this package, unpack the distribution archive and copy it to <code>/opt/gnuarmeclipse/qemu/${version}</code></p>
 
-<ul>
-  <li><code>/opt/gnuarmeclipse/qemu/${version}</code></li>
-</ul>
+<pre>
+<code>sudo mkdir -p /opt/gnuarmeclipse
+cd /opt/gnuarmeclipse
+sudo tar xvf ~/Downloads/gnuarmeclipse-qemu-debian64-2.4.50-201510290935-dev.tgz
+</code></pre>
 
 <p>Note: although perfectly possible to install it in any location, it is recommended to use this location, since by default the plug-in searches for the executable in this location.</p>
 
@@ -264,7 +267,7 @@ Copyright (c) 2003-2008 Fabrice Bellard
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
+<p class="page-footer">Last modified on Thu Oct 29 11:17:52 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/install/" data-layout="button"></div>
 
 

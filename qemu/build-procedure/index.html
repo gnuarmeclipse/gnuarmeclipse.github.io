@@ -176,7 +176,7 @@
 
 <h4 id="install-docker">Install Docker</h4>
 
-<p>On OS X, install <strong>boot2docker</strong>, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on Mac OS X</a> instructions.</p>
+<p>On OS X, install <code>boot2docker</code>, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on Mac OS X</a> instructions.</p>
 
 <h4 id="install-the-command-line-tools">Install the Command Line Tools</h4>
 
@@ -213,7 +213,7 @@ $ sudo port install texinfo texlive
 
 <h4 id="configure-docker-to-run-as-regular-user">Configure Docker to run as regular user</h4>
 
-<p>To allow docker to run as a regular user, you need to be a member of the <strong>docker</strong> group.</p>
+<p>To allow docker to run as a regular user, you need to be a member of the <code>docker</code> group.</p>
 
 <pre>
 <code>$ sudo groupadd docker
@@ -225,7 +225,7 @@ $ sudo service docker restart
 
 <h4 id="install-required-packages">Install required packages</h4>
 
-<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<strong>curl</strong>, <strong>git</strong>, <strong>automake</strong>, <strong>patch</strong>, <strong>tar</strong>, <strong>unzip</strong>).</p>
+<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<code>curl</code>, <code>git</code>, <code>automake</code>, <code>patch</code>, <code>tar</code>, <code>unzip</code>).</p>
 
 <p>The script checks for them; if the script fails, install them and re-run.</p>
 
@@ -244,9 +244,16 @@ $ sudo service docker restart
 -o ~/Downloads/build-qemu.sh
 </code></pre>
 
+<p>Alternatively, in a development environment, the entire <code>build-scripts.git</code> can be cloned, and a link to <code>Downloads</code> created:</p>
+
+<pre>
+<code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-qemu.sh \
+~/Downloads/build-qemu.sh
+</code></pre>
+
 <h2 id="check-the-script">Check the script</h2>
 
-<p>The script creates a temporary build <strong>Work/qemu</strong> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine WORK_FOLDER variable before invoking the script.</p>
+<p>The script creates a temporary build <code>Work/qemu</code> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine WORK_FOLDER variable before invoking the script.</p>
 
 <h2 id="preload-the-docker-images">Preload the Docker images</h2>
 
@@ -305,7 +312,7 @@ drwxr-xr-x  6 ilg  staff      204 May 12 21:04 win64
 
 <h3 id="separate-platform-specific-builds">Separate platform specific builds</h3>
 
-<p>Instead of <strong>–all</strong>, you can use any combination of:</p>
+<p>Instead of <code>--all</code>, you can use any combination of:</p>
 
 <pre>
 <code>--win32 --win64 --debian32 --debian64 --osx
@@ -422,7 +429,7 @@ qemu/install
 
 <h2 id="uninstall">Uninstall</h2>
 
-<p>To uninstall QEMU from a Windows machine, use the <strong>qemu-uninstall.exe</strong> program.</p>
+<p>To uninstall QEMU from a Windows machine, use the <code>qemu-uninstall.exe</code> program.</p>
 
 <p>On OS X and GNU/Linux, the GNU ARM Eclipse QEMU install folder is self-contained and removing it is enough for completely removing the application.</p>
 
@@ -440,9 +447,9 @@ Copyright (c) 2003-2008 Fabrice Bellard
 
 <h2 id="stop-boot2docker">Stop boot2docker</h2>
 
-<p>On OS X, the build script automatically starts <strong>boot2docker</strong>, if needed.</p>
+<p>On OS X, the build script automatically starts <code>boot2docker</code>, if needed.</p>
 
-<p>When done, be sure you stop boot2docker, to free significant resources (a VirtualBox Ubuntu machine).</p>
+<p>When done, be sure you stop it, to free significant resources (a VirtualBox Ubuntu machine).</p>
 
 <pre>
 <code>$ boot2docker stop
@@ -454,7 +461,7 @@ Copyright (c) 2003-2008 Fabrice Bellard
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
+<p class="page-footer">Last modified on Thu Oct 29 11:17:52 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/build-procedure/" data-layout="button"></div>
 
 
