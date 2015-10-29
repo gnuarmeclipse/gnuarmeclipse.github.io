@@ -2,11 +2,11 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/10/29/qemu-v2-4-50-20151029-released/</loc>
-    <lastmod>2015-10-29T10:04:47+00:00</lastmod>
+    <lastmod>2015-10-29T10:12:40+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/</loc>
-    <lastmod>2015-10-29T10:04:47+00:00</lastmod>
+    <lastmod>2015-10-29T10:12:40+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/09/29/arm-connected-community-article/</loc>
@@ -30,15 +30,15 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/08/05/qemu-v2-3-50-20150805-released/</loc>
-    <lastmod>2015-10-29T10:04:47+00:00</lastmod>
+    <lastmod>2015-10-29T10:12:40+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/08/04/qemu-v2-3-50-20150804-released/</loc>
-    <lastmod>2015-10-29T10:04:47+00:00</lastmod>
+    <lastmod>2015-10-29T10:12:40+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/08/02/qemu-v2-3-50-20150801-released/</loc>
-    <lastmod>2015-10-29T10:04:47+00:00</lastmod>
+    <lastmod>2015-10-29T10:12:40+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/08/01/plugins-v2.9.1-201508011813-released/</loc>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/04/04/qemu-v2-2-92-20150404-released/</loc>
-    <lastmod>2015-10-29T10:04:47+00:00</lastmod>
+    <lastmod>2015-10-29T10:12:40+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/03/24/windows-build-tools-v2.4-20150324-released/</loc>
