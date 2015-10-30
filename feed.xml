@@ -5,8 +5,8 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 29 Oct 2015 19:11:40 +0000</pubDate>
-    <lastBuildDate>Thu, 29 Oct 2015 19:11:40 +0000</lastBuildDate>
+    <pubDate>Fri, 30 Oct 2015 11:42:42 +0000</pubDate>
+    <lastBuildDate>Fri, 30 Oct 2015 11:42:42 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -27,6 +27,10 @@
         <category>Cortex-M7</category>
         
         <category>STM32F7</category>
+        
+        <category>STM32746G-EVAL</category>
+        
+        <category>STM32F746G-DISCO</category>
         
         <category>hal</category>
         
