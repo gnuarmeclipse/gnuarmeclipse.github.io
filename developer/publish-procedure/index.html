@@ -109,7 +109,7 @@
 <a href="#update-the-change-log"><span class="tocnumber">3</span> <span class="toctext">Update the Change log</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#prepare-a-new-wiki-page-to-announce-the-release"><span class="tocnumber">4</span> <span class="toctext">Prepare a new Wiki page to announce the release</span></a>
+<a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">4</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
 <a href="#new-features"><span class="tocnumber">5</span> <span class="toctext">New features</span></a>
@@ -133,13 +133,22 @@
 <a href="#clean-the-mess-in-the-local-archive-folder"><span class="tocnumber">11</span> <span class="toctext">Clean the mess in the local archive folder</span></a>
 </li>
 <li class="toc_level-1 toc_section-12">
-<a href="#merge-develop-into-master"><span class="tocnumber">12</span> <span class="toctext">Merge develop into master</span></a>
+<a href="#create-a-new-github-release"><span class="tocnumber">12</span> <span class="toctext">Create a new GitHub release</span></a>
 </li>
 <li class="toc_level-1 toc_section-13">
-<a href="#create-a-new-github-release"><span class="tocnumber">13</span> <span class="toctext">Create a new GitHub release</span></a>
+<a href="#update-the-web"><span class="tocnumber">13</span> <span class="toctext">Update the Web</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#update-the-web-page"><span class="tocnumber">14</span> <span class="toctext">Update the Web page</span></a>
+<a href="#update-the-github-release"><span class="tocnumber">14</span> <span class="toctext">Update the GitHub release</span></a>
+</li>
+<li class="toc_level-1 toc_section-15">
+<a href="#share-on-facebook"><span class="tocnumber">15</span> <span class="toctext">Share on Facebook</span></a>
+</li>
+<li class="toc_level-1 toc_section-16">
+<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">16</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
+</li>
+<li class="toc_level-1 toc_section-17">
+<a href="#merge-develop-into-master"><span class="tocnumber">17</span> <span class="toctext">Merge develop into master</span></a>
 </li>
 </ul>
 </td>
@@ -258,9 +267,9 @@ logout
 
 <p>Add an entry with the latest feature &amp; plug-in versions, copied from the publish script output.</p>
 
-<h2 id="prepare-a-new-wiki-page-to-announce-the-release">Prepare a new Wiki page to announce the release</h2>
+<h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
 
-<p>Add a new page to the project web.</p>
+<p>Add a new file to the <code>_posts/plugins/releases</code>.</p>
 
 <p>Name the post like: <em>Release v2.9.3 201508190739</em>, title: <em>Version 2.2.1-201404120702 released</em>.</p>
 
@@ -350,15 +359,6 @@ logout
   <li>move the other archives to <strong>internal</strong></li>
 </ul>
 
-<h2 id="merge-develop-into-master">Merge develop into master</h2>
-
-<ul>
-  <li>in SourceTree, switch to the <strong>master</strong> branch</li>
-  <li>merge the <strong>develop</strong> branch into <strong>master</strong></li>
-  <li>switch to <strong>develop</strong></li>
-  <li>push both branches to GitHub and SourceForge</li>
-</ul>
-
 <h2 id="create-a-new-github-release">Create a new GitHub release</h2>
 
 <ul>
@@ -370,18 +370,47 @@ logout
   <li>as description, copy the first paragraph from the Web release page</li>
   <li>add a link to the Web page <code>[Continue reading »]()</code></li>
   <li>attach binaries (drag and drop from the archives folder will do it)</li>
+  <li>mark it as a Pre-release</li>
   <li>click the <strong>Publish Release</strong> button</li>
 </ul>
 
 <p>Note: at this moment the system should send a notification to all clients watching this project.</p>
 
-<h2 id="update-the-web-page">Update the Web page</h2>
+<h2 id="update-the-web">Update the Web</h2>
 
-<p>Go to the Web page and update it to include the link to the new Release.</p>
+<ul>
+  <li>go to the post and update the link to the new Release</li>
+  <li>Jekyll build</li>
+  <li>Git push</li>
+</ul>
+
+<h2 id="update-the-github-release">Update the GitHub release</h2>
+
+<ul>
+  <li>go back to the <a href="https://github.com/gnuarmeclipse/plug-ins/releases">GitHub Releases</a> page and update the link to the blog post;</li>
+  <li>disable the pre-release flag.</li>
+</ul>
+
+<h2 id="share-on-facebook">Share on Facebook</h2>
+
+<ul>
+  <li>go to the new post and follow the Share link.</li>
+</ul>
+
+<h2 id="update-the-eclipse-marketplace-records">Update the Eclipse Marketplace records</h2>
+
+<h2 id="merge-develop-into-master">Merge develop into master</h2>
+
+<ul>
+  <li>in SourceTree, switch to the <strong>master</strong> branch</li>
+  <li>merge the <strong>develop</strong> branch into <strong>master</strong></li>
+  <li>switch to <strong>develop</strong></li>
+  <li>push both branches to GitHub and SourceForge.</li>
+</ul>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu Oct 29 18:59:05 2015 UTC.</p>
+<p class="page-footer">Last modified on Fri Nov  6 18:00:58 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/publish-procedure/" data-layout="button"></div>
 
 
@@ -392,11 +421,11 @@ logout
 <h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2015/11/06/plugins-v2.10.2-201511061603-released/">GNU ARM Eclipse plug-ins v2.10.2-201511061603 released</a></li>
   <li><a href="/blog/2015/10/29/plugins-v2.10.1-201510291730-released/">GNU ARM Eclipse plug-ins v2.10.1-201510291730 released</a></li>
   <li><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</a></li>
   <li><a href="/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-20151028*-dev released</a></li>
   <li><a href="/blog/2015/09/29/arm-connected-community-article/">ARM Connected Community article, September 2015</a></li>
-  <li><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></li>
 </ul>
 
 
