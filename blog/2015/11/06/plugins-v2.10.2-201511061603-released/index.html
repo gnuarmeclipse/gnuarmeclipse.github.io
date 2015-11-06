@@ -154,7 +154,7 @@ Posted on November 6, 2015 by Liviu Ionescu.
 
 <ul>
   <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/32">#32</a>] the Cortex-M7 specific FPU definitions <code>fpv5-d16</code> &amp; <code>fpv5-sp-d16</code> were added to the Settings page;</li>
-  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/33">#33</a>] the toolchain prefix for <strong>GCC 4.9 Linaro AArch64 bare-metal ELF</strong> was updated from <code>aarch64-none-elf-</code> to <code>aarch64-elf-</code>; change effective for newly created projects; old projects require to reselect the toolchain for the update to be effective.</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/33">#33</a>] the toolchain prefix for <strong>GCC 4.9 Linaro AArch64 bare-metal ELF</strong> was updated from <code>aarch64-none-elf-</code> to <code>aarch64-elf-</code>; the change is effective for newly created projects; old projects require to reselect the toolchain for the update to be effective.</li>
 </ul>
 
 <h2 id="addressed-bugs">Addressed bugs</h2>
@@ -166,7 +166,7 @@ Posted on November 6, 2015 by Liviu Ionescu.
 <h2 id="template-issues">Template issues</h2>
 
 <ul>
-  <li>in certain conditions, <code>newlib</code> complained for a missing symbol (<code>__dso_handle</code>); added as weak to <code>_system.c</code>.</li>
+  <li>in certain conditions, the linker complained about a missing symbol (<code>__dso_handle</code>); added as weak to <code>_syscalls.c</code>.</li>
 </ul>
 
 <h3 id="other-changes">Other changes</h3>
@@ -189,7 +189,7 @@ Posted in
 <strong>releases</strong>, <strong>plugins</strong> and tagged
 
 <strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cortex-m7</strong>, <strong>fpv5-d16</strong>, <strong>fpv5-sp-d16</strong>, <strong>__dso_handle</strong>.
-</br>Last modified on Fri Nov  6 18:00:14 2015 UTC.
+</br>Last modified on Fri Nov  6 18:34:45 2015 UTC.
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/11/06/plugins-v2.10.2-201511061603-released/" data-layout="button"></div>
 </p>
 
