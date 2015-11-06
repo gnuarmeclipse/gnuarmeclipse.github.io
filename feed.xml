@@ -5,13 +5,13 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 Nov 2015 18:34:55 +0000</pubDate>
-    <lastBuildDate>Fri, 06 Nov 2015 18:34:55 +0000</lastBuildDate>
+    <pubDate>Fri, 06 Nov 2015 18:48:54 +0000</pubDate>
+    <lastBuildDate>Fri, 06 Nov 2015 18:48:54 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v2.10.2-201511061603 released</title>
-        <description>&lt;p&gt;Version 2.10.2-201511061603 is a maintenance release, intended to improve the floating port support for Cortex-M7, and to update the toolchain prefix for &lt;strong&gt;Linaro AArch64 bare-metal ELF&lt;/strong&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Version 2.10.2-201511061603 is a maintenance release, intended to improve the floating point support for Cortex-M7, and to update the toolchain prefix for &lt;strong&gt;Linaro AArch64 bare-metal ELF&lt;/strong&gt;.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 06 Nov 2015 12:00:00 +0000</pubDate>
