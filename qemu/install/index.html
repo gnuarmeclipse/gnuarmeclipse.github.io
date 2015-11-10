@@ -120,7 +120,10 @@
 </ul>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#qemu-debugging-plug-ins"><span class="tocnumber">4</span> <span class="toctext">QEMU Debugging plug-ins</span></a>
+<a href="#update-qemu-path"><span class="tocnumber">4</span> <span class="toctext">Update QEMU path</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#qemu-debugging-plug-ins"><span class="tocnumber">5</span> <span class="toctext">QEMU Debugging plug-ins</span></a>
 </li>
 </ul>
 </td>
@@ -215,7 +218,7 @@ Copyright (c) 2003-2008 Fabrice Bellard
 <p>and the result is a folder structure similar to:</p>
 
 <p>
-<img src="https://github.com/gnuarmeclipse/qemu/wiki/assets/images/2015/mac-install-folders.png" alt="The QEMU OS X install folders" />
+<img src="/assets/images/2015/mac-install-folders.png" alt="The QEMU OS X install folders" />
 </p>
 
 <p>To check if QEMU starts, use:</p>
@@ -261,13 +264,36 @@ Copyright (c) 2003-2008 Fabrice Bellard
 
 <p>For usual Cortex-M emulation, there are no special UDEV definitions or drivers required.</p>
 
+<h2 id="update-qemu-path">Update QEMU path</h2>
+
+<p>Right after installing QEMU, or updating to a new version, it is necessary to inform Eclipse where the binaries were installed. If QEMU was installed in the default location, Eclipse has a mechanism to autodetect the most recent version, but this mechanism sometimes fails, and manual path setting is necessary.</p>
+
+<p>To set the path, first exit Eclipse, and start it again, to allow the autodetect mechanism to give it a try:</p>
+
+<ul>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> → <strong>QEMU</strong></p>
+
+    <p><img src="/assets/images/2015/04/QEMU_Preferences.png" alt="The QEMU preferences page" /></p>
+  </li>
+  <li>
+    <p>click the <strong>Restore Defaults</strong> button</p>
+  </li>
+</ul>
+
+<p>For more details please refer to the <a href="/debug/qemu/#define-the-qemufolder-location">QEMU plug-in</a> page, where the entire procedure is explained.</p>
+
 <h2 id="qemu-debugging-plug-ins">QEMU Debugging plug-ins</h2>
 
-<p>The QEMU debugging <strong>plug-ins are not included</strong> in these packages, and need to be installed as usual.</p>
+<p>The QEMU debugging <strong>plug-ins are not included</strong> in these packages, and need to be installed <a href="/plugins/install/">as usual</a>. Just be sure that the <strong>GNU ARM C/C++ QEMU Debugging</strong> plug-ins are selected.</p>
+
+<p>
+<img src="/assets/images/2015/install-new-software-updates-qemu.png" alt="Install the QEMU plug-ins" />
+</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu Oct 29 11:17:52 2015 UTC.</p>
+<p class="page-footer">Last modified on Tue Nov 10 19:38:53 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/install/" data-layout="button"></div>
 
 
@@ -368,6 +394,7 @@ Copyright (c) 2003-2008 Fabrice Bellard
   <li><a href="/qemu/">Overview</a> (read me first!)</li>
   <li><a href="/qemu/install/">QEMU Install</a></li>
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/options/">Command line options</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
   <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>

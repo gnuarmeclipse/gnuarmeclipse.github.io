@@ -141,19 +141,22 @@
 <a href="#testing"><span class="tocnumber">11</span> <span class="toctext">Testing</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#updates"><span class="tocnumber">12</span> <span class="toctext">Updates</span></a>
+<a href="#future-development"><span class="tocnumber">12</span> <span class="toctext">Future development</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#change-log"><span class="tocnumber">13</span> <span class="toctext">Change log</span></a>
+<a href="#updates"><span class="tocnumber">13</span> <span class="toctext">Updates</span></a>
 </li>
 <li class="toc_level-1 toc_section-16">
-<a href="#build-details"><span class="tocnumber">14</span> <span class="toctext">Build details</span></a>
+<a href="#change-log"><span class="tocnumber">14</span> <span class="toctext">Change log</span></a>
 </li>
 <li class="toc_level-1 toc_section-17">
-<a href="#releases"><span class="tocnumber">15</span> <span class="toctext">Releases</span></a>
+<a href="#build-details"><span class="tocnumber">15</span> <span class="toctext">Build details</span></a>
 </li>
 <li class="toc_level-1 toc_section-18">
-<a href="#other-links"><span class="tocnumber">16</span> <span class="toctext">Other links</span></a>
+<a href="#releases"><span class="tocnumber">16</span> <span class="toctext">Releases</span></a>
+</li>
+<li class="toc_level-1 toc_section-19">
+<a href="#other-links"><span class="tocnumber">17</span> <span class="toctext">Other links</span></a>
 </li>
 </ul>
 </td>
@@ -305,6 +308,12 @@ both located in the doc folder in the install location. The official QEMU site a
 
 <p>The recommended method to test QEMU is using the new QEMU Debugging plug-in; create a test project using the <a href="/tutorials/blinky-arm/">blinky</a> <strong>STM32F4xx C/C++ Project</strong> template or even the <strong>Hello World ARM Cortex-M C/C++ Project</strong> template and run it as explained in the <a href="/debug/qemu/">QEMU debugging Eclipse plug-in</a> page.</p>
 
+<h2 id="future-development">Future development</h2>
+
+<p>After the initial version proved that the idea to define peripheral register via tables is functional, it became obvious that these tables are not for humans to generate, but for machines. These definitions, in one way or another, are already available from the ARM SVD files (very large XMLs). So, for the use of QEMU, the next step is to process the SVD files and generate JSON files, with the peripheral registers, exactly as needed for a fast load by the emulator at startup. Then, from the JSON files, the run-time peripheral register objects can be generated.</p>
+
+<p>There is currently no ETA for these changes, but if anyone is interested to support development, priorities might be changed.</p>
+
 <h2 id="updates">Updates</h2>
 
 <p>As a fork of the public open source project QEMU, it is planned that the <strong>GNU ARM Eclipse QEMU</strong> will follow the releases of QEMU and also follow the GNU ARM Eclipse release schedule, for the specific features.</p>
@@ -331,7 +340,7 @@ both located in the doc folder in the install location. The official QEMU site a
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Oct 14 19:03:58 2015 UTC.</p>
+<p class="page-footer">Last modified on Tue Nov 10 19:38:53 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/" data-layout="button"></div>
 
 
@@ -432,6 +441,7 @@ both located in the doc folder in the install location. The official QEMU site a
   <li><a href="/qemu/">Overview</a> (read me first!)</li>
   <li><a href="/qemu/install/">QEMU Install</a></li>
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/options/">Command line options</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
   <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>

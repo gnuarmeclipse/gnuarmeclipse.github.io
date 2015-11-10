@@ -9,14 +9,14 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>How to build the plug-ins?</title>
+  <title>The GNU ARM Eclipse QEMU command line options</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="How to build the plug-ins?" />
+  <meta property="og:title" content="The GNU ARM Eclipse QEMU command line options" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-10">
+  <meta property="article:published_time" content="2015-11-10">
 
 
 
@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/developer/build-procedure/">
+  <link rel="canonical" href="/qemu/options/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -87,100 +87,219 @@
 <section id="main-content">
 
 
-<h1 class="page-title">How to build the plug-ins?</h1>
+<h1 class="page-title">The GNU ARM Eclipse QEMU command line options</h1>
 
 
-<h2 id="build">Build</h2>
+<h2 id="for-the-impacient">For the impacient</h2>
 
-<ul>
-  <li>select the <strong>ilg.gnuarmeclipse.parent</strong> project</li>
-  <li>right click, select Run As → Maven install</li>
-  <li>wait a while for Maven to load all required modules</li>
-</ul>
-
-<p>The result of a successful build looks like this:</p>
+<p>The command line used by the QEMU plug-in to start a debug session looks like this:</p>
 
 <pre>
-<code>[INFO] --- tycho-p2-plugin:0.22.0:update-local-index (default-update-local-index) @ ilg.gnuarmeclipse.repository ---
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary:
-[INFO]
-[INFO] GNU ARM Eclipse parent ............................ SUCCESS [  0.702 s]
-[INFO] GNU ARM Eclipse core .............................. SUCCESS [  3.971 s]
-[INFO] GNU ARM Eclipse debug core ........................ SUCCESS [  0.356 s]
-[INFO] GNU ARM Eclipse packages core ..................... SUCCESS [  0.482 s]
-[INFO] GNU ARM Eclipse managed build code ................ SUCCESS [  1.073 s]
-[INFO] GNU ARM Eclipse managed build feature ............. SUCCESS [  0.166 s]
-[INFO] GNU ARM Eclipse templates core .................... SUCCESS [  0.494 s]
-[INFO] GNU ARM Eclipse Cortex-M template ................. SUCCESS [  0.291 s]
-[INFO] GNU ARM Eclipse Cortex-M template feature ......... SUCCESS [  0.091 s]
-[INFO] GNU ARM Eclipse STM32Fx templates ................. SUCCESS [  1.639 s]
-[INFO] GNU ARM Eclipse STM32Fx templates feature ......... SUCCESS [  0.056 s]
-[INFO] GNU ARM Eclipse Freescale Kinetis templates ....... SUCCESS [  0.387 s]
-[INFO] GNU ARM Eclipse Freescale PEx template ............ SUCCESS [  0.360 s]
-[INFO] GNU ARM Eclipse Freescale templates feature ....... SUCCESS [  0.078 s]
-[INFO] GNU ARM Eclipse GDB debug ......................... SUCCESS [  2.039 s]
-[INFO] GNU ARM Eclipse J-Link debug ...................... SUCCESS [  1.070 s]
-[INFO] GNU ARM Eclipse debugger Restart button ........... SUCCESS [  0.292 s]
-[INFO] GNU ARM Eclipse J-Link debug feature .............. SUCCESS [  0.121 s]
-[INFO] GNU ARM Eclipse OpenOCD debug ..................... SUCCESS [  0.467 s]
-[INFO] GNU ARM Eclipse OpenOCD debug feature ............. SUCCESS [  0.076 s]
-[INFO] GNU ARM Eclipse QEMU debug ........................ SUCCESS [  0.519 s]
-[INFO] GNU ARM Eclipse QEMU debug feature ................ SUCCESS [  0.116 s]
-[INFO] GNU ARM Eclipse packages data ..................... SUCCESS [  0.478 s]
-[INFO] GNU ARM Eclipse debug packs ....................... SUCCESS [  0.275 s]
-[INFO] GNU ARM Eclipse packages .......................... SUCCESS [  0.228 s]
-[INFO] GNU ARM Eclipse packages UI ....................... SUCCESS [  0.593 s]
-[INFO] GNU ARM Eclipse managed build packs ............... SUCCESS [  0.415 s]
-[INFO] GNU ARM Eclipse packages feature .................. SUCCESS [  0.088 s]
-[INFO] GNU ARM Eclipse documentation ..................... SUCCESS [  0.066 s]
-[INFO] GNU ARM Eclipse documentation feature ............. SUCCESS [  0.121 s]
-[INFO] GNU ARM Eclipse repository ........................ SUCCESS [  2.797 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 43.950 s
-[INFO] Finished at: 2015-03-12T14:35:41+02:00
-[INFO] Final Memory: 105M/372M
-[INFO] ------------------------------------------------------------------------
+<code>qemu-system-gnuarmeclipse --verbose --verbose --board STM32F4-Discovery \
+--mcu STM32F407VG --gdb tcp::1234 -d unimp,guest_errors \
+--semihosting-config enable=on,target=native \
+--semihosting-cmdline blinky
 </code></pre>
 
-<h2 id="debug">Debug</h2>
-
-<ul>
-  <li><strong>Run</strong> → <strong>Debug Configurations</strong></li>
-  <li>select <strong>Eclipse Application</strong></li>
-  <li>click <strong>New</strong>
-    <ul>
-      <li>Name: <strong>Eclipse GNU ARM Plug-ins</strong></li>
-      <li>Location: ${workspace_loc}/../runtime-EclipseGNUARMPlug-ins</li>
-    </ul>
-  </li>
-  <li>Tab: <strong>Plug-ins</strong>
-    <ul>
-      <li>Launch with: ‘all workspace and enabled plug-ins’</li>
-    </ul>
-  </li>
-  <li>Tab: <strong>Arguments</strong>
-    <ul>
-      <li>Program arguments: -consoleLog</li>
-      <li>VM arguments: <strong>-ea</strong> (to enable assertions)</li>
-    </ul>
-  </li>
-  <li>click the <strong>Apply</strong> button</li>
-  <li>click the <strong>Debug</strong> button</li>
-</ul>
-
-<p>The location of the new Eclipse folder is:</p>
+<p>A typical emulation session started outside Eclipse looks like this:</p>
 
 <pre>
-<code>${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/Eclipse GNU ARM Plug-ins
+<code>qemu-system-gnuarmeclipse --verbose --verbose --board STM32F4-Discovery \
+--mcu STM32F407VG -d unimp,guest_errors \
+--nographic --image test.elf \
+--semihosting-config enable=on,target=native \
+--semihosting-cmdline test 1 2 3
 </code></pre>
+
+<h2 id="command-line-options">Command line options</h2>
+
+<p>QEMU has lots, lots of options. The official QEMU documentation (available in the distribution <code>doc</code> folder) is the autoritative source for information about them.</p>
+
+<p>Unfortunately most of these options were designed for the larger versions of QEMU, intended to emulate Linux systems, and are of little use for Cortex-M emulation.</p>
+
+<p>GNU ARM Eclipse QEMU redefines some of these general options, or adds new ones, and generally uses only a small subset of the available options.</p>
+
+<p>The common ones are presented below.</p>
+
+<h3 id="board">
+<code>board</code>
+</h3>
+
+<p>A string that defines the name of the board to be emulated:</p>
+
+<pre>
+<code>--board STM32F4-Discovery
+</code></pre>
+
+<p>To get a list of supported boards, use <code>?</code> or <code>help</code>:</p>
+
+<pre>
+<code>--board ?
+</code></pre>
+
+<h3 id="mcu">
+<code>mcu</code>
+</h3>
+
+<p>Each board has a MCU type, hardcoded in the board definitions.</p>
+
+<p>However it is possible to pretend the board has a different MCU, by explicitly specifying a MCU name:</p>
+
+<pre>
+<code>--mcu STM32F407VG
+</code></pre>
+
+<p>To get a list of supported MCUs, use <code>?</code> or <code>help</code>:</p>
+
+<pre>
+<code>--mcu ?
+</code></pre>
+
+<h3 id="image">
+<code>image</code>
+</h3>
+
+<p>The emulator currently does not preserve a persistent state of the flash memory between runs; instead, it starts with an empty flash and preloads it with the content available in an ELF file.</p>
+
+<p>For debug sessions, this can be done via the GDB protocol. For standalone sessions, QEMU needs to know the name of the ELF file:</p>
+
+<pre>
+<code>--image blinky.elf
+</code></pre>
+
+<h3 id="gdb">
+<code>gdb</code>
+</h3>
+
+<p>When used with a debugger, QEMU must implement the GDB server protocol, for the GDB client to be able to connect to it.</p>
+
+<p>The default QEMU port is <code>1234</code>; the option to start QEMU in server mode and listen on the TCP port 1234 is:</p>
+
+<pre>
+<code>--gdb tcp::1234
+</code></pre>
+
+<p>When in GDB server mode, it is no longer required to specify the ELF image, since it will be loaded by the GDB client, as in any usual debug session, which rewrites the MCU flash memory.</p>
+
+<h3 id="nographic">
+<code>nographic</code>
+</h3>
+
+<p>By default, the GNU ARM Eclipse QEMU will try to start in graphical mode, by displaying an image of the emulated board and one or more animated LEDs.</p>
+
+<p>For running unit tests this is generally not needed, and QEMU can be started with graphics support disabled:</p>
+
+<pre>
+<code>--nographic
+</code></pre>
+
+<h3 id="verbose">
+<code>verbose</code>
+</h3>
+
+<p>By default, <code>qemu</code> is very quiet, it barely complains for errors.</p>
+
+<p>To make it minimally social, add one <code>--verbose</code>, and it’ll tell what is going on:</p>
+
+<pre>
+<code>GNU ARM Eclipse 64-bits QEMU v2.4.50 (qemu-system-gnuarmeclipse).
+Board: 'STM32F4-Discovery' (ST Discovery kit for STM32F407/417 lines).
+Device: 'STM32F407VG' (Cortex-M4 r0p0, MPU), Flash: 1024 kB, RAM: 128 kB.
+Command line: 'blinky' (6 bytes).
+Cortex-M4 r0p0 core initialised.
+GDB Server listening on: 'tcp::1234'...
+Cortex-M4 r0p0 core reset.
+... connection accepted from 127.0.0.1.
+
+Execute 'mon system_reset'.
+
+Cortex-M4 r0p0 core reset.
+...
+</code></pre>
+
+<p>Adding one more <code>--verbose</code>  will make QEMU extra verbose and it’ll display details about the board hardware configuration and the memory sections loaded by GDB:</p>
+
+<pre>
+<code>GNU ARM Eclipse 64-bits QEMU v2.4.50 (qemu-system-gnuarmeclipse).
+Board: 'STM32F4-Discovery' (ST Discovery kit for STM32F407/417 lines).
+Device: 'STM32F407VG' (Cortex-M4 r0p0, MPU), Flash: 1024 kB, RAM: 128 kB.
+Command line: 'blinky' (6 bytes).
+Cortex-M4 r0p0 core initialised.
+Board picture: '/Users/ilg/Work/qemu/install/osx/qemu/share/qemu/images/STM32F4-Discovery.jpg'.
+LED: Green active high 8*10 @(258,218) /machine/mcu/stm32/gpio[d],12
+LED: Orange active high 8*10 @(287,246) /machine/mcu/stm32/gpio[d],13
+LED: Red active high 8*10 @(258,274) /machine/mcu/stm32/gpio[d],14
+LED: Blue active high 8*10 @(230,246) /machine/mcu/stm32/gpio[d],15
+GDB Server listening on: 'tcp::1234'...
+Cortex-M4 r0p0 core reset.
+... connection accepted from 127.0.0.1.
+
+Write 1004 bytes at 0x08000000-0x080003EB.
+Write   44 bytes at 0x080003EC-0x08000417.
+Write 2024 bytes at 0x08000418-0x08000BFF.
+Write 2032 bytes at 0x08000C00-0x080013EF.
+Write 2032 bytes at 0x080013F0-0x08001BDF.
+Write 2032 bytes at 0x08001BE0-0x080023CF.
+Write 2032 bytes at 0x080023D0-0x08002BBF.
+Write 2032 bytes at 0x08002BC0-0x080033AF.
+Write  364 bytes at 0x080033B0-0x0800351B.
+Write  132 bytes at 0x0800351C-0x0800359F.
+Execute 'mon system_reset'.
+
+Cortex-M4 r0p0 core reset.
+...
+</code></pre>
+
+<h3 id="d">
+<code>d</code>
+</h3>
+
+<p>By default QEMU is not only quite, but also secretive, even when it detects problems during emulation, it does not report them.</p>
+
+<p>To make QEMU inform the user about these problems, the <code>-d</code> options can be used to enable some debug options.</p>
+
+<p>There are many such options available, but the ones the plug-in uses are:</p>
+
+<pre>
+<code>-d unimp,guest_errors
+</code></pre>
+
+<h3 id="semihosting-config">
+<code>semihosting-config</code>
+</h3>
+
+<p>QEMU fully implements the ARM semihosting protocol. To enable it, use the following complicated option:</p>
+
+<pre>
+<code>--semihosting-config enable=on,target=native
+</code></pre>
+
+<h3 id="semihosting-cmdline">
+<code>semihosting-cmdline</code>
+</h3>
+
+<p>To fully use semihosting, it should also be possible to pass command line options to the emulated application.</p>
+
+<p>Any number of options can be used, but generally it is recommended to keep this to a minimum, since most embedded applications will allocate only a small buffer to receive the semihosting options, and if this buffer is overflown, no options will be passed at all.</p>
+
+<p>This option <strong>must be the last one</strong>, and all following options will be passed to the application:</p>
+
+<pre>
+<code>--semihosting-cmdline test 1 2 3
+</code></pre>
+
+<p>The first option will be passed as argv[0], so it generally should reflect the application name. The following options will be passed as argv[1] … argv[n-1], without special processing.</p>
+
+<h3 id="exit-code">exit() code</h3>
+
+<p>When started in semihosting mode, if the application’s <code>main()</code> routine returns 0, QEMU will also return 0 to its parent process. This is particularly useful when running unit tests, since 0 means the test was successful. Unfortunately the semihosting specs do not allow to pass the full exit code, so for all other returned values, QEMU will return 1, which can be used as an indication of a failed test.</p>
+
+<p>This is not really a big limitation, since unit tests can be configured to write an XML file with the detailed test results, so the binary exit code is enough to represent the pass/fail, and Continuous Integration systems will generally process the XML file for details.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/build-procedure/" data-layout="button"></div>
+<p class="page-footer">Last modified on Tue Nov 10 19:39:48 2015 UTC.</p>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/options/" data-layout="button"></div>
 
 
 </section>
