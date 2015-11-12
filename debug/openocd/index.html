@@ -152,20 +152,23 @@
 <a href="#start-openocdmanually"><span class="tocnumber">10.3</span> <span class="toctext">Start OpenOCD manually</span></a>
 </li>
 <li class="toc_level-2 toc_section-17">
-<a href="#chase-for-hangedopenocd-processes"><span class="tocnumber">10.4</span> <span class="toctext">Chase for hanged OpenOCD processes</span></a>
+<a href="#quote-the-entire-echo-command"><span class="tocnumber">10.4</span> <span class="toctext">Quote the entire echo command</span></a>
 </li>
 <li class="toc_level-2 toc_section-18">
-<a href="#compare-with-gdb-hardware-debugging"><span class="tocnumber">10.5</span> <span class="toctext">Compare with GDB Hardware Debugging</span></a>
+<a href="#chase-for-hangedopenocd-processes"><span class="tocnumber">10.5</span> <span class="toctext">Chase for hanged OpenOCD processes</span></a>
+</li>
+<li class="toc_level-2 toc_section-19">
+<a href="#compare-with-gdb-hardware-debugging"><span class="tocnumber">10.6</span> <span class="toctext">Compare with GDB Hardware Debugging</span></a>
 </li>
 </ul>
 </li>
-<li class="toc_level-1 toc_section-19">
+<li class="toc_level-1 toc_section-20">
 <a href="#no-gdb-initialisation-files-loaded"><span class="tocnumber">11</span> <span class="toctext">No GDB initialisation files loaded</span></a>
 </li>
-<li class="toc_level-1 toc_section-20">
+<li class="toc_level-1 toc_section-21">
 <a href="#semihosting-writes-are-very-slow"><span class="tocnumber">12</span> <span class="toctext">Semihosting writes are very slow</span></a>
 </li>
-<li class="toc_level-1 toc_section-21">
+<li class="toc_level-1 toc_section-22">
 <a href="#more-details"><span class="tocnumber">13</span> <span class="toctext">More details</span></a>
 </li>
 </ul>
@@ -409,6 +412,16 @@ continue
 
 <p>If you still fail to configure the plug-in to start OpenOCD automatically, proceed as when using a remote GDB server, i.e. go to the Debugger tab and disable the <strong>Start OpenOCD locally</strong>, then start it manually in a separate terminal. Tweak the command line options until you get the right behaviour, and then retry the same options with the plug-in.</p>
 
+<h3 id="quote-the-entire-echo-command">Quote the entire <code>echo</code> command</h3>
+
+<p>The syntax required by the OpenOCD <code>echo</code> command is a single string, in other words both echo and the message must be in the same string. To achieve this in a shell, the string must be quoted:</p>
+
+<pre>
+<code>-c 'echo "Started by GNU ARM Eclipse"'
+</code></pre>
+
+<p>Note: this command is used by the plug-in to detect when the GDB server is initialised and ready to receive commands. It is not necessary when starting OpenCOD manually.</p>
+
 <h3 id="chase-for-hangedopenocd-processes">Chase for hanged OpenOCD processes</h3>
 
 <p>One usual error case is to retry a debug session while a previous OpenOCD is still active (either running or hanged, started by a previous run of the plug-in or manually). In this case the new OpenOCD has no chance to work, and the plug-in will most certainly fail, sometimes even without clear error messages.</p>
@@ -439,7 +452,7 @@ continue
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
+<p class="page-footer">Last modified on Thu Nov 12 14:31:12 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/debug/openocd/" data-layout="button"></div>
 
 
