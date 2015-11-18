@@ -250,7 +250,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/articles/arm-com-2015-11/</loc>
-    <lastmod>2015-11-18T09:37:59+00:00</lastmod>
+    <lastmod>2015-11-18T18:20:34+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/eclipse/project/assign-device/</loc>
@@ -322,7 +322,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/</loc>
-    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+    <lastmod>2015-11-18T18:20:34+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/development-environment/</loc>
@@ -571,5 +571,20 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
     <lastmod>2015-11-18T09:27:14+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page2/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page3/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page4/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page5/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page6/</loc>
   </url>
 </urlset>
