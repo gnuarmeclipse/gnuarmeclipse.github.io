@@ -103,28 +103,25 @@
 <a href="#save-automatically-and-text-file-encoding"><span class="tocnumber">1</span> <span class="toctext">Save automatically and Text file encoding</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#use-active-build-configuration-for-indexing"><span class="tocnumber">2</span> <span class="toctext">Use active build configuration for indexing</span></a>
+<a href="#show-line-numbers"><span class="tocnumber">2</span> <span class="toctext">Show line numbers</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#show-line-numbers"><span class="tocnumber">3</span> <span class="toctext">Show line numbers</span></a>
+<a href="#use-active-build-configuration-for-indexing"><span class="tocnumber">3</span> <span class="toctext">Use active build configuration for indexing</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
 <a href="#editor-folding"><span class="tocnumber">4</span> <span class="toctext">Editor folding</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#insert-spaces-for-tabs"><span class="tocnumber">5</span> <span class="toctext">Insert spaces for tabs</span></a>
+<a href="#code-formatter"><span class="tocnumber">5</span> <span class="toctext">Code formatter</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#code-formatter"><span class="tocnumber">6</span> <span class="toctext">Code formatter</span></a>
+<a href="#build-console"><span class="tocnumber">6</span> <span class="toctext">Build console</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#build-console"><span class="tocnumber">7</span> <span class="toctext">Build console</span></a>
+<a href="#doxygen"><span class="tocnumber">7</span> <span class="toctext">Doxygen</span></a>
 </li>
 <li class="toc_level-1 toc_section-8">
-<a href="#doxygen"><span class="tocnumber">8</span> <span class="toctext">Doxygen</span></a>
-</li>
-<li class="toc_level-1 toc_section-9">
-<a href="#debug-previous-application"><span class="tocnumber">9</span> <span class="toctext">Debug previous application</span></a>
+<a href="#debug-previous-application"><span class="tocnumber">8</span> <span class="toctext">Debug previous application</span></a>
 </li>
 </ul>
 </td>
@@ -167,20 +164,6 @@
 <img src="/assets/images/2014/06/PreferencesSave.png" alt="Preferences: Save automatically" />
 </p>
 
-<h2 id="use-active-build-configuration-for-indexing">Use active build configuration for indexing</h2>
-
-<p>Eclipse CDT has a very powerful indexer, which parses the source code on the fly and provides hints, auto-completion help, error reporting, etc while editing, without having to start the build process. For this indexer to be accurate, it must be in sync with the compiler, in terms of options and environment. For the indexer to automatically sync when changing from one configuration to another, check if the indexer was set to use the active configuration:</p>
-
-<ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
-  <li>enable <strong>Use active build configuration</strong></li>
-  <li>click the <strong>Apply</strong> button</li>
-</ul>
-
-<p>
-<img src="/assets/images/2014/06/PreferencesIndexer.png" alt="Indexer: Use active build configuration" />
-</p>
-
 <h2 id="show-line-numbers">Show line numbers</h2>
 
 <p>Although not critical, while editing source files, it is useful to see the line numbers, and also a hint that the line may be too long:</p>
@@ -197,6 +180,20 @@
 <img src="/assets/images/2014/06/PreferencesLineNumbers.png" alt="Editor preferences" />
 </p>
 
+<h2 id="use-active-build-configuration-for-indexing">Use active build configuration for indexing</h2>
+
+<p>Eclipse CDT has a very powerful indexer, which parses the source code on the fly and provides hints, auto-completion help, error reporting, etc while editing, without having to start the build process. For this indexer to be accurate, it must be in sync with the compiler, in terms of options and environment. For the indexer to automatically sync when changing from one configuration to another, check if the indexer was set to use the active configuration:</p>
+
+<ul>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
+  <li>enable <strong>Use active build configuration</strong></li>
+  <li>click the <strong>Apply</strong> button</li>
+</ul>
+
+<p>
+<img src="/assets/images/2014/06/PreferencesIndexer.png" alt="Indexer: Use active build configuration" />
+</p>
+
 <h2 id="editor-folding">Editor folding</h2>
 
 <p>To better view the entire content of the source files, it is recommended to disable editor folding:</p>
@@ -209,22 +206,6 @@
 
 <p>
 <img src="/assets/images/2014/06/PreferencesFolding.png" alt="Disable folding" />
-</p>
-
-<h2 id="insert-spaces-for-tabs">Insert spaces for tabs</h2>
-
-<p>Using real tabs has the big disadvantage that the text appearance depends on the viewer tab size settings, which sometimes can create major readability problems.</p>
-
-<p>To avoid all these, it is recommended to avoid using tabs, ad replace them with spaces.</p>
-
-<p>
-<img src="/assets/images/2014/06/PreferencesSpaces.png" alt="Insert spaces for tabs" />
-</p>
-
-<p>To check if the text indeed has spaces and not tabs, enable the <strong>Show Whitespace Characters</strong>:</p>
-
-<p>
-<img src="/assets/images/2014/06/Show_white_spaces.png" alt="Show whitespace characters" />
 </p>
 
 <h2 id="code-formatter">Code formatter</h2>
@@ -264,6 +245,16 @@
 </ul>
 
 <p>The same action can be triggered with a right click and a <strong>Source</strong> → <strong>Format</strong> or even easier, with a keyboard shortcut (<strong>cmd+shift+F</strong> on OS X).</p>
+
+<p>To check if the text indeed has spaces and not tabs, enable the <strong>Show Whitespace Characters</strong>:</p>
+
+<p>
+<img src="/assets/images/2014/06/Show_white_spaces.png" alt="Show whitespace characters" />
+</p>
+
+<blockquote>
+  <p>Note: the solution to configure the editor to enter spaces instead of Tabs prevents editing special files that mandates Tabs, like Make files.</p>
+</blockquote>
 
 <h2 id="build-console">Build console</h2>
 
@@ -319,7 +310,7 @@
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Nov 18 09:34:22 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/eclipse/workspace/preferences/" data-layout="button"></div>
 
 
@@ -483,6 +474,7 @@
 <ul>
   <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
   <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2015-11/">GNU ARM Eclipse: Cortex-M7 support added</a></li>
 </ul>
 
 <h4 id="licenses">Licenses</h4>
