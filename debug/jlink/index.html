@@ -149,33 +149,36 @@
 <a href="#connect-to-running-target"><span class="tocnumber">11</span> <span class="toctext">Connect to running target</span></a>
 </li>
 <li class="toc_level-1 toc_section-16">
-<a href="#no-gdb-initialisation-files-loaded"><span class="tocnumber">12</span> <span class="toctext">No GDB initialisation files loaded</span></a>
+<a href="#using-multiple-j-link-probes-at-once"><span class="tocnumber">12</span> <span class="toctext">Using multiple J-Link probes at once</span></a>
 </li>
 <li class="toc_level-1 toc_section-17">
-<a href="#troubleshooting"><span class="tocnumber">13</span> <span class="toctext">Troubleshooting</span></a>
-<ul>
-<li class="toc_level-2 toc_section-18">
-<a href="#missing-or-wrong-jlinkpath"><span class="tocnumber">13.1</span> <span class="toctext">Missing or wrong jlink_path</span></a>
+<a href="#no-gdb-initialisation-files-loaded"><span class="tocnumber">13</span> <span class="toctext">No GDB initialisation files loaded</span></a>
 </li>
+<li class="toc_level-1 toc_section-18">
+<a href="#troubleshooting"><span class="tocnumber">14</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
 <li class="toc_level-2 toc_section-19">
-<a href="#wrong-device-selection"><span class="tocnumber">13.2</span> <span class="toctext">Wrong device selection</span></a>
+<a href="#missing-or-wrong-jlinkpath"><span class="tocnumber">14.1</span> <span class="toctext">Missing or wrong jlink_path</span></a>
 </li>
 <li class="toc_level-2 toc_section-20">
-<a href="#j-link-hangups"><span class="tocnumber">13.3</span> <span class="toctext">J-Link hangups</span></a>
+<a href="#wrong-device-selection"><span class="tocnumber">14.2</span> <span class="toctext">Wrong device selection</span></a>
 </li>
 <li class="toc_level-2 toc_section-21">
-<a href="#cannot-start-applications-running-from-ram"><span class="tocnumber">13.4</span> <span class="toctext">Cannot start applications running from RAM</span></a>
+<a href="#j-link-hangups"><span class="tocnumber">14.3</span> <span class="toctext">J-Link hangups</span></a>
 </li>
 <li class="toc_level-2 toc_section-22">
-<a href="#error-while-launching-command-gdb---version"><span class="tocnumber">13.5</span> <span class="toctext">Error while launching command: gdb –version</span></a>
+<a href="#cannot-start-applications-running-from-ram"><span class="tocnumber">14.4</span> <span class="toctext">Cannot start applications running from RAM</span></a>
 </li>
 <li class="toc_level-2 toc_section-23">
-<a href="#using-a-different-build-plug-in-or-not-supported-compiler"><span class="tocnumber">13.6</span> <span class="toctext">Using a different build plug-in or not supported compiler</span></a>
+<a href="#error-while-launching-command-gdb---version"><span class="tocnumber">14.5</span> <span class="toctext">Error while launching command: gdb –version</span></a>
+</li>
+<li class="toc_level-2 toc_section-24">
+<a href="#using-a-different-build-plug-in-or-not-supported-compiler"><span class="tocnumber">14.6</span> <span class="toctext">Using a different build plug-in or not supported compiler</span></a>
 </li>
 </ul>
 </li>
-<li class="toc_level-1 toc_section-24">
-<a href="#more-info"><span class="tocnumber">14</span> <span class="toctext">More info</span></a>
+<li class="toc_level-1 toc_section-25">
+<a href="#more-info"><span class="tocnumber">15</span> <span class="toctext">More info</span></a>
 </li>
 </ul>
 </td>
@@ -433,6 +436,12 @@
 
 <p>To start interacting with the target, it must be halted, using the debugger’s <strong>Halt</strong> command. After examining the target’s memory, setting breakpoints, etc, execution can be resumed, and the debug session terminated, leaving the target running.</p>
 
+<h2 id="using-multiple-j-link-probes-at-once">Using multiple J-Link probes at once</h2>
+
+<p>For advanced applications it is sometimes required to start multiple debug sessions, with multiple J-Link probes, on the same computer. SEGGER J-Link is perfectly capable of doing this, both over USB or TCP/IP.</p>
+
+<p>For this, multiple instances of Eclipse are required, and each one must be configured with different TCP/IP ports for the GDB/SWO/Telnet services, and also each must be configured with the serial number of the specific J-Link probe, printed on the back of the probe. For TCP/IP connected J-Link, instead of the serial number, use the IP address.</p>
+
 <h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
 
 <p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
@@ -491,7 +500,7 @@
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
+<p class="page-footer">Last modified on Fri Dec  4 14:05:35 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/debug/jlink/" data-layout="button"></div>
 
 
