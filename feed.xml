@@ -5,9 +5,31 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Dec 2015 12:22:30 +0000</pubDate>
-    <lastBuildDate>Wed, 09 Dec 2015 12:22:30 +0000</lastBuildDate>
+    <pubDate>Wed, 09 Dec 2015 14:20:34 +0000</pubDate>
+    <lastBuildDate>Wed, 09 Dec 2015 14:20:34 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>ARM Connected Community article, December 9, 2015</title>
+        <description>&lt;p&gt;A new article was published on the &lt;a href=&quot;http://community.arm.com&quot;&gt;ARM Connected Community&lt;/a&gt; site, under the name &lt;strong&gt;&lt;a href=&quot;https://community.arm.com/groups/tools/blog/2015/12/09/gnu-arm-eclipse-now-available-from-eclipse-marketplace&quot;&gt;GNU ARM Eclipse is now available from Eclipse Marketplace&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 08 Dec 2015 09:00:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2015/12/08/arm-connected-community-article/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/12/08/arm-connected-community-article/</guid>
+        
+        <category>article</category>
+        
+        <category>arm</category>
+        
+        <category>connected</category>
+        
+        
+        <category>news</category>
+        
+        <category>article</category>
+        
+      </item>
     
       <item>
         <title>ARM Connected Community article, November 2015</title>
@@ -216,34 +238,6 @@
         <category>releases</category>
         
         <category>qemu</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.9.2-201508071246 released</title>
-        <description>&lt;p&gt;Version 2.9.2-201508071246 is a maintenance release; the main improvements include support for multi-LED boards in the STM32F4 C++ template and more elaborate PLL settings in the STM32F4 templates.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 07 Aug 2015 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/08/07/plugins-v2.9.2-201508071246-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/08/07/plugins-v2.9.2-201508071246-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>qemu</category>
-        
-        <category>STM32F4</category>
-        
-        <category>STM32F4-Discovery</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
         
       </item>
     
