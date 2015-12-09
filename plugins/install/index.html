@@ -75,7 +75,9 @@
   <div class="inner">
     <h1><a href="/">GNU ARM Eclipse</a></h1>
     <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
-    <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+    <div id="buttons">
+      <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+    </div>
   </div>
 </header>
 
@@ -126,16 +128,16 @@
 </ul>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#plug-ins-install"><span class="tocnumber">3</span> <span class="toctext">Plug-ins install</span></a>
+<a href="#plug-ins-installupdate"><span class="tocnumber">3</span> <span class="toctext">Plug-ins install/update</span></a>
 <ul>
 <li class="toc_level-2 toc_section-10">
-<a href="#the-recommended-way"><span class="tocnumber">3.1</span> <span class="toctext">The recommended way</span></a>
+<a href="#the-eclipse-marketplace-way"><span class="tocnumber">3.1</span> <span class="toctext">The Eclipse Marketplace way</span></a>
 </li>
 <li class="toc_level-2 toc_section-11">
-<a href="#installation-problems"><span class="tocnumber">3.2</span> <span class="toctext">Installation problems</span></a>
+<a href="#the-eclipse-update-site-way"><span class="tocnumber">3.2</span> <span class="toctext">The Eclipse update site way</span></a>
 </li>
 <li class="toc_level-2 toc_section-12">
-<a href="#the-alternate-way"><span class="tocnumber">3.3</span> <span class="toctext">The alternate way</span></a>
+<a href="#the-local-archive-way"><span class="tocnumber">3.3</span> <span class="toctext">The local archive way</span></a>
 </li>
 </ul>
 </li>
@@ -143,16 +145,19 @@
 <a href="#off-line-install"><span class="tocnumber">4</span> <span class="toctext">Off-line install</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#plug-ins-versions"><span class="tocnumber">5</span> <span class="toctext">Plug-ins versions</span></a>
+<a href="#troubleshooting"><span class="tocnumber">5</span> <span class="toctext">Troubleshooting</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#set-workspace-preferences"><span class="tocnumber">6</span> <span class="toctext">Set workspace preferences</span></a>
+<a href="#plug-ins-versions"><span class="tocnumber">6</span> <span class="toctext">Plug-ins versions</span></a>
 </li>
 <li class="toc_level-1 toc_section-16">
-<a href="#toolchain-and-debugging-support"><span class="tocnumber">7</span> <span class="toctext">Toolchain and debugging support</span></a>
+<a href="#set-workspace-preferences"><span class="tocnumber">7</span> <span class="toctext">Set workspace preferences</span></a>
 </li>
 <li class="toc_level-1 toc_section-17">
-<a href="#support"><span class="tocnumber">8</span> <span class="toctext">Support</span></a>
+<a href="#toolchain-and-debugging-support"><span class="tocnumber">8</span> <span class="toctext">Toolchain and debugging support</span></a>
+</li>
+<li class="toc_level-1 toc_section-18">
+<a href="#support"><span class="tocnumber">9</span> <span class="toctext">Support</span></a>
 </li>
 </ul>
 </td>
@@ -161,7 +166,15 @@
 </table>
 </div><h2 id="quicklinks">Quicklinks</h2>
 
-<p>If you know what this is all about and you just need the update site details:</p>
+<p>If you know what this is all about, just drag-and-drop the <strong>Install</strong> button below to your running Eclipse workspace and follow the <strong>Eclipse Marketplace</strong> install/update steps.</p>
+
+<p>
+<a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2593184" class="drag" title="Drag to your running Eclipse workspace to install GNU ARM Eclipse">
+<img src="https://marketplace.eclipse.org/sites/all/themes/solstice/_themes/solstice_marketplace/public/images/btn-install.png" alt="Drag to your running Eclipse workspace to install GNU ARM Eclipse" />
+</a>
+</p>
+
+<p>If you want to do it manually, you just need the update site details:</p>
 
 <ul>
   <li>name: <strong>GNU ARM Eclipse Plug-ins</strong></li>
@@ -233,15 +246,44 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 
 <p>Please note that starting with 1.1.x, compatibility with Eclipses previous than 4.3 Kepler was no longer possible. If, for any reasons, you need a solution for older Eclipse versions, you can try the GNU ARM Eclipse Plug-in version 0.5.5, but please keep in mind that this old version is no longer maintained.</p>
 
-<h2 id="plug-ins-install">Plug-ins install</h2>
+<h2 id="plug-ins-installupdate">Plug-ins install/update</h2>
 
 <p>The following samples are from Eclipse 4.3 Kepler on OS X. Other platforms may behave slightly different, but the idea is the same.</p>
 
 <p><strong>Warning:</strong> Be sure your Eclipse is 4.3 or later, otherwise the plug-ins will refuse to install, claiming <strong>Missing requirements</strong> and <strong>Cannot satisfy dependency</strong>.</p>
 
-<h3 id="the-recommended-way">The recommended way</h3>
+<h3 id="the-eclipse-marketplace-way">The Eclipse Marketplace way</h3>
 
-<p>The recommended way to install these plug-ins is to use the Eclipse standard install/update mechanism: In the <em>Eclipse</em> menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
+<p>The easiest way to install/update the plug-ins is to drag-and-drop the <strong>Install</strong> button below to your running Eclipse workspace.</p>
+
+<p>
+<a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2593184" class="drag" title="Drag to your running Eclipse workspace to install GNU ARM Eclipse">
+<img src="https://marketplace.eclipse.org/sites/all/themes/solstice/_themes/solstice_marketplace/public/images/btn-install.png" alt="Drag to your running Eclipse workspace to install GNU ARM Eclipse" />
+</a>
+</p>
+
+<p>This should make Eclipse automatically contact the Marketplace and present a window with all GNU ARM Eclipse features:</p>
+
+<p>
+<img src="/assets/images/2015/eclipse-marketplace-features.png" alt="Eclipse Marketplace Features" />
+</p>
+
+<p>If, for any reason, this does not work for you, you can go to the <em>Eclipse</em> menu → <strong>Help</strong> → <strong>Eclipse Marketplace…</strong></p>
+
+<ul>
+  <li>in the Find field, enter GNU ARM Eclipse</li>
+  <li>click the Go button</li>
+</ul>
+
+<p>This should identify GNU ARM Eclipse and offer to Install/Update/Uninstall.</p>
+
+<p>
+<img src="/assets/images/2015/eclipse-marketplace-search.png" alt="Eclipse Marketplace Search" />
+</p>
+
+<h3 id="the-eclipse-update-site-way">The Eclipse update site way</h3>
+
+<p>The classical way to install the GNU ARM Eclipse plug-ins is to use the Eclipse standard install/update mechanism: In the <em>Eclipse</em> menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
 
 <ul>
   <li>in the <em>Install</em> window, click the <strong>Add…</strong> button (on future updates, just select the URL in the <strong>Work with:</strong> combo)</li>
@@ -267,27 +309,7 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 
 <p>Once you define the update site URL, further updates are greatly simplified (<strong>Help</strong> → <strong>Check For Updates</strong>).</p>
 
-<h3 id="installation-problems">Installation problems</h3>
-
-<p>There are cases when the on-line access to the SourceForge mirror servers might not be reliable. In these cases the Eclipse update system may fail. For example:</p>
-
-<p>
-<img src="/assets/images/2013/10/FailedInstall.png" alt="Failed install" />
-</p>
-
-<p>If this happens, Eclipse remains in a confused state and rarely can recover itself.</p>
-
-<p>The workaround is to remove the GNU ARM Eclipse update site from the available sites, restart Eclipse and add it again.</p>
-
-<p>For this go to <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Install/Update</strong> → <strong>Available Software Sites</strong>:</p>
-
-<p>
-<img src="/assets/images/2013/10/AvailableSites.png" alt="Remove from available site list" />
-</p>
-
-<p>If this still fails, the alternative method is to manually download the latest version archive and to perform the install from it, as presented below.</p>
-
-<h3 id="the-alternate-way">The alternate way</h3>
+<h3 id="the-local-archive-way">The local archive way</h3>
 
 <p>If, for any reason, you need to install a specific version of the plug-in, the solution is to download the archive from <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a> and to point the Eclipse update mechanism to the local archive: In the* Eclipse* menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
 
@@ -315,6 +337,26 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 <p>Note: Attempts to install the GNU ARM Eclipse plug-ins off-line without having the C/C++ GDB Hardware Debugging installed fails with an error related to installing the <em>ilg.gnuarmeclipse.debug.gdbjtag.jlink.feature.group</em> and other debugging features.</p>
 
 <p>On-line install do not have this problem since the Eclipse automatically downloads the C/C++ GDB Hardware Debugging plug-in from the CDT update site.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>There are cases when the on-line access to the SourceForge mirror servers might not be reliable. In these cases the Eclipse update system may fail. For example:</p>
+
+<p>
+<img src="/assets/images/2013/10/FailedInstall.png" alt="Failed install" />
+</p>
+
+<p>If this happens, Eclipse remains in a confused state and rarely can recover itself.</p>
+
+<p>The workaround is to remove the GNU ARM Eclipse update site from the available sites, restart Eclipse and add it again.</p>
+
+<p>For this go to <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Install/Update</strong> → <strong>Available Software Sites</strong>:</p>
+
+<p>
+<img src="/assets/images/2013/10/AvailableSites.png" alt="Remove from available site list" />
+</p>
+
+<p>If this still fails, the alternative method is to manually download the latest version archive and to perform the install from it, as presented below.</p>
 
 <h2 id="plug-ins-versions">Plug-ins versions</h2>
 
@@ -361,7 +403,7 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Dec  5 20:53:51 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Dec  9 08:43:38 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/plugins/install/" data-layout="button"></div>
 
 

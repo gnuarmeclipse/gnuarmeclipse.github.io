@@ -816,6 +816,10 @@ header h2 {
   letter-spacing: 0;
 }
 
+header div div.buttons {
+    float: right;
+}
+
 .inner {
   position: relative;
   width: 940px;
