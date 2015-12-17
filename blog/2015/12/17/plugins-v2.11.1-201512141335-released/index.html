@@ -9,14 +9,14 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v2.1.1-201402140758 released</title>
-  <meta name="description" content="The main change (marked by the increase of the major number to 2.x) is that debugging support in GNU ARM Eclipse became official (the previous Experimental s...">
+  <title>GNU ARM Eclipse plug-ins v2.11.1-201512141335 released</title>
+  <meta name="description" content="Version 2.11.1-201512141335 is a new release; the main improvements are: templates were updated to use CMSIS CORE 4.5, and the toolchain prefix for Linaro AA...">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.1.1-201402140758 released" />
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.11.1-201512141335 released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2014-02-14">
+  <meta property="article:published_time" content="2015-12-17">
 
 
   <meta property="article:section" content="releases" />
@@ -25,13 +25,8 @@
   <meta property="article:tag" content="gnu" />
   <meta property="article:tag" content="arm" />
   <meta property="article:tag" content="eclipse" />
-  <meta property="article:tag" content="c++" />
-  <meta property="article:tag" content="freescale" />
-  <meta property="article:tag" content="j-link" />
-  <meta property="article:tag" content="openocd" />
-  <meta property="article:tag" content="processor expert" />
-  <meta property="article:tag" content="segger" />
-  <meta property="article:tag" content="swo" />
+  <meta property="article:tag" content="cmsis" />
+  <meta property="article:tag" content="aarch64" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -41,7 +36,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2014/02/14/plugins-v2.1.1-201402140758-released/">
+  <link rel="canonical" href="/blog/2015/12/17/plugins-v2.11.1-201512141335-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -102,60 +97,90 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2014/01/22/sourceforge-featured-projects-january-2014/">←</a></td>
-    <td><a href="/blog/2014/01/22/sourceforge-featured-projects-january-2014/">SourceForge featured projects, January 2014</a></td>
+    <td><a href="/blog/2015/12/08/arm-connected-community-article/">←</a></td>
+    <td><a href="/blog/2015/12/08/arm-connected-community-article/">ARM Connected Community article, December 9, 2015</a></td>
     <td></td>
-    <td><a href="/blog/2014/02/18/plugins-v2.1.2-201402180751-released/">GNU ARM Eclipse plug-ins v2.1.2-201402180751 released</a></td>
-    <td><a href="/blog/2014/02/18/plugins-v2.1.2-201402180751-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v2.1.1-201402140758 released</h1>
+<h1 class="post-title">GNU ARM Eclipse plug-ins v2.11.1-201512141335 released</h1>
 
 
 <p class="post-meta">
-Posted on February 14, 2014 by Liviu Ionescu.
+Posted on December 17, 2015 by Liviu Ionescu.
 </p>
 
-<p>The main change (marked by the increase of the major number to 2.x) is that <strong>debugging support</strong> in GNU ARM Eclipse became <strong>official</strong> (the previous Experimental status was removed), with two variants, for a professional product (the <strong>SEGGER J-Link</strong>) and for the major open source solution (<strong>OpenOCD</strong>). Another important change was the addition of <strong>Freescale templates</strong>.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#new-features"><span class="tocnumber">1</span> <span class="toctext">New features</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#addressed-bugs"><span class="tocnumber">2</span> <span class="toctext">Addressed bugs</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#template-issues"><span class="tocnumber">3</span> <span class="toctext">Template issues</span></a>
+<ul>
+<li class="toc_level-2 toc_section-4">
+<a href="#other-changes"><span class="tocnumber">3.1</span> <span class="toctext">Other changes</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#known-problems"><span class="tocnumber">4</span> <span class="toctext">Known problems</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 2.11.1-201512141335 is a new release; the main improvements are: templates were updated to use CMSIS CORE 4.5, and the toolchain prefix for <strong>Linaro AArch64 big-endian bare-metal ELF</strong> was updated.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.1.1-201402140758">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.11.1-201512141335">Binary files »</a>
+</p>
 
-<p>New features:</p>
+<h2 id="new-features">New features</h2>
 
 <ul>
-  <li>the debug plug-in for <strong>OpenOCD</strong> was added</li>
-  <li>the <strong>Freescale KLxx template</strong> was added, currently with KL25 and KL46 members implemented; it can generate <em>blinky/empty</em> projects, in 3 variants (standalone/retargetting/semihosting)</li>
-  <li>the <strong>Freescale Processor Expert template</strong> was added; it can generate projects that use the Processor Expert tools; invoking the PEx wizard automatically will be possible from vPEx_DRV_10.4 up</li>
-  <li>[feature-request:#30] significant project <strong>portability improvements</strong>: in the build plug-in, the toolchain path mechanism was changed and made more explicit; it allows to define one path for each toolchain, and also, upon explicit request, one path for each project; no more path stored in .cproject.</li>
+  <li>all templates were updated to use CMSIS CORE 4.5</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/33">#33</a>] the toolchain prefix for <strong>Linaro AArch64 big-endian bare-metal ELF</strong> was updated from <code>aarch64_be-none-elf-</code> to <code>aarch64_be-elf-</code>; the change is effective for newly created projects; old projects require to reselect the toolchain for the update to be effective.</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/41">#41</a>] an extension point was added to the managed build plug-in to allow third party plug-ins to define toolchains.</li>
 </ul>
 
-<p>Bugs fixed:</p>
+<h2 id="addressed-bugs">Addressed bugs</h2>
 
 <ul>
-  <li>[bugs:#77] passing multiple options in JLinkGDBServer ‘Other options’ failed; fixed, multiple options are properly parsed and split into separate options</li>
-  <li>[bugs:#79] on Windows, the JLinkGDBServer console displayed an extra line feed; fixed by SEGGER</li>
-  <li>[bugs:#75] typo in the Compiler Optimization settings text (independednt); fixed.</li>
+  <li>the button to disable graphics in the QEMU debugging plug-in was not functional; fixed;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/40">#40</a>] the <em>Linker flags</em> present in the C linker were missing in the C++ linker settings page; added;</li>
 </ul>
 
-<p>Other changes in the J-Link plug-in:</p>
+<h2 id="template-issues">Template issues</h2>
 
 <ul>
-  <li>based on SEGGER suggestions and validation tests, the J-Link plug-in was updated to pass the main parameters (interface, device, endianness) only as command line arguments to the JLinkGDBServer, and not as monitor commands</li>
-  <li>[feature-request:#27] in the J-Link configuration interface, new fields were added to <strong>select the connection method (USB or IP)</strong></li>
-  <li>in the J-Link dialog with the server, the <code>monitor clrbp</code> (clear breakpoints) and <code>monitor regs</code> (display registers) commands were added during the reset sequence</li>
-  <li>in the J-Link interface, the SWO mask field also accepts hex values</li>
-  <li>the JLinkGDBServer default connection speed set to 30kHz.</li>
+  <li>in certain conditions, the STM32F7 template had problems with F745 projects; fixed;</li>
 </ul>
 
-<p>Other changes:</p>
+<h3 id="other-changes">Other changes</h3>
 
 <ul>
-  <li>in the J-Link and OpenOCD configuration interfaces, additional options can be passed to the GDB client, using a new text field</li>
-  <li>[feature-request:#26] in the build plug-in, the code used to add/edit linker scripts was changed to allow browsing</li>
-  <li>the GNU ARM C/C++ templates are now associated only with the GNU ARM Eclipse build plug-in</li>
-  <li>improved C++ support was added to all templates; when the project type is C++, the main file is created as main.cpp instead of main.c.</li>
+  <li>none.</li>
+</ul>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>none.</li>
 </ul>
 
 
@@ -165,9 +190,9 @@ Posted in
 
 <strong>releases</strong>, <strong>plugins</strong> and tagged
 
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>c++</strong>, <strong>freescale</strong>, <strong>j-link</strong>, <strong>openocd</strong>, <strong>processor expert</strong>, <strong>segger</strong>, <strong>swo</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2014/02/14/plugins-v2.1.1-201402140758-released/" data-layout="button"></div>
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cmsis</strong>, <strong>aarch64</strong>.
+</br>Last modified on Thu Dec 17 16:55:42 2015 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/12/17/plugins-v2.11.1-201512141335-released/" data-layout="button"></div>
 </p>
 
 

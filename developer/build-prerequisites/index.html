@@ -114,20 +114,26 @@
 <a href="#install-eclipse-rcp"><span class="tocnumber">1.3</span> <span class="toctext">Install Eclipse RCP</span></a>
 </li>
 <li class="toc_level-2 toc_section-5">
-<a href="#create-and-configure-the-workspace"><span class="tocnumber">1.4</span> <span class="toctext">Create and configure the workspace</span></a>
+<a href="#start-the-new-eclipse"><span class="tocnumber">1.4</span> <span class="toctext">Start the new Eclipse</span></a>
 </li>
 <li class="toc_level-2 toc_section-6">
-<a href="#install-eclipse-cdt"><span class="tocnumber">1.5</span> <span class="toctext">Install Eclipse CDT</span></a>
+<a href="#install-base-api"><span class="tocnumber">1.5</span> <span class="toctext">Install base API</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#create-and-configure-the-workspace"><span class="tocnumber">1.6</span> <span class="toctext">Create and configure the workspace</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#install-eclipse-cdt"><span class="tocnumber">1.7</span> <span class="toctext">Install Eclipse CDT</span></a>
 </li>
 </ul>
 </li>
-<li class="toc_level-1 toc_section-7">
+<li class="toc_level-1 toc_section-9">
 <a href="#clone-the-repository"><span class="tocnumber">2</span> <span class="toctext">Clone the repository</span></a>
 </li>
-<li class="toc_level-1 toc_section-8">
+<li class="toc_level-1 toc_section-10">
 <a href="#import-the-projects"><span class="tocnumber">3</span> <span class="toctext">Import the projects</span></a>
 </li>
-<li class="toc_level-1 toc_section-9">
+<li class="toc_level-1 toc_section-11">
 <a href="#associate-to-git"><span class="tocnumber">4</span> <span class="toctext">Associate to Git</span></a>
 </li>
 </ul>
@@ -154,18 +160,26 @@
 
 <ul>
   <li>go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a></li>
-  <li>download <strong>Eclipse for RCP and RAP Developers</strong>, preferably the 64-bit version (for example eclipse-rcp-luna-R-macosx-cocoa-x86_64.tar.gz)</li>
+  <li>download <strong>Eclipse for RCP and RAP Developers</strong>, preferably the 64-bit version (for example eclipse-rcp-mars-1-macosx-cocoa-x86_64.tar.gz)</li>
   <li>unpack the archive</li>
-  <li>rename eclipse to <strong>eclipse-44-rcp-cdt</strong></li>
+  <li>rename Eclipse.app to <strong>Eclipse-45-rcp-cdt.app</strong></li>
   <li>move it to <strong>…/GNU ARM Eclipse/Eclipses</strong></li>
-  <li>on Windows, create a shortcut for eclipse.exe, rename it <strong>Eclipse 4.4 RCP CDT - Shortcut</strong> and copy it to the desktop or a place of your choice</li>
-  <li>on OS X, create a Finder alias for Eclipse.app, rename it <strong>Eclipse 4.4 RCP CDT alias</strong> and move it to a place of your choice</li>
-  <li>on GNU/Linux, create a link for eclipse, rename it <strong>Eclipse 4.4 RCP CDT alias</strong> and move it to a place of your choice</li>
-  <li>start the new Eclipse</li>
-  <li>create a new workspace, preferably in a separate folder, like <strong>Eclipse Workspaces/workspace-44-rcp</strong> (note: be sure you create the workspace where you need it to be, since moving later is generally not supported by Eclipse; if you need this, preferably create a new workspace)</li>
+  <li>create shortcut to desktop:
+    <ul>
+      <li>on Windows, create a shortcut for eclipse.exe, rename it <strong>Eclipse 4.5 RCP CDT</strong> and copy it to the desktop or a place of your choice</li>
+      <li>on OS X, create a Finder alias for Eclipse.app, rename it <strong>Eclipse 4.5 RCP CDT</strong> and move it to a place of your choice</li>
+      <li>on GNU/Linux, create a link for eclipse, rename it <strong>Eclipse 4.5 RCP CDT</strong> and move it to a place of your choice</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="start-the-new-eclipse">Start the new Eclipse</h3>
+
+<ul>
+  <li>create a new workspace, preferably in a separate folder, like <strong>Eclipse Workspaces/workspace-45-rcp</strong> (note: be sure you create the workspace where you need it to be, since moving later is generally not supported by Eclipse; if you need this, preferably create a new workspace)</li>
   <li>check if you installed the right Eclipse; go to the <em>Eclipse</em> menu → <strong>Help</strong> (<em>_Eclipse_</em> on OS X) → <strong>About Eclipse</strong> and the first line should read <strong>Eclipse for RCP and RAP Developers</strong></li>
   <li><strong>Help</strong> → <strong>Install New Software</strong></li>
-  <li>Work with: Luna - <a href="http://download.eclipse.org/releases/luna">http://download.eclipse.org/releases/luna</a>
+  <li>Work with: Mars - <a href="http://download.eclipse.org/releases/mars">http://download.eclipse.org/releases/mars</a>
     <ul>
       <li>In <strong>Programming Languages</strong>
         <ul>
@@ -185,17 +199,31 @@
   </li>
   <li>wait for the new plug-ins to be installed</li>
   <li>restart<br />
-  Note: without the CDT sources available in the SDK, the extension point schemas will not be available so attempts to add new elements to the extensions will not be possible, and only ‘Generic’ elements will be offered.</li>
-  <li>install base API</li>
+  Note: without the CDT sources available in the SDK, the extension point schemas will not be available so attempts to add new elements to the extensions will not be possible, and only ‘Generic’ elements will be offered</li>
+</ul>
+
+<h3 id="install-base-api">Install base API</h3>
+
+<ul>
   <li>go to <a href="http://www.eclipse.org/cdt/downloads.php">http://www.eclipse.org/cdt/downloads.php</a>, and download <strong>cdt-master-8.3.0.zip</strong> (required to keep compatibility with Kepler 4.3)</li>
   <li>unpack the archive</li>
   <li>move the new folder to in the Eclipses folder</li>
+  <li>in <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong> → <strong>Target Platform</strong>
+    <ul>
+      <li>click Add</li>
+      <li>Start with an empty target</li>
+      <li>Next</li>
+      <li>Add → Directory</li>
+      <li>Browse → cdt-master-8.3.0</li>
+      <li>Reload</li>
+      <li>select Running Platform as Active (mandatory!)</li>
+    </ul>
+  </li>
   <li>in <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong> → <strong>API Baselines</strong>
     <ul>
       <li>click the <strong>Add Baseline…</strong> button
         <ul>
-          <li>set Name: to 8.3.0</li>
-          <li>browse Location: to …/GNU ARM Eclipse/cdt-master-8.3.0 (or set to this folder and click the <strong>Reset</strong> button)</li>
+          <li>select 8.3.0</li>
           <li>click the <strong>Finish</strong> button</li>
         </ul>
       </li>
@@ -339,7 +367,7 @@ Restart.</li>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
+<p class="page-footer">Last modified on Thu Dec 17 16:55:03 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/build-prerequisites/" data-layout="button"></div>
 
 
@@ -350,11 +378,11 @@ Restart.</li>
 <h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2015/12/17/plugins-v2.11.1-201512141335-released/">GNU ARM Eclipse plug-ins v2.11.1-201512141335 released</a></li>
   <li><a href="/blog/2015/12/08/arm-connected-community-article/">ARM Connected Community article, December 9, 2015</a></li>
   <li><a href="/blog/2015/11/17/arm-connected-community-article/">ARM Connected Community article, November 2015</a></li>
   <li><a href="/blog/2015/11/06/plugins-v2.10.2-201511061603-released/">GNU ARM Eclipse plug-ins v2.10.2-201511061603 released</a></li>
   <li><a href="/blog/2015/10/29/plugins-v2.10.1-201510291730-released/">GNU ARM Eclipse plug-ins v2.10.1-201510291730 released</a></li>
-  <li><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</a></li>
 </ul>
 
 

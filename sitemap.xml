@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://gnuarmeclipse.github.io/blog/2015/12/17/plugins-v2.11.1-201512141335-released/</loc>
+    <lastmod>2015-12-17T16:55:42+00:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/12/08/arm-connected-community-article/</loc>
     <lastmod>2015-12-09T14:20:14+00:00</lastmod>
   </url>
@@ -10,7 +14,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/11/06/plugins-v2.10.2-201511061603-released/</loc>
-    <lastmod>2015-11-26T12:46:28+00:00</lastmod>
+    <lastmod>2015-12-17T16:55:42+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/10/29/plugins-v2.10.1-201510291730-released/</loc>
@@ -274,11 +278,11 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/build-prerequisites/</loc>
-    <lastmod>2015-10-28T16:54:04+00:00</lastmod>
+    <lastmod>2015-12-17T16:55:03+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/build-procedure/</loc>
-    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+    <lastmod>2015-12-17T16:55:24+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/build-procedure/</loc>
@@ -322,7 +326,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/</loc>
-    <lastmod>2015-11-06T18:00:14+00:00</lastmod>
+    <lastmod>2015-12-17T16:55:42+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/contribute/</loc>
@@ -583,5 +587,23 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
     <lastmod>2015-11-18T09:27:14+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page2/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page3/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page4/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page5/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page6/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page7/</loc>
   </url>
 </urlset>
