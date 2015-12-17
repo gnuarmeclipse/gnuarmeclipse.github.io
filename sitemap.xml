@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/12/17/plugins-v2.11.1-201512141335-released/</loc>
-    <lastmod>2015-12-17T16:55:42+00:00</lastmod>
+    <lastmod>2015-12-17T17:06:51+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/blog/2015/12/08/arm-connected-community-article/</loc>
@@ -326,7 +326,7 @@
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/</loc>
-    <lastmod>2015-12-17T16:55:42+00:00</lastmod>
+    <lastmod>2015-12-17T17:06:51+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/contribute/</loc>
@@ -587,23 +587,5 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
     <lastmod>2015-11-18T09:27:14+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page2/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page3/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page4/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page5/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page6/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page7/</loc>
   </url>
 </urlset>

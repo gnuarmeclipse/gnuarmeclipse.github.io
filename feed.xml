@@ -5,13 +5,13 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Dec 2015 16:56:04 +0000</pubDate>
-    <lastBuildDate>Thu, 17 Dec 2015 16:56:04 +0000</lastBuildDate>
+    <pubDate>Thu, 17 Dec 2015 17:07:02 +0000</pubDate>
+    <lastBuildDate>Thu, 17 Dec 2015 17:07:02 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v2.11.1-201512141335 released</title>
-        <description>&lt;p&gt;Version 2.11.1-201512141335 is a new release; the main improvements are: templates were updated to use CMSIS CORE 4.5, and the toolchain prefix for &lt;strong&gt;Linaro AArch64 big-endian bare-metal ELF&lt;/strong&gt; was updated.&lt;/p&gt;
+        <description>&lt;p&gt;Version 2.11.1-201512141335 is a new release; the main improvements are: templates were updated to use &lt;strong&gt;CMSIS CORE 4.5&lt;/strong&gt;, and the toolchain prefix for &lt;strong&gt;Linaro AArch64 big-endian bare-metal ELF&lt;/strong&gt; was updated.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 17 Dec 2015 12:00:00 +0000</pubDate>
