@@ -9,22 +9,19 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v2.4.2-201411261616 released</title>
-  <meta name="description" content="Version 2.4.2-201411261616 is a maintenance release; the main improvements include support for Peripherals view in the OpenOCD debug plug-in and the newlib-n...">
+  <title>GNU ARM Eclipse OpenOCD v0.10.0-20160110*-dev released</title>
+  <meta name="description" content="Version v0.10.0-201601101000-dev is a maintenance release. It includes binaries for Windows, OS X and GNU/Linux.">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.4.2-201411261616 released" />
+  <meta property="og:title" content="GNU ARM Eclipse OpenOCD v0.10.0-20160110*-dev released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2014-11-26">
+  <meta property="article:published_time" content="2016-01-11">
 
 
   <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="openocd" />
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -34,7 +31,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2014/11/26/plugins-v2.4.2-201411261616-released/">
+  <link rel="canonical" href="/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -95,66 +92,97 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2014/10/14/plugins-v2.4.1-201410142110-released/">←</a></td>
-    <td><a href="/blog/2014/10/14/plugins-v2.4.1-201410142110-released/">GNU ARM Eclipse plug-ins v2.4.1-201410142110 released</a></td>
+    <td><a href="/blog/2015/12/17/plugins-v2.11.1-201512141335-released/">←</a></td>
+    <td><a href="/blog/2015/12/17/plugins-v2.11.1-201512141335-released/">GNU ARM Eclipse plug-ins v2.11.1-201512141335 released</a></td>
     <td></td>
-    <td><a href="/blog/2014/12/02/windows-build-tools-v2.0-20141202-released/">Build Tools repacked as Setup</a></td>
-    <td><a href="/blog/2014/12/02/windows-build-tools-v2.0-20141202-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v2.4.2-201411261616 released</h1>
+<h1 class="post-title">GNU ARM Eclipse OpenOCD v0.10.0-20160110*-dev released</h1>
 
 
 <p class="post-meta">
-Posted on November 26, 2014 by Liviu Ionescu.
+Posted on January 11, 2016 by Liviu Ionescu.
 </p>
 
-<p>Version 2.4.2-201411261616 is a maintenance release; the main improvements include support for <strong>Peripherals</strong> view in the <strong>OpenOCD</strong> debug plug-in and the <strong>newlib-nano</strong> explicit configuration options.</p>
-
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.4.2-201411261616">Binary files »</a></p>
-
-<p>New features:</p>
-
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
 <ul>
-  <li>[feature-requests:#73] the <strong>Peripherals</strong> view is now visible in <strong>OpenOCD</strong> too</li>
-  <li>in the C/C++ Build settings, the linker configuration was extended with explicit options to configure the <strong>newlib-nano</strong>, including setting the <strong>_printf_float</strong> and <strong>_scanf_float</strong> symbols</li>
-  <li>[feature-requests:#70] the standard Eclipse preference mechanism is now the default mechanism for setting various defaults (more info in the wiki)</li>
-  <li>[feature-requests:#72] the <code>${jlink_path}</code> is automatically set to the install folder of J-Link, by reading the Windows registry or searching several folders (on OS X or GNU/Linux)</li>
-  <li>the <code>${openocd_path}</code> is automatically set to the install folder of OpenOCD, by searching several folders</li>
-  <li>the <strong>Cortex-M7</strong> architecture was added to the compiler list of supported architectures.</li>
+<li class="toc_level-1 toc_section-1">
+<a href="#development-version"><span class="tocnumber">1</span> <span class="toctext">Development version</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#a-word-of-caution"><span class="tocnumber">2</span> <span class="toctext">A word of caution</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#configuration-update"><span class="tocnumber">3</span> <span class="toctext">Configuration update</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#download"><span class="tocnumber">4</span> <span class="toctext">Download</span></a>
+</li>
 </ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version v0.10.0-201601101000-dev is a maintenance release. It includes binaries for Windows, OS X and GNU/Linux.</p>
 
-<p>The following bugs were addressed:</p>
+<p>
+<a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.10.0-20160110">Binary files »</a>
+</p>
 
-<ul>
-  <li>[bugs:#128] when closing the <strong>Peripherals</strong> view, the memory monitors were not disposed; fixed.</li>
-  <li>[support-requests:#81] in certain erroneous conditions the debug session hanged; the error processing in the Peripherals view was improved and the problem fixed</li>
-  <li>if packs un-archiving failed, the incomplete folders were erroneously preserved; fixed, no partially installed packs left</li>
-  <li>in certain conditions, the value for the <code>fpu_unit=</code> build option was not appropriate; reset to default.</li>
-</ul>
+<h2 id="development-version">Development version</h2>
 
-<p>In the projects generated by the templates, the following issues were addressed:</p>
+<p>For those who want the latest OpenOCD features before the stable version is announced, the latest OpenOCD version built from the development repository was released in packages explicitly marked as <code>-dev</code>.</p>
 
-<ul>
-  <li>[bugs:#129] in the startup code, the data area copy check had a bug related to DATA_END_GUARD_VALUE; fixed</li>
-  <li>the origin of the flash area in the memory map for the generic <strong>Hello World ARM Cortex-M C/C++  Project</strong> was not 0x0; fixed</li>
-  <li>the ST HAL library assumes that the SysTick handler is always present and returns; the empty default SysTick handler now returns</li>
-  <li>for the large STM32 cores (F3, F4), the startup code was not able to initialise <strong>multiple RAM regions</strong>, as .data &amp; .bss; fixed; fixed, a new mechanism based on tables was added to startup.c</li>
-  <li>the file <strong>_write.c</strong>, previously located in the system folders was moved to the application folder, since its content is application dependant.</li>
-</ul>
+<h2 id="a-word-of-caution">A word of caution</h2>
+
+<p>The OpenOCD developers claim that the development versions should be generally safe to use. In case you encounter problems, please revert to the latest 0.9.0 stable release.</p>
+
+<h2 id="configuration-update">Configuration update</h2>
+
+<p>The debug plug-in generally discovers the latest installed version, by using the Windows registry keys or by searching several designated folders. If you need to use a different version, update the <code>${openocd_path}</code> variable accordingly.</p>
+
+<h2 id="download">Download</h2>
+
+<p>The new OpenOCD can be downloaded from the <a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.10.0-20160110">GitHub Releases</a> page.</p>
+
+<p>The MD5 sums of the files are:</p>
+
+<pre>
+<code>4ca0dd6d9c9ad24af2aa4eddec7717e1  
+gnuarmeclipse-openocd-debian32-0.10.0-201601101000-dev.tgz
+
+3ac38e2ac8b71a8ede734a271f0765de  
+gnuarmeclipse-openocd-debian64-0.10.0-201601101000-dev.tgz
+
+8275148ae11b954668d77739715bb1f1
+gnuarmeclipse-openocd-osx-0.10.0-201601101000-dev.pkg
+
+05a793b6d5297fbc9b9ed46f283b5152  
+gnuarmeclipse-openocd-win32-0.10.0-201601101000-dev-setup.exe
+
+49eae144aa3a43aa991d2a9444549ab6  
+gnuarmeclipse-openocd-win64-0.10.0-201601101000-dev-setup.exe
+</code></pre>
 
 
 <hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 
-<strong>releases</strong>, <strong>plugins</strong> and tagged
-
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2014/11/26/plugins-v2.4.2-201411261616-released/" data-layout="button"></div>
+<strong>releases</strong>, <strong>openocd</strong>.
+</br>Last modified on Mon Jan 11 19:54:18 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/" data-layout="button"></div>
 </p>
 
 

@@ -5,9 +5,25 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Dec 2015 21:18:06 +0000</pubDate>
-    <lastBuildDate>Tue, 22 Dec 2015 21:18:06 +0000</lastBuildDate>
+    <pubDate>Mon, 11 Jan 2016 19:54:35 +0000</pubDate>
+    <lastBuildDate>Mon, 11 Jan 2016 19:54:35 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse OpenOCD v0.10.0-20160110*-dev released</title>
+        <description>&lt;p&gt;Version v0.10.0-201601101000-dev is a maintenance release. It includes binaries for Windows, OS X and GNU/Linux.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 11 Jan 2016 12:00:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/</guid>
+        
+        
+        <category>releases</category>
+        
+        <category>openocd</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v2.11.1-201512141335 released</title>
@@ -216,32 +232,6 @@
         <category>news</category>
         
         <category>web</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</title>
-        <description>&lt;p&gt;Version 2.9.3-201508190739 is a maintenance release; it fixes a small issue in the QEMU Debugger tab, which now uses persistent values for the board/device names only when none of them were assigned to the project from the CMSIS definitions.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 19 Aug 2015 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/08/19/plugins-v2.9.3-201508190739-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/08/19/plugins-v2.9.3-201508190739-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>CMSIS</category>
-        
-        <category>qemu</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
         
       </item>
     
