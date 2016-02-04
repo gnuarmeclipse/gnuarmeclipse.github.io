@@ -9,14 +9,14 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>Using J-Link with the STM32 boards</title>
+  <title>Discussions forum</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="Using J-Link with the STM32 boards" />
+  <meta property="og:title" content="Discussions forum" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-10">
+  <meta property="article:published_time" content="2015-09-12">
 
 
 
@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/developer/j-link-stm32-boards/">
+  <link rel="canonical" href="/support/forum/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -89,7 +89,7 @@
 <section id="main-content">
 
 
-<h1 class="page-title">Using J-Link with the STM32 boards</h1>
+<h1 class="page-title">Discussions forum</h1>
 
 
 <div id="toc-container">
@@ -105,106 +105,78 @@
 <a href="#overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#the-j-link-to-st-cable"><span class="tocnumber">2</span> <span class="toctext">The J-Link to ST cable</span></a>
+<a href="#goals"><span class="tocnumber">2</span> <span class="toctext">Goals</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#the-st-6-pin-swd-connector"><span class="tocnumber">3</span> <span class="toctext">The ST 6-pin SWD connector</span></a>
+<a href="#access"><span class="tocnumber">3</span> <span class="toctext">Access</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#the-j-link-20-pin-jtagswd-connector"><span class="tocnumber">4</span> <span class="toctext">The J-Link 20-pin JTAG/SWD connector</span></a>
+<a href="#start-a-discussion"><span class="tocnumber">4</span> <span class="toctext">Start a discussion</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#the-target-detect-strap"><span class="tocnumber">5</span> <span class="toctext">The target detect strap</span></a>
+<a href="#no-support-for-markdown"><span class="tocnumber">5</span> <span class="toctext">No support for markdown</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#jumpers"><span class="tocnumber">6</span> <span class="toctext">Jumpers</span></a>
+<a href="#categories"><span class="tocnumber">6</span> <span class="toctext">Categories</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#conclusion"><span class="tocnumber">7</span> <span class="toctext">Conclusion</span></a>
+<a href="#mark-your-questions-as-answered"><span class="tocnumber">7</span> <span class="toctext">Mark your questions as Answered</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><p>This page explains how to build a cable to connect the J-Link to STM32 DISCOVERY and NUCLEO boards.</p>
+</div><h2 id="overview">Overview</h2>
 
-<h2 id="overview">Overview</h2>
+<p>A dedicated <a href="https://www.element14.com/community/groups/gnu-arm-eclipse">user discussions forum</a> was created on the <a href="https://www.element14.com/community/welcome">element14 Community server</a>.</p>
 
-<p>As most vendors do, ST also designed the cheap STM32 DISCOVERY and NUCLEO boards to include an on-board programmer. The protocol used by this programmer is ST-LINK/V2, an ST protocol. Unfortunately ST does not provide a portable GDB server to support the ST-LINK/V2 protocol, and using these STM32 boards out of the box on GNU/Linux or OS X is not possible.</p>
+<p>
+<img src="/assets/images/2016/forum-overview.png" alt="GNU ARM Eclipse forum" />
+</p>
 
-<p>For a few limited tests, the OpenOCD plug-in can be used, but the reliability of OpenOCD is not appropriate for professional use.</p>
+<h2 id="goals">Goals</h2>
 
-<p>Preferably the J-Link debug plug-in would be used, but, for costs reasons, ST did not provide the standard JTAG connector, so it is currently not possible to connect to these boards with J-Link.</p>
+<p>The forum goal was to facilitate experience sharing between GNU ARM Eclipse users and as a place to post questions and support requests. In case a problem is identified as bug or feature request, please use the corresponding GitHub Issues <a href="https://github.com/gnuarmeclipse/plug-ins/issues/">tracker</a>.</p>
 
-<h2 id="the-j-link-to-st-cable">The J-Link to ST cable</h2>
+<h2 id="access">Access</h2>
 
-<p>For those equipped with a soldering iron, it is relatively easy to adapt the existing 6-pin connector to J-Link.</p>
+<p>The forum URL is:</p>
 
-<p>The solution is a custom ribbon cable, to connect the 6-pin to the 20-pin J-Link, and a short strap to bring Vcc to pin 1 of the 6-pin connector, so that J-Link can detect the board is up and running.</p>
+<p>
+<code>https://www.element14.com/community/groups/gnu-arm-eclipse</code>
+</p>
 
-<p>The bill of materials includes:</p>
+<p>The forum type is open, and anyone can contribute. Access is free, based on registration.</p>
 
-<ul>
-  <li>a 6 wire ribbon cable, about 15 cm (6”) long</li>
-  <li>a 6-pin 2.54mm (0.1”) female, single raw, in-line connector, to match the STM board header</li>
-  <li>a 20-pin 2.54mm (0.1”) female, dual raw (2x10), in-line connector, to match the J-Link male connector</li>
-</ul>
+<h2 id="start-a-discussion">Start a discussion</h2>
 
-<p>Solder the ribbon cable to the 6-pin connector, and be sure you mark the first pin with a different colour, to later help you plug the connector in the proper position.</p>
+<p>The element14 Community Group is actually more than a simple forum, it is also a blog, it can manage polls, calendar events, and many more.</p>
 
-<h2 id="the-st-6-pin-swd-connector">The ST 6-pin SWD connector</h2>
+<p>For common usage, to start a new discussion, use the top right link <a href="https://www.element14.com/community/discussion/create.jspa?containerID=2436&amp;containerType=700">Start a discussion</a>.</p>
 
-<p>The signals on this 6-pin are:</p>
+<h2 id="no-support-for-markdown">No support for markdown</h2>
 
-<ul>
-  <li>1 - Vcc → 1 (brown)</li>
-  <li>2 - JTCK/SWCLK → 9 (red)</li>
-  <li>3 - GND → any of 4,<strong>6</strong>,8,10,12,14,16,18,20 (orange)</li>
-  <li>4 - JTMS/SWDIO → 7 (yellow)</li>
-  <li>5 - NRST → 15 (green)</li>
-  <li>6 - SWO → 13 (blue)</li>
-</ul>
+<p>Unfortunatelly the Jive powered server currently has no support for markdown, so follow the server formatting rules.</p>
 
-<h2 id="the-j-link-20-pin-jtagswd-connector">The J-Link 20-pin JTAG/SWD connector</h2>
+<h2 id="categories">Categories</h2>
 
-<p>The signals on the 20-pin are split into two groups, the even number pins are on one raw, and, except pin 2, all are connected to GND, and the odd number pins are:</p>
+<p>The GNU ARM Eclipse Group is also home for discussions related to other subprojects, like CMSIS++, µOS++, and xPacks.</p>
 
-<ul>
-  <li>1 - Viref → 1 (brown)</li>
-  <li>3 - nRST</li>
-  <li>5 - TDI</li>
-  <li>7 - TMS/SWDIO → 4 (yellow)</li>
-  <li>9 - TCK/SWCLK → 2 (red)</li>
-  <li>11 - RTCK</li>
-  <li>13 - TDO/SWO → 6 (blue)</li>
-  <li>15 - RESET → 5 (green)</li>
-  <li>17 - DBGQ</li>
-  <li>19 - 5V out</li>
-  <li>2 - NC</li>
-  <li>4 - GND</li>
-  <li>6 - GND → 3 (orange)</li>
-  <li>8,10,12,12,16,18,20 - GND</li>
-</ul>
+<p>
+<img src="/assets/images/2016/forum-categories.png" alt="GNU ARM Eclipse categories" />
+</p>
 
-<p>The correspondence between the two connectors is represented on each connector by the second number.</p>
+<p>Please be sure you select the <strong>GNU ARM Eclipse</strong> category.</p>
 
-<h2 id="the-target-detect-strap">The target detect strap</h2>
+<h2 id="mark-your-questions-as-answered">Mark your questions as Answered</h2>
 
-<p>After building the ribbon cable, the ST board needs a strap to connect the pin 1 of the 6-pin connector to Vcc, to signal J-Link that the target board is present and powered.</p>
-
-<h2 id="jumpers">Jumpers</h2>
-
-<p>The ST boards have a pair of jumpers, that need to be installed, for the programming signals to be connected from the 6-pin connector to the target processor.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>With this cable it is now possible to connect to the ST board with an external J-Link probe, to program the flash and run debugging sessions.</p>
+<p>If you receive the expected answer, please let the server know this, for an efficient way to manage the issues.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/j-link-stm32-boards/" data-layout="button"></div>
+<p class="page-footer">Last modified on Thu Feb  4 07:16:24 2016 UTC.</p>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/support/forum/" data-layout="button"></div>
 
 
 </section>
