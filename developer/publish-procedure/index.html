@@ -129,31 +129,28 @@
 <a href="#known-problems"><span class="tocnumber">9</span> <span class="toctext">Known problems</span></a>
 </li>
 <li class="toc_level-1 toc_section-10">
-<a href="#publish-on-the-main-sourceforge-updates-site"><span class="tocnumber">10</span> <span class="toctext">Publish on the main SourceForge updates site</span></a>
+<a href="#update-the-web"><span class="tocnumber">10</span> <span class="toctext">Update the Web</span></a>
 </li>
 <li class="toc_level-1 toc_section-11">
-<a href="#clean-the-mess-in-the-local-archive-folder"><span class="tocnumber">11</span> <span class="toctext">Clean the mess in the local archive folder</span></a>
+<a href="#publish-on-the-main-sourceforge-updates-site"><span class="tocnumber">11</span> <span class="toctext">Publish on the main SourceForge updates site</span></a>
 </li>
 <li class="toc_level-1 toc_section-12">
-<a href="#create-a-new-github-release"><span class="tocnumber">12</span> <span class="toctext">Create a new GitHub release</span></a>
+<a href="#clean-the-mess-in-the-local-archive-folder"><span class="tocnumber">12</span> <span class="toctext">Clean the mess in the local archive folder</span></a>
 </li>
 <li class="toc_level-1 toc_section-13">
-<a href="#update-the-web"><span class="tocnumber">13</span> <span class="toctext">Update the Web</span></a>
+<a href="#create-a-new-github-release"><span class="tocnumber">13</span> <span class="toctext">Create a new GitHub release</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#update-the-github-release"><span class="tocnumber">14</span> <span class="toctext">Update the GitHub release</span></a>
+<a href="#publish-on-sourceforge"><span class="tocnumber">14</span> <span class="toctext">Publish on SourceForge</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#publish-on-sourceforge"><span class="tocnumber">15</span> <span class="toctext">Publish on SourceForge</span></a>
+<a href="#share-on-facebook"><span class="tocnumber">15</span> <span class="toctext">Share on Facebook</span></a>
 </li>
 <li class="toc_level-1 toc_section-16">
-<a href="#share-on-facebook"><span class="tocnumber">16</span> <span class="toctext">Share on Facebook</span></a>
+<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">16</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
 </li>
 <li class="toc_level-1 toc_section-17">
-<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">17</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
-</li>
-<li class="toc_level-1 toc_section-18">
-<a href="#merge-develop-into-master"><span class="tocnumber">18</span> <span class="toctext">Merge develop into master</span></a>
+<a href="#merge-develop-into-master"><span class="tocnumber">17</span> <span class="toctext">Merge develop into master</span></a>
 </li>
 </ul>
 </td>
@@ -307,6 +304,13 @@ logout
 
 <p>Close issues on the way. Refer to them as <strong>[Issue:#22]</strong>. For SourceForge, refer to them as <strong>[bugs:#98]</strong>, <strong>[feature-requests:#60]</strong>, <strong>[support-requests:#81]</strong>.</p>
 
+<h2 id="update-the-web">Update the Web</h2>
+
+<ul>
+  <li>Jekyll build</li>
+  <li>Git push</li>
+</ul>
+
 <h2 id="publish-on-the-main-sourceforge-updates-site">Publish on the main SourceForge updates site</h2>
 
 <p>When all ready, run the <code>scripts/publish-updates.command</code>:</p>
@@ -374,27 +378,12 @@ logout
   <li>name the release like <strong>GNU ARM Eclipse plug-ins v2.9.3-201508190739</strong></li>
   <li>as description, copy the first paragraph from the Web release page</li>
   <li>add a link to the Web page <code>[Continue reading »]()</code></li>
+  <li>get URL from web and update the above link</li>
   <li>attach binaries (drag and drop from the archives folder will do it)</li>
-  <li>mark it as a Pre-release</li>
   <li>click the <strong>Publish Release</strong> button</li>
 </ul>
 
 <p>Note: at this moment the system should send a notification to all clients watching this project.</p>
-
-<h2 id="update-the-web">Update the Web</h2>
-
-<ul>
-  <li>go to the post and update the link to the new Release</li>
-  <li>Jekyll build</li>
-  <li>Git push</li>
-</ul>
-
-<h2 id="update-the-github-release">Update the GitHub release</h2>
-
-<ul>
-  <li>go back to the <a href="https://github.com/gnuarmeclipse/plug-ins/releases">GitHub Releases</a> page and update the link to the blog post;</li>
-  <li>disable the pre-release flag.</li>
-</ul>
 
 <h2 id="publish-on-sourceforge">Publish on SourceForge</h2>
 
@@ -403,7 +392,7 @@ logout
   <li>select the folder corresponding to the latest version (currently <strong>2.x</strong>); create a new one if necessary</li>
   <li>click the <strong>Add File</strong> button</li>
   <li>drag and drop the file (for example ilg.gnuarmeclipse.repository-2.1.1-201402140758.zip) in the upload window and click the <strong>Upload</strong> button</li>
-  <li>click the Done button</li>
+  <li>click the <strong>Done</strong> button</li>
   <li>check it the new file was published; click the info icon</li>
   <li>enable the <strong>Windows</strong>, <strong>OS X</strong> and <strong>Linux</strong> buttons</li>
   <li>after a while the new upload will be marked as latest version</li>
@@ -415,7 +404,7 @@ logout
   <li>go to the new post and follow the Share link.</li>
   <li>DO NOT select <strong>On your own Timeline</strong>, but <strong>On a Page you manage</strong></li>
   <li>select GNU ARM Eclipse</li>
-  <li>posting as GU ARM Eclipse</li>
+  <li>posting as GNU ARM Eclipse</li>
   <li>click <strong>Share link</strong></li>
 </ul>
 
@@ -423,7 +412,8 @@ logout
 
 <ul>
   <li>go to <a href="https://marketplace.eclipse.org/content/gnu-arm-eclipse">Eclipse Marketplace</a></li>
-  <li>click Edit</li>
+  <li>log in</li>
+  <li>click <strong>Edit</strong></li>
   <li>update version number</li>
 </ul>
 
@@ -433,12 +423,12 @@ logout
   <li>in SourceTree, switch to the <strong>master</strong> branch</li>
   <li>merge the <strong>develop</strong> branch into <strong>master</strong></li>
   <li>switch to <strong>develop</strong></li>
-  <li>push both branches to GitHub and SourceForge.</li>
+  <li>push both branches to GitHub.</li>
 </ul>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri Nov  6 18:20:34 2015 UTC.</p>
+<p class="page-footer">Last modified on Tue Feb  9 11:42:41 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/publish-procedure/" data-layout="button"></div>
 
 
