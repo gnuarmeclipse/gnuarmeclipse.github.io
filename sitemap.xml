@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://gnuarmeclipse.github.io/blog/2016/02/09/plugins-v2.11.2-201602091039-released/</loc>
+    <lastmod>2016-02-09T11:17:13+00:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/</loc>
     <lastmod>2016-01-11T19:54:18+00:00</lastmod>
   </url>
@@ -305,12 +309,16 @@
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
+    <loc>http://gnuarmeclipse.github.io/developer/change-log/2014/</loc>
+    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/qemu/change-log/2014/</loc>
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/change-log/2014/</loc>
-    <lastmod>2015-10-03T18:07:41+00:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/developer/change-log/2015/</loc>
+    <lastmod>2016-02-09T11:09:54+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/change-log/v05x/</loc>
@@ -357,11 +365,11 @@
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/download/</loc>
+    <loc>http://gnuarmeclipse.github.io/qemu/download/</loc>
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/qemu/download/</loc>
+    <loc>http://gnuarmeclipse.github.io/openocd/download/</loc>
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
@@ -421,8 +429,8 @@
     <lastmod>2015-12-09T12:22:19+00:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/debug/install/</loc>
-    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/install/</loc>
+    <lastmod>2015-12-05T20:53:51+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/qemu/install/</loc>
@@ -437,12 +445,12 @@
     <lastmod>2015-12-22T21:17:50+00:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/install/</loc>
-    <lastmod>2015-11-10T19:39:12+00:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/debug/install/</loc>
+    <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/install/</loc>
-    <lastmod>2015-12-05T20:53:51+00:00</lastmod>
+    <loc>http://gnuarmeclipse.github.io/openocd/install/</loc>
+    <lastmod>2015-11-10T19:39:12+00:00</lastmod>
   </url>
   <url>
     <loc>http://gnuarmeclipse.github.io/developer/j-link-stm32-boards/</loc>
@@ -557,7 +565,7 @@
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/openocd/releases/</loc>
+    <loc>http://gnuarmeclipse.github.io/developer/releases/</loc>
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
@@ -569,7 +577,7 @@
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
-    <loc>http://gnuarmeclipse.github.io/developer/releases/</loc>
+    <loc>http://gnuarmeclipse.github.io/openocd/releases/</loc>
     <lastmod>2015-10-03T10:04:54+00:00</lastmod>
   </url>
   <url>
@@ -595,5 +603,23 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
     <lastmod>2015-11-18T09:27:14+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page2/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page3/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page4/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page5/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page6/</loc>
+  </url>
+  <url>
+    <loc>http://gnuarmeclipse.github.io/blog/page7/</loc>
   </url>
 </urlset>

@@ -9,14 +9,14 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v2.7.1-201503211846 released</title>
-  <meta name="description" content="Version 2.7.1-201503211846 is a new release; the main improvements include: a new set of preferences pages to configure the debug tools paths (J-Link, OpenOC...">
+  <title>GNU ARM Eclipse plug-ins v2.11.2-201602091039 released</title>
+  <meta name="description" content="Version 2.11.2-201602091039 is a maintenance release; the STM templates were updated to use F4 HAL 1.11.0, F7 HAL 1.3.0.">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.7.1-201503211846 released" />
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.11.2-201602091039 released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-03-21">
+  <meta property="article:published_time" content="2016-02-09">
 
 
   <meta property="article:section" content="releases" />
@@ -25,8 +25,7 @@
   <meta property="article:tag" content="gnu" />
   <meta property="article:tag" content="arm" />
   <meta property="article:tag" content="eclipse" />
-  <meta property="article:tag" content="j-link" />
-  <meta property="article:tag" content="openocd" />
+  <meta property="article:tag" content="stm" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -36,7 +35,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2015/03/21/plugins-v2.7.1-201503211846-released/">
+  <link rel="canonical" href="/blog/2016/02/09/plugins-v2.11.2-201602091039-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -97,75 +96,79 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2015/03/20/openocd-v0.9.0-20150320-released/">←</a></td>
-    <td><a href="/blog/2015/03/20/openocd-v0.9.0-20150320-released/">GNU ARM Eclipse OpenOCD v0.9.0-20150320*-dev released</a></td>
+    <td><a href="/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/">←</a></td>
+    <td><a href="/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-20160110*-dev released</a></td>
     <td></td>
-    <td><a href="/blog/2015/03/21/windows-build-tools-v2.4-20150321-released/">GNU ARM Eclipse Windows Build Tools v2.4-201503212005 released</a></td>
-    <td><a href="/blog/2015/03/21/windows-build-tools-v2.4-20150321-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v2.7.1-201503211846 released</h1>
+<h1 class="post-title">GNU ARM Eclipse plug-ins v2.11.2-201602091039 released</h1>
 
 
 <p class="post-meta">
-Posted on March 21, 2015 by Liviu Ionescu.
+Posted on February 9, 2016 by Liviu Ionescu.
 </p>
 
-<p>Version 2.7.1-201503211846 is a new release; the main improvements include: a new set of preferences pages to configure the debug tools paths (J-Link, OpenOCD); as a homage to the team who created the former CodeRed suite, a new debug perspective named <strong>CodeRed</strong> was added, intended to be compatible with the CodeRed Develop perspective.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#updates"><span class="tocnumber">1</span> <span class="toctext">Updates</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#template-issues"><span class="tocnumber">2</span> <span class="toctext">Template issues</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#other-changes"><span class="tocnumber">2.1</span> <span class="toctext">Other changes</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#known-problems"><span class="tocnumber">3</span> <span class="toctext">Known problems</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 2.11.2-201602091039 is a maintenance release; the STM templates were updated to use <strong>F4 HAL 1.11.0</strong>, <strong>F7 HAL 1.3.0</strong>.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.7.1-201503211846">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.11.2-201602091039">Binary files »</a>
+</p>
 
-<p>New features:</p>
+<h2 id="updates">Updates</h2>
 
 <ul>
-  <li><a href="/2015/03/21/windows-build-tools-v2.4-20150321-released/">GNU ARM Eclipse Build Tools v2.4-20150321* released</a></li>
-  <li><a href="/2015/03/20/openocd-v0.9.0-20150320-released/">GNU ARM Eclipse OpenOCD 0.9.0-20150320*-dev released</a></li>
-  <li>[feature-requests:#86] new <strong>J-Link and OpenOCD preferences pages</strong> were added, to configure the executable name and the location of the binaries;<br />
-<img src="/assets/images/2015/preferences-run-jlink.png" alt="The J-Link Preferences page" /></li>
-  <li>[feature-requests:#89] in the Peripherals view, when displaying registers that changed since the previous halt, instead of a single colour (yellow) to mark changed values, <strong>three shades of yellow</strong> are used in a fading way to also show values changed by the previous and the previous-previous steps;</li>
-  <li>[feature-requests:#88] a new preferences page was added to <strong>configure the colours</strong> use by the the Peripherals view;<br />
-<img src="/assets/images/2015/preferences-run-peripheral-views.png" alt="Peripherals view preferences page" /></li>
-  <li>a <strong>new debug perspective</strong> named <strong>CodeRed</strong> was added, to better use the screen space; this is packed as a new Eclipse feature and requires to <strong>Install New Software…</strong>, a <strong>Check for Updates</strong> might not install it;<br />
-<img src="/assets/images/2015/perspective-codered.png" alt="The CodeRed debug perspective" /></li>
-  <li><strong>new Linaro toolchains</strong> were added (<em>Linaro ARMv7 bare-metal EABI</em>, <em>Linaro ARMv7 big-endian bare-metal EABI</em>); the name of <em>Linaro ARMv7 big-endian Linux GNU EABI HF</em> was slightly edited to match the naming convention used by the other toolchain;<br />
-<img src="/assets/images/2015/properties-c-setting-toolchains-names.png" alt="Supported Toolchains" /></li>
-  <li>[feature-requests:#59] to help others integrate the GNU ARM Eclipse plug-ins in their Eclipse suites, default values can now be used to configure most of the tools processing and debugger GUI elements;</li>
-  <li>[bugs:#141] the J-Link specific <strong>Connect to running target</strong> was re-enabled, since recent SEGGER releases fixed the initial bugs and this very powerful debug feature is now fully functional;<br />
-<img src="/assets/images/2015/launch-jlink-debugger-running.png" alt="Connect to running target" /></li>
-  <li>for Windows users, a new command line option (<strong>-nogui</strong>) was added when starting the J-Link GDB Server, to prevent displaying the annoying GUI windows on top of Eclipse windows;<br />
-<img src="/assets/images/2015/launch-jlink-debugger-nogui.png" alt="The -nogui option" /></li>
+  <li>the STM32F4 templates were updated to use STM HAL 1.11.0 and Keil CMSIS drivers 2.7.0</li>
+  <li>the STM32F7 templates were updated to use STM HAL 1.3.0 and Keil CMSIS drivers 2.4.0</li>
 </ul>
 
-<p>The following bugs were addressed:</p>
+<h2 id="template-issues">Template issues</h2>
 
 <ul>
-  <li>[bugs:#171] in certain conditions the new <strong>Tools Path</strong> property page was also visible for other projects managed than those managed by GNU ARM Eclipse; fixed</li>
-  <li>[bugs:#174] in certain conditions when launching OpenOCD externally, the plug-in was not able to perform properly; fixed</li>
-  <li>[bugs:#170] in certain conditions the tools paths auto-discovered from the Windows registry did not use POSIX separators; fixed</li>
-  <li>[bugs:#169] the plug-ins were quite chatty on the console; tests of specific conditions were added to all these debug trace messages;</li>
-  <li>[bugs:#168] for debug launch configurations created by external wizards, some of the CDT specific attributes had no defaults and the debug session failed to start; fixed</li>
-  <li>[bugs:#137, #107] in certain conditions, wrong commands passed in the debugger configuration windows did not properly reach the user; fixed</li>
+  <li>in _exit.c the prototype of __reset_hardware() is defined only on Release.</li>
 </ul>
 
-<p>In the projects generated by the templates, the following issues were addressed:</p>
+<h3 id="other-changes">Other changes</h3>
 
 <ul>
-  <li>[support-requests:#116] when using <strong>LTO</strong>, the exception handlers were excluded from the build, probably because they were referred only from assembly; they were marked as <strong>used</strong> and are now always included;</li>
-  <li>to help debugging, the exception handlers are now terminated with an <strong>explicit BKPT</strong> instruction, that  activates the debugger and shows the exact line where execution stopped;</li>
+  <li>none.</li>
 </ul>
 
-<p>Known problems:</p>
+<h2 id="known-problems">Known problems</h2>
 
 <ul>
-  <li>(2015-03-31) the template for the stm32f411 has a problem in the vectors_stm32f4xx.c file, generating the core vectors twice; the workaround is to remove the vectors after the #elif defined(STM32F411xE), from WWDG_IRQHandler to ADC_IRQHandler; the fix will be included in the next release.</li>
-</ul>
-
-<p>Notes:</p>
-
-<ul>
-  <li>the new J-Link configuration pages require <strong>SEGGER J-Link version 4.98 or latter</strong>. Using older version will trigger a warning in the console, because the <strong>-nogui</strong> command line option was not previously supported.</li>
+  <li>none.</li>
 </ul>
 
 
@@ -175,9 +178,9 @@ Posted in
 
 <strong>releases</strong>, <strong>plugins</strong> and tagged
 
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>j-link</strong>, <strong>openocd</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/03/21/plugins-v2.7.1-201503211846-released/" data-layout="button"></div>
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>stm</strong>.
+</br>Last modified on Tue Feb  9 11:17:13 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/02/09/plugins-v2.11.2-201602091039-released/" data-layout="button"></div>
 </p>
 
 
