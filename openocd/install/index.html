@@ -135,6 +135,14 @@
 <li class="toc_level-1 toc_section-10">
 <a href="#openocd-debugging-plug-ins"><span class="tocnumber">8</span> <span class="toctext">OpenOCD Debugging plug-ins</span></a>
 </li>
+<li class="toc_level-1 toc_section-11">
+<a href="#troubleshooting"><span class="tocnumber">9</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toc_level-2 toc_section-12">
+<a href="#usb-access-rights"><span class="tocnumber">9.1</span> <span class="toctext">USB access rights</span></a>
+</li>
+</ul>
+</li>
 </ul>
 </td>
 </tr>
@@ -341,9 +349,33 @@ Info : stm32f4x.cpu: hardware has 6 	breakpoints, 4 watchpoints
 <img src="/assets/images/2015/install-new-software-updates-openocd.png" alt="Install the OpenOCD plug-ins" />
 </p>
 
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="usb-access-rights">USB access rights</h3>
+
+<p>On some GNU/Linux distributions, the UDEV definitions are not enough,<br />
+or are not effective, and when trying to access the JTAG probe,<br />
+an error is issued:</p>
+
+<pre>
+<code>libusb_open failed: LIBUSB_ERROR_ACCESS
+</code></pre>
+
+<p>If this happens, first try to start openocd with sudo; if this works,<br />
+for regular work you also need to grant your user permission to use the USB.</p>
+
+<p>For example, on Ubuntu 15.10 you need to issue something like:</p>
+
+<pre>
+<code>usermod -aG plugdev $USER
+</code></pre>
+
+<p>If you still have problems, check your distribution documentation and<br />
+when you have a functional solution post it on the project forum.</p>
+
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Tue Nov 10 19:39:12 2015 UTC.</p>
+<p class="page-footer">Last modified on Tue Mar  8 07:57:45 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/install/" data-layout="button"></div>
 
 
