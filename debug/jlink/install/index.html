@@ -161,7 +161,13 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>J-Link comes not only with a GDB server, but with a complete set of drivers and utilities, packed by SEGGER separately for each platform. The same distribution includes drivers for all J-Link probes, so installation is quite simple. The J-Link binaries are available from the <a href="http://www.segger.com/jlink-software.html">SEGGER site</a>. Download the file appropriate for your development platform. Please note that you need to have the <strong>J-Link serial number</strong> at hand, since the download site will ask for it. You can still download the J-Link software if you do not have the serial number, but you have to pass a multiple step confirmations sequence stating that you are not using illegal clones.</p>
+<p>J-Link comes not only with a GDB server, but with a complete set of drivers and utilities, packed by SEGGER separately for each platform. The same distribution includes drivers for all J-Link probes, so installation is quite simple. The J-Link binaries are available from the <a href="http://www.segger.com/jlink-software.html">SEGGER site</a>.</p>
+
+<p>There are different sections, grouped by platform (Windows, Mac OS X, Linux, Linux ARM); go to the platform of your choice.</p>
+
+<p>Click the <strong>Download</strong> button close to the <strong>Software and documentation pack</strong> appropriate for your development platform. For Linux there are separate 32/64-bits versions, packed with different tools (DEB, RPM, TGZ); select the package that better matches your system.</p>
+
+<p>Accept the terms of the software agreement and download the software.</p>
 
 <h2 id="documentation">Documentation</h2>
 
@@ -194,10 +200,16 @@
 <ul>
   <li>double click it to start the installation process</li>
   <li>accept the license</li>
-  <li>enter the administrative password, required to write in the global /Applications folder</li>
+  <li>enter the administrative password, required to write in the global <code>/Applications</code> folder</li>
 </ul>
 
 <p>The result of the install is a folder called <strong>/Applications/SEGGER/JLink/</strong> (the same folder for all versions) where all executables and libraries are stored; please note that, as for many OS X applications, no other driver files are installed in the system folders.</p>
+
+<p>Personally I prefer to keep older versions around for a while, and for this I rename the JLink folder</p>
+
+<pre>
+<code>sudo mv JLink JLink_V80
+</code></pre>
 
 <p>
 <img src="/assets/images/2014/01/Segger-OSX.png" alt="SEGGER OS X distribution" />
@@ -209,7 +221,7 @@
 
 <h2 id="gnulinux">GNU/Linux</h2>
 
-<p>There are multiple packages available for GNU/Linux on the SEGGER download site, built as Debian/Red Hat packages, in 32/64-bit versions, or plain TGZ archives. Select the one appropriate for you system and use the specific tools to install the package. For example, on Ubuntu, to install the 64-bit .deb file, use the following command:</p>
+<p>As already mentioned, there are multiple packages available for GNU/Linux on the SEGGER download site, built as Debian/Red Hat packages, in 32/64-bits versions, or plain TGZ archives. Select the one appropriate for you system and use the specific tools to install the package. For example, on Ubuntu, to install the 64-bit .deb file, use the following command:</p>
 
 <pre>
 <code>$ sudo dpkg -i ~/Downloads/jlink_5.2.7_x86_64.deb
@@ -289,7 +301,7 @@ Waiting for GDB connection...
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Oct 28 16:54:04 2015 UTC.</p>
+<p class="page-footer">Last modified on Sun Mar 13 18:17:53 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/debug/jlink/install/" data-layout="button"></div>
 
 

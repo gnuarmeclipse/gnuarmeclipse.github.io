@@ -253,8 +253,15 @@
 
     <p><img src="/assets/images/2013/12/OpenOCDDebuggerTab.png" alt="OpenOCD Debugger tab" /></p>
   </li>
-  <li>the only field that usually requires attention is the OpenOCD <strong>Config options:</strong>, where you should add one or more configuration scripts</li>
-  <li>Note: due to a platform specific issue, on Windows it is not possible to disable the <em>Allocate console for OpenOCD</em></li>
+  <li>the only field that usually requires attention is the OpenOCD Setup <strong>Other options:</strong>, where you should add one or more configuration scripts; for example, for the STM32F4DISCOVERY board, the field should read <code>-f board/stm32f4discovery.cfg</code></li>
+</ul>
+
+<blockquote>
+  <p>Note: it is mandatory to enter a reference to a configuration script here, otherwise the debug session will not start. Use the OpenOCD documentation for details on how to start OpenOCD for various boards.</p>
+</blockquote>
+
+<ul>
+  <li>Windows notice: due to a platform specific issue, on Windows it is not possible to disable the <em>Allocate console for OpenOCD</em></li>
   <li>
     <p>click the third tab, named <strong>Startup</strong>, which contains some specific OpenOCD options used to configure the debug session; defaults are generally enough</p>
 
@@ -454,7 +461,7 @@ continue
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri Feb  5 17:28:47 2016 UTC.</p>
+<p class="page-footer">Last modified on Sun Mar 13 18:17:53 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/debug/openocd/" data-layout="button"></div>
 
 

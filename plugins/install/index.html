@@ -154,10 +154,13 @@
 <a href="#set-workspace-preferences"><span class="tocnumber">7</span> <span class="toctext">Set workspace preferences</span></a>
 </li>
 <li class="toc_level-1 toc_section-17">
-<a href="#toolchain-and-debugging-support"><span class="tocnumber">8</span> <span class="toctext">Toolchain and debugging support</span></a>
+<a href="#download-cmsis-packs"><span class="tocnumber">8</span> <span class="toctext">Download CMSIS Packs</span></a>
 </li>
 <li class="toc_level-1 toc_section-18">
-<a href="#support"><span class="tocnumber">9</span> <span class="toctext">Support</span></a>
+<a href="#toolchain-and-debugging-support"><span class="tocnumber">9</span> <span class="toctext">Toolchain and debugging support</span></a>
+</li>
+<li class="toc_level-1 toc_section-19">
+<a href="#support"><span class="tocnumber">10</span> <span class="toctext">Support</span></a>
 </li>
 </ul>
 </td>
@@ -166,7 +169,7 @@
 </table>
 </div><h2 id="quicklinks">Quicklinks</h2>
 
-<p>If you know what this is all about, just drag-and-drop the <strong>Install</strong> button below to your running Eclipse workspace and follow the <strong>Eclipse Marketplace</strong> install/update steps.</p>
+<p>If you know what this is all about, just drag-and-drop the <strong>Install</strong> button available below to your running Eclipse workspace and follow the <strong>Eclipse Marketplace</strong> install/update steps.</p>
 
 <p>
 <a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2593184" class="drag" title="Drag to your running Eclipse workspace to install GNU ARM Eclipse">
@@ -211,14 +214,18 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 
 <h3 id="eclipse--cdt">Eclipse &amp; CDT</h3>
 
-<p>The oldest Eclipse supported by the plug-ins is Eclipse 4.3 Kepler (CDT 8.3), and the recommended version is 4.4 SR2. Do not try to install them on Juno, Indigo, or older versions, since the install will fail.</p>
+<p>The oldest Eclipse supported by the plug-ins is Eclipse 4.3 Kepler (CDT 8.3), and the recommended version is 4.5 Mars. Do not try to install them on Juno, Indigo, or older versions, since the install will fail.</p>
 
-<p>The plug-ins also run on Eclipse 4.5 Mars, but there might be some small problems, for example the Restart button in the Debug view seems not working at all.</p>
+<p>Just go to the <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and get the <strong>Eclipse IDE for C/C++ Developers</strong> archive appropriate for your platform, preferably the 64-bit version.</p>
 
-<p>Just go to the <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and get the <strong>Eclipse IDE for C/C++ Developers</strong> archive appropriate for your platform, preferably the 64-bit version. Unpack it at a place of your choice and start using it.</p>
+<p>Eclipse does not need an installer, Eclipse is distributed as a plain archive. To install Eclipse, simply unpack the archive at a place of your choice and start using it.</p>
 
 <blockquote>
-  <p>Note: on GNU/Linux be sure you manually install the Eclipse; <strong>DO NOT</strong> try to install it via the Synaptics package manager, or similar, since usually you get an older version and the CDT plug-ins are not included.</p>
+  <p>Note 1: on GNU/Linux be sure you manually install the Eclipse; <strong>DO NOT</strong> try to install it via the Synaptics package manager, or similar, since usually you get an older version and the CDT plug-ins are not included.</p>
+</blockquote>
+
+<blockquote>
+  <p>Note 2: Contrary to other tools, Eclipse does not need administrative rights, does need not be installed in a system location, and does not need not be a single instance on a system. Actually you are encouraged to install multiple instances of Eclipse, possibly one for each project type, to avoid mixing plug-ins from different sources in case different project types.</p>
 </blockquote>
 
 <h3 id="cdt">CDT</h3>
@@ -232,7 +239,7 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 </p>
 
 <ul>
-  <li>select <em>Work with:</em> <strong>Kepler</strong></li>
+  <li>select <em>Work with:</em> <strong>Kepler</strong> (or more recent)</li>
   <li>if the <em>Group items by category </em>is enabled, expand the <strong>Programming Languages</strong> group</li>
   <li>select the <strong>C/C++ Development Tools</strong> feature</li>
   <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
@@ -254,7 +261,7 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 
 <h3 id="the-eclipse-marketplace-way">The Eclipse Marketplace way</h3>
 
-<p>The easiest way to install/update the plug-ins is to drag-and-drop the <strong>Install</strong> button below to your running Eclipse workspace.</p>
+<p>The easiest way to install/update the plug-ins is to drag-and-drop the <strong>Install</strong> button below to your running Eclipse workspace (If you are still in the <strong>Welcome screen</strong>, click the <strong>Workspace</strong> link to switch to the workspace, the drag-and-drop does not work in the Welcome screen).</p>
 
 <p>
 <a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2593184" class="drag" title="Drag to your running Eclipse workspace to install GNU ARM Eclipse">
@@ -383,6 +390,12 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 
 <p>After completing the installation of the plug-ins it is recommended to <a href="/eclipse/workspace/preferences/" title="Workspace preferences">set the workspace preference</a>.</p>
 
+<h2 id="download-cmsis-packs">Download CMSIS Packs</h2>
+
+<p>Although support for CMSIS Packs is still experimental, the content of the packs can be used populate the Peripheral registers views during debug sessions, so it is recommended to install the packs for the processors in use.</p>
+
+<p>For this follow the steps in the <a href="/plugins/packs-manager/">Packs manager</a> page.</p>
+
 <h2 id="toolchain-and-debugging-support">Toolchain and debugging support</h2>
 
 <p>By completing the above steps, the Eclipse environment is ready, and you can start creating projects right away. However, for being able to build and debug these projects, you also need to install:</p>
@@ -404,7 +417,7 @@ OpenJDK 64-Bit Server VM (build 24.85-b03, mixed mode)
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Dec  9 12:22:19 2015 UTC.</p>
+<p class="page-footer">Last modified on Sun Mar 13 18:21:32 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/plugins/install/" data-layout="button"></div>
 
 

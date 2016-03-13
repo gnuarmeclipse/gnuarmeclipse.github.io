@@ -102,28 +102,31 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#save-automatically-and-text-file-encoding"><span class="tocnumber">1</span> <span class="toctext">Save automatically and Text file encoding</span></a>
+<a href="#locate-the-preferences-menu"><span class="tocnumber">1</span> <span class="toctext">Locate the Preferences menu</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#show-line-numbers"><span class="tocnumber">2</span> <span class="toctext">Show line numbers</span></a>
+<a href="#save-automatically-and-text-file-encoding"><span class="tocnumber">2</span> <span class="toctext">Save automatically and Text file encoding</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#use-active-build-configuration-for-indexing"><span class="tocnumber">3</span> <span class="toctext">Use active build configuration for indexing</span></a>
+<a href="#show-line-numbers"><span class="tocnumber">3</span> <span class="toctext">Show line numbers</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#editor-folding"><span class="tocnumber">4</span> <span class="toctext">Editor folding</span></a>
+<a href="#use-active-build-configuration-for-indexing"><span class="tocnumber">4</span> <span class="toctext">Use active build configuration for indexing</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#code-formatter"><span class="tocnumber">5</span> <span class="toctext">Code formatter</span></a>
+<a href="#editor-folding"><span class="tocnumber">5</span> <span class="toctext">Editor folding</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#build-console"><span class="tocnumber">6</span> <span class="toctext">Build console</span></a>
+<a href="#code-formatter"><span class="tocnumber">6</span> <span class="toctext">Code formatter</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#doxygen"><span class="tocnumber">7</span> <span class="toctext">Doxygen</span></a>
+<a href="#build-console"><span class="tocnumber">7</span> <span class="toctext">Build console</span></a>
 </li>
 <li class="toc_level-1 toc_section-8">
-<a href="#debug-previous-application"><span class="tocnumber">8</span> <span class="toctext">Debug previous application</span></a>
+<a href="#doxygen"><span class="tocnumber">8</span> <span class="toctext">Doxygen</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#debug-previous-application"><span class="tocnumber">9</span> <span class="toctext">Debug previous application</span></a>
 </li>
 </ul>
 </td>
@@ -131,6 +134,14 @@
 </tbody>
 </table>
 </div><p>Eclipse has some unusual defaults, and this is one of the reasons sometimes Eclipse fails to meet beginner expectations. Fortunately this can be easily fixed, each time after creating a new workspace it is recommended to check and maybe change the settings below.</p>
+
+<h2 id="locate-the-preferences-menu">Locate the Preferences menu</h2>
+
+<p>Eclipse has lots of settings, and they are a bit confusing for beginners. Apart form various objects <strong>Properties</strong>, accessible with <strong>Right click</strong> in most situations, there are settings that apply to the entire workspace, and these settings are named <strong>Preferenceces</strong>, accessible in the top menu.</p>
+
+<blockquote>
+  <p>Note: the Preferences menu has different locations on Windows/Linux (search for the last entry below the <strong>Window</strong> menu) and on OS X (below Eclipse, and it is shown as “Preferences…””, with three dots).</p>
+</blockquote>
 
 <h2 id="save-automatically-and-text-file-encoding">Save automatically and Text file encoding</h2>
 
@@ -171,7 +182,7 @@
 <p>Although not critical, while editing source files, it is useful to see the line numbers, and also a hint that the line may be too long:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
   <li>enable <strong>Show line numbers</strong></li>
   <li>enable <strong>Show print margin</strong></li>
   <li>set the <strong>Print margin column</strong> at 80</li>
@@ -187,7 +198,7 @@
 <p>Eclipse CDT has a very powerful indexer, which parses the source code on the fly and provides hints, auto-completion help, error reporting, etc while editing, without having to start the build process. For this indexer to be accurate, it must be in sync with the compiler, in terms of options and environment. For the indexer to automatically sync when changing from one configuration to another, check if the indexer was set to use the active configuration:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
   <li>enable <strong>Use active build configuration</strong></li>
   <li>click the <strong>Apply</strong> button</li>
 </ul>
@@ -201,7 +212,7 @@
 <p>To better view the entire content of the source files, it is recommended to disable editor folding:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>C/C++</strong> → <strong>Editor</strong> → <strong>Folding</strong></li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Editor</strong> → <strong>Folding</strong></li>
   <li>disable <strong>Header Comments</strong> (in fact it is recommended to disable all foldings)</li>
   <li>click the <strong>Apply</strong> button</li>
 </ul>
@@ -215,7 +226,7 @@
 <p>Eclipse CDT has a very useful feature allowing to automatically reformat a piece of code to comply to a given style. The recommended style is GNU. To set it:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>C/C++</strong> → <strong>Code Style</strong> → <strong>Formatter</strong></li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Code Style</strong> → <strong>Formatter</strong></li>
   <li>in the <strong>Active profile:</strong> field, select <strong>GNU [built-in]</strong></li>
 </ul>
 
@@ -265,7 +276,7 @@
 <p>The CDT defaults need some tweaks, to increase the number of lines and to make the lines wrap:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>C/C++</strong> → <strong>Build</strong> → <strong>Console</strong></li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Build</strong> → <strong>Console</strong></li>
   <li>enable <strong>Wrap lines on the console</strong></li>
   <li>enable <strong>Bring console to top when building</strong></li>
   <li>increase the <strong>Limit console output:</strong> field, for example from 500 to 5000 lines</li>
@@ -283,7 +294,7 @@
 <p>To enable support for documentation tool comments:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>C/C++</strong> → <strong>Editor</strong></li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Editor</strong></li>
   <li>select <strong>Doxygen</strong> in the Documentation tool comments</li>
 </ul>
 
@@ -302,7 +313,7 @@
 <p>To change this setting:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>Run/Debug</strong> → <strong>Launching</strong></li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> → <strong>Launching</strong></li>
   <li>select <strong>Always launch the previously launched application</strong> in the <strong>Launch Operation</strong> section.</li>
 </ul>
 
@@ -312,7 +323,7 @@
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Nov 18 09:34:22 2015 UTC.</p>
+<p class="page-footer">Last modified on Sun Mar 13 18:17:53 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/eclipse/workspace/preferences/" data-layout="button"></div>
 
 
