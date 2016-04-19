@@ -5,9 +5,33 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Apr 2016 19:11:46 +0000</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2016 19:11:46 +0000</lastBuildDate>
+    <pubDate>Tue, 19 Apr 2016 10:44:38 +0000</pubDate>
+    <lastBuildDate>Tue, 19 Apr 2016 10:44:38 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse plug-ins v2.12.1-201604190915 released</title>
+        <description>&lt;p&gt;Version 2.12.1-201604190915 is a new release; the main change is the addition of a pyOCD debugging plug-in.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 19 Apr 2016 12:00:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/04/19/plugins-v2.12.1-201604190915-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/04/19/plugins-v2.12.1-201604190915-released/</guid>
+        
+        <category>GNU</category>
+        
+        <category>ARM</category>
+        
+        <category>Eclipse</category>
+        
+        <category>pyOCD</category>
+        
+        
+        <category>releases</category>
+        
+        <category>plugins</category>
+        
+      </item>
     
       <item>
         <title>ARM Connected Community article, April 4, 2016</title>
@@ -234,24 +258,6 @@
         <category>releases</category>
         
         <category>plugins</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</title>
-        <description>&lt;p&gt;Version 2.4.50-201510290935 is a maintenance release, fixing the graphical rendering on OS X 10.11 and the typo related to the name of the Maple board.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 29 Oct 2015 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/10/29/qemu-v2-4-50-20151029-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/10/29/qemu-v2-4-50-20151029-released/</guid>
-        
-        <category>os x</category>
-        
-        
-        <category>releases</category>
-        
-        <category>qemu</category>
         
       </item>
     
