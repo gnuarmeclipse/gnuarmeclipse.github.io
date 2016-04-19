@@ -131,7 +131,7 @@ Posted on August 7, 2015 by Liviu Ionescu.
   <li>since for HAL projects it is mandatory to have the <strong>SysTick</strong> running at 1000 Hz, the call to <code>HAL_IncTick()</code> was added to al templates, conditionally included by <code>USE_HAL_DRIVER</code>;</li>
   <li>[feature-requests:#67] the HAL function name to set the clock is <code>SystemClock_Config()</code>; the <code>configure_system_clock()</code> function was renamed <code>SystemClock_Config()</code>, defined as weak, to allow it be redefined in CubeMX projects;</li>
   <li>[feature-requests:#67] the PLL logic for STM32F4 was improved, to be specific to each device; small devices use max 84 MHz, the rest max 168 MHz; this setting is conservative, although the maximum speed is higher, it was preferred in order to keep the USB functional;</li>
-  <li>[support-requests:#155] ]support for boards that do not use external clock but only internal RC oscillator was added; just define the clock frequency (HSE) to 0 in the template wizard and the clock initialisations will use the HSI.</li>
+  <li>[support-requests:#155] ]support for boards that do not use external clock but only internal RC oscillator was added; define the clock frequency (HSE) to 0 in the template wizard and the clock initialisations will use the HSI.</li>
 </ul>
 
 
@@ -142,7 +142,7 @@ Posted in
 <strong>releases</strong>, <strong>plugins</strong> and tagged
 
 <strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>qemu</strong>, <strong>stm32f4</strong>, <strong>stm32f4-discovery</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
+</br>Last modified on Tue Apr 19 15:02:54 2016 UTC.
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/08/07/plugins-v2.9.2-201508071246-released/" data-layout="button"></div>
 </p>
 
