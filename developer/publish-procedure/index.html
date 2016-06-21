@@ -123,19 +123,22 @@
 <a href="#clean-the-mess-in-the-local-archive-folder"><span class="tocnumber">7</span> <span class="toctext">Clean the mess in the local archive folder</span></a>
 </li>
 <li class="toc_level-1 toc_section-8">
-<a href="#create-a-new-github-release"><span class="tocnumber">8</span> <span class="toctext">Create a new GitHub release</span></a>
+<a href="#push-the-develop-branch"><span class="tocnumber">8</span> <span class="toctext">Push the develop branch</span></a>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#publish-on-sourceforge"><span class="tocnumber">9</span> <span class="toctext">Publish on SourceForge</span></a>
+<a href="#create-a-new-github-release"><span class="tocnumber">9</span> <span class="toctext">Create a new GitHub release</span></a>
 </li>
 <li class="toc_level-1 toc_section-10">
-<a href="#share-on-facebook"><span class="tocnumber">10</span> <span class="toctext">Share on Facebook</span></a>
+<a href="#publish-on-sourceforge"><span class="tocnumber">10</span> <span class="toctext">Publish on SourceForge</span></a>
 </li>
 <li class="toc_level-1 toc_section-11">
-<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">11</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
+<a href="#share-on-facebook"><span class="tocnumber">11</span> <span class="toctext">Share on Facebook</span></a>
 </li>
 <li class="toc_level-1 toc_section-12">
-<a href="#merge-develop-into-master"><span class="tocnumber">12</span> <span class="toctext">Merge develop into master</span></a>
+<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">12</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#merge-develop-into-master"><span class="tocnumber">13</span> <span class="toctext">Merge develop into master</span></a>
 </li>
 </ul>
 </td>
@@ -287,7 +290,8 @@ logout
 
 <ul>
   <li>Jekyll build the <strong>gnuarmeclipse.github.io-source</strong> project</li>
-  <li>Git push the <strong>gnuarmeclipse.github.io</strong> project</li>
+  <li>Git Push &amp; Sync the <strong>gnuarmeclipse.github.io-source</strong> project</li>
+  <li>Git Push &amp; Sync the <strong>gnuarmeclipse.github.io</strong> project</li>
 </ul>
 
 <h2 id="publish-on-the-main-sourceforge-updates-site">Publish on the main SourceForge updates site</h2>
@@ -347,9 +351,17 @@ logout
   <li>move the other archives to <strong>internal</strong></li>
 </ul>
 
+<h2 id="push-the-develop-branch">Push the develop branch</h2>
+
+<ul>
+  <li>in SourceTree, switch to the <strong>develop</strong> branch</li>
+  <li>push the <strong>develop</strong> branch to GitHub</li>
+</ul>
+
 <h2 id="create-a-new-github-release">Create a new GitHub release</h2>
 
 <ul>
+  <li>be sure the <strong>develop</strong> branch is up to date and set as default</li>
   <li>go to the <a href="https://github.com/gnuarmeclipse/plug-ins/releases">GitHub Releases</a> page</li>
   <li>click <strong>Draft a new release</strong></li>
   <li>name the tag like <strong>v2.9.3-201508190739</strong></li>
@@ -368,9 +380,9 @@ logout
 
 <ul>
   <li>go to <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a></li>
-  <li>select the folder corresponding to the latest version (currently <strong>2.x</strong>); create a new one if necessary</li>
+  <li>select the folder corresponding to the latest version (currently <strong>3.x</strong>); create a new one if necessary</li>
   <li>click the <strong>Add File</strong> button</li>
-  <li>drag and drop the file (for example ilg.gnuarmeclipse.repository-2.1.1-201402140758.zip) in the upload window and click the <strong>Upload</strong> button</li>
+  <li>drag and drop the file (for example ilg.gnuarmeclipse.repository-3.1.1-201606210758.zip) in the upload window and click the <strong>Upload</strong> button</li>
   <li>click the <strong>Done</strong> button</li>
   <li>check it the new file was published; click the info icon</li>
   <li>enable the <strong>Windows</strong>, <strong>OS X</strong> and <strong>Linux</strong> buttons</li>
@@ -394,7 +406,7 @@ logout
   <li>go to <a href="https://marketplace.eclipse.org/content/gnu-arm-eclipse">Eclipse Marketplace</a></li>
   <li>log in</li>
   <li>click <strong>Edit</strong></li>
-  <li>update version number</li>
+  <li>update version number, minimum Eclipse versions.</li>
 </ul>
 
 <h2 id="merge-develop-into-master">Merge develop into master</h2>
