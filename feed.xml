@@ -5,9 +5,33 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Apr 2016 21:14:53 +0000</pubDate>
-    <lastBuildDate>Tue, 19 Apr 2016 21:14:53 +0000</lastBuildDate>
+    <pubDate>Tue, 21 Jun 2016 09:29:48 +0000</pubDate>
+    <lastBuildDate>Tue, 21 Jun 2016 09:29:48 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</title>
+        <description>&lt;p&gt;Version 3.1.1-201606210758 is a new major release; the main change is adding support for &lt;strong&gt;Eclipse 4.6 Neon&lt;/strong&gt; (CDT 9.x).&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 21 Jun 2016 12:00:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/06/21/plugins-v3.1.1-201606210758-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/06/21/plugins-v3.1.1-201606210758-released/</guid>
+        
+        <category>GNU</category>
+        
+        <category>ARM</category>
+        
+        <category>Eclipse</category>
+        
+        <category>Neon</category>
+        
+        
+        <category>releases</category>
+        
+        <category>plugins</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v2.12.1-201604190915 released</title>
@@ -215,44 +239,6 @@
         <category>fpv5-sp-d16</category>
         
         <category>__dso_handle</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.10.1-201510291730 released</title>
-        <description>&lt;p&gt;Version 2.10.1-201510291730 is a new release; the main improvements are: support for Cortex-M7, adding a STM32F7xx template, and an Analog Devices ADuCM36x template.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 29 Oct 2015 13:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/10/29/plugins-v2.10.1-201510291730-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/10/29/plugins-v2.10.1-201510291730-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>Cortex-M7</category>
-        
-        <category>STM32F7</category>
-        
-        <category>STM32746G-EVAL</category>
-        
-        <category>STM32F746G-DISCO</category>
-        
-        <category>hal</category>
-        
-        <category>qemu</category>
-        
-        <category>openocd</category>
-        
-        <category>ADuCM36x</category>
         
         
         <category>releases</category>

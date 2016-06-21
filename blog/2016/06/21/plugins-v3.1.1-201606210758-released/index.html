@@ -9,17 +9,23 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>PAD file</title>
-  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+  <title>GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</title>
+  <meta name="description" content="Version 3.1.1-201606210758 is a new major release; the main change is adding support for Eclipse 4.6 Neon (CDT 9.x).">
 
-  <meta property="og:title" content="PAD file" />
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v3.1.1-201606210758 released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-10">
+  <meta property="article:published_time" content="2016-06-21">
 
 
+  <meta property="article:section" content="releases" />
+  <meta property="article:section" content="plugins" />
 
+  <meta property="article:tag" content="gnu" />
+  <meta property="article:tag" content="arm" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="neon" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -29,7 +35,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/developer/pad-file/">
+  <link rel="canonical" href="/blog/2016/06/21/plugins-v3.1.1-201606210758-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -88,9 +94,23 @@
 <div id="site-body">
 <section id="main-content">
 
+<table id="post-navigation">
+  <tr>
+    <td><a href="/blog/2016/04/19/plugins-v2.12.1-201604190915-released/">←</a></td>
+    <td><a href="/blog/2016/04/19/plugins-v2.12.1-201604190915-released/">GNU ARM Eclipse plug-ins v2.12.1-201604190915 released</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-<h1 class="page-title">PAD file</h1>
 
+<h1 class="post-title">GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</h1>
+
+
+<p class="post-meta">
+Posted on June 21, 2016 by Liviu Ionescu.
+</p>
 
 <div id="toc-container">
 <table class="toc" id="toc">
@@ -102,41 +122,66 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+<a href="#new-features"><span class="tocnumber">1</span> <span class="toctext">New features</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#how-to-edit"><span class="tocnumber">2</span> <span class="toctext">How to edit</span></a>
+<a href="#addressed-bugs"><span class="tocnumber">2</span> <span class="toctext">Addressed bugs</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#other-changes"><span class="tocnumber">2.1</span> <span class="toctext">Other changes</span></a>
 </li>
-<li class="toc_level-1 toc_section-3">
-<a href="#how-to-publish"><span class="tocnumber">3</span> <span class="toctext">How to publish</span></a>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#known-problems"><span class="tocnumber">3</span> <span class="toctext">Known problems</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><h2 id="introduction">Introduction</h2>
+</div><p>Version 3.1.1-201606210758 is a new major release; the main change is adding support for <strong>Eclipse 4.6 Neon</strong> (CDT 9.x).</p>
 
-<p><a href="http://en.wikipedia.org/wiki/Portable_Application_Description">PAD</a> is the Portable Application Description, and it helps authors provide product descriptions and specifications to online sources in a standard way, using a standard data format that will allow webmasters and program librarians to automate program listings.</p>
+<p>
+<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v3.1.1-201606210758">Binary files »</a>
+</p>
 
-<p>The GNU ARM Eclipse Plug-ins PAD file is publically available in the <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/info/GNU_ARM_Eclipse_pad.xml">project Git</a>.</p>
+<h2 id="new-features">New features</h2>
 
-<h2 id="how-to-edit">How to edit</h2>
+<ul>
+  <li>none.</li>
+</ul>
 
-<p>Use the online <a href="http://www.appvisor.com/">AppVisor</a></p>
+<h2 id="addressed-bugs">Addressed bugs</h2>
 
-<p>Unfortunately it does not support long URLs and the GitHub Release URL cannot be entered.</p>
+<ul>
+  <li>none.</li>
+</ul>
 
-<p>The old solution was <a href="http://www.padbuilder.com/">PADBuilder.com</a>.</p>
+<h3 id="other-changes">Other changes</h3>
 
-<h2 id="how-to-publish">How to publish</h2>
+<ul>
+  <li>the minimum supported version is now CDT <strong>8.6.0</strong> from <strong>Luna SR2</strong>; Eclipse Kepler and previous are no longer supported;</li>
+  <li>the minimum Java version required is <strong>JavaSE-1.7</strong>.</li>
+</ul>
 
-<p><strong>AppVisor</strong> can directly publish the file, after validation.</p>
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/108">#108</a>] in certain conditions, the Enable flash breakpoints button does not function properly; will be fixed in the next release.</li>
+</ul>
 
 
-<hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct  3 10:04:54 2015 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/pad-file/" data-layout="button"></div>
+<hr class="post-footer"/>
+<p class="post-footer">
+Posted in
+
+<strong>releases</strong>, <strong>plugins</strong> and tagged
+
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>neon</strong>.
+</br>Last modified on Tue Jun 21 09:25:53 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/06/21/plugins-v3.1.1-201606210758-released/" data-layout="button"></div>
+</p>
 
 
 </section>

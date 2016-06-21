@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://gnuarmeclipse.github.io/blog/2016/06/21/plugins-v3.1.1-201606210758-released/</loc>
+    <lastmod>2016-06-21T09:25:53+00:00</lastmod>
+  </url>
+  <url>
     <loc>http://gnuarmeclipse.github.io/blog/2016/04/19/plugins-v2.12.1-201604190915-released/</loc>
     <lastmod>2016-04-19T10:44:25+00:00</lastmod>
   </url>
@@ -619,23 +623,5 @@
   <url>
     <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
     <lastmod>2015-11-18T09:27:14+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page2/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page3/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page4/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page5/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page6/</loc>
-  </url>
-  <url>
-    <loc>http://gnuarmeclipse.github.io/blog/page7/</loc>
   </url>
 </urlset>
