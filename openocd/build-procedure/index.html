@@ -105,7 +105,7 @@
 <a href="#prerequisites"><span class="tocnumber">1</span> <span class="toctext">Prerequisites</span></a>
 <ul>
 <li class="toc_level-2 toc_section-2">
-<a href="#os-x"><span class="tocnumber">1.1</span> <span class="toctext">OS X</span></a>
+<a href="#macos"><span class="tocnumber">1.1</span> <span class="toctext">macOS</span></a>
 </li>
 <li class="toc_level-2 toc_section-3">
 <a href="#gnulinux"><span class="tocnumber">1.2</span> <span class="toctext">GNU/Linux</span></a>
@@ -158,9 +158,9 @@
 </tr>
 </tbody>
 </table>
-</div><p>The latest version of the build script is a single run, multi-platform build, generating the Windows 32, Windows 64, GNU/Linux 32, GNU/Linux 64 and OS X distribution packages at once.</p>
+</div><p>The latest version of the build script is a single run, multi-platform build, generating the Windows 32, Windows 64, GNU/Linux 32, GNU/Linux 64 and macOS distribution packages at once.</p>
 
-<p>The script was developed on OS X, but it also runs on any recent GNU/Linux distribution (just that in this case it cannot generate the OS X package).</p>
+<p>The script was developed on macOS, but it also runs on any recent GNU/Linux distribution (just that in this case it cannot generate the macOS package).</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -168,15 +168,15 @@
 
 <p>Containers based on three docker images are used, one packing MinGW-w64 in a Debian 8, and two packing the basic system in Debian 7 (separate 32/64-bits containers). The more conservative Debian 7 was preferred to generate the GNU/Linux versions, to avoid problems when attempting to run the executables on older versions.</p>
 
-<h3 id="os-x">OS X</h3>
+<h3 id="macos">macOS</h3>
 
 <h4 id="install-docker">Install Docker</h4>
 
-<p>On OS X, install the boot2docker, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on Mac OS X</a> instructions.</p>
+<p>On macOS, install the boot2docker, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
 
 <h4 id="install-the-command-line-tools">Install the Command Line Tools</h4>
 
-<p>The OS X compiler and other development tools are packed in a separate Xcode add-on. The best place to get it is from the <a href="https://developer.apple.com/xcode/downloads/">Developer</a> site, although this might require enrolling to the developer program (free of charge).</p>
+<p>The macOS compiler and other development tools are packed in a separate Xcode add-on. The best place to get it is from the <a href="https://developer.apple.com/xcode/downloads/">Developer</a> site, although this might require enrolling to the developer program (free of charge).</p>
 
 <p>To test if the compiler is available, use:</p>
 
@@ -283,7 +283,7 @@ hello-world         latest              e45a5af57b00        4 months ago        
 <code>$ bash ~/Downloads/build-openocd.sh --all
 </code></pre>
 
-<p>On OS X, to prevent sleep, use:</p>
+<p>On macOS, to prevent sleep, use:</p>
 
 <pre>
 <code>$ caffeinate bash ~/Downloads/build-openocd.sh --all
@@ -326,7 +326,7 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <h2 id="install-hierarchy">Install hierarchy</h2>
 
-<p>The procedure to install GNU ARM Eclipse OpenOCD is platform specific, but relatively straight forward (a Windows setup, an OS X install or a TGZ archive on GNU/Linux). The setup/install asks no special questions, and the defaults are generally ok for most installations.</p>
+<p>The procedure to install GNU ARM Eclipse OpenOCD is platform specific, but relatively straight forward (a Windows setup, an macOS install or a TGZ archive on GNU/Linux). The setup/install asks no special questions, and the defaults are generally ok for most installations.</p>
 
 <p>After install, this package should create structure like this (only the first two depth levels are shown):</p>
 
@@ -368,13 +368,13 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <p>To uninstall OpenOCD from a Windows machine, use the <code>openocd-uninstall.exe</code> program.</p>
 
-<p>On OS X and GNU/Linux, the GNU ARM Eclipse OpenOCD install folder is self-contained and removing it is enough for completely removing the application.</p>
+<p>On macOS and GNU/Linux, the GNU ARM Eclipse OpenOCD install folder is self-contained and removing it is enough for completely removing the application.</p>
 
 <h2 id="test">Test</h2>
 
 <p>A simple test is performed by the script at the end, by launching the executable to check if all shared/dynamic libraries are correctly used.</p>
 
-<p>For a true test you need to first install the package and then run the program form the final location. For example on OS X the output should look like:</p>
+<p>For a true test you need to first install the package and then run the program form the final location. For example on macOS the output should look like:</p>
 
 <pre>
 <code>$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/bin/openocd --version
@@ -386,7 +386,7 @@ For bug reports, read
 
 <h2 id="stop-boot2docker">Stop boot2docker</h2>
 
-<p>On OS X, the build script automatically starts <code>boot2docker</code>, if needed.</p>
+<p>On macOS, the build script automatically starts <code>boot2docker</code>, if needed.</p>
 
 <p>When done, be sure you stop it, to free significant resources (a VirtualBox Ubuntu machine).</p>
 
@@ -400,7 +400,7 @@ For bug reports, read
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu Oct 29 11:17:52 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Jun 22 09:37:21 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/build-procedure/" data-layout="button"></div>
 
 

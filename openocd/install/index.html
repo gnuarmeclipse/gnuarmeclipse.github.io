@@ -116,7 +116,7 @@
 </ul>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#os-x"><span class="tocnumber">4</span> <span class="toctext">OS X</span></a>
+<a href="#macos"><span class="tocnumber">4</span> <span class="toctext">macOS</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
 <a href="#gnulinux"><span class="tocnumber">5</span> <span class="toctext">GNU/Linux</span></a>
@@ -201,7 +201,7 @@
 
 <pre>
 <code>C:&gt;"C:\Program Files\GNU ARM Eclipse\OpenOCD\0.8.0-201503201840\bin\openocd" --version
-GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036 (2015-03-20-18:40)
+GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00036 (2015-03-20-18:40)
 </code></pre>
 
 <h3 id="drivers">Drivers</h3>
@@ -230,20 +230,20 @@ GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036 (2015-03-20-18:40)
 
 <p>For some devices, for example <a href="https://www.olimex.com/Products/ARM/JTAG/">ARM-USB-OCD</a> from <a href="https://www.olimex.com/">Olimex</a>, after installing the vendor drivers, you must also install <a href="http://zadig.akeo.ie">Zadig</a> and convert the vendor drivers to WinUSB drivers.</p>
 
-<h2 id="os-x">OS X</h2>
+<h2 id="macos">macOS</h2>
 
-<p>For user convenience, the OS X version of <strong>GNU ARM Eclipse OpenOCD</strong> is packed as an OS X install package. Go to the <a href="https://github.com/gnuarmeclipse/openocd/releases">GitHub Releases</a> page and download the latest version named like:</p>
+<p>For user convenience, the macOS version of <strong>GNU ARM Eclipse OpenOCD</strong> is packed as an macOS install package. Go to the <a href="https://github.com/gnuarmeclipse/openocd/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
   <li> <code>gnuarmeclipse-openocd-osx-0.8.0-*.pkg</code></li>
 </ul>
 
-<p>As the name implies, this is an OS X package, that can be installed on any recent 64-bit OS X (the latest version was tested on 10.9, 10.10, 10.11).</p>
+<p>As the name implies, this is an macOS package, that can be installed on any recent 64-bits macOS (the latest version was tested on 10.9, 10.10, 10.11).</p>
 
 <p>Run the install as usual.</p>
 
 <p>
-<img src="/assets/images/2015/openocd-mac-installer.png" alt="Install the OS X package" />
+<img src="/assets/images/2015/openocd-mac-installer.png" alt="Install the macOS package" />
 </p>
 
 <p>The package is installed in:</p>
@@ -256,7 +256,7 @@ GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036 (2015-03-20-18:40)
 
 <pre>
 <code>$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/0.8.0-201501181257/bin/openocd --version
-GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036 (2015-01-18-12:57)
+GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00036 (2015-01-18-12:57)
 </code></pre>
 
 <h2 id="gnulinux">GNU/Linux</h2>
@@ -268,7 +268,7 @@ GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036 (2015-01-18-12:57)
   <li><code>gnuarmeclipse-openocd-debian32-0.8.0-201501181055.tgz</code></li>
 </ul>
 
-<p>As the name implies, these are Debian <code>tar.gz</code> archives, but can be executed on most recent GNU/Linux distributions (they were tested on Debian, Ubuntu, Manjaro, SuSE and Fedora). Select the <code>-debian64-</code> file for 64-bit machines and the <code>-debian32-</code> file for 32-bit machines.</p>
+<p>As the name implies, these are Debian <code>tar.gz</code> archives, but can be executed on most recent GNU/Linux distributions (they were tested on Debian, Ubuntu, Manjaro, SuSE and Fedora). Select the <code>-debian64-</code> file for 64-bits machines and the <code>-debian32-</code> file for 32-bits machines.</p>
 
 <p>In case you use an older distribution and encounter difficulties to run <strong>GNU ARM Eclipse OpenOCD</strong>, you can also try to build it from sources on your machine. As a last resort, if your distribution includes an OpenOCD package, you can install it using the specific tools.</p>
 
@@ -302,12 +302,12 @@ $ sudo udevadm control --reload-rules
 
 <h2 id="testing">Testing</h2>
 
-<p>To test if OpenOCD is able to connect to a specific board, you generally need to select the interface and the processor. As a shortcut, for some well known boards, there are ready made configuration files to set both the interface and the processor. For example, on OS X, to test a connection via ST/LINK v2 to the STM32F4DISCOERY board, you can use the sample below:</p>
+<p>To test if OpenOCD is able to connect to a specific board, you generally need to select the interface and the processor. As a shortcut, for some well known boards, there are ready made configuration files to set both the interface and the processor. For example, on macOS, to test a connection via ST/LINK v2 to the STM32F4DISCOERY board, you can use the sample below:</p>
 
 <pre>
 <code>$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/0.8.0-201501181257/bin/openocd \
  -f board/stm32f4discovery.cfg
-GNU ARM Eclipse 64-bit Open On-Chip Debugger 0.8.0-00036-gb7535dd (2015-01-18-12:57)
+GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00036-gb7535dd (2015-01-18-12:57)
 Licensed under GNU GPL v2
 For bug reports, read
 
@@ -375,7 +375,7 @@ when you have a functional solution post it on the project forum.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Tue Mar  8 07:57:45 2016 UTC.</p>
+<p class="page-footer">Last modified on Wed Jun 22 09:37:21 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/install/" data-layout="button"></div>
 
 
