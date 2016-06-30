@@ -2,18 +2,19 @@
 <html>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta charset='utf-8'>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml">
 
   <title>How Eclipse runtime preferences and defaults work</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="How Eclipse runtime preferences and defaults work" />
-  <meta property="og:site_name" content="GNU ARM Eclipse" />
+  <meta property="og:title" content="How Eclipse runtime preferences and defaults work">
+  <meta property="og:site_name" content="GNU ARM Eclipse">
 
 
   <meta property="article:published_time" content="2015-09-10">
@@ -22,9 +23,9 @@
 
 
 
-  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c">
 
-  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
@@ -32,7 +33,7 @@
   <link rel="canonical" href="/developer/eclipse/runtime-preferences/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
@@ -169,7 +170,8 @@
 </tr>
 </tbody>
 </table>
-</div><h2 id="overview">Overview</h2>
+</div>
+<h2 id="overview">Overview</h2>
 
 <p>Runtime preferences are key/value pairs used for two purposes:</p>
 
@@ -185,8 +187,11 @@
 <ul>
   <li>the Eclipse preferences
     <ul>
-      <li><a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fcore%2Fruntime%2Fpreferences%2FIPreferencesService.html">IPreferencesService</a> and</li>
-      <li><a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fcore%2Fruntime%2Fpreferences%2FIEclipsePreferences.html">IEclipsePreferences</a>, which extends <a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/prefs/Preferences.html">OSGi Preferences</a></li>
+      <li>
+<a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fcore%2Fruntime%2Fpreferences%2FIPreferencesService.html">IPreferencesService</a> and</li>
+      <li>
+<a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fcore%2Fruntime%2Fpreferences%2FIEclipsePreferences.html">IEclipsePreferences</a>, which extends <a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/prefs/Preferences.html">OSGi Preferences</a>
+</li>
     </ul>
   </li>
   <li>the JFace preferences
@@ -203,10 +208,14 @@
 <p>There are 4 preference scopes, derived from <a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fcore%2Fruntime%2Fpreferences%2FIScopeContext.html">IScopeContext</a>:</p>
 
 <ul>
-  <li><strong>project</strong> - <a href="http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/core/resources/ProjectScope.html">ProjectScope</a> /project/$(projectName)/$(qualifier)</li>
-  <li><strong>instance</strong> (workspace) - <a href="http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/core/runtime/preferences/InstanceScope.html">InstanceScope.INSTANCE</a> /instance/$(qualifier)</li>
-  <li><strong>configuration</strong> (Eclipse) - <a href="http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/core/runtime/preferences/ConfigurationScope.html">ConfigurationScope.INSTANCE</a> /configuration/$(qualifier)</li>
-  <li><strong>default</strong> (plug-in or feature) - <a href="http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/core/runtime/preferences/DefaultScope.html">DefaultScope.INSTANCE</a> /default/$(qualifier)</li>
+  <li>
+<strong>project</strong> - <a href="http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/core/resources/ProjectScope.html">ProjectScope</a> /project/$(projectName)/$(qualifier)</li>
+  <li>
+<strong>instance</strong> (workspace) - <a href="http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/core/runtime/preferences/InstanceScope.html">InstanceScope.INSTANCE</a> /instance/$(qualifier)</li>
+  <li>
+<strong>configuration</strong> (Eclipse) - <a href="http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/core/runtime/preferences/ConfigurationScope.html">ConfigurationScope.INSTANCE</a> /configuration/$(qualifier)</li>
+  <li>
+<strong>default</strong> (plug-in or feature) - <a href="http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/core/runtime/preferences/DefaultScope.html">DefaultScope.INSTANCE</a> /default/$(qualifier)</li>
 </ul>
 
 <p>The default preference search look-up order as defined by the platform is: project, instance, configuration, default.</p>
@@ -219,8 +228,8 @@
 
 <p>It is recommended that reading preferences be done generically, to access multiple scopes:</p>
 
-<pre>
-<code>IProject project;
+<div class="highlighter-rouge">
+<pre class="highlight"><code>IProject project;
 
 IScopeContext[] contexts;
 if (project != null) {
@@ -250,13 +259,14 @@ if (value != null) {
     return value;
 }
 </code></pre>
+</div>
 
 <h3 id="direct-access">Direct access</h3>
 
 <p>For writing preferences, it is recommended to access directly the specific scope:</p>
 
-<pre>
-<code>Preferences preferences = new ProjectScope(project).getNode(Activator.PLUGIN_ID);
+<div class="highlighter-rouge">
+<pre class="highlight"><code>Preferences preferences = new ProjectScope(project).getNode(Activator.PLUGIN_ID);
 preferences.put(id, value);
 preferences.flush();
 
@@ -268,15 +278,17 @@ Preferences preferences = ConfigurationScope.INSTANCE.getNode(Activator.PLUGIN_I
 preferences.put(id, value);
 preferences.flush();
 </code></pre>
+</div>
 
 <p>Without an explicit <strong>preferences.flush()</strong>, the file is written when Eclipse quits.</p>
 
 <p>Defaults can also be accessed directly:</p>
 
-<pre>
-<code>Preferences preferences = DefaultScope.INSTANCE.getNode(Activator.PLUGIN_ID);
+<div class="highlighter-rouge">
+<pre class="highlight"><code>Preferences preferences = DefaultScope.INSTANCE.getNode(Activator.PLUGIN_ID);
 String value = preferences.get(id, defaultValue);
 </code></pre>
+</div>
 
 <h2 id="jface-preferences">JFace preferences</h2>
 
@@ -286,29 +298,33 @@ String value = preferences.get(id, defaultValue);
 
 <p>The plug-in preferences store by default points to the InstanceScope:</p>
 
-<pre>
-<code>IPreferenceStore store = Activator.getInstance().getPreferenceStore();
+<div class="highlighter-rouge">
+<pre class="highlight"><code>IPreferenceStore store = Activator.getInstance().getPreferenceStore();
 int i = store.getInt("...");
 String s = store.getString("...");
 </code></pre>
+</div>
 
 <p>This translates loosely to a <a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fui%2Fpreferences%2FScopedPreferenceStore.html">ScopedPreferenceStore</a> with an InstanceScope with a node that matches the plug-in bundle.id.</p>
 
-<pre>
-<code>IPreferenceStore store = new ScopedPreferenceStore(InstanceScope.INSTANCE, Activator.PLUGIN_ID);
+<div class="highlighter-rouge">
+<pre class="highlight"><code>IPreferenceStore store = new ScopedPreferenceStore(InstanceScope.INSTANCE, Activator.PLUGIN_ID);
 </code></pre>
+</div>
 
 <p>For the Eclipse scope, use:</p>
 
-<pre>
-<code>IPreferenceStore store = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, Activator.PLUGIN_ID);
+<div class="highlighter-rouge">
+<pre class="highlight"><code>IPreferenceStore store = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, Activator.PLUGIN_ID);
 </code></pre>
+</div>
 
 <p>For the project scope, use:</p>
 
-<pre>
-<code>IPreferenceStore store = new ScopedPreferenceStore(new ProjectScope(project), Activator.PLUGIN_ID);
+<div class="highlighter-rouge">
+<pre class="highlight"><code>IPreferenceStore store = new ScopedPreferenceStore(new ProjectScope(project), Activator.PLUGIN_ID);
 </code></pre>
+</div>
 
 <h2 id="persistent-stores">Persistent stores</h2>
 
@@ -324,43 +340,48 @@ String s = store.getString("...");
 
 <p>The file format is similar to that used for Java properties:</p>
 
-<pre>
-<code>eclipse.preferences.version=1
+<div class="highlighter-rouge">
+<pre class="highlight"><code>eclipse.preferences.version=1
 pluginId/key=value
 ...
 </code></pre>
+</div>
 
 <p>When using the IPreferencesService, multiple intermediate nodes can be inserted:</p>
 
-<pre>
-<code>eclipse.preferences.version=1
+<div class="highlighter-rouge">
+<pre class="highlight"><code>eclipse.preferences.version=1
 pluginId/nodeId/key=value
 ...
 </code></pre>
+</div>
 
 <h3 id="project-store">Project store</h3>
 
 <p>The project preferences are stored in a file below the project .settings folder:</p>
 
-<pre>
-<code> project/.settings/&lt;pluginId&gt;.prefs
+<div class="highlighter-rouge">
+<pre class="highlight"><code> project/.settings/&lt;pluginId&gt;.prefs
 </code></pre>
+</div>
 
 <h3 id="instance-workspace-store">Instance (workspace) store</h3>
 
 <p>The workspace preferences are stored is in a separate file named after the plug-in ID:</p>
 
-<pre>
-<code>workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/&lt;pluginId&gt;.prefs
+<div class="highlighter-rouge">
+<pre class="highlight"><code>workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/&lt;pluginId&gt;.prefs
 </code></pre>
+</div>
 
 <h3 id="configuration-eclipse-store">Configuration (Eclipse) store</h3>
 
 <p>The Eclipse preferences are stored is in a separate file named after the plug-in ID:</p>
 
-<pre>
-<code>eclipse/configuration/.settings/&lt;pluginId&gt;.prefs
+<div class="highlighter-rouge">
+<pre class="highlight"><code>eclipse/configuration/.settings/&lt;pluginId&gt;.prefs
 </code></pre>
+</div>
 
 <h2 id="defaults">Defaults</h2>
 
@@ -396,17 +417,19 @@ pluginId/nodeId/key=value
 
 <p>The properties will refer to values from multiple plug-ins; this requires that each line must mention the plug-in, a ‘/’ separator and the key/value:</p>
 
-<pre>
-<code>org.eclipse.cdt.debug.core/org.eclipse.cdt.debug.corecDebug.default_expression_format=4
+<div class="highlighter-rouge">
+<pre class="highlight"><code>org.eclipse.cdt.debug.core/org.eclipse.cdt.debug.corecDebug.default_expression_format=4
 </code></pre>
+</div>
 
 <h3 id="as-product-defaults">As product defaults</h3>
 
 <p>Any defaults, for any plug-in, can be defined in the product related file, like:</p>
 
-<pre>
-<code>&lt;property name="preferenceCustomization" value="plugin_customization.ini" /&gt;
+<div class="highlighter-rouge">
+<pre class="highlight"><code>&lt;property name="preferenceCustomization" value="plugin_customization.ini" /&gt;
 </code></pre>
+</div>
 
 <p>The syntax for the properties is the same as above, plugin/key=value.</p>
 
@@ -416,27 +439,29 @@ pluginId/nodeId/key=value
 
 <p>The scope of these properties is the current plug-in; the syntax of this file requires only the key/value, no plug-in id.</p>
 
-<pre>
-<code>flashDeviceName=STM32F407VG
+<div class="highlighter-rouge">
+<pre class="highlight"><code>flashDeviceName=STM32F407VG
 </code></pre>
+</div>
 
 <h3 id="in-code">In code</h3>
 
 <p>To set the default values for preferences use the extension point <strong>org.eclipse.core.runtime.preferences</strong>.</p>
 
-<pre>
-<code>public class MyInitializer extends AbstractPreferenceInitializer {
+<div class="highlighter-rouge">
+<pre class="highlight"><code>public class MyInitializer extends AbstractPreferenceInitializer {
 
   public MyInitializer() {
   }
 
-  &lt;a href='https://github.com/Override' class='user-mention'&gt;@Override&lt;/a&gt;
+  @Override
   public void initializeDefaultPreferences() {
     IPreferenceStore store = Activator.getInstance().getPreferenceStore();
     store.setDefault("key", "value");
   }
 }
 </code></pre>
+</div>
 
 <h3 id="access-to-defaults">Access to defaults</h3>
 
@@ -444,25 +469,28 @@ pluginId/nodeId/key=value
 
 <p>For example, to lookup an integer preference value for your plug-in, use:</p>
 
-<pre>
-<code>Platform.getPreferencesService().getInt(Activator.PLUGIN_ID, preferenceKey, defaultValue, null);
+<div class="highlighter-rouge">
+<pre class="highlight"><code>Platform.getPreferencesService().getInt(Activator.PLUGIN_ID, preferenceKey, defaultValue, null);
 </code></pre>
+</div>
 
 <p>Direct access to defaults is also possible via the DefaultScope.</p>
 
-<pre>
-<code>Preferences preferences = DefaultScope.INSTANCE.getNode(Activator.PLUGIN_ID);
+<div class="highlighter-rouge">
+<pre class="highlight"><code>Preferences preferences = DefaultScope.INSTANCE.getNode(Activator.PLUGIN_ID);
 String value = preferences.get(preferenceKey, defaultValue);
 </code></pre>
+</div>
 
 <h2 id="windows-path-syntax">Windows path syntax</h2>
 
 <p>A word of cautions on Windows: the path may be defined either in the portable way, with forward slashes, or, if you prefer (the brain damaged MS-DOS syntax with) backslashes, they must be escaped by a second backslash (for Java, C and other portable environments, the backslash is used to define special characters, like \n, or to escape the next character). For example, the following definitions are equivalent:</p>
 
-<pre>
-<code>default.path.1287942917=${eclipse_home}/../gcc/bin
+<div class="highlighter-rouge">
+<pre class="highlight"><code>default.path.1287942917=${eclipse_home}/../gcc/bin
 default.path.1287942917=${eclipse_home}\\..\\gcc\\bin
 </code></pre>
+</div>
 
 <h2 id="references">References</h2>
 
@@ -476,7 +504,7 @@ default.path.1287942917=${eclipse_home}\\..\\gcc\\bin
 </ul>
 
 
-<hr class="page-footer"/>
+<hr class="page-footer">
 <p class="page-footer">Last modified on Sat Oct  3 17:33:27 2015 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/eclipse/runtime-preferences/" data-layout="button"></div>
 
@@ -496,7 +524,7 @@ default.path.1287942917=${eclipse_home}\\..\\gcc\\bin
 </ul>
 
 
-<hr />
+<hr>
 
 <h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
@@ -506,10 +534,14 @@ default.path.1287942917=${eclipse_home}\\..\\gcc\\bin
 
 <ul>
   <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li>
+<a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li>
+<a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li>
+<a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li>
+<a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
 <h4 id="installinstall"><a href="/install/">Install</a></h4>
@@ -519,7 +551,8 @@ default.path.1287942917=${eclipse_home}\\..\\gcc\\bin
   <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
+  <li>
+<a href="/debug/install/">Debugging components</a>
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
@@ -575,34 +608,40 @@ default.path.1287942917=${eclipse_home}\\..\\gcc\\bin
 <h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/qemu/">Overview</a> (read me first!)</li>
   <li><a href="/qemu/install/">QEMU Install</a></li>
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/options/">Command line options</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/openocd/">Overview</a> (read me first!)</li>
   <li><a href="/openocd/install/">OpenOCD Install</a></li>
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/windows-build-tools/">Overview</a> (read me first!)</li>
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -661,7 +700,7 @@ default.path.1287942917=${eclipse_home}\\..\\gcc\\bin
 
 <h4 id="aboutabout"><a href="/about/">About</a></h4>
 
-<hr />
+<hr>
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -683,7 +722,7 @@ default.path.1287942917=${eclipse_home}\\..\\gcc\\bin
     <ul>
   <li>© 2015 Liviu Ionescu</li>
   <li>Hosted on GitHub Pages</li>
-  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
   <li>
     <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
   </li>

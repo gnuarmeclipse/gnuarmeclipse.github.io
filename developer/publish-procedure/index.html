@@ -153,12 +153,11 @@
 
 <p>After each new build, to allow testing on various platforms, the plug-ins are published on the test site.</p>
 
-<p>For this, run the <code>scripts/publish-updates-test.command</code> (this is a script that can be executed directly in the macOS Finder).</p>
+<p>For this, run the <code class="highlighter-rouge">scripts/publish-updates-test.command</code> (this is a script that can be executed directly in the macOS Finder).</p>
 
 <p>A typical session looks like:</p>
 
-<pre>
-<code>$ /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/gnuarmeclipse-se.git/scripts/publish-updates-test.command ; exit;
+<div class="highlighter-rouge"><pre class="highlight"><code>$ /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/gnuarmeclipse-se.git/scripts/publish-updates-test.command ; exit;
 Updating Eclipse/updates-test
 Rsync-ing SourceForge Eclipse/updates-test site (-vrCt --exclude=scripts --exclude=.* --delete --checksum)
 Password:
@@ -242,6 +241,7 @@ logout
 
 [Process completed]
 </code></pre>
+</div>
 
 <h2 id="install-on-a-separate-eclipse">Install on a separate Eclipse</h2>
 
@@ -251,15 +251,15 @@ logout
 
 <p>Scan the Git log and add new entries to the <a href="/developer/change-log/">Change log</a> (pages/developer/change-log.md), grouped by days.</p>
 
-<pre>
-<code>git log --pretty='%cd * %s' --since 2015-06-24 --reverse --date=short &gt;~/Desktop/ChangeLog.txt
+<div class="highlighter-rouge"><pre class="highlight"><code>git log --pretty='%cd * %s' --since 2015-06-24 --reverse --date=short &gt;~/Desktop/ChangeLog.txt
 </code></pre>
+</div>
 
 <p>Add an entry with the latest feature &amp; plug-in versions, copied from the publish script output.</p>
 
 <h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
 
-<p>Add a new file to the <code>_posts/plugins/releases</code>.</p>
+<p>Add a new file to the <code class="highlighter-rouge">_posts/plugins/releases</code>.</p>
 
 <p>Name the post like: <em>Release v2.9.3 201508190739</em>, title: <em>Version 2.2.1-201404120702 released</em>.</p>
 
@@ -268,17 +268,17 @@ logout
 <ul>
   <li>date, as <em>Aug 1, 2015</em> (italics)</li>
   <li>one intro paragraph with the summary of the changes</li>
-  <li>a link to <code>[Binary files »]()</code>, currently empty, to be filled with the release URL</li>
+  <li>a link to <code class="highlighter-rouge">[Binary files »]()</code>, currently empty, to be filled with the release URL</li>
   <li>headers like:</li>
 </ul>
 
-<pre>
-<code>## New features
+<div class="highlighter-rouge"><pre class="highlight"><code>## New features
 ## Addressed bugs
 ## Template issues
 ## Other changes
 ## Known problems
 </code></pre>
+</div>
 
 <p>An example would be the <a href="https://github.com/gnuarmeclipse/plug-ins/wiki/Release-v2.9.1-201508011813">2.9.1</a> announcement.</p>
 
@@ -296,10 +296,9 @@ logout
 
 <h2 id="publish-on-the-main-sourceforge-updates-site">Publish on the main SourceForge updates site</h2>
 
-<p>When all ready, run the <code>scripts/publish-updates.command</code>:</p>
+<p>When all ready, run the <code class="highlighter-rouge">scripts/publish-updates.command</code>:</p>
 
-<pre>
-<code>ilg-mbp:~ ilg$ /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/gnuarmeclipse-se-git/scripts/publish-updates.command ; exit;
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg-mbp:~ ilg$ /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/gnuarmeclipse-se-git/scripts/publish-updates.command ; exit;
 Do you really want to publish? (Yes)? Yes
 Updating Eclipse/updates
 Rsync-ing SourceForge Eclipse/updates site
@@ -340,6 +339,7 @@ logout
 
 [Process completed]
 </code></pre>
+</div>
 
 <p>Do not close the terminal before copy/paste the list to the ChangeLog page!.</p>
 
@@ -368,7 +368,7 @@ logout
   <li>select the develop branch</li>
   <li>name the release like <strong>GNU ARM Eclipse plug-ins v2.9.3-201508190739</strong></li>
   <li>as description, copy the first paragraph from the Web release page</li>
-  <li>add a link to the Web page <code>[Continue reading »]()</code></li>
+  <li>add a link to the Web page <code class="highlighter-rouge">[Continue reading »]()</code></li>
   <li>get URL from web and update the above link</li>
   <li>attach binaries (drag and drop from the archives folder will do it)</li>
   <li>click the <strong>Publish Release</strong> button</li>

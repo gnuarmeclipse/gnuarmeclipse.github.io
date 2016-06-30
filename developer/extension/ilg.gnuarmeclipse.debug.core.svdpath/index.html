@@ -134,16 +134,15 @@
 
 <p>The only function required is:</p>
 
-<pre>
-<code>public IPath getSVDAbsolutePath(String deviceVendorId, String deviceName);
+<div class="highlighter-rouge"><pre class="highlight"><code>public IPath getSVDAbsolutePath(String deviceVendorId, String deviceName);
 </code></pre>
+</div>
 
 <h2 id="where-is-this-extension-point-used">Where is this extension point used?</h2>
 
-<p>The svdPath extension point is used in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/SVDPathManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/SVDPathManagerProxy.java</a>, called from <code>SVDUtils.getTree(String deviceVendorId, String deviceName)</code>:</p>
+<p>The svdPath extension point is used in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/SVDPathManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/SVDPathManagerProxy.java</a>, called from <code class="highlighter-rouge">SVDUtils.getTree(String deviceVendorId, String deviceName)</code>:</p>
 
-<pre>
-<code>// Try to get the SVD from a custom provider, like in DAVE.
+<div class="highlighter-rouge"><pre class="highlight"><code>// Try to get the SVD from a custom provider, like in DAVE.
 SVDPathManagerProxy pathManager = SVDPathManagerProxy.getInstance();
 path = pathManager.getSVDAbsolutePath(deviceVendorId, deviceName);
 
@@ -168,6 +167,7 @@ if (path == null) {
     }
 }
 </code></pre>
+</div>
 
 <p>As seen above, the extension point has precedence over any CMSIS-PACK definitions, so, if it is defined, and it returns a SVD path, the returned path is used to read the SVD file.</p>
 

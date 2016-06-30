@@ -196,10 +196,10 @@
 
 <p>To check if GDB is functional on your machine, use the following command (adjust the path for your system):</p>
 
-<pre>
-<code>$ /usr/local/gcc-arm-none-eabi-4_7-2013q3/bin/arm-none-eabi-gdb --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ /usr/local/gcc-arm-none-eabi-4_7-2013q3/bin/arm-none-eabi-gdb --version
 GNU gdb (GNU Tools for ARM Embedded Processors) 7.4.1.20130913-cvs
 </code></pre>
+</div>
 
 <p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain version. Generally only debugging .ELF applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
 

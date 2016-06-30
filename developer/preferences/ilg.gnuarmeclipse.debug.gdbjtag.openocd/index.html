@@ -130,16 +130,15 @@
 
 <p>The OpenOCD settings are persistent for each workspace and the storage is located at:</p>
 
-<pre>
-<code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.openocd.prefs
+<div class="highlighter-rouge"><pre class="highlight"><code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.openocd.prefs
 </code></pre>
+</div>
 
 <h2 id="properties">Properties</h2>
 
 <p>The persistent properties are:</p>
 
-<pre>
-<code>gdb.client.commands=set mem inaccessible-by-default off
+<div class="highlighter-rouge"><pre class="highlight"><code>gdb.client.commands=set mem inaccessible-by-default off
 gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 gdb.client.other=
 gdb.openocd.doInitialReset=true
@@ -153,23 +152,24 @@ gdb.server.doStart=true
 gdb.server.executable=${openocd_path}/${openocd_executable}
 gdb.server.other=-f board/stm32f4discovery.cfg
 </code></pre>
+</div>
 
 <h2 id="launcher-defaults">Launcher defaults</h2>
 
 <p>The following defaults are available to configure the OpenOCD debug launcher:</p>
 
-<pre>
-<code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.executable=${openocd_path}/${openocd_executable}
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.executable=${openocd_path}/${openocd_executable}
 ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 
 ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discovery.cfg
 </code></pre>
+</div>
 
 <p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
 
-<pre>
-<code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/tab.main.checkProgram=false
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/tab.main.checkProgram=false
 </code></pre>
+</div>
 
 <p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
 
@@ -181,17 +181,17 @@ ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discove
 
 <p>The plug-in will use this definition as default for <strong>${openocd_executable}</strong>.</p>
 
-<pre>
-<code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/executable.name=openocd
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/executable.name=openocd
 </code></pre>
+</div>
 
 <h3 id="the-executable-location">The executable location</h3>
 
 <p>The plug-in will take a best effort approach to find a location to be used as default for <strong>${openocd_path}</strong>.</p>
 
-<pre>
-<code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/install.folder=/Applications/GNU ARM Eclipse/OpenOCD/bin
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnuarmeclipse.debug.gdbjtag.openocd/install.folder=/Applications/GNU ARM Eclipse/OpenOCD/bin
 </code></pre>
+</div>
 
 <p>If this preference is defined and the executable is there, the plug-in will use it.</p>
 
@@ -199,8 +199,7 @@ ilg.gnuarmeclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discove
 
 <p>Otherwise the plug-in will try a folder search.</p>
 
-<pre>
-<code>search.path=\
+<div class="highlighter-rouge"><pre class="highlight"><code>search.path=\
 ${user.home}/Applications/GNU ARM Eclipse/OpenOCD:\
 ${user.home}/local/GNU ARM Eclipse/OpenOCD:\
 ${user.home}/local/gnuarmeclipse/OpenOCD:\
@@ -208,6 +207,7 @@ ${user.home}/local/gnuarmeclipse/OpenOCD:\
 /opt/local:\
 /usr/local
 </code></pre>
+</div>
 
 <p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
 

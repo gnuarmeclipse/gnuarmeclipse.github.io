@@ -96,25 +96,28 @@
 
 <p>The default properties are defined in <strong>.options</strong> files located in each plug-in folder.</p>
 
-<pre><code>org.eclipse.cdt.core/debug=false
+<div class="highlighter-rouge"><pre class="highlight"><code>org.eclipse.cdt.core/debug=false
 
 # ASTCache debugging
 org.eclipse.cdt.core/debug/ASTCache=false
 </code></pre>
+</div>
 
 <p>The debug options are available via:</p>
 
-<pre><code>String Platform.getDebugOption(String name);
+<div class="highlighter-rouge"><pre class="highlight"><code>String Platform.getDebugOption(String name);
 </code></pre>
+</div>
 
 <p>Example:</p>
 
-<pre><code>private static final boolean DEBUG= "true".equalsIgnoreCase(Platform.getDebugOption("org.eclipse.cdt.core/debug/ASTCache"));
+<div class="highlighter-rouge"><pre class="highlight"><code>private static final boolean DEBUG= "true".equalsIgnoreCase(Platform.getDebugOption("org.eclipse.cdt.core/debug/ASTCache"));
 ...
 if (DEBUG) {
   System.out.println("message");
 }
 </code></pre>
+</div>
 
 
 <hr class="page-footer"/>

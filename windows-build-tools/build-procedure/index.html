@@ -177,10 +177,10 @@
 
 <p>To test if git is available, use:</p>
 
-<pre>
-<code>$ git --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git --version
 git version 2.3.2 (Apple Git-55)
 </code></pre>
+</div>
 
 <h3 id="gnulinux">GNU/Linux</h3>
 
@@ -204,10 +204,10 @@ git version 2.3.2 (Apple Git-55)
 
 <p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-windows-build-tools.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
 
-<pre>
-<code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-windows-build-tools.sh \
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-windows-build-tools.sh \
 -o ~/Downloads/build-windows-build-tools.sh
 </code></pre>
+</div>
 
 <h2 id="check-the-script">Check the script</h2>
 
@@ -219,14 +219,13 @@ git version 2.3.2 (Apple Git-55)
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
 
-<pre>
-<code>bash ~/Downloads/build-windows-build-tools.sh preload-images
+<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-windows-build-tools.sh preload-images
 </code></pre>
+</div>
 
 <p>The result should look similar to:</p>
 
-<pre>
-<code>$ docker images
+<div class="highlighter-rouge"><pre class="highlight"><code>$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ilegeul/debian      8-gnuarm-mingw      b8261b27add4        3 minutes ago       2.692 GB
 ilegeul/debian      8-gnuarm-gcc        ba65c1716b6e        12 minutes ago      1.437 GB
@@ -237,23 +236,24 @@ ilegeul/debian32    7                   64980af805ad        4 days ago          
 debian              8                   65688f7c61c4        6 weeks ago         122.8 MB
 hello-world         latest              e45a5af57b00        4 months ago        910 B
 </code></pre>
+</div>
 
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
-<pre>
-<code>bash ~/Downloads/build-windows-build-tools.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-windows-build-tools.sh --all
 </code></pre>
+</div>
 
 <p>About half an hour later, the output of the build script is a set of 5 files in the output folder:</p>
 
-<pre>
-<code>$ ls -l output
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls -l output
 total 3680
 -rw-r--r--   1 ilg  staff   685323 May 14 23:30 gnuarmeclipse-build-tools-win32-2.5-201505142015-setup.exe
 -rw-r--r--   1 ilg  staff  1194597 May 14 23:23 gnuarmeclipse-build-tools-win64-2.5-201505142015-setup.exe
 drwxr-xr-x  13 ilg  staff      442 May 14 23:24 win32
 drwxr-xr-x  13 ilg  staff      442 May 14 23:17 win64
 </code></pre>
+</div>
 
 <h2 id="subsequent-runs">Subsequent runs</h2>
 
@@ -261,17 +261,17 @@ drwxr-xr-x  13 ilg  staff      442 May 14 23:17 win64
 
 <p>Instead of <strong>–all</strong>, you can use any combination of:</p>
 
-<pre>
-<code>--win32 --win64
+<div class="highlighter-rouge"><pre class="highlight"><code>--win32 --win64
 </code></pre>
+</div>
 
 <h3 id="clean">clean</h3>
 
 <p>To remove all build files, use:</p>
 
-<pre>
-<code>bash ~/Downloads/build-windows-build-tools.sh clean
+<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-windows-build-tools.sh clean
 </code></pre>
+</div>
 
 <h2 id="install-hierarchy">Install hierarchy</h2>
 
@@ -279,8 +279,7 @@ drwxr-xr-x  13 ilg  staff      442 May 14 23:17 win64
 
 <p>After install, this package should create structure like this (only the first two depth levels are shown):</p>
 
-<pre>
-<code>$ tree -L 2 Build\ Tools/bin/version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ tree -L 2 Build\ Tools/bin/version
 ├── COPYING
 ├── INFO.txt
 ├── bin
@@ -303,6 +302,7 @@ drwxr-xr-x  13 ilg  staff      442 May 14 23:17 win64
 
 5 directories, 14 files
 </code></pre>
+</div>
 
 <p>No other files are installed in any system folders or other locations.</p>
 
@@ -316,9 +316,9 @@ drwxr-xr-x  13 ilg  staff      442 May 14 23:17 win64
 
 <p>When done, be sure you stop boot2docker, to free significant resources (a VirtualBox Ubuntu machine).</p>
 
-<pre>
-<code>boot2docker stop
+<div class="highlighter-rouge"><pre class="highlight"><code>boot2docker stop
 </code></pre>
+</div>
 
 <h2 id="more-build-details">More build details</h2>
 

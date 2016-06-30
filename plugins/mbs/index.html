@@ -110,8 +110,7 @@
 
 <p>In both cases, to check if make is available, run the following command:</p>
 
-<pre>
-<code>$ make --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ make --version
 GNU Make 3.81
 Copyright (C) 2006  Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.
@@ -120,6 +119,7 @@ PARTICULAR PURPOSE.
 
 This program built for i386-apple-darwin11.3.0
 </code></pre>
+</div>
 
 <p>Although the managed build process does not require special features from make, it is mandatory that it is a <strong>GNU Make</strong>, preferably as recent as possible.</p>
 
@@ -185,13 +185,13 @@ This program built for i386-apple-darwin11.3.0
 
 <p>For example, the default memory definitions look like this:</p>
 
-<pre>
-<code>MEMORY
+<div class="highlighter-rouge"><pre class="highlight"><code>MEMORY
 {
   FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 128K
   RAM (rwx)  : ORIGIN = 0x20000000, LENGTH = 20K
 }
 </code></pre>
+</div>
 
 <p>The syntax is quite obvious, the default configurations is for a processor with 128 K flash and 20 K RAM (for example the SM32F103xB family).</p>
 

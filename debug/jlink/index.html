@@ -292,7 +292,7 @@
   <li>the only field that usually requires attention is the <strong>Device name</strong>, which must identify the processor family; if you assigned the device to the project, this field is automatically filled-in; usually this name is the family name; if you do not know it for your processor, follow the link at the right and copy/paste the string from the <a href="http://www.segger.com/supported-devices.html">SEGGER web page</a>;</li>
   <li>for portability reasons, the GDB server and GDB client executables are defined using variables; it is highly recommended to keep these definitions;</li>
   <li>the <strong>${cross_prefix}</strong> and the <strong>${cross_suffix}</strong> variables are defined automatically using the toolchain definitions; unless you are debugging a project-less ELF, leave them as is;</li>
-  <li>the values of the <code>${jlink_path}</code> and <code>${jlink_gdbserver}</code> can be manually edited in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong> configuration page (if you do not find this page, upgrade the plug-ins);</li>
+  <li>the values of the <code class="highlighter-rouge">${jlink_path}</code> and <code class="highlighter-rouge">${jlink_gdbserver}</code> can be manually edited in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong> configuration page (if you do not find this page, upgrade the plug-ins);</li>
   <li>the <strong>Connect to running target</strong> option allow to start a debug session without performing any reset or program download, so that the target will continue to run unaffected, until explicitly halted by the debugger (Note: this option requires the latest plug-in and SEGGER versions);</li>
   <li>
     <p>click the third tab, named <strong>Startup</strong>, which contains specific J-Link options used to configure the debug session.</p>
@@ -446,7 +446,7 @@
 
 <h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
 
-<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
+<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code class="highlighter-rouge">--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code class="highlighter-rouge">system.gdbinit</code>, <code class="highlighter-rouge">~/.gdbinit</code>, <code class="highlighter-rouge">./.gdbinit</code>) are loaded.</p>
 
 <p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section:</p>
 
@@ -454,7 +454,7 @@
 <img src="/assets/images/2015/launch-jlink-debugger-client.png" alt="" />
 </p>
 
-<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server, in this case the J-Link GDB server.</p>
+<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code class="highlighter-rouge">mon</code> will be further passed from the GDB client to the GDB server, in this case the J-Link GDB server.</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 

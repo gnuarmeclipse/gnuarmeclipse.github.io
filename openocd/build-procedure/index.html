@@ -180,13 +180,13 @@
 
 <p>To test if the compiler is available, use:</p>
 
-<pre>
-<code>$ gcc --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gcc --version
 Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
 Apple LLVM version 6.1.0 (clang-602.0.49) (based on LLVM 3.6.0svn)
 Target: x86_64-apple-darwin14.3.0
 Thread model: posix
 </code></pre>
+</div>
 
 <h4 id="install-macports">Install MacPorts</h4>
 
@@ -196,11 +196,11 @@ Thread model: posix
 
 <p>Install the following packages:</p>
 
-<pre>
-<code>sudo port install libtool automake autoconf pkgconfig wget
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo port install libtool automake autoconf pkgconfig wget
 sudo port install cmake boost libconfuse swig-python
 sudo port install texinfo texlive
 </code></pre>
+</div>
 
 <h3 id="gnulinux">GNU/Linux</h3>
 
@@ -210,19 +210,19 @@ sudo port install texinfo texlive
 
 <h4 id="configure-docker-to-run-as-regular-user">Configure Docker to run as regular user</h4>
 
-<p>To allow docker to run as a regular user, you need to be a member of the <code>docker</code> group.</p>
+<p>To allow docker to run as a regular user, you need to be a member of the <code class="highlighter-rouge">docker</code> group.</p>
 
-<pre>
-<code>$ sudo groupadd docker
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo groupadd docker
 $ sudo gpasswd -a ${USER} docker
 $ sudo service docker restart
 </code></pre>
+</div>
 
 <p>To make these changes effective, logout and login.</p>
 
 <h4 id="install-required-packages">Install required packages</h4>
 
-<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<code>curl</code>, <code>git</code>, <code>automake</code>, <code>patch</code>, <code>tar</code>, <code>unzip</code>).</p>
+<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<code class="highlighter-rouge">curl</code>, <code class="highlighter-rouge">git</code>, <code class="highlighter-rouge">automake</code>, <code class="highlighter-rouge">patch</code>, <code class="highlighter-rouge">tar</code>, <code class="highlighter-rouge">unzip</code>).</p>
 
 <p>The script checks for them; if the script fails, install them and re-run.</p>
 
@@ -236,21 +236,21 @@ $ sudo service docker restart
 
 <p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
 
-<pre>
-<code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh \
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh \
 -o ~/Downloads/build-openocd.sh
 </code></pre>
+</div>
 
-<p>Alternatively, in a development environment, the entire <code>build-scripts.git</code> can be cloned, and a link to <code>Downloads</code> created:</p>
+<p>Alternatively, in a development environment, the entire <code class="highlighter-rouge">build-scripts.git</code> can be cloned, and a link to <code class="highlighter-rouge">Downloads</code> created:</p>
 
-<pre>
-<code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-openocd.sh \
+<div class="highlighter-rouge"><pre class="highlight"><code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-openocd.sh \
 ~/Downloads/build-openocd.sh
 </code></pre>
+</div>
 
 <h2 id="check-the-script">Check the script</h2>
 
-<p>The script creates a temporary build <code>Work/openocd</code> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine <code>WORK_FOLDER</code> variable before invoking the script.</p>
+<p>The script creates a temporary build <code class="highlighter-rouge">Work/openocd</code> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine <code class="highlighter-rouge">WORK_FOLDER</code> variable before invoking the script.</p>
 
 <h2 id="preload-the-docker-images">Preload the Docker images</h2>
 
@@ -258,14 +258,13 @@ $ sudo service docker restart
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
 
-<pre>
-<code>bash ~/Downloads/build-openocd.sh preload-images
+<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-openocd.sh preload-images
 </code></pre>
+</div>
 
 <p>The result should look similar to:</p>
 
-<pre>
-<code>$ docker images
+<div class="highlighter-rouge"><pre class="highlight"><code>$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ilegeul/debian      8-gnuarm-mingw      b8261b27add4        3 minutes ago       2.692 GB
 ilegeul/debian      8-gnuarm-gcc        ba65c1716b6e        12 minutes ago      1.437 GB
@@ -276,23 +275,23 @@ ilegeul/debian32    7                   64980af805ad        4 days ago          
 debian              8                   65688f7c61c4        6 weeks ago         122.8 MB
 hello-world         latest              e45a5af57b00        4 months ago        910 B
 </code></pre>
+</div>
 
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
-<pre>
-<code>$ bash ~/Downloads/build-openocd.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-openocd.sh --all
 </code></pre>
+</div>
 
 <p>On macOS, to prevent sleep, use:</p>
 
-<pre>
-<code>$ caffeinate bash ~/Downloads/build-openocd.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ caffeinate bash ~/Downloads/build-openocd.sh --all
 </code></pre>
+</div>
 
-<p>About half an hour later (<code>caffeinate</code> is used to make sure the system does not go to sleep while left unattended), the output of the build script is a set of 5 files in the output folder:</p>
+<p>About half an hour later (<code class="highlighter-rouge">caffeinate</code> is used to make sure the system does not go to sleep while left unattended), the output of the build script is a set of 5 files in the output folder:</p>
 
-<pre>
-<code>$ ls -l output
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls -l output
 total 105616
 drwxr-xr-x  8 ilg  staff      272 May 11 15:28 debian32
 drwxr-xr-x  8 ilg  staff      272 May 11 15:20 debian64
@@ -305,24 +304,25 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:33 osx
 drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win32
 drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 </code></pre>
+</div>
 
 <h2 id="subsequent-runs">Subsequent runs</h2>
 
 <h3 id="separate-platform-specific-builds">Separate platform specific builds</h3>
 
-<p>Instead of <code>--all</code>, you can use any combination of:</p>
+<p>Instead of <code class="highlighter-rouge">--all</code>, you can use any combination of:</p>
 
-<pre>
-<code>--win32 --win64 --debian32 --debian64 --osx
+<div class="highlighter-rouge"><pre class="highlight"><code>--win32 --win64 --debian32 --debian64 --osx
 </code></pre>
+</div>
 
 <h3 id="clean">clean</h3>
 
 <p>To remove all build files, use:</p>
 
-<pre>
-<code>bash ~/Downloads/build-openocd.sh clean
+<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-openocd.sh clean
 </code></pre>
+</div>
 
 <h2 id="install-hierarchy">Install hierarchy</h2>
 
@@ -330,8 +330,7 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <p>After install, this package should create structure like this (only the first two depth levels are shown):</p>
 
-<pre>
-<code>$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/OpenOCD
+<div class="highlighter-rouge"><pre class="highlight"><code>$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/OpenOCD
 /Applications/GNU\ ARM\ Eclipse/OpenOCD
 ├── bin
 │   └── openocd
@@ -361,12 +360,13 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 16 directories, 9 files
 </code></pre>
+</div>
 
 <p>No other files are installed in any system folders or other locations.</p>
 
 <h2 id="uninstall">Uninstall</h2>
 
-<p>To uninstall OpenOCD from a Windows machine, use the <code>openocd-uninstall.exe</code> program.</p>
+<p>To uninstall OpenOCD from a Windows machine, use the <code class="highlighter-rouge">openocd-uninstall.exe</code> program.</p>
 
 <p>On macOS and GNU/Linux, the GNU ARM Eclipse OpenOCD install folder is self-contained and removing it is enough for completely removing the application.</p>
 
@@ -376,23 +376,23 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <p>For a true test you need to first install the package and then run the program form the final location. For example on macOS the output should look like:</p>
 
-<pre>
-<code>$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/bin/openocd --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/bin/openocd --version
 GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00022-g2628c74 (2015-01-15-20:44)
 Licensed under GNU GPL v2
 For bug reports, read
     http://openocd.sourceforge.net/doc/doxygen/bugs.html
 </code></pre>
+</div>
 
 <h2 id="stop-boot2docker">Stop boot2docker</h2>
 
-<p>On macOS, the build script automatically starts <code>boot2docker</code>, if needed.</p>
+<p>On macOS, the build script automatically starts <code class="highlighter-rouge">boot2docker</code>, if needed.</p>
 
 <p>When done, be sure you stop it, to free significant resources (a VirtualBox Ubuntu machine).</p>
 
-<pre>
-<code>boot2docker stop
+<div class="highlighter-rouge"><pre class="highlight"><code>boot2docker stop
 </code></pre>
+</div>
 
 <h2 id="more-build-details">More build details</h2>
 

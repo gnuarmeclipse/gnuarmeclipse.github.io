@@ -137,18 +137,17 @@
 
 <p>The only function required is:</p>
 
-<pre>
-<code>public Map&lt;String, String&gt; getExtraProperties(IConfiguration config);
+<div class="highlighter-rouge"><pre class="highlight"><code>public Map&lt;String, String&gt; getExtraProperties(IConfiguration config);
 </code></pre>
+</div>
 
 <h2 id="where-is-this-extension-point-used">Where is this extension point used?</h2>
 
 <p>The <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.debug.gdbjtag/src/ilg/gnuarmeclipse/debug/gdbjtag/data/CProjectExtraDataManagerProxy.java">ilg.gnuarmeclipse.debug.gdbjtag.data/CProjectExtraDataManagerProxy.java</a> class enumerates all <strong>cprojectExtra</strong> extension points and returns the first one that can provide data for the requested configuration.</p>
 
-<p>This <code>CProjectExtraDataManagerProxy.getExtraProperties(config)</code> is called from <code>PeripheralsService.etPeripherals(IContainerDMContext containerDMContext, DataRequestMonitor&lt;IPeripheralDMContext[]&gt; drm)</code>:</p>
+<p>This <code class="highlighter-rouge">CProjectExtraDataManagerProxy.getExtraProperties(config)</code> is called from <code class="highlighter-rouge">PeripheralsService.etPeripherals(IContainerDMContext containerDMContext, DataRequestMonitor&lt;IPeripheralDMContext[]&gt; drm)</code>:</p>
 
-<pre>
-<code>String vendorId = null;
+<div class="highlighter-rouge"><pre class="highlight"><code>String vendorId = null;
 String deviceName = null;
 
 CProjectExtraDataManagerProxy dataManager = CProjectExtraDataManagerProxy
@@ -184,6 +183,7 @@ if (vendorId != null &amp;&amp; deviceName != null) {
     return;
 }
 </code></pre>
+</div>
 
 <p>As seen above, this extension point is used to get the <strong>cmsis.device.vendor.id</strong> and <strong>cmsis.device.name</strong> associated with a project, and from it get the SVD to populate the Peripherals view.</p>
 
@@ -191,19 +191,18 @@ if (vendorId != null &amp;&amp; deviceName != null) {
 
 <p>This extension point is implemented one in <strong>ilg.gnuarmeclipse.managedbuild.cross</strong>:</p>
 
-<pre>
-<code>   &lt;extension
+<div class="highlighter-rouge"><pre class="highlight"><code>   &lt;extension
          point="ilg.gnuarmeclipse.debug.core.cprojectExtra"&gt;
       &lt;factory
             class="ilg.gnuarmeclipse.managedbuild.cross.xpi.CProjectExtraDataManagerFactory"&gt;
       &lt;/factory&gt;
    &lt;/extension&gt;
 </code></pre>
+</div>
 
 <p>The data manager created by this factory is <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnuarmeclipse.managedbuild.cross/src/ilg/gnuarmeclipse/managedbuild/cross/xpi/CProjectExtraDataManager.java">ilg.gnuarmeclipse.managedbuild.cross.xpi/CProjectExtraDataManager.java</a> which returns the entire map of extra properties associated with GNU ARM Eclipse projects, stored in .cproject:</p>
 
-<pre>
-<code>    &lt;storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"&gt;
         &lt;option id="cmsis.device.name" value="STM32F407VG"/&gt;
         &lt;option id="cmsis.subfamily.name" value="STM32F407"/&gt;
         &lt;option id="cmsis.family.name" value="STM32F4 Series"/&gt;
@@ -226,6 +225,7 @@ if (vendorId != null &amp;&amp; deviceName != null) {
         &lt;memory section="IROM1" size="0x100000" start="0x08000000" startup="1"/&gt;
     &lt;/storageModule&gt;
 </code></pre>
+</div>
 
 
 <hr class="page-footer"/>

@@ -2,40 +2,41 @@
 <html>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta charset='utf-8'>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml">
 
   <title>GNU ARM Eclipse plug-ins v2.2.1-201404120702 released</title>
   <meta name="description" content="Version 2.2.1 is a major release. The main changes are: the complete overhaul of the template plug-ins, the addition of a generic Cortex-M template, the addi...">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.2.1-201404120702 released" />
-  <meta property="og:site_name" content="GNU ARM Eclipse" />
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.2.1-201404120702 released">
+  <meta property="og:site_name" content="GNU ARM Eclipse">
 
 
   <meta property="article:published_time" content="2014-04-12">
 
 
-  <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="releases">
+  <meta property="article:section" content="plugins">
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
-  <meta property="article:tag" content="cortex-m" />
-  <meta property="article:tag" content="nano" />
-  <meta property="article:tag" content="newlib" />
-  <meta property="article:tag" content="processor expert" />
-  <meta property="article:tag" content="stm32f" />
-  <meta property="article:tag" content="template" />
+  <meta property="article:tag" content="gnu">
+  <meta property="article:tag" content="arm">
+  <meta property="article:tag" content="eclipse">
+  <meta property="article:tag" content="cortex-m">
+  <meta property="article:tag" content="nano">
+  <meta property="article:tag" content="newlib">
+  <meta property="article:tag" content="processor expert">
+  <meta property="article:tag" content="stm32f">
+  <meta property="article:tag" content="template">
 
 
-  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c">
 
-  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
@@ -43,7 +44,7 @@
   <link rel="canonical" href="/blog/2014/04/12/plugins-v2.2.1-201404120702-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
@@ -129,10 +130,10 @@ Posted on April 12, 2014 by Liviu Ionescu.
   <li>the STM32F4 template was updated to use the <strong>new HAL library</strong>, instead of the StdPeriph library</li>
   <li>starting with Processor Expert 10.4, the Freescale PEx template can now properly launch the new project wizard, so integration with Processor Expert is fully functional</li>
   <li>all templates now optionally use the <strong>newlib nano</strong> library</li>
-  <li>all templates now optionally use the new GCC 4.8 <code>-Og</code> option for debug configurations</li>
-  <li>a new trace facility, using separate functions like <code>trace_printf()</code>, was added to the code generated for the templates; the trace output channel can be changed with a preprocessor define</li>
+  <li>all templates now optionally use the new GCC 4.8 <code class="highlighter-rouge">-Og</code> option for debug configurations</li>
+  <li>a new trace facility, using separate functions like <code class="highlighter-rouge">trace_printf()</code>, was added to the code generated for the templates; the trace output channel can be changed with a preprocessor define</li>
   <li>[feature-requests:#39] selecting semihosting/retargetting/standalone is no longer a one time decision, but can be changed at build time using preprocessor definitions</li>
-  <li>new selection values were added for the <code>-mcu=</code> option
+  <li>new selection values were added for the <code class="highlighter-rouge">-mcu=</code> option
     <ul>
       <li>arm610</li>
       <li>cortex-r5</li>
@@ -146,61 +147,62 @@ Posted on April 12, 2014 by Liviu Ionescu.
       <li>armv7e-m</li>
     </ul>
   </li>
-  <li>[feature-requests:#37] a new option Save temporary files (<code>–save-temps</code>) was added to the Miscellaneous category of the compiling tools</li>
+  <li>[feature-requests:#37] a new option Save temporary files (<code class="highlighter-rouge">–save-temps</code>) was added to the Miscellaneous category of the compiling tools</li>
   <li>[feature-requests:#41] in the Tool Settings tab, the common Warnings category, new options were added:
     <ul>
-      <li><code>-Wunused</code></li>
-      <li><code>-Wpadded</code></li>
+      <li><code class="highlighter-rouge">-Wunused</code></li>
+      <li><code class="highlighter-rouge">-Wpadded</code></li>
     </ul>
   </li>
   <li>in the Tool Settings tab, the Warnings category of the C tool, new options were added:
     <ul>
-      <li><code>-Wmissing-prototypes</code></li>
-      <li><code>-Wstrict-prototypes</code></li>
-      <li><code>-Wbad-function-cast</code></li>
+      <li><code class="highlighter-rouge">-Wmissing-prototypes</code></li>
+      <li><code class="highlighter-rouge">-Wstrict-prototypes</code></li>
+      <li><code class="highlighter-rouge">-Wbad-function-cast</code></li>
     </ul>
   </li>
   <li>in the Tool Settings tab, the Warnings category of the C++ tool, new options were added:
     <ul>
-      <li><code>-Wctor-dtor-privacy</code></li>
-      <li><code>-Wnoexcept</code></li>
-      <li><code>-Wnon-virtual-dtor</code></li>
-      <li><code>-Wstrict-null-sentinel</code></li>
-      <li><code>-Wsign-promo</code></li>
+      <li><code class="highlighter-rouge">-Wctor-dtor-privacy</code></li>
+      <li><code class="highlighter-rouge">-Wnoexcept</code></li>
+      <li><code class="highlighter-rouge">-Wnon-virtual-dtor</code></li>
+      <li><code class="highlighter-rouge">-Wstrict-null-sentinel</code></li>
+      <li><code class="highlighter-rouge">-Wsign-promo</code></li>
     </ul>
   </li>
   <li>in the Tool Settings tab, the common Optimization category, new options were added:
     <ul>
-      <li><code>-ffreestanding</code></li>
+      <li><code class="highlighter-rouge">-ffreestanding</code></li>
     </ul>
   </li>
   <li>in the Tool Settings tab, the Optimization category of the C++ tool, new options were added:
     <ul>
-      <li><code>-fabi-version=</code></li>
-      <li><code>-fno-threadsafe-statics</code></li>
+      <li><code class="highlighter-rouge">-fabi-version=</code></li>
+      <li><code class="highlighter-rouge">-fno-threadsafe-statics</code></li>
     </ul>
   </li>
-  <li>the templates can now optionally generate freestanding programs, using the <code>-ffreestanding</code> option.</li>
+  <li>the templates can now optionally generate freestanding programs, using the <code class="highlighter-rouge">-ffreestanding</code> option.</li>
 </ul>
 
 <p>Major CDT bugs fixed:</p>
 
 <ul>
-  <li>[support-requests:#44] due to a long standing CDT bug affecting the creation of make files, the dependencies were not properly checked; the culprit was the <code>-MF"$(@:%.o=%.d)"</code>, instead of <code>-MT"$@"</code>, which generated wrong targets in the make files; until a proper patch will be applied to CDT, the workaround in the plug-in was to locally perform the replacement.</li>
+  <li>[support-requests:#44] due to a long standing CDT bug affecting the creation of make files, the dependencies were not properly checked; the culprit was the <code class="highlighter-rouge">-MF"$(@:%.o=%.d)"</code>, instead of <code class="highlighter-rouge">-MT"$@"</code>, which generated wrong targets in the make files; until a proper patch will be applied to CDT, the workaround in the plug-in was to locally perform the replacement.</li>
 </ul>
 
 <p>Bugs fixed:</p>
 
 <ul>
-  <li>the names of the windows tools for Sourcery CodeBench Lite were changed from <strong>cs_make</strong>/<strong>cs_rm</strong>, instead of <strong>cs-make</strong>/<strong>cs-rm</strong></li>
+  <li>the names of the windows tools for Sourcery CodeBench Lite were changed from <strong>cs_make</strong>/<strong>cs_rm</strong>, instead of <strong>cs-make</strong>/<strong>cs-rm</strong>
+</li>
   <li>after project rename there were many exceptions due to name change; fixed</li>
   <li>[bugs:#96] changing the toolchain of another build configuration then the active one was not possible in the Toolchains tab; fixed</li>
   <li>[bugs:#103, bugs:#97] J-Link &amp; OpenOCD: changing some of the fields in the interface did not enable the Apply button; fixed</li>
-  <li>[bugs:#94] in the Tool Settings tab, the optimisation option ‘Do not use _cxa_atexit() (<code>-fno-use-cxa-atexit</code>)’ was moved from the common category to the C++ compiler tool, since it applies only to C++</li>
+  <li>[bugs:#94] in the Tool Settings tab, the optimisation option ‘Do not use _cxa_atexit() (<code class="highlighter-rouge">-fno-use-cxa-atexit</code>)’ was moved from the common category to the C++ compiler tool, since it applies only to C++</li>
   <li>in the Tool Settings tab, the warning option <em>‘Warn if wrong cast (-Wbad-function-cast)’</em> was moved from the common category to the C compiler tool, since it applies only to C</li>
   <li>J-Link: in certain conditions, the remote address &amp; port were not properly set, and the debugging session did not start; fixed</li>
   <li>J-Link: in certain erroneous conditions, the J-Link plug-in triggered an exception, leaving the process handling the semihosting and SWO console in a wrong state; fixed</li>
-  <li>the inlines used in the Trace.h header were marked with <code>((always_inline))</code>, to ensure no code is generated on all optimisation levels</li>
+  <li>the inlines used in the Trace.h header were marked with <code class="highlighter-rouge">((always_inline))</code>, to ensure no code is generated on all optimisation levels</li>
   <li>[bugs:#99] J-Link &amp; OpenOCD: macro substitution added to most fields available in the interface</li>
   <li>[bugs:#100] J-Link: to avoid confusion related to multiple JTAG/SWD speeds in the interface, the labelling was changed to ‘Initial speed’ and ‘JTAG/SWD Speed’</li>
   <li>[bugs:#95] timer setting in templates was not accurate; fixed</li>
@@ -216,7 +218,7 @@ Posted on April 12, 2014 by Liviu Ionescu.
   <li>templates common code is now directly copied from the sources of the <strong>µOS++</strong>, to keep them consistent between processor families and with future code</li>
   <li>J-Link &amp; OpenOCD: a notice was added near the second reset field, to warn on not using it when debugging from RAM</li>
   <li>J-Link &amp; OpenOCD: when launching external processes (like JLinkGDB Server, GDB client, OpenOCD), the current folder is set to the project folder, to easily refer to local configuration files</li>
-  <li>the language standard defaults for new projects were changed to ISO C11 (<code>-std=gnu11</code>) and C++11 (<code>-std=gnu++11</code>)</li>
+  <li>the language standard defaults for new projects were changed to ISO C11 (<code class="highlighter-rouge">-std=gnu11</code>) and C++11 (<code class="highlighter-rouge">-std=gnu++11</code>)</li>
   <li>J-Link: as suggested by SEGGER, the default speed used for the initial server connection was increased to 1000 kHz</li>
   <li>guard checks were added on debug in the startup code, to check if the proper BSS and DATA initialisations were performed</li>
   <li>[feature-requests:#40] on Cortex-M3/M4 the trace semihosting output code can check if not running under debugger and skip the semihosting call, so it is possible to execute the applications built for Debug without the debugger connected (unfortunately for Cortex-M0/M0+ the debug registers are not available to the application, so this test cannot be done)</li>
@@ -225,16 +227,17 @@ Posted on April 12, 2014 by Liviu Ionescu.
 </ul>
 
 
-<hr class="post-footer"/>
+<hr class="post-footer">
 <p class="post-footer">
 Posted in
 
 <strong>releases</strong>, <strong>plugins</strong> and tagged
 
 <strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cortex-m</strong>, <strong>nano</strong>, <strong>newlib</strong>, <strong>processor expert</strong>, <strong>stm32f</strong>, <strong>template</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2014/04/12/plugins-v2.2.1-201404120702-released/" data-layout="button"></div>
+Last modified on Fri Oct  2 16:53:50 2015 UTC.
 </p>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2014/04/12/plugins-v2.2.1-201404120702-released/" data-layout="button"></div>
+
 
 
 </section>
@@ -252,7 +255,7 @@ Posted in
 </ul>
 
 
-<hr />
+<hr>
 
 <h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
@@ -262,10 +265,14 @@ Posted in
 
 <ul>
   <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li>
+<a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li>
+<a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li>
+<a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li>
+<a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
 <h4 id="installinstall"><a href="/install/">Install</a></h4>
@@ -275,7 +282,8 @@ Posted in
   <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
+  <li>
+<a href="/debug/install/">Debugging components</a>
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
@@ -331,34 +339,40 @@ Posted in
 <h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/qemu/">Overview</a> (read me first!)</li>
   <li><a href="/qemu/install/">QEMU Install</a></li>
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/options/">Command line options</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/openocd/">Overview</a> (read me first!)</li>
   <li><a href="/openocd/install/">OpenOCD Install</a></li>
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/windows-build-tools/">Overview</a> (read me first!)</li>
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -417,7 +431,7 @@ Posted in
 
 <h4 id="aboutabout"><a href="/about/">About</a></h4>
 
-<hr />
+<hr>
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -439,7 +453,7 @@ Posted in
     <ul>
   <li>© 2015 Liviu Ionescu</li>
   <li>Hosted on GitHub Pages</li>
-  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
   <li>
     <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
   </li>

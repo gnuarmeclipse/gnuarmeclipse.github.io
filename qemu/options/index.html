@@ -2,18 +2,19 @@
 <html>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta charset='utf-8'>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml">
 
   <title>The GNU ARM Eclipse QEMU command line options</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="The GNU ARM Eclipse QEMU command line options" />
-  <meta property="og:site_name" content="GNU ARM Eclipse" />
+  <meta property="og:title" content="The GNU ARM Eclipse QEMU command line options">
+  <meta property="og:site_name" content="GNU ARM Eclipse">
 
 
   <meta property="article:published_time" content="2015-11-10">
@@ -22,9 +23,9 @@
 
 
 
-  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c">
 
-  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
@@ -32,7 +33,7 @@
   <link rel="canonical" href="/qemu/options/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
@@ -92,30 +93,88 @@
 <h1 class="page-title">The GNU ARM Eclipse QEMU command line options</h1>
 
 
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#for-the-impacient"><span class="tocnumber">1</span> <span class="toctext">For the impacient</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#command-line-options"><span class="tocnumber">2</span> <span class="toctext">Command line options</span></a>
+<ul>
+<li class="toc_level-2 toc_section-3">
+<a href="#board"><span class="tocnumber">2.1</span> <span class="toctext">board</span></a>
+</li>
+<li class="toc_level-2 toc_section-4">
+<a href="#mcu"><span class="tocnumber">2.2</span> <span class="toctext">mcu</span></a>
+</li>
+<li class="toc_level-2 toc_section-5">
+<a href="#image"><span class="tocnumber">2.3</span> <span class="toctext">image</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#gdb"><span class="tocnumber">2.4</span> <span class="toctext">gdb</span></a>
+</li>
+<li class="toc_level-2 toc_section-7">
+<a href="#nographic"><span class="tocnumber">2.5</span> <span class="toctext">nographic</span></a>
+</li>
+<li class="toc_level-2 toc_section-8">
+<a href="#verbose"><span class="tocnumber">2.6</span> <span class="toctext">verbose</span></a>
+</li>
+<li class="toc_level-2 toc_section-9">
+<a href="#d"><span class="tocnumber">2.7</span> <span class="toctext">d</span></a>
+</li>
+<li class="toc_level-2 toc_section-10">
+<a href="#semihosting-config"><span class="tocnumber">2.8</span> <span class="toctext">semihosting-config</span></a>
+</li>
+<li class="toc_level-2 toc_section-11">
+<a href="#semihosting-cmdline"><span class="tocnumber">2.9</span> <span class="toctext">semihosting-cmdline</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#exit-code"><span class="tocnumber">2.10</span> <span class="toctext">exit() code</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#fully-semihosted-applications"><span class="tocnumber">3</span> <span class="toctext">Fully semihosted applications</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="for-the-impacient">For the impacient</h2>
 
 <p>The command line used by the QEMU plug-in to start a debug session looks like this:</p>
 
-<pre>
-<code>qemu-system-gnuarmeclipse --verbose --verbose --board STM32F4-Discovery \
+<div class="highlighter-rouge">
+<pre class="highlight"><code>qemu-system-gnuarmeclipse --verbose --verbose --board STM32F4-Discovery \
 --mcu STM32F407VG --gdb tcp::1234 -d unimp,guest_errors \
 --semihosting-config enable=on,target=native \
 --semihosting-cmdline blinky
 </code></pre>
+</div>
 
 <p>A typical emulation session started outside Eclipse looks like this:</p>
 
-<pre>
-<code>qemu-system-gnuarmeclipse --verbose --verbose --board STM32F4-Discovery \
+<div class="highlighter-rouge">
+<pre class="highlight"><code>qemu-system-gnuarmeclipse --verbose --verbose --board STM32F4-Discovery \
 --mcu STM32F407VG -d unimp,guest_errors \
 --nographic --image test.elf \
 --semihosting-config enable=on,target=native \
 --semihosting-cmdline test 1 2 3
 </code></pre>
+</div>
 
 <h2 id="command-line-options">Command line options</h2>
 
-<p>QEMU has lots, lots of options. The official QEMU documentation (available in the distribution <code>doc</code> folder) is the autoritative source for information about them.</p>
+<p>QEMU has lots, lots of options. The official QEMU documentation (available in the distribution <code class="highlighter-rouge">doc</code> folder) is the autoritative source for information about them.</p>
 
 <p>Unfortunately most of these options were designed for the larger versions of QEMU, intended to emulate Linux systems, and are of little use for Cortex-M emulation.</p>
 
@@ -124,87 +183,94 @@
 <p>The common ones are presented below.</p>
 
 <h3 id="board">
-<code>board</code>
+<code class="highlighter-rouge">board</code>
 </h3>
 
 <p>A string that defines the name of the board to be emulated:</p>
 
-<pre>
-<code>--board STM32F4-Discovery
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--board STM32F4-Discovery
 </code></pre>
+</div>
 
-<p>To get a list of supported boards, use <code>?</code> or <code>help</code>:</p>
+<p>To get a list of supported boards, use <code class="highlighter-rouge">?</code> or <code class="highlighter-rouge">help</code>:</p>
 
-<pre>
-<code>--board ?
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--board ?
 </code></pre>
+</div>
 
 <h3 id="mcu">
-<code>mcu</code>
+<code class="highlighter-rouge">mcu</code>
 </h3>
 
 <p>Each board has a MCU type, hardcoded in the board definitions.</p>
 
 <p>However it is possible to pretend the board has a different MCU, by explicitly specifying a MCU name:</p>
 
-<pre>
-<code>--mcu STM32F407VG
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--mcu STM32F407VG
 </code></pre>
+</div>
 
-<p>To get a list of supported MCUs, use <code>?</code> or <code>help</code>:</p>
+<p>To get a list of supported MCUs, use <code class="highlighter-rouge">?</code> or <code class="highlighter-rouge">help</code>:</p>
 
-<pre>
-<code>--mcu ?
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--mcu ?
 </code></pre>
+</div>
 
 <h3 id="image">
-<code>image</code>
+<code class="highlighter-rouge">image</code>
 </h3>
 
 <p>The emulator currently does not preserve a persistent state of the flash memory between runs; instead, it starts with an empty flash and preloads it with the content available in an ELF file.</p>
 
 <p>For debug sessions, this can be done via the GDB protocol. For standalone sessions, QEMU needs to know the name of the ELF file:</p>
 
-<pre>
-<code>--image blinky.elf
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--image blinky.elf
 </code></pre>
+</div>
 
 <h3 id="gdb">
-<code>gdb</code>
+<code class="highlighter-rouge">gdb</code>
 </h3>
 
 <p>When used with a debugger, QEMU must implement the GDB server protocol, for the GDB client to be able to connect to it.</p>
 
-<p>The default QEMU port is <code>1234</code>; the option to start QEMU in server mode and listen on the TCP port 1234 is:</p>
+<p>The default QEMU port is <code class="highlighter-rouge">1234</code>; the option to start QEMU in server mode and listen on the TCP port 1234 is:</p>
 
-<pre>
-<code>--gdb tcp::1234
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--gdb tcp::1234
 </code></pre>
+</div>
 
 <p>When in GDB server mode, it is no longer required to specify the ELF image, since it will be loaded by the GDB client, as in any usual debug session, which rewrites the MCU flash memory.</p>
 
 <h3 id="nographic">
-<code>nographic</code>
+<code class="highlighter-rouge">nographic</code>
 </h3>
 
 <p>By default, the GNU ARM Eclipse QEMU will try to start in graphical mode, by displaying an image of the emulated board and one or more animated LEDs.</p>
 
 <p>For running unit tests this is generally not needed, and QEMU can be started with graphics support disabled:</p>
 
-<pre>
-<code>--nographic
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--nographic
 </code></pre>
+</div>
 
 <h3 id="verbose">
-<code>verbose</code>
+<code class="highlighter-rouge">verbose</code>
 </h3>
 
-<p>By default, <code>qemu</code> is very quiet, it barely complains for errors.</p>
+<p>By default, <code class="highlighter-rouge">qemu</code> is very quiet, it barely complains for errors.</p>
 
-<p>To make it minimally social, add one <code>--verbose</code>, and it’ll tell what is going on:</p>
+<p>To make it minimally social, add one <code class="highlighter-rouge">--verbose</code>, and it’ll tell what is going on:</p>
 
-<pre>
-<code>GNU ARM Eclipse 64-bits QEMU v2.4.50 (qemu-system-gnuarmeclipse).
+<div class="highlighter-rouge">
+<pre class="highlight"><code>GNU ARM Eclipse 64-bits QEMU v2.4.50 (qemu-system-gnuarmeclipse).
 Board: 'STM32F4-Discovery' (ST Discovery kit for STM32F407/417 lines).
 Device: 'STM32F407VG' (Cortex-M4 r0p0, MPU), Flash: 1024 kB, RAM: 128 kB.
 Command line: 'blinky' (6 bytes).
@@ -218,11 +284,12 @@ Execute 'mon system_reset'.
 Cortex-M4 r0p0 core reset.
 ...
 </code></pre>
+</div>
 
-<p>Adding one more <code>--verbose</code>  will make QEMU extra verbose and it’ll display details about the board hardware configuration and the memory sections loaded by GDB:</p>
+<p>Adding one more <code class="highlighter-rouge">--verbose</code>  will make QEMU extra verbose and it’ll display details about the board hardware configuration and the memory sections loaded by GDB:</p>
 
-<pre>
-<code>GNU ARM Eclipse 64-bits QEMU v2.4.50 (qemu-system-gnuarmeclipse).
+<div class="highlighter-rouge">
+<pre class="highlight"><code>GNU ARM Eclipse 64-bits QEMU v2.4.50 (qemu-system-gnuarmeclipse).
 Board: 'STM32F4-Discovery' (ST Discovery kit for STM32F407/417 lines).
 Device: 'STM32F407VG' (Cortex-M4 r0p0, MPU), Flash: 1024 kB, RAM: 128 kB.
 Command line: 'blinky' (6 bytes).
@@ -251,33 +318,36 @@ Execute 'mon system_reset'.
 Cortex-M4 r0p0 core reset.
 ...
 </code></pre>
+</div>
 
 <h3 id="d">
-<code>d</code>
+<code class="highlighter-rouge">d</code>
 </h3>
 
 <p>By default QEMU is not only quite, but also secretive, even when it detects problems during emulation, it does not report them.</p>
 
-<p>To make QEMU inform the user about these problems, the <code>-d</code> options can be used to enable some debug options.</p>
+<p>To make QEMU inform the user about these problems, the <code class="highlighter-rouge">-d</code> options can be used to enable some debug options.</p>
 
 <p>There are many such options available, but the ones the plug-in uses are:</p>
 
-<pre>
-<code>-d unimp,guest_errors
+<div class="highlighter-rouge">
+<pre class="highlight"><code>-d unimp,guest_errors
 </code></pre>
+</div>
 
 <h3 id="semihosting-config">
-<code>semihosting-config</code>
+<code class="highlighter-rouge">semihosting-config</code>
 </h3>
 
 <p>QEMU fully implements the ARM semihosting protocol. To enable it, use the following complicated option:</p>
 
-<pre>
-<code>--semihosting-config enable=on,target=native
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--semihosting-config enable=on,target=native
 </code></pre>
+</div>
 
 <h3 id="semihosting-cmdline">
-<code>semihosting-cmdline</code>
+<code class="highlighter-rouge">semihosting-cmdline</code>
 </h3>
 
 <p>To fully use semihosting, it should also be possible to pass command line options to the emulated application.</p>
@@ -286,21 +356,26 @@ Cortex-M4 r0p0 core reset.
 
 <p>This option <strong>must be the last one</strong>, and all following options will be passed to the application:</p>
 
-<pre>
-<code>--semihosting-cmdline test 1 2 3
+<div class="highlighter-rouge">
+<pre class="highlight"><code>--semihosting-cmdline test 1 2 3
 </code></pre>
+</div>
 
 <p>The first option will be passed as argv[0], so it generally should reflect the application name. The following options will be passed as argv[1] … argv[n-1], without special processing.</p>
 
 <h3 id="exit-code">exit() code</h3>
 
-<p>When started in semihosting mode, if the application’s <code>main()</code> routine returns 0, QEMU will also return 0 to its parent process. This is particularly useful when running unit tests, since 0 means the test was successful. Unfortunately the semihosting specs do not allow to pass the full exit code, so for all other returned values, QEMU will return 1, which can be used as an indication of a failed test.</p>
+<p>When started in semihosting mode, if the application’s <code class="highlighter-rouge">main()</code> routine returns 0 and the application is a fully semihosted one, QEMU will also return 0 to its parent process. This is particularly useful when running unit tests, since 0 means the test was successful. Unfortunately the semihosting specs do not allow to pass the full exit code, so for all other returned values, QEMU will return 1, which can be used as an indication of a failed test.</p>
 
 <p>This is not really a big limitation, since unit tests can be configured to write an XML file with the detailed test results, so the binary exit code is enough to represent the pass/fail, and Continuous Integration systems will generally process the XML file for details.</p>
 
+<h2 id="fully-semihosted-applications">Fully semihosted applications</h2>
 
-<hr class="page-footer"/>
-<p class="page-footer">Last modified on Tue Nov 10 19:39:48 2015 UTC.</p>
+<p>When using QEMU for running unit tests, and expecting the exit code to reflect the test result, it is mandatory for the application to be compiled and linked as a <strong>fully semihosted application</strong>, in other words all system calls to be implemented using the semihosting interface. For the projects created by the GNU ARM Eclipse wizards, this is achieved by defining <code class="highlighter-rouge">OS_USE_SEMIHOSTING</code>; outside GNU ARM Eclipse it depends on the libraries used, for example newlib can be configured for semihosting by adding <code class="highlighter-rouge">--specs=rdimon.specs</code> to the linker options.</p>
+
+
+<hr class="page-footer">
+<p class="page-footer">Last modified on Thu Jun 30 15:18:35 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/options/" data-layout="button"></div>
 
 
@@ -319,7 +394,7 @@ Cortex-M4 r0p0 core reset.
 </ul>
 
 
-<hr />
+<hr>
 
 <h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
@@ -329,10 +404,14 @@ Cortex-M4 r0p0 core reset.
 
 <ul>
   <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li>
+<a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li>
+<a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li>
+<a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li>
+<a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
 <h4 id="installinstall"><a href="/install/">Install</a></h4>
@@ -342,7 +421,8 @@ Cortex-M4 r0p0 core reset.
   <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
+  <li>
+<a href="/debug/install/">Debugging components</a>
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
@@ -398,34 +478,40 @@ Cortex-M4 r0p0 core reset.
 <h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/qemu/">Overview</a> (read me first!)</li>
   <li><a href="/qemu/install/">QEMU Install</a></li>
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/options/">Command line options</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/openocd/">Overview</a> (read me first!)</li>
   <li><a href="/openocd/install/">OpenOCD Install</a></li>
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/windows-build-tools/">Overview</a> (read me first!)</li>
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -484,7 +570,7 @@ Cortex-M4 r0p0 core reset.
 
 <h4 id="aboutabout"><a href="/about/">About</a></h4>
 
-<hr />
+<hr>
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -506,7 +592,7 @@ Cortex-M4 r0p0 core reset.
     <ul>
   <li>© 2015 Liviu Ionescu</li>
   <li>Hosted on GitHub Pages</li>
-  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
   <li>
     <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
   </li>

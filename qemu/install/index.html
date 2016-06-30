@@ -153,11 +153,11 @@
 <p>For user convenience, the Windows versions of <strong>GNU ARM Eclipse QEMU</strong> are packed as Windows setup wizards. Go to the <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li><code>gnuarmeclipse-qemu-win32-2.2.92-201504041652-dev-setup.exe</code></li>
-  <li><code>gnuarmeclipse-qemu-win64-2.2.92-201504041652-dev-setup.exe</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-qemu-win32-2.2.92-201504041652-dev-setup.exe</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-qemu-win64-2.2.92-201504041652-dev-setup.exe</code></li>
 </ul>
 
-<p>Select the <code>-win64-</code> file for 64-bits machines and the <code>-win32-</code> file for 32-bits machines.</p>
+<p>Select the <code class="highlighter-rouge">-win64-</code> file for 64-bits machines and the <code class="highlighter-rouge">-win32-</code> file for 32-bits machines.</p>
 
 <p>Run the setup as usual.</p>
 
@@ -174,7 +174,7 @@
 <p>The default install location is:</p>
 
 <ul>
-  <li><code>C:\Program Files\GNU ARM Eclipse\QEMU\${version}</code></li>
+  <li><code class="highlighter-rouge">C:\Program Files\GNU ARM Eclipse\QEMU\${version}</code></li>
 </ul>
 
 <p>The result is a structure like:</p>
@@ -185,11 +185,11 @@
 
 <p>To check if QEMU starts, use the following command:</p>
 
-<pre>
-<code>C:\&gt;"\Program Files\GNU ARM Eclipse\QEMU\2.2.92-201504041652-dev\bin\qemu-system-gnuarmeclipse.exe" --version
+<div class="highlighter-rouge"><pre class="highlight"><code>C:\&gt;"\Program Files\GNU ARM Eclipse\QEMU\2.2.92-201504041652-dev\bin\qemu-system-gnuarmeclipse.exe" --version
 GNU ARM Eclipse 32-bits QEMU emulator version 2.2.92
 Copyright (c) 2003-2008 Fabrice Bellard
 </code></pre>
+</div>
 
 <h4 id="drivers">Drivers</h4>
 
@@ -200,7 +200,7 @@ Copyright (c) 2003-2008 Fabrice Bellard
 <p>For user convenience, the macOS version of GNU ARM Eclipse QEMU is packed as an macOS install package. Go to the <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li><code>gnuarmeclipse-qemu-osx-2.2.92-201504041609-dev.pkg</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-qemu-osx-2.2.92-201504041609-dev.pkg</code></li>
 </ul>
 
 <p>As the name implies, this is an macOS package, that can be installed on any recent 64-bits macOS (the latest version was tested on 10.11).</p>
@@ -214,7 +214,7 @@ Copyright (c) 2003-2008 Fabrice Bellard
 <p>The package is installed in:</p>
 
 <ul>
-  <li><code>/Applications/GNU ARM Eclipse/QEMU/${version}</code></li>
+  <li><code class="highlighter-rouge">/Applications/GNU ARM Eclipse/QEMU/${version}</code></li>
 </ul>
 
 <p>and the result is a folder structure similar to:</p>
@@ -225,42 +225,42 @@ Copyright (c) 2003-2008 Fabrice Bellard
 
 <p>To check if QEMU starts, use:</p>
 
-<pre>
-<code>$ /Applications/GNU\ ARM\ Eclipse/QEMU/2.2.92-201504041609-dev/bin/qemu-system-gnuarmeclipse --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ /Applications/GNU\ ARM\ Eclipse/QEMU/2.2.92-201504041609-dev/bin/qemu-system-gnuarmeclipse --version
 GNU ARM Eclipse 64-bits QEMU emulator version 2.2.92
 Copyright (c) 2003-2008 Fabrice Bellard
 </code></pre>
+</div>
 
 <h3 id="gnulinux">GNU/Linux</h3>
 
 <p>The GNU/Linux versions of GNU ARM Eclipse QEMU are packed as TGZ archives. Go to the <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li><code>gnuarmeclipse-qemu-debian64-2.2.92-201504041716-dev.tgz</code></li>
-  <li><code>gnuarmeclipse-qemu-debian32-2.2.92-201504041746-dev.tgz</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-qemu-debian64-2.2.92-201504041716-dev.tgz</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-qemu-debian32-2.2.92-201504041746-dev.tgz</code></li>
 </ul>
 
-<p>As the name implies, these are Debian <code>tar.gz</code> archives, but can be executed on most recent GNU/Linux distributions (they were built on Debian 8 and were tested on Debian, Ubuntu, Manjaro, SuSE and Fedora). Select the <code>-debian64-</code> file for 64-bits machines and the <code>-debian32-</code> file for 32-bits machines.</p>
+<p>As the name implies, these are Debian <code class="highlighter-rouge">tar.gz</code> archives, but can be executed on most recent GNU/Linux distributions (they were built on Debian 8 and were tested on Debian, Ubuntu, Manjaro, SuSE and Fedora). Select the <code class="highlighter-rouge">-debian64-</code> file for 64-bits machines and the <code class="highlighter-rouge">-debian32-</code> file for 32-bits machines.</p>
 
 <p>Note: if your distribution already provides ready to run QEMU binaries, they currently cannot be used with the GNU ARM Eclipse plug-ins, because they lack the Cortex-M support; you need to install the <strong>GNU ARM Eclipse QEMU</strong>.</p>
 
-<p>To install this package, unpack the distribution archive and copy it to <code>/opt/gnuarmeclipse/qemu/${version}</code></p>
+<p>To install this package, unpack the distribution archive and copy it to <code class="highlighter-rouge">/opt/gnuarmeclipse/qemu/${version}</code></p>
 
-<pre>
-<code>sudo mkdir -p /opt/gnuarmeclipse
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo mkdir -p /opt/gnuarmeclipse
 cd /opt/gnuarmeclipse
 sudo tar xvf ~/Downloads/gnuarmeclipse-qemu-debian64-2.4.50-201510290935-dev.tgz
 </code></pre>
+</div>
 
 <p>Note: although perfectly possible to install it in any location, it is recommended to use this location, since by default the plug-in searches for the executable in this location.</p>
 
 <p>To check if QEMU starts and is recent, use:</p>
 
-<pre>
-<code>$ /opt/gnuarmeclipse/qemu/2.2.92-201504041716-dev/bin/qemu-system-gnuarmeclipse --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ /opt/gnuarmeclipse/qemu/2.2.92-201504041716-dev/bin/qemu-system-gnuarmeclipse --version
 GNU ARM Eclipse 64-bits QEMU emulator version 2.2.92
 Copyright (c) 2003-2008 Fabrice Bellard
 </code></pre>
+</div>
 
 <h4 id="udev--drivers">UDEV &amp; Drivers</h4>
 

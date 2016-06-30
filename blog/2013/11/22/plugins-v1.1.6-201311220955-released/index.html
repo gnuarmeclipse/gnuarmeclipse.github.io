@@ -119,19 +119,19 @@ Posted on November 22, 2013 by Liviu Ionescu.
 
 <ul>
   <li>separate template configurations for standalone, retargetting or semihosting</li>
-  <li>a local <code>_sbrk()</code> was added, to match the definitions in the linker scripts; compared to the one included in newlib, this one:
+  <li>a local <code class="highlighter-rouge">_sbrk()</code> was added, to match the definitions in the linker scripts; compared to the one included in newlib, this one:
     <ul>
       <li>enforces align(4) to avoid alignment problems</li>
-      <li>checks <code>_Heap_Limit</code> instead of <code>SP</code> (RTOS can allocate it below)</li>
+      <li>checks <code class="highlighter-rouge">_Heap_Limit</code> instead of <code class="highlighter-rouge">SP</code> (RTOS can allocate it below)</li>
     </ul>
   </li>
-  <li>the libgloss/syscalls.c was included locally, to make the semihosting implementation details explicit and to allow the separate <code>_sbrk()</code>.</li>
+  <li>the libgloss/syscalls.c was included locally, to make the semihosting implementation details explicit and to allow the separate <code class="highlighter-rouge">_sbrk()</code>.</li>
 </ul>
 
 <p>Bugs fixed:</p>
 
 <ul>
-  <li>[bugs:#66, support-requests:#30] the sections.ld <code>_end</code> definition is now based on <code>_end_noinit</code> to make the templates compile in Release</li>
+  <li>[bugs:#66, support-requests:#30] the sections.ld <code class="highlighter-rouge">_end</code> definition is now based on <code class="highlighter-rouge">_end_noinit</code> to make the templates compile in Release</li>
   <li>[bugs:#63] updating the toolchain settings for multiple configurations at once is now possible</li>
   <li>[bugs:#65] when using cortex-m4 and float hard or softfp, automatically select fpv4spd16, otherwise the build failed</li>
   <li>[support-requests:#30] the pointers used in the init_array sections are void* to avoid warnings.</li>
@@ -142,8 +142,8 @@ Posted on November 22, 2013 by Liviu Ionescu.
 <ul>
   <li>the librdimon linker options were added to the Hello World templates, to make it compile directly</li>
   <li>when using startup files, the DEBUG version of ResetHandler is no longer naked, to allow breakpoints</li>
-  <li>since the <code>__register_exitproc()</code> provided by newlib seems buggy, add an empty <code>__register_exitproc()</code> in startup_cm.c to avoid startup crash when using startup files</li>
-  <li>the error processing in <code>_write_trace_semihosting_stdout()</code> is more elaborate.</li>
+  <li>since the <code class="highlighter-rouge">__register_exitproc()</code> provided by newlib seems buggy, add an empty <code class="highlighter-rouge">__register_exitproc()</code> in startup_cm.c to avoid startup crash when using startup files</li>
+  <li>the error processing in <code class="highlighter-rouge">_write_trace_semihosting_stdout()</code> is more elaborate.</li>
 </ul>
 
 

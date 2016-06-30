@@ -130,16 +130,15 @@
 
 <p>The J-Link settings are persistent in the workspace scope, and the storage file is located at:</p>
 
-<pre>
-<code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.jlink.prefs
+<div class="highlighter-rouge"><pre class="highlight"><code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnuarmeclipse.debug.gdbjtag.jlink.prefs
 </code></pre>
+</div>
 
 <h2 id="the-properties">The Properties</h2>
 
 <p>The J-Link preferences define the device name and all other J-Link related setting from the plug-in settings page.</p>
 
-<pre>
-<code>flashDeviceName=STM32F407VG
+<div class="highlighter-rouge"><pre class="highlight"><code>flashDeviceName=STM32F407VG
 gdb.client.commands=set mem inaccessible-by-default off
 gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 gdb.client.other=
@@ -169,6 +168,7 @@ gdb.server.interface=swd
 gdb.server.other=-singlerun -strict -timeout 0
 gdb.server.speed=1000
 </code></pre>
+</div>
 
 <h2 id="launcher-defaults">Launcher defaults</h2>
 
@@ -176,8 +176,7 @@ gdb.server.speed=1000
 
 <p>For example the following defaults (plus many more) are available to configure the J-Link debug launcher:</p>
 
-<pre>
-<code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.executable=${jlink_path}/${jlink_gdbserver}
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.executable=${jlink_path}/${jlink_gdbserver}
 ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 
 ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.interface=swd (or jtag)
@@ -185,12 +184,13 @@ ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.server.interface=swd (or jtag)
 ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.jlink.enableSemihosting=true
 ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
 </code></pre>
+</div>
 
 <p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
 
-<pre>
-<code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/tab.main.checkProgram=false
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/tab.main.checkProgram=false
 </code></pre>
+</div>
 
 <p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
 
@@ -202,17 +202,17 @@ ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
 
 <p>The plug-in will use this definition as default for <strong>${jlink_gdbserver}</strong>.</p>
 
-<pre>
-<code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/executable.name=JLinkGDBServer
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/executable.name=JLinkGDBServer
 </code></pre>
+</div>
 
 <h3 id="the-executable-location">The executable location</h3>
 
 <p>The plug-in will take a best effort approach to find a location to be used as default for <strong>{jlink_path}</strong>.</p>
 
-<pre>
-<code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/install.folder=/Applications/SEGGER/Jlink
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnuarmeclipse.debug.gdbjtag.jlink/install.folder=/Applications/SEGGER/Jlink
 </code></pre>
+</div>
 
 <p>If this preference is defined and the executable is there, the plug-in will use it.</p>
 
@@ -220,11 +220,11 @@ ilg.gnuarmeclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
 
 <p>Otherwise the plug-in will try a folder search.</p>
 
-<pre>
-<code>search.path=\
+<div class="highlighter-rouge"><pre class="highlight"><code>search.path=\
 ${user.home}/Applications/SEGGER:\
 /Applications/SEGGER
 </code></pre>
+</div>
 
 <p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
 

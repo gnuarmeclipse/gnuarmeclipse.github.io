@@ -221,10 +221,10 @@
   <p>I get the following when trying to install Cross Compiler</p>
 </blockquote>
 
-<pre>
-<code>Cannot complete the install because one or more required items could not be found.
+<div class="highlighter-rouge"><pre class="highlight"><code>Cannot complete the install because one or more required items could not be found.
 Software being installed: GNU ARM C/C++ Cross Compiler 1.15.2.201511061603 (ilg.gnuarmeclipse.managedbuild.cross.feature.group 1.15.2.201511061603)
 </code></pre>
+</div>
 
 <p>Your Eclipse does not include CDT. You need to install <strong>Eclipse IDE for C/C++ Developers</strong> or to manually add CDT to an existing Eclipse.</p>
 
@@ -234,24 +234,24 @@ Software being installed: GNU ARM C/C++ Cross Compiler 1.15.2.201511061603 (ilg.
 
 <p>Instead, go to the <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and get the proper <strong>Eclipse IDE for C/C++ Developers</strong>, preferably the 64-bits version.</p>
 
-<h2 id="openocd-fails-to-start-with--c-echo-started-by-gnu-arm-eclipse">OpenOCD fails to start with <code>-c echo "Started by GNU ARM Eclipse"</code></h2>
+<h2 id="openocd-fails-to-start-with--c-echo-started-by-gnu-arm-eclipse">OpenOCD fails to start with <code class="highlighter-rouge">-c echo "Started by GNU ARM Eclipse"</code></h2>
 
 <blockquote>
-  <p>I’m trying to start OpenOCD in a terminal and it fails to execute the <code>echo</code> command…</p>
+  <p>I’m trying to start OpenOCD in a terminal and it fails to execute the <code class="highlighter-rouge">echo</code> command…</p>
 </blockquote>
 
-<p>The syntax required by the OpenOCD <code>echo</code> command is a single string, in other words both echo and the message must be in the same string. To achieve this in a shell, the string must be quoted:</p>
+<p>The syntax required by the OpenOCD <code class="highlighter-rouge">echo</code> command is a single string, in other words both echo and the message must be in the same string. To achieve this in a shell, the string must be quoted:</p>
 
-<pre>
-<code>-c 'echo "Started by GNU ARM Eclipse"'
+<div class="highlighter-rouge"><pre class="highlight"><code>-c 'echo "Started by GNU ARM Eclipse"'
 </code></pre>
+</div>
 
 <p>Please note that this command is used by the plug-in to detect when the GDB server is initialised and ready to receive commands; it is not necessary when starting OpenCOD manually.</p>
 
 <h2 id="how-to-compile-files-excluded-from-build">How to compile files excluded from build?</h2>
 
 <blockquote>
-  <p>Why the default state for <code>system/src/.../xxx.c</code> is not enabled?</p>
+  <p>Why the default state for <code class="highlighter-rouge">system/src/.../xxx.c</code> is not enabled?</p>
 </blockquote>
 
 <p>Because during project creation the wizard was configured with <strong>Exclude unused</strong>.</p>
@@ -422,16 +422,15 @@ Software being installed: GNU ARM C/C++ Cross Compiler 1.15.2.201511061603 (ilg.
 
 <p>If the compiler complains something like this, then it might be possible that projects created with versions pre-1.1.3 need an update. First check the list of include folders, for each compiler tool, if the list is there, you’re done; otherwise, adding the folders again usually fixes the problem.</p>
 
-<p>If you have lots of folders and re-entereing them is tedious, you can try to manually edit the <code>.cproject</code> file. For this, first close Eclipse, and edit <code>.cproject</code> with a separate editor. Search for the lines with “.include.files”; if below them you see the list of folders, you don’t have to re-enter them again; check if the <code>&lt;option&gt;</code> element has an <code>name=</code> attribute; if not, add it before the superClass attribute, with the following content:</p>
+<p>If you have lots of folders and re-entereing them is tedious, you can try to manually edit the <code class="highlighter-rouge">.cproject</code> file. For this, first close Eclipse, and edit <code class="highlighter-rouge">.cproject</code> with a separate editor. Search for the lines with “.include.files”; if below them you see the list of folders, you don’t have to re-enter them again; check if the <code class="highlighter-rouge">&lt;option&gt;</code> element has an <code class="highlighter-rouge">name=</code> attribute; if not, add it before the superClass attribute, with the following content:</p>
 
 <p>
-<code>&lt;option id="...include.paths.NNN" name="Include paths (-I)" superClass="..."&gt;</code>
+<code class="highlighter-rouge">&lt;option id="...include.paths.NNN" name="Include paths (-I)" superClass="..."&gt;</code>
 </p>
 
 <h2 id="i-tried-to-use-float-abi-hard-on-cortex-m4-but-the-linker-fails">I tried to use Float ABI: hard on Cortex-M4, but the linker fails</h2>
 
-<pre>
-<code>Building target: test1.elf
+<div class="highlighter-rouge"><pre class="highlight"><code>Building target: test1.elf
 Invoking: Cross ARM C++ Linker
 /usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/bin/ld: error: test1.elf uses VFP register arguments
 /usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o) does not
@@ -439,6 +438,7 @@ Invoking: Cross ARM C++ Linker
 /usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
 ...
 </code></pre>
+</div>
 
 <p>Although on Cortex-M4 the only available FPU hardware is fpv4-sp-d16, the compiler does not have a default defined for this, and it is necessary to explicitly select <strong>FPU Type: fpv4-sp-d16</strong> in the C/C++ Settings page.</p>
 

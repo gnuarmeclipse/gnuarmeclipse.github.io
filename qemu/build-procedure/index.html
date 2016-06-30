@@ -178,7 +178,7 @@
 
 <h4 id="install-docker">Install Docker</h4>
 
-<p>On macOS, install <code>boot2docker</code>, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
+<p>On macOS, install <code class="highlighter-rouge">boot2docker</code>, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
 
 <h4 id="install-the-command-line-tools">Install the Command Line Tools</h4>
 
@@ -186,13 +186,13 @@
 
 <p>To test if the compiler is available, use:</p>
 
-<pre>
-<code>$ gcc --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gcc --version
 Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
 Apple LLVM version 6.1.0 (clang-602.0.49) (based on LLVM 3.6.0svn)
 Target: x86_64-apple-darwin14.3.0
 Thread model: posix
 </code></pre>
+</div>
 
 <h4 id="install-macports">Install MacPorts</h4>
 
@@ -202,10 +202,10 @@ Thread model: posix
 
 <p>Install the following packages:</p>
 
-<pre>
-<code>$ sudo port install libtool automake autoconf pkgconfig
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo port install libtool automake autoconf pkgconfig
 $ sudo port install texinfo texlive
 </code></pre>
+</div>
 
 <h3 id="gnulinux">GNU/Linux</h3>
 
@@ -215,19 +215,19 @@ $ sudo port install texinfo texlive
 
 <h4 id="configure-docker-to-run-as-regular-user">Configure Docker to run as regular user</h4>
 
-<p>To allow docker to run as a regular user, you need to be a member of the <code>docker</code> group.</p>
+<p>To allow docker to run as a regular user, you need to be a member of the <code class="highlighter-rouge">docker</code> group.</p>
 
-<pre>
-<code>$ sudo groupadd docker
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo groupadd docker
 $ sudo gpasswd -a ${USER} docker
 $ sudo service docker restart
 </code></pre>
+</div>
 
 <p>To make these changes effective, logout and login.</p>
 
 <h4 id="install-required-packages">Install required packages</h4>
 
-<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<code>curl</code>, <code>git</code>, <code>automake</code>, <code>patch</code>, <code>tar</code>, <code>unzip</code>).</p>
+<p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<code class="highlighter-rouge">curl</code>, <code class="highlighter-rouge">git</code>, <code class="highlighter-rouge">automake</code>, <code class="highlighter-rouge">patch</code>, <code class="highlighter-rouge">tar</code>, <code class="highlighter-rouge">unzip</code>).</p>
 
 <p>The script checks for them; if the script fails, install them and re-run.</p>
 
@@ -241,21 +241,21 @@ $ sudo service docker restart
 
 <p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
 
-<pre>
-<code>$ curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh \
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh \
 -o ~/Downloads/build-qemu.sh
 </code></pre>
+</div>
 
-<p>Alternatively, in a development environment, the entire <code>build-scripts.git</code> can be cloned, and a link to <code>Downloads</code> created:</p>
+<p>Alternatively, in a development environment, the entire <code class="highlighter-rouge">build-scripts.git</code> can be cloned, and a link to <code class="highlighter-rouge">Downloads</code> created:</p>
 
-<pre>
-<code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-qemu.sh \
+<div class="highlighter-rouge"><pre class="highlight"><code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-qemu.sh \
 ~/Downloads/build-qemu.sh
 </code></pre>
+</div>
 
 <h2 id="check-the-script">Check the script</h2>
 
-<p>The script creates a temporary build <code>Work/qemu</code> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine WORK_FOLDER variable before invoking the script.</p>
+<p>The script creates a temporary build <code class="highlighter-rouge">Work/qemu</code> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine WORK_FOLDER variable before invoking the script.</p>
 
 <h2 id="preload-the-docker-images">Preload the Docker images</h2>
 
@@ -263,39 +263,38 @@ $ sudo service docker restart
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
 
-<pre>
-<code>$ bash ~/Downloads/build-qemu.sh preload-images
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-qemu.sh preload-images
 </code></pre>
+</div>
 
 <p>Please be patient, this will bring about 5 GB, which on a regular broadband line might take more than 30 minutes.</p>
 
 <p>The result should look similar to:</p>
 
-<pre>
-<code>$ docker images
+<div class="highlighter-rouge"><pre class="highlight"><code>$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ilegeul/debian      8-gnuarm-mingw      1a8e62c2dd40        23 hours ago        2.486 GB
 ilegeul/debian32    8-gnuarm-gcc-x11    a006ca3d3fe6        2 days ago          1.423 GB
 ilegeul/debian      8-gnuarm-gcc-x11    575a7f52cfcf        2 days ago          1.569 GB
 hello-world         latest              e45a5af57b00        6 months ago        910 B
 </code></pre>
+</div>
 
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
-<pre>
-<code>$ bash ~/Downloads/build-qemu.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-qemu.sh --all
 </code></pre>
+</div>
 
 <p>On macOS, to prevent sleep, use:</p>
 
-<pre>
-<code>$ caffeinate bash ~/Downloads/build-qemu.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ caffeinate bash ~/Downloads/build-qemu.sh --all
 </code></pre>
+</div>
 
 <p>About half an hour later, the output of the build script is a set of 5 files in the output folder:</p>
 
-<pre>
-<code>$ ls -l output
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls -l output
 total 105616
 total 51336
 drwxr-xr-x  6 ilg  staff      204 May 12 22:07 debian32
@@ -309,24 +308,25 @@ drwxr-xr-x  4 ilg  staff      136 May 12 22:35 osx
 drwxr-xr-x  6 ilg  staff      204 May 12 21:26 win32
 drwxr-xr-x  6 ilg  staff      204 May 12 21:04 win64
 </code></pre>
+</div>
 
 <h2 id="subsequent-runs">Subsequent runs</h2>
 
 <h3 id="separate-platform-specific-builds">Separate platform specific builds</h3>
 
-<p>Instead of <code>--all</code>, you can use any combination of:</p>
+<p>Instead of <code class="highlighter-rouge">--all</code>, you can use any combination of:</p>
 
-<pre>
-<code>--win32 --win64 --debian32 --debian64 --osx
+<div class="highlighter-rouge"><pre class="highlight"><code>--win32 --win64 --debian32 --debian64 --osx
 </code></pre>
+</div>
 
 <h3 id="clean">clean</h3>
 
 <p>To remove all build files, use:</p>
 
-<pre>
-<code>$ bash ~/Downloads/build-qemu.sh clean
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-qemu.sh clean
 </code></pre>
+</div>
 
 <h2 id="the-work-folder">The Work folder</h2>
 
@@ -334,8 +334,7 @@ drwxr-xr-x  6 ilg  staff      204 May 12 21:04 win64
 
 <p>A typical Work folder includes sub-folders for each project:</p>
 
-<pre>
-<code>$ tree -L 1 qemu
+<div class="highlighter-rouge"><pre class="highlight"><code>$ tree -L 1 qemu
 qemu
 ├── README.txt
 ├── build
@@ -346,11 +345,11 @@ qemu
 ├── scripts
 └── xcode
 </code></pre>
+</div>
 
 <p>The build and include subfolders look like:</p>
 
-<pre>
-<code>$ tree -L 2 qemu/build/ qemu/install
+<div class="highlighter-rouge"><pre class="highlight"><code>$ tree -L 2 qemu/build/ qemu/install
 qemu/build/
 ├── debian32
 │   └── qemu
@@ -378,6 +377,7 @@ qemu/install
 
 22 directories, 0 files
 </code></pre>
+</div>
 
 <h2 id="install-procedure">Install procedure</h2>
 
@@ -387,8 +387,7 @@ qemu/install
 
 <p>After install, the package should create a structure like this (only the first two depth levels are shown):</p>
 
-<pre>
-<code>$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/QEMU/2.3.50-201505141607-dev
+<div class="highlighter-rouge"><pre class="highlight"><code>$ tree -L 2 /Applications/GNU\ ARM\ Eclipse/QEMU/2.3.50-201505141607-dev
 /Applications/GNU\ ARM\ Eclipse/QEMU/2.3.50-201505141607-dev
 ├── INFO.txt
 ├── bin
@@ -426,12 +425,13 @@ qemu/install
 
 11 directories, 22 files
 </code></pre>
+</div>
 
 <p>No other files are installed in any system folders or other locations.</p>
 
 <h2 id="uninstall">Uninstall</h2>
 
-<p>To uninstall QEMU from a Windows machine, use the <code>qemu-uninstall.exe</code> program.</p>
+<p>To uninstall QEMU from a Windows machine, use the <code class="highlighter-rouge">qemu-uninstall.exe</code> program.</p>
 
 <p>On macOS and GNU/Linux, the GNU ARM Eclipse QEMU install folder is self-contained and removing it is enough for completely removing the application.</p>
 
@@ -441,21 +441,21 @@ qemu/install
 
 <p>For a true test you need to first install the package and then run the program form the final location. For example on macOS the output should look like:</p>
 
-<pre>
-<code>$ /Applications/GNU\ ARM\ Eclipse/QEMU/2.2.91-201504021111-dev/bin/qemu-system-gnuarmeclipse --version
+<div class="highlighter-rouge"><pre class="highlight"><code>$ /Applications/GNU\ ARM\ Eclipse/QEMU/2.2.91-201504021111-dev/bin/qemu-system-gnuarmeclipse --version
 GNU ARM Eclipse QEMU 64-bits emulator version 2.2.91
 Copyright (c) 2003-2008 Fabrice Bellard
 </code></pre>
+</div>
 
 <h2 id="stop-boot2docker">Stop boot2docker</h2>
 
-<p>On macOS, the build script automatically starts <code>boot2docker</code>, if needed.</p>
+<p>On macOS, the build script automatically starts <code class="highlighter-rouge">boot2docker</code>, if needed.</p>
 
 <p>When done, be sure you stop it, to free significant resources (a VirtualBox Ubuntu machine).</p>
 
-<pre>
-<code>$ boot2docker stop
+<div class="highlighter-rouge"><pre class="highlight"><code>$ boot2docker stop
 </code></pre>
+</div>
 
 <h2 id="more-build-details">More build details</h2>
 

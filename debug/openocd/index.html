@@ -222,11 +222,11 @@
   <li>click the <strong>Restore Defaults</strong> button</li>
   <li>the plug-in will suggest the default values computed when Eclipse started; if a new version of OpenOCD was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
   <li>check the <strong>Executable</strong> field; it must define the name of the command line OpenOCD executable; in most cases it should be set correctly; if not, edit it to match the correct name;</li>
-  <li>check the <strong>Folder</strong> field; it must point to the actual folder where the OpenOCD tools were installed on your platform, for example <code>C:\Program Files\GNU ARM Eclipse\OpenOCD\bin</code> on Windows, <code>/Applications/GNU ARM Eclipse/OpenOCD/bin/</code> on macOS, or <code>/opt/gnuarmeclipse/openocd/bin/</code> on GNU/Linux</li>
+  <li>check the <strong>Folder</strong> field; it must point to the actual folder where the OpenOCD tools were installed on your platform, for example <code class="highlighter-rouge">C:\Program Files\GNU ARM Eclipse\OpenOCD\bin</code> on Windows, <code class="highlighter-rouge">/Applications/GNU ARM Eclipse/OpenOCD/bin/</code> on macOS, or <code class="highlighter-rouge">/opt/gnuarmeclipse/openocd/bin/</code> on GNU/Linux</li>
   <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<p>By default, the GDB server is defined as <code>${openocd_path}/${openocd_executable}</code>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to define the path to the OpenOCD relative to this variable in all your debug configurations, to have a single place to update the path when you want to use another version of the OpenOCD tools installed in a different location.</p>
+<p>By default, the GDB server is defined as <code class="highlighter-rouge">${openocd_path}/${openocd_executable}</code>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to define the path to the OpenOCD relative to this variable in all your debug configurations, to have a single place to update the path when you want to use another version of the OpenOCD tools installed in a different location.</p>
 
 <h3 id="create-the-debugger-configuration">Create the debugger configuration</h3>
 
@@ -244,7 +244,7 @@
   </li>
   <li>a multi-tab page will be displayed</li>
   <li>
-    <p>if you started this procedure with the executable file selected, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example <code>Debug/blink1.elf</code>).</p>
+    <p>if you started this procedure with the executable file selected, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example <code class="highlighter-rouge">Debug/blink1.elf</code>).</p>
 
     <p><img src="/assets/images/2013/12/OpenOCDMainTab.png" alt="The OpenOCD Main tab" /></p>
   </li>
@@ -253,7 +253,7 @@
 
     <p><img src="/assets/images/2013/12/OpenOCDDebuggerTab.png" alt="OpenOCD Debugger tab" /></p>
   </li>
-  <li>the only field that usually requires attention is the OpenOCD Setup <strong>Other options:</strong>, where you should add one or more configuration scripts; for example, for the STM32F4DISCOVERY board, the field should read <code>-f board/stm32f4discovery.cfg</code></li>
+  <li>the only field that usually requires attention is the OpenOCD Setup <strong>Other options:</strong>, where you should add one or more configuration scripts; for example, for the STM32F4DISCOVERY board, the field should read <code class="highlighter-rouge">-f board/stm32f4discovery.cfg</code></li>
 </ul>
 
 <blockquote>
@@ -270,7 +270,7 @@
   <li>
     <p>the order of sections/fields reflect the order commands are sent to GDB; for example the above generates:</p>
 
-    <pre><code>monitor reset init
+    <div class="highlighter-rouge"><pre class="highlight"><code>monitor reset init
 monitor halt
 ...
 monitor arm semihosting enable
@@ -282,6 +282,7 @@ monitor halt
 ...
 continue
 </code></pre>
+    </div>
   </li>
   <li>
     <p>select the <strong>Common</strong> tab, set the <em>Save as:</em> field to <strong>Shared file</strong> and accept the current project name</p>
@@ -334,11 +335,11 @@ continue
 <img src="/assets/images/2013/12/OpenOCDConsoles.png" alt="The new debug session, with two consoles" />
 </p>
 
-<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code>main()</code> function, which in this case is a tracing <code>printf()</code>.</p>
+<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code class="highlighter-rouge">main()</code> function, which in this case is a tracing <code class="highlighter-rouge">printf()</code>.</p>
 
 <h2 id="debug-operations">Debug operations</h2>
 
-<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code>main()</code> function), you can perform any debug operation you need.</p>
+<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code class="highlighter-rouge">main()</code> function), you can perform any debug operation you need.</p>
 
 <p>The most common operations are:</p>
 
@@ -421,13 +422,13 @@ continue
 
 <p>If you still fail to configure the plug-in to start OpenOCD automatically, proceed as when using a remote GDB server, i.e. go to the Debugger tab and disable the <strong>Start OpenOCD locally</strong>, then start it manually in a separate terminal. Tweak the command line options until you get the right behaviour, and then retry the same options with the plug-in.</p>
 
-<h3 id="quote-the-entire-echo-command">Quote the entire <code>echo</code> command</h3>
+<h3 id="quote-the-entire-echo-command">Quote the entire <code class="highlighter-rouge">echo</code> command</h3>
 
-<p>The syntax required by the OpenOCD <code>echo</code> command is a single string, in other words both echo and the message must be in the same string. To achieve this in a shell, the string must be quoted:</p>
+<p>The syntax required by the OpenOCD <code class="highlighter-rouge">echo</code> command is a single string, in other words both echo and the message must be in the same string. To achieve this in a shell, the string must be quoted:</p>
 
-<pre>
-<code>-c 'echo "Started by GNU ARM Eclipse"'
+<div class="highlighter-rouge"><pre class="highlight"><code>-c 'echo "Started by GNU ARM Eclipse"'
 </code></pre>
+</div>
 
 <p>Note: this command is used by the plug-in to detect when the GDB server is initialised and ready to receive commands. It is not necessary when starting OpenCOD manually.</p>
 
@@ -445,15 +446,15 @@ continue
 
 <h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
 
-<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code>--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code>system.gdbinit</code>, <code>~/.gdbinit</code>, <code>./.gdbinit</code>) are loaded.</p>
+<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code class="highlighter-rouge">--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code class="highlighter-rouge">system.gdbinit</code>, <code class="highlighter-rouge">~/.gdbinit</code>, <code class="highlighter-rouge">./.gdbinit</code>) are loaded.</p>
 
 <p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section.</p>
 
-<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code>mon</code> will be further passed from the GDB client to the GDB server, in this case the OpenOCD server.</p>
+<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code class="highlighter-rouge">mon</code> will be further passed from the GDB client to the GDB server, in this case the OpenOCD server.</p>
 
 <h2 id="semihosting-writes-are-very-slow">Semihosting writes are very slow</h2>
 
-<p>Yes, unfortunately this is an OpenOCD limitation. Avoid writing to <code>stderr</code>, which is excruciatingly slow.</p>
+<p>Yes, unfortunately this is an OpenOCD limitation. Avoid writing to <code class="highlighter-rouge">stderr</code>, which is excruciatingly slow.</p>
 
 <h2 id="more-details">More details</h2>
 
