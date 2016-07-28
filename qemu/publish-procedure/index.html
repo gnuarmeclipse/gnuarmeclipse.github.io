@@ -149,26 +149,28 @@
 
 <h2 id="update-the-change-log">Update the Change log</h2>
 
-<p>Scan the Git log and add new entries to the <a href="/qemu/change-log/">Change log</a> (pages/qemu/change-log.md), grouped by days.</p>
+<p>Scan the Git log and add new entries to the <a href="/qemu/change-log/">Change log</a> (<code class="highlighter-rouge">pages/qemu/change-log.md</code>), grouped by days.</p>
 
-<p>Close issues on the way. Refer to them as <strong>[Issue:[#22](…)]</strong>.</p>
+<p>Close issues on the way. Refer to them as:</p>
+
+<ul>
+  <li><strong>[Issue:[#22](…)]</strong>.</li>
+</ul>
 
 <h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
 
-<p>Add a new file to <code class="highlighter-rouge">_posts/plugins/releases</code>.</p>
-
-<p>Name the post like: <em>GNU ARM Eclipse QEMU v2.6.0-20160728</em>-dev released*.</p>
-
-<p>(do not close the post yet)</p>
+<ul>
+  <li>add a new file to <code class="highlighter-rouge">_posts/plugins/releases</code>.</li>
+  <li>name the post like: <strong>GNU ARM Eclipse QEMU v2.6.0-20160728*-dev released</strong>. (do not close the post yet, to get the MD5 sums)</li>
+</ul>
 
 <h2 id="update-the-changestxt-file">Update the CHANGES.txt file</h2>
 
-<p>Edit the <code class="highlighter-rouge">gnuarmeclipse/info/CHANGES.txt</code> file.
-Copy the entries from the web change log.</p>
+<p>Edit the <code class="highlighter-rouge">gnuarmeclipse/info/CHANGES.txt</code> file (copy the entries from the web change log).</p>
 
 <h2 id="commit-to-the-project-git">Commit to the project git</h2>
 
-<p>In the <code class="highlighter-rouge">gnuarmeclipse/qemu</code> git, commit all changes.</p>
+<p>In the <strong>gnuarmeclipse/qemu</strong> project, commit all changes.</p>
 
 <h2 id="merge-stable-release">Merge stable release</h2>
 
@@ -181,7 +183,7 @@ Copy the entries from the web change log.</p>
 
 <h2 id="check-build-scripts">Check build scripts</h2>
 
-<p>Be sure the scripts in the <code class="highlighter-rouge">build-scripts.git</code> are up to date.</p>
+<p>Be sure the scripts in the <strong>build-scripts.git</strong> are up to date.</p>
 
 <h2 id="build">Build</h2>
 
@@ -215,6 +217,13 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
 
 <h2 id="update-the-web">Update the web</h2>
 
+<ul>
+  <li>commit the <strong>gnuarmeclipse.github.io-source.git</strong> project; use a message like <strong>QEMU v2.6.0-20160728* released</strong></li>
+  <li>run <code class="highlighter-rouge">jekyll-build.command</code></li>
+  <li>commit the <strong>gnuarmeclipse.github.io.git</strong> project; use a message like <strong>QEMU v2.6.0-20160728* released</strong></li>
+  <li>push the <strong>gnuarmeclipse.github.io.git</strong> project</li>
+</ul>
+
 <h2 id="push-the-project-git">Push the project git</h2>
 
 <p>With SourceTree, push to the GitHub remote, the <strong>gnuarmeclipse</strong> and the <strong>gnuarmeclipse-dev</strong> branches.</p>
@@ -227,9 +236,9 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
   <li>click <strong>Draft a new release</strong></li>
   <li>name the tag like <strong>gae-2.6.0-20160728</strong></li>
   <li>select the <strong>gnuarmeclipse</strong> branch</li>
-  <li>name the release like <strong>GNU ARM Eclipse QEMU v2.6.0-20160728</strong> (development versions will be prefixed by <code class="highlighter-rouge">-dev</code>)</li>
+  <li>name the release like <strong>GNU ARM Eclipse QEMU v2.6.0-20160728</strong> (development versions will be prefixed by <strong>-dev</strong>)</li>
   <li>as description, copy the first paragraph from the Web release page</li>
-  <li>add a link to the Web page <code class="highlighter-rouge">[Continue reading »]()</code></li>
+  <li>add a link to the Web page <strong>[Continue reading »]()</strong></li>
   <li>get URL from web and update the above link</li>
   <li>attach binaries (drag and drop from the archives folder will do it)</li>
   <li>click the <strong>Publish Release</strong> button</li>
@@ -240,8 +249,8 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
 <h2 id="copy-binaries-to-the-local-archive-folder">Copy binaries to the local archive folder</h2>
 
 <ul>
-  <li>go to <strong>…/GNU ARM Eclipse/archive</strong></li>
-  <li>move the latest binaries to <strong>releases/qemu</strong></li>
+  <li>go to <code class="highlighter-rouge">.../GNU ARM Eclipse/archive</code></li>
+  <li>move the latest binaries to <code class="highlighter-rouge">releases/qemu</code></li>
 </ul>
 
 <h2 id="share-on-facebook">Share on Facebook</h2>
@@ -257,7 +266,7 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu Jul 28 08:24:00 2016 UTC.</p>
+<p class="page-footer">Last modified on Thu Jul 28 08:41:18 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/publish-procedure/" data-layout="button"></div>
 
 
@@ -360,6 +369,7 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/options/">Command line options</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/publish-procedure/">How to publish</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
   <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
