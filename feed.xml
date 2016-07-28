@@ -5,9 +5,33 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Jul 2016 07:26:07 +0000</pubDate>
-    <lastBuildDate>Fri, 22 Jul 2016 07:26:07 +0000</lastBuildDate>
+    <pubDate>Thu, 28 Jul 2016 08:30:34 +0000</pubDate>
+    <lastBuildDate>Thu, 28 Jul 2016 08:30:34 +0000</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse QEMU v2.6.0-20160728* released</title>
+        <description>&lt;p&gt;Version 2.6.0-201607280535 is a stable release, adding support for BASEPRI, in order for RTOSes (like FreeRTOS, &lt;a href=&quot;http://micro-os-plus.github.io&quot;&gt;µOS++ IIIe / CMSIS++&lt;/a&gt;) to properly implement critical sections.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 28 Jul 2016 02:26:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/07/28/qemu-v2-6-0-20160728-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/07/28/qemu-v2-6-0-20160728-released/</guid>
+        
+        <category>macOS</category>
+        
+        <category>BASEPRI</category>
+        
+        <category>DHCSR</category>
+        
+        <category>BKPT</category>
+        
+        
+        <category>releases</category>
+        
+        <category>qemu</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</title>
@@ -214,36 +238,6 @@
         <category>news</category>
         
         <category>article</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.10.2-201511061603 released</title>
-        <description>&lt;p&gt;Version 2.10.2-201511061603 is a maintenance release, intended to improve the floating point support for Cortex-M7, and to update the toolchain prefix for &lt;strong&gt;Linaro AArch64 bare-metal ELF&lt;/strong&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 06 Nov 2015 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/11/06/plugins-v2.10.2-201511061603-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/11/06/plugins-v2.10.2-201511061603-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>Cortex-M7</category>
-        
-        <category>fpv5-d16</category>
-        
-        <category>fpv5-sp-d16</category>
-        
-        <category>__dso_handle</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
         
       </item>
     

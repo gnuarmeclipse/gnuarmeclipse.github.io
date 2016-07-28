@@ -9,22 +9,23 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v1.1.6-201311220955 released</title>
-  <meta name="description" content="The main changes are the improvements done in the templates code.">
+  <title>GNU ARM Eclipse QEMU v2.6.0-20160728* released</title>
+  <meta name="description" content="Version 2.6.0-201607280535 is a stable release, adding support for BASEPRI, in order for RTOSes (like FreeRTOS, µOS++ IIIe / CMSIS++) to properly implement c...">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v1.1.6-201311220955 released" />
+  <meta property="og:title" content="GNU ARM Eclipse QEMU v2.6.0-20160728* released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2013-11-22">
+  <meta property="article:published_time" content="2016-07-28">
 
 
   <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="qemu" />
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="macos" />
+  <meta property="article:tag" content="basepri" />
+  <meta property="article:tag" content="dhcsr" />
+  <meta property="article:tag" content="bkpt" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -34,7 +35,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2013/11/22/plugins-v1.1.6-201311220955-released/">
+  <link rel="canonical" href="/blog/2016/07/28/qemu-v2-6-0-20160728-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -95,67 +96,75 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2013/11/10/plugins-v1.1.5-201311101919-released/">←</a></td>
-    <td><a href="/blog/2013/11/10/plugins-v1.1.5-201311101919-released/">GNU ARM Eclipse plug-ins v1.1.5-201311101919 released</a></td>
+    <td><a href="/blog/2016/06/21/plugins-v3.1.1-201606210758-released/">←</a></td>
+    <td><a href="/blog/2016/06/21/plugins-v3.1.1-201606210758-released/">GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</a></td>
     <td></td>
-    <td><a href="/blog/2013/12/22/plugins-v1.1.7-201312221905-released/">GNU ARM Eclipse plug-ins v1.1.7-201312221905 released</a></td>
-    <td><a href="/blog/2013/12/22/plugins-v1.1.7-201312221905-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v1.1.6-201311220955 released</h1>
+<h1 class="post-title">GNU ARM Eclipse QEMU v2.6.0-20160728* released</h1>
 
 
 <p class="post-meta">
-Posted on November 22, 2013 by Liviu Ionescu.
+Posted on July 28, 2016 by Liviu Ionescu.
 </p>
 
-<p>The main changes are the improvements done in the templates code.</p>
+<p>Version 2.6.0-201607280535 is a stable release, adding support for BASEPRI, in order for RTOSes (like FreeRTOS, <a href="http://micro-os-plus.github.io">µOS++ IIIe / CMSIS++</a>) to properly implement critical sections.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v1.1.6-201311220955">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.6.0-20160728">Binary files »</a>
+</p>
 
-<p>New features:</p>
-
-<ul>
-  <li>separate template configurations for standalone, retargetting or semihosting</li>
-  <li>a local <code class="highlighter-rouge">_sbrk()</code> was added, to match the definitions in the linker scripts; compared to the one included in newlib, this one:
-    <ul>
-      <li>enforces align(4) to avoid alignment problems</li>
-      <li>checks <code class="highlighter-rouge">_Heap_Limit</code> instead of <code class="highlighter-rouge">SP</code> (RTOS can allocate it below)</li>
-    </ul>
-  </li>
-  <li>the libgloss/syscalls.c was included locally, to make the semihosting implementation details explicit and to allow the separate <code class="highlighter-rouge">_sbrk()</code>.</li>
-</ul>
-
-<p>Bugs fixed:</p>
+<h2 id="addressed-issues">Addressed issues</h2>
 
 <ul>
-  <li>[bugs:#66, support-requests:#30] the sections.ld <code class="highlighter-rouge">_end</code> definition is now based on <code class="highlighter-rouge">_end_noinit</code> to make the templates compile in Release</li>
-  <li>[bugs:#63] updating the toolchain settings for multiple configurations at once is now possible</li>
-  <li>[bugs:#65] when using cortex-m4 and float hard or softfp, automatically select fpv4spd16, otherwise the build failed</li>
-  <li>[support-requests:#30] the pointers used in the init_array sections are void* to avoid warnings.</li>
+  <li>[Issue:<a href="https://github.com/gnuarmeclipse/qemu/issues/21">#21</a>] in the original QEMU, the Cortex-M3/M4/M7 <code class="highlighter-rouge">BASEPRI</code> register was ignored when processing interrupts, so it was not possible to implement critical sections by manipulating <code class="highlighter-rouge">BASEPRI</code>; fixed.</li>
+  <li>[Issue:<a href="https://github.com/gnuarmeclipse/qemu/issues/13">#13</a>] in certain conditions, writing a half word was not effective; fixed.</li>
+  <li>in the original QEMU, the <strong>CoreDebug</strong> registers were not implemented; added, with minimal functionality; in the <code class="highlighter-rouge">DHCSR</code> register, the <code class="highlighter-rouge">C_DEBUGEN</code> bit is set to 1 if the program runs under the GDB server.</li>
+  <li>[Issue:<a href="https://github.com/gnuarmeclipse/qemu/issues/23">#23</a>] make the <code class="highlighter-rouge">BKPT</code> instruction interrupt the CPU while in DEBUG</li>
+  <li>[Issue:<a href="https://github.com/gnuarmeclipse/qemu/issues/20">#20</a>] The special registered were not visible in the GDB server list; <code class="highlighter-rouge">MSP</code>, <code class="highlighter-rouge">PSP</code>, <code class="highlighter-rouge">PRIMASK</code>, <code class="highlighter-rouge">BASEPRI</code>, <code class="highlighter-rouge">FAULTMASK</code>, <code class="highlighter-rouge">CONTROL</code> were added.</li>
+  <li>[Issue:<a href="https://github.com/gnuarmeclipse/qemu/issues/19">#19</a>] in certain conditions, the resetting the peripheral registers was not effective; fixed.</li>
+  <li>add reset for all USARTs on the STM32 devices.</li>
+  <li>[Issue:<a href="https://github.com/gnuarmeclipse/qemu/issues/9">#9</a>] the LEDs on the OLIMEX STM32-P107 board were swapped; fixed.</li>
 </ul>
 
-<p>Other changes:</p>
+<h2 id="download">Download</h2>
 
-<ul>
-  <li>the librdimon linker options were added to the Hello World templates, to make it compile directly</li>
-  <li>when using startup files, the DEBUG version of ResetHandler is no longer naked, to allow breakpoints</li>
-  <li>since the <code class="highlighter-rouge">__register_exitproc()</code> provided by newlib seems buggy, add an empty <code class="highlighter-rouge">__register_exitproc()</code> in startup_cm.c to avoid startup crash when using startup files</li>
-  <li>the error processing in <code class="highlighter-rouge">_write_trace_semihosting_stdout()</code> is more elaborate.</li>
-</ul>
+<p>The new QEMU can be downloaded from the <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.6.0-20160728">GitHub Releases</a> page.</p>
+
+<p>The MD5 sums of the files are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>e17d1076b2ee7d98521dd8b719000bb8
+gnuarmeclipse-qemu-debian32-2.6.0-201607280535.tgz
+
+bde0a0d5cdd0104dff50711b138e25ff
+gnuarmeclipse-qemu-debian64-2.6.0-201607280535.tgz
+
+11996f2b20e5943b536f6df4c501a3f5
+gnuarmeclipse-qemu-osx-2.6.0-201607280535.pkg
+
+5307875e1c461746e666d996b8687e8c  
+gnuarmeclipse-qemu-win32-2.6.0-201607280535-setup.exe
+
+cd72a9ad56783e1b7cded9fc02742cab  
+gnuarmeclipse-qemu-win64-2.6.0-201607280535-setup.exe
+
+</code></pre>
+</div>
 
 
 <hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 
-<strong>releases</strong>, <strong>plugins</strong> and tagged
+<strong>releases</strong>, <strong>qemu</strong> and tagged
 
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2013/11/22/plugins-v1.1.6-201311220955-released/" data-layout="button"></div>
+<strong>macos</strong>, <strong>basepri</strong>, <strong>dhcsr</strong>, <strong>bkpt</strong>.
+</br>Last modified on Thu Jul 28 08:25:27 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/07/28/qemu-v2-6-0-20160728-released/" data-layout="button"></div>
 </p>
 
 

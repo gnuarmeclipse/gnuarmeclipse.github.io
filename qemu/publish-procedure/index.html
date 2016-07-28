@@ -9,22 +9,17 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v1.1.6-201311220955 released</title>
-  <meta name="description" content="The main changes are the improvements done in the templates code.">
+  <title>How to publish the QEMU binaries?</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v1.1.6-201311220955 released" />
+  <meta property="og:title" content="How to publish the QEMU binaries?" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2013-11-22">
+  <meta property="article:published_time" content="2016-07-27">
 
 
-  <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -34,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2013/11/22/plugins-v1.1.6-201311220955-released/">
+  <link rel="canonical" href="/qemu/publish-procedure/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -93,70 +88,177 @@
 <div id="site-body">
 <section id="main-content">
 
-<table id="post-navigation">
-  <tr>
-    <td><a href="/blog/2013/11/10/plugins-v1.1.5-201311101919-released/">←</a></td>
-    <td><a href="/blog/2013/11/10/plugins-v1.1.5-201311101919-released/">GNU ARM Eclipse plug-ins v1.1.5-201311101919 released</a></td>
-    <td></td>
-    <td><a href="/blog/2013/12/22/plugins-v1.1.7-201312221905-released/">GNU ARM Eclipse plug-ins v1.1.7-201312221905 released</a></td>
-    <td><a href="/blog/2013/12/22/plugins-v1.1.7-201312221905-released/">→</a></td>
-  </tr>
+
+<h1 class="page-title">How to publish the QEMU binaries?</h1>
+
+
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#update-the-change-log"><span class="tocnumber">1</span> <span class="toctext">Update the Change log</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">2</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#update-the-changestxt-file"><span class="tocnumber">3</span> <span class="toctext">Update the CHANGES.txt file</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#commit-to-the-project-git"><span class="tocnumber">4</span> <span class="toctext">Commit to the project git</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#merge-stable-release"><span class="tocnumber">5</span> <span class="toctext">Merge stable release</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#check-build-scripts"><span class="tocnumber">6</span> <span class="toctext">Check build scripts</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#build"><span class="tocnumber">7</span> <span class="toctext">Build</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#update-the-release-post-with-the-md5-sums"><span class="tocnumber">8</span> <span class="toctext">Update the release post with the MD5 sums</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#update-the-web"><span class="tocnumber">9</span> <span class="toctext">Update the web</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#push-the-project-git"><span class="tocnumber">10</span> <span class="toctext">Push the project git</span></a>
+</li>
+<li class="toc_level-1 toc_section-11">
+<a href="#create-the-release"><span class="tocnumber">11</span> <span class="toctext">Create the release</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#copy-binaries-to-the-local-archive-folder"><span class="tocnumber">12</span> <span class="toctext">Copy binaries to the local archive folder</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#share-on-facebook"><span class="tocnumber">13</span> <span class="toctext">Share on Facebook</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
+</div><p>The QEMU binaries are published on GitHub  <a href="https://github.com/gnuarmeclipse/qemu/releases">Releases</a>).</p>
 
+<h2 id="update-the-change-log">Update the Change log</h2>
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v1.1.6-201311220955 released</h1>
+<p>Scan the Git log and add new entries to the <a href="/qemu/change-log/">Change log</a> (pages/qemu/change-log.md), grouped by days.</p>
 
+<p>Close issues on the way. Refer to them as <strong>[Issue:[#22](…)]</strong>.</p>
 
-<p class="post-meta">
-Posted on November 22, 2013 by Liviu Ionescu.
-</p>
+<h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
 
-<p>The main changes are the improvements done in the templates code.</p>
+<p>Add a new file to <code class="highlighter-rouge">_posts/plugins/releases</code>.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v1.1.6-201311220955">Binary files »</a></p>
+<p>Name the post like: <em>GNU ARM Eclipse QEMU v2.6.0-20160728</em>-dev released*.</p>
 
-<p>New features:</p>
+<p>(do not close the post yet)</p>
 
-<ul>
-  <li>separate template configurations for standalone, retargetting or semihosting</li>
-  <li>a local <code class="highlighter-rouge">_sbrk()</code> was added, to match the definitions in the linker scripts; compared to the one included in newlib, this one:
-    <ul>
-      <li>enforces align(4) to avoid alignment problems</li>
-      <li>checks <code class="highlighter-rouge">_Heap_Limit</code> instead of <code class="highlighter-rouge">SP</code> (RTOS can allocate it below)</li>
-    </ul>
-  </li>
-  <li>the libgloss/syscalls.c was included locally, to make the semihosting implementation details explicit and to allow the separate <code class="highlighter-rouge">_sbrk()</code>.</li>
-</ul>
+<h2 id="update-the-changestxt-file">Update the CHANGES.txt file</h2>
 
-<p>Bugs fixed:</p>
+<p>Edit the <code class="highlighter-rouge">gnuarmeclipse/info/CHANGES.txt</code> file.
+Copy the entries from the web change log.</p>
 
-<ul>
-  <li>[bugs:#66, support-requests:#30] the sections.ld <code class="highlighter-rouge">_end</code> definition is now based on <code class="highlighter-rouge">_end_noinit</code> to make the templates compile in Release</li>
-  <li>[bugs:#63] updating the toolchain settings for multiple configurations at once is now possible</li>
-  <li>[bugs:#65] when using cortex-m4 and float hard or softfp, automatically select fpv4spd16, otherwise the build failed</li>
-  <li>[support-requests:#30] the pointers used in the init_array sections are void* to avoid warnings.</li>
-</ul>
+<h2 id="commit-to-the-project-git">Commit to the project git</h2>
 
-<p>Other changes:</p>
+<p>In the <code class="highlighter-rouge">gnuarmeclipse/qemu</code> git, commit all changes.</p>
+
+<h2 id="merge-stable-release">Merge stable release</h2>
+
+<p>For stable releases, with SourceTree</p>
 
 <ul>
-  <li>the librdimon linker options were added to the Hello World templates, to make it compile directly</li>
-  <li>when using startup files, the DEBUG version of ResetHandler is no longer naked, to allow breakpoints</li>
-  <li>since the <code class="highlighter-rouge">__register_exitproc()</code> provided by newlib seems buggy, add an empty <code class="highlighter-rouge">__register_exitproc()</code> in startup_cm.c to avoid startup crash when using startup files</li>
-  <li>the error processing in <code class="highlighter-rouge">_write_trace_semihosting_stdout()</code> is more elaborate.</li>
+  <li>change to the <strong>gnuarmeclipse</strong> branch</li>
+  <li>merge <strong>gnuarmeclipse-dev</strong>.</li>
+</ul>
+
+<h2 id="check-build-scripts">Check build scripts</h2>
+
+<p>Be sure the scripts in the <code class="highlighter-rouge">build-scripts.git</code> are up to date.</p>
+
+<h2 id="build">Build</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-qemu.sh clean
+$ rm -rf ~/Work/wemu/qemu/output
+$ caffeinate bash ~/Downloads/build-qemu.sh --all
+$ boot2docker stop
+</code></pre>
+</div>
+
+<h2 id="update-the-release-post-with-the-md5-sums">Update the release post with the MD5 sums</h2>
+
+<p>Copy/paste the build report at the end of the post as</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>00fa757a9bd0f80ce897e6d546183b58  
+gnuarmeclipse-qemu-debian32-2.4.50-201510290935-dev.tgz
+
+69588b16c19006275cb79aba7ee2c3f8  
+gnuarmeclipse-qemu-debian64-2.4.50-201510290935-dev.tgz
+
+8709c93b74f4085f5a0eacaa075300a9
+gnuarmeclipse-qemu-osx-2.4.50-201510290935-dev.pkg
+
+39b0c7dd39ef499ab630bd74ca87b6c3  
+gnuarmeclipse-qemu-win32-2.4.50-201510290935-dev-setup.exe
+
+70881d71c1516aeb9c7efc514cd1f32c  
+gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
+</code></pre>
+</div>
+
+<h2 id="update-the-web">Update the web</h2>
+
+<h2 id="push-the-project-git">Push the project git</h2>
+
+<p>With SourceTree, push to the GitHub remote, the <strong>gnuarmeclipse</strong> and the <strong>gnuarmeclipse-dev</strong> branches.</p>
+
+<h2 id="create-the-release">Create the release</h2>
+
+<ul>
+  <li>for stable releases, be sure the <strong>gnuarmeclipse</strong> branch is up to date and set as default</li>
+  <li>go to the <a href="https://github.com/gnuarmeclipse/qemu/releases">GitHub Releases</a> page</li>
+  <li>click <strong>Draft a new release</strong></li>
+  <li>name the tag like <strong>gae-2.6.0-20160728</strong></li>
+  <li>select the <strong>gnuarmeclipse</strong> branch</li>
+  <li>name the release like <strong>GNU ARM Eclipse QEMU v2.6.0-20160728</strong> (development versions will be prefixed by <code class="highlighter-rouge">-dev</code>)</li>
+  <li>as description, copy the first paragraph from the Web release page</li>
+  <li>add a link to the Web page <code class="highlighter-rouge">[Continue reading »]()</code></li>
+  <li>get URL from web and update the above link</li>
+  <li>attach binaries (drag and drop from the archives folder will do it)</li>
+  <li>click the <strong>Publish Release</strong> button</li>
+</ul>
+
+<p>Note: at this moment the system should send a notification to all clients watching this project.</p>
+
+<h2 id="copy-binaries-to-the-local-archive-folder">Copy binaries to the local archive folder</h2>
+
+<ul>
+  <li>go to <strong>…/GNU ARM Eclipse/archive</strong></li>
+  <li>move the latest binaries to <strong>releases/qemu</strong></li>
+</ul>
+
+<h2 id="share-on-facebook">Share on Facebook</h2>
+
+<ul>
+  <li>go to the new post and follow the Share link.</li>
+  <li>DO NOT select <strong>On your own Timeline</strong>, but <strong>On a Page you manage</strong></li>
+  <li>select GNU ARM Eclipse</li>
+  <li>posting as GNU ARM Eclipse</li>
+  <li>click <strong>Share link</strong></li>
+  <li>check the post in the <a href="https://www.facebook.com/gnuarmeclipse">Facebook page</a></li>
 </ul>
 
 
-<hr class="post-footer"/>
-<p class="post-footer">
-Posted in
-
-<strong>releases</strong>, <strong>plugins</strong> and tagged
-
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2013/11/22/plugins-v1.1.6-201311220955-released/" data-layout="button"></div>
-</p>
+<hr class="page-footer"/>
+<p class="page-footer">Last modified on Thu Jul 28 08:24:00 2016 UTC.</p>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/publish-procedure/" data-layout="button"></div>
 
 
 </section>
