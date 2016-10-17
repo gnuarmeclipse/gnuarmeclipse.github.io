@@ -154,10 +154,7 @@
 <a href="#test"><span class="tocnumber">11</span> <span class="toctext">Test</span></a>
 </li>
 <li class="toc_level-1 toc_section-17">
-<a href="#stop-boot2docker"><span class="tocnumber">12</span> <span class="toctext">Stop boot2docker</span></a>
-</li>
-<li class="toc_level-1 toc_section-18">
-<a href="#more-build-details"><span class="tocnumber">13</span> <span class="toctext">More build details</span></a>
+<a href="#more-build-details"><span class="tocnumber">12</span> <span class="toctext">More build details</span></a>
 </li>
 </ul>
 </td>
@@ -242,14 +239,14 @@ $ sudo service docker restart
 <p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh \
--o ~/Downloads/build-qemu.sh
+	-o ~/Downloads/build-qemu.sh
 </code></pre>
 </div>
 
 <p>Alternatively, in a development environment, the entire <code class="highlighter-rouge">build-scripts.git</code> can be cloned, and a link to <code class="highlighter-rouge">Downloads</code> created:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-qemu.sh \
-~/Downloads/build-qemu.sh
+	~/Downloads/build-qemu.sh
 </code></pre>
 </div>
 
@@ -273,10 +270,9 @@ $ sudo service docker restart
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-ilegeul/debian      8-gnuarm-mingw      1a8e62c2dd40        23 hours ago        2.486 GB
-ilegeul/debian32    8-gnuarm-gcc-x11    a006ca3d3fe6        2 days ago          1.423 GB
-ilegeul/debian      8-gnuarm-gcc-x11    575a7f52cfcf        2 days ago          1.569 GB
-hello-world         latest              e45a5af57b00        6 months ago        910 B
+ilegeul/debian32    8-gnuarm-gcc-x11-v3   14a0dcce0dd7        11 months ago       1.633 GB
+ilegeul/debian      8-gnuarm-gcc-x11-v3   a461714e9b42        11 months ago       1.771 GB
+ilegeul/debian      8-gnuarm-mingw        1c04c24123c1        15 months ago       2.486 GB
 </code></pre>
 </div>
 
@@ -360,7 +356,7 @@ qemu/build/
 ├── win32
 │   └── qemu
 └── win64
-    └── qemu
+	└── qemu
 qemu/install
 ├── debian32
 │   ├── archive
@@ -373,7 +369,7 @@ qemu/install
 ├── win32
 │   └── qemu
 └── win64
-    └── qemu
+	└── qemu
 
 22 directories, 0 files
 </code></pre>
@@ -447,23 +443,13 @@ Copyright (c) 2003-2008 Fabrice Bellard
 </code></pre>
 </div>
 
-<h2 id="stop-boot2docker">Stop boot2docker</h2>
-
-<p>On macOS, the build script automatically starts <code class="highlighter-rouge">boot2docker</code>, if needed.</p>
-
-<p>When done, be sure you stop it, to free significant resources (a VirtualBox Ubuntu machine).</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ boot2docker stop
-</code></pre>
-</div>
-
 <h2 id="more-build-details">More build details</h2>
 
 <p>The script is quite complex, and an attempt to explain its functionality would require some effort. For the final authoritative details, please refer to the comments available in the <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-qemu.sh">script</a>.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Jun 22 09:37:21 2016 UTC.</p>
+<p class="page-footer">Last modified on Mon Oct 17 14:30:48 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/build-procedure/" data-layout="button"></div>
 
 

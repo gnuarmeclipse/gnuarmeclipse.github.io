@@ -148,10 +148,7 @@
 <a href="#test"><span class="tocnumber">9</span> <span class="toctext">Test</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#stop-boot2docker"><span class="tocnumber">10</span> <span class="toctext">Stop boot2docker</span></a>
-</li>
-<li class="toc_level-1 toc_section-16">
-<a href="#more-build-details"><span class="tocnumber">11</span> <span class="toctext">More build details</span></a>
+<a href="#more-build-details"><span class="tocnumber">10</span> <span class="toctext">More build details</span></a>
 </li>
 </ul>
 </td>
@@ -220,6 +217,12 @@ $ sudo service docker restart
 
 <p>To make these changes effective, logout and login.</p>
 
+<p>The above are for Ubuntu and the Debian family. For other distributions, the last line may differ, for example for Arch Linux use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ systemctl restart docker
+</code></pre>
+</div>
+
 <h4 id="install-required-packages">Install required packages</h4>
 
 <p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<code class="highlighter-rouge">curl</code>, <code class="highlighter-rouge">git</code>, <code class="highlighter-rouge">automake</code>, <code class="highlighter-rouge">patch</code>, <code class="highlighter-rouge">tar</code>, <code class="highlighter-rouge">unzip</code>).</p>
@@ -237,14 +240,14 @@ $ sudo service docker restart
 <p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh \
--o ~/Downloads/build-openocd.sh
+    -o ~/Downloads/build-openocd.sh
 </code></pre>
 </div>
 
 <p>Alternatively, in a development environment, the entire <code class="highlighter-rouge">build-scripts.git</code> can be cloned, and a link to <code class="highlighter-rouge">Downloads</code> created:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-openocd.sh \
-~/Downloads/build-openocd.sh
+    ~/Downloads/build-openocd.sh
 </code></pre>
 </div>
 
@@ -265,15 +268,10 @@ $ sudo service docker restart
 <p>The result should look similar to:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-ilegeul/debian      8-gnuarm-mingw      b8261b27add4        3 minutes ago       2.692 GB
-ilegeul/debian      8-gnuarm-gcc        ba65c1716b6e        12 minutes ago      1.437 GB
-ilegeul/debian      7-gnuarm-gcc        16b30d6a4244        32 minutes ago      1.6 GB
-ilegeul/debian32    7-gnuarm-gcc        2e416e412fad        43 minutes ago      1.596 GB
-ilegeul/debian      7                   a4ad8e2c6d76        4 days ago          96.13 MB
-ilegeul/debian32    7                   64980af805ad        4 days ago          93.65 MB
-debian              8                   65688f7c61c4        6 weeks ago         122.8 MB
-hello-world         latest              e45a5af57b00        4 months ago        910 B
+REPOSITORY          TAG                   IMAGE ID            CREATED             SIZE
+ilegeul/debian32    8-gnuarm-gcc-x11-v3   14a0dcce0dd7        11 months ago       1.633 GB
+ilegeul/debian      8-gnuarm-gcc-x11-v3   a461714e9b42        11 months ago       1.771 GB
+ilegeul/debian      8-gnuarm-mingw        1c04c24123c1        15 months ago       2.486 GB
 </code></pre>
 </div>
 
@@ -384,23 +382,13 @@ For bug reports, read
 </code></pre>
 </div>
 
-<h2 id="stop-boot2docker">Stop boot2docker</h2>
-
-<p>On macOS, the build script automatically starts <code class="highlighter-rouge">boot2docker</code>, if needed.</p>
-
-<p>When done, be sure you stop it, to free significant resources (a VirtualBox Ubuntu machine).</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>boot2docker stop
-</code></pre>
-</div>
-
 <h2 id="more-build-details">More build details</h2>
 
 <p>The script is quite complex, and an attempt to explain its functionality would require some effort. For the final authoritative details, please refer to the comments available in the <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">script</a>.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Jun 22 09:37:21 2016 UTC.</p>
+<p class="page-footer">Last modified on Mon Oct 17 14:30:48 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/build-procedure/" data-layout="button"></div>
 
 
