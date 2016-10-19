@@ -130,10 +130,10 @@
 <a href="#testing"><span class="tocnumber">6</span> <span class="toctext">Testing</span></a>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#update-openocd-path"><span class="tocnumber">7</span> <span class="toctext">Update OpenOCD path</span></a>
+<a href="#openocd-debugging-plug-ins"><span class="tocnumber">7</span> <span class="toctext">OpenOCD Debugging plug-ins</span></a>
 </li>
 <li class="toc_level-1 toc_section-10">
-<a href="#openocd-debugging-plug-ins"><span class="tocnumber">8</span> <span class="toctext">OpenOCD Debugging plug-ins</span></a>
+<a href="#update-openocd-path"><span class="tocnumber">8</span> <span class="toctext">Update OpenOCD path</span></a>
 </li>
 <li class="toc_level-1 toc_section-11">
 <a href="#troubleshooting"><span class="tocnumber">9</span> <span class="toctext">Troubleshooting</span></a>
@@ -322,6 +322,14 @@ Info : stm32f4x.cpu: hardware has 6 	breakpoints, 4 watchpoints
 </code></pre>
 </div>
 
+<h2 id="openocd-debugging-plug-ins">OpenOCD Debugging plug-ins</h2>
+
+<p>The OpenOCD debugging <strong>plug-ins are not included</strong> in these packages, and need to be installed <a href="/plugins/install/">as usual</a>. Just be sure that the <strong>GNU ARM C/C++ OpenOCD Debugging</strong> plug-ins are selected.</p>
+
+<p>
+<img src="/assets/images/2015/install-new-software-updates-openocd.png" alt="Install the OpenOCD plug-ins" />
+</p>
+
 <h2 id="update-openocd-path">Update OpenOCD path</h2>
 
 <p>Right after installing OpenOCD, or updating to a new version, it is necessary to inform Eclipse where the binaries were installed. If OpenOCD was installed in the default location, Eclipse has a mechanism to autodetect the most recent version, but this mechanism sometimes fails, and manual path setting is necessary.</p>
@@ -340,14 +348,6 @@ Info : stm32f4x.cpu: hardware has 6 	breakpoints, 4 watchpoints
 </ul>
 
 <p>For more details please refer to the <a href="/debug/qemu/#define-the-openocd-folder-location">OpenOCD plug-in</a> page, where the entire procedure is explained.</p>
-
-<h2 id="openocd-debugging-plug-ins">OpenOCD Debugging plug-ins</h2>
-
-<p>The OpenOCD debugging <strong>plug-ins are not included</strong> in these packages, and need to be installed <a href="/plugins/install/">as usual</a>. Just be sure that the <strong>GNU ARM C/C++ OpenOCD Debugging</strong> plug-ins are selected.</p>
-
-<p>
-<img src="/assets/images/2015/install-new-software-updates-openocd.png" alt="Install the OpenOCD plug-ins" />
-</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -375,7 +375,7 @@ when you have a functional solution post it on the project forum.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Jun 22 09:37:21 2016 UTC.</p>
+<p class="page-footer">Last modified on Wed Oct 19 15:09:56 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/install/" data-layout="button"></div>
 
 
