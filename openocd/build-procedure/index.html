@@ -116,7 +116,7 @@
 </ul>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#download-the-build-script"><span class="tocnumber">2</span> <span class="toctext">Download the build script</span></a>
+<a href="#download-the-build-scripts-repo"><span class="tocnumber">2</span> <span class="toctext">Download the build scripts repo</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
 <a href="#check-the-script"><span class="tocnumber">3</span> <span class="toctext">Check the script</span></a>
@@ -163,13 +163,9 @@
 
 <p>The main trick that made the multi-platform build possible is <a href="https://www.docker.com">Docker</a>.</p>
 
-<p>Containers based on three docker images are used, one packing MinGW-w64 in a Debian 8, and two packing the basic system in Debian 7 (separate 32/64-bits containers). The more conservative Debian 7 was preferred to generate the GNU/Linux versions, to avoid problems when attempting to run the executables on older versions.</p>
+<p>Containers based on three docker images are used, one packing MinGW-w64 in a Debian 8, and two packing the basic system in Debian 8 (separate 32/64-bits containers). The more conservative Debian was preferred to generate the GNU/Linux versions, to avoid problems when attempting to run the executables on older versions.</p>
 
 <h3 id="macos">macOS</h3>
-
-<h4 id="install-docker">Install Docker</h4>
-
-<p>On macOS, install the boot2docker, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
 
 <h4 id="install-the-command-line-tools">Install the Command Line Tools</h4>
 
@@ -185,19 +181,21 @@ Thread model: posix
 </code></pre>
 </div>
 
-<h4 id="install-macports">Install MacPorts</h4>
+<h4 id="install-a-custom-instance-of-homebrew">Install a custom instance of Homebrew</h4>
 
-<p>The build procedure requires the presence of <a href="http://www.macports.org">MacPorts</a>. Install it according to the documentation.</p>
+<p>The build process is quite complex, and requires tools not available in the standard Apple macOS distribution. These tools can be installed with Homebrew. To keep these tools separate, a custom instance of Homebrew is installed in <code class="highlighter-rouge">$HOME/opt/homebrew-gae</code>. Unfortunately, <strong>MacTex</strong> and <strong>XQuartz</strong> are not packed as Homebrew packages, but install as macOS packages and links to them are created (without adding them to the PATH).</p>
 
-<h4 id="install-required-macports-packages">Install required MacPorts packages</h4>
+<p>The entire process can be automatised with a script, available from a gist:</p>
 
-<p>Install the following packages:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo port install libtool automake autoconf pkgconfig wget
-sudo port install cmake boost libconfuse swig-python
-sudo port install texinfo texlive
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://gist.github.com/46407a070844f764dec6f27bde385797.git ~/Downloads/install-homebrew.gist
+$ bash ~/Downloads/install-homebrew.gist/install-homebrew-gae.sh
 </code></pre>
 </div>
+<p>The script runs most of the time with user credentials, but to install MacTex and XQuartz, temporary <code class="highlighter-rouge">sudo</code> access is required.</p>
+
+<h4 id="install-docker">Install Docker</h4>
+
+<p>On macOS, Docker can be installed by following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
 
 <h3 id="gnulinux">GNU/Linux</h3>
 
@@ -233,27 +231,19 @@ $ sudo service docker restart
 
 <p>The Docker images are available from <a href="https://hub.docker.com/u/ilegeul/">Docker Hub</a>. They were build using the Dockerfiles available from <a href="https://github.com/ilg-ul/docker">ilg-ul/docker on GitHub</a>.</p>
 
-<h2 id="download-the-build-script">Download the build script</h2>
+<h2 id="download-the-build-scripts-repo">Download the build scripts repo</h2>
 
-<p>The script is available from the SourceForge git repository and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">viewed online</a>.</p>
+<p>The build script is available from GitHub and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">viewed online</a>.</p>
 
-<p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
+<p>To download it, clone the <a href="https://github.com/gnuarmeclipse/build-scripts">gnuarmeclipse/build-scripts</a> Git repo.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-openocd.sh \
-    -o ~/Downloads/build-openocd.sh
-</code></pre>
-</div>
-
-<p>Alternatively, in a development environment, the entire <code class="highlighter-rouge">build-scripts.git</code> can be cloned, and a link to <code class="highlighter-rouge">Downloads</code> created:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-openocd.sh \
-    ~/Downloads/build-openocd.sh
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/gnuarmeclipse/build-scripts.git  ~/Downloads/build-scripts.git
 </code></pre>
 </div>
 
 <h2 id="check-the-script">Check the script</h2>
 
-<p>The script creates a temporary build <code class="highlighter-rouge">Work/openocd</code> folder in the the user home. Although not recommended, if for any reasons you need to change this, you can redefine <code class="highlighter-rouge">WORK_FOLDER</code> variable before invoking the script.</p>
+<p>The script creates a temporary build <code class="highlighter-rouge">Work/openocd</code> folder in the user home. Although not recommended, if for any reasons you need to change this, you can redefine <code class="highlighter-rouge">WORK_FOLDER</code> variable before invoking the script.</p>
 
 <h2 id="preload-the-docker-images">Preload the Docker images</h2>
 
@@ -261,7 +251,7 @@ $ sudo service docker restart
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-openocd.sh preload-images
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-openocd.sh preload-images
 </code></pre>
 </div>
 
@@ -277,17 +267,11 @@ ilegeul/debian      8-gnuarm-mingw        1c04c24123c1        15 months ago     
 
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-openocd.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-openocd.sh --all
 </code></pre>
 </div>
 
-<p>On macOS, to prevent sleep, use:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ caffeinate bash ~/Downloads/build-openocd.sh --all
-</code></pre>
-</div>
-
-<p>About half an hour later (<code class="highlighter-rouge">caffeinate</code> is used to make sure the system does not go to sleep while left unattended), the output of the build script is a set of 5 files in the output folder:</p>
+<p>About half an hour later, the output of the build script is a set of 5 files in the output folder:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ ls -l output
 total 105616
@@ -318,7 +302,7 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <p>To remove all build files, use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-openocd.sh clean
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-openocd.sh clean
 </code></pre>
 </div>
 
@@ -388,7 +372,7 @@ For bug reports, read
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Mon Oct 17 14:30:48 2016 UTC.</p>
+<p class="page-footer">Last modified on Thu Oct 20 19:01:22 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/build-procedure/" data-layout="button"></div>
 
 

@@ -116,7 +116,7 @@
 </ul>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#download-the-build-script"><span class="tocnumber">2</span> <span class="toctext">Download the build script</span></a>
+<a href="#download-the-build-scripts-repo"><span class="tocnumber">2</span> <span class="toctext">Download the build scripts repo</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
 <a href="#check-the-script"><span class="tocnumber">3</span> <span class="toctext">Check the script</span></a>
@@ -164,20 +164,35 @@
 
 <h3 id="macos">macOS</h3>
 
-<h4 id="install-docker">Install Docker</h4>
-
-<p>On macOS, install <strong>boot2docker</strong>, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
-
 <h4 id="install-the-command-line-tools">Install the Command Line Tools</h4>
 
-<p>The macOS development tools are packed in a separate Xcode add-on. The best place to get it is from the <a href="https://developer.apple.com/xcode/downloads/">Developer</a> site, although this might require enrolling to the developer program (free of charge).</p>
+<p>The macOS compiler and other development tools are packed in a separate Xcode add-on. The best place to get it is from the <a href="https://developer.apple.com/xcode/downloads/">Developer</a> site, although this might require enrolling to the developer program (free of charge).</p>
 
-<p>To test if git is available, use:</p>
+<p>To test if the compiler is available, use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git --version
-git version 2.3.2 (Apple Git-55)
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 6.1.0 (clang-602.0.49) (based on LLVM 3.6.0svn)
+Target: x86_64-apple-darwin14.3.0
+Thread model: posix
 </code></pre>
 </div>
+
+<h4 id="install-a-custom-instance-of-homebrew">Install a custom instance of Homebrew</h4>
+
+<p>The build process is quite complex, and requires tools not available in the standard Apple macOS distribution. These tools can be installed with Homebrew. To keep these tools separate, a custom instance of Homebrew is installed in <code class="highlighter-rouge">$HOME/opt/homebrew-gae</code>. Unfortunately, <strong>MacTex</strong> and <strong>XQuartz</strong> are not packed as Homebrew packages, but install as macOS packages and links to them are created (without adding them to the PATH).</p>
+
+<p>The entire process can be automatised with a script, available from a gist:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://gist.github.com/46407a070844f764dec6f27bde385797.git ~/Downloads/install-homebrew.gist
+$ bash ~/Downloads/install-homebrew.gist/install-homebrew-gae.sh
+</code></pre>
+</div>
+<p>The script runs most of the time with user credentials, but to install MacTex and XQuartz, temporary <code class="highlighter-rouge">sudo</code> access is required.</p>
+
+<h4 id="install-docker">Install Docker</h4>
+
+<p>On macOS, Docker can be installed by following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
 
 <h3 id="gnulinux">GNU/Linux</h3>
 
@@ -213,14 +228,13 @@ $ sudo service docker restart
 
 <p>The Docker images are available from <a href="https://hub.docker.com/u/ilegeul/">Docker Hub</a>. They were build using the Dockerfiles available from <a href="https://github.com/ilg-ul/docker">ilg-ul/docker on GitHub</a>.</p>
 
-<h2 id="download-the-build-script">Download the build script</h2>
+<h2 id="download-the-build-scripts-repo">Download the build scripts repo</h2>
 
-<p>The script is available from the GitHub git repository and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-windows-build-tools.sh">viewed online</a>.</p>
+<p>The build script is available from GitHub and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">viewed online</a>.</p>
 
-<p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-windows-build-tools.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
+<p>To download it, clone the <a href="https://github.com/gnuarmeclipse/build-scripts">gnuarmeclipse/build-scripts</a> Git repo.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-windows-build-tools.sh \
-    -o ~/Downloads/build-windows-build-tools.sh
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/gnuarmeclipse/build-scripts.git  ~/Downloads/build-scripts.git
 </code></pre>
 </div>
 
@@ -234,7 +248,7 @@ $ sudo service docker restart
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-windows-build-tools.sh preload-images
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-windows-build-tools.sh preload-images
 </code></pre>
 </div>
 
@@ -248,7 +262,7 @@ ilegeul/debian      8-gnuarm-mingw      b8261b27add4        3 minutes ago       
 
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-windows-build-tools.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-windows-build-tools.sh --all
 </code></pre>
 </div>
 
@@ -277,7 +291,7 @@ drwxr-xr-x  13 ilg  staff      442 May 14 23:17 win64
 
 <p>To remove all build files, use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bash ~/Downloads/build-windows-build-tools.sh clean
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-windows-build-tools.sh clean
 </code></pre>
 </div>
 
@@ -324,7 +338,7 @@ drwxr-xr-x  13 ilg  staff      442 May 14 23:17 win64
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Mon Oct 17 14:30:48 2016 UTC.</p>
+<p class="page-footer">Last modified on Thu Oct 20 19:01:22 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/windows-build-tools/build-procedure/" data-layout="button"></div>
 
 

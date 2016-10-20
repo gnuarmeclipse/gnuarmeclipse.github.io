@@ -116,7 +116,7 @@
 </ul>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#download-the-build-script"><span class="tocnumber">2</span> <span class="toctext">Download the build script</span></a>
+<a href="#download-the-build-scripts-repo"><span class="tocnumber">2</span> <span class="toctext">Download the build scripts repo</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
 <a href="#check-the-script"><span class="tocnumber">3</span> <span class="toctext">Check the script</span></a>
@@ -173,10 +173,6 @@
 
 <h3 id="macos">macOS</h3>
 
-<h4 id="install-docker">Install Docker</h4>
-
-<p>On macOS, install <code class="highlighter-rouge">boot2docker</code>, following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
-
 <h4 id="install-the-command-line-tools">Install the Command Line Tools</h4>
 
 <p>The macOS compiler and other development tools are packed in a separate Xcode add-on. The best place to get it is from the <a href="https://developer.apple.com/xcode/downloads/">Developer</a> site, although this might require enrolling to the developer program (free of charge).</p>
@@ -191,18 +187,21 @@ Thread model: posix
 </code></pre>
 </div>
 
-<h4 id="install-macports">Install MacPorts</h4>
+<h4 id="install-a-custom-instance-of-homebrew">Install a custom instance of Homebrew</h4>
 
-<p>The build procedure requires the presence of <a href="http://www.macports.org">MacPorts</a>. Install it according to the documentation.</p>
+<p>The build process is quite complex, and requires tools not available in the standard Apple macOS distribution. These tools can be installed with Homebrew. To keep these tools separate, a custom instance of Homebrew is installed in <code class="highlighter-rouge">$HOME/opt/homebrew-gae</code>. Unfortunately, <strong>MacTex</strong> and <strong>XQuartz</strong> are not packed as Homebrew packages, but install as macOS packages and links to them are created (without adding them to the PATH).</p>
 
-<h4 id="install-required-macports-packages">Install required MacPorts packages</h4>
+<p>The entire process can be automatised with a script, available from a gist:</p>
 
-<p>Install the following packages:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo port install libtool automake autoconf pkgconfig
-$ sudo port install texinfo texlive
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://gist.github.com/46407a070844f764dec6f27bde385797.git ~/Downloads/install-homebrew.gist
+$ bash ~/Downloads/install-homebrew.gist/install-homebrew-gae.sh
 </code></pre>
 </div>
+<p>The script runs most of the time with user credentials, but to install MacTex and XQuartz, temporary <code class="highlighter-rouge">sudo</code> access is required.</p>
+
+<h4 id="install-docker">Install Docker</h4>
+
+<p>On macOS, Docker can be installed by following the official <a href="https://docs.docker.com/installation/mac/">Install Docker on macOS</a> instructions.</p>
 
 <h3 id="gnulinux">GNU/Linux</h3>
 
@@ -222,6 +221,12 @@ $ sudo service docker restart
 
 <p>To make these changes effective, logout and login.</p>
 
+<p>The above are for Ubuntu and the Debian family. For other distributions, the last line may differ, for example for Arch Linux use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ systemctl restart docker
+</code></pre>
+</div>
+
 <h4 id="install-required-packages">Install required packages</h4>
 
 <p>Since most of the build is performed inside the Docker containers, there are not many requirements for the host, and most of the time these programs are in the standard distribution (<code class="highlighter-rouge">curl</code>, <code class="highlighter-rouge">git</code>, <code class="highlighter-rouge">automake</code>, <code class="highlighter-rouge">patch</code>, <code class="highlighter-rouge">tar</code>, <code class="highlighter-rouge">unzip</code>).</p>
@@ -232,21 +237,13 @@ $ sudo service docker restart
 
 <p>The Docker images are available from <a href="https://hub.docker.com/u/ilegeul/">Docker Hub</a>. They were build using the Dockerfiles available from <a href="https://github.com/ilg-ul/docker">ilg-ul/docker</a> on GitHub.</p>
 
-<h2 id="download-the-build-script">Download the build script</h2>
+<h2 id="download-the-build-scripts-repo">Download the build scripts repo</h2>
 
-<p>The script is available from the GitHub and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-qemu.sh">viewed online</a>.</p>
+<p>The build script is available from GitHub and can be <a href="https://github.com/gnuarmeclipse/build-scripts/blob/master/scripts/build-openocd.sh">viewed online</a>.</p>
 
-<p>To download it use the <a href="https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh">Raw</a> link. If the browser fails, use the following command in a terminal:</p>
+<p>To download it, clone the <a href="https://github.com/gnuarmeclipse/build-scripts">gnuarmeclipse/build-scripts</a> Git repo.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ curl -L https://github.com/gnuarmeclipse/build-scripts/raw/master/scripts/build-qemu.sh \
-	-o ~/Downloads/build-qemu.sh
-</code></pre>
-</div>
-
-<p>Alternatively, in a development environment, the entire <code class="highlighter-rouge">build-scripts.git</code> can be cloned, and a link to <code class="highlighter-rouge">Downloads</code> created:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ln -s /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/build-scripts.git/scripts/build-qemu.sh \
-	~/Downloads/build-qemu.sh
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/gnuarmeclipse/build-scripts.git  ~/Downloads/build-scripts.git
 </code></pre>
 </div>
 
@@ -260,7 +257,7 @@ $ sudo service docker restart
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-qemu.sh preload-images
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-qemu.sh preload-images
 </code></pre>
 </div>
 
@@ -278,13 +275,13 @@ ilegeul/debian      8-gnuarm-mingw        1c04c24123c1        15 months ago     
 
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-qemu.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-qemu.sh --all
 </code></pre>
 </div>
 
 <p>On macOS, to prevent sleep, use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ caffeinate bash ~/Downloads/build-qemu.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ caffeinate bash ~/Downloads/build-scripts.git/build-qemu.sh --all
 </code></pre>
 </div>
 
@@ -320,7 +317,7 @@ drwxr-xr-x  6 ilg  staff      204 May 12 21:04 win64
 
 <p>To remove all build files, use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-qemu.sh clean
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-qemu.sh clean
 </code></pre>
 </div>
 
@@ -449,7 +446,7 @@ Copyright (c) 2003-2008 Fabrice Bellard
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Mon Oct 17 14:30:48 2016 UTC.</p>
+<p class="page-footer">Last modified on Thu Oct 20 19:01:22 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/build-procedure/" data-layout="button"></div>
 
 
