@@ -185,9 +185,10 @@ Thread model: posix
 
 <p>The build process is quite complex, and requires tools not available in the standard Apple macOS distribution. These tools can be installed with Homebrew. To keep these tools separate, a custom instance of Homebrew is installed in <code class="highlighter-rouge">$HOME/opt/homebrew-gae</code>. Unfortunately, <strong>MacTex</strong> and <strong>XQuartz</strong> are not packed as Homebrew packages, but install as macOS packages and links to them are created (without adding them to the PATH).</p>
 
-<p>The entire process can be automatised with a script, available from a gist:</p>
+<p>The entire process can be automated with a script, available from Gist:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://gist.github.com/46407a070844f764dec6f27bde385797.git ~/Downloads/install-homebrew.gist
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://gist.github.com/46407a070844f764dec6f27bde385797.git \
+  ~/Downloads/install-homebrew.gist
 $ bash ~/Downloads/install-homebrew.gist/install-homebrew-gae.sh
 </code></pre>
 </div>
@@ -203,7 +204,7 @@ $ bash ~/Downloads/install-homebrew.gist/install-homebrew-gae.sh
 
 <p>For any GNU/Linux distribution, follow the <a href="https://docs.docker.com/installation/#installation">specific instructions</a>.</p>
 
-<h4 id="configure-docker-to-run-as-regular-user">Configure Docker to run as regular user</h4>
+<h4 id="configure-docker-to-run-as-a-regular-user">Configure Docker to run as a regular user</h4>
 
 <p>To allow docker to run as a regular user, you need to be a member of the <code class="highlighter-rouge">docker</code> group.</p>
 
@@ -237,7 +238,8 @@ $ sudo service docker restart
 
 <p>To download it, clone the <a href="https://github.com/gnuarmeclipse/build-scripts">gnuarmeclipse/build-scripts</a> Git repo.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/gnuarmeclipse/build-scripts.git  ~/Downloads/build-scripts.git
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/gnuarmeclipse/build-scripts.git \
+  ~/Downloads/build-scripts.git
 </code></pre>
 </div>
 
@@ -251,7 +253,7 @@ $ sudo service docker restart
 
 <p>However, since the images used for this build are relatively large, it is recommended to load them explicitly before starting the build:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-openocd.sh preload-images
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh preload-images
 </code></pre>
 </div>
 
@@ -267,7 +269,13 @@ ilegeul/debian      8-gnuarm-mingw        1c04c24123c1        15 months ago     
 
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-openocd.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh --all
+</code></pre>
+</div>
+
+<p>On macOS, to prevent entering sleep, use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ caffeinate bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh --all
 </code></pre>
 </div>
 
@@ -302,7 +310,7 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <p>To remove all build files, use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/build-openocd.sh clean
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh clean
 </code></pre>
 </div>
 
