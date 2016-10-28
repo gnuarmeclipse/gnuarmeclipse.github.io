@@ -111,13 +111,13 @@
 <a href="#commit-to-the-project-git"><span class="tocnumber">3</span> <span class="toctext">Commit to the project git</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">4</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
+<a href="#checkclonepull-build-scripts"><span class="tocnumber">4</span> <span class="toctext">Check/clone/pull build scripts</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#checkclonepull-build-scripts"><span class="tocnumber">5</span> <span class="toctext">Check/clone/pull build scripts</span></a>
+<a href="#build"><span class="tocnumber">5</span> <span class="toctext">Build</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#build"><span class="tocnumber">6</span> <span class="toctext">Build</span></a>
+<a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">6</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
 <a href="#update-the-release-post-with-the-md5-sums"><span class="tocnumber">7</span> <span class="toctext">Update the release post with the MD5 sums</span></a>
@@ -162,14 +162,6 @@
 
 <p>In the <strong>gnuarmeclipse/windows-build-tools</strong> project, commit all changes.</p>
 
-<h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
-
-<ul>
-  <li>add a new file to <code class="highlighter-rouge">_posts/windows-build-tools/releases</code></li>
-  <li>named the file like <code class="highlighter-rouge">2016-10-28-windows-build-tools-v2.7-20161028-released.md</code></li>
-  <li>name the post like: <strong>GNU ARM Eclipse Windows Build Tools v2.7-201610281058 released</strong> (do not close the post yet, to get the timestamp and the MD5 sums)</li>
-</ul>
-
 <h2 id="checkclonepull-build-scripts">Check/clone/pull build scripts</h2>
 
 <p>Be sure the scripts in the <strong>build-scripts.git</strong> are up to date.</p>
@@ -185,6 +177,14 @@
 $ caffeinate bash ~/Downloads/build-scripts.git/scripts/build-windows-build-tools.sh --all
 </code></pre>
 </div>
+
+<h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
+
+<ul>
+  <li>add a new file to <code class="highlighter-rouge">_posts/windows-build-tools/releases</code></li>
+  <li>name the file like <code class="highlighter-rouge">2016-10-28-windows-build-tools-v2-7-20161028-released.md</code></li>
+  <li>name the post like: <strong>GNU ARM Eclipse Windows Build Tools v2.7-20161028* released</strong>.</li>
+</ul>
 
 <h2 id="update-the-release-post-with-the-md5-sums">Update the release post with the MD5 sums</h2>
 
@@ -223,7 +223,7 @@ gnuarmeclipse-build-tools-win64-2.7-201610281058-setup.exe
   <li>as description, copy the first paragraph from the Web release page</li>
   <li>add a link to the Web page <strong>[Continue reading »]()</strong></li>
   <li>get URL from web and update the above link</li>
-  <li>attach binaries (drag and drop from the archives folder will do it)</li>
+  <li>attach binaries and MD5 (drag and drop from the archives folder will do it)</li>
   <li>click the <strong>Publish Release</strong> button</li>
 </ul>
 
@@ -233,7 +233,7 @@ gnuarmeclipse-build-tools-win64-2.7-201610281058-setup.exe
 
 <ul>
   <li>go to <code class="highlighter-rouge">.../GNU ARM Eclipse/archive</code></li>
-  <li>move the latest binaries to <code class="highlighter-rouge">releases/qemu</code></li>
+  <li>move the latest binaries and MD5 to <code class="highlighter-rouge">releases/build-tools</code></li>
 </ul>
 
 <h2 id="share-on-facebook">Share on Facebook</h2>
@@ -243,13 +243,13 @@ gnuarmeclipse-build-tools-win64-2.7-201610281058-setup.exe
   <li>DO NOT select <strong>On your own Timeline</strong>, but <strong>On a Page you manage</strong></li>
   <li>select GNU ARM Eclipse</li>
   <li>posting as GNU ARM Eclipse</li>
-  <li>click <strong>Share link</strong></li>
+  <li>click <strong>Post to Facebook</strong></li>
   <li>check the post in the <a href="https://www.facebook.com/gnuarmeclipse">Facebook page</a></li>
 </ul>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri Oct 28 12:31:12 2016 UTC.</p>
+<p class="page-footer">Last modified on Fri Oct 28 17:29:57 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/windows-build-tools/publish-procedure/" data-layout="button"></div>
 
 
@@ -260,7 +260,7 @@ gnuarmeclipse-build-tools-win64-2.7-201610281058-setup.exe
 <h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
-  <li><a href="/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/">GNU ARM Eclipse Windows Build Tools v2.7-201610281058 released</a></li>
+  <li><a href="/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/">GNU ARM Eclipse Windows Build Tools v2.7-20161028* released</a></li>
   <li><a href="/blog/2016/07/28/qemu-v2-6-0-20160728-released/">GNU ARM Eclipse QEMU v2.6.0-20160728* released</a></li>
   <li><a href="/blog/2016/06/21/plugins-v3.1.1-201606210758-released/">GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</a></li>
   <li><a href="/blog/2016/04/19/plugins-v2.12.1-201604190915-released/">GNU ARM Eclipse plug-ins v2.12.1-201604190915 released</a></li>
@@ -364,6 +364,7 @@ gnuarmeclipse-build-tools-win64-2.7-201610281058-setup.exe
   <li><a href="/openocd/install/">OpenOCD Install</a></li>
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/publish-procedure/">How to publish</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
   <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>

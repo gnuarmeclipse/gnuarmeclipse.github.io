@@ -9,24 +9,17 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v2.8.1-201504061754 released</title>
-  <meta name="description" content="Version 2.8.1-201504061754 is a new release; the main improvement is the addition of an experimental QEMU Debugging plug-in, using the GNU ARM Eclipse QEMU e...">
+  <title>How to publish the OpenOCD binaries?</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.8.1-201504061754 released" />
+  <meta property="og:title" content="How to publish the OpenOCD binaries?" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-04-06">
+  <meta property="article:published_time" content="2016-10-28">
 
 
-  <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
-  <meta property="article:tag" content="cortex-m" />
-  <meta property="article:tag" content="qemu" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -36,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2015/04/06/plugins-v2.8.1-201504061754-released/">
+  <link rel="canonical" href="/openocd/publish-procedure/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -95,68 +88,190 @@
 <div id="site-body">
 <section id="main-content">
 
-<table id="post-navigation">
-  <tr>
-    <td><a href="/blog/2015/04/04/qemu-v2-2-92-20150404-released/">←</a></td>
-    <td><a href="/blog/2015/04/04/qemu-v2-2-92-20150404-released/">GNU ARM Eclipse QEMU v2.2.92-20150404*-dev released</a></td>
-    <td></td>
-    <td><a href="/blog/2015/05/19/openocd-v0.9.0-20150519-released/">GNU ARM Eclipse OpenOCD v0.9.0-20150519* released</a></td>
-    <td><a href="/blog/2015/05/19/openocd-v0.9.0-20150519-released/">→</a></td>
-  </tr>
+
+<h1 class="page-title">How to publish the OpenOCD binaries?</h1>
+
+
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#update-the-change-log"><span class="tocnumber">1</span> <span class="toctext">Update the Change log</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#update-the-changestxt-file"><span class="tocnumber">2</span> <span class="toctext">Update the CHANGES.txt file</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#commit-to-the-project-git"><span class="tocnumber">3</span> <span class="toctext">Commit to the project git</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#merge-stable-release"><span class="tocnumber">4</span> <span class="toctext">Merge stable release</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#checkclonepull-build-scripts"><span class="tocnumber">5</span> <span class="toctext">Check/clone/pull build scripts</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#build"><span class="tocnumber">6</span> <span class="toctext">Build</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">7</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#update-the-release-post-with-the-md5-sums"><span class="tocnumber">8</span> <span class="toctext">Update the release post with the MD5 sums</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#update-the-web"><span class="tocnumber">9</span> <span class="toctext">Update the web</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#push-the-project-git"><span class="tocnumber">10</span> <span class="toctext">Push the project git</span></a>
+</li>
+<li class="toc_level-1 toc_section-11">
+<a href="#create-the-release"><span class="tocnumber">11</span> <span class="toctext">Create the release</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#copy-binaries-to-the-local-archive-folder"><span class="tocnumber">12</span> <span class="toctext">Copy binaries to the local archive folder</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#share-on-facebook"><span class="tocnumber">13</span> <span class="toctext">Share on Facebook</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
+</div><p>The OpenOCD binaries are published on GitHub  <a href="https://github.com/gnuarmeclipse/openocd/releases">Releases</a>).</p>
 
+<h2 id="update-the-change-log">Update the Change log</h2>
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v2.8.1-201504061754 released</h1>
+<p>Scan the Git log and add new entries to the <a href="/openocd/change-log/">Change log</a> (<code class="highlighter-rouge">pages/openocd/change-log.md</code>), grouped by days.</p>
 
-
-<p class="post-meta">
-Posted on April 6, 2015 by Liviu Ionescu.
-</p>
-
-<p>Version 2.8.1-201504061754 is a new release; the main improvement is the addition of an experimental QEMU Debugging plug-in, using the <a href="/qemu">GNU ARM Eclipse QEMU</a> emulator.</p>
-
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.8.1-201504061754">Binary files »</a></p>
-
-<p>New features:</p>
+<p>Close issues on the way. Refer to them as:</p>
 
 <ul>
-  <li><a href="/2015/04/05/qemu-v2-2-92-20150404-released/">GNU ARM Eclipse QEMU 2.2.92-20150404*-dev released</a></li>
-  <li>the QEMU Debugging plug-in was added
-<img src="/assets/images/2015/launch-qemu-debugger-intro.png" alt="The QEMU Debugging plug-in" /></li>
+  <li><strong>[Issue:[#22](…)]</strong>.</li>
 </ul>
 
-<p>The following bugs were addressed:</p>
+<h2 id="update-the-changestxt-file">Update the CHANGES.txt file</h2>
+
+<p>Edit the <code class="highlighter-rouge">gnuarmeclipse/info/CHANGES.txt</code> file (copy the entries from the web change log).</p>
+
+<h2 id="commit-to-the-project-git">Commit to the project git</h2>
+
+<p>In the <strong>gnuarmeclipse/openocd</strong> project, commit all changes.</p>
+
+<h2 id="merge-stable-release">Merge stable release</h2>
+
+<p>For stable releases, with SourceTree</p>
 
 <ul>
-  <li>[bugs:#176] in certain conditions, changing the newlib destination folder in the STM template wizard resulted in an error; fixed</li>
+  <li>change to the <strong>gnuarmeclipse</strong> branch</li>
+  <li>merge <strong>gnuarmeclipse-dev</strong>.</li>
 </ul>
 
-<p>In the projects generated by the templates, the following issues were addressed:</p>
+<h2 id="checkclonepull-build-scripts">Check/clone/pull build scripts</h2>
+
+<p>Be sure the scripts in the <strong>build-scripts.git</strong> are up to date.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/gnuarmeclipse/build-scripts.git \
+  ~/Downloads/build-scripts.git
+</code></pre>
+</div>
+
+<h2 id="build">Build</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh cleanall
+$ caffeinate bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh --all
+</code></pre>
+</div>
+
+<h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
 
 <ul>
-  <li>[bugs:#177] the vectors table for STM32F411 projects had a range of vectors generated twice; fixed</li>
-  <li>when generating semihosted projects, the infinite loop was replaced by a finite loop; the number of loops is taken from argv[1].</li>
+  <li>add a new file to <code class="highlighter-rouge">_posts/openocd/releases</code></li>
+  <li>name the file like <code class="highlighter-rouge">2016-01-11-openocd-v0-10-0-20160110-dev-released.md</code></li>
+  <li>name the post like: <strong>GNU ARM Eclipse OpenOCD v0.10.0-20160110*-dev released</strong>.</li>
 </ul>
 
-<p>Known problems:</p>
+<h2 id="update-the-release-post-with-the-md5-sums">Update the release post with the MD5 sums</h2>
+
+<p>Copy/paste the build report at the end of the post as</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>4ca0dd6d9c9ad24af2aa4eddec7717e1  
+gnuarmeclipse-openocd-debian32-0.10.0-201601101000-dev.tgz
+
+3ac38e2ac8b71a8ede734a271f0765de  
+gnuarmeclipse-openocd-debian64-0.10.0-201601101000-dev.tgz
+
+8275148ae11b954668d77739715bb1f1
+gnuarmeclipse-openocd-osx-0.10.0-201601101000-dev.pkg
+
+05a793b6d5297fbc9b9ed46f283b5152  
+gnuarmeclipse-openocd-win32-0.10.0-201601101000-dev-setup.exe
+
+49eae144aa3a43aa991d2a9444549ab6  
+gnuarmeclipse-openocd-win64-0.10.0-201601101000-dev-setup.exe
+</code></pre>
+</div>
+
+<h2 id="update-the-web">Update the web</h2>
 
 <ul>
-  <li>QEMU emulates only Cortex-M3 instructions; specific Cortex-M4 instructions are not supported;</li>
-  <li>the QEMU emulator supports a limited set of ARM system registers, like those controlling SysTick, and the NVIC; vendor specific peripherals are not yet supported;</li>
-  <li>the 64-bits Windows version of QEMU has some DLL problems and fails to start; until a solution is found, the 32-bits version of QEMU can be used on Windows 64-bits too.</li>
+  <li>commit the <strong>gnuarmeclipse.github.io-source.git</strong> project; use a message like <strong>OpenOCD v0.10.0-20160110*-dev released</strong></li>
+  <li>run <code class="highlighter-rouge">jekyll-build.command</code></li>
+  <li>commit the <strong>gnuarmeclipse.github.io.git</strong> project; use a message like <strong>OpenOCD v0.10.0-20160110*-dev released</strong></li>
+  <li>push the <strong>gnuarmeclipse.github.io.git</strong> project</li>
+</ul>
+
+<h2 id="push-the-project-git">Push the project git</h2>
+
+<p>With SourceTree, push to the GitHub remote, the <strong>gnuarmeclipse</strong> and the <strong>gnuarmeclipse-dev</strong> branches.</p>
+
+<h2 id="create-the-release">Create the release</h2>
+
+<ul>
+  <li>for stable releases, be sure the <strong>gnuarmeclipse</strong> branch is up to date and set as default</li>
+  <li>go to the <a href="https://github.com/gnuarmeclipse/openocd/releases">GitHub Releases</a> page</li>
+  <li>click <strong>Draft a new release</strong></li>
+  <li>name the tag like <strong>gae-0.10.0-20160110</strong></li>
+  <li>select the <strong>master</strong> branch</li>
+  <li>name the release like <strong>GNU ARM Eclipse OpenOCD v0.10.0-201601101000-dev</strong></li>
+  <li>as description, copy the first paragraph from the Web release page</li>
+  <li>add a link to the Web page <strong>[Continue reading »]()</strong></li>
+  <li>get URL from web and update the above link</li>
+  <li>attach binaries and MD5 (drag and drop from the archives folder will do it)</li>
+  <li>click the <strong>Publish Release</strong> button</li>
+</ul>
+
+<p>Note: at this moment the system should send a notification to all clients watching this project.</p>
+
+<h2 id="copy-binaries-to-the-local-archive-folder">Copy binaries to the local archive folder</h2>
+
+<ul>
+  <li>go to <code class="highlighter-rouge">.../GNU ARM Eclipse/archive</code></li>
+  <li>move the latest binaries and MD5 to <code class="highlighter-rouge">releases/openocd</code></li>
+</ul>
+
+<h2 id="share-on-facebook">Share on Facebook</h2>
+
+<ul>
+  <li>go to the new post and follow the Share link.</li>
+  <li>DO NOT select <strong>On your own Timeline</strong>, but <strong>On a Page you manage</strong></li>
+  <li>select GNU ARM Eclipse</li>
+  <li>posting as GNU ARM Eclipse</li>
+  <li>click <strong>Post to Facebook</strong></li>
+  <li>check the post in the <a href="https://www.facebook.com/gnuarmeclipse">Facebook page</a></li>
 </ul>
 
 
-<hr class="post-footer"/>
-<p class="post-footer">
-Posted in
-
-<strong>releases</strong>, <strong>plugins</strong> and tagged
-
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cortex-m</strong>, <strong>qemu</strong>.
-</br>Last modified on Wed Jun 22 09:37:21 2016 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/04/06/plugins-v2.8.1-201504061754-released/" data-layout="button"></div>
-</p>
+<hr class="page-footer"/>
+<p class="page-footer">Last modified on Fri Oct 28 17:27:16 2016 UTC.</p>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/publish-procedure/" data-layout="button"></div>
 
 
 </section>
