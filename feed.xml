@@ -5,9 +5,37 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Oct 2016 07:44:40 +0000</pubDate>
-    <lastBuildDate>Mon, 24 Oct 2016 07:44:40 +0000</lastBuildDate>
+    <pubDate>Fri, 28 Oct 2016 12:38:50 +0000</pubDate>
+    <lastBuildDate>Fri, 28 Oct 2016 12:38:50 +0000</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse Windows Build Tools v2.7-201610281058 released</title>
+        <description>&lt;p&gt;Version 2.7-201610281058 is a maintenance release of the GNU ARM Eclipse Windows Build Tools.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 28 Oct 2016 12:00:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/</guid>
+        
+        <category>windows</category>
+        
+        <category>setup</category>
+        
+        <category>build</category>
+        
+        <category>make</category>
+        
+        <category>rm</category>
+        
+        <category>busybox</category>
+        
+        
+        <category>releases</category>
+        
+        <category>windows-build-tools</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse QEMU v2.6.0-20160728* released</title>
@@ -205,28 +233,6 @@
         <pubDate>Tue, 08 Dec 2015 09:00:00 +0000</pubDate>
         <link>http://gnuarmeclipse.github.io/blog/2015/12/08/arm-connected-community-article/</link>
         <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/12/08/arm-connected-community-article/</guid>
-        
-        <category>article</category>
-        
-        <category>arm</category>
-        
-        <category>connected</category>
-        
-        
-        <category>news</category>
-        
-        <category>article</category>
-        
-      </item>
-    
-      <item>
-        <title>ARM Connected Community article, November 2015</title>
-        <description>&lt;p&gt;A new article was published on the &lt;a href=&quot;http://community.arm.com&quot;&gt;ARM Connected Community&lt;/a&gt; site, under the name &lt;strong&gt;&lt;a href=&quot;https://community.arm.com/groups/tools/blog/2015/11/17/gnu-arm-eclipse-full-cortex-m7-support-added&quot;&gt;GNU ARM Eclipse: full Cortex-M7 support added&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 17 Nov 2015 09:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/11/17/arm-connected-community-article/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/11/17/arm-connected-community-article/</guid>
         
         <category>article</category>
         

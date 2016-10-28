@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
+
+  <title>How to publish the Windows Build Tools binaries?</title>
+  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+
+  <meta property="og:title" content="How to publish the Windows Build Tools binaries?" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="article:published_time" content="2016-10-28">
+
+
+
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
+
+  <link rel="canonical" href="/windows-build-tools/publish-procedure/">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<header>
+  <div class="inner">
+    <h1><a href="/">GNU ARM Eclipse</a></h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <div id="buttons">
+      <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+    </div>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+
+<div id="site-body">
+<section id="main-content">
+
+
+<h1 class="page-title">How to publish the Windows Build Tools binaries?</h1>
+
+
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#update-the-change-log"><span class="tocnumber">1</span> <span class="toctext">Update the Change log</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#update-the-changestxt-file"><span class="tocnumber">2</span> <span class="toctext">Update the CHANGES.txt file</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#commit-to-the-project-git"><span class="tocnumber">3</span> <span class="toctext">Commit to the project git</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">4</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#checkclonepull-build-scripts"><span class="tocnumber">5</span> <span class="toctext">Check/clone/pull build scripts</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#build"><span class="tocnumber">6</span> <span class="toctext">Build</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#update-the-release-post-with-the-md5-sums"><span class="tocnumber">7</span> <span class="toctext">Update the release post with the MD5 sums</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#update-the-web"><span class="tocnumber">8</span> <span class="toctext">Update the web</span></a>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#push-the-project-git"><span class="tocnumber">9</span> <span class="toctext">Push the project git</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#create-the-release"><span class="tocnumber">10</span> <span class="toctext">Create the release</span></a>
+</li>
+<li class="toc_level-1 toc_section-11">
+<a href="#copy-binaries-to-the-local-archive-folder"><span class="tocnumber">11</span> <span class="toctext">Copy binaries to the local archive folder</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#share-on-facebook"><span class="tocnumber">12</span> <span class="toctext">Share on Facebook</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>The Windows Build Tools binaries are published on GitHub  <a href="https://github.com/gnuarmeclipse/windows-build-tools/releases">Releases</a>).</p>
+
+<h2 id="update-the-change-log">Update the Change log</h2>
+
+<p>Scan the Git log and add new entries to the <a href="/windows-build-tools/change-log/">Change log</a> (<code class="highlighter-rouge">pages/windows-build-tools/change-log.md</code>), grouped by days.</p>
+
+<p>Close issues on the way. Refer to them as:</p>
+
+<ul>
+  <li><strong>[Issue:[#22](…)]</strong>.</li>
+</ul>
+
+<h2 id="update-the-changestxt-file">Update the CHANGES.txt file</h2>
+
+<p>Edit the <code class="highlighter-rouge">gnuarmeclipse/info/CHANGES.txt</code> file (copy the entries from the web change log).</p>
+
+<h2 id="commit-to-the-project-git">Commit to the project git</h2>
+
+<p>In the <strong>gnuarmeclipse/windows-build-tools</strong> project, commit all changes.</p>
+
+<h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
+
+<ul>
+  <li>add a new file to <code class="highlighter-rouge">_posts/windows-build-tools/releases</code></li>
+  <li>named the file like <code class="highlighter-rouge">2016-10-28-windows-build-tools-v2.7-20161028-released.md</code></li>
+  <li>name the post like: <strong>GNU ARM Eclipse Windows Build Tools v2.7-201610281058 released</strong> (do not close the post yet, to get the timestamp and the MD5 sums)</li>
+</ul>
+
+<h2 id="checkclonepull-build-scripts">Check/clone/pull build scripts</h2>
+
+<p>Be sure the scripts in the <strong>build-scripts.git</strong> are up to date.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/gnuarmeclipse/build-scripts.git \
+  ~/Downloads/build-scripts.git
+</code></pre>
+</div>
+
+<h2 id="build">Build</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-windows-build-tools.sh cleanall
+$ caffeinate bash ~/Downloads/build-scripts.git/scripts/build-windows-build-tools.sh --all
+</code></pre>
+</div>
+
+<h2 id="update-the-release-post-with-the-md5-sums">Update the release post with the MD5 sums</h2>
+
+<p>Copy/paste the build report at the end of the post as</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>c88f834f14f20b99bda1747ab6a8857b
+gnuarmeclipse-build-tools-win32-2.7-201610281058-setup.exe
+
+e7a34cb1e2ee68acbb41a4e441f75aa1
+gnuarmeclipse-build-tools-win64-2.7-201610281058-setup.exe
+</code></pre>
+</div>
+
+<h2 id="update-the-web">Update the web</h2>
+
+<ul>
+  <li>commit the <strong>gnuarmeclipse.github.io-source.git</strong> project; use a message like <strong>Windows Build Tools v2.7-20161028* released</strong></li>
+  <li>run <code class="highlighter-rouge">jekyll-build.command</code></li>
+  <li>commit the <strong>gnuarmeclipse.github.io.git</strong> project; use a message like <strong>Windows Build Tools v2.7-20161028* released</strong></li>
+  <li>push the <strong>gnuarmeclipse.github.io.git</strong> project</li>
+</ul>
+
+<h2 id="push-the-project-git">Push the project git</h2>
+
+<p>With SourceTree, push to the GitHub remote, the <strong>master</strong> branche.</p>
+
+<h2 id="create-the-release">Create the release</h2>
+
+<ul>
+  <li>for stable releases, be sure the <strong>master</strong> branch is up to date and set as default</li>
+  <li>go to the <a href="https://github.com/gnuarmeclipse/windows-build-tools/releases">GitHub Releases</a> page</li>
+  <li>click <strong>Draft a new release</strong></li>
+  <li>name the tag like <strong>v2.7</strong></li>
+  <li>select the <strong>master</strong> branch</li>
+  <li>name the release like <strong>GNU ARM Eclipse Windows Build Tools v2.7-201610281058</strong></li>
+  <li>as description, copy the first paragraph from the Web release page</li>
+  <li>add a link to the Web page <strong>[Continue reading »]()</strong></li>
+  <li>get URL from web and update the above link</li>
+  <li>attach binaries (drag and drop from the archives folder will do it)</li>
+  <li>click the <strong>Publish Release</strong> button</li>
+</ul>
+
+<p>Note: at this moment the system should send a notification to all clients watching this project.</p>
+
+<h2 id="copy-binaries-to-the-local-archive-folder">Copy binaries to the local archive folder</h2>
+
+<ul>
+  <li>go to <code class="highlighter-rouge">.../GNU ARM Eclipse/archive</code></li>
+  <li>move the latest binaries to <code class="highlighter-rouge">releases/qemu</code></li>
+</ul>
+
+<h2 id="share-on-facebook">Share on Facebook</h2>
+
+<ul>
+  <li>go to the new post and follow the Share link.</li>
+  <li>DO NOT select <strong>On your own Timeline</strong>, but <strong>On a Page you manage</strong></li>
+  <li>select GNU ARM Eclipse</li>
+  <li>posting as GNU ARM Eclipse</li>
+  <li>click <strong>Share link</strong></li>
+  <li>check the post in the <a href="https://www.facebook.com/gnuarmeclipse">Facebook page</a></li>
+</ul>
+
+
+<hr class="page-footer"/>
+<p class="page-footer">Last modified on Fri Oct 28 12:31:12 2016 UTC.</p>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/windows-build-tools/publish-procedure/" data-layout="button"></div>
+
+
+</section>
+
+<aside id="sidebar">
+
+<h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
+
+<ul>
+  <li><a href="/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/">GNU ARM Eclipse Windows Build Tools v2.7-201610281058 released</a></li>
+  <li><a href="/blog/2016/07/28/qemu-v2-6-0-20160728-released/">GNU ARM Eclipse QEMU v2.6.0-20160728* released</a></li>
+  <li><a href="/blog/2016/06/21/plugins-v3.1.1-201606210758-released/">GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</a></li>
+  <li><a href="/blog/2016/04/19/plugins-v2.12.1-201604190915-released/">GNU ARM Eclipse plug-ins v2.12.1-201604190915 released</a></li>
+  <li><a href="/blog/2016/04/03/arm-connected-community-article/">ARM Connected Community article, April 4, 2016</a></li>
+</ul>
+
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="featurespluginsfeatures"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloadsdownloads"><a href="/downloads/">Downloads</a></h4>
+
+<ul>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4 id="installinstall"><a href="/install/">Install</a></h4>
+
+<ul>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging components</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li><a href="/install/">Install order</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4 id="templatestemplates"><a href="/templates/">Templates</a></h4>
+
+<ul>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4 id="debuggingdebug"><a href="/debug/">Debugging</a></h4>
+
+<ul>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4 id="gnu-arm-qemu-homeqemu"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/options/">Command line options</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/publish-procedure/">How to publish</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4 id="gnu-arm-openocd-homeopenocd"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+</ul>
+
+<h4 id="windows-build-tools-homewindows-build-tools"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/publish-procedure/">How to publish</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4 id="supportsupport"><a href="/support/">Support</a></h4>
+
+<ul>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="/support/forum/">Forum</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+</ul>
+
+<h4 id="developerdeveloper"><a href="/developer/">Developer</a></h4>
+
+<ul>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
+</ul>
+
+<h4 id="hardware">Hardware</h4>
+
+<ul>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+</ul>
+
+<h4 id="latest-articles">Latest Articles</h4>
+
+<ul>
+  <li><a href="/articles/arm-com-2015-12-09/">GNU ARM Eclipse now available from Eclipse Marketplace</a></li>
+  <li><a href="/articles/arm-com-2015-11/">GNU ARM Eclipse: Cortex-M7 support added</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+
+<ul>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+
+<ul>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4 id="aboutabout"><a href="/about/">About</a></h4>
+
+<hr />
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</aside>
+
+
+</div>
+</div>
+
+<div class="inner clearfix">
+<div class="site-footer">
+  <div class="site-footer-links left">
+    <ul>
+  <li>© 2016 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
+</ul>
+
+  </div>
+  <a href="http://github.com/gnuarmeclipse" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+  </a>
+  <div class="site-footer-links right">
+    <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
+</ul>
+
+  </div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

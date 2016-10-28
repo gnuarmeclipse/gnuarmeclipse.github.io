@@ -117,7 +117,7 @@
 <a href="#merge-stable-release"><span class="tocnumber">5</span> <span class="toctext">Merge stable release</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#check-build-scripts"><span class="tocnumber">6</span> <span class="toctext">Check build scripts</span></a>
+<a href="#checkclonepull-build-scripts"><span class="tocnumber">6</span> <span class="toctext">Check/clone/pull build scripts</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
 <a href="#build"><span class="tocnumber">7</span> <span class="toctext">Build</span></a>
@@ -181,16 +181,19 @@
   <li>merge <strong>gnuarmeclipse-dev</strong>.</li>
 </ul>
 
-<h2 id="check-build-scripts">Check build scripts</h2>
+<h2 id="checkclonepull-build-scripts">Check/clone/pull build scripts</h2>
 
 <p>Be sure the scripts in the <strong>build-scripts.git</strong> are up to date.</p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/gnuarmeclipse/build-scripts.git \
+  ~/Downloads/build-scripts.git
+</code></pre>
+</div>
+
 <h2 id="build">Build</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-qemu.sh clean
-$ rm -rf ~/Work/wemu/qemu/output
-$ caffeinate bash ~/Downloads/build-qemu.sh --all
-$ boot2docker stop
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-qemu.sh cleanall
+$ caffeinate bash ~/Downloads/build-scripts.git/scripts/build-qemu.sh --all
 </code></pre>
 </div>
 
@@ -266,7 +269,7 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu Jul 28 08:59:56 2016 UTC.</p>
+<p class="page-footer">Last modified on Fri Oct 28 12:37:17 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/publish-procedure/" data-layout="button"></div>
 
 
@@ -277,11 +280,11 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
 <h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/">GNU ARM Eclipse Windows Build Tools v2.7-201610281058 released</a></li>
   <li><a href="/blog/2016/07/28/qemu-v2-6-0-20160728-released/">GNU ARM Eclipse QEMU v2.6.0-20160728* released</a></li>
   <li><a href="/blog/2016/06/21/plugins-v3.1.1-201606210758-released/">GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</a></li>
   <li><a href="/blog/2016/04/19/plugins-v2.12.1-201604190915-released/">GNU ARM Eclipse plug-ins v2.12.1-201604190915 released</a></li>
   <li><a href="/blog/2016/04/03/arm-connected-community-article/">ARM Connected Community article, April 4, 2016</a></li>
-  <li><a href="/blog/2016/02/10/plugins-v2.11.3-201602101653-released/">GNU ARM Eclipse plug-ins v2.11.3-201602101653 released</a></li>
 </ul>
 
 
@@ -391,6 +394,7 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
   <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/publish-procedure/">How to publish</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
   <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
@@ -471,7 +475,7 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
 <div class="site-footer">
   <div class="site-footer-links left">
     <ul>
-  <li>© 2015 Liviu Ionescu</li>
+  <li>© 2016 Liviu Ionescu</li>
   <li>Hosted on GitHub Pages</li>
   <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
   <li>
