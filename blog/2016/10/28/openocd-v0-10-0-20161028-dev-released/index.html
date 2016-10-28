@@ -9,25 +9,19 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse Windows Build Tools v2.4-20150324* released</title>
-  <meta name="description" content="Version 2.4-201503242026 is a maintenance release, fixing the uninstall procedure.">
+  <title>GNU ARM Eclipse OpenOCD v0.10.0-20161028*-dev released</title>
+  <meta name="description" content="Version v0.10.0-201610281609-dev is a maintenance release. It includes binaries for Windows, macOS and GNU/Linux.">
 
-  <meta property="og:title" content="GNU ARM Eclipse Windows Build Tools v2.4-20150324* released" />
+  <meta property="og:title" content="GNU ARM Eclipse OpenOCD v0.10.0-20161028*-dev released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-03-24">
+  <meta property="article:published_time" content="2016-10-28">
 
 
   <meta property="article:section" content="releases" />
-  <meta property="article:section" content="windows-build-tools" />
+  <meta property="article:section" content="openocd" />
 
-  <meta property="article:tag" content="windows" />
-  <meta property="article:tag" content="setup" />
-  <meta property="article:tag" content="build" />
-  <meta property="article:tag" content="make" />
-  <meta property="article:tag" content="rm" />
-  <meta property="article:tag" content="busybox" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -37,7 +31,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
 
-  <link rel="canonical" href="/blog/2015/03/24/windows-build-tools-v2.4-20150324-released/">
+  <link rel="canonical" href="/blog/2016/10/28/openocd-v0-10-0-20161028-dev-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -98,43 +92,86 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2015/03/24/openocd-v0.9.0-20150324-dev-released/">←</a></td>
-    <td><a href="/blog/2015/03/24/openocd-v0.9.0-20150324-dev-released/">GNU ARM Eclipse OpenOCD v0.9.0-20150324*-dev released</a></td>
+    <td><a href="/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/">←</a></td>
+    <td><a href="/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/">GNU ARM Eclipse Windows Build Tools v2.7-20161028* released</a></td>
     <td></td>
-    <td><a href="/blog/2015/04/04/qemu-v2-2-92-20150404-released/">GNU ARM Eclipse QEMU v2.2.92-20150404*-dev released</a></td>
-    <td><a href="/blog/2015/04/04/qemu-v2-2-92-20150404-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse Windows Build Tools v2.4-20150324* released</h1>
+<h1 class="post-title">GNU ARM Eclipse OpenOCD v0.10.0-20161028*-dev released</h1>
 
 
 <p class="post-meta">
-Posted on March 24, 2015 by Liviu Ionescu.
+Posted on October 28, 2016 by Liviu Ionescu.
 </p>
 
-<p>Version 2.4-201503242026 is a maintenance release, fixing the uninstall procedure.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#development-version"><span class="tocnumber">1</span> <span class="toctext">Development version</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#a-word-of-caution"><span class="tocnumber">2</span> <span class="toctext">A word of caution</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#configuration-update"><span class="tocnumber">3</span> <span class="toctext">Configuration update</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#download"><span class="tocnumber">4</span> <span class="toctext">Download</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version v0.10.0-201610281609-dev is a maintenance release. It includes binaries for Windows, macOS and GNU/Linux.</p>
 
 <p>
-<a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.4b">Binary files »</a>
+<a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.10.0-20161028">Binary files »</a>
 </p>
 
-<h2 id="known-problems">Known problems</h2>
+<h2 id="development-version">Development version</h2>
 
-<ul>
-  <li>none so far</li>
-</ul>
+<p>For those who want the latest OpenOCD features before the stable version is announced, the latest OpenOCD version built from the development repository was released in packages explicitly marked as <code class="highlighter-rouge">-dev</code>.</p>
 
-<p><strong>Warning:</strong> If you installed v2.4-201503212005, <strong>DO NOT</strong> uninstall it, but install the new version over the old one. Please check if the recommended install folder includes the new date (2.4-201503242026). If it does not, add it manually.</p>
+<h2 id="a-word-of-caution">A word of caution</h2>
+
+<p>The OpenOCD developers claim that the development versions should be generally safe to use. In case you encounter problems, please revert to the latest 0.9.0 stable release.</p>
+
+<h2 id="configuration-update">Configuration update</h2>
+
+<p>The debug plug-in generally discovers the latest installed version, by using the Windows registry keys or by searching several designated folders. If you need to use a different version, update the <code class="highlighter-rouge">${openocd_path}</code> variable accordingly.</p>
 
 <h2 id="download">Download</h2>
 
-<p>The new Windows Build Tools can be downloaded from the <a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.4b">GitHub Release</a> page.</p>
+<p>The new OpenOCD can be downloaded from the <a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.10.0-20161028">GitHub Releases</a> page.</p>
 
-<p>The available files are:</p>
+<p>The MD5 sums of the files are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>gnuarmeclipse-build-tools-win32-2.4-201503242026-setup.exe
+<div class="highlighter-rouge"><pre class="highlight"><code>c13c87a00741b3664dd703eb6729f610  
+gnuarmeclipse-openocd-debian32-0.10.0-201610281609-dev.tgz
+
+6a09bae777f1b940d4bf38eed34b5075  
+gnuarmeclipse-openocd-debian64-0.10.0-201610281609-dev.tgz
+
+e374e36d3fc5c35c38242cfe7cee77c3 
+gnuarmeclipse-openocd-osx-0.10.0-201610281609-dev.pkg
+
+63f5a6d0fa2fd2281d768218c25b13e1  
+gnuarmeclipse-openocd-win32-0.10.0-201610281609-dev-setup.exe
+
+f0c5d18c13f1330172dfbb1986e253fa  
+gnuarmeclipse-openocd-win64-0.10.0-201610281609-dev-setup.exe
 </code></pre>
 </div>
 
@@ -143,11 +180,9 @@ Posted on March 24, 2015 by Liviu Ionescu.
 <p class="post-footer">
 Posted in
 
-<strong>releases</strong>, <strong>windows-build-tools</strong> and tagged
-
-<strong>windows</strong>, <strong>setup</strong>, <strong>build</strong>, <strong>make</strong>, <strong>rm</strong>, <strong>busybox</strong>.
-</br>Last modified on Fri Oct 28 17:29:18 2016 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/03/24/windows-build-tools-v2.4-20150324-released/" data-layout="button"></div>
+<strong>releases</strong>, <strong>openocd</strong>.
+</br>Last modified on Fri Oct 28 18:02:12 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/10/28/openocd-v0-10-0-20161028-dev-released/" data-layout="button"></div>
 </p>
 
 
