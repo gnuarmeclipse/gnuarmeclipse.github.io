@@ -105,43 +105,41 @@
 <a href="#overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#documentation"><span class="tocnumber">2</span> <span class="toctext">Documentation</span></a>
+<a href="#j-link-conversion"><span class="tocnumber">2</span> <span class="toctext">J-Link conversion</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#windows"><span class="tocnumber">3</span> <span class="toctext">Windows</span></a>
+<a href="#documentation"><span class="tocnumber">3</span> <span class="toctext">Documentation</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#windows"><span class="tocnumber">4</span> <span class="toctext">Windows</span></a>
 <ul>
-<li class="toc_level-2 toc_section-4">
-<a href="#drivers"><span class="tocnumber">3.1</span> <span class="toctext">Drivers</span></a>
+<li class="toc_level-2 toc_section-5">
+<a href="#drivers"><span class="tocnumber">4.1</span> <span class="toctext">Drivers</span></a>
 </li>
 </ul>
-</li>
-<li class="toc_level-1 toc_section-5">
-<a href="#macos"><span class="tocnumber">4</span> <span class="toctext">macOS</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#gnulinux"><span class="tocnumber">5</span> <span class="toctext">GNU/Linux</span></a>
+<a href="#macos"><span class="tocnumber">5</span> <span class="toctext">macOS</span></a>
+</li>
+<li class="toc_level-1 toc_section-7">
+<a href="#gnulinux"><span class="tocnumber">6</span> <span class="toctext">GNU/Linux</span></a>
 <ul>
-<li class="toc_level-2 toc_section-7">
-<a href="#udev"><span class="tocnumber">5.1</span> <span class="toctext">UDEV</span></a>
+<li class="toc_level-2 toc_section-8">
+<a href="#udev"><span class="tocnumber">6.1</span> <span class="toctext">UDEV</span></a>
+</li>
+<li class="toc_level-2 toc_section-9">
+<a href="#usb-access-rights"><span class="tocnumber">6.2</span> <span class="toctext">USB access rights</span></a>
 </li>
 </ul>
-</li>
-<li class="toc_level-1 toc_section-8">
-<a href="#testing"><span class="tocnumber">6</span> <span class="toctext">Testing</span></a>
-</li>
-<li class="toc_level-1 toc_section-9">
-<a href="#openocd-debugging-plug-ins"><span class="tocnumber">7</span> <span class="toctext">OpenOCD Debugging plug-ins</span></a>
 </li>
 <li class="toc_level-1 toc_section-10">
-<a href="#update-openocd-path"><span class="tocnumber">8</span> <span class="toctext">Update OpenOCD path</span></a>
+<a href="#testing"><span class="tocnumber">7</span> <span class="toctext">Testing</span></a>
 </li>
 <li class="toc_level-1 toc_section-11">
-<a href="#troubleshooting"><span class="tocnumber">9</span> <span class="toctext">Troubleshooting</span></a>
-<ul>
-<li class="toc_level-2 toc_section-12">
-<a href="#usb-access-rights"><span class="tocnumber">9.1</span> <span class="toctext">USB access rights</span></a>
+<a href="#openocd-debugging-plug-ins"><span class="tocnumber">8</span> <span class="toctext">OpenOCD Debugging plug-ins</span></a>
 </li>
-</ul>
+<li class="toc_level-1 toc_section-12">
+<a href="#update-openocd-path"><span class="tocnumber">9</span> <span class="toctext">Update OpenOCD path</span></a>
 </li>
 </ul>
 </td>
@@ -158,17 +156,25 @@
 
 <p><strong>Warning:</strong> OpenOCD is a very complex project, capable of working with many JTAG probes, but support for them must be explicitly included at build time, so be sure that support for your JTAG probe was included in the binaries you plan to use. The <strong>GNU ARM Eclipse OpenOCD</strong> includes support for most existing probes.</p>
 
+<h2 id="j-link-conversion">J-Link conversion</h2>
+
+<p>If the only reason to run OpenOCD is to use the ST-LINK on-board programmer on STM Discovery or Nucleo boards, then, thanks to SEGGER, a better solution exists: it is possible to <strong>upgrade the on-board programmer firmware to behave like a J-Link</strong> lite, and then use the GNU ARM Eclipse J-Link plug-in. The conversion is reversible, you can return the board to ST-LINK at any time.</p>
+
+<p>Please follow the instructions on <a href="https://www.segger.com/jlink-st-link.html">Converting ST-LINK on-board into a J-Link</a>.</p>
+
 <h2 id="documentation">Documentation</h2>
 
-<p>The OpenOCD documentation is available in the <a href="https://sourceforge.net/projects/openocd/files/openocd/">Files</a> section of the SourceForge project. For version 0.9.0, the manual is <a href="http://sourceforge.net/projects/openocd/files/openocd/0.9.0/openocd.pdf/download">openocd.pdf</a>.</p>
+<p>If you are using the GNU ARM Eclipse OpenOCD, the documentation is part of the installed package.</p>
+
+<p>Slightly older version are also available in the <a href="https://sourceforge.net/projects/openocd/files/openocd/">Files</a> section of the SourceForge project. For version 0.9.0, the manual is <a href="http://sourceforge.net/projects/openocd/files/openocd/0.9.0/openocd.pdf/download">openocd.pdf</a>.</p>
 
 <h2 id="windows">Windows</h2>
 
 <p>For user convenience, the Windows versions of <strong>GNU ARM Eclipse OpenOCD</strong> are packed as Windows setup wizards. Go to the <a href="https://github.com/gnuarmeclipse/openocd/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">gnuarmeclipse-openocd-win64-0.8.0-*-setup.exe</code></li>
-  <li><code class="highlighter-rouge">gnuarmeclipse-openocd-win32-0.8.0-*-setup.exe</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-openocd-win64-0.10.0-*-setup.exe</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-openocd-win32-0.10.0-*-setup.exe</code></li>
 </ul>
 
 <p>Select the <code class="highlighter-rouge">-win64-</code> file for Windows x64 machines and the <code class="highlighter-rouge">-win32-</code> file for Windows x32 machines.</p>
@@ -206,7 +212,7 @@ GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00036 (2015-03-20-18:40)
 
 <h3 id="drivers">Drivers</h3>
 
-<p>As usual on Windows, mastering drivers is a challenge and OpenOCD is no exceptions, so don’t be surprised to encounter many incompatible drivers for various JTAG probes. The OpenOCD distribution includes some libusb drivers, and recommends to run the <code class="highlighter-rouge">zadig.exe</code> tool to activate them. Although this manoeuvre will make OpenOCD happy, it will most probably ruin other USB drivers you might have installed. Our strong recommendation is NOT to do this, and instead use the manufacturer drivers, when compatible with OpenOCD.</p>
+<p>As usual on Windows, mastering drivers is a challenge and OpenOCD is no exceptions, so don’t be surprised to encounter many incompatible drivers for various JTAG probes. The OpenOCD distribution includes some libusb drivers, and recommends to run the <code class="highlighter-rouge">zadig.exe</code> tool to activate them. Although this manoeuvre will make OpenOCD happy, it will most probably ruin other USB drivers you might have installed. Our strong recommendation is to <strong>NOT</strong> do this, and instead use the manufacturer drivers, when compatible with OpenOCD.</p>
 
 <h4 id="st-linkv2">ST-LINK/V2</h4>
 
@@ -235,10 +241,10 @@ GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00036 (2015-03-20-18:40)
 <p>For user convenience, the macOS version of <strong>GNU ARM Eclipse OpenOCD</strong> is packed as an macOS install package. Go to the <a href="https://github.com/gnuarmeclipse/openocd/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li> <code class="highlighter-rouge">gnuarmeclipse-openocd-osx-0.8.0-*.pkg</code></li>
+  <li> <code class="highlighter-rouge">gnuarmeclipse-openocd-osx-0.10.0-*.pkg</code></li>
 </ul>
 
-<p>As the name implies, this is an macOS package, that can be installed on any recent 64-bits macOS (the latest version was tested on 10.9, 10.10, 10.11).</p>
+<p>As the name implies, this is an macOS package, that can be installed on any recent 64-bits macOS.</p>
 
 <p>Run the install as usual.</p>
 
@@ -264,8 +270,8 @@ GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00036 (2015-01-18-12:57)
 <p>The GNU/Linux versions of <strong>GNU ARM Eclipse OpenOCD</strong> are packed as TGZ archives. Go to the <a href="https://github.com/gnuarmeclipse/openocd/releases">GitHub Releases</a> page and download the latest version named like:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">gnuarmeclipse-openocd-debian64-0.8.0-201501181055.tgz</code></li>
-  <li><code class="highlighter-rouge">gnuarmeclipse-openocd-debian32-0.8.0-201501181055.tgz</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-openocd-debian64-0.10.0-201501181055.tgz</code></li>
+  <li><code class="highlighter-rouge">gnuarmeclipse-openocd-debian32-0.10.0-201501181055.tgz</code></li>
 </ul>
 
 <p>As the name implies, these are Debian <code class="highlighter-rouge">tar.gz</code> archives, but can be executed on most recent GNU/Linux distributions (they were tested on Debian, Ubuntu, Manjaro, SuSE and Fedora). Select the <code class="highlighter-rouge">-debian64-</code> file for 64-bits machines and the <code class="highlighter-rouge">-debian32-</code> file for 32-bits machines.</p>
@@ -274,9 +280,9 @@ GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00036 (2015-01-18-12:57)
 
 <p>To install this package, unpack the archive and copy it to  <code class="highlighter-rouge">/opt/gnuarmeclipse/openocd/${version}</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo mkdir -p /opt/gnuarmeclipse
-cd /opt/gnuarmeclipse
-sudo tar xvf ~/Downloads/gnuarmeclipse-openocd-debian64-0.10.0-201510281129-dev.tgz
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo mkdir -p /opt/gnuarmeclipse
+$ cd /opt/gnuarmeclipse
+$ sudo tar xvf ~/Downloads/gnuarmeclipse-openocd-debian64-0.10.0-201510281129-dev.tgz
 </code></pre>
 </div>
 
@@ -284,28 +290,53 @@ sudo tar xvf ~/Downloads/gnuarmeclipse-openocd-debian64-0.10.0-201510281129-dev.
 
 <p>To check if OpenOCD starts and is recent, use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ /opt/gnuarmeclipse/openocd/0.10.0-201510281129-dev/bin/openocd --version   GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.10.0-dev-00141-g09aeb96-dirty (2015-10-28-11:56)
+<div class="highlighter-rouge"><pre class="highlight"><code>$ /opt/gnuarmeclipse/openocd/0.10.0-201510281129-dev/bin/openocd --version
+GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.10.0-dev-00141-g09aeb96-dirty (2015-10-28-11:56)
 </code></pre>
 </div>
 
 <h3 id="udev">UDEV</h3>
 
-<p>For the JTAG probes implemented as USB devices (actually most of them), the last installation step on GNU/Linux is to configure the UDEV subsystem. OpenOCD provides an UDEV rules file defining all the supported IDs; to install it, just copy the file to <code class="highlighter-rouge">/etc/udev/rules.d</code> and eventually notify the daemon:</p>
+<p>For the JTAG probes implemented as USB devices (actually most of them), the last installation step on GNU/Linux is to configure the <strong>UDEV</strong> subsystem. OpenOCD provides an UDEV rules file defining all the supported IDs; to install it, just copy the file to <code class="highlighter-rouge">/etc/udev/rules.d</code> and eventually notify the daemon:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo cp /opt/gnuarmeclipse/openocd/0.10.0-201510281129-dev/contrib/99-openocd.rules \
- /etc/udev/rules.d/
+  /etc/udev/rules.d/
 $ sudo udevadm control --reload-rules
 </code></pre>
 </div>
 
 <p>Note: If you previously installed the J-Link binaries, the USB IDs were already added to UDEV. The above OpenOCD rules file also defines the J-Link ID. Apparently UDEV does not complain; if you encounter problems, just comment out the definition in the OpenOCD file.</p>
 
+<h3 id="usb-access-rights">USB access rights</h3>
+
+<p>On some GNU/Linux distributions, the UDEV definitions are not enough,
+or are not effective, and when trying to access the JTAG probe,
+an error is issued:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>libusb_open failed: LIBUSB_ERROR_ACCESS
+</code></pre>
+</div>
+
+<p>If this happens, first try to start openocd with sudo; if this works,
+for regular work you also need to grant your user permission to use the USB.</p>
+
+<p>For example, on Ubuntu 15.10 you need to issue something like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo usermod -aG plugdev $USER
+</code></pre>
+</div>
+
+<p>Then relogin or restart.</p>
+
+<p>If you still have problems, check your distribution documentation and
+when you have a functional solution post it on the project forum.</p>
+
 <h2 id="testing">Testing</h2>
 
 <p>To test if OpenOCD is able to connect to a specific board, you generally need to select the interface and the processor. As a shortcut, for some well known boards, there are ready made configuration files to set both the interface and the processor. For example, on macOS, to test a connection via ST/LINK v2 to the STM32F4DISCOERY board, you can use the sample below:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ /Applications/GNU\ ARM\ Eclipse/OpenOCD/0.8.0-201501181257/bin/openocd \
- -f board/stm32f4discovery.cfg
+  -f board/stm32f4discovery.cfg
 GNU ARM Eclipse 64-bits Open On-Chip Debugger 0.8.0-00036-gb7535dd (2015-01-18-12:57)
 Licensed under GNU GPL v2
 For bug reports, read
@@ -349,29 +380,6 @@ Info : stm32f4x.cpu: hardware has 6 	breakpoints, 4 watchpoints
 
 <p>For more details please refer to the <a href="/debug/qemu/#define-the-openocd-folder-location">OpenOCD plug-in</a> page, where the entire procedure is explained.</p>
 
-<h2 id="troubleshooting">Troubleshooting</h2>
-
-<h3 id="usb-access-rights">USB access rights</h3>
-
-<p>On some GNU/Linux distributions, the UDEV definitions are not enough,
-or are not effective, and when trying to access the JTAG probe,
-an error is issued:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>libusb_open failed: LIBUSB_ERROR_ACCESS
-</code></pre>
-</div>
-
-<p>If this happens, first try to start openocd with sudo; if this works,
-for regular work you also need to grant your user permission to use the USB.</p>
-
-<p>For example, on Ubuntu 15.10 you need to issue something like:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>usermod -aG plugdev $USER
-</code></pre>
-</div>
-
-<p>If you still have problems, check your distribution documentation and
-when you have a functional solution post it on the project forum.</p>
 
 
 <hr class="page-footer"/>
