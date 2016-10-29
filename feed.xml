@@ -5,9 +5,33 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Oct 2016 07:08:17 +0000</pubDate>
-    <lastBuildDate>Sat, 29 Oct 2016 07:08:17 +0000</lastBuildDate>
+    <pubDate>Sat, 29 Oct 2016 13:07:50 +0000</pubDate>
+    <lastBuildDate>Sat, 29 Oct 2016 13:07:50 +0000</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse QEMU v2.7.0-20161029* released</title>
+        <description>&lt;p&gt;Version 2.7.0-201610290751 is a new stable release, following the offfical QEMU releases.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 29 Oct 2016 12:55:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/10/29/qemu-v2-7-0-20161029-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/10/29/qemu-v2-7-0-20161029-released/</guid>
+        
+        <category>emulator</category>
+        
+        <category>macos</category>
+        
+        <category>linux</category>
+        
+        <category>windos</category>
+        
+        
+        <category>releases</category>
+        
+        <category>qemu</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse OpenOCD v0.10.0-20161028*-dev released</title>
@@ -212,32 +236,6 @@
         <category>releases</category>
         
         <category>openocd</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.11.1-201512141335 released</title>
-        <description>&lt;p&gt;Version 2.11.1-201512141335 is a new release; the main improvements are: templates were updated to use &lt;strong&gt;CMSIS CORE 4.5&lt;/strong&gt;, and the toolchain prefix for &lt;strong&gt;Linaro AArch64 big-endian bare-metal ELF&lt;/strong&gt; was updated.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 17 Dec 2015 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2015/12/17/plugins-v2.11.1-201512141335-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2015/12/17/plugins-v2.11.1-201512141335-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>CMSIS</category>
-        
-        <category>AArch64</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
         
       </item>
     
