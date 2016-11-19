@@ -26,8 +26,8 @@
 
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
 
   <link rel="canonical" href="/plugins/install/">
 
@@ -145,22 +145,36 @@
 <a href="#off-line-install"><span class="tocnumber">4</span> <span class="toctext">Off-line install</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#troubleshooting"><span class="tocnumber">5</span> <span class="toctext">Troubleshooting</span></a>
+<a href="#checkset-the-global-tools-paths"><span class="tocnumber">5</span> <span class="toctext">Check/set the global tools paths</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#plug-ins-versions"><span class="tocnumber">6</span> <span class="toctext">Plug-ins versions</span></a>
+<a href="#troubleshooting"><span class="tocnumber">6</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toc_level-2 toc_section-16">
+<a href="#sourceforge-problems"><span class="tocnumber">6.1</span> <span class="toctext">SourceForge problems</span></a>
 </li>
-<li class="toc_level-1 toc_section-16">
-<a href="#set-workspace-preferences"><span class="tocnumber">7</span> <span class="toctext">Set workspace preferences</span></a>
+<li class="toc_level-2 toc_section-17">
+<a href="#incomplete-eclipse"><span class="tocnumber">6.2</span> <span class="toctext">Incomplete Eclipse</span></a>
 </li>
-<li class="toc_level-1 toc_section-17">
-<a href="#download-cmsis-packs"><span class="tocnumber">8</span> <span class="toctext">Download CMSIS Packs</span></a>
+</ul>
 </li>
 <li class="toc_level-1 toc_section-18">
-<a href="#toolchain-and-debugging-support"><span class="tocnumber">9</span> <span class="toctext">Toolchain and debugging support</span></a>
+<a href="#plug-ins-versions"><span class="tocnumber">7</span> <span class="toctext">Plug-ins versions</span></a>
 </li>
 <li class="toc_level-1 toc_section-19">
-<a href="#support"><span class="tocnumber">10</span> <span class="toctext">Support</span></a>
+<a href="#set-workspace-preferences"><span class="tocnumber">8</span> <span class="toctext">Set workspace preferences</span></a>
+</li>
+<li class="toc_level-1 toc_section-20">
+<a href="#download-cmsis-packs"><span class="tocnumber">9</span> <span class="toctext">Download CMSIS Packs</span></a>
+</li>
+<li class="toc_level-1 toc_section-21">
+<a href="#toolchain-and-debugging-support"><span class="tocnumber">10</span> <span class="toctext">Toolchain and debugging support</span></a>
+</li>
+<li class="toc_level-1 toc_section-22">
+<a href="#test-project"><span class="tocnumber">11</span> <span class="toctext">Test project</span></a>
+</li>
+<li class="toc_level-1 toc_section-23">
+<a href="#support"><span class="tocnumber">12</span> <span class="toctext">Support</span></a>
 </li>
 </ul>
 </td>
@@ -184,6 +198,8 @@
   <li>URL: <code class="highlighter-rouge">http://gnuarmeclipse.sourceforge.net/updates</code></li>
 </ul>
 
+<p>It is recommended that you install the plug-ins after installing the <a href="/toolchain/install">toolchain</a>, the <a href="/windows-build-tools/install/">build tools</a> (on Windows), and the <a href="/debug/install/">debugging binaries</a>.</p>
+
 <h2 id="prerequisites">Prerequisites</h2>
 
 <p>Since these are Eclipse plug-ins, they obviously require a functional Eclipse CDT, which requires Java.</p>
@@ -200,7 +216,7 @@
 
 <h3 id="java">Java</h3>
 
-<p>The recommended package is the official <a href="http://www.oracle.com/technetwork/java/javase/index.html">Oracle <strong>Java SE</strong></a>. The <strong>OpenJDK Java</strong> used in Ubuntu is also fine. The minimum is JDK 1.7, or even JRE 1.7 (the Java Runtime Environment), but, as said before, better use the latest JDK. On macOS the last Apple Java implementation is 1.6, so it is required to use the Oracle 1.7 or later.</p>
+<p>The recommended package is the latest version from the official <a href="http://www.oracle.com/technetwork/java/javase/index.html">Oracle <strong>Java SE</strong> page</a>. The <strong>OpenJDK Java</strong> used in Ubuntu is also fine. The minimum is JDK 1.7, or even JRE 1.7 (the Java Runtime Environment), but, as said before, better use the latest JDK (currently 1.8). On macOS the last Apple Java implementation is 1.6, so it is required to use the Oracle version.</p>
 
 <p>For example, on Ubuntu 14.04 LTS, you can install the OpenJDK run-time and test if it was properly installed with the following commands:</p>
 
@@ -214,11 +230,25 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 
 <h3 id="eclipse--cdt">Eclipse &amp; CDT</h3>
 
-<p>The oldest Eclipse supported by the plug-ins is Eclipse 4.4 Luna SR2 (CDT 8.6), and the recommended version is 4.5 Mars. Do not try to install them on Kepler, Juno, Indigo, or older versions, since the install will fail.</p>
+<p>The oldest Eclipse supported by the plug-ins is Eclipse 4.4 Luna SR2 (CDT 8.6), and the recommended version is <strong>4.5 Mars SR2</strong>. Do not try to install them on Kepler, Juno, Indigo, or older versions, since the install will fail.</p>
 
-<p>Go to the <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and get the <strong>Eclipse IDE for C/C++ Developers</strong> archive appropriate for your platform, preferably the 64-bits version.</p>
+<p>The plug-ins are also functional on Neon, but on macOS there is a bug in the Eclipse rendering code, and some fonts are not aligned properly; this is completely unrelated to GNU ARM Eclipse plug-ins.</p>
 
-<p>Eclipse does not need an installer, Eclipse is distributed as a plain archive. To install Eclipse, simply unpack the archive at a place of your choice and start using it.</p>
+<p>Go to the <a href="http://www.eclipse.org/downloads/eclipse-packages">Eclipse packages</a> and get the <strong>Eclipse IDE for C/C++ Developers</strong> archive appropriate for your platform, preferably the 64-bits version.</p>
+
+<p>Links to older versions are available in the <strong>More Downloads</strong> section, at the bottom.</p>
+
+<p>
+<img src="/assets/images/2016/eclipse-packages.png" alt="Eclipse packages" />
+</p>
+
+<p>In case you reached the main Eclipse downloads page, avoid the recommended download and follow the link to the Eclipse packages.</p>
+
+<p>
+<img src="/assets/images/2016/eclipse-downloads.png" alt="Eclipse packages" />
+</p>
+
+<p>Traditionally Eclipse does not need an installer, Eclipse is distributed as a plain archive. To install Eclipse, simply unpack the archive at a place of your choice and start using it.</p>
 
 <blockquote>
   <p>Note 1: on GNU/Linux be sure you manually install the Eclipse; <strong>DO NOT</strong> try to install it via the Synaptics package manager, or similar, since usually you get an older version and the CDT plug-ins are not included.</p>
@@ -230,23 +260,23 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 
 <h3 id="cdt">CDT</h3>
 
-<p>The minimum CDT version is 8.6. Do not try to use earlier versions, since either the install will fail, or it will not run properly.</p>
+<p>The minimum CDT version is 8.6. Do not try to use earlier versions, since either the install will fail (with something like <code class="highlighter-rouge">... requires 'bundle org.eclipse.cdt 8.6.0' but it could not be found</code>), or it will not run properly.</p>
 
 <p>As mentioned before, the recommended way is to use a fresh <strong>Eclipse IDE for C/C++ Developers</strong> for the cross ARM development projects. Even if you did so, but especially if you did not do so, it is a good idea to check if you really have the latest version available. For this, enter the <em>Eclipse</em> menu and go to <strong>Help</strong> → <strong>Install New Software</strong></p>
 
 <p>
-<img src="/assets/images/2013/10/InstallNewSoftware.png" alt="Install new software" />
+<img src="/assets/images/2016/install-new-software.png" alt="Install new software" />
 </p>
 
 <ul>
-  <li>select <em>Work with:</em> <strong>Kepler</strong> (or more recent)</li>
+  <li>select <em>Work with:</em> <strong>Luna</strong> (or more recent)</li>
   <li>if the <em>Group items by category </em>is enabled, expand the <strong>Programming Languages</strong> group</li>
   <li>select the <strong>C/C++ Development Tools</strong> feature</li>
   <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
 </ul>
 
 <p>
-<img src="/assets/images/2013/10/InstallCDT.png" alt="CDT install" />
+<img src="/assets/images/2016/install-cdt.png" alt="CDT install" />
 </p>
 
 <h3 id="compatibility-issues">Compatibility issues</h3>
@@ -348,7 +378,27 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 
 <p>On-line install do not have this problem since the Eclipse automatically downloads the C/C++ GDB Hardware Debugging plug-in from the CDT update site.</p>
 
+<h2 id="checkset-the-global-tools-paths">Check/set the global tools paths</h2>
+
+<p>If you already installed the toolchain (and, on Windows, the build tools) in the default locations, as suggested in the above steps, the plug-ins might have automatically discovered them.</p>
+
+<p>
+<img src="/assets/images/2015/win-preferences-c-build-global-tools-path.png" alt="Global Tools Path" />
+</p>
+
+<p>The above definition will make the toolchain and build tools accessible to all projects in all workspaces.</p>
+
+<p>If needed, you can define different paths per workspace (<strong>Workspace Tools Paths</strong>) or even per project (<strong>Tools Paths</strong> in the project properties).</p>
+
+<p>To check if the paths definitions are effective, go to the project properties page and identify the <strong>PATH</strong> variable. Be sure the <strong>Origin</strong> column reads <strong>BUILD SYSTEM</strong>; if you manually edit it, the Origin will change and will read USER, but this is totally not recommended, since manually editing the path disables further automated updates of the path.</p>
+
+<p>
+<img src="/assets/images/2015/win-properties-c-environment.png" alt="Environment PATH" />
+</p>
+
 <h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="sourceforge-problems">SourceForge problems</h3>
 
 <p>There are cases when the on-line access to the SourceForge mirror servers might not be reliable. In these cases the Eclipse update system may fail. For example:</p>
 
@@ -367,6 +417,24 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 </p>
 
 <p>If this still fails, the alternative method is to manually download the latest version archive and to perform the install from it, as presented below.</p>
+
+<h3 id="incomplete-eclipse">Incomplete Eclipse</h3>
+
+<p>If Eclipse complains that some required items could not be found, most probably you are trying to install the plug-ins on an older Eclipse, or on another Eclipse package than the recommended <strong>Eclipse IDE for C/C++ Developers</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Cannot complete the install because one or more required items could not be found.
+  Software being installed: GNU ARM C/C++ J-Link Debugging 4.1.1.201606210758 (ilg.gnuarmeclipse.debug.gdbjtag.jlink.feature.group 4.1.1.201606210758)
+  Missing requirement: GNU ARM C/C++ Core 3.1.1.201606210758 (ilg.gnuarmeclipse.core 3.1.1.201606210758) requires 'bundle org.eclipse.cdt 8.6.0' but it could not be found
+  Cannot satisfy dependency:
+    From: GNU ARM C/C++ J-Link Debugging 4.1.1.201606210758 (ilg.gnuarmeclipse.debug.gdbjtag.jlink 4.1.1.201606210758)
+    To: bundle ilg.gnuarmeclipse.core 0.0.0
+  Cannot satisfy dependency:
+    From: GNU ARM C/C++ J-Link Debugging 4.1.1.201606210758 (ilg.gnuarmeclipse.debug.gdbjtag.jlink.feature.group 4.1.1.201606210758)
+    To: ilg.gnuarmeclipse.debug.gdbjtag.jlink [4.1.1.201606210758]
+</code></pre>
+</div>
+
+<p>Reinstall the correct Eclipse package, or add CDT to the existing Eclipse (<strong>Programming Languages</strong> → <strong>C/C++ Development Tools</strong>).</p>
 
 <h2 id="plug-ins-versions">Plug-ins versions</h2>
 
@@ -410,16 +478,18 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 
 <p>It is also highly recommended to install the Packs plug-in, to switch to the Packs perspective and using the <a href="/plugins/packs-manager/" title="Packs manager">Packs manager</a> to install the packages related to the devices in use. Even if Packs support is not complete yet, you still can benefit from the existing CMSIS Packs, for example by using the <a href="/debug/peripheral-registers/" title="The peripherals registers view">peripherals registers view</a> in debug, the documentation view in the C/C++ perspective, etc.</p>
 
+<h2 id="test-project">Test project</h2>
+
 <p>Follow the above steps and when everything is ready, proceed to <a href="/tutorials/blinky-arm/" title="Tutorial: Create a test project">create and build a test project</a>.</p>
 
 <h2 id="support">Support</h2>
 
-<p>If you encountered any problems when installing the plug-ins, pleas refer to the <a href="/support/">Support</a> page and <strong>do not</strong> post comments to the blog pages containing support requests.</p>
+<p>If you encountered any problems when installing the plug-ins, pleas refer to the <a href="/support/">Support</a> page and <strong>do not</strong> send private email.</p>
 
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Jun 22 09:36:50 2016 UTC.</p>
+<p class="page-footer">Last modified on Sat Nov 19 13:50:30 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/plugins/install/" data-layout="button"></div>
 
 
@@ -458,10 +528,9 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 
 <ul>
   <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
+  <li><a href="/debug/install/">Debugging binaries</a>
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
@@ -469,6 +538,7 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
       <li><a href="/qemu/install/">QEMU install</a></li>
     </ul>
   </li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
 </ul>
 
 <h4 id="important">Important</h4>

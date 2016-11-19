@@ -26,8 +26,8 @@
 
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201510051605" media="screen">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201510051605" media="print">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
 
   <link rel="canonical" href="/windows-build-tools/install/">
 
@@ -117,16 +117,13 @@
 <a href="#check-version"><span class="tocnumber">5</span> <span class="toctext">Check version</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#check-the-global-tools-path"><span class="tocnumber">6</span> <span class="toctext">Check the global tools path</span></a>
+<a href="#do-not-update-the-user-or-system-path"><span class="tocnumber">6</span> <span class="toctext">DO NOT update the user or system path!</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#do-not-update-the-user-or-system-path"><span class="tocnumber">7</span> <span class="toctext">DO NOT update the user or system path!</span></a>
+<a href="#uninstall"><span class="tocnumber">7</span> <span class="toctext">Uninstall</span></a>
 </li>
 <li class="toc_level-1 toc_section-8">
-<a href="#uninstall"><span class="tocnumber">8</span> <span class="toctext">Uninstall</span></a>
-</li>
-<li class="toc_level-1 toc_section-9">
-<a href="#the-echo-command"><span class="tocnumber">9</span> <span class="toctext">The echo command</span></a>
+<a href="#the-echo-command"><span class="tocnumber">8</span> <span class="toctext">The echo command</span></a>
 </li>
 </ul>
 </td>
@@ -181,24 +178,6 @@ There is NO WARRANTY, to the extent permitted by law.
 </code></pre>
 </div>
 
-<h2 id="check-the-global-tools-path">Check the global tools path</h2>
-
-<p>If you installed the build tools as explained above, the setup already added a key to the Windows Registry and the plug-in can read it and automatically configure the PATH.</p>
-
-<p>
-<img src="/assets/images/2015/win-preferences-c-build-global-tools-path.png" alt="Global Tools Path" />
-</p>
-
-<p>The above definition will make the build tools accessible to all projects in all workspaces.</p>
-
-<p>If needed, you can define different paths per workspace (<strong>Workspace Tools Paths</strong>) or even per project (<strong>Tools Paths</strong> in the project properties).</p>
-
-<p>To check if the paths definitions are effective, go to the project properties page and identify the <strong>PATH</strong> variable. Be sure the <strong>Origin</strong> column reads <strong>BUILD SYSTEM</strong>; if you manually edit it, the Origin will change and will read USER, but this is totally not recommended, since manually editing the path disables further automated updates of the path.</p>
-
-<p>
-<img src="/assets/images/2015/win-properties-c-environment.png" alt="Environment PATH" />
-</p>
-
 <h2 id="do-not-update-the-user-or-system-path">DO NOT update the user or system path!</h2>
 
 <p>As recommended when installing the toolchain, it is recommended to keep this settings outside the user or system path. Microsoft did not provide these programs in their distribution, and it is better to keep it that way, when you need them just explicitly update the build path to use them.</p>
@@ -213,7 +192,7 @@ There is NO WARRANTY, to the extent permitted by law.
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri Oct 28 12:32:02 2016 UTC.</p>
+<p class="page-footer">Last modified on Sat Nov 19 13:50:30 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/windows-build-tools/install/" data-layout="button"></div>
 
 
@@ -252,10 +231,9 @@ There is NO WARRANTY, to the extent permitted by law.
 
 <ul>
   <li><a href="/install/">Overview</a></li>
-  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging components</a>
+  <li><a href="/debug/install/">Debugging binaries</a>
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
@@ -263,6 +241,7 @@ There is NO WARRANTY, to the extent permitted by law.
       <li><a href="/qemu/install/">QEMU install</a></li>
     </ul>
   </li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
 </ul>
 
 <h4 id="important">Important</h4>

@@ -1170,6 +1170,7 @@ h2#contents + ul {
 
 #sidebar ul {
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 /* The list of additional tools */
