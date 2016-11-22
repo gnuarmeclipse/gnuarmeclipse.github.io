@@ -5,9 +5,39 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Nov 2016 13:50:45 +0000</pubDate>
-    <lastBuildDate>Sat, 19 Nov 2016 13:50:45 +0000</lastBuildDate>
+    <pubDate>Tue, 22 Nov 2016 19:49:59 +0000</pubDate>
+    <lastBuildDate>Tue, 22 Nov 2016 19:49:59 +0000</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</title>
+        <description>&lt;p&gt;Version 2.8-201611221915 is a maintenance release of the GNU ARM Eclipse Windows Build Tools.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 22 Nov 2016 18:20:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/</guid>
+        
+        <category>windows</category>
+        
+        <category>setup</category>
+        
+        <category>build</category>
+        
+        <category>make</category>
+        
+        <category>makedir</category>
+        
+        <category>rm</category>
+        
+        <category>busybox</category>
+        
+        
+        <category>releases</category>
+        
+        <category>windows-build-tools</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse QEMU v2.7.0-20161029* released</title>
@@ -220,22 +250,6 @@
         <category>releases</category>
         
         <category>plugins</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse OpenOCD v0.10.0-20160110*-dev released</title>
-        <description>&lt;p&gt;Version v0.10.0-201601101000-dev is a maintenance release. It includes binaries for Windows, macOS and GNU/Linux.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 11 Jan 2016 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/01/11/openocd-v0.10.0-201601101000-dev-released/</guid>
-        
-        
-        <category>releases</category>
-        
-        <category>openocd</category>
         
       </item>
     

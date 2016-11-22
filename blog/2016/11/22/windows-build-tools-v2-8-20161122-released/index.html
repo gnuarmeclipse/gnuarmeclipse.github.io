@@ -9,19 +9,26 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse OpenOCD v0.8.0-20150320* released</title>
-  <meta name="description" content="Version v0.8.0-20150320* is a maintenance release.">
+  <title>GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</title>
+  <meta name="description" content="Version 2.8-201611221915 is a maintenance release of the GNU ARM Eclipse Windows Build Tools.">
 
-  <meta property="og:title" content="GNU ARM Eclipse OpenOCD v0.8.0-20150320* released" />
+  <meta property="og:title" content="GNU ARM Eclipse Windows Build Tools v2.8-20161122* released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-03-20">
+  <meta property="article:published_time" content="2016-11-22">
 
 
   <meta property="article:section" content="releases" />
-  <meta property="article:section" content="openocd" />
+  <meta property="article:section" content="windows-build-tools" />
 
+  <meta property="article:tag" content="windows" />
+  <meta property="article:tag" content="setup" />
+  <meta property="article:tag" content="build" />
+  <meta property="article:tag" content="make" />
+  <meta property="article:tag" content="makedir" />
+  <meta property="article:tag" content="rm" />
+  <meta property="article:tag" content="busybox" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -31,7 +38,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
 
-  <link rel="canonical" href="/blog/2015/03/20/openocd-v0.8.0-20150320-released/">
+  <link rel="canonical" href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -92,34 +99,92 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2015/02/28/plugins-v2.6.1-201502281154-released/">←</a></td>
-    <td><a href="/blog/2015/02/28/plugins-v2.6.1-201502281154-released/">GNU ARM Eclipse plug-ins v2.6.1-201502281154 released</a></td>
+    <td><a href="/blog/2016/10/29/qemu-v2-7-0-20161029-released/">←</a></td>
+    <td><a href="/blog/2016/10/29/qemu-v2-7-0-20161029-released/">GNU ARM Eclipse QEMU v2.7.0-20161029* released</a></td>
     <td></td>
-    <td><a href="/blog/2015/03/20/openocd-v0.9.0-20150320-released/">GNU ARM Eclipse OpenOCD v0.9.0-20150320*-dev released</a></td>
-    <td><a href="/blog/2015/03/20/openocd-v0.9.0-20150320-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse OpenOCD v0.8.0-20150320* released</h1>
+<h1 class="post-title">GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</h1>
 
 
 <p class="post-meta">
-Posted on March 20, 2015 by Liviu Ionescu.
+Posted on November 22, 2016 by Liviu Ionescu.
 </p>
 
-<p>Version v0.8.0-20150320* is a maintenance release.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#content"><span class="tocnumber">1</span> <span class="toctext">Content</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#changes"><span class="tocnumber">2</span> <span class="toctext">Changes</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#known-problems"><span class="tocnumber">3</span> <span class="toctext">Known problems</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#download"><span class="tocnumber">4</span> <span class="toctext">Download</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 2.8-201611221915 is a maintenance release of the GNU ARM Eclipse Windows Build Tools.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.8.0-20150320">Binary files »</a></p>
+<p>
+<a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.8">Binary files »</a>
+</p>
+
+<h2 id="content">Content</h2>
+
+<p>The GNU ARM Eclipse Build Tools v2.8 package includes the <strong>version 4.1 of GNU make</strong> (built from MSYS2 source files), and version <strong>1.26.0-git of BusyBox</strong>, which provides a convenient implementation for sh/rm/echo/mkdir.</p>
+
+<h2 id="changes">Changes</h2>
+
+<p>The main functional change in v2.8 is the addition of <code class="highlighter-rouge">mkdir.exe</code> (actually a copy of <code class="highlighter-rouge">busybox.exe</code>).</p>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>none so far</li>
+</ul>
+
+<h2 id="download">Download</h2>
+
+<p>The new Windows Build Tools can be downloaded from the <a href="https://github.com/gnuarmeclipse/windows-build-tools/releases/tag/v2.8">GitHub Release</a> page.</p>
+
+<p>The MD5 sums of the files are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>4cae81d8019ef50c12c5b63e94ebf05a  
+gnuarmeclipse-build-tools-win32-2.8-201611221915-setup.exe
+
+87432980919ec3e39dcce56d107ab0b4  
+gnuarmeclipse-build-tools-win64-2.8-201611221915-setup.exe
+</code></pre>
+</div>
 
 
 <hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 
-<strong>releases</strong>, <strong>openocd</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/03/20/openocd-v0.8.0-20150320-released/" data-layout="button"></div>
+<strong>releases</strong>, <strong>windows-build-tools</strong> and tagged
+
+<strong>windows</strong>, <strong>setup</strong>, <strong>build</strong>, <strong>make</strong>, <strong>makedir</strong>, <strong>rm</strong>, <strong>busybox</strong>.
+</br>Last modified on Tue Nov 22 19:46:27 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/" data-layout="button"></div>
 </p>
 
 
