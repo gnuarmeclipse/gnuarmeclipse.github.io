@@ -5,13 +5,13 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Nov 2016 01:03:36 +0000</pubDate>
-    <lastBuildDate>Tue, 29 Nov 2016 01:03:36 +0000</lastBuildDate>
+    <pubDate>Tue, 29 Nov 2016 01:13:30 +0000</pubDate>
+    <lastBuildDate>Tue, 29 Nov 2016 01:13:30 +0000</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
         <title>GNU ARM Eclipse QEMU v2.7.0-20161128* released</title>
-        <description>&lt;p&gt;Version 2.7.0-201611282115 is a maintenance release, adding support for active graphical buttons.&lt;/p&gt;
+        <description>&lt;p&gt;Version 2.7.0-201611282115 is a new release, adding support for active graphical buttons.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 28 Nov 2016 20:19:00 +0000</pubDate>
