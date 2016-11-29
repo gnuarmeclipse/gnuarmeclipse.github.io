@@ -5,9 +5,41 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Nov 2016 19:49:59 +0000</pubDate>
-    <lastBuildDate>Tue, 22 Nov 2016 19:49:59 +0000</lastBuildDate>
+    <pubDate>Tue, 29 Nov 2016 01:03:36 +0000</pubDate>
+    <lastBuildDate>Tue, 29 Nov 2016 01:03:36 +0000</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse QEMU v2.7.0-20161128* released</title>
+        <description>&lt;p&gt;Version 2.7.0-201611282115 is a maintenance release, adding support for active graphical buttons.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 28 Nov 2016 20:19:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/11/28/qemu-v2-7-0-20161128-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/11/28/qemu-v2-7-0-20161128-released/</guid>
+        
+        <category>emulator</category>
+        
+        <category>macos</category>
+        
+        <category>linux</category>
+        
+        <category>windos</category>
+        
+        <category>graphic</category>
+        
+        <category>sdl2</category>
+        
+        <category>button</category>
+        
+        <category>led</category>
+        
+        
+        <category>releases</category>
+        
+        <category>qemu</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</title>
@@ -213,30 +245,6 @@
         <pubDate>Wed, 10 Feb 2016 12:00:00 +0000</pubDate>
         <link>http://gnuarmeclipse.github.io/blog/2016/02/10/plugins-v2.11.3-201602101653-released/</link>
         <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/02/10/plugins-v2.11.3-201602101653-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>STM</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.11.2-201602091039 released</title>
-        <description>&lt;p&gt;Version 2.11.2-201602091039 is a maintenance release; the STM templates were updated to use &lt;strong&gt;F4 HAL 1.11.0&lt;/strong&gt;, &lt;strong&gt;F7 HAL 1.3.0&lt;/strong&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 09 Feb 2016 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/02/09/plugins-v2.11.2-201602091039-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/02/09/plugins-v2.11.2-201602091039-released/</guid>
         
         <category>GNU</category>
         

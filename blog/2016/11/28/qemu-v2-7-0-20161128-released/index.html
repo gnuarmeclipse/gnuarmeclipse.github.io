@@ -9,30 +9,27 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v2.10.1-201510291730 released</title>
-  <meta name="description" content="Version 2.10.1-201510291730 is a new release; the main improvements are: support for Cortex-M7, adding a STM32F7xx template, and an Analog Devices ADuCM36x t...">
+  <title>GNU ARM Eclipse QEMU v2.7.0-20161128* released</title>
+  <meta name="description" content="Version 2.7.0-201611282115 is a maintenance release, adding support for active graphical buttons.">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.10.1-201510291730 released" />
+  <meta property="og:title" content="GNU ARM Eclipse QEMU v2.7.0-20161128* released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-10-29">
+  <meta property="article:published_time" content="2016-11-28">
 
 
   <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="qemu" />
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
-  <meta property="article:tag" content="cortex-m7" />
-  <meta property="article:tag" content="stm32f7" />
-  <meta property="article:tag" content="stm32746g-eval" />
-  <meta property="article:tag" content="stm32f746g-disco" />
-  <meta property="article:tag" content="hal" />
-  <meta property="article:tag" content="qemu" />
-  <meta property="article:tag" content="openocd" />
-  <meta property="article:tag" content="aducm36x" />
+  <meta property="article:tag" content="emulator" />
+  <meta property="article:tag" content="macos" />
+  <meta property="article:tag" content="linux" />
+  <meta property="article:tag" content="windos" />
+  <meta property="article:tag" content="graphic" />
+  <meta property="article:tag" content="sdl2" />
+  <meta property="article:tag" content="button" />
+  <meta property="article:tag" content="led" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -42,7 +39,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
 
-  <link rel="canonical" href="/blog/2015/10/29/plugins-v2.10.1-201510291730-released/">
+  <link rel="canonical" href="/blog/2016/11/28/qemu-v2-7-0-20161128-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -103,20 +100,20 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">←</a></td>
-    <td><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</a></td>
+    <td><a href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">←</a></td>
+    <td><a href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</a></td>
     <td></td>
-    <td><a href="/blog/2015/11/06/plugins-v2.10.2-201511061603-released/">GNU ARM Eclipse plug-ins v2.10.2-201511061603 released</a></td>
-    <td><a href="/blog/2015/11/06/plugins-v2.10.2-201511061603-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v2.10.1-201510291730 released</h1>
+<h1 class="post-title">GNU ARM Eclipse QEMU v2.7.0-20161128* released</h1>
 
 
 <p class="post-meta">
-Posted on October 29, 2015 by Liviu Ionescu.
+Posted on November 28, 2016 by Liviu Ionescu.
 </p>
 
 <div id="toc-container">
@@ -129,80 +126,90 @@ Posted on October 29, 2015 by Liviu Ionescu.
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#new-features"><span class="tocnumber">1</span> <span class="toctext">New features</span></a>
+<a href="#changes"><span class="tocnumber">1</span> <span class="toctext">Changes</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#addressed-bugs"><span class="tocnumber">2</span> <span class="toctext">Addressed bugs</span></a>
+<a href="#new-features"><span class="tocnumber">2</span> <span class="toctext">New features</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#template-issues"><span class="tocnumber">3</span> <span class="toctext">Template issues</span></a>
-<ul>
-<li class="toc_level-2 toc_section-4">
-<a href="#other-changes"><span class="tocnumber">3.1</span> <span class="toctext">Other changes</span></a>
+<a href="#known-problems"><span class="tocnumber">3</span> <span class="toctext">Known problems</span></a>
 </li>
-</ul>
+<li class="toc_level-1 toc_section-4">
+<a href="#how-to-test-the-buttons"><span class="tocnumber">4</span> <span class="toctext">How to test the buttons</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#known-problems"><span class="tocnumber">4</span> <span class="toctext">Known problems</span></a>
+<a href="#download"><span class="tocnumber">5</span> <span class="toctext">Download</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><p>Version 2.10.1-201510291730 is a new release; the main improvements are: support for Cortex-M7, adding a STM32F7xx template, and an Analog Devices ADuCM36x template.</p>
+</div><p>Version 2.7.0-201611282115 is a maintenance release, adding support for active graphical buttons.</p>
 
-<p>
-<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.10.1-201510291730">Binary files »</a>
-</p>
+<h2 id="changes">Changes</h2>
+
+<p>As the old version 1.2 of the SDL graphical library was less and less supported, the build procedure was updated to use SDL2.</p>
 
 <h2 id="new-features">New features</h2>
 
 <ul>
-  <li><a href="/blog/2015/10/28/openocd-v0.10.0-20151028-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-20151028*-dev released</a>;</li>
-  <li><a href="/blog/2015/10/29/qemu-v2-4-50-20151029-released/">GNU ARM Eclipse QEMU v2.4.50-20151029*-dev released</a>;</li>
-  <li>[<a href="https://sourceforge.net/p/gnuarmeclipse/feature-requests/103/">SF features-request#103</a>] a template for the current STM32F7 family was added, with support for STM32746G-EVAL and STM32F746G-DISCO;</li>
-  <li>[<a href="https://sourceforge.net/p/gnuarmeclipse/feature-requests/107/">SF features-request#107</a>] Analog Devices contributed a template for the ADuCM36[01] devices;</li>
-  <li>[<a href="https://sourceforge.net/p/gnuarmeclipse/feature-requests/108/">SF features-request#108</a>] the generic Cortex-M template was extended to also create Cortex-M7 projects;</li>
-  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/13">#13</a>] the <strong>Devices</strong> tab is now visible to all projects, not only those generated by GNU ARM Eclipse.</li>
-</ul>
-
-<h2 id="addressed-bugs">Addressed bugs</h2>
-
-<ul>
-  <li>[<a href="https://sourceforge.net/p/gnuarmeclipse/bugs/195/">SF bugs#195</a>] the content of the <strong>Toolchains</strong> tab was not updated when the build configuration changed; fixed.</li>
-</ul>
-
-<h2 id="template-issues">Template issues</h2>
-
-<ul>
-  <li>the <strong>CMSIS Core</strong> was updated to v4.4;</li>
-  <li>the <strong>STM32F4 HAL</strong> was updated to v1.9.0;</li>
-  <li>the implementation of <code class="highlighter-rouge">assert_failed()</code> was made <code class="highlighter-rouge">weak</code>, to allow redefinitions.</li>
-</ul>
-
-<h3 id="other-changes">Other changes</h3>
-
-<ul>
-  <li>part of the <strong>µOS++ III</strong> code used by the templates (ARM Core, STM32F4 CMSIS, STM32F4 HAL) was migrated to separate packages, available in the GitHub project <a href="https://github.com/xpacks">xPacks</a>. Eventually the entire dependency on <strong>µOS++ III</strong> will be migrated to separate packages.</li>
+  <li>ths <strong>STM32</strong> implementation was extended to support the <code class="highlighter-rouge">EXTI</code> and the <code class="highlighter-rouge">SYSCFG</code> peripherals; now it is possible to trigger interrupts on GPIO pin changes;</li>
+  <li>the debug options were extended with two new trace options, <code class="highlighter-rouge">func</code> and <code class="highlighter-rouge">mr</code> (use them after <code class="highlighter-rouge">-d</code>);</li>
+  <li>the most compelling feature is <strong>the addition of the active graphical buttons</strong>; the rectangles around the buttons are live, and moving the mouse over them <strong>changes the cursor to a hand</strong>; clicking the buttons is also functional, the <strong>Reset</strong> button triggers a board reset; the user button is also connected to the correspondig GPIO pin, and can be checked by <strong>reading the GPIO pin input</strong> value; it is also possible to configure the EXTI device to <strong>trigger interrupts on GPIO pin changes</strong>.</li>
 </ul>
 
 <h2 id="known-problems">Known problems</h2>
 
 <ul>
-  <li>none so far</li>
+  <li>the graphical buttons are currently available only for the STM32F4DISCOVERY board (the user button is connected to GPIO A0); more boards will be added in future versions;</li>
+  <li>Ctrl-C does not interrupt the execution if the <code class="highlighter-rouge">--nographic</code> option is used.</li>
 </ul>
+
+<h2 id="how-to-test-the-buttons">How to test the buttons</h2>
+
+<p>An Eclipse project that can be used to test the STM32F4DISCOVERY button is available from</p>
+
+<p>
+<a href="https://github.com/gnuarmeclipse/eclipse-qemu-test-projects/tree/master/f407-disc-birq">https://github.com/gnuarmeclipse/eclipse-qemu-test-projects/tree/master/f407-disc-birq</a>
+</p>
+
+<p>To use it, clone the <a href="https://github.com/gnuarmeclipse/eclipse-qemu-test-projects">gnuarmeclipse/eclipse-qemu-test-projects</a> git and import the <code class="highlighter-rouge">f407-disc-birq</code> project. Build and run the application; the four coloured LEDs will lit for a second, then turn off; click the blue button; the LEDs will lit one by one. Click the black button; the board will reset.</p>
+
+<h2 id="download">Download</h2>
+
+<p>The new QEMU can be downloaded from the <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.7.0-20161128">GitHub Releases</a> page.</p>
+
+<p>The MD5 sums of the files are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>95a4af83d5e053bef92c418f47341cfc  
+gnuarmeclipse-qemu-debian32-2.7.0-201611282115-dev.tgz
+
+d03755819d618f4ddd2a75b63a848135  
+gnuarmeclipse-qemu-debian64-2.7.0-201611282115-dev.tgz
+
+24473650547470808002f7aa0a02ef17 
+gnuarmeclipse-qemu-osx-2.7.0-201611282115-dev.pkg
+
+9f157e9a6bd4ed7d3d3de81c2a56f065  
+gnuarmeclipse-qemu-win32-2.7.0-201611282115-dev-setup.exe
+
+e9de44232334a41678972aafb3260c16  
+gnuarmeclipse-qemu-win64-2.7.0-201611282115-dev-setup.exe
+</code></pre>
+</div>
+
 
 
 <hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 
-<strong>releases</strong>, <strong>plugins</strong> and tagged
+<strong>releases</strong>, <strong>qemu</strong> and tagged
 
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cortex-m7</strong>, <strong>stm32f7</strong>, <strong>stm32746g-eval</strong>, <strong>stm32f746g-disco</strong>, <strong>hal</strong>, <strong>qemu</strong>, <strong>openocd</strong>, <strong>aducm36x</strong>.
-</br>Last modified on Fri Oct 30 11:42:19 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/10/29/plugins-v2.10.1-201510291730-released/" data-layout="button"></div>
+<strong>emulator</strong>, <strong>macos</strong>, <strong>linux</strong>, <strong>windos</strong>, <strong>graphic</strong>, <strong>sdl2</strong>, <strong>button</strong>, <strong>led</strong>.
+</br>Last modified on Tue Nov 29 00:58:58 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/11/28/qemu-v2-7-0-20161128-released/" data-layout="button"></div>
 </p>
 
 

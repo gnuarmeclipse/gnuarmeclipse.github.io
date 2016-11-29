@@ -163,7 +163,7 @@
 
 <h2 id="commit-to-the-project-git">Commit to the project git</h2>
 
-<p>In the <strong>gnuarmeclipse/qemu</strong> project, commit all changes.</p>
+<p>In the <strong>gnuarmeclipse/qemu</strong> project, commit all changes; use something like <em>prepare v2.7.0-20161128* release</em> as message.</p>
 
 <h2 id="merge-stable-release">Merge stable release</h2>
 
@@ -187,8 +187,9 @@
 
 <p>Important note: Before starting the build, double check if the repository is clean (all changes were commited), otherwise the build version will be stamped with <code class="highlighter-rouge">-dirty</code>).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-qemu.sh cleanall
-$ caffeinate bash ~/Downloads/build-scripts.git/scripts/build-qemu.sh --all
+<div class="highlighter-rouge"><pre class="highlight"><code>$ caffeinate bash
+$ bash ~/Downloads/build-scripts.git/scripts/build-qemu.sh cleanall
+$ bash ~/Downloads/build-scripts.git/scripts/build-qemu.sh --all
 </code></pre>
 </div>
 
@@ -272,7 +273,7 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct 29 17:08:24 2016 UTC.</p>
+<p class="page-footer">Last modified on Tue Nov 29 00:58:58 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/qemu/publish-procedure/" data-layout="button"></div>
 
 
@@ -283,11 +284,11 @@ gnuarmeclipse-qemu-win64-2.4.50-201510290935-dev-setup.exe
 <h4 id="latest-newsblog"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2016/11/28/qemu-v2-7-0-20161128-released/">GNU ARM Eclipse QEMU v2.7.0-20161128* released</a></li>
   <li><a href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</a></li>
   <li><a href="/blog/2016/10/29/qemu-v2-7-0-20161029-released/">GNU ARM Eclipse QEMU v2.7.0-20161029* released</a></li>
   <li><a href="/blog/2016/10/28/openocd-v0-10-0-20161028-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-20161028*-dev released</a></li>
   <li><a href="/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/">GNU ARM Eclipse Windows Build Tools v2.7-20161028* released</a></li>
-  <li><a href="/blog/2016/07/28/qemu-v2-6-0-20160728-released/">GNU ARM Eclipse QEMU v2.6.0-20160728* released</a></li>
 </ul>
 
 
