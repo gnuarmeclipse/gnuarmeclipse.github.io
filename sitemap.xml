@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://gnuarmeclipse.github.io/blog/2016/12/02/plugins-install-issue/</loc>
+<lastmod>2016-12-02T11:21:44+00:00</lastmod>
+</url>
+<url>
 <loc>http://gnuarmeclipse.github.io/blog/2016/11/28/qemu-v2-7-0-20161128-released/</loc>
-<lastmod>2016-11-29T08:47:10+00:00</lastmod>
+<lastmod>2016-11-29T09:09:34+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/</loc>
@@ -663,5 +667,33 @@
 <url>
 <loc>http://gnuarmeclipse.github.io/plugins/mbs/</loc>
 <lastmod>2016-06-22T09:37:21+00:00</lastmod>
+</url>
+<url>
+<loc>http://gnuarmeclipse.github.io/blog/page2/</loc>
+<lastmod>2015-10-02T10:18:39+00:00</lastmod>
+</url>
+<url>
+<loc>http://gnuarmeclipse.github.io/blog/page3/</loc>
+<lastmod>2015-10-02T10:18:39+00:00</lastmod>
+</url>
+<url>
+<loc>http://gnuarmeclipse.github.io/blog/page4/</loc>
+<lastmod>2015-10-02T10:18:39+00:00</lastmod>
+</url>
+<url>
+<loc>http://gnuarmeclipse.github.io/blog/page5/</loc>
+<lastmod>2015-10-02T10:18:39+00:00</lastmod>
+</url>
+<url>
+<loc>http://gnuarmeclipse.github.io/blog/page6/</loc>
+<lastmod>2015-10-02T10:18:39+00:00</lastmod>
+</url>
+<url>
+<loc>http://gnuarmeclipse.github.io/blog/page7/</loc>
+<lastmod>2015-10-02T10:18:39+00:00</lastmod>
+</url>
+<url>
+<loc>http://gnuarmeclipse.github.io/blog/page8/</loc>
+<lastmod>2015-10-02T10:18:39+00:00</lastmod>
 </url>
 </urlset>

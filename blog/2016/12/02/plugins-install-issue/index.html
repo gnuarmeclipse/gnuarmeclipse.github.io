@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
+
+  <title>GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</title>
+  <meta name="description" content="For historical reasons, the GNU ARM Eclipse update sites for installing new software are hosted by SourceForge, and up to now they successfuly handled more t...">
+
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="article:published_time" content="2016-12-02">
+
+
+  <meta property="article:section" content="support" />
+  <meta property="article:section" content="plugins" />
+
+  <meta property="article:tag" content="gnu" />
+  <meta property="article:tag" content="arm" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="sourceforge" />
+  <meta property="article:tag" content="oracle" />
+  <meta property="article:tag" content="jdk" />
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
+
+  <link rel="canonical" href="/blog/2016/12/02/plugins-install-issue/">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<header>
+  <div class="inner">
+    <h1><a href="/">GNU ARM Eclipse</a></h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <div id="buttons">
+      <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+    </div>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+
+<div id="site-body">
+<section id="main-content">
+
+<table id="post-navigation">
+  <tr>
+    <td><a href="/blog/2016/11/28/qemu-v2-7-0-20161128-released/">←</a></td>
+    <td><a href="/blog/2016/11/28/qemu-v2-7-0-20161128-released/">GNU ARM Eclipse QEMU v2.7.0-20161128* released</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+<h1 class="post-title">GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</h1>
+
+
+<p class="post-meta">
+Posted on December 2, 2016 by Liviu Ionescu.
+</p>
+
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#problem"><span class="tocnumber">1</span> <span class="toctext">Problem</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#solutions"><span class="tocnumber">2</span> <span class="toctext">Solutions</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#workaround"><span class="tocnumber">3</span> <span class="toctext">Workaround</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>For historical reasons, the GNU ARM Eclipse update sites for installing new software are hosted by SourceForge, and up to now they successfuly handled more than 4.500.000 downloaded files for this project.</p>
+
+<h2 id="problem">Problem</h2>
+
+<p>Recently SourceForge did a change in the security settings used by their download servers and mirrors. For most of the users this was transparent, but for some, the result when trying to install new software, was the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>An error occurred while collecting items to be installed
+session context was:(profile=epp.package.cpp, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+Unable to read repository at http://gnuarmeclipse.sourceforge.net/updates-test/plugins/ilg.gnuarmeclipse.templates.ad_1.1.3.201611031134.jar.
+sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+Unable to read repository at http://gnuarmeclipse.sourceforge.net/updates-test/plugins/ilg.gnuarmeclipse.templates.freescale_2.2.7.201611031134.jar.
+sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+</code></pre>
+</div>
+
+<p>The problem is caused by SourceForge using certificates issued by <a href="https://letsencrypt.org">Let’s Encrypt</a>, a new provider not yet in the list of root providers on many environments.</p>
+
+<p>Not finding it on the list, Java tries to authenticate these certificates using additional steps.</p>
+
+<p>Unfortunately, some corporate firewalls prevent these additional steps, and install attempts will fail with the above messages.</p>
+
+<h2 id="solutions">Solutions</h2>
+
+<p>The easiest solution is to <strong>update your Java JDK to 8u101 or later</strong>, since in JDK 8u101 Oracle added <em>Let’s Encrypt</em> to the list of trusted root certificates, and the additional accesses should no longer be needed.</p>
+
+<p>If this is not possible, try to convince your network administrator to reconfigure the firewall to allow Java access to the certificate sites.</p>
+
+<h2 id="workaround">Workaround</h2>
+
+<p>As a temporary workaround, you can always <strong>download the plug-ins as an archive</strong>, and install from it.</p>
+
+<p>Or, you can configure your mobile phone as a hot spot, and try to connect to the internet directly; please note that sometimes this does not work, since  local firewals or antivirus configurations might prevent direct access.</p>
+
+
+<hr class="post-footer"/>
+<p class="post-footer">
+Posted in
+
+<strong>support</strong>, <strong>plugins</strong> and tagged
+
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>sourceforge</strong>, <strong>oracle</strong>, <strong>jdk</strong>.
+</br>Last modified on Fri Dec  2 11:21:44 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/12/02/plugins-install-issue/" data-layout="button"></div>
+</p>
+
+
+</section>
+
+<aside id="sidebar">
+
+<h4 id="latest-news"><a href="/blog/">Latest News</a></h4>
+
+<ul>
+  <li><a href="/blog/2016/12/02/plugins-install-issue/">GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</a></li>
+  <li><a href="/blog/2016/11/28/qemu-v2-7-0-20161128-released/">GNU ARM Eclipse QEMU v2.7.0-20161128* released</a></li>
+  <li><a href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</a></li>
+  <li><a href="/blog/2016/10/29/qemu-v2-7-0-20161029-released/">GNU ARM Eclipse QEMU v2.7.0-20161029* released</a></li>
+  <li><a href="/blog/2016/10/28/openocd-v0-10-0-20161028-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-20161028*-dev released</a></li>
+</ul>
+
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="features"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloads"><a href="/downloads/">Downloads</a></h4>
+
+<ul>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4 id="install"><a href="/install/">Install</a></h4>
+
+<ul>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging binaries</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li><a href="/install/">Install order</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4 id="templates"><a href="/templates/">Templates</a></h4>
+
+<ul>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4 id="debugging"><a href="/debug/">Debugging</a></h4>
+
+<ul>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4 id="gnu-arm-qemu-home"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/options/">Command line options</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/publish-procedure/">How to publish</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4 id="gnu-arm-openocd-home"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/publish-procedure/">How to publish</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+</ul>
+
+<h4 id="windows-build-tools-home"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/publish-procedure/">How to publish</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4 id="support"><a href="/support/">Support</a></h4>
+
+<ul>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="/support/forum/">Forum</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+</ul>
+
+<h4 id="developer"><a href="/developer/">Developer</a></h4>
+
+<ul>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
+</ul>
+
+<h4 id="hardware">Hardware</h4>
+
+<ul>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+</ul>
+
+<h4 id="latest-articles">Latest Articles</h4>
+
+<ul>
+  <li><a href="/articles/arm-com-2015-12-09/">GNU ARM Eclipse now available from Eclipse Marketplace</a></li>
+  <li><a href="/articles/arm-com-2015-11/">GNU ARM Eclipse: Cortex-M7 support added</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+
+<ul>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+
+<ul>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4 id="about"><a href="/about/">About</a></h4>
+
+<hr />
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</aside>
+
+
+</div>
+</div>
+
+<div class="inner clearfix">
+<div class="site-footer">
+  <div class="site-footer-links left">
+    <ul>
+  <li>© 2016 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
+</ul>
+
+  </div>
+  <a href="http://github.com/gnuarmeclipse" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+  </a>
+  <div class="site-footer-links right">
+    <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
+</ul>
+
+  </div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
