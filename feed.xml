@@ -5,9 +5,39 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 12:42:18 +0000</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 12:42:18 +0000</lastBuildDate>
+    <pubDate>Tue, 27 Dec 2016 16:42:26 +0000</pubDate>
+    <lastBuildDate>Tue, 27 Dec 2016 16:42:26 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse QEMU v2.8.0-20161227* released</title>
+        <description>&lt;p&gt;Version 2.8.0-201612271623 is a new release, adding support for active graphical buttons to all supported boards.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 27 Dec 2016 15:29:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2016/12/27/qemu-v2-8-0-20161227-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/12/27/qemu-v2-8-0-20161227-released/</guid>
+        
+        <category>emulator</category>
+        
+        <category>macos</category>
+        
+        <category>linux</category>
+        
+        <category>windos</category>
+        
+        <category>graphic</category>
+        
+        <category>button</category>
+        
+        <category>led</category>
+        
+        
+        <category>releases</category>
+        
+        <category>qemu</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</title>
@@ -236,32 +266,6 @@
         <category>releases</category>
         
         <category>plugins</category>
-        
-      </item>
-    
-      <item>
-        <title>ARM Connected Community article, April 4, 2016</title>
-        <description>&lt;p&gt;A new article was published on the &lt;a href=&quot;http://community.arm.com&quot;&gt;ARM Connected Community&lt;/a&gt; site, under the name &lt;strong&gt;&lt;a href=&quot;https://community.arm.com/groups/tools/blog/2016/04/03/gnu-arm-eclipse-more-than-3200000-files-downloaded&quot;&gt;GNU ARM Eclipse: more than 3.200.000 files downloaded!&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 03 Apr 2016 09:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/04/03/arm-connected-community-article/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/04/03/arm-connected-community-article/</guid>
-        
-        <category>article</category>
-        
-        <category>arm</category>
-        
-        <category>connected</category>
-        
-        <category>sourceforge</category>
-        
-        <category>downloads</category>
-        
-        
-        <category>news</category>
-        
-        <category>article</category>
         
       </item>
     

@@ -9,14 +9,14 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse QEMU v2.7.0-20161029* released</title>
-  <meta name="description" content="Version 2.7.0-201610290751 is a new stable release, following the offfical QEMU releases.">
+  <title>GNU ARM Eclipse QEMU v2.8.0-20161227* released</title>
+  <meta name="description" content="Version 2.8.0-201612271623 is a new release, adding support for active graphical buttons to all supported boards.">
 
-  <meta property="og:title" content="GNU ARM Eclipse QEMU v2.7.0-20161029* released" />
+  <meta property="og:title" content="GNU ARM Eclipse QEMU v2.8.0-20161227* released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2016-10-29">
+  <meta property="article:published_time" content="2016-12-27">
 
 
   <meta property="article:section" content="releases" />
@@ -26,6 +26,9 @@
   <meta property="article:tag" content="macos" />
   <meta property="article:tag" content="linux" />
   <meta property="article:tag" content="windos" />
+  <meta property="article:tag" content="graphic" />
+  <meta property="article:tag" content="button" />
+  <meta property="article:tag" content="led" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -35,7 +38,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
 
-  <link rel="canonical" href="/blog/2016/10/29/qemu-v2-7-0-20161029-released/">
+  <link rel="canonical" href="/blog/2016/12/27/qemu-v2-8-0-20161227-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -96,20 +99,20 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2016/10/28/openocd-v0-10-0-20161028-dev-released/">←</a></td>
-    <td><a href="/blog/2016/10/28/openocd-v0-10-0-20161028-dev-released/">GNU ARM Eclipse OpenOCD v0.10.0-20161028*-dev released</a></td>
+    <td><a href="/blog/2016/12/02/plugins-install-issue/">←</a></td>
+    <td><a href="/blog/2016/12/02/plugins-install-issue/">GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</a></td>
     <td></td>
-    <td><a href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</a></td>
-    <td><a href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse QEMU v2.7.0-20161029* released</h1>
+<h1 class="post-title">GNU ARM Eclipse QEMU v2.8.0-20161227* released</h1>
 
 
 <p class="post-meta">
-Posted on October 29, 2016 by Liviu Ionescu.
+Posted on December 27, 2016 by Liviu Ionescu.
 </p>
 
 <div id="toc-container">
@@ -125,50 +128,85 @@ Posted on October 29, 2016 by Liviu Ionescu.
 <a href="#changes"><span class="tocnumber">1</span> <span class="toctext">Changes</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#known-problems"><span class="tocnumber">2</span> <span class="toctext">Known problems</span></a>
+<a href="#new-features"><span class="tocnumber">2</span> <span class="toctext">New features</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#download"><span class="tocnumber">3</span> <span class="toctext">Download</span></a>
+<a href="#addressed-bugs"><span class="tocnumber">3</span> <span class="toctext">Addressed bugs</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#known-problems"><span class="tocnumber">4</span> <span class="toctext">Known problems</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#how-to-test-the-buttons"><span class="tocnumber">5</span> <span class="toctext">How to test the buttons</span></a>
+</li>
+<li class="toc_level-1 toc_section-6">
+<a href="#download"><span class="tocnumber">6</span> <span class="toctext">Download</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><p>Version 2.7.0-201610290751 is a new stable release, following the offfical QEMU releases.</p>
+</div><p>Version 2.8.0-201612271623 is a new release, adding support for active graphical buttons to all supported boards.</p>
 
 <h2 id="changes">Changes</h2>
 
-<p>In addition to the official QEMU changes, the only small functional improvement is a patch that allows silent Windows setups to install in a custom location, using the <code class="highlighter-rouge">/D</code> command line switch.</p>
+<p>The main internal change is the use of CMSIS SVD files to generate the peripheral registers. This ensures the best possible accuracy in the register bitfields implementation.</p>
+
+<h2 id="new-features">New features</h2>
+
+<ul>
+  <li>the most compelling new feature is <strong>the addition of active graphical buttons</strong>; the rectangles around the buttons are sensitive, and moving the mouse over them <strong>changes the cursor to a hand</strong>; clicking the buttons is also functional, the <strong>Reset</strong> button triggers a board reset; the user button is also connected to the correspondig GPIO pin, and can be checked by <strong>reading the GPIO pin input</strong> value; it is also possible to configure the EXTI device to <strong>trigger interrupts on GPIO pin changes</strong>;</li>
+  <li>ths <strong>STM32</strong> implementation was extended to support the <code class="highlighter-rouge">EXTI</code> and the <code class="highlighter-rouge">SYSCFG</code> or <code class="highlighter-rouge">AFIO</code> peripherals; now it is possible to trigger interrupts on GPIO pin changes;</li>
+</ul>
+
+<h2 id="addressed-bugs">Addressed bugs</h2>
+
+<ul>
+  <li>[<a href="https://github.com/gnuarmeclipse/qemu/issues/31">#31</a>] - the GPIO toggling using the ODR register is now functional;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/qemu/issues/24">#24</a>] - command line options located after <code class="highlighter-rouge">--semihosting-cmdline</code> are no longer parsed, but passed to the application.</li>
+</ul>
 
 <h2 id="known-problems">Known problems</h2>
 
 <ul>
-  <li>none so far</li>
+  <li>Ctrl-C does not interrupt the execution if the <code class="highlighter-rouge">--nographic</code> option is used.</li>
 </ul>
+
+<h2 id="how-to-test-the-buttons">How to test the buttons</h2>
+
+<p>An Eclipse project that can be used to test the STM32F4DISCOVERY button is available from</p>
+
+<p>
+<a href="https://github.com/gnuarmeclipse/eclipse-qemu-test-projects/tree/master/f407-disc-blink">https://github.com/gnuarmeclipse/eclipse-qemu-test-projects/tree/master/f407-disc-blink</a>
+</p>
+
+<p>To use it, clone the <a href="https://github.com/gnuarmeclipse/eclipse-qemu-test-projects">gnuarmeclipse/eclipse-qemu-test-projects</a> git and import the <code class="highlighter-rouge">f407-disc-blink</code> project. Build and run the application; the four coloured LEDs will lit for a second, then turn off; click the blue button; the LEDs will lit one by one. Click the black button; the board will reset.</p>
 
 <h2 id="download">Download</h2>
 
-<p>The new QEMU can be downloaded from the <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.7.0-20161029">GitHub Releases</a> page.</p>
+<p>The new QEMU can be downloaded from the <a href="https://github.com/gnuarmeclipse/qemu/releases/tag/gae-2.8.0-20161227">GitHub Releases</a> page.</p>
 
 <p>The MD5 sums of the files are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>b09312cbf97a6907cc618b5ae367232d  
-gnuarmeclipse-qemu-debian32-2.7.0-201610290751.tgz
+<div class="highlighter-rouge"><pre class="highlight"><code>c081412c60e9111f045ea7c6aaf54ce7  
+gnuarmeclipse-qemu-debian32-2.8.0-201612271623-dev.tgz
 
-33f834fc81cebfcee74ff7f1c7b6a3b7  
-gnuarmeclipse-qemu-debian64-2.7.0-201610290751.tgz
+9402b283bd9006fc1a9300b522ffd91b  
+gnuarmeclipse-qemu-debian64-2.8.0-201612271623-dev.tgz
 
-febe0d6f41eb52516b4971df583db501 
-gnuarmeclipse-qemu-osx-2.7.0-201610290751.pkg
+4a6fed49c4d4fd6e5b581f939d81461a 
+gnuarmeclipse-qemu-osx-2.8.0-201612271623-dev.pkg
 
-d82d366d4b3e6d8ac880fd6039069fa2  
-gnuarmeclipse-qemu-win32-2.7.0-201610290751-setup.exe
+9330ef6cd0a456226bad279d217c68b2  
+gnuarmeclipse-qemu-win32-2.8.0-201612271623-dev-setup.exe
 
-4e54ec208d2be6896ac7d84783a1c656  
-gnuarmeclipse-qemu-win64-2.7.0-201610290751-setup.exe
+30a423b245df15cc41b7e05ce842d95a  
+gnuarmeclipse-qemu-win64-2.8.0-201612271623-dev-setup.exe
+
 </code></pre>
 </div>
+
 
 
 <hr class="post-footer"/>
@@ -177,9 +215,9 @@ Posted in
 
 <strong>releases</strong>, <strong>qemu</strong> and tagged
 
-<strong>emulator</strong>, <strong>macos</strong>, <strong>linux</strong>, <strong>windos</strong>.
-</br>Last modified on Sat Oct 29 13:06:21 2016 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/10/29/qemu-v2-7-0-20161029-released/" data-layout="button"></div>
+<strong>emulator</strong>, <strong>macos</strong>, <strong>linux</strong>, <strong>windos</strong>, <strong>graphic</strong>, <strong>button</strong>, <strong>led</strong>.
+</br>Last modified on Tue Dec 27 16:40:47 2016 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2016/12/27/qemu-v2-8-0-20161227-released/" data-layout="button"></div>
 </p>
 
 
