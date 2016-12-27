@@ -151,29 +151,32 @@
 <a href="#troubleshooting"><span class="tocnumber">6</span> <span class="toctext">Troubleshooting</span></a>
 <ul>
 <li class="toc_level-2 toc_section-16">
-<a href="#sourceforge-problems"><span class="tocnumber">6.1</span> <span class="toctext">SourceForge problems</span></a>
+<a href="#java-security-problems"><span class="tocnumber">6.1</span> <span class="toctext">Java security problems</span></a>
 </li>
 <li class="toc_level-2 toc_section-17">
-<a href="#incomplete-eclipse"><span class="tocnumber">6.2</span> <span class="toctext">Incomplete Eclipse</span></a>
+<a href="#sourceforge-problems"><span class="tocnumber">6.2</span> <span class="toctext">SourceForge problems</span></a>
+</li>
+<li class="toc_level-2 toc_section-18">
+<a href="#incomplete-eclipse"><span class="tocnumber">6.3</span> <span class="toctext">Incomplete Eclipse</span></a>
 </li>
 </ul>
 </li>
-<li class="toc_level-1 toc_section-18">
+<li class="toc_level-1 toc_section-19">
 <a href="#plug-ins-versions"><span class="tocnumber">7</span> <span class="toctext">Plug-ins versions</span></a>
 </li>
-<li class="toc_level-1 toc_section-19">
+<li class="toc_level-1 toc_section-20">
 <a href="#set-workspace-preferences"><span class="tocnumber">8</span> <span class="toctext">Set workspace preferences</span></a>
 </li>
-<li class="toc_level-1 toc_section-20">
+<li class="toc_level-1 toc_section-21">
 <a href="#download-cmsis-packs"><span class="tocnumber">9</span> <span class="toctext">Download CMSIS Packs</span></a>
 </li>
-<li class="toc_level-1 toc_section-21">
+<li class="toc_level-1 toc_section-22">
 <a href="#toolchain-and-debugging-support"><span class="tocnumber">10</span> <span class="toctext">Toolchain and debugging support</span></a>
 </li>
-<li class="toc_level-1 toc_section-22">
+<li class="toc_level-1 toc_section-23">
 <a href="#test-project"><span class="tocnumber">11</span> <span class="toctext">Test project</span></a>
 </li>
-<li class="toc_level-1 toc_section-23">
+<li class="toc_level-1 toc_section-24">
 <a href="#support"><span class="tocnumber">12</span> <span class="toctext">Support</span></a>
 </li>
 </ul>
@@ -227,6 +230,8 @@ OpenJDK Runtime Environment (IcedTea 2.6.1) (7u85-2.6.1-5ubuntu0.14.04.1)
 OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 </code></pre>
 </div>
+
+<p>If you are behind a firewall, older Java virtual machines <a href="/blog/2016/12/02/plugins-install-issue/">fail to connect to SourceForge</a>. Update your Java JDK to <strong>8u101 or later</strong> and retry to install the plug-ins.</p>
 
 <h3 id="eclipse--cdt">Eclipse &amp; CDT</h3>
 
@@ -403,6 +408,10 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
+<h3 id="java-security-problems">Java security problems</h3>
+
+<p>If you are behind a firewall, older Java virtual machines <a href="/blog/2016/12/02/plugins-install-issue/">fail to connect to SourceForge</a>. Install the latest JDK and retry to install the plug-ins.</p>
+
 <h3 id="sourceforge-problems">SourceForge problems</h3>
 
 <p>There are cases when the on-line access to the SourceForge mirror servers might not be reliable. In these cases the Eclipse update system may fail. For example:</p>
@@ -494,7 +503,7 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Dec 24 07:25:37 2016 UTC.</p>
+<p class="page-footer">Last modified on Tue Dec 27 11:24:30 2016 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/plugins/install/" data-layout="button"></div>
 
 
