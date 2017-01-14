@@ -5,9 +5,33 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 20:12:10 +0000</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 20:12:10 +0000</lastBuildDate>
+    <pubDate>Sat, 14 Jan 2017 14:56:11 +0000</pubDate>
+    <lastBuildDate>Sat, 14 Jan 2017 14:56:11 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</title>
+        <description>&lt;p&gt;Version 3.2.1-201701141320 is a new major release; the main change is adding support for &lt;strong&gt;Eclipse Neon.2&lt;/strong&gt; (CDT 9.2).&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 14 Jan 2017 12:49:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2017/01/14/plugins-v3.2.1-201701141320-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2017/01/14/plugins-v3.2.1-201701141320-released/</guid>
+        
+        <category>GNU</category>
+        
+        <category>ARM</category>
+        
+        <category>Eclipse</category>
+        
+        <category>Neon</category>
+        
+        
+        <category>releases</category>
+        
+        <category>plugins</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse QEMU v2.8.0-20161227* released</title>
@@ -237,30 +261,6 @@
         <category>Eclipse</category>
         
         <category>Neon</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v2.12.1-201604190915 released</title>
-        <description>&lt;p&gt;Version 2.12.1-201604190915 is a new release; the main change is the addition of a pyOCD debugging plug-in.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 19 Apr 2016 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/04/19/plugins-v2.12.1-201604190915-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/04/19/plugins-v2.12.1-201604190915-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>pyOCD</category>
         
         
         <category>releases</category>

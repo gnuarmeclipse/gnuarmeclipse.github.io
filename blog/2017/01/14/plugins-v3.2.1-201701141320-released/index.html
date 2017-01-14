@@ -9,17 +9,23 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>How to download the GNU ARM Eclipse Windows Build Tools?</title>
-  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+  <title>GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</title>
+  <meta name="description" content="Version 3.2.1-201701141320 is a new major release; the main change is adding support for Eclipse Neon.2 (CDT 9.2).">
 
-  <meta property="og:title" content="How to download the GNU ARM Eclipse Windows Build Tools?" />
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v3.2.1-201701141320 released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-16">
+  <meta property="article:published_time" content="2017-01-14">
 
 
+  <meta property="article:section" content="releases" />
+  <meta property="article:section" content="plugins" />
 
+  <meta property="article:tag" content="gnu" />
+  <meta property="article:tag" content="arm" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="neon" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -29,7 +35,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
 
-  <link rel="canonical" href="/windows-build-tools/download/">
+  <link rel="canonical" href="/blog/2017/01/14/plugins-v3.2.1-201701141320-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -88,26 +94,115 @@
 <div id="site-body">
 <section id="main-content">
 
+<table id="post-navigation">
+  <tr>
+    <td><a href="/blog/2016/12/27/qemu-v2-8-0-20161227-released/">←</a></td>
+    <td><a href="/blog/2016/12/27/qemu-v2-8-0-20161227-released/">GNU ARM Eclipse QEMU v2.8.0-20161227* released</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-<h1 class="page-title">How to download the GNU ARM Eclipse Windows Build Tools?</h1>
+
+<h1 class="post-title">GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</h1>
 
 
-<h2 id="github-releases">GitHub Releases</h2>
-
-<p>All versions of the GNU ARM Eclipse Windows Build Tools are available via the <a href="https://github.com/gnuarmeclipse/windows-build-tools/releases">GitHub Releases</a> page. For details how to reach it, see the <a href="/downloads/">Downloads</a> page.</p>
-
-<p>
-<img src="/assets/images/2015/github-gae-build-tools-releases.png" alt="Windows Build Tools Releases" />
+<p class="post-meta">
+Posted on January 14, 2017 by Liviu Ionescu.
 </p>
 
-<h2 id="6432-bits">64/32-bits</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#new-features"><span class="tocnumber">1</span> <span class="toctext">New features</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#addressed-bugs"><span class="tocnumber">2</span> <span class="toctext">Addressed bugs</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#template-changes"><span class="tocnumber">3</span> <span class="toctext">Template changes</span></a>
+<ul>
+<li class="toc_level-2 toc_section-4">
+<a href="#other-changes"><span class="tocnumber">3.1</span> <span class="toctext">Other changes</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#known-problems"><span class="tocnumber">4</span> <span class="toctext">Known problems</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 3.2.1-201701141320 is a new major release; the main change is adding support for <strong>Eclipse Neon.2</strong> (CDT 9.2).</p>
 
-<p>Starting with version v2.6 there are separate 64/32-bits binaries. If running a modern 64-bits Windows, it is highly recommended to download the 64-bits version, since it not only reduces the risk of 32-bits DLL rebases, but also the 64-bits <code class="highlighter-rouge">make</code> seems to run slightly faster.</p>
+<p>
+<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v3.2.1-201701141320">Binary files »</a>
+</p>
+
+<h2 id="new-features">New features</h2>
+
+<ul>
+  <li>the <code class="highlighter-rouge">-march=</code> option was extended to include <code class="highlighter-rouge">armv8-m.base</code>, <code class="highlighter-rouge">armv8-m.main</code>, <code class="highlighter-rouge">armv8-m.main+dsp</code> (from GCC 5.4)</li>
+  <li>the <code class="highlighter-rouge">-mcpu=</code> option was extended to include <code class="highlighter-rouge">cortex-a72</code>, <code class="highlighter-rouge">cortex-r8</code>, <code class="highlighter-rouge">exynos-m1</code>, <code class="highlighter-rouge">xgene1</code> (from GCC 5.4)</li>
+  <li>the fields to configure the compiler standard were extended up to <code class="highlighter-rouge">-std=c++1z</code></li>
+  <li>the field to configure the C++ ABI version was extended to support version 7, 8 and 9 (from GCC 5.4)</li>
+  <li>the field to configure the debug information was extended to support the  version dwarf-5 (currently experimental in GCC 5.4)</li>
+</ul>
+
+<h2 id="addressed-bugs">Addressed bugs</h2>
+
+<ul>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/156">#156</a>] the second update of <strong>Neon (4.6.2)</strong> introduced a new implementation for the GDB consoles, slightly incompatible with previous versions, which prevented the debug sessions to start on Windows; with a little help from the CDT developpers, a solution to create the GDB server consoles was found, such that the debug plug-ins start properly an Neon.2 too;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/145">#145</a>] in certain conditions, installing an older version of a CMSIS Pack failed; the problem was identified to be related to cache management; fixed;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/126">#126</a>] in certain conditions, the folders entered in the Eclipse preferences pages <strong>Global Tools Paths</strong> and <strong>Workspace Tools Paths</strong> were not validated; thanks to a patch provided by John Moule, this problem was fixed;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/125">#125</a>] in certain conditions, the folders entered in the project properties page <strong>Tools Paths</strong> were not validated; thanks to a patch provided by John Moule, this problem was fixed;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/108">#108</a>] in certain conditions, the <strong>Enable flash breakpoints</strong> button did not function properly; thanks to a patch provided by John Cortell, this problem was fixed;</li>
+  <li>in certain conditions, refreshing packs with bad PDSC files terminated the refresh process and subsequent packs were not refreshed; a more elaborate error processing was implemented, errors are logged and all packs are now refreshed;</li>
+  <li>in certain conditions, the J-Link/OpenOCD,QEMU debugging plug-ins  validated the server fields even when the server was not started; fixed;</li>
+</ul>
+
+<h2 id="template-changes">Template changes</h2>
+
+<ul>
+  <li>the stm32f0 template was updated to use StdPerip V1.5.0</li>
+  <li>the stm32f0 template was extended to support 030xC, 070x6, 070xB, 091</li>
+  <li>the stm32f4 template was updated to use Cube HAL v1.12.0</li>
+  <li>the stm32f4 template was extended to support 412Cx, 412Rx, 412Vx, 412Zx</li>
+</ul>
+
+<h3 id="other-changes">Other changes</h3>
+
+<ul>
+  <li>for consistency reasons, the compiler tools names were slightly changed to include GNU (for example <strong>Cross ARM GNU C Compiler</strong>)</li>
+</ul>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>none.</li>
+</ul>
 
 
-<hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri Oct 28 12:34:02 2016 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/windows-build-tools/download/" data-layout="button"></div>
+<hr class="post-footer"/>
+<p class="post-footer">
+Posted in
+
+<strong>releases</strong>, <strong>plugins</strong> and tagged
+
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>neon</strong>.
+</br>Last modified on Sat Jan 14 14:55:29 2017 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2017/01/14/plugins-v3.2.1-201701141320-released/" data-layout="button"></div>
+</p>
 
 
 </section>
