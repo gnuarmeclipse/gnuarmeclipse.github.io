@@ -114,22 +114,22 @@
 <a href="#merge-stable-release"><span class="tocnumber">4</span> <span class="toctext">Merge stable release</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#checkclonepull-build-scripts"><span class="tocnumber">5</span> <span class="toctext">Check/clone/pull build scripts</span></a>
+<a href="#push-the-project-git"><span class="tocnumber">5</span> <span class="toctext">Push the project git</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#build"><span class="tocnumber">6</span> <span class="toctext">Build</span></a>
+<a href="#checkclonepull-build-scripts"><span class="tocnumber">6</span> <span class="toctext">Check/clone/pull build scripts</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">7</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
+<a href="#build"><span class="tocnumber">7</span> <span class="toctext">Build</span></a>
 </li>
 <li class="toc_level-1 toc_section-8">
-<a href="#update-the-release-post-with-the-md5-sums"><span class="tocnumber">8</span> <span class="toctext">Update the release post with the MD5 sums</span></a>
+<a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">8</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#update-the-web"><span class="tocnumber">9</span> <span class="toctext">Update the web</span></a>
+<a href="#update-the-release-post-with-the-md5-sums"><span class="tocnumber">9</span> <span class="toctext">Update the release post with the MD5 sums</span></a>
 </li>
 <li class="toc_level-1 toc_section-10">
-<a href="#push-the-project-git"><span class="tocnumber">10</span> <span class="toctext">Push the project git</span></a>
+<a href="#update-the-web"><span class="tocnumber">10</span> <span class="toctext">Update the web</span></a>
 </li>
 <li class="toc_level-1 toc_section-11">
 <a href="#create-the-release"><span class="tocnumber">11</span> <span class="toctext">Create the release</span></a>
@@ -149,7 +149,8 @@
 
 <h2 id="update-the-change-log">Update the Change log</h2>
 
-<p>Scan the Git log and add new entries to the <a href="/openocd/change-log/">Change log</a> (<code class="highlighter-rouge">pages/openocd/change-log.md</code>), grouped by days.</p>
+<p>In the project git, scan the log.
+In the documentation git, add new entries to the <a href="/openocd/change-log/">Change log</a> (<code class="highlighter-rouge">pages/openocd/change-log.md</code>), grouped by days.</p>
 
 <p>Close issues on the way. Refer to them as:</p>
 
@@ -159,7 +160,7 @@
 
 <h2 id="update-the-changestxt-file">Update the CHANGES.txt file</h2>
 
-<p>Edit the <code class="highlighter-rouge">gnuarmeclipse/info/CHANGES.txt</code> file (copy the entries from the web change log).</p>
+<p>In the project git, edit the <code class="highlighter-rouge">gnuarmeclipse/info/CHANGES.txt</code> file (copy the entries from the web change log).</p>
 
 <h2 id="commit-to-the-project-git">Commit to the project git</h2>
 
@@ -167,12 +168,16 @@
 
 <h2 id="merge-stable-release">Merge stable release</h2>
 
-<p>For stable releases, with SourceTree</p>
+<p>For <strong>stable releases</strong>, with SourceTree</p>
 
 <ul>
   <li>change to the <strong>gnuarmeclipse</strong> branch</li>
   <li>merge <strong>gnuarmeclipse-dev</strong>.</li>
 </ul>
+
+<h2 id="push-the-project-git">Push the project git</h2>
+
+<p>With SourceTree, push to the GitHub remote, the <strong>gnuarmeclipse</strong> and the <strong>gnuarmeclipse-dev</strong> branches.</p>
 
 <h2 id="checkclonepull-build-scripts">Check/clone/pull build scripts</h2>
 
@@ -188,11 +193,14 @@
 <p>Important note: Before starting the build, double check if the repository is clean (all changes were commited), otherwise the build version will be stamped with <code class="highlighter-rouge">-dirty</code>).</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh cleanall
+$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh checkout-stable
 $ caffeinate bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh --all
 </code></pre>
 </div>
 
 <h2 id="prepare-a-new-blog-post-to-announce-the-release">Prepare a new blog post to announce the release</h2>
+
+<p>In the documentation git:</p>
 
 <ul>
   <li>add a new file to <code class="highlighter-rouge">_posts/openocd/releases</code></li>
@@ -229,10 +237,6 @@ gnuarmeclipse-openocd-win64-0.10.0-201601101000-dev-setup.exe
   <li>commit the <strong>gnuarmeclipse.github.io.git</strong> project; use a message like <strong>OpenOCD v0.10.0-20160110*-dev released</strong></li>
   <li>push the <strong>gnuarmeclipse.github.io.git</strong> project</li>
 </ul>
-
-<h2 id="push-the-project-git">Push the project git</h2>
-
-<p>With SourceTree, push to the GitHub remote, the <strong>gnuarmeclipse</strong> and the <strong>gnuarmeclipse-dev</strong> branches.</p>
 
 <h2 id="create-the-release">Create the release</h2>
 
@@ -272,7 +276,7 @@ gnuarmeclipse-openocd-win64-0.10.0-201601101000-dev-setup.exe
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Oct 29 17:08:24 2016 UTC.</p>
+<p class="page-footer">Last modified on Tue Jan 24 19:57:58 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/publish-procedure/" data-layout="button"></div>
 
 
@@ -283,11 +287,11 @@ gnuarmeclipse-openocd-win64-0.10.0-201601101000-dev-setup.exe
 <h4 id="latest-news"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2017/01/24/openocd-v0-10-0-20170124-released/">GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</a></li>
   <li><a href="/blog/2017/01/14/plugins-v3.2.1-201701141320-released/">GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</a></li>
   <li><a href="/blog/2016/12/27/qemu-v2-8-0-20161227-released/">GNU ARM Eclipse QEMU v2.8.0-20161227* released</a></li>
   <li><a href="/blog/2016/12/02/plugins-install-issue/">GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</a></li>
   <li><a href="/blog/2016/11/28/qemu-v2-7-0-20161128-released/">GNU ARM Eclipse QEMU v2.7.0-20161128* released</a></li>
-  <li><a href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</a></li>
 </ul>
 
 

@@ -9,24 +9,19 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v1.1.0.201310161930 released</title>
-  <meta name="description" content="Version 1.1.0.201310161930 is the first version of the GNU ARM Eclipse Plug-in SE (second edition), publicly available after about two weeks of development a...">
+  <title>GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</title>
+  <meta name="description" content="Version v0.10.0-201701241841 is a major stable release. It includes binaries for Windows, macOS and GNU/Linux.">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v1.1.0.201310161930 released" />
+  <meta property="og:title" content="GNU ARM Eclipse OpenOCD v0.10.0-20170124* released" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2013-10-16">
+  <meta property="article:published_time" content="2017-01-24">
 
 
   <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="openocd" />
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
-  <meta property="article:tag" content="indexer" />
-  <meta property="article:tag" content="toolchain" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -36,7 +31,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
 
-  <link rel="canonical" href="/blog/2013/10/16/plugins-v1.1.0-201310161930-released/">
+  <link rel="canonical" href="/blog/2017/01/24/openocd-v0-10-0-20170124-released/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -97,54 +92,99 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2013/10/11/plugins-v0.5.5.201310111213-released/">←</a></td>
-    <td><a href="/blog/2013/10/11/plugins-v0.5.5.201310111213-released/">GNU ARM Eclipse plug-ins v0.5.5.201310111213 released and marked ‘End of life’</a></td>
+    <td><a href="/blog/2017/01/14/plugins-v3.2.1-201701141320-released/">←</a></td>
+    <td><a href="/blog/2017/01/14/plugins-v3.2.1-201701141320-released/">GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</a></td>
     <td></td>
-    <td><a href="/blog/2013/10/19/plugins-v1.1.1-201310191701-released/">GNU ARM Eclipse plug-ins v1.1.1.201310191701 released</a></td>
-    <td><a href="/blog/2013/10/19/plugins-v1.1.1-201310191701-released/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v1.1.0.201310161930 released</h1>
+<h1 class="post-title">GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</h1>
 
 
 <p class="post-meta">
-Posted on October 16, 2013 by Liviu Ionescu.
+Posted on January 24, 2017 by Liviu Ionescu.
 </p>
 
-<p>Version 1.1.0.201310161930 is the first version of the GNU ARM Eclipse Plug-in SE (second edition), publicly available after about two weeks of development and tests.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#stable-version"><span class="tocnumber">1</span> <span class="toctext">Stable version</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#changes"><span class="tocnumber">2</span> <span class="toctext">Changes</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#known-problems"><span class="tocnumber">3</span> <span class="toctext">Known problems</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#download"><span class="tocnumber">4</span> <span class="toctext">Download</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version v0.10.0-201701241841 is a major stable release. It includes binaries for Windows, macOS and GNU/Linux.</p>
 
 <p>
-<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v1.1.0-201310161930">Binary files »</a>
+<a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.10.0-20170124">Binary files »</a>
 </p>
 
-<p>It includes support for the same toolchains as the last 0.5.x version, but the implementation is completely new.</p>
+<h2 id="stable-version">Stable version</h2>
 
-<h2 id="changes-and-other-goodies">Changes and other goodies</h2>
+<p>This release follows the latest official release <a href="http://openocd.org/2017/01/openocd-0-10-0-release-is-out/">OpenOCD 0.10.0</a> from Jan 22nd, 2017.</p>
 
-<p>The major change is <strong>a new way of managing toolchain definitions</strong>.</p>
+<h2 id="changes">Changes</h2>
 
-<p>For users this means that it will be possible to add new toolchains to the plug-in much easier, <strong>reducing the wait-for-new-toolchain delay</strong>; for the plug-in developers this means a significantly lower effort to expand and maintain the code.</p>
+<p>Except the official OpenOCD changes, there are no specific GNU ARM Eclipse changes.</p>
 
-<p>The second important change is support for toolchain paths, which simplifies usage and <strong>makes switching toolchains easier</strong>.</p>
+<h2 id="known-problems">Known problems</h2>
 
-<p>Other changes include a better option management, with most options being defined for all related tools; for users this <strong>minimises the risk of using inconsistent options</strong> in various build steps.</p>
+<ul>
+  <li>none so far</li>
+</ul>
 
-<p>Indexer support is also improved, by passing all relevant options to the discovery process; for users this means a <strong>lower risk out-of-sync index</strong> (the mysterious situation when the build passes successfully, but the editor still reports various strange errors).</p>
+<h2 id="download">Download</h2>
 
-<p>This first version is marked as ‘Experimental’, which means it must be treated with caution for production environments. Depending on the bug reports received during the next period, this status will probably be lifted with the next version.</p>
+<p>The new OpenOCD can be downloaded from the <a href="https://github.com/gnuarmeclipse/openocd/releases/tag/gae-0.10.0-20170124">GitHub Releases</a> page.</p>
+
+<p>The MD5 sums of the files are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1e37296eec84a147548097893d4d75ad  
+gnuarmeclipse-openocd-debian32-0.10.0-201701241841.tgz
+
+963496e661925a8902df6b91945c797d  
+gnuarmeclipse-openocd-debian64-0.10.0-201701241841.tgz
+
+9ac4535c67d4137729c6ecc34c08eacb 
+gnuarmeclipse-openocd-osx-0.10.0-201701241841.pkg
+
+eaf78663a5f64cf9b2eb55da506f1fa2  
+gnuarmeclipse-openocd-win32-0.10.0-201701241841-setup.exe
+
+0f900b5e88ee0836dcc6e6fd3b8d857c  
+gnuarmeclipse-openocd-win64-0.10.0-201701241841-setup.exe
+</code></pre>
+</div>
 
 
 <hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 
-<strong>releases</strong>, <strong>plugins</strong> and tagged
-
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>indexer</strong>, <strong>toolchain</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2013/10/16/plugins-v1.1.0-201310161930-released/" data-layout="button"></div>
+<strong>releases</strong>, <strong>openocd</strong>.
+</br>Last modified on Tue Jan 24 19:58:26 2017 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2017/01/24/openocd-v0-10-0-20170124-released/" data-layout="button"></div>
 </p>
 
 

@@ -5,9 +5,25 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Jan 2017 15:21:44 +0000</pubDate>
-    <lastBuildDate>Sat, 14 Jan 2017 15:21:44 +0000</lastBuildDate>
+    <pubDate>Tue, 24 Jan 2017 20:00:46 +0000</pubDate>
+    <lastBuildDate>Tue, 24 Jan 2017 20:00:46 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</title>
+        <description>&lt;p&gt;Version v0.10.0-201701241841 is a major stable release. It includes binaries for Windows, macOS and GNU/Linux.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 24 Jan 2017 18:43:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2017/01/24/openocd-v0-10-0-20170124-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2017/01/24/openocd-v0-10-0-20170124-released/</guid>
+        
+        
+        <category>releases</category>
+        
+        <category>openocd</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</title>
@@ -242,30 +258,6 @@
         <category>releases</category>
         
         <category>qemu</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse plug-ins v3.1.1-201606210758 released</title>
-        <description>&lt;p&gt;Version 3.1.1-201606210758 is a new major release; the main change is adding support for &lt;strong&gt;Eclipse 4.6 Neon&lt;/strong&gt; (CDT 9.x).&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 21 Jun 2016 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/06/21/plugins-v3.1.1-201606210758-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/06/21/plugins-v3.1.1-201606210758-released/</guid>
-        
-        <category>GNU</category>
-        
-        <category>ARM</category>
-        
-        <category>Eclipse</category>
-        
-        <category>Neon</category>
-        
-        
-        <category>releases</category>
-        
-        <category>plugins</category>
         
       </item>
     

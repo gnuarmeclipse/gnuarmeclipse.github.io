@@ -125,30 +125,33 @@
 <a href="#preload-the-docker-images"><span class="tocnumber">4</span> <span class="toctext">Preload the Docker images</span></a>
 </li>
 <li class="toc_level-1 toc_section-8">
-<a href="#build-all-distribution-files"><span class="tocnumber">5</span> <span class="toctext">Build all distribution files</span></a>
+<a href="#select-the-stable-or-the-development-branch"><span class="tocnumber">5</span> <span class="toctext">Select the stable or the development branch</span></a>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#subsequent-runs"><span class="tocnumber">6</span> <span class="toctext">Subsequent runs</span></a>
-<ul>
-<li class="toc_level-2 toc_section-10">
-<a href="#separate-platform-specific-builds"><span class="tocnumber">6.1</span> <span class="toctext">Separate platform specific builds</span></a>
+<a href="#build-all-distribution-files"><span class="tocnumber">6</span> <span class="toctext">Build all distribution files</span></a>
 </li>
+<li class="toc_level-1 toc_section-10">
+<a href="#subsequent-runs"><span class="tocnumber">7</span> <span class="toctext">Subsequent runs</span></a>
+<ul>
 <li class="toc_level-2 toc_section-11">
-<a href="#clean"><span class="tocnumber">6.2</span> <span class="toctext">clean</span></a>
+<a href="#separate-platform-specific-builds"><span class="tocnumber">7.1</span> <span class="toctext">Separate platform specific builds</span></a>
+</li>
+<li class="toc_level-2 toc_section-12">
+<a href="#clean"><span class="tocnumber">7.2</span> <span class="toctext">clean</span></a>
 </li>
 </ul>
 </li>
-<li class="toc_level-1 toc_section-12">
-<a href="#install-hierarchy"><span class="tocnumber">7</span> <span class="toctext">Install hierarchy</span></a>
-</li>
 <li class="toc_level-1 toc_section-13">
-<a href="#uninstall"><span class="tocnumber">8</span> <span class="toctext">Uninstall</span></a>
+<a href="#install-hierarchy"><span class="tocnumber">8</span> <span class="toctext">Install hierarchy</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#test"><span class="tocnumber">9</span> <span class="toctext">Test</span></a>
+<a href="#uninstall"><span class="tocnumber">9</span> <span class="toctext">Uninstall</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#more-build-details"><span class="tocnumber">10</span> <span class="toctext">More build details</span></a>
+<a href="#test"><span class="tocnumber">10</span> <span class="toctext">Test</span></a>
+</li>
+<li class="toc_level-1 toc_section-16">
+<a href="#more-build-details"><span class="tocnumber">11</span> <span class="toctext">More build details</span></a>
 </li>
 </ul>
 </td>
@@ -267,6 +270,28 @@ ilegeul/debian      8-gnuarm-mingw        1c04c24123c1        15 months ago     
 </code></pre>
 </div>
 
+<h2 id="select-the-stable-or-the-development-branch">Select the stable or the development branch</h2>
+
+<p>The repository has two branches; by default the development branch is used.</p>
+
+<p>To select the stable branch, use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh checkout-stable
+</code></pre>
+</div>
+
+<p>To later switch back to the development branch, use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh checkout-dev
+</code></pre>
+</div>
+
+<p>To pull new commits from the repository, use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh pull
+</code></pre>
+</div>
+
 <h2 id="build-all-distribution-files">Build all distribution files</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh --all
@@ -308,9 +333,15 @@ drwxr-xr-x  8 ilg  staff      272 May 11 15:13 win64
 
 <h3 id="clean">clean</h3>
 
-<p>To remove all build files, use:</p>
+<p>To remove most build files, use:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh clean
+</code></pre>
+</div>
+
+<p>To also remove the repository and the output files, use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash ~/Downloads/build-scripts.git/scripts/build-openocd.sh cleanall
 </code></pre>
 </div>
 
@@ -380,7 +411,7 @@ For bug reports, read
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Mon Oct 24 07:47:38 2016 UTC.</p>
+<p class="page-footer">Last modified on Tue Jan 24 19:57:58 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/openocd/build-procedure/" data-layout="button"></div>
 
 
@@ -391,11 +422,11 @@ For bug reports, read
 <h4 id="latest-news"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2017/01/24/openocd-v0-10-0-20170124-released/">GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</a></li>
   <li><a href="/blog/2017/01/14/plugins-v3.2.1-201701141320-released/">GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</a></li>
   <li><a href="/blog/2016/12/27/qemu-v2-8-0-20161227-released/">GNU ARM Eclipse QEMU v2.8.0-20161227* released</a></li>
   <li><a href="/blog/2016/12/02/plugins-install-issue/">GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</a></li>
   <li><a href="/blog/2016/11/28/qemu-v2-7-0-20161128-released/">GNU ARM Eclipse QEMU v2.7.0-20161128* released</a></li>
-  <li><a href="/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/">GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</a></li>
 </ul>
 
 
