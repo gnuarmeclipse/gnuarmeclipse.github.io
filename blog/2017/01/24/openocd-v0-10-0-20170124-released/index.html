@@ -146,14 +146,14 @@ Posted on January 24, 2017 by Liviu Ionescu.
 
 <h2 id="changes">Changes</h2>
 
-<p>Except the official OpenOCD changes, there are no specific GNU ARM Eclipse changes.</p>
+<p>Except the official OpenOCD changes, there are no specific GNU ARM Eclipse changes, and even previous patches were no longer ncecessary with this version.</p>
 
-<p>One important note: the old <code class="highlighter-rouge">ft2232</code> interface was deprecated and all configuration files using it were removed from the original OpenOCD distribution. As a consequence, JTAG probes that used the <code class="highlighter-rouge">ft2232</code> interface are no longer supported.</p>
+<p>One important note: the old <code class="highlighter-rouge">ft2232</code> interface was deprecated and replaced by the new <code class="highlighter-rouge">ftdi</code> interface; all configuration files using <code class="highlighter-rouge">ft2232</code> were removed from the original OpenOCD distribution; as a consequence, <strong>debug configurations should be updated to use the interface files available in the <code class="highlighter-rouge">interface/ftdi</code> folder</strong>.</p>
 
 <h2 id="known-problems">Known problems</h2>
 
 <ul>
-  <li>the file `interface/ftdi/olimex-arm-usb-ocd.cfg’ seems not to function properly.</li>
+  <li>none so far</li>
 </ul>
 
 <h2 id="download">Download</h2>
