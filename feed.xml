@@ -5,9 +5,31 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Jan 2017 10:42:39 +0000</pubDate>
-    <lastBuildDate>Wed, 25 Jan 2017 10:42:39 +0000</lastBuildDate>
+    <pubDate>Thu, 26 Jan 2017 11:27:29 +0000</pubDate>
+    <lastBuildDate>Thu, 26 Jan 2017 11:27:29 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>SourceForge 5.000.000 downloads, January 2017</title>
+        <description>&lt;p&gt;January 2017 came with a nice surprise, the SourceForge statistics for the GNU ARM Eclipse project show &lt;strong&gt;more than 5.000.000 downloads&lt;/strong&gt; in the last 4 years:&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 26 Jan 2017 10:15:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2017/01/26/sourceforge-5m-downloads/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2017/01/26/sourceforge-5m-downloads/</guid>
+        
+        <category>featured</category>
+        
+        <category>SourceForge</category>
+        
+        <category>downloads</category>
+        
+        
+        <category>news</category>
+        
+        <category>project</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</title>
@@ -234,30 +256,6 @@
         <category>releases</category>
         
         <category>windows-build-tools</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse QEMU v2.6.0-20160728* released</title>
-        <description>&lt;p&gt;Version 2.6.0-201607280535 is a stable release, adding support for BASEPRI, in order for RTOSes (like FreeRTOS, &lt;a href=&quot;http://micro-os-plus.github.io&quot;&gt;µOS++ IIIe / CMSIS++&lt;/a&gt;) to properly implement critical sections.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 28 Jul 2016 02:26:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/07/28/qemu-v2-6-0-20160728-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/07/28/qemu-v2-6-0-20160728-released/</guid>
-        
-        <category>macOS</category>
-        
-        <category>BASEPRI</category>
-        
-        <category>DHCSR</category>
-        
-        <category>BKPT</category>
-        
-        
-        <category>releases</category>
-        
-        <category>qemu</category>
         
       </item>
     
