@@ -5,9 +5,37 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Jan 2017 23:32:10 +0000</pubDate>
-    <lastBuildDate>Thu, 26 Jan 2017 23:32:10 +0000</lastBuildDate>
+    <pubDate>Sun, 29 Jan 2017 17:27:57 +0000</pubDate>
+    <lastBuildDate>Sun, 29 Jan 2017 17:27:57 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse plug-ins: Received fatal alert: handshake_failure</title>
+        <description>&lt;p&gt;For historical reasons, the GNU ARM Eclipse update sites for installing new software are hosted by SourceForge, and, up to now, they successfuly handled more than 5.000.000 downloaded files for this project, but in the last months SourceForge experienced several security issues affecting GNU ARM Eclipse plug-ins users.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 29 Jan 2017 08:33:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2017/01/29/plugins-install-issue/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2017/01/29/plugins-install-issue/</guid>
+        
+        <category>GNU</category>
+        
+        <category>ARM</category>
+        
+        <category>Eclipse</category>
+        
+        <category>SourceForge</category>
+        
+        <category>Oracle</category>
+        
+        <category>JDK</category>
+        
+        
+        <category>support</category>
+        
+        <category>plugins</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse: 5.000.000 SourceForge downloads, January 2017</title>
@@ -102,7 +130,7 @@
       </item>
     
       <item>
-        <title>GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</title>
+        <title>GNU ARM Eclipse plug-ins: sun.security.validator.ValidatorException</title>
         <description>&lt;p&gt;For historical reasons, the GNU ARM Eclipse update sites for installing new software are hosted by SourceForge, and up to now they successfuly handled more than 4.500.000 downloaded files for this project.&lt;/p&gt;
 
 </description>
@@ -228,34 +256,6 @@
         <category>releases</category>
         
         <category>openocd</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse Windows Build Tools v2.7-20161028* released</title>
-        <description>&lt;p&gt;Version 2.7-201610281058 is a maintenance release of the GNU ARM Eclipse Windows Build Tools.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 28 Oct 2016 12:00:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/10/28/windows-build-tools-v2.7-20161028-released/</guid>
-        
-        <category>windows</category>
-        
-        <category>setup</category>
-        
-        <category>build</category>
-        
-        <category>make</category>
-        
-        <category>rm</category>
-        
-        <category>busybox</category>
-        
-        
-        <category>releases</category>
-        
-        <category>windows-build-tools</category>
         
       </item>
     

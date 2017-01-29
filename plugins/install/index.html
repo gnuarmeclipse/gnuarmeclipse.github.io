@@ -203,6 +203,14 @@
 
 <p>It is recommended that you install the plug-ins after installing the <a href="/toolchain/install">toolchain</a>, the <a href="/windows-build-tools/install/">build tools</a> (on Windows), and the <a href="/debug/install/">debugging binaries</a>.</p>
 
+<blockquote>
+  <p>Important notes:</p>
+  <ul>
+    <li>if you use the Oracle JDK, starting with mid January, attempts to install from SourceForge <a href="/blog/2017/01/29/plugins-install-issue/">fail with handshake_error</a>;</li>
+    <li>if you are behind a firewall, older Java virtual machines <a href="/blog/2016/12/02/plugins-install-issue/">fail to connect to SourceForge</a>.</li>
+  </ul>
+</blockquote>
+
 <h2 id="prerequisites">Prerequisites</h2>
 
 <p>Since these are Eclipse plug-ins, they obviously require a functional Eclipse CDT, which requires Java.</p>
@@ -410,7 +418,10 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 
 <h3 id="java-security-problems">Java security problems</h3>
 
-<p>If you are behind a firewall, older Java virtual machines <a href="/blog/2016/12/02/plugins-install-issue/">fail to connect to SourceForge</a>. Install the latest JDK and retry to install the plug-ins.</p>
+<ul>
+  <li>if you use the Oracle JDK, starting with mid January, attempts to install from SourceForge <a href="/blog/2017/01/29/plugins-install-issue/">fail with handshake_error</a>. Install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files</a> and retry to install the plug-ins.</li>
+  <li>if you are behind a firewall, older Java virtual machines <a href="/blog/2016/12/02/plugins-install-issue/">fail to connect to SourceForge</a>. Install the latest JDK and retry to install the plug-ins.</li>
+</ul>
 
 <h3 id="sourceforge-problems">SourceForge problems</h3>
 
@@ -514,11 +525,11 @@ OpenJDK 64-bits Server VM (build 24.85-b03, mixed mode)
 <h4 id="latest-news"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2017/01/29/plugins-install-issue/">GNU ARM Eclipse plug-ins: Received fatal alert: handshake_failure</a></li>
   <li><a href="/blog/2017/01/26/sourceforge-5m-downloads/">GNU ARM Eclipse: 5.000.000 SourceForge downloads, January 2017</a></li>
   <li><a href="/blog/2017/01/24/openocd-v0-10-0-20170124-released/">GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</a></li>
   <li><a href="/blog/2017/01/14/plugins-v3.2.1-201701141320-released/">GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</a></li>
   <li><a href="/blog/2016/12/27/qemu-v2-8-0-20161227-released/">GNU ARM Eclipse QEMU v2.8.0-20161227* released</a></li>
-  <li><a href="/blog/2016/12/02/plugins-install-issue/">GNU ARM Eclipse plug-ins sun.security.validator.ValidatorException</a></li>
 </ul>
 
 

@@ -9,17 +9,25 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>Discussions forum</title>
-  <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
+  <title>GNU ARM Eclipse plug-ins: Received fatal alert: handshake_failure</title>
+  <meta name="description" content="For historical reasons, the GNU ARM Eclipse update sites for installing new software are hosted by SourceForge, and, up to now, they successfuly handled more...">
 
-  <meta property="og:title" content="Discussions forum" />
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins: Received fatal alert: handshake_failure" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-12">
+  <meta property="article:published_time" content="2017-01-29">
 
 
+  <meta property="article:section" content="support" />
+  <meta property="article:section" content="plugins" />
 
+  <meta property="article:tag" content="gnu" />
+  <meta property="article:tag" content="arm" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="sourceforge" />
+  <meta property="article:tag" content="oracle" />
+  <meta property="article:tag" content="jdk" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -29,7 +37,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
 
-  <link rel="canonical" href="/support/forum/">
+  <link rel="canonical" href="/blog/2017/01/29/plugins-install-issue/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -88,95 +96,81 @@
 <div id="site-body">
 <section id="main-content">
 
-
-<h1 class="page-title">Discussions forum</h1>
-
-
-<div id="toc-container">
-<table class="toc" id="toc">
-<tbody>
-<tr>
-<td>
-<div id="toctitle">
-<h2>Contents</h2>
-</div>
-<ul>
-<li class="toc_level-1 toc_section-1">
-<a href="#overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
-</li>
-<li class="toc_level-1 toc_section-2">
-<a href="#goals"><span class="tocnumber">2</span> <span class="toctext">Goals</span></a>
-</li>
-<li class="toc_level-1 toc_section-3">
-<a href="#access"><span class="tocnumber">3</span> <span class="toctext">Access</span></a>
-</li>
-<li class="toc_level-1 toc_section-4">
-<a href="#start-a-discussion"><span class="tocnumber">4</span> <span class="toctext">Start a discussion</span></a>
-</li>
-<li class="toc_level-1 toc_section-5">
-<a href="#no-support-for-markdown"><span class="tocnumber">5</span> <span class="toctext">No support for markdown</span></a>
-</li>
-<li class="toc_level-1 toc_section-6">
-<a href="#categories"><span class="tocnumber">6</span> <span class="toctext">Categories</span></a>
-</li>
-<li class="toc_level-1 toc_section-7">
-<a href="#mark-your-questions-as-answered"><span class="tocnumber">7</span> <span class="toctext">Mark your questions as Answered</span></a>
-</li>
-</ul>
-</td>
-</tr>
-</tbody>
+<table id="post-navigation">
+  <tr>
+    <td><a href="/blog/2017/01/26/sourceforge-5m-downloads/">←</a></td>
+    <td><a href="/blog/2017/01/26/sourceforge-5m-downloads/">GNU ARM Eclipse: 5.000.000 SourceForge downloads, January 2017</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
-</div><h2 id="overview">Overview</h2>
 
-<p>A dedicated <a href="https://www.element14.com/community/groups/gnu-arm-eclipse">user discussions forum</a> was created on the <a href="https://www.element14.com/community/welcome">element14 Community server</a>.</p>
 
-<p>
-<img src="/assets/images/2016/forum-overview.png" alt="GNU ARM Eclipse forum" />
+<h1 class="post-title">GNU ARM Eclipse plug-ins: Received fatal alert: handshake_failure</h1>
+
+
+<p class="post-meta">
+Posted on January 29, 2017 by Liviu Ionescu.
 </p>
 
-<h2 id="goals">Goals</h2>
+<p>For historical reasons, the GNU ARM Eclipse update sites for installing new software are hosted by SourceForge, and, up to now, they successfuly handled more than 5.000.000 downloaded files for this project, but in the last months SourceForge experienced several security issues affecting GNU ARM Eclipse plug-ins users.</p>
 
-<p>The forum goal was to facilitate experience sharing between GNU ARM Eclipse users and as a place to post questions and support requests. In case a problem is identified as bug or feature request, please use the corresponding GitHub Issues <a href="https://github.com/gnuarmeclipse/plug-ins/issues/">tracker</a>.</p>
+<h2 id="problem">Problem</h2>
 
-<h2 id="access">Access</h2>
-
-<p>The forum URL is:</p>
+<p>In Jan. 2017 SourceForge did a change a second change in the security settings used by their download servers and mirrors. For some of the users this was transparent, but for some, the result when trying to install new software, was the following:</p>
 
 <p>
-<code class="highlighter-rouge">https://www.element14.com/community/groups/gnu-arm-eclipse</code>
+<img src="/assets/images/2017/handshake-failure.png" alt="Handshake failure" />
 </p>
 
-<p>The forum type is open, and anyone can contribute. Access is free, based on registration.</p>
+<p>Checking the Eclipse log revealed a Java SSL exception:</p>
 
-<h2 id="start-a-discussion">Start a discussion</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2017-01-28 18:48:05.200
+!MESSAGE Unable to read repository at http://gnuarmeclipse.sourceforge.net/updates-test/content.xml.
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:535)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:403)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:177)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+</code></pre>
+</div>
 
-<p>The element14 Community Group is actually more than a simple forum, it is also a blog, it can manage polls, calendar events, and many more.</p>
+<p>The problem is caused by <strong>SourceForge mandating the use of strong encryption</strong>, while the Oracle JDK, due to export restrictions, is not able to handle strong encryption.</p>
 
-<p>For common usage, to start a new discussion, use the top right link <a href="https://www.element14.com/community/discussion/create.jspa?containerID=2436&amp;containerType=700">Start a discussion</a>.</p>
+<h2 id="solution">Solution</h2>
 
-<h2 id="no-support-for-markdown">No support for markdown</h2>
+<p>The solution is to install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files</a>. In practical terms, this means replacing two JAR files in the JRE <code class="highlighter-rouge">/lib/security</code> folder.</p>
 
-<p>Unfortunatelly the Jive powered server currently has no support for markdown, so follow the server formatting rules.</p>
+<p>Read the instructions in the <code class="highlighter-rouge">README.txt</code> file and follow them carefully. Replacing the files might require administrative rights.</p>
 
-<h2 id="categories">Categories</h2>
 
-<p>The GNU ARM Eclipse Group is also home for discussions related to other subprojects, like CMSIS++, µOS++, and xPacks.</p>
 
-<p>
-<img src="/assets/images/2016/forum-categories.png" alt="GNU ARM Eclipse categories" />
+<hr class="post-footer"/>
+<p class="post-footer">
+Posted in
+
+<strong>support</strong>, <strong>plugins</strong> and tagged
+
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>sourceforge</strong>, <strong>oracle</strong>, <strong>jdk</strong>.
+</br>Last modified on Sun Jan 29 16:39:43 2017 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2017/01/29/plugins-install-issue/" data-layout="button"></div>
 </p>
-
-<p>Please be sure you select the <strong>GNU ARM Eclipse</strong> category.</p>
-
-<h2 id="mark-your-questions-as-answered">Mark your questions as Answered</h2>
-
-<p>If you receive the expected answer, please let the server know this, for an efficient way to manage the issues.</p>
-
-
-<hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu Feb  4 07:16:24 2016 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/support/forum/" data-layout="button"></div>
 
 
 </section>
