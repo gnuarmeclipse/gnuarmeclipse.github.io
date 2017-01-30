@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2017/01/29/plugins-install-issue/</loc>
-<lastmod>2017-01-29T16:39:43+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2017/01/26/sourceforge-5m-downloads/</loc>
@@ -22,7 +22,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2016/12/02/plugins-install-issue/</loc>
-<lastmod>2016-12-27T12:41:58+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2016/11/28/qemu-v2-7-0-20161128-released/</loc>
@@ -442,7 +442,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/windows-build-tools/download/</loc>
-<lastmod>2016-10-28T12:34:02+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/downloads/</loc>
@@ -470,7 +470,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/support/faq/</loc>
-<lastmod>2016-12-27T11:24:30+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/plugins/features/</loc>
@@ -498,7 +498,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/toolchain/install/</loc>
-<lastmod>2016-06-22T09:37:21+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/qemu/install/</loc>
@@ -506,7 +506,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/plugins/install/</loc>
-<lastmod>2016-12-27T11:24:30+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/install/</loc>
@@ -626,15 +626,15 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/openocd/publish-procedure/</loc>
-<lastmod>2017-01-24T19:57:58+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/windows-build-tools/publish-procedure/</loc>
-<lastmod>2016-10-28T17:29:57+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/qemu/publish-procedure/</loc>
-<lastmod>2016-12-27T16:43:46+00:00</lastmod>
+<lastmod>2017-01-29T17:31:07+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/developer/publish-procedure/</loc>
