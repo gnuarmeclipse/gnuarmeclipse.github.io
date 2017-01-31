@@ -132,7 +132,7 @@
 </table>
 </div><h2 id="overview">Overview</h2>
 
-<p>If your development platform is Windows, you need to install two additional command line programs, <strong>make</strong> and <strong>rm</strong>, required by the Eclipse external builder.</p>
+<p>If your development platform is Windows, you need to install two additional command line programs, <code class="highlighter-rouge">make</code> and <code class="highlighter-rouge">rm</code>, required by the Eclipse external builder.</p>
 
 <p>Unfortunately, most current toolchains do not provide these two programs in their windows distribution.</p>
 
@@ -140,15 +140,15 @@
 
 <h2 id="mentor-sourcery-codebench">Mentor Sourcery CodeBench</h2>
 
-<p>One notable exception is the <strong><a href="http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/editions/lite-edition/">Mentor Sourcery CodeBench Lite</a></strong> toolchain for Windows, which provides two programs, <strong>cs-make</strong> and <strong>cs-rm</strong> (the cs- prefix comes from CodeSourcery, the former name of the company that distributed the toolchain).</p>
+<p>One notable exception is the <strong><a href="http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/editions/lite-edition/">Mentor Sourcery CodeBench Lite</a></strong> toolchain for Windows, which provides two programs, <code class="highlighter-rouge">cs-make</code> and <code class="highlighter-rouge">cs-rm</code> (the <code class="highlighter-rouge">cs-</code> prefix comes from CodeSourcery, the former name of the company that distributed the toolchain).</p>
 
-<p>Unfortunately it seems that the CodeSourcery setup is not complete, and the bin/sh is not present, so, make is using cmd.exe to run sub processes, which presents the old Windows 8191 characters command line limitation.</p>
+<p>Unfortunately it seems that the CodeSourcery setup is not complete, and the <code class="highlighter-rouge">bin/sh</code> is not present, so, <code class="highlighter-rouge">make</code> is using <code class="highlighter-rouge">cmd.exe</code> to run sub processes, which presents the <strong>old Windows 8191 characters</strong> command line limitation.</p>
 
-<p>So, if you use the CodeBench Lite (not recommended anyway), although you already have these two programs in the toolchain path, if you want to use longer lines and a modern make, preferably install these tools and update the names from cs-make to <strong>make</strong> and from cs-rm to <strong>rm</strong> in the Toolchains configuration tab.</p>
+<p>So, if you use the CodeBench Lite (not recommended anyway), although you already have these two programs in the toolchain path, if you want to use longer lines and a modern make, preferably install these tools and update the names from <code class="highlighter-rouge">cs-make</code> to <code class="highlighter-rouge">make</code> and from <code class="highlighter-rouge">cs-rm</code> to <code class="highlighter-rouge">rm</code> in the <strong>Toolchains</strong> configuration tab.</p>
 
 <h2 id="download-the-windows-build-tools-setup">Download the Windows Build Tools setup</h2>
 
-<p>Otherwise, if you use other toolchains, like the recommended <a href="http://launchpad.net/gcc-arm-embedded"><strong>GNU Tools for ARM Embedded Processors</strong></a>, for your convenience we prepared a small package with the required build tools; download the most recent <strong>gnuarmeclipse-build-tools-win32-2.*-*-setup.exe</strong> file from the <a href="https://sourceforge.net/projects/gnuarmeclipse/files/Build Tools/">SourceForge download area</a> and proceed with the setup.</p>
+<p>Otherwise, if you use other toolchains, like the recommended <a href="http://launchpad.net/gcc-arm-embedded"><strong>GNU Tools for ARM Embedded Processors</strong></a>, for your convenience we prepared a small package with the required build tools; download the most recent <code class="highlighter-rouge">gnuarmeclipse-build-tools-win[32|64]-*.*-*-setup.exe</code> file from the <a href="https://github.com/gnuarmeclipse/windows-build-tools/releases">Github Releases</a> page and proceed with the setup.</p>
 
 <h2 id="run-the-setup">Run the setup</h2>
 
@@ -184,15 +184,15 @@ There is NO WARRANTY, to the extent permitted by law.
 
 <h2 id="uninstall">Uninstall</h2>
 
-<p>If needed, you can completely remove the package from your system by running the provided uninstall (<strong>build-tools-uninstall.exe</strong>).</p>
+<p>If needed, you can completely remove the package from your system by running the provided uninstall (<code class="highlighter-rouge">build-tools-uninstall.exe</code>).</p>
 
 <h2 id="the-echo-command">The echo command</h2>
 
-<p>The package also contains an executable for the <strong>echo</strong> command. It is not mandatory for the build to succeed, but it is recommended to have it in the build path, to avoid an annoying CDT bug, that triggers an error during the first build of a new project, claiming that <em>Program “gcc” not found in PATH</em>.</p>
+<p>The package also contains an executable for the <code class="highlighter-rouge">echo</code> command. It is not mandatory for the build to succeed, but it is recommended to have it in the build path, to avoid an annoying CDT bug, that triggers an error during the first build of a new project, claiming that <em>Program “gcc” not found in PATH</em>.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Nov 19 13:50:30 2016 UTC.</p>
+<p class="page-footer">Last modified on Tue Jan 31 19:52:52 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/windows-build-tools/install/" data-layout="button"></div>
 
 
