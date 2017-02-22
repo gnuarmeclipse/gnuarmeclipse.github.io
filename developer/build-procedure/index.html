@@ -27,8 +27,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201702222107" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201702222107" media="print">
 
   <link rel="canonical" href="/developer/build-procedure/">
 
@@ -93,63 +93,126 @@
 <h1 class="page-title">How to build the plug-ins?</h1>
 
 
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#build"><span class="tocnumber">1</span> <span class="toctext">Build</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#debug"><span class="tocnumber">2</span> <span class="toctext">Debug</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#debug-with-cdt-sources"><span class="tocnumber">3</span> <span class="toctext">Debug with CDT sources</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="build">Build</h2>
 
 <ul>
   <li>select the <strong>ilg.gnuarmeclipse.parent</strong> project</li>
-  <li>right click, select Run As → Maven install</li>
+  <li>right click, select <strong>Run As</strong> → <strong>Maven install</strong>
+</li>
   <li>wait a while for Maven to load all required modules</li>
 </ul>
 
 <p>The result of a successful build looks like this:</p>
 
 <div class="highlighter-rouge">
-<pre class="highlight"><code>[INFO] --- tycho-p2-plugin:0.22.0:update-local-index (default-update-local-index) @ ilg.gnuarmeclipse.repository ---
+<pre class="highlight"><code>[INFO] --- tycho-p2-plugin:0.25.0:update-local-index (default-update-local-index) @ ilg.gnuarmeclipse.repository ---
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary:
-[INFO]
-[INFO] GNU ARM Eclipse parent ............................ SUCCESS [  0.702 s]
-[INFO] GNU ARM Eclipse core .............................. SUCCESS [  3.971 s]
-[INFO] GNU ARM Eclipse debug core ........................ SUCCESS [  0.356 s]
-[INFO] GNU ARM Eclipse packages core ..................... SUCCESS [  0.482 s]
-[INFO] GNU ARM Eclipse managed build code ................ SUCCESS [  1.073 s]
-[INFO] GNU ARM Eclipse managed build feature ............. SUCCESS [  0.166 s]
-[INFO] GNU ARM Eclipse templates core .................... SUCCESS [  0.494 s]
-[INFO] GNU ARM Eclipse Cortex-M template ................. SUCCESS [  0.291 s]
-[INFO] GNU ARM Eclipse Cortex-M template feature ......... SUCCESS [  0.091 s]
-[INFO] GNU ARM Eclipse STM32Fx templates ................. SUCCESS [  1.639 s]
-[INFO] GNU ARM Eclipse STM32Fx templates feature ......... SUCCESS [  0.056 s]
-[INFO] GNU ARM Eclipse Freescale Kinetis templates ....... SUCCESS [  0.387 s]
-[INFO] GNU ARM Eclipse Freescale PEx template ............ SUCCESS [  0.360 s]
-[INFO] GNU ARM Eclipse Freescale templates feature ....... SUCCESS [  0.078 s]
-[INFO] GNU ARM Eclipse GDB debug ......................... SUCCESS [  2.039 s]
-[INFO] GNU ARM Eclipse J-Link debug ...................... SUCCESS [  1.070 s]
-[INFO] GNU ARM Eclipse debugger Restart button ........... SUCCESS [  0.292 s]
-[INFO] GNU ARM Eclipse J-Link debug feature .............. SUCCESS [  0.121 s]
-[INFO] GNU ARM Eclipse OpenOCD debug ..................... SUCCESS [  0.467 s]
-[INFO] GNU ARM Eclipse OpenOCD debug feature ............. SUCCESS [  0.076 s]
-[INFO] GNU ARM Eclipse QEMU debug ........................ SUCCESS [  0.519 s]
-[INFO] GNU ARM Eclipse QEMU debug feature ................ SUCCESS [  0.116 s]
-[INFO] GNU ARM Eclipse packages data ..................... SUCCESS [  0.478 s]
-[INFO] GNU ARM Eclipse debug packs ....................... SUCCESS [  0.275 s]
-[INFO] GNU ARM Eclipse packages .......................... SUCCESS [  0.228 s]
-[INFO] GNU ARM Eclipse packages UI ....................... SUCCESS [  0.593 s]
-[INFO] GNU ARM Eclipse managed build packs ............... SUCCESS [  0.415 s]
-[INFO] GNU ARM Eclipse packages feature .................. SUCCESS [  0.088 s]
-[INFO] GNU ARM Eclipse documentation ..................... SUCCESS [  0.066 s]
-[INFO] GNU ARM Eclipse documentation feature ............. SUCCESS [  0.121 s]
-[INFO] GNU ARM Eclipse repository ........................ SUCCESS [  2.797 s]
+[INFO] 
+[INFO] GNU ARM Eclipse parent ............................. SUCCESS [  0.153 s]
+[INFO] GNU ARM Eclipse core ............................... SUCCESS [  2.347 s]
+[INFO] GNU ARM Eclipse debug core ......................... SUCCESS [  0.276 s]
+[INFO] GNU ARM Eclipse packages core ...................... SUCCESS [  0.405 s]
+[INFO] GNU ARM Eclipse managed build code ................. SUCCESS [  0.655 s]
+[INFO] GNU ARM Eclipse managed build feature .............. SUCCESS [  0.137 s]
+[INFO] GNU ARM Eclipse templates core ..................... SUCCESS [  0.422 s]
+[INFO] GNU ARM Eclipse Cortex-M template .................. SUCCESS [  0.252 s]
+[INFO] GNU ARM Eclipse Cortex-M template feature .......... SUCCESS [  0.097 s]
+[INFO] GNU ARM Eclipse STM32Fx templates .................. SUCCESS [  1.709 s]
+[INFO] GNU ARM Eclipse STM32Fx templates feature .......... SUCCESS [  0.082 s]
+[INFO] GNU ARM Eclipse Freescale Kinetis templates ........ SUCCESS [  0.292 s]
+[INFO] GNU ARM Eclipse Freescale PEx template ............. SUCCESS [  0.268 s]
+[INFO] GNU ARM Eclipse Freescale templates feature ........ SUCCESS [  0.100 s]
+[INFO] GNU ARM Eclipse ADuCM template ..................... SUCCESS [  0.396 s]
+[INFO] GNU ARM Eclipse ADuCM template feature ............. SUCCESS [  0.080 s]
+[INFO] GNU ARM Eclipse GDB debug .......................... SUCCESS [  1.170 s]
+[INFO] GNU ARM Eclipse J-Link debug ....................... SUCCESS [  0.648 s]
+[INFO] GNU ARM Eclipse debugger Restart button ............ SUCCESS [  0.233 s]
+[INFO] GNU ARM Eclipse J-Link debug feature ............... SUCCESS [  0.117 s]
+[INFO] GNU ARM Eclipse OpenOCD debug ...................... SUCCESS [  0.478 s]
+[INFO] GNU ARM Eclipse OpenOCD debug feature .............. SUCCESS [  0.118 s]
+[INFO] GNU ARM Eclipse PyOCD debug ........................ SUCCESS [  0.820 s]
+[INFO] GNU ARM Eclipse PyOCD debug feature ................ SUCCESS [  0.088 s]
+[INFO] GNU ARM Eclipse QEMU debug ......................... SUCCESS [  0.432 s]
+[INFO] GNU ARM Eclipse QEMU debug feature ................. SUCCESS [  0.089 s]
+[INFO] GNU ARM Eclipse packages data ...................... SUCCESS [  0.339 s]
+[INFO] GNU ARM Eclipse debug packs ........................ SUCCESS [  0.268 s]
+[INFO] GNU ARM Eclipse packages ........................... SUCCESS [  0.208 s]
+[INFO] GNU ARM Eclipse packages UI ........................ SUCCESS [  0.431 s]
+[INFO] GNU ARM Eclipse managed build packs ................ SUCCESS [  0.329 s]
+[INFO] GNU ARM Eclipse packages feature ................... SUCCESS [  0.129 s]
+[INFO] GNU ARM Eclipse CodeRed perspective ................ SUCCESS [  0.258 s]
+[INFO] GNU ARM Eclipse CodeRed perspective feature ........ SUCCESS [  0.151 s]
+[INFO] GNU ARM Eclipse documentation ...................... SUCCESS [  0.052 s]
+[INFO] GNU ARM Eclipse documentation feature .............. SUCCESS [  0.043 s]
+[INFO] GNU ARM Eclipse repository ......................... SUCCESS [  5.770 s]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 43.950 s
-[INFO] Finished at: 2015-03-12T14:35:41+02:00
-[INFO] Final Memory: 105M/372M
+[INFO] Total time: 43.399 s
+[INFO] Finished at: 2017-02-18T15:18:25+02:00
+[INFO] Final Memory: 146M/1424M
 [INFO] ------------------------------------------------------------------------
 </code></pre>
 </div>
 
+<p>The build result is in the <code class="highlighter-rouge">ilg.gnuarmeclipse.repository</code> project</p>
+<ul>
+  <li>the <code class="highlighter-rouge">target/ilg.gnuarmeclipse.repository-3.3.1-SNAPSHOT.zip</code> file</li>
+  <li>the <code class="highlighter-rouge">target/repository</code> folder, with the p2 update site</li>
+</ul>
+
 <h2 id="debug">Debug</h2>
+
+<p>Create a file <code class="highlighter-rouge">Eclipse Workspaces/debug.options</code> with the following content:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>ilg.gnuarmeclipse.core/debug=true
+
+ilg.gnuarmeclipse.managedbuild.cross/debug=true
+#ilg.gnuarmeclipse.managedbuild.packs/debug=true
+
+ilg.gnuarmeclipse.debug.core/debug=true
+ilg.gnuarmeclipse.debug.gdbjtag/debug=true
+
+ilg.gnuarmeclipse.debug.gdbjtag.jlink/debug=true
+ilg.gnuarmeclipse.debug.gdbjtag.openocd/debug=true
+ilg.gnuarmeclipse.debug.gdbjtag.qemu/debug=true
+
+#ilg.gnuarmeclipse.packs/debug=true
+#ilg.gnuarmeclipse.packs.core/debug=true
+#ilg.gnuarmeclipse.packs.data/debug=true
+#ilg.gnuarmeclipse.packs.ui/debug=true
+
+ilg.gnuarmeclipse.codered/debug=true
+</code></pre>
+</div>
+
+<p>To run a debug session using the GNU ARM Eclipse plug-ins:</p>
 
 <ul>
   <li>
@@ -161,12 +224,14 @@
     <ul>
       <li>Name: <strong>Eclipse GNU ARM Plug-ins</strong>
 </li>
-      <li>Location: ${workspace_loc}/../runtime-EclipseGNUARMPlug-ins</li>
+      <li>Location: <code class="highlighter-rouge">${workspace_loc}/../runtime-Eclipse46</code>
+</li>
     </ul>
   </li>
   <li>Tab: <strong>Plug-ins</strong>
     <ul>
-      <li>Launch with: ‘all workspace and enabled plug-ins’</li>
+      <li>Launch with: <strong>plug-ins selected below</strong>; the Workspace list should include all <code class="highlighter-rouge">ilg.gnuarmeclipse.*</code> plug-ins; the Target Platform list should include all Eclipse, not only CDT, plug-ins; if the Eclipse plug-ins are not in the list, then the Preferences → Plug-in Development -&gt; Target Platform is not Running Platform, and must be changed. The alternative to use <strong>all workspace and enabled plug-ins</strong> might work in some configurations, and can also be used, but if dependencies are not met, manual selection is required.</li>
+      <li>click the <strong>Validate Plug-ins</strong> button; most probably the <code class="highlighter-rouge">org.apache.xmlrpc</code> plug-in will complain about <code class="highlighter-rouge">javax.xml.bind</code>; either install it, or disable the plug-in; validate again and disable a few more plug-ins (<code class="highlighter-rouge">org.eclipse.mylyn.bugzilla.core</code>, <code class="highlighter-rouge">org.eclipse.mylyn.bugzilla.ui</code> and <code class="highlighter-rouge">org.eclipse.mylyn.commons.xmlrpc</code>).</li>
     </ul>
   </li>
   <li>Tab: <strong>Arguments</strong>
@@ -174,18 +239,21 @@
       <li>Program arguments:
         <ul>
           <li><code class="highlighter-rouge">-consoleLog</code></li>
-          <li><code class="highlighter-rouge">-debug /Users/ilg/My\ Files/MacBookPro\ Projects/GNU\ ARM\ Eclipse/Eclipse\ Workspaces/debug.options</code></li>
+          <li>
+<code class="highlighter-rouge">-debug</code> <code class="highlighter-rouge">.../GNU\ ARM\ Eclipse/Eclipse\ Workspaces/debug.options</code>
+</li>
         </ul>
       </li>
       <li>VM arguments:
         <ul>
           <li>
 <code class="highlighter-rouge">-ea</code> (to enable assertions)</li>
-          <li><code class="highlighter-rouge">-Dorg.eclipse.swt.internal.carbon.smallFonts</code></li>
+          <li>
+<code class="highlighter-rouge">-Dorg.eclipse.swt.internal.carbon.smallFonts</code> (only on macOS)</li>
           <li><code class="highlighter-rouge">-Xdock:icon=../Resources/Eclipse.icns</code></li>
         </ul>
       </li>
-      <li>enable <code class="highlighter-rouge">-XstartOnFirstThread</code>
+      <li>enable <strong>Use the -XstartOnFirstThread argument when launching with SWT</strong>
 </li>
     </ul>
   </li>
@@ -202,9 +270,58 @@
 </code></pre>
 </div>
 
+<h2 id="debug-with-cdt-sources">Debug with CDT sources</h2>
+
+<p>A more elaborated configuration is required when willing to run debug sessions using CDT source files from the Git repository, for example to debug issues inside CDT.</p>
+
+<p>Clone the CDT repository:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>git clone git://git.eclipse.org/gitroot/cdt/org.eclipse.cdt.git org.eclipse.cdt.git
+</code></pre>
+</div>
+
+<p>Create a new working set named <strong>CDT</strong></p>
+
+<ul>
+  <li>in the Package Explorer view, click the down pointing triangle,</li>
+  <li>select <strong>Configure Working Sets…</strong>
+    <ul>
+      <li>click the <strong>New…</strong> button</li>
+      <li>fill in the <strong>Working set name:</strong> with CDT</li>
+      <li>click the <strong>Finish</strong> button</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Import all CDT projects</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu → <strong>File</strong> → <strong>Import…</strong> → <strong>Existing Maven Projects</strong>
+</li>
+  <li>click the <strong>Next &gt;</strong> button</li>
+  <li>browse for the <code class="highlighter-rouge">org.eclipse.cdt.git</code> folder</li>
+  <li>keep all projects selected</li>
+  <li>enable <strong>Add projects(s) to working set</strong> and enter CDT</li>
+  <li>click the <strong>Finish</strong> button</li>
+  <li>accept the <strong>Discover m2e connectors</strong> dependency to <code class="highlighter-rouge">tycho-eclipserun-plugin</code> and click the <strong>Finish</strong> button</li>
+</ul>
+
+<p>Create a new debug configuration</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu → <strong>Run</strong> → <strong>Debug Configurations…</strong>
+</li>
+  <li>duplicate ‘Eclipse GNU ARM Plug-ins’ into ‘Eclipse GNU ARM Plug-ins CDT’</li>
+  <li>using the <strong>Validate Plug-ins</strong> button, disable unwanted plug-ins until the validation passes</li>
+  <li>click the <strong>Apply</strong> button</li>
+  <li>click the <strong>Debug</strong> buton to start a debug session</li>
+</ul>
+
+
 
 <hr class="page-footer">
-<p class="page-footer">Last modified on Thu Dec 17 16:55:24 2015 UTC.</p>
+<p class="page-footer">Last modified on Wed Feb 22 21:14:39 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/build-procedure/" data-layout="button"></div>
 
 

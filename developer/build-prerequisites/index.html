@@ -2,18 +2,19 @@
 <html>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta charset='utf-8'>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml">
 
   <title>Build prerequisites</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="Build prerequisites" />
-  <meta property="og:site_name" content="GNU ARM Eclipse" />
+  <meta property="og:title" content="Build prerequisites">
+  <meta property="og:site_name" content="GNU ARM Eclipse">
 
 
   <meta property="article:published_time" content="2015-09-10">
@@ -22,17 +23,17 @@
 
 
 
-  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c">
 
-  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201611191546" media="screen">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201611191546" media="print">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201702222107" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201702222107" media="print">
 
   <link rel="canonical" href="/developer/build-prerequisites/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
@@ -111,7 +112,7 @@
 <a href="#prepare-folders"><span class="tocnumber">1.2</span> <span class="toctext">Prepare folders</span></a>
 </li>
 <li class="toc_level-2 toc_section-4">
-<a href="#install-eclipse-rcp"><span class="tocnumber">1.3</span> <span class="toctext">Install Eclipse RCP</span></a>
+<a href="#install-eclipse-ide-for-eclipse-commiters"><span class="tocnumber">1.3</span> <span class="toctext">Install Eclipse IDE for Eclipse Commiters</span></a>
 </li>
 <li class="toc_level-2 toc_section-5">
 <a href="#start-the-new-eclipse"><span class="tocnumber">1.4</span> <span class="toctext">Start the new Eclipse</span></a>
@@ -123,7 +124,7 @@
 <a href="#create-and-configure-the-workspace"><span class="tocnumber">1.6</span> <span class="toctext">Create and configure the workspace</span></a>
 </li>
 <li class="toc_level-2 toc_section-8">
-<a href="#install-eclipse-cdt"><span class="tocnumber">1.7</span> <span class="toctext">Install Eclipse CDT</span></a>
+<a href="#install-several-eclipse-cdt-instances"><span class="tocnumber">1.7</span> <span class="toctext">Install several Eclipse CDT instances</span></a>
 </li>
 </ul>
 </li>
@@ -134,41 +135,52 @@
 <a href="#import-the-projects"><span class="tocnumber">3</span> <span class="toctext">Import the projects</span></a>
 </li>
 <li class="toc_level-1 toc_section-11">
-<a href="#associate-to-git"><span class="tocnumber">4</span> <span class="toctext">Associate to Git</span></a>
+<a href="#configure-the-working-sets"><span class="tocnumber">4</span> <span class="toctext">Configure the working sets</span></a>
+</li>
+<li class="toc_level-1 toc_section-12">
+<a href="#create-the-maven-run-configuration"><span class="tocnumber">5</span> <span class="toctext">Create the Maven run configuration</span></a>
+</li>
+<li class="toc_level-1 toc_section-13">
+<a href="#cdt-wiki"><span class="tocnumber">6</span> <span class="toctext">CDT Wiki</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><h2 id="install--configure-eclipse">Install &amp; Configure Eclipse</h2>
+</div>
+<h2 id="install--configure-eclipse">Install &amp; Configure Eclipse</h2>
 
 <h3 id="install-java">Install Java</h3>
 
-<p>Install Sun JDK 1.7 or later (required since Eclipse 4.4); JRE is not enough, without JDK you will not be able to run debug sessions.</p>
+<p>Install Sun JDK 1.8 or later (required since Eclipse 4.6); JRE is not enough, without JDK you will not be able to run debug sessions.</p>
 
 <h3 id="prepare-folders">Prepare folders</h3>
 
 <ul>
-  <li>in a place of you choice, create a folder <strong>GNU ARM Eclipse</strong></li>
-  <li>inside it create two more folders, <strong>Eclipses</strong> and <strong>Eclipse Workspaces</strong></li>
+  <li>in a place of you choice, create a folder <code class="highlighter-rouge">GNU ARM Eclipse</code>
+</li>
+  <li>inside it create two more folders, <code class="highlighter-rouge">Eclipses</code> and <code class="highlighter-rouge">Eclipse Workspaces</code>
+</li>
 </ul>
 
-<h3 id="install-eclipse-rcp">Install Eclipse RCP</h3>
+<h3 id="install-eclipse-ide-for-eclipse-commiters">Install Eclipse IDE for Eclipse Commiters</h3>
 
 <p>This instance of Eclipse will be used for actual development.</p>
 
 <ul>
-  <li>go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a></li>
-  <li>download <strong>Eclipse for RCP and RAP Developers</strong>, preferably the 64-bits version (for example eclipse-rcp-mars-2-macosx-cocoa-x86_64.tar.gz)</li>
+  <li>go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and follow the <a href="https://www.eclipse.org/downloads/eclipse-packages/">download packages</a> link</li>
+  <li>download <strong>Eclipse IDE for Eclipse Committers</strong>, preferably the 64-bits version (for example eclipse-committers-neon-2-macosx-cocoa-x86_64.tar.gz)</li>
   <li>unpack the archive</li>
-  <li>rename Eclipse.app to <strong>Eclipse-45-rcp-cdt.app</strong></li>
-  <li>move it to <strong>…/GNU ARM Eclipse/Eclipses</strong></li>
+  <li>rename <code class="highlighter-rouge">Eclipse.app</code> to <code class="highlighter-rouge">Eclipse-com-cdt-46.app</code>
+</li>
+  <li>move it to <code class="highlighter-rouge">.../GNU ARM Eclipse/Eclipses</code>
+</li>
   <li>create shortcut to desktop:
     <ul>
-      <li>on Windows, create a shortcut for eclipse.exe, rename it <strong>Eclipse 4.5 RCP CDT</strong> and copy it to the desktop or a place of your choice</li>
-      <li>on macOS, create a Finder alias for Eclipse.app, rename it <strong>Eclipse 4.5 RCP CDT</strong> and move it to a place of your choice</li>
-      <li>on GNU/Linux, create a link for eclipse, rename it <strong>Eclipse 4.5 RCP CDT</strong> and move it to a place of your choice</li>
+      <li>on Windows, create a shortcut for <code class="highlighter-rouge">eclipse.exe</code>, rename it <code class="highlighter-rouge">E46 GAE.lnk</code> and copy it to the desktop or a place of your choice</li>
+      <li>on macOS, create a Finder alias for <code class="highlighter-rouge">Eclipse.app</code>, rename it <code class="highlighter-rouge">E46 GAE</code> and move it to a place of your choice</li>
+      <li>on GNU/Linux, create a link for <code class="highlighter-rouge">eclipse</code>, rename it <code class="highlighter-rouge">E46 GAE</code> and move it to a place of your choice</li>
     </ul>
   </li>
 </ul>
@@ -176,20 +188,37 @@
 <h3 id="start-the-new-eclipse">Start the new Eclipse</h3>
 
 <ul>
-  <li>create a new workspace, preferably in a separate folder, like <strong>Eclipse Workspaces/workspace-45-rcp</strong> (note: be sure you create the workspace where you need it to be, since moving later is generally not supported by Eclipse; if you need this, preferably create a new workspace)</li>
-  <li>check if you installed the right Eclipse; go to the <em>Eclipse</em> menu → <strong>Help</strong> (<em>_Eclipse_</em> on macOS) → <strong>About Eclipse</strong> and the first line should read <strong>Eclipse for RCP and RAP Developers</strong></li>
-  <li><strong>Help</strong> → <strong>Install New Software</strong></li>
-  <li>Work with: Mars - <a href="http://download.eclipse.org/releases/mars">http://download.eclipse.org/releases/mars</a>
+  <li>create a new workspace, preferably in a separate folder, like <code class="highlighter-rouge">Eclipse Workspaces/w-gae-46</code> (note: be sure you create the workspace where you need it to be, since moving later is generally not supported by Eclipse; if you need this, preferably create a new workspace)</li>
+  <li>check if you installed the right Eclipse; go to the <em>Eclipse</em> menu → <strong>Help</strong> (<em>_Eclipse_</em> on macOS) → <strong>About Eclipse</strong> and the first line should read <strong>Eclipse IDE for Eclipse Committers</strong>
+</li>
+  <li>
+<strong>Help</strong> → <strong>Install New Software</strong>
+</li>
+  <li>Work with: <code class="highlighter-rouge">Neon - http://download.eclipse.org/releases/neon</code>
     <ul>
       <li>In <strong>Programming Languages</strong>
         <ul>
-          <li>select <strong>C/C++ Development Tools</strong></li>
-          <li>select <strong>C/C++ Development Tools SDK</strong></li>
+          <li>select <strong>C/C++ Development Tools</strong>
+</li>
+          <li>select <strong>C/C++ Development Tools SDK</strong>
+</li>
+          <li>optional: Autotools, CMake, Docker, LLVM, Unit Testing, …</li>
         </ul>
       </li>
       <li>In <strong>Mobile and Device Development</strong>
         <ul>
-          <li>select <strong>C/C++ GDB Hardware Debugging</strong></li>
+          <li>select <strong>C/C++ GCC Cross Compile Support</strong>
+</li>
+          <li>select <strong>C/C++ GDB Hardware Debugging</strong>
+</li>
+          <li>select <strong>C/C++ Memory View Enhancements</strong>
+</li>
+        </ul>
+      </li>
+      <li>In <strong>General Purpose Tools</strong>
+        <ul>
+          <li>select <strong>m2e - Maven Integration for Eclipse</strong>
+</li>
         </ul>
       </li>
       <li>click the <strong>Next</strong> button</li>
@@ -198,32 +227,53 @@
     </ul>
   </li>
   <li>wait for the new plug-ins to be installed</li>
-  <li>restart
-  Note: without the CDT sources available in the SDK, the extension point schemas will not be available so attempts to add new elements to the extensions will not be possible, and only ‘Generic’ elements will be offered</li>
+  <li>restart</li>
 </ul>
+
+<p>Note: without the CDT sources available in the SDK, the extension point schemas will not be available so attempts to add new elements to the extensions will not be possible, and only ‘Generic’ elements will be offered</p>
 
 <h3 id="install-base-api">Install base API</h3>
 
 <ul>
-  <li>go to <a href="http://www.eclipse.org/cdt/downloads.php">http://www.eclipse.org/cdt/downloads.php</a>, and download <strong>cdt-master-8.6.0.zip</strong> (required to keep compatibility with Eclipse 4.4 Luna SR2)</li>
+  <li>go to <a href="http://www.eclipse.org/cdt/downloads.php">http://www.eclipse.org/cdt/downloads.php</a>, and download <code class="highlighter-rouge">cdt-8.6.0.zip</code> (required to keep compatibility with Eclipse 4.4 Luna SR2)</li>
   <li>unpack the archive</li>
   <li>move the new folder to in the Eclipses folder</li>
-  <li>in <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong> → <strong>Target Platform</strong>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong> → <strong>Target Platform</strong>
     <ul>
-      <li>click Add</li>
-      <li>Start with an empty target</li>
-      <li>Next</li>
-      <li>Add → Directory</li>
-      <li>Browse → cdt-master-8.6.0</li>
-      <li>Reload</li>
-      <li>select Running Platform as Active (mandatory!)</li>
+      <li>click the <strong>Add…</strong> button</li>
+      <li>select <strong>Nothing: Start with an empty target</strong>
+</li>
+      <li>Next
+        <ul>
+          <li>Enter name: <strong>8.6.0 Luna</strong>
+</li>
+          <li>click <strong>Add</strong> → <strong>Directory</strong>
+</li>
+          <li>click <strong>Browse</strong> → <code class="highlighter-rouge">cdt-8.6.0</code>
+</li>
+          <li>click the <strong>Finish</strong> button</li>
+        </ul>
+      </li>
+      <li>click the <strong>Reload</strong> button</li>
+      <li>click the <strong>Finish</strong>
+</li>
     </ul>
   </li>
-  <li>in <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong> → <strong>API Baselines</strong>
+  <li>select <strong>Running Platform as Active</strong> (mandatory!)</li>
+  <li>OK</li>
+</ul>
+
+<p>Selecting the running platform is required when starting Eclipse to Run or Debug, without it the core plug-ins will not be available.</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong> → <strong>API Baselines</strong>
     <ul>
-      <li>click the <strong>Add Baseline…</strong> button
+      <li>click the <strong>Add Baseline…</strong> button</li>
+      <li>select <strong>A target platform</strong>
         <ul>
-          <li>select 8.6.0</li>
+          <li>Enter name: 8.6.0 Luna</li>
+          <li>select 8.6.0 Luna</li>
+          <li>click the <strong>Refresh</strong> button</li>
           <li>click the <strong>Finish</strong> button</li>
         </ul>
       </li>
@@ -237,137 +287,202 @@
 
 <ul>
   <li>change the workspace preferences</li>
-  <li>go to <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong></li>
-  <li><strong>General</strong> → <strong>Workspace</strong>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences…</strong>
+</li>
+  <li>
+<strong>General</strong> → <strong>Workspace</strong>
     <ul>
-      <li>disable <strong>Build automatically</strong></li>
-      <li>enable <strong>Refresh on access</strong></li>
-      <li>enable <strong>Save automatically before rebuild</strong></li>
-      <li>set <strong>Text file encoding: UTF-8</strong></li>
-      <li>press the <strong>Apply</strong> button</li>
+      <li>disable <strong>Build automatically</strong>
+</li>
+      <li>enable <strong>Refresh on access</strong>
+</li>
+      <li>enable <strong>Save automatically before rebuild</strong>
+</li>
+      <li>set <strong>Text file encoding: UTF-8</strong>
+</li>
+      <li>click the <strong>Apply</strong> button</li>
     </ul>
   </li>
-  <li><strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong>
+  <li>
+<strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong>
     <ul>
       <li>enable <strong>Show Print Margin</strong> (80)</li>
-      <li>enable <strong>Show Line Numbers</strong></li>
-      <li>press the <strong>Apply</strong> button</li>
-      <li>press the <strong>OK</strong> button</li>
+      <li>enable <strong>Show Line Numbers</strong>
+</li>
+      <li>click the <strong>Apply</strong> button</li>
+      <li>click the <strong>OK</strong> button</li>
+      <li>click the <strong>Apply</strong> button</li>
     </ul>
   </li>
-  <li><strong>Run/Debug</strong> → <strong>Console</strong>
+  <li>
+<strong>Run/Debug</strong> → <strong>Console</strong>
     <ul>
       <li>disable Limit console output</li>
+      <li>click the <strong>Apply</strong> button</li>
     </ul>
   </li>
-  <li><strong>Java</strong> → <strong>Editor</strong> → <strong>Folding</strong>
+  <li>
+<strong>Java</strong> → <strong>Editor</strong> → <strong>Folding</strong>
     <ul>
-      <li>disable <strong>Header Comments</strong></li>
-      <li>disable <strong>Imports</strong></li>
+      <li>disable <strong>Header Comments</strong>
+</li>
+      <li>disable <strong>Imports</strong>
+</li>
+      <li>click the <strong>Apply</strong> button</li>
     </ul>
   </li>
+  <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<h3 id="install-eclipse-cdt">Install Eclipse CDT</h3>
+<h3 id="install-several-eclipse-cdt-instances">Install several Eclipse CDT instances</h3>
 
-<p>This separate instance of Eclipse will be used to test the plug-in.</p>
+<p>These separate instances of Eclipse will be used to test the plug-in.</p>
+
+<p>Go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and follow the <a href="https://www.eclipse.org/downloads/eclipse-packages/">download packages</a> link</p>
+
+<h4 id="eclipse-46-neon">Eclipse 4.6 Neon</h4>
 
 <ul>
-  <li>go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a></li>
-  <li>download <strong>Eclipse IDE for C/C++ Developers</strong> (eclipse-cpp-mars-2-macosx-cocoa-x86_64.tar.gz)</li>
+  <li>download <strong>Eclipse IDE for C/C++ Developers</strong> (<code class="highlighter-rouge">eclipse-cpp-neon-2-macosx-cocoa-x86_64.tar.gz</code>)</li>
   <li>unpack the archive</li>
-  <li>rename <em>_Eclipse_</em> to <strong>eclipse-4.5-cdt-test</strong></li>
-  <li>on macOS, enter the folder, make a Finder alias of the <strong>Eclipse.app</strong>, rename it <strong>Eclipse 4.5 CDT test alias</strong> and move it to a place of your choice (the Desktop, for example)</li>
+  <li>rename <em>_Eclipse_</em> to <strong>eclipse-cdt-test-46</strong>
+</li>
+  <li>on macOS, make a Finder alias of the <strong>Eclipse.app</strong>, rename it <strong>E46 CDT test</strong> and move it to a place of your choice (the Desktop, for example)</li>
+</ul>
+
+<h4 id="eclipse-45-mars">Eclipse 4.5 Mars</h4>
+
+<ul>
+  <li>download <strong>Eclipse IDE for C/C++ Developers</strong> (<code class="highlighter-rouge">eclipse-cpp-mars-2-macosx-cocoa-x86_64.tar.gz</code>)</li>
+  <li>unpack the archive</li>
+  <li>rename <em>_Eclipse_</em> to <strong>eclipse-cdt-test-45</strong>
+</li>
+  <li>on macOS, make a Finder alias of the <strong>Eclipse.app</strong>, rename it <strong>E45 CDT test</strong> and move it to a place of your choice (the Desktop, for example)</li>
+</ul>
+
+<h4 id="eclipse-44-luna">Eclipse 4.4 Luna</h4>
+
+<ul>
+  <li>download <strong>Eclipse IDE for C/C++ Developers</strong> (<code class="highlighter-rouge">eclipse-cpp-luna-SR2-macosx-cocoa-x86_64.tar.gz</code>)</li>
+  <li>unpack the archive</li>
+  <li>rename <em>_Eclipse_</em> to <strong>eclipse-cdt-test-44</strong>
+</li>
+  <li>on macOS, make a Finder alias of the <strong>Eclipse.app</strong>, rename it <strong>E44 CDT test</strong> and move it to a place of your choice (the Desktop, for example)</li>
 </ul>
 
 <h2 id="clone-the-repository">Clone the repository</h2>
 
 <p>On Unix systems, the recommended method is using a command line:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd .../GNU ARM Eclipse
+<div class="highlighter-rouge">
+<pre class="highlight"><code>$ cd .../GNU ARM Eclipse
 $ git clone https://github.com/gnuarmeclipse/plug-ins.git plug-ins.git
 </code></pre>
 </div>
 
-<p>On Windows, without a git command, you can use Eclipse to clone the Git repository</p>
-
-<ul>
-  <li><em>Eclipse</em> menu → <strong>File</strong> → <strong>Import</strong>
-    <ul>
-      <li>Git → <strong>Projects from Git</strong></li>
-      <li>click <strong>Next</strong></li>
-    </ul>
-  </li>
-  <li>Select Repository Source
-    <ul>
-      <li>select <strong>Clone URI</strong></li>
-      <li>click <strong>Next</strong></li>
-    </ul>
-  </li>
-  <li>Source Git Repository
-    <ul>
-      <li>URI: https://github.com/gnuarmeclipse/plug-ins.git</li>
-      <li>click <strong>Next</strong></li>
-    </ul>
-  </li>
-  <li>Branch Selection
-    <ul>
-      <li>select all branches</li>
-      <li>click <strong>Next</strong></li>
-    </ul>
-  </li>
-  <li>Local Destination
-    <ul>
-      <li>Directory: …/GNU ARM Eclipse/plug-ins.git</li>
-      <li>Initial branch: stable (or devel, for the latest development version)</li>
-      <li>click <strong>Next</strong></li>
-    </ul>
-  </li>
-  <li>Select a wizard to use for importing projects
-    <ul>
-      <li>click <strong>Cancel</strong> (do NOT import any projects)</li>
-    </ul>
-  </li>
-</ul>
+<p>On Windows, the <code class="highlighter-rouge">git</code> command is available in the <a href="https://git-scm.com/download/win">Git for Windows</a> package.</p>
 
 <h2 id="import-the-projects">Import the projects</h2>
 
-<p>Import projects using Maven</p>
+<p>Import projects using the Maven importer:</p>
 
 <ul>
-  <li><em>Eclipse</em> menu → <strong>File</strong> → <strong>Import</strong></li>
+  <li>
+<em>Eclipse</em> menu → <strong>File</strong> → <strong>Import</strong>
+</li>
   <li>Select
     <ul>
-      <li>Maven → <strong>Existing Maven Projects</strong></li>
-      <li>click <strong>Next</strong></li>
+      <li>Maven → <strong>Existing Maven Projects</strong>
+</li>
+      <li>click <strong>Next</strong>
+</li>
     </ul>
   </li>
   <li>Maven Projects
     <ul>
-      <li>Root Directory: …/GNU ARM Eclipse/plug-ins.git</li>
+      <li>Root Directory: <code class="highlighter-rouge">.../GNU ARM Eclipse/plug-ins.git</code>
+</li>
+      <li>keep all selected</li>
       <li>Add project(s) to working set: GNU ARM Eclipse</li>
       <li>click <strong>Finish</strong>
-If doing this on a fresh Eclipse, accept to install <strong>Tycho Project Configurators</strong>.
-Restart.</li>
+If doing this on a fresh Eclipse</li>
+      <li>accept m23 settings</li>
+      <li>accept to install <strong>Tycho Project Configurators</strong>
+</li>
+      <li>click <strong>Finish</strong>
+</li>
     </ul>
   </li>
+  <li>Restart</li>
 </ul>
 
-<h2 id="associate-to-git">Associate to Git</h2>
+<h2 id="configure-the-working-sets">Configure the working sets</h2>
+
+<p>In the Package Explorer:</p>
 
 <ul>
-  <li>select al projects</li>
-  <li>right click Share projects</li>
-  <li>select Git</li>
-  <li>click <strong>Next</strong></li>
-  <li>accept the locations</li>
-  <li>click <strong>Finish</strong></li>
-  <li>select projects one by one; the git repository should appear after the project names</li>
+  <li>click the down pointing triangle icon and select <strong>Configure Working Sets</strong>.
+    <ul>
+      <li>select GNU ARM Eclipse and click the <strong>Edit…</strong> button</li>
+      <li>click the <strong>Select All</strong> button</li>
+      <li>click the <strong>Finish</strong> button</li>
+    </ul>
+  </li>
+  <li>click the <strong>OK</strong> button</li>
 </ul>
 
+<h2 id="create-the-maven-run-configuration">Create the Maven run configuration</h2>
 
-<hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Jun 22 09:37:21 2016 UTC.</p>
+<p>To ensure that Maven considers only the desired plugin versions during the build, it is necessary to pass a command line option when starting Maven, to ignore local artifacts:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>-Dtycho.localArtifacts=ignore
+</code></pre>
+</div>
+
+<p>Without this option, Maven will issue many warnings, like:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>[INFO] Resolving dependencies of MavenProject: ilg.gnuarmeclipse:ilg.gnuarmeclipse.core:3.3.1-SNAPSHOT @ /Users/ilg/My Files/MacBookPro Projects/GNU ARM Eclipse/plug-ins.git/ilg.gnuarmeclipse.core/pom.xml
+[WARNING] The following locally built units have been used to resolve project dependencies:
+[WARNING]   org.eclipse.cdt.make.core/7.3.0.201702180936
+[WARNING]   org.eclipse.cdt/9.2.0.201702180936
+[WARNING]   org.eclipse.cdt.core.native/5.10.0.201702180936
+[WARNING]   org.eclipse.cdt.managedbuilder.core/8.4.0.201702180936
+[INFO] Resolving class path of MavenProject: ilg.gnuarmeclipse:ilg.gnuarmeclipse.core:3.3.1-SNAPSHOT @ /Users/ilg/My Files/MacBookPro Projects/GNU ARM Eclipse/plug-ins.git/ilg.gnuarmeclipse.core/pom.xml
+</code></pre>
+</div>
+
+<p>Unfortunately I did not find a way to pass this option in the pom files, and it must be passed only on the command line.</p>
+
+<p>To start the Maven build from Eclipse … (TODO)</p>
+
+<ul>
+  <li>select the <strong>gnuarmeclipse-parent</strong> project</li>
+  <li>
+<em>Eclipse</em> menu → <strong>Run</strong> → <strong>Run Configurations…</strong>
+</li>
+  <li>double click the <strong>Maven Build</strong> enty</li>
+  <li>in the Main tab
+    <ul>
+      <li>Goals: <code class="highlighter-rouge">clean install</code>
+</li>
+      <li>add a new parameter, name <code class="highlighter-rouge">tycho.localArtifacts</code>, value <code class="highlighter-rouge">ignore</code>
+</li>
+    </ul>
+  </li>
+  <li>click the <strong>Apply</strong> button</li>
+  <li>click the <strong>Run</strong> button</li>
+</ul>
+
+<h2 id="cdt-wiki">CDT Wiki</h2>
+
+<p>For more details, see <a href="https://wiki.eclipse.org/CDT">https://wiki.eclipse.org/CDT</a>, especially the <a href="https://wiki.eclipse.org/Getting_started_with_CDT_development">Getting started with CDT development</a> page.</p>
+
+
+
+<hr class="page-footer">
+<p class="page-footer">Last modified on Wed Feb 22 21:14:39 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/build-prerequisites/" data-layout="button"></div>
 
 
@@ -386,7 +501,7 @@ Restart.</li>
 </ul>
 
 
-<hr />
+<hr>
 
 <h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
 
@@ -396,10 +511,14 @@ Restart.</li>
 
 <ul>
   <li><a href="/downloads/">Overview</a></li>
-  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
-  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
-  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
-  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+  <li>
+<a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li>
+<a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li>
+<a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li>
+<a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
 </ul>
 
 <h4 id="install"><a href="/install/">Install</a></h4>
@@ -408,7 +527,8 @@ Restart.</li>
   <li><a href="/install/">Overview</a></li>
   <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
   <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
-  <li><a href="/debug/install/">Debugging binaries</a>
+  <li>
+<a href="/debug/install/">Debugging binaries</a>
     <ul>
       <li><a href="/debug/install/">Overview</a></li>
       <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
@@ -465,37 +585,43 @@ Restart.</li>
 <h4 id="gnu-arm-qemu-home"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
 
 <ul>
-  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/qemu/">Overview</a> (read me first!)</li>
   <li><a href="/qemu/install/">QEMU Install</a></li>
   <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
   <li><a href="/qemu/options/">Command line options</a></li>
   <li><a href="/qemu/build-procedure/">How to build</a></li>
   <li><a href="/qemu/publish-procedure/">How to publish</a></li>
   <li><a href="/qemu/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="gnu-arm-openocd-home"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
 
 <ul>
-  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/openocd/">Overview</a> (read me first!)</li>
   <li><a href="/openocd/install/">OpenOCD Install</a></li>
   <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
   <li><a href="/openocd/build-procedure/">How to build</a></li>
   <li><a href="/openocd/publish-procedure/">How to publish</a></li>
   <li><a href="/openocd/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
 </ul>
 
 <h4 id="windows-build-tools-home"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
 
 <ul>
-  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li>
+<a href="/windows-build-tools/">Overview</a> (read me first!)</li>
   <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
   <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
   <li><a href="/windows-build-tools/publish-procedure/">How to publish</a></li>
   <li><a href="/windows-build-tools/releases/">Releases</a></li>
-  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+  <li>
+<a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
 </ul>
 
 <h4 id="advanced">Advanced</h4>
@@ -554,7 +680,7 @@ Restart.</li>
 
 <h4 id="about"><a href="/about/">About</a></h4>
 
-<hr />
+<hr>
 <p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -576,7 +702,7 @@ Restart.</li>
     <ul>
   <li>© 2017 Liviu Ionescu</li>
   <li>Hosted on GitHub Pages</li>
-  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS"></a></li>
   <li>
     <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
   </li>
