@@ -117,7 +117,7 @@
 <a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">5</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#test-local-versio-of-the-web"><span class="tocnumber">6</span> <span class="toctext">Test local versio of the Web</span></a>
+<a href="#test-local-version-of-the-web"><span class="tocnumber">6</span> <span class="toctext">Test local version of the Web</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
 <a href="#publish-on-the-main-sourceforge-updates-site"><span class="tocnumber">7</span> <span class="toctext">Publish on the main SourceForge updates site</span></a>
@@ -126,31 +126,28 @@
 <a href="#clean-the-mess-in-the-local-archive-folder"><span class="tocnumber">8</span> <span class="toctext">Clean the mess in the local archive folder</span></a>
 </li>
 <li class="toc_level-1 toc_section-9">
-<a href="#push-the-develop-branch"><span class="tocnumber">9</span> <span class="toctext">Push the develop branch</span></a>
+<a href="#merge-develop-into-master"><span class="tocnumber">9</span> <span class="toctext">Merge develop into master</span></a>
 </li>
 <li class="toc_level-1 toc_section-10">
-<a href="#merge-develop-into-master"><span class="tocnumber">10</span> <span class="toctext">Merge develop into master</span></a>
+<a href="#create-a-new-github-release"><span class="tocnumber">10</span> <span class="toctext">Create a new GitHub release</span></a>
 </li>
 <li class="toc_level-1 toc_section-11">
-<a href="#create-a-new-github-release"><span class="tocnumber">11</span> <span class="toctext">Create a new GitHub release</span></a>
+<a href="#publish-the-web"><span class="tocnumber">11</span> <span class="toctext">Publish the Web</span></a>
 </li>
 <li class="toc_level-1 toc_section-12">
-<a href="#publish-the-web"><span class="tocnumber">12</span> <span class="toctext">Publish the Web</span></a>
+<a href="#update-the-release-link"><span class="tocnumber">12</span> <span class="toctext">Update the release link</span></a>
 </li>
 <li class="toc_level-1 toc_section-13">
-<a href="#update-the-release-link"><span class="tocnumber">13</span> <span class="toctext">Update the release link</span></a>
+<a href="#close-issues"><span class="tocnumber">13</span> <span class="toctext">Close issues</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#close-issues"><span class="tocnumber">14</span> <span class="toctext">Close issues</span></a>
+<a href="#publish-on-sourceforge"><span class="tocnumber">14</span> <span class="toctext">Publish on SourceForge</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#publish-on-sourceforge"><span class="tocnumber">15</span> <span class="toctext">Publish on SourceForge</span></a>
+<a href="#share-on-facebook"><span class="tocnumber">15</span> <span class="toctext">Share on Facebook</span></a>
 </li>
 <li class="toc_level-1 toc_section-16">
-<a href="#share-on-facebook"><span class="tocnumber">16</span> <span class="toctext">Share on Facebook</span></a>
-</li>
-<li class="toc_level-1 toc_section-17">
-<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">17</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
+<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">16</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
 </li>
 </ul>
 </td>
@@ -303,7 +300,7 @@ logout
 
 <p>Mark all these issues as part of the current version milestone. Refer to them as <strong>[Issue:#22]</strong>. For SourceForge, refer to them as <strong>[bugs:#98]</strong>, <strong>[feature-requests:#60]</strong>, <strong>[support-requests:#81]</strong>.</p>
 
-<h2 id="test-local-versio-of-the-web">Test local versio of the Web</h2>
+<h2 id="test-local-version-of-the-web">Test local version of the Web</h2>
 
 <ul>
   <li>build the local Jekyll <strong>gnuarmeclipse.github.io-source</strong> project</li>
@@ -369,8 +366,6 @@ logout
   <li>move the other archives to <strong>internal</strong></li>
 </ul>
 
-<h2 id="push-the-develop-branch">Push the develop branch</h2>
-
 <h2 id="merge-develop-into-master">Merge develop into master</h2>
 
 <ul>
@@ -402,13 +397,14 @@ logout
 
 <ul>
   <li>Git Push &amp; Sync the <strong>gnuarmeclipse.github.io-source</strong> project; use something like <code class="highlighter-rouge">v3.2.1-201701141320 released</code> as message</li>
+  <li>wait for the Travis build to complete; occasionally links to not work, and might need to restart the build</li>
 </ul>
 
 <p>Note: the release must exist, otherwise Travis will complain and do not publish the site to <strong>gnuarmeclipse.github.io</strong>.</p>
 
 <h2 id="update-the-release-link">Update the release link</h2>
 
-<p>In the releases page:</p>
+<p>In the <a href="https://github.com/gnuarmeclipse/plug-ins/releases">GitHub Releases</a> page:</p>
 
 <ul>
   <li>add a link to the Web page <code class="highlighter-rouge">[Continue reading »]()</code></li>
@@ -417,7 +413,7 @@ logout
 
 <h2 id="close-issues">Close issues</h2>
 
-<p>For all issues marked with the current version, close them with a message like <em>fixed in v3.2.1-201701141320</em>.</p>
+<p>For all <a href="https://github.com/gnuarmeclipse/plug-ins/issues">GitHub issues</a> marked with the current version, close them with a message like <em>fixed since v3.2.1-201701141320</em>.</p>
 
 <h2 id="publish-on-sourceforge">Publish on SourceForge</h2>
 
@@ -455,7 +451,7 @@ logout
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Feb 25 15:15:44 2017 UTC.</p>
+<p class="page-footer">Last modified on Sat Feb 25 15:50:39 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/publish-procedure/" data-layout="button"></div>
 
 

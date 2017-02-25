@@ -5,13 +5,13 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Feb 2017 15:31:51 +0000</pubDate>
-    <lastBuildDate>Sat, 25 Feb 2017 15:31:51 +0000</lastBuildDate>
+    <pubDate>Sat, 25 Feb 2017 15:52:36 +0000</pubDate>
+    <lastBuildDate>Sat, 25 Feb 2017 15:52:36 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v3.3.1-201702251311 released</title>
-        <description>&lt;p&gt;Version 3.3.1-201702251311 is a new major release; the main change is adding support for &lt;strong&gt;GCC 6.x&lt;/strong&gt;, including new &lt;strong&gt;Cortex-M23/M33&lt;/strong&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Version 3.3.1-201702251311 is a new release; the main change is adding support for &lt;strong&gt;GCC 6.x&lt;/strong&gt;, including new &lt;strong&gt;Cortex-M23/M33&lt;/strong&gt;.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 25 Feb 2017 12:20:00 +0000</pubDate>
@@ -101,7 +101,7 @@
     
       <item>
         <title>GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</title>
-        <description>&lt;p&gt;Version 3.2.1-201701141320 is a new major release; the main change is adding support for &lt;strong&gt;Eclipse Neon.2&lt;/strong&gt; (CDT 9.2).&lt;/p&gt;
+        <description>&lt;p&gt;Version 3.2.1-201701141320 is a new release; the main change is adding support for &lt;strong&gt;Eclipse Neon.2&lt;/strong&gt; (CDT 9.2).&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 14 Jan 2017 12:49:00 +0000</pubDate>
