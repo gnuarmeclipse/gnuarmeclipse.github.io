@@ -117,7 +117,7 @@
 <a href="#prepare-a-new-blog-post-to-announce-the-release"><span class="tocnumber">5</span> <span class="toctext">Prepare a new blog post to announce the release</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#update-the-web"><span class="tocnumber">6</span> <span class="toctext">Update the Web</span></a>
+<a href="#test-local-versio-of-the-web"><span class="tocnumber">6</span> <span class="toctext">Test local versio of the Web</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
 <a href="#publish-on-the-main-sourceforge-updates-site"><span class="tocnumber">7</span> <span class="toctext">Publish on the main SourceForge updates site</span></a>
@@ -132,19 +132,25 @@
 <a href="#merge-develop-into-master"><span class="tocnumber">10</span> <span class="toctext">Merge develop into master</span></a>
 </li>
 <li class="toc_level-1 toc_section-11">
-<a href="#close-issues"><span class="tocnumber">11</span> <span class="toctext">Close issues</span></a>
+<a href="#create-a-new-github-release"><span class="tocnumber">11</span> <span class="toctext">Create a new GitHub release</span></a>
 </li>
 <li class="toc_level-1 toc_section-12">
-<a href="#create-a-new-github-release"><span class="tocnumber">12</span> <span class="toctext">Create a new GitHub release</span></a>
+<a href="#publish-the-web"><span class="tocnumber">12</span> <span class="toctext">Publish the Web</span></a>
 </li>
 <li class="toc_level-1 toc_section-13">
-<a href="#publish-on-sourceforge"><span class="tocnumber">13</span> <span class="toctext">Publish on SourceForge</span></a>
+<a href="#update-the-release-link"><span class="tocnumber">13</span> <span class="toctext">Update the release link</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#share-on-facebook"><span class="tocnumber">14</span> <span class="toctext">Share on Facebook</span></a>
+<a href="#close-issues"><span class="tocnumber">14</span> <span class="toctext">Close issues</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">15</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
+<a href="#publish-on-sourceforge"><span class="tocnumber">15</span> <span class="toctext">Publish on SourceForge</span></a>
+</li>
+<li class="toc_level-1 toc_section-16">
+<a href="#share-on-facebook"><span class="tocnumber">16</span> <span class="toctext">Share on Facebook</span></a>
+</li>
+<li class="toc_level-1 toc_section-17">
+<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">17</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
 </li>
 </ul>
 </td>
@@ -255,13 +261,14 @@ logout
 
 <h2 id="create-a-new-milestone">Create a new milestone</h2>
 
-<p>Name it with the current version, like <em>v3.2.1</em>.</p>
+<p>In the <a href="https://github.com/gnuarmeclipse/plug-ins/issues">plug-ins issues</a> page, click the <a href="https://github.com/gnuarmeclipse/plug-ins/milestones">Milestones</a> button and add a <a href="https://github.com/gnuarmeclipse/plug-ins/milestones/new">new</a> milestone. As title, use the current version, like <em>v3.2.1</em>.</p>
 
 <h2 id="update-the-change-log">Update the Change log</h2>
 
 <p>Scan the Git log and add new entries to the <a href="/developer/change-log/">Change log</a> (pages/developer/change-log.md), grouped by days.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git log --pretty='%cd * %s' --since 2015-06-24 --reverse --date=short &gt;~/Desktop/ChangeLog.txt
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git log --pretty='%cd * %s' --since 2015-06-24 \
+--reverse --date=short &gt;~/Desktop/ChangeLog.txt
 </code></pre>
 </div>
 
@@ -296,10 +303,11 @@ logout
 
 <p>Mark all these issues as part of the current version milestone. Refer to them as <strong>[Issue:#22]</strong>. For SourceForge, refer to them as <strong>[bugs:#98]</strong>, <strong>[feature-requests:#60]</strong>, <strong>[support-requests:#81]</strong>.</p>
 
-<h2 id="update-the-web">Update the Web</h2>
+<h2 id="test-local-versio-of-the-web">Test local versio of the Web</h2>
 
 <ul>
-  <li>Jekyll build the <strong>gnuarmeclipse.github.io-source</strong> project</li>
+  <li>build the local Jekyll <strong>gnuarmeclipse.github.io-source</strong> project</li>
+  <li>test it using the localhost:4000 address</li>
   <li>Git Push &amp; Sync the <strong>gnuarmeclipse.github.io-source</strong> project; use something like <code class="highlighter-rouge">v3.2.1-201701141320 released</code> as message</li>
   <li>Git Push &amp; Sync the <strong>gnuarmeclipse.github.io</strong> project; use something like <code class="highlighter-rouge">v3.2.1-201701141320 released</code> as message</li>
 </ul>
@@ -363,23 +371,16 @@ logout
 
 <h2 id="push-the-develop-branch">Push the develop branch</h2>
 
-<ul>
-  <li>in SourceTree, switch to the <strong>develop</strong> branch</li>
-  <li>push the <strong>develop</strong> branch to GitHub</li>
-</ul>
-
 <h2 id="merge-develop-into-master">Merge develop into master</h2>
 
 <ul>
+  <li>in SourceTree, switch to the <strong>develop</strong> branch</li>
+  <li>push the <strong>develop</strong> branch to GitHub</li>
   <li>in SourceTree, switch to the <strong>master</strong> branch</li>
   <li>merge the <strong>develop</strong> branch into <strong>master</strong></li>
+  <li>push the <strong>master</strong> branch to GitHub</li>
   <li>switch to <strong>develop</strong></li>
-  <li>push both branches to GitHub.</li>
 </ul>
-
-<h2 id="close-issues">Close issues</h2>
-
-<p>For all issues marked with the current version, close them with a message like <em>fixed in v3.2.1-201701141320</em>.</p>
 
 <h2 id="create-a-new-github-release">Create a new GitHub release</h2>
 
@@ -391,13 +392,32 @@ logout
   <li>select the <strong>develop</strong> branch</li>
   <li>name the release like <strong>GNU ARM Eclipse plug-ins v2.9.3-201508190739</strong></li>
   <li>as description, copy the first paragraph from the Web release page</li>
-  <li>add a link to the Web page <code class="highlighter-rouge">[Continue reading »]()</code></li>
-  <li>get URL from web and update the above link</li>
   <li>attach binaries (drag and drop from the archives folder will do it)</li>
   <li>click the <strong>Publish Release</strong> button</li>
 </ul>
 
 <p>Note: at this moment the system should send a notification to all clients watching this project.</p>
+
+<h2 id="publish-the-web">Publish the Web</h2>
+
+<ul>
+  <li>Git Push &amp; Sync the <strong>gnuarmeclipse.github.io-source</strong> project; use something like <code class="highlighter-rouge">v3.2.1-201701141320 released</code> as message</li>
+</ul>
+
+<p>Note: the release must exist, otherwise Travis will complain and do not publish the site to <strong>gnuarmeclipse.github.io</strong>.</p>
+
+<h2 id="update-the-release-link">Update the release link</h2>
+
+<p>In the releases page:</p>
+
+<ul>
+  <li>add a link to the Web page <code class="highlighter-rouge">[Continue reading »]()</code></li>
+  <li>get URL from web <a href="http://gnuarmeclipse.github.io/developer/releases/">Releases</a> and update the above link</li>
+</ul>
+
+<h2 id="close-issues">Close issues</h2>
+
+<p>For all issues marked with the current version, close them with a message like <em>fixed in v3.2.1-201701141320</em>.</p>
 
 <h2 id="publish-on-sourceforge">Publish on SourceForge</h2>
 
@@ -435,7 +455,7 @@ logout
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Jan 14 15:21:22 2017 UTC.</p>
+<p class="page-footer">Last modified on Sat Feb 25 15:15:44 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/publish-procedure/" data-layout="button"></div>
 
 
@@ -446,11 +466,11 @@ logout
 <h4 id="latest-news"><a href="/blog/">Latest News</a></h4>
 
 <ul>
+  <li><a href="/blog/2017/02/25/plugins-v3.3.1-201702251311-released/">GNU ARM Eclipse plug-ins v3.3.1-201702251311 released</a></li>
   <li><a href="/blog/2017/01/29/plugins-install-issue/">GNU ARM Eclipse plug-ins: Received fatal alert: handshake_failure</a></li>
   <li><a href="/blog/2017/01/26/sourceforge-5m-downloads/">GNU ARM Eclipse: 5.000.000 SourceForge downloads, January 2017</a></li>
   <li><a href="/blog/2017/01/24/openocd-v0-10-0-20170124-released/">GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</a></li>
   <li><a href="/blog/2017/01/14/plugins-v3.2.1-201701141320-released/">GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</a></li>
-  <li><a href="/blog/2016/12/27/qemu-v2-8-0-20161227-released/">GNU ARM Eclipse QEMU v2.8.0-20161227* released</a></li>
 </ul>
 
 

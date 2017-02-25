@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
+
+  <title>GNU ARM Eclipse plug-ins v3.3.1-201702251311 released</title>
+  <meta name="description" content="Version 3.3.1-201702251311 is a new major release; the main change is adding support for GCC 6.x, including new Cortex-M23/M33.">
+
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins v3.3.1-201702251311 released" />
+  <meta property="og:site_name" content="GNU ARM Eclipse" />
+
+
+  <meta property="article:published_time" content="2017-02-25">
+
+
+  <meta property="article:section" content="releases" />
+  <meta property="article:section" content="plugins" />
+
+  <meta property="article:tag" content="gnu" />
+  <meta property="article:tag" content="arm" />
+  <meta property="article:tag" content="eclipse" />
+  <meta property="article:tag" content="neon" />
+
+
+  <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
+
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201702222107" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201702222107" media="print">
+
+  <link rel="canonical" href="/blog/2017/02/25/plugins-v3.3.1-201702251311-released/">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-16767008-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<header>
+  <div class="inner">
+    <h1><a href="/">GNU ARM Eclipse</a></h1>
+    <h2>A family of Eclipse CDT extensions and tools for GNU ARM development</h2>
+    <div id="buttons">
+      <a href="http://github.com/gnuarmeclipse" class="button"><small>Follow me on</small> GitHub</a>
+    </div>
+  </div>
+</header>
+
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+
+<div id="site-body">
+<section id="main-content">
+
+<table id="post-navigation">
+  <tr>
+    <td><a href="/blog/2017/01/29/plugins-install-issue/">←</a></td>
+    <td><a href="/blog/2017/01/29/plugins-install-issue/">GNU ARM Eclipse plug-ins: Received fatal alert: handshake_failure</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+<h1 class="post-title">GNU ARM Eclipse plug-ins v3.3.1-201702251311 released</h1>
+
+
+<p class="post-meta">
+Posted on February 25, 2017 by Liviu Ionescu.
+</p>
+
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#new-features"><span class="tocnumber">1</span> <span class="toctext">New features</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#addressed-bugs"><span class="tocnumber">2</span> <span class="toctext">Addressed bugs</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#template-changes"><span class="tocnumber">3</span> <span class="toctext">Template changes</span></a>
+<ul>
+<li class="toc_level-2 toc_section-4">
+<a href="#other-changes"><span class="tocnumber">3.1</span> <span class="toctext">Other changes</span></a>
+</li>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#known-problems"><span class="tocnumber">4</span> <span class="toctext">Known problems</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>Version 3.3.1-201702251311 is a new major release; the main change is adding support for <strong>GCC 6.x</strong>, including new <strong>Cortex-M23/M33</strong>.</p>
+
+<p>
+<a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v3.3.1-201702251311">Binary files »</a>
+</p>
+
+<h2 id="new-features">New features</h2>
+
+<ul>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/180">Issue:#180</a>] support the latest architectures and devices:
+    <ul>
+      <li>the <code class="highlighter-rouge">-march=</code> option was extended to include <code class="highlighter-rouge">armv8.1-a</code>, <code class="highlighter-rouge">armv8.1-a+crc</code> (from GCC 6.2)</li>
+      <li>the <code class="highlighter-rouge">-mcpu=</code> option was extended to include <code class="highlighter-rouge">cortex-m23</code>, <code class="highlighter-rouge">cortex-m33</code>, <code class="highlighter-rouge">cortex-a17</code>, <code class="highlighter-rouge">cortex-a32</code>, <code class="highlighter-rouge">cortex-a35</code>, <code class="highlighter-rouge">cortex-a72</code>, <code class="highlighter-rouge">qdf24xx</code> (from GCC 6.2)</li>
+    </ul>
+  </li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/179">Issue:#179</a>] on macOS and Linux, the search path for the toolchain/OpenOCD/QEMU executables was extended with <code class="highlighter-rouge">${user.home}/opt</code>; this is the new recommended location for installing optional tools;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/182">Issue:#182</a>] the initial logic to compute the default toolchain was based on the lexicographic order of folder names; due to changes in the naming conventions, this logic failed to identify the latest ARM GCC 6 release; the logic was changed and now it uses the date of the <code class="highlighter-rouge">arm-none-eabi-gcc</code> file;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/177">Issue:#177</a>] the J-Link debugging plug-in was extended to accept IP tunneling configurations (the IP field was extended to accept the <code class="highlighter-rouge">:</code> character);</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/174">Issue:#174</a>] to help identify problems when launching external executables (like the J-Link/OpenOCD/QEMU GDB servers and the GDB client), the entire command line is logged to the <code class="highlighter-rouge">${workspace}/.metadata/.log</code> file.</li>
+</ul>
+
+<h2 id="addressed-bugs">Addressed bugs</h2>
+
+<ul>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/170">Issue:#170</a>] in the QEMU debugging plug-in, changing only the <strong>Device Name:</strong> was not enough to enable the Apply button; fixed;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/pull/176">PR #176</a>] the target override combo box in the pyOCD Debugger pane was not being set to the saved value when the debug config was edited; also wrapped some prints with a check for debugging being enabled;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/181">Issue:#181</a>] avoid Eclipse <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=512550">bug 512550</a>, affecting the <strong>New C/C++ Project</strong> wizard; the project is now created with the default toolchain even if the wizard does not reach the page to select the toolchain;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/175">Issue:#175</a>] in the C/C++ Build → Settings → Tools Settings → Print Size → General, in certain conditions, the <strong>Hex</strong> field was not visible; fixed;</li>
+  <li>[<a href="https://github.com/gnuarmeclipse/plug-ins/issues/173">Issue:#173</a>] attempts to run an OpenOCD debug session without starting the server failed if the <strong>Config options:</strong> field was empty; fixed, the content of the field is ignored if the <strong>Start OpenOCD locally</strong> is disable;</li>
+</ul>
+
+<h2 id="template-changes">Template changes</h2>
+
+<ul>
+  <li>none.</li>
+</ul>
+
+<h3 id="other-changes">Other changes</h3>
+
+<ul>
+  <li>none.</li>
+</ul>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>on Neon.2, when using GDB 7.12 from GCC 6.x, the Suspend and Terminate buttons are not functional and it is not possible to interrupt a running debug session; the problem is not related to the GNU ARM Eclipse plug-ins, but a bug in Eclipse CDT 9.2; the bug was eventually fixed in CDT 9.2.1 packed with Neon.3, due in March 2017; as a temporary workaround, better use GDB 7.10, from GCC 5.x.</li>
+</ul>
+
+
+<hr class="post-footer"/>
+<p class="post-footer">
+Posted in
+
+<strong>releases</strong>, <strong>plugins</strong> and tagged
+
+<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>neon</strong>.
+</br>Last modified on Sat Feb 25 14:33:56 2017 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2017/02/25/plugins-v3.3.1-201702251311-released/" data-layout="button"></div>
+</p>
+
+
+</section>
+
+<aside id="sidebar">
+
+<h4 id="latest-news"><a href="/blog/">Latest News</a></h4>
+
+<ul>
+  <li><a href="/blog/2017/02/25/plugins-v3.3.1-201702251311-released/">GNU ARM Eclipse plug-ins v3.3.1-201702251311 released</a></li>
+  <li><a href="/blog/2017/01/29/plugins-install-issue/">GNU ARM Eclipse plug-ins: Received fatal alert: handshake_failure</a></li>
+  <li><a href="/blog/2017/01/26/sourceforge-5m-downloads/">GNU ARM Eclipse: 5.000.000 SourceForge downloads, January 2017</a></li>
+  <li><a href="/blog/2017/01/24/openocd-v0-10-0-20170124-released/">GNU ARM Eclipse OpenOCD v0.10.0-20170124* released</a></li>
+  <li><a href="/blog/2017/01/14/plugins-v3.2.1-201701141320-released/">GNU ARM Eclipse plug-ins v3.2.1-201701141320 released</a></li>
+</ul>
+
+
+<hr />
+
+<h4 id="gnu-arm-eclipse-home"><a href="/">GNU ARM Eclipse Home</a></h4>
+
+<h4 id="features"><a href="/plugins/features/">Features</a></h4>
+
+<h4 id="downloads"><a href="/downloads/">Downloads</a></h4>
+
+<ul>
+  <li><a href="/downloads/">Overview</a></li>
+  <li><a href="/plugins/download/">Plug-ins</a> (<a href="/developer/releases/">releases</a>)</li>
+  <li><a href="/windows-build-tools/download/">Windows Build Tools</a> (<a href="/windows-build-tools/releases/">releases</a>)</li>
+  <li><a href="/qemu/download/">QEMU</a> (<a href="/qemu/releases/">releases</a>)</li>
+  <li><a href="/openocd/download/">OpenOCD</a> (<a href="/openocd/releases/">releases</a>)</li>
+</ul>
+
+<h4 id="install"><a href="/install/">Install</a></h4>
+
+<ul>
+  <li><a href="/install/">Overview</a></li>
+  <li><a href="/toolchain/install/">Toolchain(s) install</a></li>
+  <li><a href="/windows-build-tools/install/">Windows build tools (make &amp; rm) install</a></li>
+  <li><a href="/debug/install/">Debugging binaries</a>
+    <ul>
+      <li><a href="/debug/install/">Overview</a></li>
+      <li><a href="/debug/jlink/install/">SEGGER J-Link install</a></li>
+      <li><a href="/openocd/install/">OpenOCD install</a></li>
+      <li><a href="/qemu/install/">QEMU install</a></li>
+    </ul>
+  </li>
+  <li><a href="/plugins/install/">Eclipse plug-ins install</a></li>
+</ul>
+
+<h4 id="important">Important</h4>
+
+<ul>
+  <li><a href="/install/">Install order</a></li>
+  <li><a href="/eclipse/workspace/preferences/">Workspace preferences</a></li>
+  <li><a href="/toolchain/path/">Toolchain path</a></li>
+  <li><a href="/eclipse/project/portability/">Project portability</a></li>
+</ul>
+
+<h4 id="tutorials">Tutorials</h4>
+
+<ul>
+  <li><a href="/tutorials/blinky-arm/">Create a Blinky ARM test project</a></li>
+  <li><a href="/tutorials/hello-arm/">Create a Hello ARM test project</a></li>
+</ul>
+
+<h4 id="how-to-use">How to use</h4>
+
+<ul>
+  <li><a href="/plugins/mbs/">The managed build plug-in</a></li>
+  <li><a href="/plugins/packs-manager/">The packs manager (CMSIS)</a></li>
+  <li><a href="/eclipse/project/assign-device/">Assign a device</a></li>
+</ul>
+
+<h4 id="templates"><a href="/templates/">Templates</a></h4>
+
+<ul>
+  <li><a href="/templates/">Overview</a></li>
+  <li><a href="/templates/cortexm/">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/">STM32Fxx template</a></li>
+  <li><a href="/templates/klxx/">Freescale KLxx templates</a></li>
+</ul>
+
+<h4 id="debugging"><a href="/debug/">Debugging</a></h4>
+
+<ul>
+  <li><a href="/debug/">Overview</a></li>
+  <li><a href="/debug/jlink/">The SEGGER J-Link plug-in</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/debug/qemu/">The QEMU plug-in</a></li>
+  <li><a href="/debug/peripheral-registers/">The peripheral registers view (CMSIS)</a></li>
+</ul>
+
+<h4 id="gnu-arm-qemu-home"><a href="/qemu/">GNU ARM QEMU Home</a></h4>
+
+<ul>
+  <li><a href="/qemu/">Overview</a> (read me first!)</li>
+  <li><a href="/qemu/install/">QEMU Install</a></li>
+  <li><a href="/debug/qemu/">Eclipse plug-in</a></li>
+  <li><a href="/qemu/options/">Command line options</a></li>
+  <li><a href="/qemu/build-procedure/">How to build</a></li>
+  <li><a href="/qemu/publish-procedure/">How to publish</a></li>
+  <li><a href="/qemu/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/qemu/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4 id="gnu-arm-openocd-home"><a href="/openocd/">GNU ARM OpenOCD Home</a></h4>
+
+<ul>
+  <li><a href="/openocd/">Overview</a> (read me first!)</li>
+  <li><a href="/openocd/install/">OpenOCD Install</a></li>
+  <li><a href="/debug/openocd/">The OpenOCD plug-in</a></li>
+  <li><a href="/openocd/build-procedure/">How to build</a></li>
+  <li><a href="/openocd/publish-procedure/">How to publish</a></li>
+  <li><a href="/openocd/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/openocd/issues/1/">Support</a>  (report issue)</li>
+</ul>
+
+<h4 id="windows-build-tools-home"><a href="/windows-build-tools/">Windows Build Tools Home</a></h4>
+
+<ul>
+  <li><a href="/windows-build-tools/">Overview</a> (read me first!)</li>
+  <li><a href="/windows-build-tools/install/">Windows Build Tools Install</a></li>
+  <li><a href="/windows-build-tools/build-procedure/">How to build</a></li>
+  <li><a href="/windows-build-tools/publish-procedure/">How to publish</a></li>
+  <li><a href="/windows-build-tools/releases/">Releases</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/windows-build-tools/issues/1/">Support</a> (report issue)</li>
+</ul>
+
+<h4 id="advanced">Advanced</h4>
+
+<ul>
+  <li><a href="/advanced/headless-builds/">Headless builds</a></li>
+</ul>
+
+<h4 id="support"><a href="/support/">Support</a></h4>
+
+<ul>
+  <li><a href="/support/">Overview</a></li>
+  <li><a href="/support/known-issues/">Known issues</a></li>
+  <li><a href="/support/faq/">FAQ</a></li>
+  <li><a href="/support/sourceforge/">SourceForge tickets</a></li>
+  <li><a href="/support/forum/">Forum</a></li>
+  <li><a href="https://github.com/gnuarmeclipse/plug-ins/issues/1/">Report plug-ins issue</a></li>
+</ul>
+
+<h4 id="developer"><a href="/developer/">Developer</a></h4>
+
+<ul>
+  <li><a href="/developer/build-procedure/">How to build</a></li>
+  <li><a href="/developer/publish-procedure/">How to publish</a></li>
+  <li><a href="/developer/change-log">Change log</a></li>
+  <li><a href="/developer/contribute/">Contribute</a></li>
+</ul>
+
+<h4 id="hardware">Hardware</h4>
+
+<ul>
+  <li><a href="/developer/j-link-stm32-boards/">J-Link and STM32 boards</a></li>
+</ul>
+
+<h4 id="latest-articles">Latest Articles</h4>
+
+<ul>
+  <li><a href="/articles/arm-com-2015-12-09/">GNU ARM Eclipse now available from Eclipse Marketplace</a></li>
+  <li><a href="/articles/arm-com-2015-11/">GNU ARM Eclipse: Cortex-M7 support added</a></li>
+  <li><a href="/articles/arm-com-2015-09/">GNU ARM Eclipse has a new look and a new home</a></li>
+  <li><a href="/articles/arm-com-2014-07/">GNU ARM Eclipse: open source tools with (experimental) CMSIS Pack support</a></li>
+</ul>
+
+<h4 id="licenses">Licenses</h4>
+
+<ul>
+  <li><a href="/licenses/plug-ins/">Eclipse plug-ins</a></li>
+  <li><a href="/licenses/tools/">Tools</a></li>
+</ul>
+
+<h4 id="finance">Finance</h4>
+
+<ul>
+  <li><a href="/finance/sponsorship/">Sponsorship &amp; donations</a></li>
+</ul>
+
+<h4 id="about"><a href="/about/">About</a></h4>
+
+<hr />
+<p>This site uses the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="Pay Pal" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</aside>
+
+
+</div>
+</div>
+
+<div class="inner clearfix">
+<div class="site-footer">
+  <div class="site-footer-links left">
+    <ul>
+  <li>© 2017 Liviu Ionescu</li>
+  <li>Hosted on GitHub Pages</li>
+  <li><a href="/feed.xml"><img src="/assets/images/feed-20.png" alt="RSS" /></a></li>
+  <li>
+    <div class="fb-like" data-href="https://facebook.com/gnuarmeclipse/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  </li>
+</ul>
+
+  </div>
+  <a href="http://github.com/gnuarmeclipse" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+  </a>
+  <div class="site-footer-links right">
+    <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">News</a></li>
+  <li><a href="/downloads/">Downloads</a></li>
+  <li><a href="/support/">Support</a></li>
+  <li><a href="/about/">About</a></li>
+</ul>
+
+  </div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
