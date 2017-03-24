@@ -105,22 +105,25 @@
 <a href="#overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
 </li>
 <li class="toc_level-1 toc_section-2">
-<a href="#the-j-link-to-st-cable"><span class="tocnumber">2</span> <span class="toctext">The J-Link to ST cable</span></a>
+<a href="#convert-the-st-link-on-board-into-a-j-link"><span class="tocnumber">2</span> <span class="toctext">Convert the ST-LINK on-board into a J-Link</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#the-st-6-pin-swd-connector"><span class="tocnumber">3</span> <span class="toctext">The ST 6-pin SWD connector</span></a>
+<a href="#the-custom-j-link-to-st-cable"><span class="tocnumber">3</span> <span class="toctext">The custom J-Link to ST cable</span></a>
 </li>
 <li class="toc_level-1 toc_section-4">
-<a href="#the-j-link-20-pin-jtagswd-connector"><span class="tocnumber">4</span> <span class="toctext">The J-Link 20-pin JTAG/SWD connector</span></a>
+<a href="#the-st-6-pin-swd-connector"><span class="tocnumber">4</span> <span class="toctext">The ST 6-pin SWD connector</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#the-target-detect-strap"><span class="tocnumber">5</span> <span class="toctext">The target detect strap</span></a>
+<a href="#the-j-link-20-pin-jtagswd-connector"><span class="tocnumber">5</span> <span class="toctext">The J-Link 20-pin JTAG/SWD connector</span></a>
 </li>
 <li class="toc_level-1 toc_section-6">
-<a href="#jumpers"><span class="tocnumber">6</span> <span class="toctext">Jumpers</span></a>
+<a href="#the-target-detect-strap"><span class="tocnumber">6</span> <span class="toctext">The target detect strap</span></a>
 </li>
 <li class="toc_level-1 toc_section-7">
-<a href="#conclusion"><span class="tocnumber">7</span> <span class="toctext">Conclusion</span></a>
+<a href="#jumpers"><span class="tocnumber">7</span> <span class="toctext">Jumpers</span></a>
+</li>
+<li class="toc_level-1 toc_section-8">
+<a href="#conclusion"><span class="tocnumber">8</span> <span class="toctext">Conclusion</span></a>
 </li>
 </ul>
 </td>
@@ -135,9 +138,17 @@
 
 <p>For a few limited tests, the OpenOCD plug-in can be used, but the reliability of OpenOCD is not appropriate for professional use.</p>
 
-<p>Preferably the J-Link debug plug-in would be used, but, for costs reasons, ST did not provide the standard JTAG connector, so it is currently not possible to connect to these boards with J-Link.</p>
+<p>Preferably the J-Link debug plug-in would be used, but, for costs reasons, ST did not provide the standard JTAG connector, so it is currently not possible to connect to these boards with an external J-Link probe.</p>
 
-<h2 id="the-j-link-to-st-cable">The J-Link to ST cable</h2>
+<h2 id="convert-the-st-link-on-board-into-a-j-link">Convert the ST-LINK on-board into a J-Link</h2>
+
+<p>In a very inspired move to address this issue, SEGGER provided an upgrade path, and most of the ST bemo boards can now be converted to J-Link; please follow the SEGGER <a href="https://www.segger.com/jlink-st-link.html">Converting ST-LINK on-board into a J-Link</a> page.</p>
+
+<p>After the firmware upgrade, you’ll be able to connect the J-Link GDB server via the existing board USB port. However, please note that not all J-Link features are available via this solution, which is somehow a J-Link Lite version.</p>
+
+<p>For a fully featured J-Link solution, a little harware is required.</p>
+
+<h2 id="the-custom-j-link-to-st-cable">The custom J-Link to ST cable</h2>
 
 <p>For those equipped with a soldering iron, it is relatively easy to adapt the existing 6-pin connector to J-Link.</p>
 
@@ -199,11 +210,13 @@
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>With this cable it is now possible to connect to the ST board with an external J-Link probe, to program the flash and run debugging sessions.</p>
+<p>The recommended solution is to upgrade the flash, and you’ll be able to connect the J-Link GDB server via the existing board USB port.</p>
+
+<p>For those who need a full J-Link connection, with this cable it is possible to connect to the ST board with an external J-Link probe, to program the flash and run debugging sessions.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Jun 22 09:37:21 2016 UTC.</p>
+<p class="page-footer">Last modified on Fri Mar 24 20:56:12 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/j-link-stm32-boards/" data-layout="button"></div>
 
 

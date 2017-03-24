@@ -235,7 +235,9 @@ further debugging may prove unreliable.
 
 <h3 id="the-internal-builder-fails-whilegenerating-the-listing">The internal builder fails while generating the listing</h3>
 
-<p>Due to a CDT bug, when using the Internal builder it is not possible to generate the additional program listing. If you need it, it is recommended to enable the <strong>External builder</strong> in the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Builder Settings</strong> tab → <strong>Builder type</strong>. The <strong>Internal builder</strong> can be used without any problems for projects that do not have secondary targets (like libraries).</p>
+<p>Due to a CDT bug, when using the Internal builder it is not possible to generate the additional program listing. If you need it, it is recommended to enable the <strong>External builder</strong> in the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Builder Settings</strong> tab → <strong>Builder type</strong>.</p>
+
+<p>The <strong>Internal builder</strong> is long deprecated, it was no longer maintained by the CDT team for many years, and it is strongly recommended <strong>not</strong> to use it at all.</p>
 
 <h3 id="conflict-while-editing-tools">Conflict while editing tools</h3>
 
@@ -309,7 +311,7 @@ further debugging may prove unreliable.
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu Jun 30 15:20:04 2016 UTC.</p>
+<p class="page-footer">Last modified on Fri Mar 24 20:52:13 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/support/known-issues/" data-layout="button"></div>
 
 
