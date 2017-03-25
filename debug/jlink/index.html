@@ -243,12 +243,12 @@
   <li>click the <strong>Restore Defaults</strong> button</li>
   <li>the plug-in will suggest the default values computed when Eclipse started; if a new version of SEGGER was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
   <li>check the <strong>Executable</strong> field; it must define the name of the command line J-Link GDB server executable; in most cases it should be set correctly; if not, edit it to match the correct name;</li>
-  <li>check the <strong>Folder</strong> field; it must point to the actual folder where the J-Link tools were installed on your platform, for example <strong>/Applications/SEGGER/JLink</strong> on macOS</li>
+  <li>check the <strong>Folder</strong> field; it must point to the actual folder where the J-Link tools were installed on your platform, for example <code class="highlighter-rouge">/Applications/SEGGER/JLink_V614b</code> on macOS</li>
   <li>click the <strong>OK</strong> button</li>
-  <li><strong>Windows warning:</strong> please note that on Windows there are two GDB server executables, one with a UI and one to be used as a command line (JLinkGDBServerCL.exe); you obviously need to configure the executable field to point to <strong>JLinkGDBServerCL.exe</strong>;</li>
+  <li><strong>Windows warning:</strong> please note that on Windows there are two GDB server executables, one with a UI and one to be used as a command line (<code class="highlighter-rouge">JLinkGDBServerCL.exe</code>); you obviously need to configure the executable field to point to <code class="highlighter-rouge">JLinkGDBServerCL.exe</code>.</li>
 </ul>
 
-<p>By default, the GDB server is defined as <strong>${jlink_path}/${jlink_gdbserver}</strong>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to keep this definition in all your debug configurations, and also to have a single place to update the path when a new version of the J-Link tools is released.</p>
+<p>By default, the GDB server is defined as <code class="highlighter-rouge">${jlink\_path}/${jlink\_gdbserver}</code>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to keep this definition in all your debug configurations, and also to have a single place to update the path when a new version of the J-Link tools is released.</p>
 
 <h3 id="associate-a-device-to-the-project">Associate a device to the project</h3>
 
@@ -280,7 +280,7 @@
   </li>
   <li>a multi-tab page will be displayed;</li>
   <li>
-    <p>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example Debug/blink1.elf).</p>
+    <p>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example blink1) and the application file name and location (for example <code class="highlighter-rouge">Debug/blink1.elf</code>).</p>
 
     <p><img src="/assets/images/2013/12/DebugMainTab.png" alt="The Main tab" /></p>
   </li>
@@ -291,7 +291,7 @@
   </li>
   <li>the only field that usually requires attention is the <strong>Device name</strong>, which must identify the processor family; if you assigned the device to the project, this field is automatically filled-in; usually this name is the family name; if you do not know it for your processor, follow the link at the right and copy/paste the string from the <a href="http://www.segger.com/supported-devices.html">SEGGER web page</a>;</li>
   <li>for portability reasons, the GDB server and GDB client executables are defined using variables; it is highly recommended to keep these definitions;</li>
-  <li>the <strong>${cross_prefix}</strong> and the <strong>${cross_suffix}</strong> variables are defined automatically using the toolchain definitions; unless you are debugging a project-less ELF, leave them as is;</li>
+  <li>the <code class="highlighter-rouge">${cross_prefix}</code> and the <code class="highlighter-rouge">${cross_suffix}</code> variables are defined automatically using the toolchain definitions; unless you are debugging a project-less ELF, leave them as is;</li>
   <li>the values of the <code class="highlighter-rouge">${jlink_path}</code> and <code class="highlighter-rouge">${jlink_gdbserver}</code> can be manually edited in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> <strong>→</strong> <strong>SEGGER J-Link</strong> configuration page (if you do not find this page, upgrade the plug-ins);</li>
   <li>the <strong>Connect to running target</strong> option allow to start a debug session without performing any reset or program download, so that the target will continue to run unaffected, until explicitly halted by the debugger (Note: this option requires the latest plug-in and SEGGER versions);</li>
   <li>
@@ -359,11 +359,11 @@
 
 <p>The new debug session, with three consoles.</p>
 
-<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <em>main()</em> function, which in this case is a tracing <em>printf()</em>.</p>
+<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code class="highlighter-rouge">main()</code> function, which in this case is a tracing <code class="highlighter-rouge">printf()</code>.</p>
 
 <h2 id="debug-operations">Debug operations</h2>
 
-<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <strong>main()</strong> function), you can perform any debug operation you need.</p>
+<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code class="highlighter-rouge">main()</code> function), you can perform any debug operation you need.</p>
 
 <p>The most common operations are:</p>
 
@@ -488,11 +488,11 @@
 
 <h3 id="error-while-launching-command-gdb-version">Error while launching command: gdb –version</h3>
 
-<p>If you kept the GDB client executable defined as <strong>${cross_prefix}gdb${cross_suffix}</strong>, the above error means that the macros could not be substituted with the correct prefix/suffix. There can be several reasons for this. One might be that you did not associate the debug launcher to a project. Check the <strong>Main</strong> tab and be sure the field <strong>Project:</strong> refer to the correct project. Next time when you create the debug configuration, be sure you follow the above suggestions (select .elf, <strong>Debug Configurations</strong>, double click on <strong>GDB SEGGER J-Link Debugging</strong>. Another reason is presented below.</p>
+<p>If you kept the GDB client executable defined as <code class="highlighter-rouge">${cross\_prefix}gdb${cross\_suffix}</code>, the above error means that the macros could not be substituted with the correct prefix/suffix. There can be several reasons for this. One might be that you did not associate the debug launcher to a project. Check the <strong>Main</strong> tab and be sure the field <strong>Project:</strong> refer to the correct project. Next time when you create the debug configuration, be sure you follow the above suggestions (select .elf, <strong>Debug Configurations</strong>, double click on <strong>GDB SEGGER J-Link Debugging</strong>. Another reason is presented below.</p>
 
 <h3 id="using-a-different-build-plug-in-or-not-supported-compiler">Using a different build plug-in or not supported compiler</h3>
 
-<p>Another reason for not being able to start the debug session is that your project was not build with the GNU ARM Eclipse managed build plug-in. If you are using another build plug-in, or an exotic/obsolete toolchain, you need to replace <strong>${cross_prefix}gdb${cross_suffix}</strong> with the actual name of the gdb client available in your toolchain, since the ${cross_*} macros are available only in projects managed by the GNU ARM Eclipse build plug-in.</p>
+<p>Another reason for not being able to start the debug session is that your project was not build with the GNU ARM Eclipse managed build plug-in. If you are using another build plug-in, or an exotic/obsolete toolchain, you need to replace <code class="highlighter-rouge">${cross\_prefix}gdb${cross\_suffix}</code> with the actual name of the gdb client available in your toolchain, since the <code class="highlighter-rouge">${cross_*}</code> macros are available only in projects managed by the GNU ARM Eclipse build plug-in.</p>
 
 <h2 id="more-info">
 <strong>More info</strong>
@@ -502,7 +502,7 @@
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Feb  4 13:44:35 2017 UTC.</p>
+<p class="page-footer">Last modified on Sat Mar 25 19:55:45 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/debug/jlink/" data-layout="button"></div>
 
 
