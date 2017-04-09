@@ -231,7 +231,7 @@ arm-none-eabi-gcc <span class="o">(</span>GNU Tools <span class="k">for </span>A
       <p>Note: It is highly recommended to <strong>do not to change the install path</strong>, since the plug-in tries to automatically discover the toolchain by searching only a limited set of possible locations (<code class="highlighter-rouge">${HOME}/Applications/GNU Tools ARM Embedded</code>, <code class="highlighter-rouge">${HOME}/local/GNU Tools ARM Embedded</code>, <code class="highlighter-rouge">${HOME}/local</code>, <code class="highlighter-rouge">${HOME}/opt</code>, <code class="highlighter-rouge">/usr/local</code>).</p>
     </blockquote>
 
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo mkdir -p <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>mkdir -p <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
 <span class="gp">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
 <span class="gp">$ </span>tar xjf ~/Downloads/gcc-arm-none-eabi-6-2017-q1-update-mac.tar.bz2
 <span class="gp">$ </span>chmod -R -w <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/gcc-arm-none-eabi-6-2017-q1-update
@@ -242,8 +242,8 @@ arm-none-eabi-gcc <span class="o">(</span>GNU Tools <span class="k">for </span>A
   <li>
     <p>test if the compiler is functional; use the actual install path:</p>
 
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/gcc-arm-none-eabi-4_8-2014q1/bin/arm-none-eabi-gcc --version
-arm-none-eabi-gcc <span class="o">(</span>GNU Tools <span class="k">for </span>ARM Embedded Processors<span class="o">)</span> 4.8.4 20140526 <span class="o">(</span>release<span class="o">)</span> <span class="o">[</span>ARM/embedded-4_8-branch revision 211358]
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/gcc-arm-none-eabi-6-2017-q1-update/bin/arm-none-eabi-gcc --version
+arm-none-eabi-gcc <span class="o">(</span>GNU Tools <span class="k">for </span>ARM Embedded Processors 6-2017-q1-update<span class="o">)</span> 6.3.1 20170215 <span class="o">(</span>release<span class="o">)</span> <span class="o">[</span>ARM/embedded-6-branch revision 245512
 </code></pre>
     </div>
 
@@ -353,7 +353,7 @@ arm-none-eabi-gcc <span class="o">(</span>GNU Tools <span class="k">for </span>A
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri Mar 24 20:55:13 2017 UTC.</p>
+<p class="page-footer">Last modified on Sun Apr  9 15:34:46 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/toolchain/install/" data-layout="button"></div>
 
 

@@ -10,7 +10,7 @@ If you have interesting ideas on how to improve the project Web, and generally i
 
 ## Submit bug reports & enhancement requests
 
-If you discovered a typo, a broken link, or you have a pertinent suggestion how to enhance the GNU ARM Eclipse Web site, please use the [GitHub Issues](https://github.com/gnuarmeclipse/gnuarmeclipse.github.io/issues) tracker.
+If you discovered a typo, a broken link, or you have a pertinent suggestion how to enhance the GNU ARM Eclipse Web site, please use the [GitHub Issues](https://github.com/gnuarmeclipse/gnuarmeclipse.github.io-source/issues) tracker.
 
 Be sure you report only issues related to the GNU ARM Eclipse Web site. **DO NOT** use it for issues related to the plug-ins or to the tools (QEMU, OpenOCD, Build tools, etc), which should be addressed to their corresponding trackers. J-Link specific questions should be addresses to SEGGER support.
 
