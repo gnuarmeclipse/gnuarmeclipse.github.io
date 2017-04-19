@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://gnuarmeclipse.github.io/blog/2017/04/19/openocd-v0-10-0-20170418-released/</loc>
+<lastmod>2017-04-19T12:43:23+00:00</lastmod>
+</url>
+<url>
 <loc>http://gnuarmeclipse.github.io/blog/2017/02/25/plugins-v3.3.1-201702251311-released/</loc>
 <lastmod>2017-02-25T15:49:49+00:00</lastmod>
 </url>
@@ -14,7 +18,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2017/01/24/openocd-v0-10-0-20170124-released/</loc>
-<lastmod>2017-01-25T10:45:04+00:00</lastmod>
+<lastmod>2017-04-19T12:38:23+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2017/01/14/plugins-v3.2.1-201701141320-released/</loc>

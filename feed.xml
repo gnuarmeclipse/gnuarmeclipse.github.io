@@ -5,9 +5,25 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Apr 2017 15:48:17 +0000</pubDate>
-    <lastBuildDate>Sun, 09 Apr 2017 15:48:17 +0000</lastBuildDate>
+    <pubDate>Wed, 19 Apr 2017 12:46:40 +0000</pubDate>
+    <lastBuildDate>Wed, 19 Apr 2017 12:46:40 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse OpenOCD v0.10.0-20170418* released</title>
+        <description>&lt;p&gt;Version v0.10.0-201704182147 is a maintenance release. It updates &lt;code class=&quot;highlighter-rouge&quot;&gt;libhid.a&lt;/code&gt; to the latest available version, 0.8.0-rc1. It includes binaries for Windows, macOS and GNU/Linux.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 19 Apr 2017 04:41:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2017/04/19/openocd-v0-10-0-20170418-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2017/04/19/openocd-v0-10-0-20170418-released/</guid>
+        
+        
+        <category>releases</category>
+        
+        <category>openocd</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v3.3.1-201702251311 released</title>
@@ -240,30 +256,6 @@
         <category>releases</category>
         
         <category>windows-build-tools</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse QEMU v2.7.0-20161029* released</title>
-        <description>&lt;p&gt;Version 2.7.0-201610290751 is a new stable release, following the offfical QEMU releases.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 29 Oct 2016 12:55:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/10/29/qemu-v2-7-0-20161029-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/10/29/qemu-v2-7-0-20161029-released/</guid>
-        
-        <category>emulator</category>
-        
-        <category>macos</category>
-        
-        <category>linux</category>
-        
-        <category>windos</category>
-        
-        
-        <category>releases</category>
-        
-        <category>qemu</category>
         
       </item>
     
