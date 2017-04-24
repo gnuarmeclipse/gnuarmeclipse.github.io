@@ -123,9 +123,17 @@
 </li>
 <li class="toc_level-1 toc_section-7">
 <a href="#gnulinux"><span class="tocnumber">6</span> <span class="toctext">GNU/Linux</span></a>
+<ul>
+<li class="toc_level-2 toc_section-8">
+<a href="#udev"><span class="tocnumber">6.1</span> <span class="toctext">UDEV</span></a>
 </li>
-<li class="toc_level-1 toc_section-8">
-<a href="#the-j-link-plug-in"><span class="tocnumber">7</span> <span class="toctext">The J-Link plug-in</span></a>
+</ul>
+</li>
+<li class="toc_level-1 toc_section-9">
+<a href="#testing"><span class="tocnumber">7</span> <span class="toctext">Testing</span></a>
+</li>
+<li class="toc_level-1 toc_section-10">
+<a href="#the-j-link-plug-in"><span class="tocnumber">8</span> <span class="toctext">The J-Link plug-in</span></a>
 </li>
 </ul>
 </td>
@@ -212,24 +220,25 @@
 <p>As already mentioned, there are multiple packages available for GNU/Linux on the SEGGER download site, built as Debian/Red Hat packages, in 32/64-bits versions, or plain TGZ archives. Select the one appropriate for you system and use the specific tools to install the package. For example, on Ubuntu, to install the 64-bits .deb file, use the following command:</p>
 
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo dpkg -i ~/Downloads/jlink_5.2.7_x86_64.deb
-bash
+</code></pre>
+</div>
 
-The J-Link executables are installed <span class="k">in</span> <span class="sb">`</span>/usr/bin<span class="sb">`</span>.
+<p>The J-Link executables are installed in <code class="highlighter-rouge">/usr/bin</code>.</p>
 
-In <span class="k">case</span> you have a 64-bits machine and install the 32-bits SEGGER package, you might need several 32-bits libraries, depending on distribution.
+<p>In case you have a 64-bits machine and install the 32-bits SEGGER package, you might need several 32-bits libraries, depending on distribution.</p>
 
-<span class="c">### UDEV</span>
+<h3 id="udev">UDEV</h3>
 
-The install procedure automatically adds <span class="k">**</span>/etc/udev/rules.d/99-jlink.rules<span class="k">**</span> to define the USB IDs of the J-Link devices. No other drivers are required.
+<p>The install procedure automatically adds <strong>/etc/udev/rules.d/99-jlink.rules</strong> to define the USB IDs of the J-Link devices. No other drivers are required.</p>
 
-<span class="c">## Testing</span>
+<h2 id="testing">Testing</h2>
 
-To <span class="nb">test </span><span class="k">if </span>J-Link is able to connect to a specific board, you generally need to specify the interface <span class="o">(</span>JTAG or SWD<span class="p">)</span> and the device name. By default, J-Link GDBServer will try JTAG but <span class="k">if </span>only SWD is wired <span class="o">(</span>which is very common on custom hardware<span class="o">)</span>, you would need to specify the interface <span class="o">(</span>-if SWD<span class="o">)</span>. The device name is needed <span class="k">for </span>targets which require special handling on connect <span class="o">(</span>e.g. due to silicon bugs which make auto-detection impossible<span class="o">)</span>. For a list of available device names, please refer to the SEGGER [Supported devices]<span class="o">(</span>http://www.segger.com/jlink_supported_devices.html<span class="o">)</span> page. Below is an example how to <span class="nb">test </span>a JTAG connection to a STM32F103 evaluation board <span class="o">(</span>-device STM32F103RB<span class="o">)</span> on macOS.
+<p>To test if J-Link is able to connect to a specific board, you generally need to specify the interface (JTAG or SWD) and the device name. By default, J-Link GDBServer will try JTAG but if only SWD is wired (which is very common on custom hardware), you would need to specify the interface (-if SWD). The device name is needed for targets which require special handling on connect (e.g. due to silicon bugs which make auto-detection impossible). For a list of available device names, please refer to the SEGGER <a href="http://www.segger.com/jlink_supported_devices.html">Supported devices</a> page. Below is an example how to test a JTAG connection to a STM32F103 evaluation board (-device STM32F103RB) on macOS.</p>
 
-	<span class="nv">$ </span>/Applications/SEGGER/JLink/JLinkGDBServer -if JTAG -device STM32F103RB
+<div class="highlighter-rouge"><pre class="highlight"><code>	$ /Applications/SEGGER/JLink/JLinkGDBServer -if JTAG -device STM32F103RB
 	SEGGER J-Link GDB Server V4.80 Command Line Version
 
-	JLinkARM.dll V4.80 <span class="o">(</span>DLL compiled Dec 20 2013 19:44:31<span class="o">)</span>
+	JLinkARM.dll V4.80 (DLL compiled Dec 20 2013 19:44:31)
 
 	-----GDB Server start settings-----
 	GDBInit file:                  none
@@ -255,28 +264,29 @@ To <span class="nb">test </span><span class="k">if </span>J-Link is able to conn
 	Hardware: V8.00
 	S/N: XXXXXXXXX
 	OEM: SEGGER-EDU
-	Feature<span class="o">(</span>s<span class="o">)</span>: FlashBP, GDB
+	Feature(s): FlashBP, GDB
 	Checking target voltage...
 	Listening on TCP/IP port 2331
 	Connecting to target...
-	J-Link found 2 JTAG devices, Total IRLen <span class="o">=</span> 9
-	JTAG ID: 0x3BA00477 <span class="o">(</span>Cortex-M3<span class="o">)</span>
+	J-Link found 2 JTAG devices, Total IRLen = 9
+	JTAG ID: 0x3BA00477 (Cortex-M3)
 	Connected to target
-	Waiting <span class="k">for </span>GDB connection...
+	Waiting for GDB connection...
 	^C
+</code></pre>
+</div>
 
-On Windows, to start the GDB server, use back-slashes <span class="k">in </span>the path and the CL <span class="o">(</span><span class="nb">command </span>line<span class="o">)</span> version:
+<p>On Windows, to start the GDB server, use back-slashes in the path and the CL (command line) version:</p>
 
-<span class="sb">```</span>bash
-C:&gt;C:<span class="se">\P</span>rogram Files<span class="se">\S</span>EGGER<span class="se">\J</span>LinkARM_V480<span class="se">\J</span>LinkGDBServerCL
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>C:&gt;C:<span class="se">\P</span>rogram Files<span class="se">\S</span>EGGER<span class="se">\J</span>LinkARM_V480<span class="se">\J</span>LinkGDBServerCL
 </code></pre>
 </div>
 
 <p>On Ubuntu the command is simple:</p>
 
-<p>```bash
-$ /usr/bin/JLinkGDBServer
-bash</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>/usr/bin/JLinkGDBServer
+</code></pre>
+</div>
 
 <p>In all cases, the result should be similar to the one obtained on macOS.</p>
 
@@ -287,7 +297,7 @@ bash</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Sat Mar 25 19:55:45 2017 UTC.</p>
+<p class="page-footer">Last modified on Mon Apr 24 08:33:39 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/debug/jlink/install/" data-layout="button"></div>
 
 
