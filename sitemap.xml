@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://gnuarmeclipse.github.io/blog/2017/04/25/plugins-v3.4.1-201704251808-released/</loc>
+<lastmod>2017-04-26T07:05:28+00:00</lastmod>
+</url>
+<url>
 <loc>http://gnuarmeclipse.github.io/blog/2017/04/19/openocd-v0-10-0-20170418-released/</loc>
 <lastmod>2017-04-19T12:43:23+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2017/02/25/plugins-v3.3.1-201702251311-released/</loc>
-<lastmod>2017-02-25T15:49:49+00:00</lastmod>
+<lastmod>2017-04-26T07:05:28+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/blog/2017/01/29/plugins-install-issue/</loc>
@@ -410,7 +414,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/developer/change-log/</loc>
-<lastmod>2017-02-25T14:33:56+00:00</lastmod>
+<lastmod>2017-04-26T07:05:28+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/openocd/change-log/</loc>
@@ -542,7 +546,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/debug/jlink/install/</loc>
-<lastmod>2017-04-24T08:33:39+00:00</lastmod>
+<lastmod>2017-04-26T07:05:28+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/debug/jlink/</loc>
@@ -638,7 +642,7 @@
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/developer/publish-procedure/</loc>
-<lastmod>2017-02-25T15:50:39+00:00</lastmod>
+<lastmod>2017-04-26T07:05:28+00:00</lastmod>
 </url>
 <url>
 <loc>http://gnuarmeclipse.github.io/openocd/publish-procedure/</loc>

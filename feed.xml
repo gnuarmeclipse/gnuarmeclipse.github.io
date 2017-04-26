@@ -5,9 +5,35 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Apr 2017 08:35:44 +0000</pubDate>
-    <lastBuildDate>Mon, 24 Apr 2017 08:35:44 +0000</lastBuildDate>
+    <pubDate>Wed, 26 Apr 2017 07:12:13 +0000</pubDate>
+    <lastBuildDate>Wed, 26 Apr 2017 07:12:13 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse plug-ins v3.4.1-201704251808 released</title>
+        <description>&lt;p&gt;Version 3.4.1-201704251808 is a maintenance release, intended to update the plugins to the new CMSIS Packs specs and to also fix some bugs.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 25 Apr 2017 19:08:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2017/04/25/plugins-v3.4.1-201704251808-released/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2017/04/25/plugins-v3.4.1-201704251808-released/</guid>
+        
+        <category>GNU</category>
+        
+        <category>ARM</category>
+        
+        <category>Eclipse</category>
+        
+        <category>CMSIS</category>
+        
+        <category>Packs</category>
+        
+        
+        <category>releases</category>
+        
+        <category>plugins</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse OpenOCD v0.10.0-20170418* released</title>
@@ -226,36 +252,6 @@
         <category>releases</category>
         
         <category>qemu</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse Windows Build Tools v2.8-20161122* released</title>
-        <description>&lt;p&gt;Version 2.8-201611221915 is a maintenance release of the GNU ARM Eclipse Windows Build Tools.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 22 Nov 2016 18:20:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/11/22/windows-build-tools-v2-8-20161122-released/</guid>
-        
-        <category>windows</category>
-        
-        <category>setup</category>
-        
-        <category>build</category>
-        
-        <category>make</category>
-        
-        <category>makedir</category>
-        
-        <category>rm</category>
-        
-        <category>busybox</category>
-        
-        
-        <category>releases</category>
-        
-        <category>windows-build-tools</category>
         
       </item>
     
