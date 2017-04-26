@@ -138,16 +138,19 @@
 <a href="#update-the-release-link"><span class="tocnumber">12</span> <span class="toctext">Update the release link</span></a>
 </li>
 <li class="toc_level-1 toc_section-13">
-<a href="#close-issues"><span class="tocnumber">13</span> <span class="toctext">Close issues</span></a>
+<a href="#add-the-release-downloads-badge"><span class="tocnumber">13</span> <span class="toctext">Add the release downloads badge</span></a>
 </li>
 <li class="toc_level-1 toc_section-14">
-<a href="#publish-on-sourceforge-"><span class="tocnumber">14</span> <span class="toctext">Publish on SourceForge ()</span></a>
+<a href="#close-issues"><span class="tocnumber">14</span> <span class="toctext">Close issues</span></a>
 </li>
 <li class="toc_level-1 toc_section-15">
-<a href="#share-on-facebook"><span class="tocnumber">15</span> <span class="toctext">Share on Facebook</span></a>
+<a href="#publish-on-sourceforge-"><span class="tocnumber">15</span> <span class="toctext">Publish on SourceForge ()</span></a>
 </li>
 <li class="toc_level-1 toc_section-16">
-<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">16</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
+<a href="#share-on-facebook"><span class="tocnumber">16</span> <span class="toctext">Share on Facebook</span></a>
+</li>
+<li class="toc_level-1 toc_section-17">
+<a href="#update-the-eclipse-marketplace-records"><span class="tocnumber">17</span> <span class="toctext">Update the Eclipse Marketplace records</span></a>
 </li>
 </ul>
 </td>
@@ -522,11 +525,11 @@ logout
   <li>be sure the <strong>develop</strong> branch is up to date and set as default</li>
   <li>go to the <a href="https://github.com/gnuarmeclipse/plug-ins/releases">GitHub Releases</a> page</li>
   <li>click <strong>Draft a new release</strong></li>
-  <li>name the tag like <strong>v2.9.3-201508190739</strong></li>
+  <li>name the tag like <strong>v2.9.3-201508190739</strong> (mind the <code class="highlighter-rouge">-</code> in the middle!)</li>
   <li>select the <strong>develop</strong> branch</li>
-  <li>name the release like <strong>GNU ARM Eclipse plug-ins v2.9.3-201508190739</strong></li>
+  <li>name the release like <strong>GNU ARM Eclipse plug-ins v2.9.3-201508190739</strong>  (mind the <code class="highlighter-rouge">-</code> in the middle!)</li>
   <li>as description, copy the first paragraph from the Web release page</li>
-  <li>attach binaries (drag and drop from the archives folder will do it)</li>
+  <li><strong>attach binaries</strong> (drag and drop from the archives folder will do it)</li>
   <li>click the <strong>Publish Release</strong> button</li>
 </ul>
 
@@ -549,6 +552,14 @@ logout
   <li>add a link to the Web page <code class="highlighter-rouge">[Continue reading »]()</code></li>
   <li>get URL from web <a href="http://gnuarmeclipse.github.io/developer/releases/">Releases</a> and update the above link</li>
 </ul>
+
+<h2 id="add-the-release-downloads-badge">Add the release downloads badge</h2>
+
+<p>The code looks like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[![Github Releases (by Release)](https://img.shields.io/github/downloads/gnuarmeclipse/plug-ins/v3.4.1-201704251808/total.svg)](http://gnuarmeclipse.github.io/blog/2017/02/25/plugins-v3.4.1-201704251808-released/)
+</code></pre>
+</div>
 
 <h2 id="close-issues">Close issues</h2>
 
@@ -590,7 +601,7 @@ logout
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Wed Apr 26 07:05:28 2017 UTC.</p>
+<p class="page-footer">Last modified on Wed Apr 26 08:14:14 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/publish-procedure/" data-layout="button"></div>
 
 
