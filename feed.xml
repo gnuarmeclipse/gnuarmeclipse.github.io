@@ -5,9 +5,35 @@
     <description>A family of Eclipse CDT extensions and tools for GNU ARM development</description>
     <link>http://gnuarmeclipse.github.io/</link>
     <atom:link href="http://gnuarmeclipse.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 May 2017 02:00:45 +0000</pubDate>
-    <lastBuildDate>Mon, 01 May 2017 02:00:45 +0000</lastBuildDate>
+    <pubDate>Tue, 02 May 2017 11:23:58 +0000</pubDate>
+    <lastBuildDate>Tue, 02 May 2017 11:23:58 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>GNU ARM Eclipse plug-ins update sites migrated to Bintray</title>
+        <description>&lt;p&gt;After serving almost 6 million downloaded files, the &lt;strong&gt;Eclipse update sites&lt;/strong&gt; were &lt;strong&gt;migrated&lt;/strong&gt; from the venerable SourceForge &lt;strong&gt;to the new Bintray site&lt;/strong&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 02 May 2017 08:15:00 +0000</pubDate>
+        <link>http://gnuarmeclipse.github.io/blog/2017/05/02/sourceforge-to-bintray-migration/</link>
+        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2017/05/02/sourceforge-to-bintray-migration/</guid>
+        
+        <category>featured</category>
+        
+        <category>SourceForge</category>
+        
+        <category>Bintray</category>
+        
+        <category>downloads</category>
+        
+        <category>update</category>
+        
+        
+        <category>news</category>
+        
+        <category>project</category>
+        
+      </item>
     
       <item>
         <title>GNU ARM Eclipse plug-ins v3.4.1-201704251808 released</title>
@@ -220,38 +246,6 @@
         <category>support</category>
         
         <category>plugins</category>
-        
-      </item>
-    
-      <item>
-        <title>GNU ARM Eclipse QEMU v2.7.0-20161128* released</title>
-        <description>&lt;p&gt;Version 2.7.0-201611282115 is a new release, adding support for active graphical buttons.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 28 Nov 2016 20:19:00 +0000</pubDate>
-        <link>http://gnuarmeclipse.github.io/blog/2016/11/28/qemu-v2-7-0-20161128-released/</link>
-        <guid isPermaLink="true">http://gnuarmeclipse.github.io/blog/2016/11/28/qemu-v2-7-0-20161128-released/</guid>
-        
-        <category>emulator</category>
-        
-        <category>macos</category>
-        
-        <category>linux</category>
-        
-        <category>windos</category>
-        
-        <category>graphic</category>
-        
-        <category>sdl2</category>
-        
-        <category>button</category>
-        
-        <category>led</category>
-        
-        
-        <category>releases</category>
-        
-        <category>qemu</category>
         
       </item>
     

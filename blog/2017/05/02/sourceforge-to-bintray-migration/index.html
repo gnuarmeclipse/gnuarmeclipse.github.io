@@ -9,24 +9,24 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</title>
-  <meta name="description" content="Version 2.9.3-201508190739 is a maintenance release; it fixes a small issue in the QEMU Debugger tab, which now uses persistent values for the board/device n...">
+  <title>GNU ARM Eclipse plug-ins update sites migrated to Bintray</title>
+  <meta name="description" content="After serving almost 6 million downloaded files, the Eclipse update sites were migrated from the venerable SourceForge to the new Bintray site.">
 
-  <meta property="og:title" content="GNU ARM Eclipse plug-ins v2.9.3-201508190739 released" />
+  <meta property="og:title" content="GNU ARM Eclipse plug-ins update sites migrated to Bintray" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-08-19">
+  <meta property="article:published_time" content="2017-05-02">
 
 
-  <meta property="article:section" content="releases" />
-  <meta property="article:section" content="plugins" />
+  <meta property="article:section" content="news" />
+  <meta property="article:section" content="project" />
 
-  <meta property="article:tag" content="gnu" />
-  <meta property="article:tag" content="arm" />
-  <meta property="article:tag" content="eclipse" />
-  <meta property="article:tag" content="cmsis" />
-  <meta property="article:tag" content="qemu" />
+  <meta property="article:tag" content="featured" />
+  <meta property="article:tag" content="sourceforge" />
+  <meta property="article:tag" content="bintray" />
+  <meta property="article:tag" content="downloads" />
+  <meta property="article:tag" content="update" />
 
 
   <meta name="google-site-verification" content="NT_y3tqI_8mrd8gYA_FDWHT2-tkJExOC6KBkSnyZx6c" />
@@ -36,7 +36,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201702222107" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201702222107" media="print">
 
-  <link rel="canonical" href="/blog/2015/08/19/plugins-v2.9.3-201508190739-released/">
+  <link rel="canonical" href="/blog/2017/05/02/sourceforge-to-bintray-migration/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -97,36 +97,114 @@
 
 <table id="post-navigation">
   <tr>
-    <td><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">←</a></td>
-    <td><a href="/blog/2015/08/16/qemu-v2-3-50-20150816-released/">GNU ARM Eclipse QEMU v2.3.50-20150816*-dev released</a></td>
+    <td><a href="/blog/2017/04/25/plugins-v3.4.1-201704251808-released/">←</a></td>
+    <td><a href="/blog/2017/04/25/plugins-v3.4.1-201704251808-released/">GNU ARM Eclipse plug-ins v3.4.1-201704251808 released</a></td>
     <td></td>
-    <td><a href="/blog/2015/09/14/web-new-look/">The GNU ARM Eclipse project has a new home and a new look (GitHub)</a></td>
-    <td><a href="/blog/2015/09/14/web-new-look/">→</a></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
 
-<h1 class="post-title">GNU ARM Eclipse plug-ins v2.9.3-201508190739 released</h1>
+<h1 class="post-title">GNU ARM Eclipse plug-ins update sites migrated to Bintray</h1>
 
 
 <p class="post-meta">
-Posted on August 19, 2015 by Liviu Ionescu.
+Posted on May 2, 2017 by Liviu Ionescu.
 </p>
 
-<p>Version 2.9.3-201508190739 is a maintenance release; it fixes a small issue in the QEMU Debugger tab, which now uses persistent values for the board/device names only when none of them were assigned to the project from the CMSIS definitions.</p>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#rationale"><span class="tocnumber">1</span> <span class="toctext">Rationale</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#github"><span class="tocnumber">2</span> <span class="toctext">GitHub</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#bintray-servers"><span class="tocnumber">3</span> <span class="toctext">Bintray servers</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#sourceforge-redirects"><span class="tocnumber">4</span> <span class="toctext">SourceForge redirects</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#expected-issues"><span class="tocnumber">5</span> <span class="toctext">Expected issues</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><p>After serving almost 6 million downloaded files, the <strong>Eclipse update sites</strong> were <strong>migrated</strong> from the venerable SourceForge <strong>to the new Bintray site</strong>.</p>
 
-<p><a href="https://github.com/gnuarmeclipse/plug-ins/releases/tag/v2.9.3-201508190739">Binary files »</a></p>
+<h2 id="rationale">Rationale</h2>
+
+<p>After several security incidents, by the end of 2016, SourceForge decided to change the security certificates and to mandate the use of HTTPS. This resulted in a large number of complains from users behind firewalls, who were no longer able to access the Eclipse update sites, and had to manually download archives and install locally. Although not at all the fault of GNU ARM Eclipse (the root of the problem seems to be in the Oracle Java libraries), the SourceForge desire to use stronger encryption was in the end perceived as a bad user experience by GNU ARM Eclipse users, a situation that we cannot accept.</p>
+
+<h2 id="github">GitHub</h2>
+
+<p>The main development site used by the project is and will remain GitHub, but since GitHub Releases currently do not support subfolders, publishing the Eclipse update sites on GitHub Releases is not an option. Publishing on GitHub Pages or even directly as a Git project might have been technically possible, but neither are intended for high volume downloads and do not provide any analytics.</p>
+
+<h2 id="bintray-servers">Bintray servers</h2>
+
+<p><a href="https://bintray.com/">Bintray</a> is a modern solution for software distribution, with many new features compared to the traditional SourceForge <code class="highlighter-rouge">rsync</code> approach.</p>
+
+<p>The Bintray page to manage the downloads is <a href="https://bintray.com/gnu-mcu-eclipse">https://bintray.com/gnu-mcu-eclipse</a>, with several separate repositories, each with its own statistics.</p>
+
+<p>The new internal URL addresses used for downloads are:</p>
+
+<ul>
+  <li><a href="https://dl.bintray.com/gnu-mcu-eclipse/updates">https://dl.bintray.com/gnu-mcu-eclipse/updates</a></li>
+  <li><a href="https://dl.bintray.com/gnu-mcu-eclipse/updates-test">https://dl.bintray.com/gnu-mcu-eclipse/updates-test</a></li>
+  <li><a href="https://dl.bintray.com/gnu-mcu-eclipse/updates-experimental">https://dl.bintray.com/gnu-mcu-eclipse/updates-experimental</a></li>
+</ul>
+
+<h2 id="sourceforge-redirects">SourceForge redirects</h2>
+
+<p>The physical files may be stored on Bintray, but the official URL addresses to be used for installs/updates will remain on SourceForge, since SourceForge provides a convenient redirect solution:</p>
+
+<ul>
+  <li><a href="https://gnu-mcu-eclipse.sourceforge.io/updates">https://gnu-mcu-eclipse.sourceforge.io/updates</a></li>
+  <li><a href="https://gnu-mcu-eclipse.sourceforge.io/updates-test">https://gnu-mcu-eclipse.sourceforge.io/updates-test</a></li>
+  <li><a href="https://gnu-mcu-eclipse.sourceforge.io/updates-experimental">https://gnu-mcu-eclipse.sourceforge.io/updates-experimental</a></li>
+</ul>
+
+<p>For compatibility reasons, the old URLs will continue to be active and maintained, being redirected to the same Bintray locations:</p>
+
+<ul>
+  <li><a href="http://gnuarmeclipse.sourceforge.net/updates">http://gnuarmeclipse.sourceforge.net/updates</a></li>
+  <li><a href="http://gnuarmeclipse.sourceforge.net/updates-test">http://gnuarmeclipse.sourceforge.net/updates-test</a></li>
+</ul>
+
+<h2 id="expected-issues">Expected issues</h2>
+
+<p>This change is expected to have no negative consequences on existing Eclipse installations. Enterprise networks with absurd security limitations which prevented direct access to the update site and required manual downloads of the release archives may (or may not…) have a better chance for normal Eclipse install/update.</p>
+
+<p>The change in the public URL should be seamless, with all future plug-ins versions to automatically point to the new URLs.</p>
+
+<p>
+<em>
+<strong>Many thanks to all those who use this project!</strong>
+</em>
+</p>
 
 
 <hr class="post-footer"/>
 <p class="post-footer">
 Posted in
 
-<strong>releases</strong>, <strong>plugins</strong> and tagged
+<strong>news</strong>, <strong>project</strong> and tagged
 
-<strong>gnu</strong>, <strong>arm</strong>, <strong>eclipse</strong>, <strong>cmsis</strong>, <strong>qemu</strong>.
-</br>Last modified on Fri Oct  2 16:53:50 2015 UTC.
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2015/08/19/plugins-v2.9.3-201508190739-released/" data-layout="button"></div>
+<strong>featured</strong>, <strong>sourceforge</strong>, <strong>bintray</strong>, <strong>downloads</strong>, <strong>update</strong>.
+</br>Last modified on Tue May  2 11:22:52 2017 UTC.
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/blog/2017/05/02/sourceforge-to-bintray-migration/" data-layout="button"></div>
 </p>
 
 
