@@ -109,7 +109,13 @@
 <a href="#debug"><span class="tocnumber">2</span> <span class="toctext">Debug</span></a>
 </li>
 <li class="toc_level-1 toc_section-3">
-<a href="#debug-with-cdt-sources"><span class="tocnumber">3</span> <span class="toctext">Debug with CDT sources</span></a>
+<a href="#debug-options"><span class="tocnumber">3</span> <span class="toctext">Debug options</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#plug-ins-cache"><span class="tocnumber">4</span> <span class="toctext">Plug-ins cache</span></a>
+</li>
+<li class="toc_level-1 toc_section-5">
+<a href="#debug-with-cdt-sources"><span class="tocnumber">5</span> <span class="toctext">Debug with CDT sources</span></a>
 </li>
 </ul>
 </td>
@@ -263,12 +269,22 @@ ilg.gnuarmeclipse.codered/debug=true
 
 <p>Be sure the target platform is the Running Platform, otherwise starting the debug session fails.</p>
 
-<p>The location of the new Eclipse folder is:</p>
+<h2 id="debug-options">Debug options</h2>
+
+<p>as seen before, the debug options are grouped in a file and passed to Eclipse using the <code class="highlighter-rouge">-debug &lt;name&gt;</code> option.</p>
+
+<h2 id="plug-ins-cache">Plug-ins cache</h2>
+
+<p>When starting debug sessions from within Eclipse, a copy of the run-time is kept under</p>
 
 <div class="highlighter-rouge">
 <pre class="highlight"><code>${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/Eclipse GNU ARM Plug-ins
 </code></pre>
 </div>
+
+<p>For unknown reasons, some changes in the source code (like changing properties files) do not trigger a rebuild, and it is normally not possible to test these changes.</p>
+
+<p>The workaround I found was to remove this folder, and Eclipse will recreate it before the next run.</p>
 
 <h2 id="debug-with-cdt-sources">Debug with CDT sources</h2>
 
@@ -321,7 +337,7 @@ ilg.gnuarmeclipse.codered/debug=true
 
 
 <hr class="page-footer">
-<p class="page-footer">Last modified on Wed Feb 22 21:14:39 2017 UTC.</p>
+<p class="page-footer">Last modified on Wed May  3 21:29:46 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/build-procedure/" data-layout="button"></div>
 
 
