@@ -9,14 +9,14 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>GNU ARM Eclipse Developer page</title>
+  <title>ilg.gnumcueclipse.managedbuild.cross.riscv - persistent values & toolchain ids</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="GNU ARM Eclipse Developer page" />
+  <meta property="og:title" content="ilg.gnumcueclipse.managedbuild.cross.riscv - persistent values & toolchain ids" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
-  <meta property="article:published_time" content="2015-09-10">
+  <meta property="article:published_time" content="2017-05-12">
 
 
 
@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201702222107" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201702222107" media="print">
 
-  <link rel="canonical" href="/developer/">
+  <link rel="canonical" href="/developer/preferences/ilg.gnumcueclipse.managedbuild.cross.riscv/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -89,7 +89,7 @@
 <section id="main-content">
 
 
-<h1 class="page-title">GNU ARM Eclipse Developer page</h1>
+<h1 class="page-title">ilg.gnumcueclipse.managedbuild.cross.riscv - persistent values & toolchain ids</h1>
 
 
 <div id="toc-container">
@@ -102,172 +102,112 @@
 </div>
 <ul>
 <li class="toc_level-1 toc_section-1">
-<a href="#under-the-hood"><span class="tocnumber">1</span> <span class="toctext">Under the hood</span></a>
-<ul>
-<li class="toc_level-2 toc_section-2">
-<a href="#runtime-preferences"><span class="tocnumber">1.1</span> <span class="toctext">Runtime preferences</span></a>
+<a href="#the-build-tools-path"><span class="tocnumber">1</span> <span class="toctext">The build tools path</span></a>
 </li>
-<li class="toc_level-2 toc_section-3">
-<a href="#debugging-options"><span class="tocnumber">1.2</span> <span class="toctext">Debugging options</span></a>
+<li class="toc_level-1 toc_section-2">
+<a href="#the-default-toolchain"><span class="tocnumber">2</span> <span class="toctext">The default toolchain</span></a>
 </li>
-<li class="toc_level-2 toc_section-4">
-<a href="#gnu-arm-eclipse-extension-points"><span class="tocnumber">1.3</span> <span class="toctext">GNU ARM Eclipse extension points</span></a>
+<li class="toc_level-1 toc_section-3">
+<a href="#toolchain-paths"><span class="tocnumber">3</span> <span class="toctext">Toolchain paths</span></a>
 </li>
-</ul>
+<li class="toc_level-1 toc_section-4">
+<a href="#toolchain-ids"><span class="tocnumber">4</span> <span class="toctext">Toolchain IDs</span></a>
 </li>
 <li class="toc_level-1 toc_section-5">
-<a href="#miscellaneous"><span class="tocnumber">2</span> <span class="toctext">Miscellaneous</span></a>
-</li>
-<li class="toc_level-1 toc_section-6">
-<a href="#how-to-build"><span class="tocnumber">3</span> <span class="toctext">How to build</span></a>
-</li>
-<li class="toc_level-1 toc_section-7">
-<a href="#hardware"><span class="tocnumber">4</span> <span class="toctext">Hardware</span></a>
-</li>
-<li class="toc_level-1 toc_section-8">
-<a href="#references"><span class="tocnumber">5</span> <span class="toctext">References</span></a>
-<ul>
-<li class="toc_level-2 toc_section-9">
-<a href="#eclipse"><span class="tocnumber">5.1</span> <span class="toctext">Eclipse</span></a>
-</li>
-<li class="toc_level-2 toc_section-10">
-<a href="#other"><span class="tocnumber">5.2</span> <span class="toctext">Other</span></a>
-</li>
-<li class="toc_level-2 toc_section-11">
-<a href="#installers"><span class="tocnumber">5.3</span> <span class="toctext">Installers</span></a>
-</li>
-<li class="toc_level-2 toc_section-12">
-<a href="#references-to-gnu-arm-eclipse"><span class="tocnumber">5.4</span> <span class="toctext">References to GNU ARM Eclipse</span></a>
-</li>
-<li class="toc_level-2 toc_section-13">
-<a href="#sites-for-articles"><span class="tocnumber">5.5</span> <span class="toctext">Sites for articles</span></a>
-</li>
-</ul>
-</li>
-<li class="toc_level-1 toc_section-14">
-<a href="#releases"><span class="tocnumber">6</span> <span class="toctext">Releases</span></a>
+<a href="#defaults"><span class="tocnumber">5</span> <span class="toctext">Defaults</span></a>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</div><h2 id="under-the-hood">Under the hood</h2>
+</div><h2 id="the-build-tools-path">The build tools path</h2>
 
-<h3 id="runtime-preferences">Runtime preferences</h3>
+<p>The build tools path preference is:</p>
 
-<ul>
-  <li><a href="/developer/eclipse/runtime-preferences">How Eclipse runtime preferences and defaults work</a></li>
-  <li><a href="/developer/preferences/ilg.gnuarmeclipse.managedbuild.cross">ilg.gnuarmeclipse.managedbuild.cross</a> persistent values &amp; toolchain ids</li>
-  <li><a href="/developer/preferences/ilg.gnumcueclipse.managedbuild.cross.riscv">ilg.gnumcueclipse.managedbuild.cross.riscv</a> persistent values &amp; toolchain ids</li>
-  <li><a href="/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.jlink">ilg.gnuarmeclipse.debug.gdbjtag.jlink</a> persistent values (workspace)</li>
-  <li><a href="/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.openocd">ilg.gnuarmeclipse.debug.gdbjtag.openocd</a> persistent values (workspace)</li>
-  <li><a href="/developer/preferences/ilg.gnuarmeclipse.debug.gdbjtag.qemu">ilg.gnuarmeclipse.debug.gdbjtag.qemu</a> persistent values (workspace)</li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>buildTools.path=C:/Program Files/GNU MCU Eclipse/Build Tools/bin
+</code></pre>
+</div>
 
-<h3 id="debugging-options">Debugging options</h3>
+<p>This value can be stored in all persistent scopes (Eclipse, workspace, project).</p>
 
-<ul>
-  <li><a href="/developer/eclipse/debugging-options">How Eclipse debugging options work</a></li>
-  <li><a href="https://wiki.eclipse.org/FAQ_How_do_I_use_the_platform_debug_tracing_facility">Platform tracing facility</a></li>
-</ul>
+<h2 id="the-default-toolchain">The default toolchain</h2>
 
-<h3 id="gnu-arm-eclipse-extension-points">GNU ARM Eclipse extension points</h3>
+<p>The default toolchain preference is:</p>
 
-<p>The GNU ARM Eclipse plug-ins define several custom extension points, to facilitate the integration with third-party plug-ins.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>toolchain.name=RISC-V GCC/Newlib
+</code></pre>
+</div>
 
-<ul>
-  <li><a href="/developer/extension/ilg.gnuarmeclipse.debug.core.cprojectextra">ilg.gnuarmeclipse.debug.core.cprojectExtra</a> (C Project Extra Data Manager)</li>
-  <li><a href="/developer/extension/ilg.gnuarmeclipse.debug.core.svdpath">ilg.gnuarmeclipse.debug.core.svdPath</a> (SVD Path Manager)</li>
-</ul>
+<p>It is stored in the Eclipse scope.</p>
 
-<h2 id="miscellaneous">Miscellaneous</h2>
+<h2 id="toolchain-paths">Toolchain paths</h2>
 
-<ul>
-  <li><a href="/developer/eclipse/tips-tricks">Eclipse Development Tips &amp; Tricks</a></li>
-  <li><a href="/developer/pad-file">PAD file</a></li>
-</ul>
+<p>The toolchain path preferences are:</p>
 
-<h2 id="how-to-build">How to build</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>toolchain.path.2032619395=/Users/ilg/opt/riscv64-unknown-elf-gcc-20170503-x86_64-apple-darwin/bin
+</code></pre>
+</div>
 
-<p>How to build the plug-ins from sources and publish them.</p>
+<p>The toolchain ID is described below.</p>
 
-<ul>
-  <li><a href="/developer/build-prerequisites">Prerequisites</a></li>
-  <li><a href="/developer/build-procedure">How to build</a></li>
-  <li><a href="/developer/publish-procedure">How to publish</a></li>
-  <li><a href="/developer/development-environment">Development environment</a></li>
-  <li><a href="/developer/change-log">Change log</a> (<a href="/developer/change-log/2014">2014</a>) (<a href="/developer/change-log/2013">2013</a>) (<a href="/developer/change-log/v05x">v0.5.x</a>)</li>
-</ul>
+<p>Currently these preferences are stored in the Eclipse scope.</p>
 
-<h2 id="hardware">Hardware</h2>
+<h2 id="toolchain-ids">Toolchain IDs</h2>
 
-<ul>
-  <li><a href="/developer/j-link-stm32-boards">J-Link and STM32 boards</a> (how to build a cable to connect the J-Link to STM32 DISCOVERY and NUCLEO boards)</li>
-</ul>
+<p>The numerical value in the path property is the toolchain ID, computed as the absolute value of the <strong>Java hash of the name string</strong>.</p>
 
-<h2 id="references">References</h2>
+<p>The list of supported toolchains and their IDs:</p>
 
-<h3 id="eclipse">Eclipse</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RISC-V GCC/Newlib</td>
+      <td>2032619395</td>
+    </tr>
+    <tr>
+      <td>Custom</td>
+      <td>2029746065</td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li><a href="http://wiki.eclipse.org/Main_Page">Eclipse.org Wiki</a></li>
-  <li><a href="http://wiki.eclipse.org/User_Interface_Guidelines">Eclipse User Interface Guidelines</a></li>
-  <li><a href="http://www.eclipse.org/swt/widgets/">SWT Widgets</a></li>
-  <li><a href="http://help.eclipse.org/luna/index.jsp">Eclipse Luna documentation</a></li>
-  <li><a href="http://help.eclipse.org/luna/topic/org.eclipse.cdt.doc.isv/guide/dsf/intro/dsf_programming_intro.html">Introduction to Programming with DSF</a></li>
-  <li><a href="http://wiki.eclipse.org/CDT/cdt-debug-dsf-gdb-extensibility">CDT DSF debug</a></li>
-</ul>
+<h2 id="defaults">Defaults</h2>
 
-<h3 id="other">Other</h3>
+<p>All persistent values can be given defaults, for example:</p>
 
-<ul>
-  <li><a href="http://www.keil.com/pack/doc/cmsis/General/html/index.html">ARM CMSIS</a></li>
-  <li><a href="http://community.arm.com/groups/tools/blog">ARM Connected Community: ARM &amp; Keil Tools</a></li>
-  <li><a href="https://groups.google.com/forum/#!forum/cmsis">Google Groups: CMSIS</a></li>
-  <li><a href="https://sourceforge.net/p/forge/site-support/6343/">Forge site support #6343 Project description not propagated to all tools</a></li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.managedbuild.cross.riscv/buildTools.path=C:/Program Files/GNU MCU Eclipse/Build Tools/bin
 
-<h3 id="installers">Installers</h3>
+ilg.gnumcueclipse.managedbuild.cross.riscv/toolchain.name=RISC-V GCC/Newlib
+ilg.gnumcueclipse.managedbuild.cross.riscv/toolchain.path.2032619395=/Users/ilg/opt/riscv64-unknown-elf-gcc-20170503-x86_64-apple-darwin/bin
+</code></pre>
+</div>
 
-<ul>
-  <li><a href="http://nsis.sourceforge.net/Main_Page">NSIS</a></li>
-  <li><a href="http://blogs.msdn.com/b/windows_installer_team/archive/2009/09/02/authoring-a-single-package-for-per-user-or-per-machine-installation-context-in-windows-7.aspx">Single Package</a></li>
-</ul>
+<p>Defaults only properties:</p>
 
-<h3 id="references-to-gnu-arm-eclipse">References to GNU ARM Eclipse</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code># One of the following will be set to toolchain.search.path.1287942917.
+toolchain.search.path.windows.1287942917=${user.home}/AppData/Local/Programs/GNU MCU Eclipse
+toolchain.search.path.linux.1287942917=${user.home}/opt:/usr/opt
+toolchain.search.path.osx.1287942917=${user.home}/Applications/GNU MCU Eclipse:${user.home}/local:/usr/local
 
-<ul>
-  <li><a href="http://www.amazon.com/Getting-Started-STM32-Nucleo-Development-ebook/dp/B00WBU4BPW">Getting Started With STM32 Nucleo Development</a></li>
-</ul>
-
-<h3 id="sites-for-articles">Sites for articles</h3>
-
-<ul>
-  <li><a href="https://community.arm.com/welcome">ARMConnected Community</a> - login, Create a new Blog Post, A place’s blog, Software Development Tools, copy/paste markup from site, H2, update links, enter tags</li>
-  <li><a href="http://www.element14.com/community/groups/open-source-software">Element14</a> - login, the Open Source Software; Write a blog post, copy/paste from ARM, load images, enter tags</li>
-  <li><a href="https://embdev.net/user/login">EmbDev</a> - New Topic to <a href="https://embdev.net/forum/arm-gcc">Forum: ARM programming with GCC/GNU tools</a>; no pictures; underline headers (no BBCs)</li>
-  <li><a href="http://www.eevblog.com/forum/login/">EEVblog</a> - <a href="http://www.eevblog.com/forum/microcontrollers/">Microcontrollers &amp; FPGAs</a>; New topic, BBC codes (bold titles, image links to web article), Notify</li>
-  <li><a href="http://stm32duino.com/viewforum.php?f=41">Arduino</a> - New Topic, copy/paste content from EEVblog; disable signature, enable notifications</li>
-  <li><a href="https://community.st.com/community/stm32-community">STM32 MCUs Community</a> - Sign in to forum, New Discussion, copy/paste HTML from Arduino (a real mess)</li>
-</ul>
-
-<p>BBC codes:</p>
-<ul>
-  <li><code class="highlighter-rouge">[img width=30]http:⁄⁄wiki.simplemachines.org/smf/images/1/19/Button_media.png[/img]</code></li>
-  <li><code class="highlighter-rouge">[url=http://simplemachines.org]text or more BB Code[/url]</code></li>
-</ul>
-
-<h2 id="releases">Releases</h2>
-
-<ul>
-  <li><a href="/developer/releases">releases</a></li>
-</ul>
+# Set to false to disable the folder check.
+global.toolchain.path.strict=true
+global.buildTools.path.strict=true
+workspace.toolchain.path.strict=true
+workspace.buildTools.path.strict=true
+</code></pre>
+</div>
 
 
 <hr class="page-footer"/>
 <p class="page-footer">Last modified on Fri May 12 15:01:31 2017 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/" data-layout="button"></div>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnumcueclipse.managedbuild.cross.riscv/" data-layout="button"></div>
 
 
 </section>
