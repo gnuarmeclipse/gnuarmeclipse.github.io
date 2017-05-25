@@ -9,10 +9,10 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>Eclipse debugging options</title>
+  <title>The ilg.gnumcueclipse.debug.core.svdPath extension point</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="Eclipse debugging options" />
+  <meta property="og:title" content="The ilg.gnumcueclipse.debug.core.svdPath extension point" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201702222107" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201702222107" media="print">
 
-  <link rel="canonical" href="/developer/eclipse/debugging-options/">
+  <link rel="canonical" href="/developer/extension/ilg.gnumcueclipse.debug.core.svdpath/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -89,62 +89,94 @@
 <section id="main-content">
 
 
-<h1 class="page-title">Eclipse debugging options</h1>
+<h1 class="page-title">The ilg.gnumcueclipse.debug.core.svdPath extension point</h1>
 
 
-<h2 id="start-eclipse-in-debugging-mode">Start Eclipse in debugging mode</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#purpose"><span class="tocnumber">1</span> <span class="toctext">Purpose</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#definition"><span class="tocnumber">2</span> <span class="toctext">Definition</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#api"><span class="tocnumber">3</span> <span class="toctext">API</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#where-is-this-extension-point-used"><span class="tocnumber">4</span> <span class="toctext">Where is this extension point used?</span></a>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="purpose">Purpose</h2>
 
-<p>To start Eclipse with all tracing messages enabled, add <code class="highlighter-rouge">-debug &lt;file&gt;</code> to the command line:</p>
+<p>This extension point provides decoupled access to a SVD file from the debug plug-ins.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug https://github.com/gnuarmeclipse/plug-ins/raw/develop/debug.options
+<p>It must be implemented by distributions that include SVD files managed outside CMSIS-PACK.</p>
+
+<h2 id="definition">Definition</h2>
+
+<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.core/schema/svd_path.exsd">ilg.gnumcueclipse.debug.core/schema/svd_path.exsd</a>.</p>
+
+<h2 id="api">API</h2>
+
+<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.core/src/ilg/gnumcueclipse/debug/core/data/ISVDPathManager.java">ISVDPathManager</a>.</p>
+
+<p>The only function required is:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="n">IPath</span> <span class="nf">getSVDAbsolutePath</span><span class="o">(</span><span class="n">String</span> <span class="n">deviceVendorId</span><span class="o">,</span> <span class="n">String</span> <span class="n">deviceName</span><span class="o">);</span>
 </code></pre>
 </div>
 
-<p>Alternatively, you can copy the files locally, edit it and point Eclipse to it:</p>
+<h2 id="where-is-this-extension-point-used">Where is this extension point used?</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug ${HOME}/tmp/debug.options
-</code></pre>
-</div>
+<p>The svdPath extension point is used in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.gdbjtag/src/ilg/gnumcueclipse/debug/gdbjtag/data/SVDPathManagerProxy.java">ilg.gnumcueclipse.debug.gdbjtag.data/SVDPathManagerProxy.java</a>, called from <code class="highlighter-rouge">SVDUtils.getTree(String deviceVendorId, String deviceName)</code>:</p>
 
-<p>For convenience, you can also copy the file as <code class="highlighter-rouge">Eclipse.app/Contents/MacOS/.options</code> and start Eclipse without the file name:</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="c1">// Try to get the SVD from a custom provider, like in DAVE.</span>
+<span class="n">SVDPathManagerProxy</span> <span class="n">pathManager</span> <span class="o">=</span> <span class="n">SVDPathManagerProxy</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">pathManager</span><span class="o">.</span><span class="na">getSVDAbsolutePath</span><span class="o">(</span><span class="n">deviceVendorId</span><span class="o">,</span> <span class="n">deviceName</span><span class="o">);</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug
-</code></pre>
-</div>
+<span class="k">if</span> <span class="o">(</span><span class="n">path</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
 
-<h2 id="how-eclipse-tracing-works">How Eclipse tracing works?</h2>
+    <span class="c1">// Try to get the SVD from the CMSIS Packs.</span>
+    <span class="n">IPacksDataManager</span> <span class="n">dataManager</span> <span class="o">=</span> <span class="n">PacksDataManagerFactoryProxy</span>
+                <span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">createDataManager</span><span class="o">();</span>
 
-<p>Individual Eclipse plug-ins check various properties to display debugging trace messages.</p>
+    <span class="k">if</span> <span class="o">(</span><span class="n">dataManager</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">CoreException</span><span class="o">(</span>
+                <span class="k">new</span> <span class="nf">Status</span><span class="o">(</span><span class="n">Status</span><span class="o">.</span><span class="na">ERROR</span><span class="o">,</span> <span class="n">Activator</span><span class="o">.</span><span class="na">PLUGIN_ID</span><span class="o">,</span>
+                        <span class="s">"Peripherals descriptions are available only via the Packs plug-in."</span><span class="o">));</span>
+    <span class="o">}</span>
 
-<p>The default properties are defined in <strong>.options</strong> files located in each plug-in folder.</p>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">dataManager</span><span class="o">.</span><span class="na">getSVDAbsolutePath</span><span class="o">(</span><span class="n">deviceVendorId</span><span class="o">,</span> <span class="n">deviceName</span><span class="o">);</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>org.eclipse.cdt.core/debug=false
-
-# ASTCache debugging
-org.eclipse.cdt.core/debug/ASTCache=false
-</code></pre>
-</div>
-
-<p>The actual values of the debug options are programatically available via:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">String</span> <span class="n">Platform</span><span class="o">.</span><span class="na">getDebugOption</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">);</span>
-</code></pre>
-</div>
-
-<p>Example:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">DEBUG</span><span class="o">=</span> <span class="s">"true"</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">Platform</span><span class="o">.</span><span class="na">getDebugOption</span><span class="o">(</span><span class="s">"org.eclipse.cdt.core/debug/ASTCache"</span><span class="o">));</span>
-<span class="o">...</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">DEBUG</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"message"</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">path</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">CoreException</span><span class="o">(</span>
+                <span class="k">new</span> <span class="nf">Status</span><span class="o">(</span><span class="n">Status</span><span class="o">.</span><span class="na">ERROR</span><span class="o">,</span> <span class="n">Activator</span><span class="o">.</span><span class="na">PLUGIN_ID</span><span class="o">,</span>
+                        <span class="s">"There are no peripherals descriptions available, install the required packs."</span><span class="o">));</span>
+    <span class="o">}</span>
 <span class="o">}</span>
 </code></pre>
 </div>
 
+<p>As seen above, the extension point has precedence over any CMSIS-PACK definitions, so, if it is defined, and it returns a SVD path, the returned path is used to read the SVD file.</p>
+
+<p>The content of the SVD file is further used to populate the Peripherals view in the debug plug-ins.</p>
+
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu May 25 11:05:48 2017 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/eclipse/debugging-options/" data-layout="button"></div>
+<p class="page-footer">Last modified on Thu May 25 11:40:23 2017 UTC.</p>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/extension/ilg.gnumcueclipse.debug.core.svdpath/" data-layout="button"></div>
 
 
 </section>
