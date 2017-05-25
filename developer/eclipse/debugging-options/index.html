@@ -106,7 +106,7 @@
 </code></pre>
 </div>
 
-<p>For convenience, you can also copy into the Eclipse folder (for example as <code class="highlighter-rouge">Eclipse.app/Contents/MacOS/.options</code>) and start Eclipse without the file name:</p>
+<p>For convenience, you can also copy into the file as <code class="highlighter-rouge">.options</code> Eclipse folder (for example as <code class="highlighter-rouge">Eclipse.app/Contents/MacOS/.options</code>) and start Eclipse without the file name:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug
 </code></pre>
@@ -137,7 +137,7 @@ org.eclipse.cdt.core/debug/ASTCache=false
 
 <p>Example:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">DEBUG</span><span class="o">=</span> <span class="s">"true"</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">Platform</span><span class="o">.</span><span class="na">getDebugOption</span><span class="o">(</span><span class="s">"org.eclipse.cdt.core/debug/ASTCache"</span><span class="o">));</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">DEBUG</span> <span class="o">=</span> <span class="s">"true"</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">Platform</span><span class="o">.</span><span class="na">getDebugOption</span><span class="o">(</span><span class="s">"org.eclipse.cdt.core/debug/ASTCache"</span><span class="o">));</span>
 <span class="o">...</span>
 <span class="k">if</span> <span class="o">(</span><span class="n">DEBUG</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"message"</span><span class="o">);</span>
@@ -147,7 +147,7 @@ org.eclipse.cdt.core/debug/ASTCache=false
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu May 25 12:01:42 2017 UTC.</p>
+<p class="page-footer">Last modified on Thu May 25 12:05:38 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/eclipse/debugging-options/" data-layout="button"></div>
 
 
