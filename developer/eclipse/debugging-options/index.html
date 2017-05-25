@@ -100,13 +100,13 @@
 </code></pre>
 </div>
 
-<p>Alternatively, you can copy the files locally, edit it and point Eclipse to it:</p>
+<p>Alternatively, you can copy the file locally, edit it and point Eclipse to it:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug ${HOME}/tmp/debug.options
 </code></pre>
 </div>
 
-<p>For convenience, you can also copy the file as <code class="highlighter-rouge">Eclipse.app/Contents/MacOS/.options</code> and start Eclipse without the file name:</p>
+<p>For convenience, you can also copy into the Eclipse folder (for example as <code class="highlighter-rouge">Eclipse.app/Contents/MacOS/.options</code>) and start Eclipse without the file name:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug
 </code></pre>
@@ -116,7 +116,9 @@
 
 <p>Individual Eclipse plug-ins check various properties to display debugging trace messages.</p>
 
-<p>The default properties are defined in <strong>.options</strong> files located in each plug-in folder.</p>
+<h3 id="default-debug-values">Default debug values</h3>
+
+<p>The properties not defined in the file given to <code class="highlighter-rouge">-debug</code> (or in Eclipse <code class="highlighter-rouge">.options</code>) default to the values defined in <strong>.options</strong> files located in each plug-in folder (generally set to <code class="highlighter-rouge">false</code>).</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>org.eclipse.cdt.core/debug=false
 
@@ -124,6 +126,8 @@
 org.eclipse.cdt.core/debug/ASTCache=false
 </code></pre>
 </div>
+
+<h3 id="programatic-access">Programatic access</h3>
 
 <p>The actual values of the debug options are programatically available via:</p>
 
@@ -143,7 +147,7 @@ org.eclipse.cdt.core/debug/ASTCache=false
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu May 25 11:05:48 2017 UTC.</p>
+<p class="page-footer">Last modified on Thu May 25 12:01:42 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/eclipse/debugging-options/" data-layout="button"></div>
 
 
