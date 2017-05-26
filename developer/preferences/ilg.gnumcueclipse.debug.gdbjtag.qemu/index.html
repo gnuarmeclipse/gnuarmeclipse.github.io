@@ -9,10 +9,10 @@
 
   <link rel="alternate" type="application/rss+xml" title="GNU ARM Eclipse" href="/feed.xml" />
 
-  <title>Eclipse debugging options</title>
+  <title>ilg.gnumcueclipse.debug.gdbjtag.qemu - persistent values</title>
   <meta name="description" content="A family of Eclipse CDT extensions and tools for GNU ARM development">
 
-  <meta property="og:title" content="Eclipse debugging options" />
+  <meta property="og:title" content="ilg.gnumcueclipse.debug.gdbjtag.qemu - persistent values" />
   <meta property="og:site_name" content="GNU ARM Eclipse" />
 
 
@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css?201702222107" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/print.css?201702222107" media="print">
 
-  <link rel="canonical" href="/developer/eclipse/debugging-options/">
+  <link rel="canonical" href="/developer/preferences/ilg.gnumcueclipse.debug.gdbjtag.qemu/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
@@ -89,74 +89,137 @@
 <section id="main-content">
 
 
-<h1 class="page-title">Eclipse debugging options</h1>
+<h1 class="page-title">ilg.gnumcueclipse.debug.gdbjtag.qemu - persistent values</h1>
 
 
-<h2 id="start-eclipse-in-debugging-mode">Start Eclipse in debugging mode</h2>
+<div id="toc-container">
+<table class="toc" id="toc">
+<tbody>
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toc_level-1 toc_section-1">
+<a href="#the-workspace-storage"><span class="tocnumber">1</span> <span class="toctext">The workspace storage</span></a>
+</li>
+<li class="toc_level-1 toc_section-2">
+<a href="#properties"><span class="tocnumber">2</span> <span class="toctext">Properties</span></a>
+</li>
+<li class="toc_level-1 toc_section-3">
+<a href="#launcher-defaults"><span class="tocnumber">3</span> <span class="toctext">Launcher defaults</span></a>
+</li>
+<li class="toc_level-1 toc_section-4">
+<a href="#install-defaults"><span class="tocnumber">4</span> <span class="toctext">Install defaults</span></a>
+<ul>
+<li class="toc_level-2 toc_section-5">
+<a href="#the-executable-name"><span class="tocnumber">4.1</span> <span class="toctext">The executable name</span></a>
+</li>
+<li class="toc_level-2 toc_section-6">
+<a href="#the-executable-location"><span class="tocnumber">4.2</span> <span class="toctext">The executable location</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="the-workspace-storage">The workspace storage</h2>
 
-<p>To start Eclipse with all tracing messages enabled, add <code class="highlighter-rouge">-debug &lt;file&gt;</code> to the command line:</p>
+<p>The QEMU setting are persistent for each workspace and the storage is located at:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug https://github.com/gnuarmeclipse/plug-ins/raw/develop/debug.options
+<div class="highlighter-rouge"><pre class="highlight"><code>.../workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ilg.gnumcueclipse.debug.gdbjtag.qemu.prefs
 </code></pre>
 </div>
 
-<p>Alternatively, you can copy the file locally, edit it and point Eclipse to it:</p>
+<p>The properties in this file define the device name and all other setting from the interface.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug ${HOME}/tmp/debug.options
+<h2 id="properties">Properties</h2>
+<p>The persistent properties are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gdb.client.commands=set mem inaccessible-by-default off
+gdb.client.executable=${cross_prefix}gdb${cross_suffix}
+gdb.client.other=
+gdb.qemu.boardName=STM32F4-Discovery
+gdb.qemu.deviceName=STM32F407VG
+gdb.qemu.doDebugInRam=false
+gdb.qemu.doInitialReset=false
+gdb.qemu.doPreRunReset=true
+gdb.qemu.enableSemihosting=true
+gdb.qemu.init.other=
+gdb.qemu.isVerbose=false
+gdb.qemu.preRun.other=
+gdb.server.doStart=true
+gdb.server.executable=${qemu_path}/${qemu_executable}
+gdb.server.other=
 </code></pre>
 </div>
 
-<p>For convenience, you can also copy into the file as <code class="highlighter-rouge">.options</code> Eclipse folder (for example as <code class="highlighter-rouge">Eclipse.app/Contents/MacOS/.options</code>) and start Eclipse without the file name:</p>
+<h2 id="launcher-defaults">Launcher defaults</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.../Eclipse.app/Contents/MacOS/eclipse -debug
+<p>The following defaults are available to configure the QEMU debug launcher:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.debug.gdbjtag.qemu/gdb.server.executable=${qemu_path}/${qemu_executable}
+ilg.gnumcueclipse.debug.gdbjtag.qemu/gdb.client.executable=${cross_prefix}gdb${cross_suffix}
 </code></pre>
 </div>
 
-<h2 id="how-eclipse-tracing-works">How Eclipse tracing works?</h2>
+<p>Defining these properties will provide the desired default values to the <strong>Debugging</strong> or <strong>Startup</strong> tabs.</p>
 
-<p>Individual Eclipse plug-ins check various properties to display debugging trace messages.</p>
-
-<h3 id="default-debug-values">Default debug values</h3>
-
-<p>The properties not defined in the file given to <code class="highlighter-rouge">-debug</code> (or in Eclipse <code class="highlighter-rouge">.options</code>) default to the values defined in <strong>.options</strong> files located in each plug-in folder (generally set to <code class="highlighter-rouge">false</code>).</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>org.eclipse.cdt.core/debug=false
-
-# ASTCache debugging
-org.eclipse.cdt.core/debug/ASTCache=false
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.debug.gdbjtag.qemu/tab.main.checkProgram=false
 </code></pre>
 </div>
 
-<h3 id="programatic-access">Programatic access</h3>
+<p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
 
-<p>The actual values of the debug options are programatically available via:</p>
+<h2 id="install-defaults">Install defaults</h2>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">String</span> <span class="n">Platform</span><span class="o">.</span><span class="na">getDebugOption</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">);</span>
+<p>Defining these two properties will provide default values to the corresponding fields in the <strong>Run/Debug</strong> → <strong>QEMU</strong> preferences page. The same variables are visible in the <strong>Run/Debug</strong> → <strong>String Substitution</strong> page.</p>
+
+<h3 id="the-executable-name">The executable name</h3>
+
+<p>The plug-in will use this definition as default for <strong>${qemu_executable}</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.debug.gdbjtag.qemu/executable.name=qemu-system-gnuarmeclipse
 </code></pre>
 </div>
 
-<p>Example:</p>
+<h3 id="the-executable-location">The executable location</h3>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">DEBUG</span> <span class="o">=</span> <span class="s">"true"</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">Platform</span><span class="o">.</span><span class="na">getDebugOption</span><span class="o">(</span><span class="s">"org.eclipse.cdt.core/debug/ASTCache"</span><span class="o">));</span>
-<span class="o">...</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">DEBUG</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"message"</span><span class="o">);</span>
-<span class="o">}</span>
+<p>The plug-in will take a best effort approach to find a location to be used as default for <strong>${qemu_path}</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.debug.gdbjtag.qemu/install.folder=/Applications/GNU ARM Eclipse/QEMU/2.2.92-201504041609-dev/bin
 </code></pre>
 </div>
 
-<p>A more elaborated solution is to derive the <code class="highlighter-rouge">Activator</code> class from <code class="highlighter-rouge">ilg.gnumcueclipse.core.AbstractUIActivator</code> and use the <code class="highlighter-rouge">isDebugging()</code> method:</p>
+<p>If this preference is defined and the executable is there, the plug-in will use it.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>if (Activator.getInstance().isDebugging()) {
-	System.out.println("message");
-}
+<p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\GNU ARM Eclipse\QEMU</strong> subkey, and the executable is found there, the plug-in will use it.</p>
+
+<p>Otherwise the plug-in will try a folder search.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>search.path=\
+${user.home}/Applications/GNU ARM Eclipse/QEMU:\
+${user.home}/local/GNU ARM Eclipse/QEMU:\
+${user.home}/local/gnuarmeclipse/QEMU:\
+/Applications/GNU ARM Eclipse/QEMU:\
+/opt/local:\
+/usr/local
 </code></pre>
 </div>
+
+<p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
+
+<p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/bin/${qemu_executable}</strong>; if multiple such subfolders are found (in case multiple versions), the list of names is ordered lexicographically and the last one is used.</p>
+
+<p>If not found, another test for <strong>folder/bin/${qemu_executable}</strong> is made.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu May 25 15:59:43 2017 UTC.</p>
-<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/eclipse/debugging-options/" data-layout="button"></div>
+<p class="page-footer">Last modified on Fri May 26 10:34:47 2017 UTC.</p>
+<div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnumcueclipse.debug.gdbjtag.qemu/" data-layout="button"></div>
 
 
 </section>
