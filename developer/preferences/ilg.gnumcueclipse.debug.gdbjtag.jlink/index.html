@@ -167,6 +167,8 @@ gdb.server.executable=${jlink_path}/${jlink_gdbserver}
 gdb.server.interface=swd
 gdb.server.other=-singlerun -strict -timeout 0
 gdb.server.speed=1000
+install.folder=...
+executable.name=JLinkGDBServer
 </code></pre>
 </div>
 
@@ -192,7 +194,7 @@ ilg.gnumcueclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
 </code></pre>
 </div>
 
-<p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
+<p>Setting <code class="highlighter-rouge">tab.main.checkProgram</code> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
 
 <h2 id="install-defaults">Install defaults</h2>
 
@@ -200,7 +202,7 @@ ilg.gnumcueclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
 
 <h3 id="the-executable-name">The executable name</h3>
 
-<p>The plug-in will use this definition as default for <strong>${jlink_gdbserver}</strong>.</p>
+<p>The plug-in will use this definition as default for <code class="highlighter-rouge">${jlink_gdbserver}</code>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.debug.gdbjtag.jlink/executable.name=JLinkGDBServer
 </code></pre>
@@ -208,7 +210,7 @@ ilg.gnumcueclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
 
 <h3 id="the-executable-location">The executable location</h3>
 
-<p>The plug-in will take a best effort approach to find a location to be used as default for <strong>{jlink_path}</strong>.</p>
+<p>The plug-in will take a best effort approach to find a location to be used as default for <code class="highlighter-rouge">${jlink_path}</code>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.debug.gdbjtag.jlink/install.folder=/Applications/SEGGER/Jlink
 </code></pre>
@@ -216,7 +218,7 @@ ilg.gnumcueclipse.debug.gdbjtag.jlink/gdb.jlink.enableSwo=true
 
 <p>If this preference is defined and the executable is there, the plug-in will use it.</p>
 
-<p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\SEGGER\J-Link</strong> subkey, and the executable is found there, the plug-in will use it.</p>
+<p>if not, the Windows Registry will be searched. If the <code class="highlighter-rouge">InstallFolder</code> key is found below the <code class="highlighter-rouge">\\SEGGER\\J-Link</code> subkey, and the executable is found there, the plug-in will use it.</p>
 
 <p>Otherwise the plug-in will try a folder search.</p>
 
@@ -226,15 +228,15 @@ ${user.home}/Applications/SEGGER:\
 </code></pre>
 </div>
 
-<p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
+<p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <code class="highlighter-rouge">preferences.ini</code> file are used.</p>
 
-<p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/${jlink_gdbserver}</strong>; if multiple such subfolders are found (in case multiple versions, like J-Link_V494, J-Link_V496), the list of names is ordered lexicographically and the last one is used.</p>
+<p>For each folder in the path, the plug-in tries to identify subfolders which look like <code class="highlighter-rouge">folder/*/${jlink_gdbserver}</code>; if multiple such subfolders are found (in case multiple versions, like J-Link_V494, J-Link_V496), the list of names is ordered lexicographically and the last one is used.</p>
 
-<p>If not found, another test for <strong>folder/${jlink_gdbserver}</strong> is made.</p>
+<p>If not found, another test for <code class="highlighter-rouge">folder/${jlink_gdbserver}</code> is made.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri May 26 10:34:47 2017 UTC.</p>
+<p class="page-footer">Last modified on Tue May 30 18:46:51 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnumcueclipse.debug.gdbjtag.jlink/" data-layout="button"></div>
 
 
@@ -385,6 +387,7 @@ ${user.home}/Applications/SEGGER:\
 <h4 id="developer"><a href="/developer/">Developer</a></h4>
 
 <ul>
+  <li><a href="/developer/">Overview</a></li>
   <li><a href="/developer/build-procedure/">How to build</a></li>
   <li><a href="/developer/publish-procedure/">How to publish</a></li>
   <li><a href="/developer/change-log">Change log</a></li>

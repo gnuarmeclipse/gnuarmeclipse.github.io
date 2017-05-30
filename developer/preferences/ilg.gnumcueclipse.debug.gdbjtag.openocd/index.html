@@ -151,6 +151,8 @@ gdb.openocd.preRunReset.type=halt
 gdb.server.doStart=true
 gdb.server.executable=${openocd_path}/${openocd_executable}
 gdb.server.other=-f board/stm32f4discovery.cfg
+install.folder=...
+executable.name=openocd
 </code></pre>
 </div>
 
@@ -171,7 +173,7 @@ ilg.gnumcueclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discove
 </code></pre>
 </div>
 
-<p>Setting <strong>tab.main.checkProgram</strong> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
+<p>Setting <code class="highlighter-rouge">tab.main.checkProgram</code> to true will check the program name field and disable the Debug button if the program name is not valid.</p>
 
 <h2 id="install-defaults">Install defaults</h2>
 
@@ -179,7 +181,7 @@ ilg.gnumcueclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discove
 
 <h3 id="the-executable-name">The executable name</h3>
 
-<p>The plug-in will use this definition as default for <strong>${openocd_executable}</strong>.</p>
+<p>The plug-in will use this definition as default for <code class="highlighter-rouge">${openocd_executable}</code>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.debug.gdbjtag.openocd/executable.name=openocd
 </code></pre>
@@ -187,7 +189,7 @@ ilg.gnumcueclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discove
 
 <h3 id="the-executable-location">The executable location</h3>
 
-<p>The plug-in will take a best effort approach to find a location to be used as default for <strong>${openocd_path}</strong>.</p>
+<p>The plug-in will take a best effort approach to find a location to be used as default for <code class="highlighter-rouge">${openocd_path}</code>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ilg.gnumcueclipse.debug.gdbjtag.openocd/install.folder=/Applications/GNU ARM Eclipse/OpenOCD/bin
 </code></pre>
@@ -195,7 +197,7 @@ ilg.gnumcueclipse.debug.gdbjtag.openocd/gdb.server.other=-f board/stm32f4discove
 
 <p>If this preference is defined and the executable is there, the plug-in will use it.</p>
 
-<p>if not, the Windows Registry will be searched. If the <strong>InstallFolder</strong> key is found below the <strong>\GNU ARM Eclipse\OpenOCD</strong> subkey, and the executable is found there, the plug-in will use it.</p>
+<p>if not, the Windows Registry will be searched. If the <code class="highlighter-rouge">InstallFolder</code> key is found below the <code class="highlighter-rouge">\\GNU ARM Eclipse\\OpenOCD</code> subkey, and the executable is found there, the plug-in will use it.</p>
 
 <p>Otherwise the plug-in will try a folder search.</p>
 
@@ -209,15 +211,15 @@ ${user.home}/local/gnuarmeclipse/OpenOCD:\
 </code></pre>
 </div>
 
-<p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <strong>preferences.ini</strong> file are used.</p>
+<p>If this preference is defined, the plug-in will use it as search path, otherwise the specific platform defaults available in the <code class="highlighter-rouge">preferences.ini</code> file are used.</p>
 
-<p>For each folder in the path, the plug-in tries to identify subfolders which look like <strong>folder/*/bin/${openocd_executable}</strong>; if multiple such subfolders are found (in case multiple versions, like 0.8.0, 0.9.0-dev), the list of names is ordered lexicographically and the last one is used.</p>
+<p>For each folder in the path, the plug-in tries to identify subfolders which look like <code class="highlighter-rouge">folder/*/bin/${openocd_executable}</code>; if multiple such subfolders are found (in case multiple versions, like 0.8.0, 0.9.0-dev), the list of names is ordered lexicographically and the last one is used.</p>
 
-<p>If not found, another test for <strong>folder/bin/${openocd_executable}</strong> is made.</p>
+<p>If not found, another test for <code class="highlighter-rouge">folder/bin/${openocd_executable}</code> is made.</p>
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Fri May 26 10:34:47 2017 UTC.</p>
+<p class="page-footer">Last modified on Tue May 30 18:46:51 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/preferences/ilg.gnumcueclipse.debug.gdbjtag.openocd/" data-layout="button"></div>
 
 
@@ -368,6 +370,7 @@ ${user.home}/local/gnuarmeclipse/OpenOCD:\
 <h4 id="developer"><a href="/developer/">Developer</a></h4>
 
 <ul>
+  <li><a href="/developer/">Overview</a></li>
   <li><a href="/developer/build-procedure/">How to build</a></li>
   <li><a href="/developer/publish-procedure/">How to publish</a></li>
   <li><a href="/developer/change-log">Change log</a></li>

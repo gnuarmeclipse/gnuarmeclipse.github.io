@@ -129,11 +129,11 @@
 
 <h2 id="definition">Definition</h2>
 
-<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.core/schema/cproject_extra_data.exsd">ilg.gnumcueclipse.debug.core/schema/cproject_extra_data.exsd</a>.</p>
+<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/bundles/ilg.gnumcueclipse.debug.core/schema/cproject_extra_data.exsd">ilg.gnumcueclipse.debug.core/schema/cproject_extra_data.exsd</a>.</p>
 
 <h2 id="api">API</h2>
 
-<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.core/src/ilg/gnumcueclipse/debug/core/data/ICProjectExtraDataManager.java">ICProjectExtraDataManager</a>.</p>
+<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/bundles/ilg.gnumcueclipse.debug.core/src/ilg/gnumcueclipse/debug/core/data/ICProjectExtraDataManager.java">ICProjectExtraDataManager</a>.</p>
 
 <p>The only function required is:</p>
 
@@ -143,7 +143,7 @@
 
 <h2 id="where-is-this-extension-point-used">Where is this extension point used?</h2>
 
-<p>The <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.gdbjtag/src/ilg/gnumcueclipse/debug/gdbjtag/data/CProjectExtraDataManagerProxy.java">ilg.gnumcueclipse.debug.gdbjtag.data/CProjectExtraDataManagerProxy.java</a> class enumerates all <strong>cprojectExtra</strong> extension points and returns the first one that can provide data for the requested configuration.</p>
+<p>The <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/bundles/ilg.gnumcueclipse.debug.gdbjtag/src/ilg/gnumcueclipse/debug/gdbjtag/data/CProjectExtraDataManagerProxy.java">ilg.gnumcueclipse.debug.gdbjtag.data/CProjectExtraDataManagerProxy.java</a> class enumerates all <strong>cprojectExtra</strong> extension points and returns the first one that can provide data for the requested configuration.</p>
 
 <p>This <code class="highlighter-rouge">CProjectExtraDataManagerProxy.getExtraProperties(config)</code> is called from <code class="highlighter-rouge">PeripheralsService.etPeripherals(IContainerDMContext containerDMContext, DataRequestMonitor&lt;IPeripheralDMContext[]&gt; drm)</code>:</p>
 
@@ -196,7 +196,7 @@
 </code></pre>
 </div>
 
-<p>The data manager created by this factory is <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.managedbuild.cross/src/ilg/gnumcueclipse/managedbuild/cross/xpi/CProjectExtraDataManager.java">ilg.gnumcueclipse.managedbuild.cross.xpi/CProjectExtraDataManager.java</a> which returns the entire map of extra properties associated with GNU ARM Eclipse projects, stored in .cproject:</p>
+<p>The data manager created by this factory is <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/bundles/ilg.gnumcueclipse.managedbuild.cross/src/ilg/gnumcueclipse/managedbuild/cross/xpi/CProjectExtraDataManager.java">ilg.gnumcueclipse.managedbuild.cross.xpi/CProjectExtraDataManager.java</a> which returns the entire map of extra properties associated with GNU ARM Eclipse projects, stored in .cproject:</p>
 
 <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;storageModule</span> <span class="na">moduleId=</span><span class="s">"ilg.gnumcueclipse.managedbuild.packs"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">id=</span><span class="s">"cmsis.device.name"</span> <span class="na">value=</span><span class="s">"STM32F407VG"</span><span class="nt">/&gt;</span>
@@ -225,7 +225,7 @@
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu May 25 11:51:44 2017 UTC.</p>
+<p class="page-footer">Last modified on Tue May 30 19:50:55 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/extension/ilg.gnumcueclipse.debug.core.cprojectextra/" data-layout="button"></div>
 
 
@@ -376,6 +376,7 @@
 <h4 id="developer"><a href="/developer/">Developer</a></h4>
 
 <ul>
+  <li><a href="/developer/">Overview</a></li>
   <li><a href="/developer/build-procedure/">How to build</a></li>
   <li><a href="/developer/publish-procedure/">How to publish</a></li>
   <li><a href="/developer/change-log">Change log</a></li>

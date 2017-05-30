@@ -126,11 +126,11 @@
 
 <h2 id="definition">Definition</h2>
 
-<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.core/schema/svd_path.exsd">ilg.gnumcueclipse.debug.core/schema/svd_path.exsd</a>.</p>
+<p>The Eclipse definition of this extension point is in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/bundles/ilg.gnumcueclipse.debug.core/schema/svd_path.exsd">ilg.gnumcueclipse.debug.core/schema/svd_path.exsd</a>.</p>
 
 <h2 id="api">API</h2>
 
-<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.core/src/ilg/gnumcueclipse/debug/core/data/ISVDPathManager.java">ISVDPathManager</a>.</p>
+<p>The extension point refers to a factory that creates a class that must implement <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/bundles/ilg.gnumcueclipse.debug.core/src/ilg/gnumcueclipse/debug/core/data/ISVDPathManager.java">ISVDPathManager</a>.</p>
 
 <p>The only function required is:</p>
 
@@ -140,7 +140,7 @@
 
 <h2 id="where-is-this-extension-point-used">Where is this extension point used?</h2>
 
-<p>The svdPath extension point is used in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/ilg.gnumcueclipse.debug.gdbjtag/src/ilg/gnumcueclipse/debug/gdbjtag/data/SVDPathManagerProxy.java">ilg.gnumcueclipse.debug.gdbjtag.data/SVDPathManagerProxy.java</a>, called from <code class="highlighter-rouge">SVDUtils.getTree(String deviceVendorId, String deviceName)</code>:</p>
+<p>The svdPath extension point is used in <a href="https://github.com/gnuarmeclipse/plug-ins/blob/develop/bundles/ilg.gnumcueclipse.debug.gdbjtag/src/ilg/gnumcueclipse/debug/gdbjtag/data/SVDPathManagerProxy.java">ilg.gnumcueclipse.debug.gdbjtag.data/SVDPathManagerProxy.java</a>, called from <code class="highlighter-rouge">SVDUtils.getTree(String deviceVendorId, String deviceName)</code>:</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="c1">// Try to get the SVD from a custom provider, like in DAVE.</span>
 <span class="n">SVDPathManagerProxy</span> <span class="n">pathManager</span> <span class="o">=</span> <span class="n">SVDPathManagerProxy</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
@@ -175,7 +175,7 @@
 
 
 <hr class="page-footer"/>
-<p class="page-footer">Last modified on Thu May 25 11:40:23 2017 UTC.</p>
+<p class="page-footer">Last modified on Tue May 30 19:50:55 2017 UTC.</p>
 <div class="fb-share-button" data-href="http://gnuarmeclipse.github.io/developer/extension/ilg.gnumcueclipse.debug.core.svdpath/" data-layout="button"></div>
 
 
@@ -326,6 +326,7 @@
 <h4 id="developer"><a href="/developer/">Developer</a></h4>
 
 <ul>
+  <li><a href="/developer/">Overview</a></li>
   <li><a href="/developer/build-procedure/">How to build</a></li>
   <li><a href="/developer/publish-procedure/">How to publish</a></li>
   <li><a href="/developer/change-log">Change log</a></li>
